@@ -1,0 +1,113 @@
+// CSS Style Guide: https://codeguide.co/#css
+
+// https://stylus-lang.com/docs/keyframes.html
+vendors = official;
+
+$scheme = hexo-config('scheme') ? hexo-config('scheme') : 'Muse';
+
+
+// Variables Layer
+// --------------------------------------------------
+@import '_variables/base';
+@import '_variables/' + $scheme;
+for $inject_variable in hexo-config('injects.variable')
+  @import $inject_variable;
+
+// Mixins Layer
+// --------------------------------------------------
+@import '_mixins';
+for $inject_mixin in hexo-config('injects.mixin')
+  @import $inject_mixin;
+
+// Dark mode colors
+// --------------------------------------------------
+@import '_colors';
+
+// Common Layer
+// --------------------------------------------------
+
+// Scaffolding
+@import '_common/scaffolding';
+
+// Layout
+@import '_common/outline';
+
+// Components
+@import '_common/components';
+
+
+// Schemes Layer
+// --------------------------------------------------
+@import '_schemes/' + $scheme;
+
+
+// Custom Layer
+// --------------------------------------------------
+for $inject_style in hexo-config('injects.style')
+  @import $inject_style;
+
+/* =========================================
+   IG 照片牆專用排版 (寫在 Main 最後面)
+   ========================================= */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.ig-card {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-radius: 2px;
+}
+
+.ig-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ig-card:hover img {
+  filter: sepia(0.4);
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+/* =========================================
+   雙門洞 1988 懷舊配色 (安全注入版)
+   ========================================= */
+
+/* 1. 背景：改成溫暖米色 */
+body {
+  background: #f4f0e6;
+  color: #333;
+}
+
+/* 2. 讓 Gemini 的區塊變成白色卡片 (最關鍵的一步) */
+.header-inner, .sidebar-inner, .post-block {
+  background: #fff;       /* 卡片維持白色 */
+  border-radius: 4px;     /* 圓角 */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 淡淡的陰影 */
+  padding: 24px;          /* 增加一點呼吸空間 */
+  margin-bottom: 24px;    /* 卡片之間的距離 */
+}
+
+/* 3. 左上角標題區塊：阿澤深藍色 */
+.site-brand-container {
+  background: #2c3e50;
+}
+
+/* 4. 選單文字優化 (因為背景變米色，加強對比) */
+.menu-item a {
+  color: #555;
+}
+.menu-item a:hover {
+  background: #f4f0e6; /* 滑鼠移過去變成米色 */
+  border-radius: 4px;
+}
