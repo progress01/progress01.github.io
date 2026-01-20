@@ -42,4 +42,10 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://search.worldcat.org/zh-tw/title/1433650799?oclcNum=1433650799"target="_blank">
+      <img src="/images/Good-Child-Syndrome.png"> </a>
+    </a>
+  </div>
+
 </div>
