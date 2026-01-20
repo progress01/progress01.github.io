@@ -111,3 +111,10 @@ symbols_count_time:
   total_symbols: true
   total_time: true
   exclude_codeblock: false
+
+  # 搜尋引擎設定
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
