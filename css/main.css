@@ -1385,7 +1385,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #1278ff;
+    background: #83ba1b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1848,6 +1848,16 @@ pre code {
 }
 .back-to-top.back-to-top-on {
   bottom: 30px;
+}
+.reading-progress-bar {
+  --progress: 0;
+  background: #2c3e50;
+  height: 3px;
+  position: fixed;
+  z-index: 50;
+  width: var(--progress);
+  left: 0;
+  top: 0;
 }
 .rtl.post-body p,
 .rtl.post-body a,
@@ -2334,6 +2344,56 @@ pre code {
   to {
     transform: rotateZ(-30deg);
   }
+}
+.followme {
+  color: #bbb;
+  padding: 1em 1.5em;
+  text-align: center;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  margin: 1em 0 0;
+}
+.followme .social-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.followme .social-list .social-item {
+  margin: 0.5em 2em;
+  position: relative;
+}
+@media (max-width: 991px) {
+  .followme .social-list .social-item {
+    margin: 0.5em 0.75em;
+  }
+}
+.followme .social-list .social-link {
+  border: 0;
+  display: block;
+}
+.followme .social-list .social-link .icon {
+  font-size: 1.75em;
+}
+.followme .social-list .social-link .label {
+  display: block;
+  font-size: 14px;
+}
+.followme .social-list .social-link:hover + .social-item-img {
+  display: block;
+}
+.followme .social-list span.social-link {
+  color: var(--link-color);
+}
+.followme .social-list span.social-link:hover {
+  color: var(--link-hover-color);
+}
+.followme .social-list .social-item-img {
+  display: none;
+  left: 50%;
+  max-width: 180px;
+  position: absolute;
+  transform: translate(-50%, 20px);
+  z-index: 1;
 }
 .category-all-page .category-all-title {
   text-align: center;
@@ -3067,4 +3127,26 @@ body {
 .menu-item a:hover {
   background: #f4f0e6; /* 滑鼠移過去變成米色 */
   border-radius: 4px;
+}
+/* =========================================
+   將標籤雲 (Tag Cloud) 改造為 列表清單
+   ========================================= */
+.tag-cloud-tags {
+  text-align: left !important; /* 強制靠左對齊 */
+}
+.tag-cloud-tags a {
+  display: block; /* 關鍵！讓每個標籤獨佔一行 */
+  font-size: 14px !important; /* 雙重保險：強制字體大小 */
+  color: #555 !important; /* 統一文字顏色 */
+  border-bottom: 1px solid #eee; /* 加上淺灰色分隔線 */
+  padding: 8px 0; /* 增加上下呼吸空間 */
+  margin: 0; /* 清除原本的間距 */
+}
+/* 滑鼠移過去的效果 */
+.tag-cloud-tags a:hover {
+  background-color: #f5f5f5; /* 淡淡的灰色背景 */
+  color: #222 !important; /* 文字變深 */
+  text-decoration: none;
+  padding-left: 10px; /* 移過去時稍微往右縮排，增加互動感 */
+  transition: all 0.2s; /* 平滑過渡 */
 }
