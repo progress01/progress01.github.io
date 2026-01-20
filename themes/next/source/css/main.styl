@@ -111,3 +111,28 @@ body {
   background: #f4f0e6; /* 滑鼠移過去變成米色 */
   border-radius: 4px;
 }
+
+/* =========================================
+   將標籤雲 (Tag Cloud) 改造為 列表清單
+   ========================================= */
+.tag-cloud-tags {
+  text-align: left !important;   /* 強制靠左對齊 */
+}
+
+.tag-cloud-tags a {
+  display: block;                /* 關鍵！讓每個標籤獨佔一行 */
+  font-size: 14px !important;    /* 雙重保險：強制字體大小 */
+  color: #555 !important;        /* 統一文字顏色 */
+  border-bottom: 1px solid #eee; /* 加上淺灰色分隔線 */
+  padding: 8px 0;                /* 增加上下呼吸空間 */
+  margin: 0;                     /* 清除原本的間距 */
+}
+
+/* 滑鼠移過去的效果 */
+.tag-cloud-tags a:hover {
+  background-color: #f5f5f5;     /* 淡淡的灰色背景 */
+  color: #222 !important;        /* 文字變深 */
+  text-decoration: none;
+  padding-left: 10px;            /* 移過去時稍微往右縮排，增加互動感 */
+  transition: all 0.2s;          /* 平滑過渡 */
+}
