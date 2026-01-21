@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #9aab26;
+    background: #c4ddff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2935,4 +2935,17 @@ body {
   text-decoration: none;
   padding-left: 10px; /* 移過去時稍微往右縮排，增加互動感 */
   transition: all 0.2s; /* 平滑過渡 */
+}
+/* 修改 Header 背景：深藍色 + 顆粒質感 */
+.site-brand-container {
+/* 這是你喜歡的午夜藍 */
+  background-color: #2c3e50;
+/* 這行會產生微微的雜訊顆粒感，不需要圖片 */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+/* 讓標題文字維持白色 */
+.site-title,
+.site-subtitle {
+  color: #fdf6e3; /* 米白色 */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 加一點陰影讓字跳出來 */
 }
