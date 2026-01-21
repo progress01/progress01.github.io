@@ -48,4 +48,9 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://www.kkbox.com/tw/tc/song/1_Q7nEuk_TKl6iW5rD"target="_blank">
+      <img src="/images/SUWO-Forever.png"> </a>
+    </a>
+  </div>
 </div>
