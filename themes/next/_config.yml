@@ -112,6 +112,7 @@ menu:
   #commonweal: /404/ || fa fa-heartbeat
   photos: /photos/ || fa fa-camera
   reading: /reading-log/ || fa fa-book
+  random: /random/ || fa fa-dice
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
