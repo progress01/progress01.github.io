@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>DON&#39;T COUNT THE DAYS</title>
-  <icon>http://example.com/icon.png</icon>
+  <icon>https://progress01.github.io/icon.png</icon>
   <subtitle>紀錄並凝視</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://progress01.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://progress01.github.io/"/>
   <updated>2026-01-19T15:11:30.406Z</updated>
-  <id>http://example.com/</id>
+  <id>https://progress01.github.io/</id>
   
   <author>
     <name>Ch-Ju</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>歌曲推薦-Free Loop</title>
-    <link href="http://example.com/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/"/>
-    <id>http://example.com/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/</id>
+    <link href="https://progress01.github.io/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/"/>
+    <id>https://progress01.github.io/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/</id>
     <published>2026-01-19T04:00:00.000Z</published>
     <updated>2026-01-19T15:11:30.406Z</updated>
     
@@ -46,21 +46,21 @@
     
     
     
-    <category term="音樂推薦" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
+    <category term="音樂推薦" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
-    <category term="專輯插圖" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
+    <category term="專輯插圖" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
     
     
-    <category term="音樂推薦" scheme="http://example.com/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
+    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
-    <category term="專輯插圖" scheme="http://example.com/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
+    <category term="專輯插圖" scheme="https://progress01.github.io/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
     
   </entry>
   
   <entry>
     <title>歌曲推薦-Better Man</title>
-    <link href="http://example.com/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/"/>
-    <id>http://example.com/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</id>
+    <link href="https://progress01.github.io/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/"/>
+    <id>https://progress01.github.io/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</id>
     <published>2025-12-25T04:00:00.000Z</published>
     <updated>2026-01-19T16:38:58.247Z</updated>
     
@@ -87,21 +87,21 @@
     
     
     
-    <category term="音樂推薦" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
+    <category term="音樂推薦" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
-    <category term="專輯插圖" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
+    <category term="專輯插圖" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
     
     
-    <category term="音樂推薦" scheme="http://example.com/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
+    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
-    <category term="專輯插圖" scheme="http://example.com/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
+    <category term="專輯插圖" scheme="https://progress01.github.io/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
     
   </entry>
   
   <entry>
     <title>歌曲推薦-2375</title>
-    <link href="http://example.com/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/"/>
-    <id>http://example.com/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/</id>
+    <link href="https://progress01.github.io/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/"/>
+    <id>https://progress01.github.io/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/</id>
     <published>2025-10-24T04:00:00.000Z</published>
     <updated>2026-01-20T02:36:25.006Z</updated>
     
@@ -130,21 +130,21 @@
     
     
     
-    <category term="音樂推薦" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
+    <category term="音樂推薦" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
-    <category term="專輯插圖" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
+    <category term="專輯插圖" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
     
     
-    <category term="音樂推薦" scheme="http://example.com/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
+    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
-    <category term="專輯插圖" scheme="http://example.com/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
+    <category term="專輯插圖" scheme="https://progress01.github.io/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
     
   </entry>
   
   <entry>
     <title>女給時代：1930年代臺灣的珈琲店文化-書籍閱讀紀錄</title>
-    <link href="http://example.com/2025/04/09/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/"/>
-    <id>http://example.com/2025/04/09/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/</id>
+    <link href="https://progress01.github.io/2025/04/09/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/"/>
+    <id>https://progress01.github.io/2025/04/09/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/</id>
     <published>2025-04-08T16:55:27.000Z</published>
     <updated>2026-01-19T17:12:37.172Z</updated>
     
@@ -155,21 +155,21 @@
     
     
     
-    <category term="書籍" scheme="http://example.com/categories/%E6%9B%B8%E7%B1%8D/"/>
+    <category term="書籍" scheme="https://progress01.github.io/categories/%E6%9B%B8%E7%B1%8D/"/>
     
-    <category term="閱讀心得" scheme="http://example.com/categories/%E6%9B%B8%E7%B1%8D/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    <category term="閱讀心得" scheme="https://progress01.github.io/categories/%E6%9B%B8%E7%B1%8D/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
     
     
-    <category term="書籍" scheme="http://example.com/tags/%E6%9B%B8%E7%B1%8D/"/>
+    <category term="書籍" scheme="https://progress01.github.io/tags/%E6%9B%B8%E7%B1%8D/"/>
     
-    <category term="閱讀心得" scheme="http://example.com/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    <category term="閱讀心得" scheme="https://progress01.github.io/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
   <entry>
     <title>請不要在大家面前稱讚我-書籍閱讀紀錄</title>
-    <link href="http://example.com/2025/01/07/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/"/>
-    <id>http://example.com/2025/01/07/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/</id>
+    <link href="https://progress01.github.io/2025/01/07/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/"/>
+    <id>https://progress01.github.io/2025/01/07/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/</id>
     <published>2025-01-06T17:34:55.000Z</published>
     <updated>2026-01-20T17:46:09.557Z</updated>
     
@@ -180,21 +180,21 @@
     
     
     
-    <category term="書籍" scheme="http://example.com/categories/%E6%9B%B8%E7%B1%8D/"/>
+    <category term="書籍" scheme="https://progress01.github.io/categories/%E6%9B%B8%E7%B1%8D/"/>
     
-    <category term="閱讀心得" scheme="http://example.com/categories/%E6%9B%B8%E7%B1%8D/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    <category term="閱讀心得" scheme="https://progress01.github.io/categories/%E6%9B%B8%E7%B1%8D/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
     
     
-    <category term="書籍" scheme="http://example.com/tags/%E6%9B%B8%E7%B1%8D/"/>
+    <category term="書籍" scheme="https://progress01.github.io/tags/%E6%9B%B8%E7%B1%8D/"/>
     
-    <category term="閱讀心得" scheme="http://example.com/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    <category term="閱讀心得" scheme="https://progress01.github.io/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
   <entry>
     <title>若草物語-戀愛姐妹與無法戀愛的我-影片紀錄</title>
-    <link href="http://example.com/2024/12/24/%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E-%E6%88%80%E6%84%9B%E5%A7%90%E5%A6%B9%E8%88%87%E7%84%A1%E6%B3%95%E6%88%80%E6%84%9B%E7%9A%84%E6%88%91-%E5%BD%B1%E7%89%87%E7%B4%80%E9%8C%84/"/>
-    <id>http://example.com/2024/12/24/%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E-%E6%88%80%E6%84%9B%E5%A7%90%E5%A6%B9%E8%88%87%E7%84%A1%E6%B3%95%E6%88%80%E6%84%9B%E7%9A%84%E6%88%91-%E5%BD%B1%E7%89%87%E7%B4%80%E9%8C%84/</id>
+    <link href="https://progress01.github.io/2024/12/24/%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E-%E6%88%80%E6%84%9B%E5%A7%90%E5%A6%B9%E8%88%87%E7%84%A1%E6%B3%95%E6%88%80%E6%84%9B%E7%9A%84%E6%88%91-%E5%BD%B1%E7%89%87%E7%B4%80%E9%8C%84/"/>
+    <id>https://progress01.github.io/2024/12/24/%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E-%E6%88%80%E6%84%9B%E5%A7%90%E5%A6%B9%E8%88%87%E7%84%A1%E6%B3%95%E6%88%80%E6%84%9B%E7%9A%84%E6%88%91-%E5%BD%B1%E7%89%87%E7%B4%80%E9%8C%84/</id>
     <published>2024-12-24T00:55:13.000Z</published>
     <updated>2026-01-20T01:00:51.935Z</updated>
     
@@ -205,21 +205,21 @@
     
     
     
-    <category term="影片" scheme="http://example.com/categories/%E5%BD%B1%E7%89%87/"/>
+    <category term="影片" scheme="https://progress01.github.io/categories/%E5%BD%B1%E7%89%87/"/>
     
-    <category term="觀影心得" scheme="http://example.com/categories/%E5%BD%B1%E7%89%87/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/"/>
+    <category term="觀影心得" scheme="https://progress01.github.io/categories/%E5%BD%B1%E7%89%87/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/"/>
     
     
-    <category term="影片" scheme="http://example.com/tags/%E5%BD%B1%E7%89%87/"/>
+    <category term="影片" scheme="https://progress01.github.io/tags/%E5%BD%B1%E7%89%87/"/>
     
-    <category term="觀影心得" scheme="http://example.com/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/"/>
+    <category term="觀影心得" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
   <entry>
     <title>明天別再來敲門-書籍閱讀紀錄</title>
-    <link href="http://example.com/2022/07/31/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/"/>
-    <id>http://example.com/2022/07/31/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/</id>
+    <link href="https://progress01.github.io/2022/07/31/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/"/>
+    <id>https://progress01.github.io/2022/07/31/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80-%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84/</id>
     <published>2022-07-31T15:21:24.000Z</published>
     <updated>2026-01-19T05:33:04.783Z</updated>
     
@@ -230,14 +230,14 @@
     
     
     
-    <category term="書籍" scheme="http://example.com/categories/%E6%9B%B8%E7%B1%8D/"/>
+    <category term="書籍" scheme="https://progress01.github.io/categories/%E6%9B%B8%E7%B1%8D/"/>
     
-    <category term="閱讀心得" scheme="http://example.com/categories/%E6%9B%B8%E7%B1%8D/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    <category term="閱讀心得" scheme="https://progress01.github.io/categories/%E6%9B%B8%E7%B1%8D/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
     
     
-    <category term="書籍" scheme="http://example.com/tags/%E6%9B%B8%E7%B1%8D/"/>
+    <category term="書籍" scheme="https://progress01.github.io/tags/%E6%9B%B8%E7%B1%8D/"/>
     
-    <category term="閱讀心得" scheme="http://example.com/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    <category term="閱讀心得" scheme="https://progress01.github.io/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
