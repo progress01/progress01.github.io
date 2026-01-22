@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="&#x2F;* 修正版：只隱藏「置頂文章 (Sticky)」的標題與資訊，不要誤傷無辜 *&#x2F;   .post-block.sticky .post-header,   .post-block.sticky .post-footer {      display: none !important;    }    &#x2F;* 2. 暴力滿版魔法：針對這個置頂區塊去除白邊 *&#x2F;   .post-block.st">
+    <meta name="description" content="&#x2F;* 🎯 終極修正：鎖定「首頁 (page-home)」的「第一篇文章 (first-of-type)」 *&#x2F;   &#x2F;* 這樣就不用管它有沒有 sticky class，只要它是排第一的看板，就會被選中 *&#x2F;      .page-home .post-block:first-of-type .post-header,   .page-home .post-block:first-of-t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="System Ready...">
 <meta property="og:url" content="https://progress01.github.io/2026/01/21/welcome-board/index.html">
 <meta property="og:site_name" content="DON&#39;T COUNT THE DAYS">
-<meta property="og:description" content="&#x2F;* 修正版：只隱藏「置頂文章 (Sticky)」的標題與資訊，不要誤傷無辜 *&#x2F;   .post-block.sticky .post-header,   .post-block.sticky .post-footer {      display: none !important;    }    &#x2F;* 2. 暴力滿版魔法：針對這個置頂區塊去除白邊 *&#x2F;   .post-block.st">
+<meta property="og:description" content="&#x2F;* 🎯 終極修正：鎖定「首頁 (page-home)」的「第一篇文章 (first-of-type)」 *&#x2F;   &#x2F;* 這樣就不用管它有沒有 sticky class，只要它是排第一的看板，就會被選中 *&#x2F;      .page-home .post-block:first-of-type .post-header,   .page-home .post-block:first-of-t">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-01-21T13:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-22T03:42:55.131Z">
+<meta property="article:modified_time" content="2026-01-22T04:22:12.984Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-01-22 11:42:55" itemprop="dateModified" datetime="2026-01-22T11:42:55+08:00">2026-01-22</time>
+      <time title="修改時間：2026-01-22 12:22:12" itemprop="dateModified" datetime="2026-01-22T12:22:12+08:00">2026-01-22</time>
     </span>
 
   
@@ -252,7 +252,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.2k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -270,20 +270,22 @@
     
     
     <div class="post-body" itemprop="articleBody"><style>
-  /* 修正版：只隱藏「置頂文章 (Sticky)」的標題與資訊，不要誤傷無辜 */
-  .post-block.sticky .post-header,
-  .post-block.sticky .post-footer { 
+  /* 🎯 終極修正：鎖定「首頁 (page-home)」的「第一篇文章 (first-of-type)」 */
+  /* 這樣就不用管它有沒有 sticky class，只要它是排第一的看板，就會被選中 */
+  
+  .page-home .post-block:first-of-type .post-header,
+  .page-home .post-block:first-of-type .post-footer { 
     display: none !important; 
   }
 
-  /* 2. 暴力滿版魔法：針對這個置頂區塊去除白邊 */
-  .post-block.sticky {
+  /* 去除白邊與陰影，讓它變透明背景 */
+  .page-home .post-block:first-of-type {
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
     margin-top: 0 !important;
   }
-  
+
   /* 手機版適配 */
   @media (max-width: 767px) {
     .terminal-box { flex-direction: column; }

@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-01-22 11:42:55" itemprop="dateModified" datetime="2026-01-22T11:42:55+08:00">2026-01-22</time>
+      <time title="修改時間：2026-01-22 12:22:12" itemprop="dateModified" datetime="2026-01-22T12:22:12+08:00">2026-01-22</time>
     </span>
 
   
@@ -252,7 +252,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.2k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -271,20 +271,22 @@
     
     <div class="post-body" itemprop="articleBody">
           <style>
-  /* 修正版：只隱藏「置頂文章 (Sticky)」的標題與資訊，不要誤傷無辜 */
-  .post-block.sticky .post-header,
-  .post-block.sticky .post-footer { 
+  /* 🎯 終極修正：鎖定「首頁 (page-home)」的「第一篇文章 (first-of-type)」 */
+  /* 這樣就不用管它有沒有 sticky class，只要它是排第一的看板，就會被選中 */
+  
+  .page-home .post-block:first-of-type .post-header,
+  .page-home .post-block:first-of-type .post-footer { 
     display: none !important; 
   }
 
-  /* 2. 暴力滿版魔法：針對這個置頂區塊去除白邊 */
-  .post-block.sticky {
+  /* 去除白邊與陰影，讓它變透明背景 */
+  .page-home .post-block:first-of-type {
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
     margin-top: 0 !important;
   }
-  
+
   /* 手機版適配 */
   @media (max-width: 767px) {
     .terminal-box { flex-direction: column; }
