@@ -56,8 +56,8 @@ reward: false
     line-height: 1.8;
   ">
 <div><i class="fa fa-film" style="color: #ffa726;"></i> TAPE: Life_Vol.1</div>
-<div><i class="fa fa-music" style="color: #ffa726;"></i> AUDIO: Stereo</div>
-<div><i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: Nostalgia</div>
+<div><i class="fa fa-music" style="color: #ffa726;"></i> AUDIO: Don't worry</div>
+<div><i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: （´◔​∀◔`)</div>
 <div><i class="fa fa-clock-o" style="color: #ffa726;"></i> TIME: <span id="clock-display">00:00:00</span></div>
     
 <div style="margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;">
