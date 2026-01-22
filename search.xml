@@ -1,100 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>歌曲推薦-Free Loop</title>
-    <url>/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦  Daniel Powter 的 Free Loop
-      <br>
-      出自專輯 Daniel Powter
-      <br>
-      <a href="https://open.spotify.com/track/2rtSjGAgCkHL5mKboZMVgD?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/Free-Loop.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    其實我從來沒查過這首歌到底在唱什麼之前，就已經喜歡很久了，又到了週一已經慢慢學會穩定心情的走進辦公室。我喜歡這首的結尾We can change and feel alright跟歌手還有旋律很多很多。
-]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-2375</title>
-    <url>/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 棉花糖 的 2375
-      <br>
-      出自專輯 小飛行
-      <br>
-      <a href="https://open.spotify.com/track/2tBbej01PrPbAt0kYBiWVK?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/2375.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    查了一些分享2375約等於一個階段六年，通常5-6年很常被拿來當成一個評估的時期，如果當成階段思考的溫暖歌曲的話其實意外的適合！
-    以這個當角度的話這首歌很多地方都可以想像了！
-    從時間過了2375天開始思考自己，在意的人，世界，家與夢想，而旋律又讓人感覺到支撐的溫暖。好久以前第一次聽到這首歌是圖韻獎上面學姊演唱，分享想家時候會聽的歌，搭配這個方向，好像又能更懂了一些創作者跟聽歌人的心領神會！
-
-]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>System Ready...</title>
-    <url>/2026/01/22/welcome-board/</url>
-    <content><![CDATA[<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // 1. 找到所有標題連結
-    var titles = document.querySelectorAll('.post-title-link');
-    titles.forEach(function(el) {
-      // 2. 如果標題文字是 "System Ready..."
-      if (el.innerText.trim().includes('System Ready')) {
-        // 3. 往上找它的爸爸 (Header)，然後隱藏它
-        var header = el.closest('.post-header');
-        if (header) header.style.display = 'none';
-        // 4. 順便把下面那排日期也藏起來
-        var footer = el.closest('.post-block').querySelector('.post-footer');
-        if (footer) footer.style.display = 'none';
-      }
-    });
-  });
-</script>
+    <url>/2026/01/21/welcome-board/</url>
+    <content><![CDATA[<style>
+  /* 為了防止 JS 跑太慢，先用 CSS 擋一下首頁第一篇文章的標題 */
+  /* 如果這個失效，下面的 JS 會補刀 */
+  .page-home .post-block:first-of-type .post-header { opacity: 0; }
+  
+  /* 儀表板基本設定 */
+  .terminal-box { font-family: 'Courier New', monospace; }
+  
+  /* 手機版適配 */
+  @media (max-width: 767px) {
+    .terminal-box { flex-direction: column; }
+    .terminal-right { 
+      border-left: none !important; 
+      border-top: 1px dashed #5d4037; 
+      padding-left: 0 !important;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+  }
+</style>
 
-<div class="terminal-box" style="
+<div id="my-dashboard" class="terminal-box" style="
     display: flex; 
     background: #191414; 
     padding: 30px; 
     border-radius: 8px; 
-    font-family: 'Courier New', monospace; 
     color: #ffb74d; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     border: 1px solid #3e2723;
+    margin-top: -20px; /* 微調位置，讓它往上頂一點 */
 ">
   
   <div style="flex: 2; min-width: 250px;">
@@ -119,15 +57,18 @@
     <div><i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: Nostalgia</div>
     <div><i class="fa fa-clock-o" style="color: #ffa726;"></i> TIME: <span id="clock-display">00:00:00</span></div>
     
-<div style="margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;">
-   <span style="width: 10px; height: 10px; background-color: #ef6c00; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
+<pre><code>&lt;div style=&quot;margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;&quot;&gt;
+   &lt;span style=&quot;width: 10px; height: 10px; background-color: #ef6c00; border-radius: 50%; display: inline-block; margin-right: 8px;&quot;&gt;&lt;/span&gt;
    REC
-</div>
+&lt;/div&gt;
+</code></pre>
+  </div>
 
 </div>
 
 <script>
-  const text = "從 1995 開始的日子有些走遠了，有些仍在前方。\n收藏往後回望的自己與那些回不去的日子...";
+  // 打字機與時鐘功能
+  const text = "從 1995 開始的日子有些走遠了，有些仍在前方。\n收藏往後回望的自己與那些回不去的日子....";
   const speed = 80; 
   let i = 0;
   
@@ -143,15 +84,44 @@
     }
   }
   
-  typeWriter();
-  
   function updateTime() {
     const now = new Date();
-    const timeString = now.toTimeString().split(' ')[0];
-    document.getElementById("clock-display").innerText = timeString;
+    document.getElementById("clock-display").innerText = now.toTimeString().split(' ')[0];
   }
+
+  // 🔥 關鍵邏輯：找到我自己，然後殺掉我的標題
+  function killHeader() {
+    // 1. 找到儀表板本體
+    var me = document.getElementById("my-dashboard");
+    if (me) {
+      // 2. 往上找最近的文章容器 (article 或 .post-block)
+      var article = me.closest('article') || me.closest('.post-block');
+      if (article) {
+        // 3. 在這個容器裡面，找到標題 (header) 和 底部 (footer)
+        var header = article.querySelector('.post-header');
+        var footer = article.querySelector('.post-footer');
+        
+        // 4. 隱藏它們
+        if (header) { header.style.display = 'none'; }
+        if (footer) { footer.style.display = 'none'; }
+        
+        // 5. 順便把容器的白邊去掉 (暴力滿版)
+        article.style.background = 'transparent';
+        article.style.boxShadow = 'none';
+        article.style.padding = '0';
+      }
+    }
+  }
+
+  // 執行順序
+  typeWriter();
   setInterval(updateTime, 1000);
   updateTime();
+  
+  // 為了保險，我們執行兩次隱藏指令 (一次現在，一次等頁面載完)
+  killHeader();
+  document.addEventListener("DOMContentLoaded", killHeader);
+  window.addEventListener("load", killHeader);
 </script>
 
 <style>
@@ -159,35 +129,6 @@
   @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
   @keyframes blink-red { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 </style>]]></content>
-  </entry>
-  <entry>
-    <title>歌曲推薦-Better Man</title>
-    <url>/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Robbie Williams 的 Better Man
-      <br>
-      出自專輯 Sing When You're Winning
-      <br>
-      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/better-man.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     這首由 Robbie Williams 演唱的版本能感覺出來所謂"聲音的魅力"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
   </entry>
   <entry>
     <title>女給時代：1930年代臺灣的珈琲店文化-書籍閱讀紀錄</title>
@@ -215,36 +156,6 @@
       <tags>
         <tag>書籍</tag>
         <tag>閱讀心得</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-說，你愛我</title>
-    <url>/2026/01/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%AA%AA%EF%BC%8C%E4%BD%A0%E6%84%9B%E6%88%91/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 陳淑華 的 說，你愛我
-      <br>
-      出自專輯 淑樺盛開Forever
-      <br>
-      <a href="https://www.kkbox.com/tw/tc/song/1_Q7nEuk_TKl6iW5rD" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/SUWO-Forever.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    週三可能需要一點肯定感？這首說吧說你愛我可能可以算一點點，我喜歡歌手在歌曲中的那種放鬆的感覺，挺適合週三下午的！雖然說是節奏R&B，但由陳淑華演唱又帶了一點早期老歌特有的味道，我自己非常喜歡。
-]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
       </tags>
   </entry>
   <entry>
@@ -300,6 +211,35 @@
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-Better Man</title>
+    <url>/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Robbie Williams 的 Better Man
+      <br>
+      出自專輯 Sing When You're Winning
+      <br>
+      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/better-man.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     這首由 Robbie Williams 演唱的版本能感覺出來所謂"聲音的魅力"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>若草物語-戀愛姐妹與無法戀愛的我-影片紀錄</title>
     <url>/2024/12/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E-%E6%88%80%E6%84%9B%E5%A7%90%E5%A6%B9%E8%88%87%E7%84%A1%E6%B3%95%E6%88%80%E6%84%9B%E7%9A%84%E6%88%91/</url>
     <content><![CDATA[<p>每當我同理角色，就有點讓我再一次面對之前被拒絕的難過跟遺憾，快節奏跟套路雖然會讓我忍不住去預設發展，但老實說我真實期待的不是這樣的世界，跟隨角色跟決定是我之後會努力的部分，畢竟豐富的角色才有豐富的故事，不然一切都是世界觀的建構而已。</p>
@@ -339,6 +279,101 @@
       <tags>
         <tag>影片</tag>
         <tag>觀影心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-Free Loop</title>
+    <url>/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦  Daniel Powter 的 Free Loop
+      <br>
+      出自專輯 Daniel Powter
+      <br>
+      <a href="https://open.spotify.com/track/2rtSjGAgCkHL5mKboZMVgD?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/Free-Loop.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    其實我從來沒查過這首歌到底在唱什麼之前，就已經喜歡很久了，又到了週一已經慢慢學會穩定心情的走進辦公室。我喜歡這首的結尾We can change and feel alright跟歌手還有旋律很多很多。
+]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-說，你愛我</title>
+    <url>/2026/01/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%AA%AA%EF%BC%8C%E4%BD%A0%E6%84%9B%E6%88%91/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 陳淑華 的 說，你愛我
+      <br>
+      出自專輯 淑樺盛開Forever
+      <br>
+      <a href="https://www.kkbox.com/tw/tc/song/1_Q7nEuk_TKl6iW5rD" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/SUWO-Forever.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    週三可能需要一點肯定感？這首說吧說你愛我可能可以算一點點，我喜歡歌手在歌曲中的那種放鬆的感覺，挺適合週三下午的！雖然說是節奏R&B，但由陳淑華演唱又帶了一點早期老歌特有的味道，我自己非常喜歡。
+]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-2375</title>
+    <url>/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 棉花糖 的 2375
+      <br>
+      出自專輯 小飛行
+      <br>
+      <a href="https://open.spotify.com/track/2tBbej01PrPbAt0kYBiWVK?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/2375.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    查了一些分享2375約等於一個階段六年，通常5-6年很常被拿來當成一個評估的時期，如果當成階段思考的溫暖歌曲的話其實意外的適合！
+    以這個當角度的話這首歌很多地方都可以想像了！
+    從時間過了2375天開始思考自己，在意的人，世界，家與夢想，而旋律又讓人感覺到支撐的溫暖。好久以前第一次聽到這首歌是圖韻獎上面學姊演唱，分享想家時候會聽的歌，搭配這個方向，好像又能更懂了一些創作者跟聽歌人的心領神會！
+
+]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
       </tags>
   </entry>
 </search>
