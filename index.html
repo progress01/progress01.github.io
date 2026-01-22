@@ -203,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/01/21/welcome-board/">
+    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/01/22/welcome-board/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -224,7 +224,7 @@
           
               <span class="post-sticky-flag" title="置頂">
                 <i class="fa fa-thumbtack"></i>
-              </span><a href="/2026/01/21/welcome-board/" class="post-title-link" itemprop="url">System Ready...</a>
+              </span><a href="/2026/01/22/welcome-board/" class="post-title-link" itemprop="url">System Ready...</a>
         </h2>
 
         <div class="post-meta-container">
@@ -234,15 +234,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2026-01-21 21:00:00" itemprop="dateCreated datePublished" datetime="2026-01-21T21:00:00+08:00">2026-01-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-01-22 12:22:12" itemprop="dateModified" datetime="2026-01-22T12:22:12+08:00">2026-01-22</time>
+      <time title="創建時間：2026-01-22 21:00:00 / 修改時間：13:47:00" itemprop="dateCreated datePublished" datetime="2026-01-22T21:00:00+08:00">2026-01-22</time>
     </span>
 
   
@@ -252,7 +246,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.3k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -270,35 +264,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <style>
-  /* 🎯 終極修正：鎖定「首頁 (page-home)」的「第一篇文章 (first-of-type)」 */
-  /* 這樣就不用管它有沒有 sticky class，只要它是排第一的看板，就會被選中 */
-  
-  .page-home .post-block:first-of-type .post-header,
-  .page-home .post-block:first-of-type .post-footer { 
-    display: none !important; 
-  }
-
-  /* 去除白邊與陰影，讓它變透明背景 */
-  .page-home .post-block:first-of-type {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  /* 手機版適配 */
-  @media (max-width: 767px) {
-    .terminal-box { flex-direction: column; }
-    .terminal-right { 
-      border-left: none !important; 
-      border-top: 1px dashed #5d4037; 
-      padding-left: 0 !important;
-      padding-top: 20px;
-      margin-top: 20px;
-    }
-  }
-</style>
+          <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. 找到所有標題連結
+    var titles = document.querySelectorAll('.post-title-link');
+    titles.forEach(function(el) {
+      // 2. 如果標題文字是 "System Ready..."
+      if (el.innerText.trim().includes('System Ready')) {
+        // 3. 往上找它的爸爸 (Header)，然後隱藏它
+        var header = el.closest('.post-header');
+        if (header) header.style.display = 'none';
+        // 4. 順便把下面那排日期也藏起來
+        var footer = el.closest('.post-block').querySelector('.post-footer');
+        if (footer) footer.style.display = 'none';
+      }
+    });
+  });
+</script>
 
 <div class="terminal-box" style="
     display: flex; 
@@ -1260,7 +1242,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">9k</span>
+    <span title="總字數">8k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
