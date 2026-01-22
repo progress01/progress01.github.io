@@ -9,7 +9,7 @@ comments: false
 
   <div class="ig-card">
     <a href="https://search.worldcat.org/zh-tw/title/1230345777" target="_blank">
-    <img src="/images/2026-01-18-23-30-18.png"> </a>
+    <img src="/images/明天別再來敲門.png"> </a>
   </div>
 
   <div class="ig-card">

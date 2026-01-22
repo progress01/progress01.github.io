@@ -7,13 +7,21 @@ reward: false
 ---
 
 <style>
-  .post-header, .post-footer { display: none !important; }
+  /* 修正版：只隱藏「置頂文章 (Sticky)」的標題與資訊，不要誤傷無辜 */
+  .post-block.sticky .post-header,
+  .post-block.sticky .post-footer { 
+    display: none !important; 
+  }
+
+  /* 2. 暴力滿版魔法：針對這個置頂區塊去除白邊 */
   .post-block.sticky {
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
     margin-top: 0 !important;
   }
+  
+  /* 手機版適配 */
   @media (max-width: 767px) {
     .terminal-box { flex-direction: column; }
     .terminal-right { 
@@ -67,7 +75,7 @@ reward: false
 </div>
 
 <script>
-  const text = "從 1995 開始的日子有些走遠了，有些仍在前方。\n期待著能珍藏著一些屬於我的回憶與那些回不去的日子...";
+  const text = "從 1995 開始的日子有些走遠了，有些仍在前方。\n收藏往後回望的自己與那些回不去的日子...";
   const speed = 80; 
   let i = 0;
   

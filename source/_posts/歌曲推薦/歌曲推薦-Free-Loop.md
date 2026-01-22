@@ -1,9 +1,6 @@
 ---
 title: 歌曲推薦-Free Loop
 date: 2026-01-19 12:00:00
-categories:
-  - 音樂推薦
-  - 專輯插圖
 tags: [音樂推薦, 專輯插圖]
 ---
 

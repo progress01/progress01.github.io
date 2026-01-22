@@ -1,9 +1,6 @@
 ---
 title: 歌曲推薦-Better Man
 date: 2025-12-25 12:00:00
-categories:
-  - 音樂推薦
-  - 專輯插圖
 tags: [音樂推薦, 專輯插圖]
 ---
 
