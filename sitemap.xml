@@ -183,20 +183,6 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/tags/%E5%BD%B1%E7%89%87/</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://progress01.github.io/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://progress01.github.io/tags/%E5%BF%83%E6%83%85/</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,6 +191,20 @@
   
   <url>
     <loc>https://progress01.github.io/tags/%E5%9B%B0%E6%93%BE/</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E5%BD%B1%E7%89%87/</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
