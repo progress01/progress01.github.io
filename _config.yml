@@ -136,3 +136,10 @@ feed:
 
 sitemap:
   path: sitemap.xml
+
+  # Mermaid Diagram 設定
+mermaid:
+  enable: true
+  version: "8.14.0"
+  options: 
+    startOnload: true
