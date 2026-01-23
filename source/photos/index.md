@@ -60,6 +60,10 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/260uNZaYf0d6f4FeHJPUtn?autoplay=true"target="_blank">
+      <img src="/images/song_一輩子的孤單.png"> </a>
+    </a>
+  </div>
+
 </div>
-
-
