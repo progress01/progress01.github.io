@@ -72,4 +72,10 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://search.worldcat.org/zh-tw/title/1547689657"target="_blank">
+      <img src="/images/book_畫出心之所嚮.png"> </a>
+    </a>
+  </div>
+
 </div>
