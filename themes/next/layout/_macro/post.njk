@@ -99,6 +99,16 @@
     {### END POST BODY ###}
     {#####################}
 
+    {% if not is_index and (post.tags.length > 0) %}
+          <div style="margin-top: 40px; margin-bottom: 20px; padding: 20px; background: #f9f9f9; border-left: 5px solid #555;">
+            <h3 style="margin: 0 0 15px 0; font-size: 1.2em; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+              📚 延伸閱讀 (猜你也喜歡...)
+            </h3>
+            {{ popular_posts( {}, post ) }}
+          </div>
+        {% endif %}
+  
+
     <footer class="post-footer">
       {%- if is_index %}
         <div class="post-eof"></div>

@@ -113,6 +113,7 @@ menu:
   photos: /photos/ || fa fa-camera
   reading: /reading-log/ || fa fa-book
   random: /random/ || fa fa-dice
+  calendar: /calendar/ || fa fa-calendar
 
 # Enable / Disable menu icons / item badges.
 menu_settings:

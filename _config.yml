@@ -143,3 +143,24 @@ mermaid:
   version: "8.14.0"
   options: 
     startOnload: true
+
+# 🔗 延伸閱讀 (Related Posts) 設定
+popular_posts:
+  action: related   # 模式：related(相關文章) 或 popular(熱門文章)
+  limit: 5          # 顯示幾篇？
+  date_format: "YYYY-MM-DD"
+  more_link: false  # 是否顯示 "更多" 按鈕
+  excerpt: false    # 是否顯示摘要 (建議關閉，保持清爽)
+
+# -----------------------------------------------------------
+# 📅 Hexo Calendar Plugin Settings
+# -----------------------------------------------------------
+calendar:
+  enable: true
+  enable_page: true
+  enable_widget: true
+  theme: git
+  layout: page
+  months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
