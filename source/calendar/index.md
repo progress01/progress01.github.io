@@ -5,7 +5,7 @@ layout: page
 comments: false
 ---
 
-<div id="calendar" style="width: 100%; min-height: 250px; margin-top: 20px;">
+<div id="calendar" style="width: 100%; height: auto; min-height: 250px; margin-top: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
    <div style="text-align: center; padding: 20px;">
      <i class="fa fa-spinner fa-spin"></i> Loading...
    </div>
