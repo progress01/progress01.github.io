@@ -78,4 +78,10 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3ZAlSkH5KTDSq1YAD7jilp"target="_blank">
+      <img src="/images/song_如你所願.png"> </a>
+    </a>
+  </div>
+
 </div>
