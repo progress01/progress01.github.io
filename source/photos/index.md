@@ -107,4 +107,17 @@ comments: false
       <img src="/images/song_給我一首歌的時間.png"> </a>
     </a>
   </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1drkbspB7y7tUbY3aAQhiV"target="_blank">
+      <img src="/images/song_藍色眼睛.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3zymKle3GhoBCD384D2hms"target="_blank">
+      <img src="/images/song_神話.png"> </a>
+    </a>
+  </div> 
+
 </div>
