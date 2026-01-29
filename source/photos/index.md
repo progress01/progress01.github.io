@@ -140,3 +140,23 @@ comments: false
 
 </div>
 
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. 找到你的照片牆
+    var grid = document.querySelector('.ig-grid');
+    
+    // 2. 拿到所有的卡片
+    if (grid) {
+      var cards = Array.from(grid.children);
+      
+      // 3. 把順序倒過來 (Reverse)
+      cards.reverse().forEach(function(card) {
+        // 4. 重新貼回去
+        grid.appendChild(card);
+      });
+    }
+  });
+</script>
+
