@@ -6,25 +6,112 @@ comments: false
 reward: false
 ---
 
+{% raw %}
 <style>
-/* 為了防止 JS 跑太慢，先用 CSS 擋一下首頁第一篇文章的標題 */
- /* 如果這個失效，下面的 JS 會補刀 */
+/* 防止標題閃爍 */
 .page-home .post-block:first-of-type .post-header { opacity: 0; }
-  
-  /* 儀表板基本設定 */
-  .terminal-box { font-family: 'Courier New', monospace; }
-  
-  /* 手機版適配 */
-  @media (max-width: 767px) {
+
+/* 儀表板全域字體 */
+.terminal-box { font-family: 'Courier New', monospace; }
+
+/* 連結樣式重置 */
+.terminal-box a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* PLAY 按鈕 */
+.play-btn {
+    color: #e65100 !important; 
+    font-weight: bold;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.play-btn:hover {
+    background-color: #e65100;
+    color: #191414 !important;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #e65100;
+}
+
+/* TAPE 連結 */
+.tape-link {
+    color: #ffcc80 !important;
+    border-bottom: 1px dashed #ffcc80 !important;
+}
+.tape-link:hover {
+    color: #fff !important;
+    border-bottom: 1px solid #fff !important;
+}
+
+/* 左下角進度條動畫 */
+.loading-bar-container {
+    width: 100%;
+    height: 4px;
+    background: #3e2723;
+    margin-top: auto;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.loading-bar {
+    width: 40%;
+    height: 100%;
+    background: #e65100;
+    position: absolute;
+    left: -40%;
+    animation: load 3s infinite linear;
+}
+@keyframes load {
+    0% { left: -40%; }
+    100% { left: 100%; }
+}
+.loading-text {
+    font-size: 10px; 
+    color: #5d4037; 
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* --- 🆕 新增：1988 風格音頻跳動條 CSS --- */
+.equalizer {
+    display: inline-flex;
+    align-items: flex-end;
+    height: 14px; /* 高度設定 */
+    width: 16px;  /* 總寬度 */
+    margin-right: 8px; /* 跟文字保持距離 */
+}
+.bar {
+    width: 3px; /* 每一條的寬度 */
+    background-color: #ffa726; /* 使用原本圖示的顏色 */
+    margin-right: 2px; /* 條之間的間距 */
+    animation: bounce 1s infinite ease-in-out;
+    border-radius: 1px 1px 0 0; /* 上面圓角 */
+}
+/* 讓三根柱子跳動節奏不一樣，製造隨機感 */
+.bar:nth-child(1) { animation-duration: 0.8s; height: 40%; animation-delay: -0.2s; }
+.bar:nth-child(2) { animation-duration: 1.1s; height: 80%; animation-delay: -0.4s; }
+.bar:nth-child(3) { animation-duration: 1.3s; height: 50%; animation-delay: -0.6s; }
+
+@keyframes bounce {
+    0%, 100% { height: 20%; opacity: 0.6; }
+    50% { height: 100%; opacity: 1; }
+}
+
+/* 手機版適配 */
+@media (max-width: 767px) {
     .terminal-box { flex-direction: column; }
+    .terminal-left { margin-bottom: 20px; }
     .terminal-right { 
       border-left: none !important; 
       border-top: 1px dashed #5d4037; 
       padding-left: 0 !important;
       padding-top: 20px;
-      margin-top: 20px;
     }
-  }
+}
 </style>
 
 <div id="my-dashboard" class="terminal-box" style="
@@ -35,12 +122,32 @@ reward: false
     color: #ffb74d; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     border: 1px solid #3e2723;
-    margin-top: -20px; /* 微調位置，讓它往上頂一點 */
+    margin-top: -20px;
 ">
   
-  <div style="flex: 2; min-width: 250px;">
-    <span style="color: #e65100; font-weight:bold;">PLAY <i class="fa fa-play"></i></span> 
-    <span id="typewriter-text"></span><span class="cursor">_</span>
+  <div class="terminal-left" style="
+    flex: 2; 
+    min-width: 250px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+  ">
+    <div style="display: flex; align-items: flex-start;">
+        <div style="margin-right: 15px; flex-shrink: 0;">
+            <a href="/tags/音樂推薦/" class="play-btn">
+                PLAY <i class="fa fa-play"></i>
+            </a>
+        </div>
+        <div style="line-height: 1.8;">
+             <span id="typewriter-text"></span><span class="cursor">_</span>
+        </div>
+    </div>
+    <div style="margin-top: 30px; opacity: 0.7;">
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-text">SYSTEM_SYNCING... [||||||||||]</div>
+    </div>
   </div>
 
   <div class="terminal-right" style="
@@ -55,16 +162,32 @@ reward: false
     font-size: 14px;
     line-height: 1.8;
   ">
-<div><i class="fa fa-film" style="color: #ffa726;"></i> TAPE: Life_Vol.1</div>
-<div><i class="fa fa-music" style="color: #ffa726;"></i> AUDIO: Don't worry</div>
-<div><i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: （´◔​∀◔`)</div>
-<div><i class="fa fa-clock-o" style="color: #ffa726;"></i> TIME: <span id="clock-display">00:00:00</span></div>
+    <div>
+        <i class="fa fa-film" style="color: #ffa726;"></i> TAPE: 
+        <a href="/archives/" class="tape-link">Life_Vol.1</a>
+    </div>
     
-<div style="margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;">
-<span style="width: 10px; height: 10px; background-color: #ef6c00; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
-REC
-</div>
-</div>
+    <div style="display: flex; align-items: center;">
+        <div class="equalizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        AUDIO: Don't worry
+    </div>
+    
+    <div>
+        <i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: 
+        <a href="/photos/" class="tape-link" title="記憶縮影">（´◔​∀◔`)</a>
+    </div>
+
+    <div><i class="fa fa-clock-o" style="color: #ffa726;"></i> TIME: <span id="clock-display">00:00:00</span></div>
+    
+    <div style="margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;">
+      <span style="width: 10px; height: 10px; background-color: #ef6c00; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
+      REC
+    </div>
+  </div>
 
 </div>
 
@@ -91,23 +214,18 @@ REC
     document.getElementById("clock-display").innerText = now.toTimeString().split(' ')[0];
   }
 
-  // 🔥 關鍵邏輯：找到我自己，然後殺掉我的標題
+  // 隱藏標題
   function killHeader() {
-    // 1. 找到儀表板本體
     var me = document.getElementById("my-dashboard");
     if (me) {
-      // 2. 往上找最近的文章容器 (article 或 .post-block)
       var article = me.closest('article') || me.closest('.post-block');
       if (article) {
-        // 3. 在這個容器裡面，找到標題 (header) 和 底部 (footer)
         var header = article.querySelector('.post-header');
         var footer = article.querySelector('.post-footer');
         
-        // 4. 隱藏它們
         if (header) { header.style.display = 'none'; }
         if (footer) { footer.style.display = 'none'; }
         
-        // 5. 順便把容器的白邊去掉 (暴力滿版)
         article.style.background = 'transparent';
         article.style.boxShadow = 'none';
         article.style.padding = '0';
@@ -115,12 +233,10 @@ REC
     }
   }
 
-  // 執行順序
   typeWriter();
   setInterval(updateTime, 1000);
   updateTime();
   
-  // 為了保險，我們執行兩次隱藏指令 (一次現在，一次等頁面載完)
   killHeader();
   document.addEventListener("DOMContentLoaded", killHeader);
   window.addEventListener("load", killHeader);
@@ -131,3 +247,4 @@ REC
   @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
   @keyframes blink-red { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 </style>
+{% endraw %}
