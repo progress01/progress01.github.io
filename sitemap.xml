@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/</loc>
+    
+    <lastmod>2026-02-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://progress01.github.io/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</loc>
     
     <lastmod>2026-02-01</lastmod>
@@ -147,15 +156,6 @@
   
   <url>
     <loc>https://progress01.github.io/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/</loc>
-    
-    <lastmod>2026-01-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/</loc>
     
     <lastmod>2026-01-24</lastmod>
     
@@ -324,6 +324,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E7%AB%99%E5%8B%99/</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://progress01.github.io/tags/%E8%87%AA%E8%A3%BD%E5%B7%A5%E5%85%B7/</loc>

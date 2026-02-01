@@ -235,15 +235,17 @@
     <link href="https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/"/>
     <id>https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/</id>
     <published>2026-01-24T17:22:38.000Z</published>
-    <updated>2026-01-24T17:27:31.493Z</updated>
+    <updated>2026-02-01T16:41:17.482Z</updated>
     
-    <content type="html"><![CDATA[<p>重要已知問題紀錄</p> <span id="more"></span> <ol><li>手機格式跑版，[閱讀管理]區塊的內容甘特圖的數字跟奇怪符號</li><li>手機格式跑版，[更新熱力圖]的圖表會超出框框</li><li>要設定更新與寫作頻率</li><li>每天要記得讀書與更新</li><li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>重要已知問題紀錄</p> <span id="more"></span> <ol><li>手機格式跑版，[閱讀管理]區塊的內容甘特圖的數字跟奇怪符號</li><li>手機格式跑版，[更新熱力圖]的圖表會超出框框</li><li>要設定更新與寫作頻率</li><li>每天要記得讀書與更新</li><li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li><li>想在網站實作規範的jsonld之類的設計</li><li>工具類的作品展示模板設計中</li></ol>]]></content>
     
     
     <summary type="html">&lt;p&gt;重要已知問題紀錄&lt;/p&gt;</summary>
     
     
     
+    
+    <category term="站務" scheme="https://progress01.github.io/tags/%E7%AB%99%E5%8B%99/"/>
     
   </entry>
   

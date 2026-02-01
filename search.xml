@@ -257,8 +257,13 @@
 <li>要設定更新與寫作頻率</li>
 <li>每天要記得讀書與更新</li>
 <li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li>
+<li>想在網站實作規範的jsonld之類的設計</li>
+<li>工具類的作品展示模板設計中</li>
 </ol>
 ]]></content>
+      <tags>
+        <tag>站務</tag>
+      </tags>
   </entry>
   <entry>
     <title>混亂日常的一個「存檔點」工具設計</title>
@@ -370,35 +375,6 @@
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-Better Man</title>
-    <url>/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Robbie Williams 的 Better Man
-      <br>
-      出自專輯 Sing When You're Winning
-      <br>
-      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_better_man.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     這首由 Robbie Williams 演唱的版本能感覺出來所謂"聲音的魅力"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-All for you</title>
     <url>/2026/01/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-All-for-you/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -425,36 +401,6 @@
     <br>
     我自己很喜歡這首歌，理由的話大概就是裡面有一種屬於雙方之間的小甜蜜吧，某陣子熱衷於找有沒有不要太情緒強烈的對唱曲，淡一點點但又好聽的，但後來特別找了歌詞好像也不是這樣！但這個錯誤的印象跟現在我還是很喜歡這首歌。
 
-]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-Free Loop</title>
-    <url>/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦  Daniel Powter 的 Free Loop
-      <br>
-      出自專輯 Daniel Powter
-      <br>
-      <a href="https://open.spotify.com/track/2rtSjGAgCkHL5mKboZMVgD?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_free_loop.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    其實我從來沒查過這首歌到底在唱什麼之前，就已經喜歡很久了，又到了週一已經慢慢學會穩定心情的走進辦公室。我喜歡這首的結尾We can change and feel alright跟歌手還有旋律很多很多。
 ]]></content>
       <tags>
         <tag>音樂推薦</tag>
@@ -494,31 +440,59 @@
       </tags>
   </entry>
   <entry>
-    <title>free magic</title>
-    <url>/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</url>
+    <title>歌曲推薦-Better Man</title>
+    <url>/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 WAG 的 Free magic
+      推薦 Robbie Williams 的 Better Man
       <br>
-      出自專輯 WAG(同名專輯)
+      出自專輯 Sing When You're Winning
       <br>
-      <a href="https://www.youtube.com/watch?v=KzvvBC_ceEE" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
     </p>
-</div>
+  </div>
 
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_free_magic.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_better_man.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。]]></content>
+     這首由 Robbie Williams 演唱的版本能感覺出來所謂"聲音的魅力"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-Free Loop</title>
+    <url>/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦  Daniel Powter 的 Free Loop
+      <br>
+      出自專輯 Daniel Powter
+      <br>
+      <a href="https://open.spotify.com/track/2rtSjGAgCkHL5mKboZMVgD?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_free_loop.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    其實我從來沒查過這首歌到底在唱什麼之前，就已經喜歡很久了，又到了週一已經慢慢學會穩定心情的走進辦公室。我喜歡這首的結尾We can change and feel alright跟歌手還有旋律很多很多。
+]]></content>
       <tags>
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
@@ -589,6 +563,37 @@
       </tags>
   </entry>
   <entry>
+    <title>free magic</title>
+    <url>/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 WAG 的 Free magic
+      <br>
+      出自專輯 WAG(同名專輯)
+      <br>
+      <a href="https://www.youtube.com/watch?v=KzvvBC_ceEE" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_free_magic.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-一輩子的孤單</title>
     <url>/2026/01/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%BC%A9%E5%AD%90%E7%9A%84%E5%AD%A4%E5%96%AE/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -612,6 +617,36 @@
 轉載自個人ig每日點播> chjuhsu05
     <br>
     陽光冷風與週五，恰似mv的場景，今天真的超級適合這首，我反而因為詞曲太好而不知道怎麼評價，只能說我很喜歡這樣的清新感。
+]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-回到過去</title>
+    <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 周杰倫 的 回到過去
+      <br>
+      出自專輯 八度空間
+      <br>
+      <a href="https://open.spotify.com/track/7n6RsQEj7Tjd5QwJ1xm0dF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_回到過去.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    我一直很喜歡這首歌，有天突然發現mv是在輔大拍的就更喜歡了，消失的舊文園，熟悉的濟時樓跟校園的各個角落，從來沒有發現我是這麼的喜歡輔大，或是單純的想回到過去？拋棄掉關於回憶的部分，這首歌我覺得周杰倫真的有一個能稱為特色的地方是有時候歌詞也能當成旋律，作為歌好聽，不想聽歌詞的時候整體搭配起來並不會覺得出戲，這首歌在最後用漸弱的處理我也很喜歡。
 ]]></content>
       <tags>
         <tag>音樂推薦</tag>
@@ -673,36 +708,6 @@
     <br>
     我真的每次畫萬芳的專輯都失手的很嚴重
     但我還是很喜歡萬芳的，尤其最近學長傳了現場給我聽，又感覺到那種整個晚上就算聽同一首歌也不會膩的那種細微的唱法用心跟變化了。這首如你所願特別的地方是他營造了一個回聲的聽感，又唱的這麼又輕又重，真的超級特別，假設心情不差的話超級推薦，但心情鬱悶可能怕歌太慢。
-]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-回到過去</title>
-    <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 周杰倫 的 回到過去
-      <br>
-      出自專輯 八度空間
-      <br>
-      <a href="https://open.spotify.com/track/7n6RsQEj7Tjd5QwJ1xm0dF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_回到過去.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    我一直很喜歡這首歌，有天突然發現mv是在輔大拍的就更喜歡了，消失的舊文園，熟悉的濟時樓跟校園的各個角落，從來沒有發現我是這麼的喜歡輔大，或是單純的想回到過去？拋棄掉關於回憶的部分，這首歌我覺得周杰倫真的有一個能稱為特色的地方是有時候歌詞也能當成旋律，作為歌好聽，不想聽歌詞的時候整體搭配起來並不會覺得出戲，這首歌在最後用漸弱的處理我也很喜歡。
 ]]></content>
       <tags>
         <tag>音樂推薦</tag>
@@ -807,37 +812,6 @@
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-給我一首歌的時間</title>
-    <url>/2026/01/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%99%82%E9%96%93/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 周杰倫 的 給我一首歌的時間
-      <br>
-      出自專輯 魔杰座
-      <br>
-      <a href="https://open.spotify.com/track/1KlVJebZrrMSMxcEKOV5w5" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_給我一首歌的時間.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    最近開始想像如果我的青春2009，假如也有個請回答2009的話會是怎麼樣的感覺，跨越類比與數位，fb的流行以及全部共同記憶這件事情慢慢的消逝，這樣的青春時代有什麼是深刻特別而且讓這個世代的人都共同懷舊的情感呢？ 這時朋友跟我說2009年的歌都超神的，頓時想到那個畢業旅行跟校外教學大家高唱周杰倫的日子。]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-說，你愛我</title>
     <url>/2026/01/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%AA%AA%EF%BC%8C%E4%BD%A0%E6%84%9B%E6%88%91/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -862,6 +836,35 @@
     <br>
     週三可能需要一點肯定感？這首說吧說你愛我可能可以算一點點，我喜歡歌手在歌曲中的那種放鬆的感覺，挺適合週三下午的！雖然說是節奏R&B，但由陳淑華演唱又帶了一點早期老歌特有的味道，我自己非常喜歡。
 ]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-藍色眼睛</title>
+    <url>/2025/12/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%97%8D%E8%89%B2%E7%9C%BC%E7%9D%9B/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 展翼 的 藍色眼睛
+      <br>
+      出自專輯 Zayin
+      <br>
+      <a href="https://open.spotify.com/track/1drkbspB7y7tUbY3aAQhiV" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_藍色眼睛.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    今天不知道為何非常想推薦這首，偶爾有那種喜歡但說不出原因的歌，但這樣遺憾卻不撕心裂肺的歌反而讓我感受到更大的空白，歌詞跟曲風我覺得像是即使遺憾被時間沖刷，情緒低落的部分消散，拉長的想念卻仍然再繼續，以藍色的眼睛代稱著遺憾的想念。]]></content>
       <tags>
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
@@ -897,29 +900,31 @@
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-藍色眼睛</title>
-    <url>/2025/12/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%97%8D%E8%89%B2%E7%9C%BC%E7%9D%9B/</url>
+    <title>歌曲推薦-給我一首歌的時間</title>
+    <url>/2026/01/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%99%82%E9%96%93/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 展翼 的 藍色眼睛
+      推薦 周杰倫 的 給我一首歌的時間
       <br>
-      出自專輯 Zayin
+      出自專輯 魔杰座
       <br>
-      <a href="https://open.spotify.com/track/1drkbspB7y7tUbY3aAQhiV" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/1KlVJebZrrMSMxcEKOV5w5" target="_blank">收聽連結 -> 點此前往</a>
     </p>
-  </div>
+</div>
 
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_藍色眼睛.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_給我一首歌的時間.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    今天不知道為何非常想推薦這首，偶爾有那種喜歡但說不出原因的歌，但這樣遺憾卻不撕心裂肺的歌反而讓我感受到更大的空白，歌詞跟曲風我覺得像是即使遺憾被時間沖刷，情緒低落的部分消散，拉長的想念卻仍然再繼續，以藍色的眼睛代稱著遺憾的想念。]]></content>
+    最近開始想像如果我的青春2009，假如也有個請回答2009的話會是怎麼樣的感覺，跨越類比與數位，fb的流行以及全部共同記憶這件事情慢慢的消逝，這樣的青春時代有什麼是深刻特別而且讓這個世代的人都共同懷舊的情感呢？ 這時朋友跟我說2009年的歌都超神的，頓時想到那個畢業旅行跟校外教學大家高唱周杰倫的日子。]]></content>
       <tags>
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
@@ -1064,33 +1069,6 @@
       </tags>
   </entry>
   <entry>
-    <title>有工作的第N+2天</title>
-    <url>/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/</url>
-    <content><![CDATA[<p>當我開始逃避想晚點進辦公室位置的時候，那種想換工作的想法總是一再的重複出現<br> <span id="more"></span> </p>
-<h2 id="當我開始逃避想晚點進辦公室位置的時候"><a href="#當我開始逃避想晚點進辦公室位置的時候" class="headerlink" title="當我開始逃避想晚點進辦公室位置的時候"></a>當我開始逃避想晚點進辦公室位置的時候</h2><p>一切的變化是來自於辦公室氛圍的轉變，同事從可信賴的夥伴，變成那種爛工作犧牲對象的可能者，犧牲他去做爛工作就不是我了！輪調是目前工作的傳統，目的在於培養能了解各項工作的人，以能做全方位的規劃與討論為未來發展藍圖，但那只是藍圖…</p>
-<p>事實上每次輪調都可能去到不想去的地方，以及接到不想接的工作，這次的衝突也因此而生，當我開始因為可能因為莫名其妙的理由被喚去做那項工作的時候，大家還是很給我肯定的，說有機會去說看看或是調整整個工作項目，到後來就是一路失控的過程了，越級呈報、閒言閒語以及一堆莫名其妙的辦公室壓力。</p>
-<p>辦公室突然像是一個火爐，每天燒掉一點自己的信心、燒掉一點工作的樂趣，而燃料很多，一些是自己的愧疚，一些可能是想回到以前的落差感，最多就是那種無能為力吧？而當我開始追究我到底做錯什麼這一個死胡同的時候，代表我也沒有想找到答案，我只是想要有一個悲傷的地方讓我自己可以躺著，那種就算黑掉我也不在乎的勇氣消逝的無影無蹤….</p>
-<p>想換工作的想法一再出現，但走了就好嗎？我其實沒有成功拯救自己，也沒有任何排解掉這種煩悶心情的出口，他就是卡在胸口，深呼吸的瞬間可能有消失一點，但我不可能每一口都是深呼吸，當我一疏忽…就像是會被所有的痛苦追上。但除了快被燃燒殆盡的我之外，其他人也沒受到什麼影響，我也能試著像大家一樣不去在乎這些情緒嗎？ 或是造成別人痛苦的人本來就感受不到這些。</p>
-<h2 id="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"><a href="#沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈" class="headerlink" title="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"></a>沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈</h2><p>困擾的狀況重複出現，我就發現無論我想讓我心裡好過一點，以沒有我是損失的方向來看，還是換一個角度用我是輸家的論點，我認賠來看，怎麼樣的在意都讓我一再的因為前後對比與怎麼搞成這樣的失落感，想放棄感。</p>
-<p>疲倦的心靈找不到一個停損的點可以棲身，似乎在情緒的起伏之中我也變成了無趣之人，今天的工作有趣嗎？ 我可能只想趕快下班逃離這個是非之地。但又怎麼能逃呢？沒有能力面試到能去的工作，履歷寫了一半就丟在那邊沒更新，放下一去去其他地方的我是有能力面對不同工作的嗎？</p>
-<p>我雖然總是沒信心，但對能力的培養與挑戰我總是沒什麼勇氣做更多的嘗試。</p>
-<h2 id="是我自己性格上的缺陷嗎？"><a href="#是我自己性格上的缺陷嗎？" class="headerlink" title="是我自己性格上的缺陷嗎？"></a>是我自己性格上的缺陷嗎？</h2><p>我也想過是不是因為自己性格上的缺陷，導致我在這個情緒上陷入過久，又或是生命中第一個感覺到不友善與無法替自己主張沒問題的地方？</p>
-<p>我發現我自己除了一些道德上的潔癖之外，我想我好像非常希望自己是一個不被眾人討論壞名聲的人，成為議論對象可能還行，但壞事或奇怪的事情真的是一介意起來就停不下來，因此我也會注意自己的品行是否端正（盡量）。但其實也沒有誰對誰錯，只是這樣結果之下，這個污點就像是一塊清不掉的黑點，潔癖在我的內心隱隱的責備，而我的道德也反過來用愧疚感來給我壓力。</p>
-<p>但老實說，真的沒有誰對誰錯的問題，忽視與冷漠也只代表了我自己心靈上不夠自立自強，不夠強大，所幸在遊戲之中我找到了我自己可以的感覺，能慢慢地給自己安慰，但遊戲仍然不是生活，我還是得在生活裡面成長起來才行。</p>
-<h2 id="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"><a href="#知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值" class="headerlink" title="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"></a>知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值</h2><p>查了一些霸凌的知識與反擊手段，但我發現與其說和解，其實在這些事情上我要能夠壓著我的自卑感，不僅僅是肯定我的特質，也認可自己的價值。</p>
-<p>我在這裡並不是因為怎麼樣，而是作為館員，在推動事務上自己有想努力的內容，很多事情也不會因為怎樣而改變，而且相對於被霸凌，被忽視與冷漠對待反倒是稍微輕鬆一點的（應該）</p>
-<h2 id="隨時失去的轉職可能性與履歷撰寫"><a href="#隨時失去的轉職可能性與履歷撰寫" class="headerlink" title="隨時失去的轉職可能性與履歷撰寫"></a>隨時失去的轉職可能性與履歷撰寫</h2><p>要我不懷念過去是不可能的，我想念我剛來的工作環境以及能討論，願意交流的大家，完成的任務有人分享，失敗的宣傳有人能夠檢討，為了更好的推廣而討論著的大家，但莫名其妙在不同事物的同時衝擊下都搞砸了。</p>
-<p>之前本來幸災樂禍地想說，即使要離職，離不開圖書館的也不是我，但真的是這樣嗎？其實我也抱著不確定的心態，之前找工作的不順利又有一點浮上心頭，但我的忍耐是不是也代表我正失去轉職的可能性？ 我也不知道。</p>
-<p>但在害怕之中時間確實不斷滴答的流逝。</p>
-<h2 id="誠實面對自己"><a href="#誠實面對自己" class="headerlink" title="誠實面對自己"></a>誠實面對自己</h2><p>肯認自己之外，關於缺點跟弱點仍然是要誠實面對的，至少我要能夠回答，工作到底要不要換，目前有哪些能力，哪些可以作為之後的名片，我想怎樣經營自己的品牌這幾個問題，若沒有答案我會對我自己很失望。</p>
-<p>麻痺的一天只有麻痺沒有未來，為自己規劃是我該為自己負責的地方。 </p>
-]]></content>
-      <tags>
-        <tag>心情</tag>
-        <tag>困擾</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>請不要在大家面前稱讚我-書籍閱讀紀錄</title>
     <url>/2025/01/07/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91/</url>
     <content><![CDATA[<p>透過包裝自己的努力，去強調態度與時間，但重要的成果與競爭卻給不出來。只能試著讓自己不去激烈的消極，從安心感之外的地方讓自己去試著面對挫折。</p>
@@ -1117,6 +1095,33 @@
       <tags>
         <tag>書籍</tag>
         <tag>閱讀心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有工作的第N+2天</title>
+    <url>/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/</url>
+    <content><![CDATA[<p>當我開始逃避想晚點進辦公室位置的時候，那種想換工作的想法總是一再的重複出現<br> <span id="more"></span> </p>
+<h2 id="當我開始逃避想晚點進辦公室位置的時候"><a href="#當我開始逃避想晚點進辦公室位置的時候" class="headerlink" title="當我開始逃避想晚點進辦公室位置的時候"></a>當我開始逃避想晚點進辦公室位置的時候</h2><p>一切的變化是來自於辦公室氛圍的轉變，同事從可信賴的夥伴，變成那種爛工作犧牲對象的可能者，犧牲他去做爛工作就不是我了！輪調是目前工作的傳統，目的在於培養能了解各項工作的人，以能做全方位的規劃與討論為未來發展藍圖，但那只是藍圖…</p>
+<p>事實上每次輪調都可能去到不想去的地方，以及接到不想接的工作，這次的衝突也因此而生，當我開始因為可能因為莫名其妙的理由被喚去做那項工作的時候，大家還是很給我肯定的，說有機會去說看看或是調整整個工作項目，到後來就是一路失控的過程了，越級呈報、閒言閒語以及一堆莫名其妙的辦公室壓力。</p>
+<p>辦公室突然像是一個火爐，每天燒掉一點自己的信心、燒掉一點工作的樂趣，而燃料很多，一些是自己的愧疚，一些可能是想回到以前的落差感，最多就是那種無能為力吧？而當我開始追究我到底做錯什麼這一個死胡同的時候，代表我也沒有想找到答案，我只是想要有一個悲傷的地方讓我自己可以躺著，那種就算黑掉我也不在乎的勇氣消逝的無影無蹤….</p>
+<p>想換工作的想法一再出現，但走了就好嗎？我其實沒有成功拯救自己，也沒有任何排解掉這種煩悶心情的出口，他就是卡在胸口，深呼吸的瞬間可能有消失一點，但我不可能每一口都是深呼吸，當我一疏忽…就像是會被所有的痛苦追上。但除了快被燃燒殆盡的我之外，其他人也沒受到什麼影響，我也能試著像大家一樣不去在乎這些情緒嗎？ 或是造成別人痛苦的人本來就感受不到這些。</p>
+<h2 id="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"><a href="#沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈" class="headerlink" title="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"></a>沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈</h2><p>困擾的狀況重複出現，我就發現無論我想讓我心裡好過一點，以沒有我是損失的方向來看，還是換一個角度用我是輸家的論點，我認賠來看，怎麼樣的在意都讓我一再的因為前後對比與怎麼搞成這樣的失落感，想放棄感。</p>
+<p>疲倦的心靈找不到一個停損的點可以棲身，似乎在情緒的起伏之中我也變成了無趣之人，今天的工作有趣嗎？ 我可能只想趕快下班逃離這個是非之地。但又怎麼能逃呢？沒有能力面試到能去的工作，履歷寫了一半就丟在那邊沒更新，放下一去去其他地方的我是有能力面對不同工作的嗎？</p>
+<p>我雖然總是沒信心，但對能力的培養與挑戰我總是沒什麼勇氣做更多的嘗試。</p>
+<h2 id="是我自己性格上的缺陷嗎？"><a href="#是我自己性格上的缺陷嗎？" class="headerlink" title="是我自己性格上的缺陷嗎？"></a>是我自己性格上的缺陷嗎？</h2><p>我也想過是不是因為自己性格上的缺陷，導致我在這個情緒上陷入過久，又或是生命中第一個感覺到不友善與無法替自己主張沒問題的地方？</p>
+<p>我發現我自己除了一些道德上的潔癖之外，我想我好像非常希望自己是一個不被眾人討論壞名聲的人，成為議論對象可能還行，但壞事或奇怪的事情真的是一介意起來就停不下來，因此我也會注意自己的品行是否端正（盡量）。但其實也沒有誰對誰錯，只是這樣結果之下，這個污點就像是一塊清不掉的黑點，潔癖在我的內心隱隱的責備，而我的道德也反過來用愧疚感來給我壓力。</p>
+<p>但老實說，真的沒有誰對誰錯的問題，忽視與冷漠也只代表了我自己心靈上不夠自立自強，不夠強大，所幸在遊戲之中我找到了我自己可以的感覺，能慢慢地給自己安慰，但遊戲仍然不是生活，我還是得在生活裡面成長起來才行。</p>
+<h2 id="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"><a href="#知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值" class="headerlink" title="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"></a>知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值</h2><p>查了一些霸凌的知識與反擊手段，但我發現與其說和解，其實在這些事情上我要能夠壓著我的自卑感，不僅僅是肯定我的特質，也認可自己的價值。</p>
+<p>我在這裡並不是因為怎麼樣，而是作為館員，在推動事務上自己有想努力的內容，很多事情也不會因為怎樣而改變，而且相對於被霸凌，被忽視與冷漠對待反倒是稍微輕鬆一點的（應該）</p>
+<h2 id="隨時失去的轉職可能性與履歷撰寫"><a href="#隨時失去的轉職可能性與履歷撰寫" class="headerlink" title="隨時失去的轉職可能性與履歷撰寫"></a>隨時失去的轉職可能性與履歷撰寫</h2><p>要我不懷念過去是不可能的，我想念我剛來的工作環境以及能討論，願意交流的大家，完成的任務有人分享，失敗的宣傳有人能夠檢討，為了更好的推廣而討論著的大家，但莫名其妙在不同事物的同時衝擊下都搞砸了。</p>
+<p>之前本來幸災樂禍地想說，即使要離職，離不開圖書館的也不是我，但真的是這樣嗎？其實我也抱著不確定的心態，之前找工作的不順利又有一點浮上心頭，但我的忍耐是不是也代表我正失去轉職的可能性？ 我也不知道。</p>
+<p>但在害怕之中時間確實不斷滴答的流逝。</p>
+<h2 id="誠實面對自己"><a href="#誠實面對自己" class="headerlink" title="誠實面對自己"></a>誠實面對自己</h2><p>肯認自己之外，關於缺點跟弱點仍然是要誠實面對的，至少我要能夠回答，工作到底要不要換，目前有哪些能力，哪些可以作為之後的名片，我想怎樣經營自己的品牌這幾個問題，若沒有答案我會對我自己很失望。</p>
+<p>麻痺的一天只有麻痺沒有未來，為自己規劃是我該為自己負責的地方。 </p>
+]]></content>
+      <tags>
+        <tag>心情</tag>
+        <tag>困擾</tag>
       </tags>
   </entry>
   <entry>
