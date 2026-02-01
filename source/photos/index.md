@@ -150,6 +150,12 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/44HC7P3O8gVmqaGwxSCrAs"target="_blank">
+      <img src="/images/song_All-for-you.png"> </a>
+    </a>
+  </div> 
+
 </div>
 
 </div>
