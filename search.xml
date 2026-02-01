@@ -3,25 +3,112 @@
   <entry>
     <title>System Ready...</title>
     <url>/2026/01/21/welcome-board/</url>
-    <content><![CDATA[<style>
-/* 為了防止 JS 跑太慢，先用 CSS 擋一下首頁第一篇文章的標題 */
- /* 如果這個失效，下面的 JS 會補刀 */
+    <content><![CDATA[
+<style>
+/* 防止標題閃爍 */
 .page-home .post-block:first-of-type .post-header { opacity: 0; }
-  
-  /* 儀表板基本設定 */
-  .terminal-box { font-family: 'Courier New', monospace; }
-  
-  /* 手機版適配 */
-  @media (max-width: 767px) {
+
+/* 儀表板全域字體 */
+.terminal-box { font-family: 'Courier New', monospace; }
+
+/* 連結樣式重置 */
+.terminal-box a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* PLAY 按鈕 */
+.play-btn {
+    color: #e65100 !important; 
+    font-weight: bold;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.play-btn:hover {
+    background-color: #e65100;
+    color: #191414 !important;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #e65100;
+}
+
+/* TAPE 連結 */
+.tape-link {
+    color: #ffcc80 !important;
+    border-bottom: 1px dashed #ffcc80 !important;
+}
+.tape-link:hover {
+    color: #fff !important;
+    border-bottom: 1px solid #fff !important;
+}
+
+/* 左下角進度條動畫 */
+.loading-bar-container {
+    width: 100%;
+    height: 4px;
+    background: #3e2723;
+    margin-top: auto;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.loading-bar {
+    width: 40%;
+    height: 100%;
+    background: #e65100;
+    position: absolute;
+    left: -40%;
+    animation: load 3s infinite linear;
+}
+@keyframes load {
+    0% { left: -40%; }
+    100% { left: 100%; }
+}
+.loading-text {
+    font-size: 10px; 
+    color: #5d4037; 
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* --- 🆕 新增：1988 風格音頻跳動條 CSS --- */
+.equalizer {
+    display: inline-flex;
+    align-items: flex-end;
+    height: 14px; /* 高度設定 */
+    width: 16px;  /* 總寬度 */
+    margin-right: 8px; /* 跟文字保持距離 */
+}
+.bar {
+    width: 3px; /* 每一條的寬度 */
+    background-color: #ffa726; /* 使用原本圖示的顏色 */
+    margin-right: 2px; /* 條之間的間距 */
+    animation: bounce 1s infinite ease-in-out;
+    border-radius: 1px 1px 0 0; /* 上面圓角 */
+}
+/* 讓三根柱子跳動節奏不一樣，製造隨機感 */
+.bar:nth-child(1) { animation-duration: 0.8s; height: 40%; animation-delay: -0.2s; }
+.bar:nth-child(2) { animation-duration: 1.1s; height: 80%; animation-delay: -0.4s; }
+.bar:nth-child(3) { animation-duration: 1.3s; height: 50%; animation-delay: -0.6s; }
+
+@keyframes bounce {
+    0%, 100% { height: 20%; opacity: 0.6; }
+    50% { height: 100%; opacity: 1; }
+}
+
+/* 手機版適配 */
+@media (max-width: 767px) {
     .terminal-box { flex-direction: column; }
+    .terminal-left { margin-bottom: 20px; }
     .terminal-right { 
       border-left: none !important; 
       border-top: 1px dashed #5d4037; 
       padding-left: 0 !important;
       padding-top: 20px;
-      margin-top: 20px;
     }
-  }
+}
 </style>
 
 <div id="my-dashboard" class="terminal-box" style="
@@ -32,12 +119,32 @@
     color: #ffb74d; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     border: 1px solid #3e2723;
-    margin-top: -20px; /* 微調位置，讓它往上頂一點 */
+    margin-top: -20px;
 ">
   
-  <div style="flex: 2; min-width: 250px;">
-    <span style="color: #e65100; font-weight:bold;">PLAY <i class="fa fa-play"></i></span> 
-    <span id="typewriter-text"></span><span class="cursor">_</span>
+  <div class="terminal-left" style="
+    flex: 2; 
+    min-width: 250px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+  ">
+    <div style="display: flex; align-items: flex-start;">
+        <div style="margin-right: 15px; flex-shrink: 0;">
+            <a href="/tags/音樂推薦/" class="play-btn">
+                PLAY <i class="fa fa-play"></i>
+            </a>
+        </div>
+        <div style="line-height: 1.8;">
+             <span id="typewriter-text"></span><span class="cursor">_</span>
+        </div>
+    </div>
+    <div style="margin-top: 30px; opacity: 0.7;">
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-text">SYSTEM_SYNCING... [||||||||||]</div>
+    </div>
   </div>
 
   <div class="terminal-right" style="
@@ -52,16 +159,32 @@
     font-size: 14px;
     line-height: 1.8;
   ">
-<div><i class="fa fa-film" style="color: #ffa726;"></i> TAPE: Life_Vol.1</div>
-<div><i class="fa fa-music" style="color: #ffa726;"></i> AUDIO: Don't worry</div>
-<div><i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: （´◔​∀◔`)</div>
-<div><i class="fa fa-clock-o" style="color: #ffa726;"></i> TIME: <span id="clock-display">00:00:00</span></div>
+    <div>
+        <i class="fa fa-film" style="color: #ffa726;"></i> TAPE: 
+        <a href="/archives/" class="tape-link">Life_Vol.1</a>
+    </div>
     
-<div style="margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;">
-<span style="width: 10px; height: 10px; background-color: #ef6c00; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
-REC
-</div>
-</div>
+    <div style="display: flex; align-items: center;">
+        <div class="equalizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        AUDIO: Don't worry
+    </div>
+    
+    <div>
+        <i class="fa fa-eye" style="color: #ffa726;"></i> VIEW: 
+        <a href="/photos/" class="tape-link" title="記憶縮影">（´◔​∀◔`)</a>
+    </div>
+
+    <div><i class="fa fa-clock-o" style="color: #ffa726;"></i> TIME: <span id="clock-display">00:00:00</span></div>
+    
+    <div style="margin-top: 15px; color: #ef6c00; font-weight: bold; animation: blink-red 2s infinite; display: flex; align-items: center;">
+      <span style="width: 10px; height: 10px; background-color: #ef6c00; border-radius: 50%; display: inline-block; margin-right: 8px;"></span>
+      REC
+    </div>
+  </div>
 
 </div>
 
@@ -88,23 +211,18 @@ REC
     document.getElementById("clock-display").innerText = now.toTimeString().split(' ')[0];
   }
 
-  // 🔥 關鍵邏輯：找到我自己，然後殺掉我的標題
+  // 隱藏標題
   function killHeader() {
-    // 1. 找到儀表板本體
     var me = document.getElementById("my-dashboard");
     if (me) {
-      // 2. 往上找最近的文章容器 (article 或 .post-block)
       var article = me.closest('article') || me.closest('.post-block');
       if (article) {
-        // 3. 在這個容器裡面，找到標題 (header) 和 底部 (footer)
         var header = article.querySelector('.post-header');
         var footer = article.querySelector('.post-footer');
         
-        // 4. 隱藏它們
         if (header) { header.style.display = 'none'; }
         if (footer) { footer.style.display = 'none'; }
         
-        // 5. 順便把容器的白邊去掉 (暴力滿版)
         article.style.background = 'transparent';
         article.style.boxShadow = 'none';
         article.style.padding = '0';
@@ -112,12 +230,10 @@ REC
     }
   }
 
-  // 執行順序
   typeWriter();
   setInterval(updateTime, 1000);
   updateTime();
   
-  // 為了保險，我們執行兩次隱藏指令 (一次現在，一次等頁面載完)
   killHeader();
   document.addEventListener("DOMContentLoaded", killHeader);
   window.addEventListener("load", killHeader);
@@ -127,7 +243,8 @@ REC
   .cursor { color: #ffb74d; animation: blink 1s infinite; }
   @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
   @keyframes blink-red { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-</style>]]></content>
+</style>
+]]></content>
   </entry>
   <entry>
     <title>部落格改版規劃</title>
@@ -142,6 +259,80 @@ REC
 <li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>混亂日常的一個「存檔點」工具設計</title>
+    <url>/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</url>
+    <content><![CDATA[<h3 id="專案說明-The-Pain-Point"><a href="#專案說明-The-Pain-Point" class="headerlink" title="專案說明 (The Pain Point)"></a>專案說明 (The Pain Point)</h3><p>說明文字(待補)</p>
+ <span id="more"></span>
+
+<h3 id="作品展示-Live-Demo"><a href="#作品展示-Live-Demo" class="headerlink" title="作品展示 (Live Demo)"></a>作品展示 (Live Demo)</h3><p>與其說原理，不如直接試用。<a href="https://progress01.github.io/lifecheck/">https://progress01.github.io/lifecheck/</a><br>我在下方嵌入了這個工具的視窗，你可以直接在這裡點擊操作，體驗一下把焦慮一項項「劃掉」的快感。</p>
+
+<style>
+  /* 復古電腦視窗風格容器 */
+  .retro-window {
+    border: 2px solid #5d4037; 
+    border-radius: 6px; 
+    overflow: hidden; 
+    margin: 30px 0;
+    box-shadow: 4px 4px 0px #3e2723; /* 復古陰影 */
+    background: #fff;
+  }
+  
+  /* 視窗標題列 */
+  .retro-title-bar {
+    background: #3e2723; 
+    color: #ffcc80; 
+    padding: 8px 15px; 
+    font-size: 14px; 
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 紅綠燈小按鈕裝飾 */
+  .window-controls span {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+</style>
+
+<div class="retro-window">
+    <div class="retro-title-bar">
+        <span>> SYSTEM_TOOL: LIFE_CHECK_V1.0</span>
+        <div class="window-controls">
+            <span style="background:#ff5f56;"></span>
+            <span style="background:#ffbd2e;"></span>
+            <span style="background:#27c93f;"></span>
+        </div>
+    </div>
+    
+    <iframe 
+        src="https://progress01.github.io/lifecheck/" 
+        style="width: 100%; height: 600px; border: none;"
+        title="Life Check Tool Demo">
+    </iframe>
+</div>
+
+
+<h3 id="👨‍💻-技術筆記-Under-the-Hood"><a href="#👨‍💻-技術筆記-Under-the-Hood" class="headerlink" title="👨‍💻 技術筆記 (Under the Hood)"></a>👨‍💻 技術筆記 (Under the Hood)</h3><p>說明待補</p>
+<ul>
+<li><strong>Host</strong>：託管於 GitHub Pages，免費且穩定。</li>
+<li><strong>Tech Stack</strong>：HTML5, CSS3, Vanilla JS (純原生 JavaScript)。</li>
+<li><strong>Design</strong>：響應式設計 (RWD)，手機上也能完美顯示。</li>
+</ul>
+<p>這個工具或許不能幫我解決工作上的大難題，但它能幫我解決生活中的小焦慮。<br>當我看著清單全部變綠的那一刻，我就知道：<strong>System Ready. 可以繼續前進了。</strong></p>
+<blockquote>
+<p><strong>Project Status</strong>: Stable<br><strong>Repository</strong>: <a href="https://github.com/progress01/lifecheck">View on GitHub</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>自製工具</tag>
+        <tag>實驗室</tag>
+      </tags>
   </entry>
   <entry>
     <title>歌曲推薦-2375</title>
@@ -179,6 +370,35 @@ REC
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-Better Man</title>
+    <url>/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Robbie Williams 的 Better Man
+      <br>
+      出自專輯 Sing When You're Winning
+      <br>
+      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_better_man.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     這首由 Robbie Williams 演唱的版本能感覺出來所謂"聲音的魅力"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-All for you</title>
     <url>/2026/01/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-All-for-you/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -206,35 +426,6 @@ REC
     我自己很喜歡這首歌，理由的話大概就是裡面有一種屬於雙方之間的小甜蜜吧，某陣子熱衷於找有沒有不要太情緒強烈的對唱曲，淡一點點但又好聽的，但後來特別找了歌詞好像也不是這樣！但這個錯誤的印象跟現在我還是很喜歡這首歌。
 
 ]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-Better Man</title>
-    <url>/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Robbie Williams 的 Better Man
-      <br>
-      出自專輯 Sing When You're Winning
-      <br>
-      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_better_man.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     這首由 Robbie Williams 演唱的版本能感覺出來所謂"聲音的魅力"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。]]></content>
       <tags>
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
@@ -297,6 +488,37 @@ REC
     <br>
     五月天的台語歌其實只能說是清新但不能說難忘，而這首我覺得很像是穿著輕搖滾外套的愁緒，沒有到絕望但是是一種抒發，我自己很滿喜歡的。
 ]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>free magic</title>
+    <url>/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 WAG 的 Free magic
+      <br>
+      出自專輯 WAG(同名專輯)
+      <br>
+      <a href="https://www.youtube.com/watch?v=KzvvBC_ceEE" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_free_magic.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。]]></content>
       <tags>
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
@@ -367,37 +589,6 @@ REC
       </tags>
   </entry>
   <entry>
-    <title>free magic</title>
-    <url>/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 WAG 的 Free magic
-      <br>
-      出自專輯 WAG(同名專輯)
-      <br>
-      <a href="https://www.youtube.com/watch?v=KzvvBC_ceEE" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_free_magic.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-一輩子的孤單</title>
     <url>/2026/01/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%BC%A9%E5%AD%90%E7%9A%84%E5%AD%A4%E5%96%AE/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -458,36 +649,6 @@ REC
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-回到過去</title>
-    <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 周杰倫 的 回到過去
-      <br>
-      出自專輯 八度空間
-      <br>
-      <a href="https://open.spotify.com/track/7n6RsQEj7Tjd5QwJ1xm0dF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_回到過去.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    我一直很喜歡這首歌，有天突然發現mv是在輔大拍的就更喜歡了，消失的舊文園，熟悉的濟時樓跟校園的各個角落，從來沒有發現我是這麼的喜歡輔大，或是單純的想回到過去？拋棄掉關於回憶的部分，這首歌我覺得周杰倫真的有一個能稱為特色的地方是有時候歌詞也能當成旋律，作為歌好聽，不想聽歌詞的時候整體搭配起來並不會覺得出戲，這首歌在最後用漸弱的處理我也很喜歡。
-]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-如你所願</title>
     <url>/2026/01/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A6%82%E4%BD%A0%E6%89%80%E9%A1%98/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -512,6 +673,36 @@ REC
     <br>
     我真的每次畫萬芳的專輯都失手的很嚴重
     但我還是很喜歡萬芳的，尤其最近學長傳了現場給我聽，又感覺到那種整個晚上就算聽同一首歌也不會膩的那種細微的唱法用心跟變化了。這首如你所願特別的地方是他營造了一個回聲的聽感，又唱的這麼又輕又重，真的超級特別，假設心情不差的話超級推薦，但心情鬱悶可能怕歌太慢。
+]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-回到過去</title>
+    <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 周杰倫 的 回到過去
+      <br>
+      出自專輯 八度空間
+      <br>
+      <a href="https://open.spotify.com/track/7n6RsQEj7Tjd5QwJ1xm0dF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_回到過去.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    我一直很喜歡這首歌，有天突然發現mv是在輔大拍的就更喜歡了，消失的舊文園，熟悉的濟時樓跟校園的各個角落，從來沒有發現我是這麼的喜歡輔大，或是單純的想回到過去？拋棄掉關於回憶的部分，這首歌我覺得周杰倫真的有一個能稱為特色的地方是有時候歌詞也能當成旋律，作為歌好聽，不想聽歌詞的時候整體搭配起來並不會覺得出戲，這首歌在最後用漸弱的處理我也很喜歡。
 ]]></content>
       <tags>
         <tag>音樂推薦</tag>
@@ -677,102 +868,6 @@ REC
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-藍色眼睛</title>
-    <url>/2025/12/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%97%8D%E8%89%B2%E7%9C%BC%E7%9D%9B/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 展翼 的 藍色眼睛
-      <br>
-      出自專輯 Zayin
-      <br>
-      <a href="https://open.spotify.com/track/1drkbspB7y7tUbY3aAQhiV" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_藍色眼睛.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    今天不知道為何非常想推薦這首，偶爾有那種喜歡但說不出原因的歌，但這樣遺憾卻不撕心裂肺的歌反而讓我感受到更大的空白，歌詞跟曲風我覺得像是即使遺憾被時間沖刷，情緒低落的部分消散，拉長的想念卻仍然再繼續，以藍色的眼睛代稱著遺憾的想念。]]></content>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有工作的第N+2天</title>
-    <url>/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/</url>
-    <content><![CDATA[<p>當我開始逃避想晚點進辦公室位置的時候，那種想換工作的想法總是一再的重複出現<br> <span id="more"></span> </p>
-<h2 id="當我開始逃避想晚點進辦公室位置的時候"><a href="#當我開始逃避想晚點進辦公室位置的時候" class="headerlink" title="當我開始逃避想晚點進辦公室位置的時候"></a>當我開始逃避想晚點進辦公室位置的時候</h2><p>一切的變化是來自於辦公室氛圍的轉變，同事從可信賴的夥伴，變成那種爛工作犧牲對象的可能者，犧牲他去做爛工作就不是我了！輪調是目前工作的傳統，目的在於培養能了解各項工作的人，以能做全方位的規劃與討論為未來發展藍圖，但那只是藍圖…</p>
-<p>事實上每次輪調都可能去到不想去的地方，以及接到不想接的工作，這次的衝突也因此而生，當我開始因為可能因為莫名其妙的理由被喚去做那項工作的時候，大家還是很給我肯定的，說有機會去說看看或是調整整個工作項目，到後來就是一路失控的過程了，越級呈報、閒言閒語以及一堆莫名其妙的辦公室壓力。</p>
-<p>辦公室突然像是一個火爐，每天燒掉一點自己的信心、燒掉一點工作的樂趣，而燃料很多，一些是自己的愧疚，一些可能是想回到以前的落差感，最多就是那種無能為力吧？而當我開始追究我到底做錯什麼這一個死胡同的時候，代表我也沒有想找到答案，我只是想要有一個悲傷的地方讓我自己可以躺著，那種就算黑掉我也不在乎的勇氣消逝的無影無蹤….</p>
-<p>想換工作的想法一再出現，但走了就好嗎？我其實沒有成功拯救自己，也沒有任何排解掉這種煩悶心情的出口，他就是卡在胸口，深呼吸的瞬間可能有消失一點，但我不可能每一口都是深呼吸，當我一疏忽…就像是會被所有的痛苦追上。但除了快被燃燒殆盡的我之外，其他人也沒受到什麼影響，我也能試著像大家一樣不去在乎這些情緒嗎？ 或是造成別人痛苦的人本來就感受不到這些。</p>
-<h2 id="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"><a href="#沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈" class="headerlink" title="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"></a>沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈</h2><p>困擾的狀況重複出現，我就發現無論我想讓我心裡好過一點，以沒有我是損失的方向來看，還是換一個角度用我是輸家的論點，我認賠來看，怎麼樣的在意都讓我一再的因為前後對比與怎麼搞成這樣的失落感，想放棄感。</p>
-<p>疲倦的心靈找不到一個停損的點可以棲身，似乎在情緒的起伏之中我也變成了無趣之人，今天的工作有趣嗎？ 我可能只想趕快下班逃離這個是非之地。但又怎麼能逃呢？沒有能力面試到能去的工作，履歷寫了一半就丟在那邊沒更新，放下一去去其他地方的我是有能力面對不同工作的嗎？</p>
-<p>我雖然總是沒信心，但對能力的培養與挑戰我總是沒什麼勇氣做更多的嘗試。</p>
-<h2 id="是我自己性格上的缺陷嗎？"><a href="#是我自己性格上的缺陷嗎？" class="headerlink" title="是我自己性格上的缺陷嗎？"></a>是我自己性格上的缺陷嗎？</h2><p>我也想過是不是因為自己性格上的缺陷，導致我在這個情緒上陷入過久，又或是生命中第一個感覺到不友善與無法替自己主張沒問題的地方？</p>
-<p>我發現我自己除了一些道德上的潔癖之外，我想我好像非常希望自己是一個不被眾人討論壞名聲的人，成為議論對象可能還行，但壞事或奇怪的事情真的是一介意起來就停不下來，因此我也會注意自己的品行是否端正（盡量）。但其實也沒有誰對誰錯，只是這樣結果之下，這個污點就像是一塊清不掉的黑點，潔癖在我的內心隱隱的責備，而我的道德也反過來用愧疚感來給我壓力。</p>
-<p>但老實說，真的沒有誰對誰錯的問題，忽視與冷漠也只代表了我自己心靈上不夠自立自強，不夠強大，所幸在遊戲之中我找到了我自己可以的感覺，能慢慢地給自己安慰，但遊戲仍然不是生活，我還是得在生活裡面成長起來才行。</p>
-<h2 id="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"><a href="#知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值" class="headerlink" title="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"></a>知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值</h2><p>查了一些霸凌的知識與反擊手段，但我發現與其說和解，其實在這些事情上我要能夠壓著我的自卑感，不僅僅是肯定我的特質，也認可自己的價值。</p>
-<p>我在這裡並不是因為怎麼樣，而是作為館員，在推動事務上自己有想努力的內容，很多事情也不會因為怎樣而改變，而且相對於被霸凌，被忽視與冷漠對待反倒是稍微輕鬆一點的（應該）</p>
-<h2 id="隨時失去的轉職可能性與履歷撰寫"><a href="#隨時失去的轉職可能性與履歷撰寫" class="headerlink" title="隨時失去的轉職可能性與履歷撰寫"></a>隨時失去的轉職可能性與履歷撰寫</h2><p>要我不懷念過去是不可能的，我想念我剛來的工作環境以及能討論，願意交流的大家，完成的任務有人分享，失敗的宣傳有人能夠檢討，為了更好的推廣而討論著的大家，但莫名其妙在不同事物的同時衝擊下都搞砸了。</p>
-<p>之前本來幸災樂禍地想說，即使要離職，離不開圖書館的也不是我，但真的是這樣嗎？其實我也抱著不確定的心態，之前找工作的不順利又有一點浮上心頭，但我的忍耐是不是也代表我正失去轉職的可能性？ 我也不知道。</p>
-<p>但在害怕之中時間確實不斷滴答的流逝。</p>
-<h2 id="誠實面對自己"><a href="#誠實面對自己" class="headerlink" title="誠實面對自己"></a>誠實面對自己</h2><p>肯認自己之外，關於缺點跟弱點仍然是要誠實面對的，至少我要能夠回答，工作到底要不要換，目前有哪些能力，哪些可以作為之後的名片，我想怎樣經營自己的品牌這幾個問題，若沒有答案我會對我自己很失望。</p>
-<p>麻痺的一天只有麻痺沒有未來，為自己規劃是我該為自己負責的地方。 </p>
-]]></content>
-      <tags>
-        <tag>心情</tag>
-        <tag>困擾</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有工作的第N+3天</title>
-    <url>/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/</url>
-    <content><![CDATA[<p>當生活出現變故而無法有效消化的話，勢必會在日常相處中造成他人的困擾，因為下意識的連自己都在尋找能協助的地方<br> <span id="more"></span> </p>
-<h2 id="不知道怎樣消化的情緒"><a href="#不知道怎樣消化的情緒" class="headerlink" title="不知道怎樣消化的情緒"></a>不知道怎樣消化的情緒</h2><p>承接第Ｎ＋2天的內容，老實說真的因為這樣的煩惱非常低潮，即使自己努力消化，但仍然下意識的想在還算有交流中親近的朋友裡面，尋找一個解方，無論是訴苦或是討論，然而這樣負面的交流與未充分顧及情緒的交流，實際上是充滿風險的。第一是交流時你的哀傷與渴望對方能懂你的心情，勢必焦慮而去忽略掉那些平常時會注意的內容，例如失去意識到快吵起來的當下，仍在意對方是否懂你的意識表達。第二是即使注意到了狀況正在失控，但你因為自己的關係，可能踩到對方雷點或是錯誤的玩笑，那只會讓交流狀況更惡化，因為你仍然希望對方能體諒你的情境，但忽略了對方此刻因雷點觸動而產生的情緒。</p>
-<p>在那時低潮時就因為一些小事情跟親近的朋友短時間內發生了不同的爭吵，一人一次總共兩人（忽略掉那個沒爭吵就失去交流機會的同事的話）。明明內容上還好，卻在後續有點類似於絕交了，或是直接喪失了日常交流的勇氣，現在想來還是覺得如果當時我能處理得更好一點就好了。</p>
-<h2 id="我隱藏在內心深處的害怕"><a href="#我隱藏在內心深處的害怕" class="headerlink" title="我隱藏在內心深處的害怕"></a>我隱藏在內心深處的害怕</h2><blockquote>
-<p>我似乎能夠可以坦誠的說：我的人際需要我的維繫，可能要扮演主動的角色，而當我下意識的猶豫是否能聯繫對方，大概率我可能要失去這段友情了，無法有效消化情緒的我就是這樣關係中的未爆彈。</p>
-</blockquote>
-<p>曾經有過一個想法是，假如因為不小心在低潮時觸發雷點的人際關係是否是我的問題？還是更需要去考慮到這段關係的不穩固？錯來自於雙方而不是我單方面的反省？</p>
-<p>但實際審視下來，我發現我除了能完全信任的人際交往之外，很多的朋友更多來自於我的主動維繫，假如我因為吵架而下意識不敢直接向對方交流，那大概率這段友情就無疾而終了吧，因為我也從來沒有重要到是誰的前幾順位過。</p>
-<p>實際上只要發生在我自己低潮或無法控制情緒的時刻，大概率交流中都很容易吵架，訊息上機率又會更高，法律學習的經驗讓我習慣分割成兩個論點，並且試圖在吵架中下意識的證明即使我錯了，也來自於我行為導致，想法上應該仍要給我緩頰的空間。</p>
-<p>但又仔細的推理，造成短時間爭執到絕交的變故應該能歸納成</p>
-<ol>
-<li><p>我的自我意識偏強，總是特別在意對方在對話中有無感受到我的論述，或至少讓這個論述有傳達到對方的腦海中思索過，這往往也是爭吵升級的開端。</p>
-</li>
-<li><p>特別在意自我的正面形象，總是在對話過程中在意自己有沒有被黑掉，有點類似於對父母的頂嘴，希望能對針對我的針對性指責做出反擊，彷彿只要能保持住這個自我的認同感就能讓自己在這段人際關係中保持自己的信心，但這通常只能是爭吵崩潰的爭辯，因為對方根本不懂你在糾結的地方。</p>
-</li>
-</ol>
-<p>當我在意這兩點，又在爭吵時，對涉及以上內容的部分反應激烈（雖然重點會想放在事情上面，但我的說理方式也會讓對方失控，或認為我不可溝通），接著也可能單純講不好，導致對方不回應或講一些重話。例如宣達本次討論是我以為自己很重要，但他根本不在意這些，或是宣達我的無理取鬧根本有問題，或是直接表示本次共購雲端的行為因為我不小心觸犯到他的雷點還以此開玩笑，決定終止共購行為。</p>
-<h2 id="當一切失控但無法暫停"><a href="#當一切失控但無法暫停" class="headerlink" title="當一切失控但無法暫停"></a>當一切失控但無法暫停</h2><blockquote>
-<p>當一切開始在對話中失控的感覺真的是糟透了，我無法看自己無法參與討論的過程，腦海中像是你快聽我說跟我要終止這場對話不然之後很難有愉快的交流了，總之，糟透了。</p>
-</blockquote>
-<p>我開始發現，或許我能先解決掉的不是情緒或是強迫我不要在低潮時交流，而是自我意識跟形象維持這兩件事情，當我有意識地放棄這個去參加討論，似乎這樣的處理方式才是好的，畢竟能這麼讓雙方沒有顧忌的友情是有限的，我完全不想考驗任何一段友情，我不知道他們能不能禁得起考驗 (明顯很多不行)。</p>
-<blockquote>
-<p>事情糟糕的一個方向的時候，隨意調解氣氛也要多注意，開玩笑化解但卻剛好是對方很在意的地方那只會讓一切更糟糕，伴隨著剛剛不好的交流累積的火藥一起</p>
-</blockquote>
-<p>以在雲端共購的吵架來說，如果我不開玩笑地說，如果下次她能回應快一點，可能就不會讓對方生氣了，在當時對方以道歉發洩情緒，表示：除了家人之外抱歉本來就不會回應這麼快！</p>
-<p>但我沒注意到對方很在意這件事情的雷點或是被講好幾次的痛處，沒有評估後果隨意找自以為輕鬆的話題開玩笑，結果直接戳到炸彈，她想何時回訊息確實是她的自由，而為了轉移上面的尷尬，沒注意到對方不喜歡甚麼這件事情是我的疏失。</p>
-<p>以在好奇資料庫權限爭議來說，如果我不繼續向對方有負擔的人追問，並轉告追問的答案給對方，導致向我反映問題的人很介意，「可能被知道這個問題的詢問來自於他」因為我沒有消彌這一點不安，導致後續很尷尬，即使我說是自己問的對方也不想相信，認為我開他玩笑。</p>
-<h2 id="那之後呢？"><a href="#那之後呢？" class="headerlink" title="那之後呢？"></a>那之後呢？</h2><blockquote>
-<p>雖然似乎認真檢討了自己，但誠實面對自己最糟糕的地方是這到底要算改進還是追憶，或許這些友情也都並沒有這麼脆弱，而是基於第二點總結，我自己害怕得不敢去聯繫而以？</p>
-</blockquote>
-<p>也不知道答案是什麼，也不知道什麼樣的信任能被考驗，我開始珍惜每一次開心的相處，並試著記得很多當下的時刻，這些時間的快樂至少要被肯認是真實的吧，有工作的第N+3天後，我得試著記得教訓並改進。</p>
-]]></content>
-      <tags>
-        <tag>心情</tag>
-        <tag>困擾</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>來自地獄的法官-影片紀錄</title>
     <url>/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/</url>
     <content><![CDATA[<p>劇中，加害者都有受到處罰，這是現實世界無法實現的支撐點。而到頭來整部劇也反思憤怒之時是否仍要守住自己的原則？很像是最近看HERO裡面的其中一段，律師盡力幫加害人變故其實不是一件壞事，當雙方把所有攻防都丟在法官面前之時，讓真相自己說話，雖然挺理想主義的，但現實世界就是沒有那雙全知全能的眼睛來避免問題。<br> <span id="more"></span></p>
@@ -799,6 +894,35 @@ REC
       <tags>
         <tag>書籍</tag>
         <tag>閱讀心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-藍色眼睛</title>
+    <url>/2025/12/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%97%8D%E8%89%B2%E7%9C%BC%E7%9D%9B/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 展翼 的 藍色眼睛
+      <br>
+      出自專輯 Zayin
+      <br>
+      <a href="https://open.spotify.com/track/1drkbspB7y7tUbY3aAQhiV" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_藍色眼睛.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    今天不知道為何非常想推薦這首，偶爾有那種喜歡但說不出原因的歌，但這樣遺憾卻不撕心裂肺的歌反而讓我感受到更大的空白，歌詞跟曲風我覺得像是即使遺憾被時間沖刷，情緒低落的部分消散，拉長的想念卻仍然再繼續，以藍色的眼睛代稱著遺憾的想念。]]></content>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
       </tags>
   </entry>
   <entry>
@@ -940,6 +1064,33 @@ REC
       </tags>
   </entry>
   <entry>
+    <title>有工作的第N+2天</title>
+    <url>/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/</url>
+    <content><![CDATA[<p>當我開始逃避想晚點進辦公室位置的時候，那種想換工作的想法總是一再的重複出現<br> <span id="more"></span> </p>
+<h2 id="當我開始逃避想晚點進辦公室位置的時候"><a href="#當我開始逃避想晚點進辦公室位置的時候" class="headerlink" title="當我開始逃避想晚點進辦公室位置的時候"></a>當我開始逃避想晚點進辦公室位置的時候</h2><p>一切的變化是來自於辦公室氛圍的轉變，同事從可信賴的夥伴，變成那種爛工作犧牲對象的可能者，犧牲他去做爛工作就不是我了！輪調是目前工作的傳統，目的在於培養能了解各項工作的人，以能做全方位的規劃與討論為未來發展藍圖，但那只是藍圖…</p>
+<p>事實上每次輪調都可能去到不想去的地方，以及接到不想接的工作，這次的衝突也因此而生，當我開始因為可能因為莫名其妙的理由被喚去做那項工作的時候，大家還是很給我肯定的，說有機會去說看看或是調整整個工作項目，到後來就是一路失控的過程了，越級呈報、閒言閒語以及一堆莫名其妙的辦公室壓力。</p>
+<p>辦公室突然像是一個火爐，每天燒掉一點自己的信心、燒掉一點工作的樂趣，而燃料很多，一些是自己的愧疚，一些可能是想回到以前的落差感，最多就是那種無能為力吧？而當我開始追究我到底做錯什麼這一個死胡同的時候，代表我也沒有想找到答案，我只是想要有一個悲傷的地方讓我自己可以躺著，那種就算黑掉我也不在乎的勇氣消逝的無影無蹤….</p>
+<p>想換工作的想法一再出現，但走了就好嗎？我其實沒有成功拯救自己，也沒有任何排解掉這種煩悶心情的出口，他就是卡在胸口，深呼吸的瞬間可能有消失一點，但我不可能每一口都是深呼吸，當我一疏忽…就像是會被所有的痛苦追上。但除了快被燃燒殆盡的我之外，其他人也沒受到什麼影響，我也能試著像大家一樣不去在乎這些情緒嗎？ 或是造成別人痛苦的人本來就感受不到這些。</p>
+<h2 id="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"><a href="#沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈" class="headerlink" title="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"></a>沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈</h2><p>困擾的狀況重複出現，我就發現無論我想讓我心裡好過一點，以沒有我是損失的方向來看，還是換一個角度用我是輸家的論點，我認賠來看，怎麼樣的在意都讓我一再的因為前後對比與怎麼搞成這樣的失落感，想放棄感。</p>
+<p>疲倦的心靈找不到一個停損的點可以棲身，似乎在情緒的起伏之中我也變成了無趣之人，今天的工作有趣嗎？ 我可能只想趕快下班逃離這個是非之地。但又怎麼能逃呢？沒有能力面試到能去的工作，履歷寫了一半就丟在那邊沒更新，放下一去去其他地方的我是有能力面對不同工作的嗎？</p>
+<p>我雖然總是沒信心，但對能力的培養與挑戰我總是沒什麼勇氣做更多的嘗試。</p>
+<h2 id="是我自己性格上的缺陷嗎？"><a href="#是我自己性格上的缺陷嗎？" class="headerlink" title="是我自己性格上的缺陷嗎？"></a>是我自己性格上的缺陷嗎？</h2><p>我也想過是不是因為自己性格上的缺陷，導致我在這個情緒上陷入過久，又或是生命中第一個感覺到不友善與無法替自己主張沒問題的地方？</p>
+<p>我發現我自己除了一些道德上的潔癖之外，我想我好像非常希望自己是一個不被眾人討論壞名聲的人，成為議論對象可能還行，但壞事或奇怪的事情真的是一介意起來就停不下來，因此我也會注意自己的品行是否端正（盡量）。但其實也沒有誰對誰錯，只是這樣結果之下，這個污點就像是一塊清不掉的黑點，潔癖在我的內心隱隱的責備，而我的道德也反過來用愧疚感來給我壓力。</p>
+<p>但老實說，真的沒有誰對誰錯的問題，忽視與冷漠也只代表了我自己心靈上不夠自立自強，不夠強大，所幸在遊戲之中我找到了我自己可以的感覺，能慢慢地給自己安慰，但遊戲仍然不是生活，我還是得在生活裡面成長起來才行。</p>
+<h2 id="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"><a href="#知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值" class="headerlink" title="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"></a>知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值</h2><p>查了一些霸凌的知識與反擊手段，但我發現與其說和解，其實在這些事情上我要能夠壓著我的自卑感，不僅僅是肯定我的特質，也認可自己的價值。</p>
+<p>我在這裡並不是因為怎麼樣，而是作為館員，在推動事務上自己有想努力的內容，很多事情也不會因為怎樣而改變，而且相對於被霸凌，被忽視與冷漠對待反倒是稍微輕鬆一點的（應該）</p>
+<h2 id="隨時失去的轉職可能性與履歷撰寫"><a href="#隨時失去的轉職可能性與履歷撰寫" class="headerlink" title="隨時失去的轉職可能性與履歷撰寫"></a>隨時失去的轉職可能性與履歷撰寫</h2><p>要我不懷念過去是不可能的，我想念我剛來的工作環境以及能討論，願意交流的大家，完成的任務有人分享，失敗的宣傳有人能夠檢討，為了更好的推廣而討論著的大家，但莫名其妙在不同事物的同時衝擊下都搞砸了。</p>
+<p>之前本來幸災樂禍地想說，即使要離職，離不開圖書館的也不是我，但真的是這樣嗎？其實我也抱著不確定的心態，之前找工作的不順利又有一點浮上心頭，但我的忍耐是不是也代表我正失去轉職的可能性？ 我也不知道。</p>
+<p>但在害怕之中時間確實不斷滴答的流逝。</p>
+<h2 id="誠實面對自己"><a href="#誠實面對自己" class="headerlink" title="誠實面對自己"></a>誠實面對自己</h2><p>肯認自己之外，關於缺點跟弱點仍然是要誠實面對的，至少我要能夠回答，工作到底要不要換，目前有哪些能力，哪些可以作為之後的名片，我想怎樣經營自己的品牌這幾個問題，若沒有答案我會對我自己很失望。</p>
+<p>麻痺的一天只有麻痺沒有未來，為自己規劃是我該為自己負責的地方。 </p>
+]]></content>
+      <tags>
+        <tag>心情</tag>
+        <tag>困擾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>請不要在大家面前稱讚我-書籍閱讀紀錄</title>
     <url>/2025/01/07/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91/</url>
     <content><![CDATA[<p>透過包裝自己的努力，去強調態度與時間，但重要的成果與競爭卻給不出來。只能試著讓自己不去激烈的消極，從安心感之外的地方讓自己去試著面對挫折。</p>
@@ -966,6 +1117,46 @@ REC
       <tags>
         <tag>書籍</tag>
         <tag>閱讀心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有工作的第N+3天</title>
+    <url>/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/</url>
+    <content><![CDATA[<p>當生活出現變故而無法有效消化的話，勢必會在日常相處中造成他人的困擾，因為下意識的連自己都在尋找能協助的地方<br> <span id="more"></span> </p>
+<h2 id="不知道怎樣消化的情緒"><a href="#不知道怎樣消化的情緒" class="headerlink" title="不知道怎樣消化的情緒"></a>不知道怎樣消化的情緒</h2><p>承接第Ｎ＋2天的內容，老實說真的因為這樣的煩惱非常低潮，即使自己努力消化，但仍然下意識的想在還算有交流中親近的朋友裡面，尋找一個解方，無論是訴苦或是討論，然而這樣負面的交流與未充分顧及情緒的交流，實際上是充滿風險的。第一是交流時你的哀傷與渴望對方能懂你的心情，勢必焦慮而去忽略掉那些平常時會注意的內容，例如失去意識到快吵起來的當下，仍在意對方是否懂你的意識表達。第二是即使注意到了狀況正在失控，但你因為自己的關係，可能踩到對方雷點或是錯誤的玩笑，那只會讓交流狀況更惡化，因為你仍然希望對方能體諒你的情境，但忽略了對方此刻因雷點觸動而產生的情緒。</p>
+<p>在那時低潮時就因為一些小事情跟親近的朋友短時間內發生了不同的爭吵，一人一次總共兩人（忽略掉那個沒爭吵就失去交流機會的同事的話）。明明內容上還好，卻在後續有點類似於絕交了，或是直接喪失了日常交流的勇氣，現在想來還是覺得如果當時我能處理得更好一點就好了。</p>
+<h2 id="我隱藏在內心深處的害怕"><a href="#我隱藏在內心深處的害怕" class="headerlink" title="我隱藏在內心深處的害怕"></a>我隱藏在內心深處的害怕</h2><blockquote>
+<p>我似乎能夠可以坦誠的說：我的人際需要我的維繫，可能要扮演主動的角色，而當我下意識的猶豫是否能聯繫對方，大概率我可能要失去這段友情了，無法有效消化情緒的我就是這樣關係中的未爆彈。</p>
+</blockquote>
+<p>曾經有過一個想法是，假如因為不小心在低潮時觸發雷點的人際關係是否是我的問題？還是更需要去考慮到這段關係的不穩固？錯來自於雙方而不是我單方面的反省？</p>
+<p>但實際審視下來，我發現我除了能完全信任的人際交往之外，很多的朋友更多來自於我的主動維繫，假如我因為吵架而下意識不敢直接向對方交流，那大概率這段友情就無疾而終了吧，因為我也從來沒有重要到是誰的前幾順位過。</p>
+<p>實際上只要發生在我自己低潮或無法控制情緒的時刻，大概率交流中都很容易吵架，訊息上機率又會更高，法律學習的經驗讓我習慣分割成兩個論點，並且試圖在吵架中下意識的證明即使我錯了，也來自於我行為導致，想法上應該仍要給我緩頰的空間。</p>
+<p>但又仔細的推理，造成短時間爭執到絕交的變故應該能歸納成</p>
+<ol>
+<li><p>我的自我意識偏強，總是特別在意對方在對話中有無感受到我的論述，或至少讓這個論述有傳達到對方的腦海中思索過，這往往也是爭吵升級的開端。</p>
+</li>
+<li><p>特別在意自我的正面形象，總是在對話過程中在意自己有沒有被黑掉，有點類似於對父母的頂嘴，希望能對針對我的針對性指責做出反擊，彷彿只要能保持住這個自我的認同感就能讓自己在這段人際關係中保持自己的信心，但這通常只能是爭吵崩潰的爭辯，因為對方根本不懂你在糾結的地方。</p>
+</li>
+</ol>
+<p>當我在意這兩點，又在爭吵時，對涉及以上內容的部分反應激烈（雖然重點會想放在事情上面，但我的說理方式也會讓對方失控，或認為我不可溝通），接著也可能單純講不好，導致對方不回應或講一些重話。例如宣達本次討論是我以為自己很重要，但他根本不在意這些，或是宣達我的無理取鬧根本有問題，或是直接表示本次共購雲端的行為因為我不小心觸犯到他的雷點還以此開玩笑，決定終止共購行為。</p>
+<h2 id="當一切失控但無法暫停"><a href="#當一切失控但無法暫停" class="headerlink" title="當一切失控但無法暫停"></a>當一切失控但無法暫停</h2><blockquote>
+<p>當一切開始在對話中失控的感覺真的是糟透了，我無法看自己無法參與討論的過程，腦海中像是你快聽我說跟我要終止這場對話不然之後很難有愉快的交流了，總之，糟透了。</p>
+</blockquote>
+<p>我開始發現，或許我能先解決掉的不是情緒或是強迫我不要在低潮時交流，而是自我意識跟形象維持這兩件事情，當我有意識地放棄這個去參加討論，似乎這樣的處理方式才是好的，畢竟能這麼讓雙方沒有顧忌的友情是有限的，我完全不想考驗任何一段友情，我不知道他們能不能禁得起考驗 (明顯很多不行)。</p>
+<blockquote>
+<p>事情糟糕的一個方向的時候，隨意調解氣氛也要多注意，開玩笑化解但卻剛好是對方很在意的地方那只會讓一切更糟糕，伴隨著剛剛不好的交流累積的火藥一起</p>
+</blockquote>
+<p>以在雲端共購的吵架來說，如果我不開玩笑地說，如果下次她能回應快一點，可能就不會讓對方生氣了，在當時對方以道歉發洩情緒，表示：除了家人之外抱歉本來就不會回應這麼快！</p>
+<p>但我沒注意到對方很在意這件事情的雷點或是被講好幾次的痛處，沒有評估後果隨意找自以為輕鬆的話題開玩笑，結果直接戳到炸彈，她想何時回訊息確實是她的自由，而為了轉移上面的尷尬，沒注意到對方不喜歡甚麼這件事情是我的疏失。</p>
+<p>以在好奇資料庫權限爭議來說，如果我不繼續向對方有負擔的人追問，並轉告追問的答案給對方，導致向我反映問題的人很介意，「可能被知道這個問題的詢問來自於他」因為我沒有消彌這一點不安，導致後續很尷尬，即使我說是自己問的對方也不想相信，認為我開他玩笑。</p>
+<h2 id="那之後呢？"><a href="#那之後呢？" class="headerlink" title="那之後呢？"></a>那之後呢？</h2><blockquote>
+<p>雖然似乎認真檢討了自己，但誠實面對自己最糟糕的地方是這到底要算改進還是追憶，或許這些友情也都並沒有這麼脆弱，而是基於第二點總結，我自己害怕得不敢去聯繫而以？</p>
+</blockquote>
+<p>也不知道答案是什麼，也不知道什麼樣的信任能被考驗，我開始珍惜每一次開心的相處，並試著記得很多當下的時刻，這些時間的快樂至少要被肯認是真實的吧，有工作的第N+3天後，我得試著記得教訓並改進。</p>
+]]></content>
+      <tags>
+        <tag>心情</tag>
+        <tag>困擾</tag>
       </tags>
   </entry>
 </search>
