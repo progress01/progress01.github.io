@@ -156,6 +156,12 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/46StCuctbFMKxPh7R7QGBs"target="_blank">
+      <img src="/images/song_悄悄告訴她.png"> </a>
+    </a>
+  </div> 
+
 </div>
 
 </div>
@@ -177,4 +183,3 @@ comments: false
     }
   });
 </script>
-
