@@ -79,7 +79,7 @@
     <link href="https://progress01.github.io/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/"/>
     <id>https://progress01.github.io/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</id>
     <published>2026-01-30T04:00:39.000Z</published>
-    <updated>2026-01-30T12:26:33.846Z</updated>
+    <updated>2026-02-03T08:21:33.375Z</updated>
     
     <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;">      推薦 WAG 的 Free magic      <br>      出自專輯 WAG(同名專輯)      <br>      <a href="https://www.youtube.com/watch?v=KzvvBC_ceEE" target="_blank">收聽連結 -> 點此前往</a>    </p></div><div style="width: 150px; flex-shrink: 0;"><img src="/images/song_free_magic.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);"></div></div><span id="more"></span> 轉載自個人ig每日點播> chjuhsu05    <br>    這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。]]></content>
     
@@ -272,9 +272,9 @@
     <link href="https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/"/>
     <id>https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/</id>
     <published>2026-01-24T17:22:38.000Z</published>
-    <updated>2026-02-01T16:41:17.482Z</updated>
+    <updated>2026-02-03T08:42:16.974Z</updated>
     
-    <content type="html"><![CDATA[<p>重要已知問題紀錄</p> <span id="more"></span> <ol><li>手機格式跑版，[閱讀管理]區塊的內容甘特圖的數字跟奇怪符號</li><li>手機格式跑版，[更新熱力圖]的圖表會超出框框</li><li>要設定更新與寫作頻率</li><li>每天要記得讀書與更新</li><li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li><li>想在網站實作規範的jsonld之類的設計</li><li>工具類的作品展示模板設計中</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>重要已知問題紀錄</p> <span id="more"></span> <ol start="3"><li>要設定更新與寫作頻率</li><li>每天要記得讀書與更新</li><li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li><li>想在網站實作規範的jsonld之類的設計</li><li>工具類的作品展示模板設計中</li></ol>]]></content>
     
     
     <summary type="html">&lt;p&gt;重要已知問題紀錄&lt;/p&gt;</summary>
