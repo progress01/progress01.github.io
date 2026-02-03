@@ -5,10 +5,15 @@ layout: page
 comments: false
 ---
 
-<div id="calendar" style="width: 100%; height: auto; min-height: 250px; margin-top: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-   <div style="text-align: center; padding: 20px;">
-     <i class="fa fa-spinner fa-spin"></i> Loading...
-   </div>
+{% raw %}
+<div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 20px;">
+    
+    <div id="calendar" style="width: 100%; min-width: 800px; height: 250px;">
+       <div style="text-align: center; padding: 50px;">
+         <i class="fa fa-spinner fa-spin"></i> Loading Graph...
+       </div>
+    </div>
+
 </div>
 
 <script src="/lib/echarts.min.js"></script>
@@ -21,6 +26,7 @@ comments: false
       .then(res => res.json())
       .then(data => {
         document.getElementById('calendar').innerHTML = "";
+        // 初始化圖表
         Calendar.init('calendar', { data: data });
       })
       .catch(err => {
@@ -29,3 +35,4 @@ comments: false
       });
   })();
 </script>
+{% endraw %}
