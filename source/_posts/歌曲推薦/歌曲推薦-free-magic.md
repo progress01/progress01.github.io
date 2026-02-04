@@ -1,5 +1,5 @@
 ---
-title: free magic
+title: 歌曲推薦-free magic
 date: 2026-01-30 12:00:39
 tags: [音樂推薦, 專輯插圖]
 ---
