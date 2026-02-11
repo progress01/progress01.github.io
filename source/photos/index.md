@@ -186,6 +186,20 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7dZiEriz7QNBToCqbqlTjH?autoplay=true"target="_blank">
+      <img src="/images/song_給電影人的情書.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0YwbtJsL5CMCnOJUxVJimu"target="_blank">
+      <img src="/images/song_無眠.png"> </a>
+    </a>
+  </div> 
+
+</div>
+
 </div>
 
 </div>
