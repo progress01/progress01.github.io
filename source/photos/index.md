@@ -204,6 +204,18 @@ comments: false
     </a>
   </div> 
 
+   <div class="ig-card">
+    <a href="https://open.spotify.com/track/3g5JdJgUsojThJj6pmRR7g?autoplay=true"target="_blank">
+      <img src="/images/song_戀戀風塵.png"> </a>
+    </a>
+  </div> 
+
+   <div class="ig-card">
+    <a href="https://open.spotify.com/track/5jHui9rDOvE84VzyddLHVh"target="_blank">
+      <img src="/images/song_我們的故事.png"> </a>
+    </a>
+  </div> 
+
 </div>
 
 </div>
@@ -227,4 +239,3 @@ comments: false
     }
   });
 </script>
-
