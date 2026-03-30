@@ -222,6 +222,18 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/52baP0Nwp6bJyI95JMW9gF?autoplay=true"target="_blank">
+      <img src="/images/song_忘了你忘了我.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4mTZQvYs0QrcMqNo9xNd5X="_blank">
+      <img src="/images/song_茫茫到深更.png"> </a>
+    </a>
+  </div> 
+
 </div>
 
 </div>
@@ -246,3 +258,16 @@ comments: false
   });
 </script>
 
+
+<div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 推薦 羅時豐 的 茫茫到深更
+      <br>
+      出自同名專輯
+      <br>
+      <a href="https://open.spotify.com/track/4mTZQvYs0QrcMqNo9xNd5X" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_茫茫到深更.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
