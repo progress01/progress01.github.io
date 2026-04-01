@@ -6,7 +6,7 @@
   <link href="https://progress01.github.io/atom.xml" rel="self"/>
   
   <link href="https://progress01.github.io/"/>
-  <updated>2026-03-31T15:32:36.207Z</updated>
+  <updated>2026-04-01T13:31:19.248Z</updated>
   <id>https://progress01.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>歌曲推薦-再會啦心愛的無緣的人</title>
+    <link href="https://progress01.github.io/2026/04/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%86%8D%E6%9C%83%E5%95%A6%E5%BF%83%E6%84%9B%E7%9A%84%E7%84%A1%E7%B7%A3%E7%9A%84%E4%BA%BA/"/>
+    <id>https://progress01.github.io/2026/04/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%86%8D%E6%9C%83%E5%95%A6%E5%BF%83%E6%84%9B%E7%9A%84%E7%84%A1%E7%B7%A3%E7%9A%84%E4%BA%BA/</id>
+    <published>2026-04-01T04:00:52.000Z</published>
+    <updated>2026-04-01T13:31:19.248Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;">      推薦 施文彬 的 再會啦心愛的無緣的人      <br>      出自同名專輯      <br>      <a href="https://open.spotify.com/track/5XZKK64s6wjd0P5MowNuB1?si=9895f4cd8a5041e7" target="_blank">收聽連結 -> 點此前往</a>    </p>  </div><div style="width: 150px; flex-shrink: 0;"><img src="/images/song_再會啦心愛的無緣的人.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);"></div></div><span id="more"></span> 轉載自個人ig每日點播> chjuhsu05    <br>    手跟臉真的是有夠難，今天再次大爆炸了，推薦這首我喜歡裡面的感情，祝福這件事情本來就很難，這首的釋懷跟祝福的感覺收斂的很棒！]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 施文彬 的 再會啦心愛的無緣的人
+      &lt;br&gt;
+      出自同名專輯
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/5XZKK64s6wjd0P5MowNuB1?si=9895f4cd8a5041e7&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+&lt;img src=&quot;/images/song_再會啦心愛的無緣的人.png&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>歌曲推薦-雲中月圓</title>
@@ -718,25 +751,6 @@
     <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
     
     <category term="專輯插圖" scheme="https://progress01.github.io/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>部落格改版規劃</title>
-    <link href="https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/"/>
-    <id>https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/</id>
-    <published>2026-01-24T17:22:38.000Z</published>
-    <updated>2026-02-03T08:42:16.974Z</updated>
-    
-    <content type="html"><![CDATA[<p>重要已知問題紀錄</p> <span id="more"></span> <ol start="3"><li>要設定更新與寫作頻率</li><li>每天要記得讀書與更新</li><li>手機板格式有些會掉字&gt;一個字落在第二行很怪</li><li>想在網站實作規範的jsonld之類的設計</li><li>工具類的作品展示模板設計中</li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;重要已知問題紀錄&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="站務" scheme="https://progress01.github.io/tags/%E7%AB%99%E5%8B%99/"/>
     
   </entry>
   
