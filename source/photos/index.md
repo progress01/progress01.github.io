@@ -240,6 +240,12 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5XZKK64s6wjd0P5MowNuB1?si=9895f4cd8a5041e7="_blank">
+      <img src="/images/song_再會啦心愛的無緣的人.png"> </a>
+    </a>
+  </div> 
+
 </div>
 
 </div>
@@ -263,3 +269,5 @@ comments: false
     }
   });
 </script>
+
+
