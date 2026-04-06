@@ -171,13 +171,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -616,6 +616,128 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    
+  
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ch-Ju">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DON'T COUNT THE DAYS">
+      <meta itemprop="description" content="生活紀錄與學習部落格">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | DON'T COUNT THE DAYS">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/" class="post-title-link" itemprop="url">討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2026-04-06 17:00:00" itemprop="dateCreated datePublished" datetime="2026-04-06T17:00:00+08:00">2026-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2026-04-07 00:33:10" itemprop="dateModified" datetime="2026-04-07T00:33:10+08:00">2026-04-07</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>571</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
+<hr>
+<h3 id="挑戰與痛點"><a href="#挑戰與痛點" class="headerlink" title="挑戰與痛點"></a>挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
+<p><strong>思考方向轉向</strong></p>
+<ol>
+<li>民眾如果不點到政府網頁</li>
+<li>政府資訊無法準確傳達</li>
+<li>政績與績效(或相對的流量)將出現問題</li>
+</ol>
+<p><strong>在不點到網頁”實際觀測資訊”時</strong></p>
+<ol>
+<li>以關鍵字與網頁排序為主的SEO重要性降低</li>
+<li>以直接出現在引用資源且被AI總結重要性提高</li>
+</ol>
+<p><strong>政府網頁的挑戰</strong></p>
+<ol>
+<li>時事性資訊逐漸轉向社群平台公布</li>
+<li>重要的補助與政策宣導績效仍然會透過網頁但”層層堆疊”</li>
+<li>多數牽涉民眾與廠商的業務很多轉入特定系統</li>
+</ol>
+<p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
+<blockquote>
+<p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
+</blockquote>
+<hr>
+<p>綜上所述，若能以低的成本或批次處理的方式，將這個方向納入網頁改版中，將能增加政府網頁資訊的利用價值。</p>
+<blockquote>
+<p>📝 後續待補，希望以實際案例討論GEO 實體標記。</p>
+</blockquote>
+
       
     </div>
 
@@ -2414,9 +2536,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2026-02-02 12:00:00 / 修改時間：00:35:50" itemprop="dateCreated datePublished" datetime="2026-02-02T12:00:00+08:00">2026-02-02</time>
+      <time title="創建時間：2026-02-02 12:00:00" itemprop="dateCreated datePublished" datetime="2026-02-02T12:00:00+08:00">2026-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2026-04-07 00:21:02" itemprop="dateModified" datetime="2026-04-07T00:21:02+08:00">2026-04-07</time>
     </span>
 
   
@@ -2592,119 +2720,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/01/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ch-Ju">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DON'T COUNT THE DAYS">
-      <meta itemprop="description" content="生活紀錄與學習部落格">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | DON'T COUNT THE DAYS">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/01/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%AB/" class="post-title-link" itemprop="url">歌曲推薦-愫</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2026-01-29 12:00:00 / 修改時間：20:25:24" itemprop="dateCreated datePublished" datetime="2026-01-29T12:00:00+08:00">2026-01-29</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>141</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 鄧妙華和孫建平 的 愫
-      <br>
-      出自專輯 醉人的美酒
-      <br>
-      <a href="https://open.spotify.com/track/1eOAIpanxGczndpxUxnW8Q" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_愫.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/01/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%AB/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    
-  
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -2728,13 +2743,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">25k</span>
+    <span title="總字數">26k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">23 分鐘</span>
+    <span title="所需總閱讀時間">24 分鐘</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動

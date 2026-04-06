@@ -19,30 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="推薦 成龍 和 金喜善 的 神話(有些翻譯是無盡的愛)              出自同名電影(神話)              收聽連結 -&gt; 點此前往">
+    <meta name="description" content="現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。  挑戰與痛點以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。 思考方向轉向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="歌曲推薦-神話">
-<meta property="og:url" content="https://progress01.github.io/2025/12/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%A5%9E%E8%A9%B1/index.html">
+<meta property="og:title" content="討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)">
+<meta property="og:url" content="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/index.html">
 <meta property="og:site_name" content="DON&#39;T COUNT THE DAYS">
-<meta property="og:description" content="推薦 成龍 和 金喜善 的 神話(有些翻譯是無盡的愛)              出自同名電影(神話)              收聽連結 -&gt; 點此前往">
+<meta property="og:description" content="現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。  挑戰與痛點以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。 思考方向轉向">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://progress01.github.io/images/song_%E7%A5%9E%E8%A9%B1.png">
-<meta property="article:published_time" content="2025-12-24T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-27T00:44:03.077Z">
+<meta property="article:published_time" content="2026-04-06T09:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-06T16:33:10.841Z">
 <meta property="article:author" content="Ch-Ju">
-<meta property="article:tag" content="專輯插圖">
-<meta property="article:tag" content="音樂推薦">
+<meta property="article:tag" content="GEO">
+<meta property="article:tag" content="網站流量">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://progress01.github.io/images/song_%E7%A5%9E%E8%A9%B1.png">
 
 
-<link rel="canonical" href="https://progress01.github.io/2025/12/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%A5%9E%E8%A9%B1/">
+<link rel="canonical" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://progress01.github.io/2025/12/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%A5%9E%E8%A9%B1/","path":"2025/12/24/歌曲推薦/歌曲推薦-神話/","title":"歌曲推薦-神話"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/","path":"2026/04/06/實驗室/討論GEO篇一_做網頁說明/","title":"討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歌曲推薦-神話 | DON'T COUNT THE DAYS</title>
+<title>討論GEO篇一:如何簡單做網頁說明(生成式引擎優化) | DON'T COUNT THE DAYS</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QR6QX786"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-L3QR6QX786","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -152,7 +150,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -165,6 +163,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8F%BE%E6%B3%81%E8%A8%8E%E8%AB%96"><span class="nav-number">1.</span> <span class="nav-text">現況討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%91%E6%88%B0%E8%88%87%E7%97%9B%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">挑戰與痛點</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2025/12/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%A5%9E%E8%A9%B1/">
+    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -223,12 +222,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="歌曲推薦-神話 | DON'T COUNT THE DAYS">
+      <meta itemprop="name" content="討論GEO篇一:如何簡單做網頁說明(生成式引擎優化) | DON'T COUNT THE DAYS">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          歌曲推薦-神話
+          討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)
         </h1>
 
         <div class="post-meta-container">
@@ -239,14 +238,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2025-12-24 12:00:00" itemprop="dateCreated datePublished" datetime="2025-12-24T12:00:00+08:00">2025-12-24</time>
+      <time title="創建時間：2026-04-06 17:00:00" itemprop="dateCreated datePublished" datetime="2026-04-06T17:00:00+08:00">2026-04-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-01-27 08:44:03" itemprop="dateModified" datetime="2026-01-27T08:44:03+08:00">2026-01-27</time>
+      <time title="修改時間：2026-04-07 00:33:10" itemprop="dateModified" datetime="2026-04-07T00:33:10+08:00">2026-04-07</time>
     </span>
 
   
@@ -256,7 +255,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>228</span>
+      <span>571</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -273,30 +272,35 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 成龍 和 金喜善 的 神話(有些翻譯是無盡的愛)
-      <br>
-      出自同名電影(神話)
-      <br>
-      <a href="https://open.spotify.com/track/3zymKle3GhoBCD384D2hms" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_神話.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首因為電影與電視劇還有不同版本，老實說要聽電影主題曲還得另外上網找，但我個人是最推薦電影版本的，除了有電影中公主的轉身舞（這幕真的超美超難忘）之外，韓文的副歌真的讓這首歌更增色了不少！ 我雖然也喜歡胡歌的音色但成龍實際上也沒輸多少，因此這次強烈推薦這一個版本。神話的宿命感以及時代感再加上濃烈的人物情感，這首歌其實意外的元素很多！
-
+    <div class="post-body" itemprop="articleBody"><h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
+<hr>
+<h3 id="挑戰與痛點"><a href="#挑戰與痛點" class="headerlink" title="挑戰與痛點"></a>挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
+<p><strong>思考方向轉向</strong></p>
+<ol>
+<li>民眾如果不點到政府網頁</li>
+<li>政府資訊無法準確傳達</li>
+<li>政績與績效(或相對的流量)將出現問題</li>
+</ol>
+<p><strong>在不點到網頁”實際觀測資訊”時</strong></p>
+<ol>
+<li>以關鍵字與網頁排序為主的SEO重要性降低</li>
+<li>以直接出現在引用資源且被AI總結重要性提高</li>
+</ol>
+<p><strong>政府網頁的挑戰</strong></p>
+<ol>
+<li>時事性資訊逐漸轉向社群平台公布</li>
+<li>重要的補助與政策宣導績效仍然會透過網頁但”層層堆疊”</li>
+<li>多數牽涉民眾與廠商的業務很多轉入特定系統</li>
+</ol>
+<p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
+<blockquote>
+<p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
+</blockquote>
+<hr>
+<p>綜上所述，若能以低的成本或批次處理的方式，將這個方向納入網頁改版中，將能增加政府網頁資訊的利用價值。</p>
+<blockquote>
+<p>📝 後續待補，希望以實際案例討論GEO 實體標記。</p>
+</blockquote>
 
     </div>
 
@@ -309,7 +313,7 @@
             <h3 style="margin: 0 0 15px 0; font-size: 1.2em; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
               📚 延伸閱讀 (猜你也喜歡...)
             </h3>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2025\10\24\歌曲推薦\歌曲推薦-2375\" title="歌曲推薦-2375" rel="bookmark">歌曲推薦-2375</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2026\01\09\歌曲推薦\歌曲推薦-All-for-you\" title="歌曲推薦-All for you" rel="bookmark">歌曲推薦-All for you</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2026\01\19\歌曲推薦\歌曲推薦-Free-Loop\" title="歌曲推薦-Free Loop" rel="bookmark">歌曲推薦-Free Loop</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2025\12\25\歌曲推薦\歌曲推薦-Better-Man\" title="歌曲推薦-Better Man" rel="bookmark">歌曲推薦-Better Man</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2026\01\28\歌曲推薦\歌曲推薦-I-love-you無望\" title="歌曲推薦-I love you無望" rel="bookmark">歌曲推薦-I love you無望</a></h3></div></li></ul>
+            
           </div>
         
   
@@ -333,22 +337,19 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/" rel="tag"># 音樂推薦</a>
-              <a href="/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/" rel="tag"># 專輯插圖</a>
+              <a href="/tags/GEO/" rel="tag"># GEO</a>
+              <a href="/tags/%E7%B6%B2%E7%AB%99%E6%B5%81%E9%87%8F/" rel="tag"># 網站流量</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/" rel="prev" title="歌曲推薦-2375">
-                  <i class="fa fa-angle-left"></i> 歌曲推薦-2375
+                <a href="/2026/04/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%94%BE%E9%A2%A8%E5%90%B9/" rel="prev" title="歌曲推薦-放風吹">
+                  <i class="fa fa-angle-left"></i> 歌曲推薦-放風吹
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/" rel="next" title="歌曲推薦-Better Man">
-                  歌曲推薦-Better Man <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

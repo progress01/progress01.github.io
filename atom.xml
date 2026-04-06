@@ -6,7 +6,7 @@
   <link href="https://progress01.github.io/atom.xml" rel="self"/>
   
   <link href="https://progress01.github.io/"/>
-  <updated>2026-04-06T02:58:13.027Z</updated>
+  <updated>2026-04-06T16:33:10.841Z</updated>
   <id>https://progress01.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)</title>
+    <link href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/"/>
+    <id>https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/</id>
+    <published>2026-04-06T09:00:00.000Z</published>
+    <updated>2026-04-06T16:33:10.841Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p><hr><h3 id="挑戰與痛點"><a href="#挑戰與痛點" class="headerlink" title="挑戰與痛點"></a>挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p><p><strong>思考方向轉向</strong></p><ol><li>民眾如果不點到政府網頁</li><li>政府資訊無法準確傳達</li><li>政績與績效(或相對的流量)將出現問題</li></ol><p><strong>在不點到網頁”實際觀測資訊”時</strong></p><ol><li>以關鍵字與網頁排序為主的SEO重要性降低</li><li>以直接出現在引用資源且被AI總結重要性提高</li></ol><p><strong>政府網頁的挑戰</strong></p><ol><li>時事性資訊逐漸轉向社群平台公布</li><li>重要的補助與政策宣導績效仍然會透過網頁但”層層堆疊”</li><li>多數牽涉民眾與廠商的業務很多轉入特定系統</li></ol><p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p><blockquote><p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p></blockquote><hr><p>綜上所述，若能以低的成本或批次處理的方式，將這個方向納入網頁改版中，將能增加政府網頁資訊的利用價值。</p><blockquote><p>📝 後續待補，希望以實際案例討論GEO 實體標記。</p></blockquote>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;現況討論&quot;&gt;&lt;a href=&quot;#現況討論&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="GEO" scheme="https://progress01.github.io/tags/GEO/"/>
+    
+    <category term="網站流量" scheme="https://progress01.github.io/tags/%E7%B6%B2%E7%AB%99%E6%B5%81%E9%87%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>歌曲推薦-放風吹</title>
@@ -579,7 +606,7 @@
     <link href="https://progress01.github.io/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/"/>
     <id>https://progress01.github.io/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</id>
     <published>2026-02-02T04:00:00.000Z</published>
-    <updated>2026-02-01T16:35:50.894Z</updated>
+    <updated>2026-04-06T16:21:02.643Z</updated>
     
     <content type="html"><![CDATA[<h3 id="專案說明-The-Pain-Point"><a href="#專案說明-The-Pain-Point" class="headerlink" title="專案說明 (The Pain Point)"></a>專案說明 (The Pain Point)</h3><p>說明文字(待補)</p> <span id="more"></span><h3 id="作品展示-Live-Demo"><a href="#作品展示-Live-Demo" class="headerlink" title="作品展示 (Live Demo)"></a>作品展示 (Live Demo)</h3><p>與其說原理，不如直接試用。<a href="https://progress01.github.io/lifecheck/">https://progress01.github.io/lifecheck/</a><br>我在下方嵌入了這個工具的視窗，你可以直接在這裡點擊操作，體驗一下把焦慮一項項「劃掉」的快感。</p><style>  /* 復古電腦視窗風格容器 */  .retro-window {    border: 2px solid #5d4037;     border-radius: 6px;     overflow: hidden;     margin: 30px 0;    box-shadow: 4px 4px 0px #3e2723; /* 復古陰影 */    background: #fff;  }    /* 視窗標題列 */  .retro-title-bar {    background: #3e2723;     color: #ffcc80;     padding: 8px 15px;     font-size: 14px;     font-family: 'Courier New', monospace;    display: flex;    justify-content: space-between;    align-items: center;  }  /* 紅綠燈小按鈕裝飾 */  .window-controls span {    display: inline-block;    width: 10px; height: 10px;    border-radius: 50%;    margin-left: 5px;  }</style><div class="retro-window">    <div class="retro-title-bar">        <span>> SYSTEM_TOOL: LIFE_CHECK_V1.0</span>        <div class="window-controls">            <span style="background:#ff5f56;"></span>            <span style="background:#ffbd2e;"></span>            <span style="background:#27c93f;"></span>        </div>    </div>        <iframe         src="https://progress01.github.io/lifecheck/"         style="width: 100%; height: 600px; border: none;"        title="Life Check Tool Demo">    </iframe></div><h3 id="👨‍💻-技術筆記-Under-the-Hood"><a href="#👨‍💻-技術筆記-Under-the-Hood" class="headerlink" title="👨‍💻 技術筆記 (Under the Hood)"></a>👨‍💻 技術筆記 (Under the Hood)</h3><p>說明待補</p><ul><li><strong>Host</strong>：託管於 GitHub Pages，免費且穩定。</li><li><strong>Tech Stack</strong>：HTML5, CSS3, Vanilla JS (純原生 JavaScript)。</li><li><strong>Design</strong>：響應式設計 (RWD)，手機上也能完美顯示。</li></ul><p>這個工具或許不能幫我解決工作上的大難題，但它能幫我解決生活中的小焦慮。<br>當我看著清單全部變綠的那一刻，我就知道：<strong>System Ready. 可以繼續前進了。</strong></p><blockquote><p><strong>Project Status</strong>: Stable<br><strong>Repository</strong>: <a href="https://github.com/progress01/lifecheck">View on GitHub</a></p></blockquote>]]></content>
     
@@ -698,45 +725,6 @@
 &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
 
 &lt;img src=&quot;/images/song_I_love_you_無望.png&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;</summary>
-    
-    
-    
-    
-    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
-    
-    <category term="專輯插圖" scheme="https://progress01.github.io/tags/%E5%B0%88%E8%BC%AF%E6%8F%92%E5%9C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌曲推薦-You are not alone</title>
-    <link href="https://progress01.github.io/2026/01/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-You-are-not-alone/"/>
-    <id>https://progress01.github.io/2026/01/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-You-are-not-alone/</id>
-    <published>2026-01-27T04:00:18.000Z</published>
-    <updated>2026-01-27T15:42:17.746Z</updated>
-    
-    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;">      推薦 Michael Jackson 的 You are not alone      <br>      出自專輯 HIStory: Past, Present and Future, Book I      <br>      <a href="https://youtu.be/pAyKJAtDNCw?si=v-UYqB0XobeLuaoa" target="_blank">收聽連結 -> 點此前往</a>    </p></div><div style="width: 150px; flex-shrink: 0;"><img src="/images/song_you_are_not_alone.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);"></div></div><span id="more"></span> 轉載自個人ig每日點播> chjuhsu05    <br>    Michael的太多抹黑讓這首歌承擔了很多眼光？但我自己第一次聽到這首歌的時候就馬上去找原唱跟大聽特聽了,我想無論如何他都很耐聽而且溫暖（他歌裡面類似換氣他的短音很酷？ ]]></content>
-    
-    
-    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
-  
-  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
-    &lt;p style=&quot;margin-top: 0;&quot;&gt;
-      推薦 Michael Jackson 的 You are not alone
-      &lt;br&gt;
-      出自專輯 HIStory: Past, Present and Future, Book I
-      &lt;br&gt;
-      &lt;a href=&quot;https://youtu.be/pAyKJAtDNCw?si=v-UYqB0XobeLuaoa&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
-    &lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
-
-&lt;img src=&quot;/images/song_you_are_not_alone.png&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
 
 &lt;/div&gt;
 
