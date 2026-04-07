@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。  挑戰與痛點以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。 思考方向轉向">
+    <meta name="description" content="1.現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)">
-<meta property="og:url" content="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/index.html">
+<meta property="og:title" content="討論GEO篇一">
+<meta property="og:url" content="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/index.html">
 <meta property="og:site_name" content="DON&#39;T COUNT THE DAYS">
-<meta property="og:description" content="現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。  挑戰與痛點以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。 思考方向轉向">
+<meta property="og:description" content="1.現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-04-06T09:00:00.000Z">
-<meta property="article:modified_time" content="2026-04-06T16:33:10.841Z">
+<meta property="article:modified_time" content="2026-04-07T17:00:25.557Z">
 <meta property="article:author" content="Ch-Ju">
 <meta property="article:tag" content="GEO">
 <meta property="article:tag" content="網站流量">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/">
+<link rel="canonical" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/","path":"2026/04/06/實驗室/討論GEO篇一_做網頁說明/","title":"討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/","path":"2026/04/06/實驗室/討論GEO篇一/","title":"討論GEO篇一"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>討論GEO篇一:如何簡單做網頁說明(生成式引擎優化) | DON'T COUNT THE DAYS</title>
+<title>討論GEO篇一 | DON'T COUNT THE DAYS</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QR6QX786"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-L3QR6QX786","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -163,7 +163,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8F%BE%E6%B3%81%E8%A8%8E%E8%AB%96"><span class="nav-number">1.</span> <span class="nav-text">現況討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%91%E6%88%B0%E8%88%87%E7%97%9B%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">挑戰與痛點</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%8F%BE%E6%B3%81%E8%A8%8E%E8%AB%96"><span class="nav-number">1.</span> <span class="nav-text">1.現況討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8C%91%E6%88%B0%E8%88%87%E7%97%9B%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">2.挑戰與痛點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-GEO%E7%9A%84%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.</span> <span class="nav-text">3.GEO的定義</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80_%E5%81%9A%E7%B6%B2%E9%A0%81%E8%AA%AA%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -222,12 +222,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="討論GEO篇一:如何簡單做網頁說明(生成式引擎優化) | DON'T COUNT THE DAYS">
+      <meta itemprop="name" content="討論GEO篇一 | DON'T COUNT THE DAYS">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          討論GEO篇一:如何簡單做網頁說明(生成式引擎優化)
+          討論GEO篇一
         </h1>
 
         <div class="post-meta-container">
@@ -245,7 +245,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-04-07 00:33:10" itemprop="dateModified" datetime="2026-04-07T00:33:10+08:00">2026-04-07</time>
+      <time title="修改時間：2026-04-08 01:00:25" itemprop="dateModified" datetime="2026-04-08T01:00:25+08:00">2026-04-08</time>
     </span>
 
   
@@ -255,14 +255,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>571</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -272,9 +272,10 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
-<hr>
-<h3 id="挑戰與痛點"><a href="#挑戰與痛點" class="headerlink" title="挑戰與痛點"></a>挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
+    <div class="post-body" itemprop="articleBody"><h3 id="1-現況討論"><a href="#1-現況討論" class="headerlink" title="1.現況討論"></a>1.現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
+ <span id="more"></span>
+
+<h3 id="2-挑戰與痛點"><a href="#2-挑戰與痛點" class="headerlink" title="2.挑戰與痛點"></a>2.挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
 <p><strong>思考方向轉向</strong></p>
 <ol>
 <li>民眾如果不點到政府網頁</li>
@@ -296,10 +297,34 @@
 <blockquote>
 <p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
 </blockquote>
-<hr>
-<p>綜上所述，若能以低的成本或批次處理的方式，將這個方向納入網頁改版中，將能增加政府網頁資訊的利用價值。</p>
+<h3 id="3-GEO的定義"><a href="#3-GEO的定義" class="headerlink" title="3.GEO的定義"></a>3.GEO的定義</h3><p>生成式引擎優話(GEO)是專注於創建和優化內容，使其更容易被人工智慧聊天機器人和生成式搜尋引擎發現、理解和使用的一種實踐。</p>
 <blockquote>
-<p>📝 後續待補，希望以實際案例討論GEO 實體標記。</p>
+<p>Generative Engine Optimization (GEO) is an emerging practice focused on creating and optimizing content to be easily discovered, understood, and used by AI chatbots and generative search engines.</p>
+</blockquote>
+<p>但對我來說，GEO 的概念，更像是數位世界裡對「網頁意義」的<strong>涵攝 (Subsumption)</strong>。</p>
+<p><strong>涵攝說明</strong><br>這是一個法律概念。在操作法律時，我們會透過大小前提形成結論：將「生活事實」，通過路徑歸入「法律規範要件」，最終產生「特定法律效果」。<br>這個概念特別強調在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實 (<code>x</code>) 合於規範要件 (<code>f</code>)，則會產出對應的法律效果 (<code>y</code>)。</p>
+<p><strong>SEO 與 GEO 的本質差異</strong><br>拉回 GEO 的定義，要讓 AI 成功理解我們的網頁，可理解是一種數位效果 (<code>y</code>)。因此，我們要尋找數位內容中合於 <code>f(x)</code> 的要件。這往大了說，是學術界發展許久的本體論 (Ontology) 與知識圖譜；往小了說，這就是 SEO 與 GEO 的分野：</p>
+<ul>
+<li><strong>SEO (面對人)</strong>：像是一個貼滿「關鍵字」的紙箱。搜尋引擎的排序，是一種觀察關鍵字相似度的「模糊機率關聯」，搜尋引擎是在「猜測」使用者的意圖跟網頁的關聯。</li>
+<li><strong>GEO (面對 AI)</strong>：偏向透過精準的「實體定義 (Entities)」，進行數位涵攝，讓 AI 能明確發現、理解和使用。</li>
+</ul>
+<p><strong>實踐 GEO 的涵攝路徑</strong><br>在這個思考方向下，我們該如何實踐 GEO？</p>
+<ol>
+<li><strong>將 Schema.org 視為「規範要件」</strong>：例如將 <code>GovernmentOrganization</code> 視為定義規則。</li>
+<li><strong>將網頁內容視為「具體事實」</strong>：檢視網站既有的業務標籤與內容。</li>
+<li><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)。</li>
+<li><strong>達成數位效果</strong>：當事實合於要件，AI 就能直接達成「權威性引用」與「邏輯推論」。</li>
+</ol>
+<p><strong>數位世界的函數對應：y &#x3D; f(x)</strong><br>總結這個實踐過程，我們必須明確定義這套涵攝動作：</p>
+<ul>
+<li><strong>規範要件 <code>f()</code></strong>：權威實體應具備的構成要件（如：發布者、管轄領域等 Schema 定義）。</li>
+<li><strong>具體事實 <code>x</code></strong>：網站上的客觀文字與資料。</li>
+<li><strong>涵攝動作</strong>：透過 JSON-LD 進行對應，將事實 <code>x</code> 歸入規範 <code>f()</code>。</li>
+<li><strong>特定效果 <code>y</code></strong>：當具體事實成功涵攝進規範要件，產出的結果即是「AI 的確定性理解」。</li>
+</ul>
+<p>如此設定的操作性定義，再加上實作與機關溝通成本，能讓政府資訊逐漸成為「AI 推論時的法理前提」，將這個方向納入網頁改版中，將能增加政府網頁資訊的利用價值。</p>
+<blockquote>
+<p> 接續討論Schema.org的規範的了解方式</p>
 </blockquote>
 
     </div>
@@ -380,13 +405,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">26k</span>
+    <span title="總字數">27k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">24 分鐘</span>
+    <span title="所需總閱讀時間">25 分鐘</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
