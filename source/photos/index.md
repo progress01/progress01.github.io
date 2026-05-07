@@ -252,6 +252,32 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1V4sDwQG1EGV2gjTnSpHPs?si=bf234273a85f4f52="_blank">
+      <img src="/images/song_我一個人住.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4dSYWupeStIqSivFfWydA0?si=be1538778bf046a5="_blank">
+      <img src="/images/song_其實我真的很在乎.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6vd1nL0a9KvymEBx1api9K?si=fa4ae5e3a42a41f2="_blank">
+      <img src="/images/song_一見鍾情.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3wEOiRXa4hZlHlvspbPhBV?si=bfe945efea04426b="_blank">
+      <img src="/images/song_一世情緣.png"> </a>
+    </a>
+  </div> 
+
+  
+
 </div>
 
 </div>
