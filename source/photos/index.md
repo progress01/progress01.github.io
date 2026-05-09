@@ -276,6 +276,35 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7dzfkAauigVOAiHPbAAENJ?si=4c1b6a748f6442c4="_blank">
+      <img src="/images/song_因為寂寞.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1VpHU8KcaoB2WVVV2KDWEn?si=c63e47f950b34fdd="_blank">
+      <img src="/images/song_廣島之戀.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5czIw7sNuTCBsHbJY4QQoR?si=2c24b5e2485f418a="_blank">
+      <img src="/images/song_燃燒一瞬間.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5giaxxi6NrfkieRe2Q2AxA?si=982e992c58d64073="_blank">
+      <img src="/images/song_若我告訴你其實我愛的只是你.png"> </a>
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/46JgXFM4ealcaHRwMqX5X5?si=3a585aefb21a47d6="_blank">
+      <img src="/images/song_這些日子以來.png"> </a>
+    </a>
+  </div> 
   
 
 </div>
