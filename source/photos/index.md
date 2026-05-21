@@ -329,7 +329,14 @@ comments: false
     <a href="https://open.spotify.com/track/3V5miBCXgnjIB9ktVef8ww?si=4b02013930f94708" target="_blank">
       <img src="/images/song_慢火車.png">
     </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2aIHo5BAdpQoSEMnXIFsKM?si=7900a59d0a424d8d" target="_blank">
+      <img src="/images/song_理想.png">
+    </a>
   </div> 
+ 
  
  
 
