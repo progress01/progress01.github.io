@@ -336,7 +336,13 @@ comments: false
       <img src="/images/song_理想.png">
     </a>
   </div> 
- 
+  
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/58Qw7or324Ci84R42VcPGX?si=dfd67df6523f4abf" target="_blank">
+      <img src="/images/song_動不動就說愛我.png">
+    </a>
+  </div> 
+
  
  
 
