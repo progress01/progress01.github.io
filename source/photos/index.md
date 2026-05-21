@@ -323,7 +323,14 @@ comments: false
     <a href="https://open.spotify.com/track/2YAd147feN9BvWCIT2hwA4?si=3e4a16ffc1354293" target="_blank">
       <img src="/images/song_一切再重來.png">
     </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3V5miBCXgnjIB9ktVef8ww?si=4b02013930f94708" target="_blank">
+      <img src="/images/song_慢火車.png">
+    </a>
   </div> 
+ 
  
 
 
