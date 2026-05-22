@@ -336,10 +336,22 @@ comments: false
       <img src="/images/song_理想.png">
     </a>
   </div> 
-  
+
   <div class="ig-card">
     <a href="https://open.spotify.com/track/58Qw7or324Ci84R42VcPGX?si=dfd67df6523f4abf" target="_blank">
       <img src="/images/song_動不動就說愛我.png">
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/52ZCvlqluyOzyS3u4yephB?si=9f14228f97b54c0f" target="_blank">
+      <img src="/images/song_鴨子.png">
+    </a>
+  </div> 
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/43iIQbw5hx986dUEZbr3eN?si=3972e71ff23f41c9" target="_blank">
+      <img src="/images/song_From_The_Start.png">
     </a>
   </div> 
 
