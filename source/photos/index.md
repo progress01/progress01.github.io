@@ -361,7 +361,12 @@ comments: false
     </a>
   </div> 
 
- 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4j6jBbfZh2XrmW70IUGcnI?si=c9cddd5920a04699" target="_blank">
+      <img src="/images/song_我為你傷心.png">
+    </a>
+  </div> 
+
  
 
 
