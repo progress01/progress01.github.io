@@ -367,6 +367,72 @@ comments: false
     </a>
   </div> 
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/754kgU5rWscRTfvlsuEwFp?si=fa08f8a8bb6645c8" target="_blank">
+      <img src="/images/song_kiss_me.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3Q8gghlGBErHu6K3J8ROgv?si=db8e616312a74dff" target="_blank">
+      <img src="/images/song_答案.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5fOkUkzwuYIs9BjGf3z1Bt?si=14d596b3d94b4be0" target="_blank">
+      <img src="/images/song_其實都沒有.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4LFwNJWoj74Yd71fIr1W8x?si=7f8232a4c719475c" target="_blank">
+      <img src="/images/song_right_here_waiting.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq?si=32c9f4e989e84c2b" target="_blank">
+      <img src="/images/song_my_heart_will_go_on.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/30pUVEgP0CXceGGTZslhXs?si=37f2b8bfcd184b52" target="_blank">
+      <img src="/images/song_how_long_will_i_love_you.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae" target="_blank">
+      <img src="/images/song_way_back_into_love.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4vJMCBtcBSr6JbAtdGIWS8?si=507a8f4e274f471e" target="_blank">
+      <img src="/images/song_逍遙嘆.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5bj04W68MNmSK1n6Tbndgz?si=0583843200164df8" target="_blank">
+      <img src="/images/song_星月神話.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6LLyiqMoNoex4Zu0ka4iF2?si=2932adf7905846af" target="_blank">
+      <img src="/images/song_唯一.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3IVh5aVZdYYxKtJ0yTap1h?si=a4d72f72496746b8" target="_blank">
+      <img src="/images/song_期待愛.png">
+    </a>
+  </div>
+
  
 
 
