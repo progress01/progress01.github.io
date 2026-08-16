@@ -433,6 +433,24 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/75bAn0lAPUBoxM0RYsKGUu?si=8a107eaee4ca4520" target="_blank">
+      <img src="/images/song_tears.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7qiZ0zNWtJsoUQVoCLwi7l?si=e7d3bf64e5524801" target="_blank">
+      <img src="/images/song_愛作夢的人.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1jwwyhTZw5QRFnCCmCdhT5?si=f25c5d1740ad4c2e" target="_blank">
+      <img src="/images/song_親愛的你啊.png">
+    </a>
+  </div>
+
  
 
 
