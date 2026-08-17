@@ -451,6 +451,30 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1zCSc8I5104P9uiIajdZuT?si=ba99c97a581245ab" target="_blank">
+      <img src="/images/song_愛丫愛丫.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7yyEGv4E98hUli34NVq40s?si=f836304296dc48d2" target="_blank">
+      <img src="/images/song_葉子.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7ronMHt2hVGfpag6m27wd9?si=046898e5260548ea" target="_blank">
+      <img src="/images/song_一千年以後.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3SViwkY1IP8cVvcBmcIkxn?si=450a415c89194778" target="_blank">
+      <img src="/images/song_一直很安靜.png">
+    </a>
+  </div>
+
  
 
 
