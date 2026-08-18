@@ -475,6 +475,30 @@ comments: false
     </a>
   </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/22Dglcz1VwyXTCEBt6PIdG?si=4b158bcedbf64e97" target="_blank">
+      <img src="/images/song_不是我不明白.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/26so7ajU82ioMhfYQTuIhR?si=76a4628773ff4c19" target="_blank">
+      <img src="/images/song_我們的歌.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2sky5wSdKFF7nuoA8kB5dx?si=c0447a4b18aa4ff1" target="_blank">
+      <img src="/images/song_你不在.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4ugY7kSA3vbhvE6YrgDv28?si=6dac9cc020f8492d" target="_blank">
+      <img src="/images/song_第一個清晨.png">
+    </a>
+  </div>
+
  
 
 
