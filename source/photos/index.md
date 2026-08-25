@@ -8,6 +8,12 @@ comments: false
 <div class="ig-grid">
 
   <div class="ig-card">
+    <a href="https://www.books.com.tw/products/0010910694" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/book_基地.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://search.worldcat.org/zh-tw/title/1230345777" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_明天別再來敲門.png">
     </a>
