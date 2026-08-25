@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #df6a9f;
+    background: #adaa67;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2964,7 +2964,8 @@ body {
 }
 /* 桌機側邊列：跟文章內容同步捲動 */
 @media (min-width: 992px) {
-  .main > .column > .sidebar {
+  .main > .column > .sidebar,
+  .main > .column > .sidebar .post-toc {
     position: static;
   }
 }
