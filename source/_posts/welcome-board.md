@@ -1,4 +1,5 @@
 ---
+categories: [站務]
 title: System Ready...
 date: 2026-01-21 21:00:00
 sticky: 100

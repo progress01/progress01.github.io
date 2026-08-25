@@ -103,17 +103,10 @@ open_graph:
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
-  #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
-  photos: /photos/ || fa fa-camera
+  categories: /categories/ || fa fa-th
   reading: /reading-log/ || fa fa-book
-  random: /random/ || fa fa-dice
-  calendar: /calendar/ || fa fa-calendar
+  photos: /photos/ || fa fa-camera
+  # 標籤、歸檔、隨機文章與熱力圖保留頁面，但不放在主要導覽列。
 
 # Enable / Disable menu icons / item badges.
 menu_settings:

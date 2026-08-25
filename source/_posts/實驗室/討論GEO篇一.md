@@ -1,4 +1,5 @@
 ---
+categories: [觀念與實驗]
 title: "討論GEO篇一"
 date: 2026-04-06 17:00:00
 tags: [GEO, 網站流量]

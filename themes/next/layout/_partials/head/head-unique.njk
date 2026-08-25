@@ -12,6 +12,38 @@
   {%- set canonical = canonical | replace(r/\.html$/, '') %}
 {%- endif %}
 <link rel="canonical" href="{{ canonical }}">
+
+{%- set page_url = url %}
+{%- set page_name = page.title or config.title %}
+{%- set page_description = page.description or config.description %}
+{%- set is_article = page.layout === 'post' or page.type === 'post' %}
+{%- set is_homepage = is_home() %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {% if is_article %}"Article"{% elif is_homepage %}"WebSite"{% else %}"WebPage"{% endif %},
+  "@id": {{ page_url | dump | safe }},
+  "url": {{ page_url | dump | safe }},
+  "name": {{ page_name | dump | safe }},
+  "description": {{ page_description | dump | safe }}{% if is_article %},
+  "headline": {{ page.title | dump | safe }},
+  "datePublished": {{ moment(page.date).format() | dump | safe }},
+  "dateModified": {{ moment(page.updated or page.date).format() | dump | safe }},
+  "author": {
+    "@type": "Person",
+    "name": {{ config.author | dump | safe }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ config.title | dump | safe }}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page_url | dump | safe }}
+  }{% endif %}
+}
+</script>
+
 {%- if page.noindex %}
 <meta name="robots" content="noindex">
 {%- endif %}

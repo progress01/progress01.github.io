@@ -1,4 +1,5 @@
 ---
+categories: [音樂]
 title: 歌曲推薦-When you say nothing at all
 date: 2026-01-22 12:00:30
 tags: [音樂推薦, 專輯插圖]

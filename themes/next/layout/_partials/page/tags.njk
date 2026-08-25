@@ -1,16 +1,16 @@
-<div class="tag-cloud">
-  <div class="tag-cloud-title">
-    {{ _p('counter.tag_cloud', site.tags.length) }}
-  </div>
-  <div class="tag-cloud-tags">
-    {{ tagcloud({
-      min_font: theme.tagcloud.min,
-      max_font: theme.tagcloud.max,
-      amount  : theme.tagcloud.amount,
-      orderby : theme.tagcloud.orderby,
-      order   : theme.tagcloud.order,
-      class   : 'tag-cloud'
-      })
-    }}
-  </div>
+<div class="tag-index-page">
+  <div class="tag-index-title">常用標籤（顯示文章數量）</div>
+  <p class="tag-index-note">
+    音樂推薦、專輯插圖、實驗室已由內容分類承擔；舊標籤連結仍保留相容。
+  </p>
+  <ul class="tag-index-list" itemprop="keywords">
+    {% for tag in site.tags.sort('name', 1).toArray() %}
+      {% if tag.name != '音樂推薦' and tag.name != '專輯插圖' and tag.name != '實驗室' %}
+        <li class="tag-index-list-item">
+          <a class="tag-index-list-link" href="{{ url_for(tag.path) }}" rel="tag">{{ tag.name }}</a>
+          <span class="tag-index-list-count">{{ tag.length }}</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>

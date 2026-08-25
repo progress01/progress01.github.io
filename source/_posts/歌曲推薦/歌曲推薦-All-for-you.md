@@ -1,4 +1,5 @@
 ---
+categories: [音樂]
 title: 歌曲推薦-All for you
 date: 2026-01-09 12:00:00
 tags: [音樂推薦, 專輯插圖]

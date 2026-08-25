@@ -8,13 +8,13 @@ comments: false
 <div class="ig-grid">
 
   <div class="ig-card">
-    <a href="https://www.books.com.tw/products/0010910694" target="_blank">
+    <a href="/2026/08/25/閱讀影評/基地/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_基地.png">
     </a>
   </div>
 
   <div class="ig-card">
-    <a href="https://search.worldcat.org/zh-tw/title/1230345777" target="_blank">
+    <a href="/2022/07/31/閱讀影評/明天別再來敲門/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_明天別再來敲門.png">
     </a>
   </div>
@@ -32,13 +32,13 @@ comments: false
   </div>
 
   <div class="ig-card">
-    <a href="https://search.worldcat.org/zh-tw/title/1462579612" target="_blank">
+    <a href="/2025/04/09/閱讀影評/女給時代：1930年代臺灣的珈琲店文化/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_女給時代.png">
     </a>
   </div>
 
   <div class="ig-card">
-    <a href="https://www.google.com/search?q=%E8%8B%A5%E8%8D%89%E7%89%A9%E8%88%87&oq=%E8%8B%A5%E8%8D%89%E7%89%A9%E8%88%87&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTQyODFqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8" target="_blank">
+    <a href="/2024/12/24/閱讀影評/若草物語-戀愛姐妹與無法戀愛的我/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/drama_若草物語.png">
     </a>
   </div>
@@ -50,7 +50,7 @@ comments: false
   </div>
 
   <div class="ig-card">
-    <a href="https://search.worldcat.org/zh-tw/title/1433650799?oclcNum=1433650799" target="_blank">
+    <a href="/2025/01/07/閱讀影評/請不要在大家面前稱讚我/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_請不要在大家面前稱讚我.png">
     </a>
   </div>
@@ -74,13 +74,13 @@ comments: false
   </div>
 
   <div class="ig-card">
-    <a href="https://search.worldcat.org/zh-tw/title/1149386794" target="_blank">
+    <a href="/2025/04/09/閱讀影評/呼吸/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_呼吸.png">
     </a>
   </div>
 
   <div class="ig-card">
-    <a href="https://search.worldcat.org/zh-tw/title/1547689657" target="_blank">
+    <a href="/2026/01/24/閱讀影評/畫出心之所嚮/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_畫出心之所嚮.png">
     </a>
   </div>
@@ -92,7 +92,7 @@ comments: false
   </div>
 
    <div class="ig-card">
-    <a href="https://www.disneyplus.com/zh-tw/browse/entity-51d214e4-5fc3-49e2-b658-4d06caddebb9" target="_blank">
+    <a href="/2025/04/28/閱讀影評/來自地獄的法官/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/drama_來自地獄的法官.png">
     </a>
   </div> 
@@ -505,10 +505,83 @@ comments: false
     </a>
   </div>
 
- 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0L5voMzioUFL6Pm07tfvRW?si=c77add712f7b4ae5" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_夜行性動物.png">
+    </a>
+  </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6GmRxBfE68sxJBRcMsKvtU?si=cf9bd1d1aabf4c37" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_噓.png">
+    </a>
+  </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5oX05zSKGE4uFZakzvg0B0?si=5f325986bc3c419c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_아로하.png">
+    </a>
+  </div>
 
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2y2Aho30oC8SugthFyWdsW?si=2c842b927d2e479c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_無窮.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4d9EqrvrcbA50QmauFLYMn?si=b3ab23a710ad4a77" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_就值得愛了.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0mf2l317Gqar2mS1ynEdbd?si=8c5c30032b7549ca" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Secret_of_my_heart.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3X7uFMzJrEE0sxn62qd8Ch?si=e7a08769fd0d460a" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Nothing‘s_Gonna_Stop_Us_Now.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6KsUOp85auZgdfgau8gSiZ?si=16d266d1e376424d" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Hyehwa_dong.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7rU6Iebxzlvqy5t857bKFq?si=a427f6a2c05e44d6" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_プラスティック・ラブ.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2Zca2tML8v9K9gWskcKoUS?si=30f6b74d93c14041" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_それぞれに.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6Ho58vQUjGnBU9m8Z6uNcv?si=df06c1181bd14a8a" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Tally.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1UbXXZMnlsyfZ5ziKNxJ7y?si=961116c6e6fb4bf9" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Don_t_You_Worry.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0K25zmumCzn2kFmh9zcLWy?si=6ed7fe04fc3e482d" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Candy.png">
+    </a>
+  </div>
 </div>
 
 <script>

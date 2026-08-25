@@ -1,4 +1,5 @@
 ---
+categories: [音樂]
 title: 歌曲推薦-I love you無望
 date: 2026-01-28 12:00:28
 tags: [音樂推薦, 專輯插圖]

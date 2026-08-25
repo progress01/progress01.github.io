@@ -1,4 +1,5 @@
 ---
+categories: [音樂]
 title: 歌曲推薦-You are not alone
 date: 2026-01-27 12:00:18
 tags: [音樂推薦, 專輯插圖]
