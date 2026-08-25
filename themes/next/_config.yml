@@ -106,7 +106,9 @@ menu:
   categories: /categories/ || fa fa-th
   reading: /reading-log/ || fa fa-book
   photos: /photos/ || fa fa-camera
-  # 標籤、歸檔、隨機文章與熱力圖保留頁面，但不放在主要導覽列。
+  random: /random/ || fa fa-dice
+  calendar: /calendar/ || fa fa-calendar
+  # 標籤與歸檔保留頁面，但不放在主要導覽列。
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
