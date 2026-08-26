@@ -14,6 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const input = document.querySelector('.search-input');
   const container = document.querySelector('.search-result-container');
+  const emptyMessageTemplate = CONFIG.i18n.empty || '找不到與「${query}」相關的文章或紀錄';
+  const recentMarkup = container.innerHTML;
+  let selectedCategory = 'all';
+  const escapeHtml = text => text.replace(/[&<>"']/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+  const renderEmptyState = (icon, message) => `<div class="search-empty-state"><i class="${icon} fa-3x"></i><p>${message}</p></div>`;
+  const renderRecent = (category = selectedCategory) => {
+    selectedCategory = category;
+    container.innerHTML = recentMarkup;
+    const recent = container.querySelector('[data-search-recent]');
+    if (!recent) return;
+
+    recent.querySelectorAll('[data-search-category]').forEach(button => {
+      const isActive = button.dataset.searchCategory === selectedCategory;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    const recentItems = [...recent.querySelectorAll('[data-search-recent-item]')];
+    const matchingItems = selectedCategory === 'all'
+      ? recentItems.filter(item => Number(item.dataset.searchRecentRank) < 10)
+      : recentItems.filter(item => {
+        const categories = item.dataset.searchRecentCategories.split('|');
+        return categories.includes(selectedCategory);
+      }).slice(0, 10);
+    const visibleSet = new Set(matchingItems);
+    const visibleItems = recentItems.filter(item => {
+      const isVisible = visibleSet.has(item);
+      item.hidden = !isVisible;
+      return isVisible;
+    });
+    const recentNote = recent.querySelector('[data-search-recent-note]');
+    if (recentNote) recentNote.textContent = selectedCategory === 'all' ? '最近 10 篇' : '分類內最新 10 篇';
+    const emptyState = recent.querySelector('[data-search-recent-empty]');
+    if (emptyState) emptyState.hidden = visibleItems.length > 0;
+  };
 
   const inputEventFunction = () => {
     if (!localSearch.isfetched) return;
@@ -24,10 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // Perform local searching
       resultItems = localSearch.getResultItems(keywords);
     }
-    if (keywords.length === 1 && keywords[0] === '') {
-      container.innerHTML = '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
+    if (searchText.length === 0) {
+      renderRecent(selectedCategory);
     } else if (resultItems.length === 0) {
-      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+      const message = emptyMessageTemplate.replace('${query}', escapeHtml(searchText));
+      container.innerHTML = renderEmptyState('far fa-frown', message);
     } else {
       resultItems.sort((left, right) => {
         if (left.includedCount !== right.includedCount) {
@@ -53,6 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   input.addEventListener('input', inputEventFunction);
   window.addEventListener('search:loaded', inputEventFunction);
+  container.addEventListener('click', event => {
+    const button = event.target.closest('[data-search-category]');
+    if (!button || input.value.trim()) return;
+    renderRecent(button.dataset.searchCategory);
+  });
 
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {

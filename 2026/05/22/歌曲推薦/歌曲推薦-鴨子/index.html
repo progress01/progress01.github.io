@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋文章、標籤或關鍵字…","prompt":"輸入關鍵字，開始找回文章與紀錄。","empty":"找不到與「${query}」相關的文章或紀錄","hits_time":"找到 ${hits} 篇文章（約 ${time} 毫秒）","hits":"找到 ${hits} 篇文章"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="推薦 蘇慧倫 的 鴨子              出自專輯 鴨子(同名專輯)              收聽連結 -&gt; 點此前往">
 <meta property="og:type" content="article">
@@ -157,17 +157,857 @@
         </span>
         <div class="search-input-container">
           <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜尋..." spellcheck="false"
+                placeholder="搜尋文章、標籤或關鍵字…" spellcheck="false"
                 type="search" class="search-input">
         </div>
         <span class="popup-btn-close" role="button">
           <i class="fa fa-times-circle"></i>
         </span>
       </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
+      <div class="search-result-container" aria-live="polite">
+        <section class="search-recent" data-search-recent aria-label="最近更新文章">
+          <div class="search-recent-heading">
+            <span class="search-recent-kicker">JUST IN / 最近更新</span>
+            <span class="search-recent-note" data-search-recent-note>最近 10 篇</span>
+          </div>
+
+          <div class="search-category-tabs" role="tablist" aria-label="依文章分類瀏覽">
+            <button class="search-category-tab is-active" type="button" role="tab" aria-selected="true" data-search-category="all">全部</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="站務">站務</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="觀念與實驗">觀念與實驗</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="閱讀與影視">閱讀與影視</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="音樂">音樂</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="生活紀錄">生活紀錄</button>
+          </div>
+
+          <div class="search-recent-list">
+              <a class="search-recent-item" href="/2026/08/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%9D%9E%E6%AD%A3%E5%B8%B8%E7%BE%8E%E9%A3%9F%E6%96%87/" data-search-recent-item data-search-recent-rank="0" data-search-recent-categories="閱讀與影視">
+                <time class="search-recent-date" datetime="2026-08-26T12:00:00+08:00">08-26</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">非正常美食文(網路小說閱讀紀錄)</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%9F%BA%E5%9C%B0/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="閱讀與影視">
+                <time class="search-recent-date" datetime="2026-08-25T12:00:00+08:00">08-25</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">基地-書籍閱讀紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%B6%E5%AF%A6%E9%83%BD%E6%B2%92%E6%9C%89/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-08-06T12:00:00+08:00">08-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-其實都沒有</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%AD%94%E6%A1%88/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-08-05T12:00:00+08:00">08-05</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-答案</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-kiss-me/" data-search-recent-item data-search-recent-rank="4" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-08-04T12:00:00+08:00">08-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-kiss me</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Right-here-waiting/" data-search-recent-item data-search-recent-rank="5" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-07-31T12:00:00+08:00">07-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Right Here Waiting</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-My-heart-will-go-on/" data-search-recent-item data-search-recent-rank="6" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-07-30T12:00:00+08:00">07-30</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-My Heart Will Go On</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-How-long-will-I-love-you/" data-search-recent-item data-search-recent-rank="7" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-07-29T12:00:00+08:00">07-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-How long will I love you</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Way-back-into-love/" data-search-recent-item data-search-recent-rank="8" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-07-28T12:00:00+08:00">07-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Way back into love</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%8D%E9%81%99%E5%98%86/" data-search-recent-item data-search-recent-rank="9" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-07-27T12:00:00+08:00">07-27</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-逍遙嘆</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%98%9F%E6%9C%88%E7%A5%9E%E8%A9%B1/" data-search-recent-item data-search-recent-rank="10" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-24T12:00:00+08:00">07-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-星月神話</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%94%AF%E4%B8%80/" data-search-recent-item data-search-recent-rank="11" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-23T12:00:00+08:00">07-23</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-唯一</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%9F%E5%BE%85%E6%84%9B/" data-search-recent-item data-search-recent-rank="12" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-22T12:00:00+08:00">07-22</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-期待愛</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-tears/" data-search-recent-item data-search-recent-rank="13" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-21T12:00:00+08:00">07-21</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Tears</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9B%E4%BD%9C%E5%A4%A2%E7%9A%84%E4%BA%BA/" data-search-recent-item data-search-recent-rank="14" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-20T12:00:00+08:00">07-20</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-愛作夢的人</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%A6%AA%E6%84%9B%E7%9A%84%E4%BD%A0%E5%95%8A/" data-search-recent-item data-search-recent-rank="15" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-17T12:00:00+08:00">07-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-親愛的你啊</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9B%E4%B8%AB%E6%84%9B%E4%B8%AB/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-16T12:00:00+08:00">07-16</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-愛丫愛丫</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%91%89%E5%AD%90/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-15T12:00:00+08:00">07-15</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-葉子</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E5%8D%83%E5%B9%B4%E4%BB%A5%E5%BE%8C/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-14T12:00:00+08:00">07-14</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-一千年以後</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E7%9B%B4%E5%BE%88%E5%AE%89%E9%9D%9C/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-13T12:00:00+08:00">07-13</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-一直很安靜</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%8D%E6%98%AF%E6%88%91%E4%B8%8D%E6%98%8E%E7%99%BD/" data-search-recent-item data-search-recent-rank="20" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-09T12:00:00+08:00">07-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-不是我不明白</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%AD%8C/" data-search-recent-item data-search-recent-rank="21" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-08T12:00:00+08:00">07-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-我們的歌</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E4%B8%8D%E5%9C%A8/" data-search-recent-item data-search-recent-rank="22" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-07T12:00:00+08:00">07-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-你不在</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/07/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%AC%AC%E4%B8%80%E5%80%8B%E6%B8%85%E6%99%A8/" data-search-recent-item data-search-recent-rank="23" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-07-06T12:00:00+08:00">07-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-第一個清晨</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%B4%A8%E5%AD%90/" data-search-recent-item data-search-recent-rank="24" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-22T12:00:00+08:00">05-22</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-鴨子</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%90%86%E6%83%B3/" data-search-recent-item data-search-recent-rank="25" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-21T12:00:00+08:00">05-21</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-理想</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8B%95%E4%B8%8D%E5%8B%95%E5%B0%B1%E8%AA%AA%E6%84%9B%E6%88%91/" data-search-recent-item data-search-recent-rank="26" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-20T12:00:00+08:00">05-20</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-動不動就說愛我</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-From-The-Start/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-19T12:00:00+08:00">05-19</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-From The Start</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%80%E6%9B%B21990/" data-search-recent-item data-search-recent-rank="28" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-18T12:00:00+08:00">05-18</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-戀曲1990</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%8A%B1%E8%91%97%E4%BD%A0/" data-search-recent-item data-search-recent-rank="29" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-15T12:00:00+08:00">05-15</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-抱著你</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E5%88%87%E5%86%8D%E9%87%8D%E4%BE%86/" data-search-recent-item data-search-recent-rank="30" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-14T12:00:00+08:00">05-14</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-一切再重來</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%85%A2%E7%81%AB%E8%BB%8A/" data-search-recent-item data-search-recent-rank="31" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-13T12:00:00+08:00">05-13</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-慢火車</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/12/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%95%99%E4%B8%8D%E4%BD%8F%E7%9A%84%E6%95%85%E4%BA%8B/" data-search-recent-item data-search-recent-rank="32" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-12T12:00:00+08:00">05-12</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-留不住的故事</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E7%82%BA%E4%BD%A0%E5%82%B7%E5%BF%83/" data-search-recent-item data-search-recent-rank="33" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-11T12:00:00+08:00">05-11</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-我為你傷心</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%BB%A3%E5%B3%B6%E4%B9%8B%E6%88%80/" data-search-recent-item data-search-recent-rank="34" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-08T12:00:00+08:00">05-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-廣島之戀</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85/" data-search-recent-item data-search-recent-rank="35" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-07T12:00:00+08:00">05-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-一見鍾情</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E4%B8%80%E5%80%8B%E4%BA%BA%E4%BD%8F/" data-search-recent-item data-search-recent-rank="36" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-06T12:00:00+08:00">05-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-我一個人住</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%B6%E5%AF%A6%E6%88%91%E7%9C%9F%E7%9A%84%E5%BE%88%E5%9C%A8%E4%B9%8E/" data-search-recent-item data-search-recent-rank="37" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-05T12:00:00+08:00">05-05</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-其實我真的很在乎</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/05/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E4%B8%96%E6%83%85%E7%B7%A3/" data-search-recent-item data-search-recent-rank="38" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-05-04T12:00:00+08:00">05-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-一世情緣</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%8B%A5%E6%88%91%E5%91%8A%E8%A8%B4%E4%BD%A0%E5%85%B6%E5%AF%A6%E6%88%91%E6%84%9B%E7%9A%84%E5%8F%AA%E6%98%AF%E4%BD%A0/" data-search-recent-item data-search-recent-rank="39" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-04-30T12:00:00+08:00">04-30</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-若我告訴你其實我愛的只是你</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%87%83%E7%87%92%E4%B8%80%E7%9E%AC%E9%96%93/" data-search-recent-item data-search-recent-rank="40" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-04-29T12:00:00+08:00">04-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-燃燒一瞬間</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%99%E4%BA%9B%E6%97%A5%E5%AD%90%E4%BB%A5%E4%BE%86/" data-search-recent-item data-search-recent-rank="41" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-04-28T12:00:00+08:00">04-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-這些日子以來</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%A0%E7%82%BA%E5%AF%82%E5%AF%9E/" data-search-recent-item data-search-recent-rank="42" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-04-27T12:00:00+08:00">04-27</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-因為寂寞</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/" data-search-recent-item data-search-recent-rank="43" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-04-06T17:00:00+08:00">04-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">討論GEO篇一</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%94%BE%E9%A2%A8%E5%90%B9/" data-search-recent-item data-search-recent-rank="44" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-04-02T12:00:05+08:00">04-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-放風吹</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/04/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%86%8D%E6%9C%83%E5%95%A6%E5%BF%83%E6%84%9B%E7%9A%84%E7%84%A1%E7%B7%A3%E7%9A%84%E4%BA%BA/" data-search-recent-item data-search-recent-rank="45" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-04-01T12:00:52+08:00">04-01</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-再會啦心愛的無緣的人</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/03/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9B%B2%E4%B8%AD%E6%9C%88%E5%9C%93/" data-search-recent-item data-search-recent-rank="46" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-03-31T12:00:29+08:00">03-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-雲中月圓</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/03/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%8C%AB%E8%8C%AB%E5%88%B0%E6%B7%B1%E6%9B%B4/" data-search-recent-item data-search-recent-rank="47" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-03-30T12:00:56+08:00">03-30</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-茫茫到深更</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%BF%98%E4%BA%86%E4%BD%A0%E5%BF%98%E4%BA%86%E6%88%91/" data-search-recent-item data-search-recent-rank="48" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-23T12:50:40+08:00">02-23</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-忘了你忘了我</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%80%E6%88%80%E9%A2%A8%E5%A1%B5/" data-search-recent-item data-search-recent-rank="49" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-13T12:00:32+08:00">02-13</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-戀戀風塵</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/12/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%95%85%E4%BA%8B/" data-search-recent-item data-search-recent-rank="50" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-12T12:00:19+08:00">02-12</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-我們的故事</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B7%9A%E6%B5%B7/" data-search-recent-item data-search-recent-rank="51" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-11T12:00:49+08:00">02-11</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-淚海</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E9%9B%BB%E5%BD%B1%E4%BA%BA%E7%9A%84%E6%83%85%E6%9B%B8/" data-search-recent-item data-search-recent-rank="52" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-10T12:00:23+08:00">02-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-給電影人的情書</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%84%A1%E7%9C%A0/" data-search-recent-item data-search-recent-rank="53" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-09T12:00:41+08:00">02-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-無眠</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%84%A1%E5%BA%95%E6%B4%9E/" data-search-recent-item data-search-recent-rank="54" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-06T12:00:00+08:00">02-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-無底洞</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%88%8A%E6%84%9B/" data-search-recent-item data-search-recent-rank="55" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-05T12:00:56+08:00">02-05</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-舊愛</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E5%A5%BD%E5%97%8E/" data-search-recent-item data-search-recent-rank="56" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-04T12:00:54+08:00">02-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-你好嗎</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%9C%A8%E7%B4%90%E7%B4%84%E6%89%93%E9%9B%BB%E8%A9%B1%E7%B5%A6%E4%BD%A0/" data-search-recent-item data-search-recent-rank="57" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-03T12:00:11+08:00">02-03</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-我在紐約打電話給你</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%82%84%E6%82%84%E5%91%8A%E8%A8%B4%E5%A5%B9/" data-search-recent-item data-search-recent-rank="58" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-02-02T12:00:54+08:00">02-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-悄悄告訴她</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/" data-search-recent-item data-search-recent-rank="59" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-02-02T12:00:00+08:00">02-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">混亂日常的一個「存檔點」工具設計</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/" data-search-recent-item data-search-recent-rank="60" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-30T12:00:39+08:00">01-30</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-free magic</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%AB/" data-search-recent-item data-search-recent-rank="61" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-29T12:00:00+08:00">01-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-愫</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-I-love-you%E7%84%A1%E6%9C%9B/" data-search-recent-item data-search-recent-rank="62" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-28T12:00:28+08:00">01-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-I love you無望</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-You-are-not-alone/" data-search-recent-item data-search-recent-rank="63" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-27T12:00:18+08:00">01-27</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-You are not alone</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/" data-search-recent-item data-search-recent-rank="64" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-26T12:00:00+08:00">01-26</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-回到過去</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/" data-search-recent-item data-search-recent-rank="65" data-search-recent-categories="站務" hidden>
+                <time class="search-recent-date" datetime="2026-01-25T01:22:38+08:00">01-25</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">站務</span>
+                  <span class="search-recent-title">部落格改版規劃</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/" data-search-recent-item data-search-recent-rank="66" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-01-24T14:21:24+08:00">01-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">畫出心之所嚮-書籍閱讀紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%BC%A9%E5%AD%90%E7%9A%84%E5%AD%A4%E5%96%AE/" data-search-recent-item data-search-recent-rank="67" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-23T12:00:54+08:00">01-23</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-一輩子的孤單</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-When-you-say-nothing-at-all/" data-search-recent-item data-search-recent-rank="68" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-22T12:00:30+08:00">01-22</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-When you say nothing at all</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/21/welcome-board/" data-search-recent-item data-search-recent-rank="69" data-search-recent-categories="站務" hidden>
+                <time class="search-recent-date" datetime="2026-01-21T21:00:00+08:00">01-21</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">站務</span>
+                  <span class="search-recent-title">System Ready...</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%AA%AA%EF%BC%8C%E4%BD%A0%E6%84%9B%E6%88%91/" data-search-recent-item data-search-recent-rank="70" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-21T12:00:54+08:00">01-21</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-說，你愛我</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A6%82%E4%BD%A0%E6%89%80%E9%A1%98/" data-search-recent-item data-search-recent-rank="71" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-20T12:00:00+08:00">01-20</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-如你所願</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Free-Loop/" data-search-recent-item data-search-recent-rank="72" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-19T12:00:00+08:00">01-19</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Free Loop</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Wonderful-tonight/" data-search-recent-item data-search-recent-rank="73" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-16T12:00:18+08:00">01-16</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Wonderful tonight</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/" data-search-recent-item data-search-recent-rank="74" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-15T12:00:00+08:00">01-15</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Nothing‘s Gonna Stop Us Now</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%8A%E4%B8%8A%E7%B1%A4/" data-search-recent-item data-search-recent-rank="75" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-14T12:00:54+08:00">01-14</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-上上籤</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%99%82%E9%96%93/" data-search-recent-item data-search-recent-rank="76" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-13T12:00:00+08:00">01-13</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-給我一首歌的時間</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/12/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Secret-of-my-heart/" data-search-recent-item data-search-recent-rank="77" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-12T12:00:00+08:00">01-12</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Secret of my heart</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-All-for-you/" data-search-recent-item data-search-recent-rank="78" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-09T12:00:00+08:00">01-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-All for you</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Candy/" data-search-recent-item data-search-recent-rank="79" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-08T12:00:00+08:00">01-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Candy</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%EC%95%84%EB%A1%9C%ED%95%98/" data-search-recent-item data-search-recent-rank="80" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-07T12:00:00+08:00">01-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-아로하</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Hyehwa-dong/" data-search-recent-item data-search-recent-rank="81" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-06T12:00:00+08:00">01-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Hyehwa dong</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%B0%B1%E5%80%BC%E5%BE%97%E6%84%9B%E4%BA%86/" data-search-recent-item data-search-recent-rank="82" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-05T12:00:00+08:00">01-05</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-就值得愛了</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%AB/" data-search-recent-item data-search-recent-rank="83" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-01-02T12:00:00+08:00">01-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-それぞれに</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Tally/" data-search-recent-item data-search-recent-rank="84" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-31T12:00:00+08:00">12-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Tally</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Don-t-You-Worry/" data-search-recent-item data-search-recent-rank="85" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-30T12:00:00+08:00">12-30</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Don't You Worry</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%97%8D%E8%89%B2%E7%9C%BC%E7%9D%9B/" data-search-recent-item data-search-recent-rank="86" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-29T12:00:00+08:00">12-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-藍色眼睛</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E3%83%97%E3%83%A9%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%A9%E3%83%96/" data-search-recent-item data-search-recent-rank="87" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-26T12:00:00+08:00">12-26</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-プラスティック・ラブ</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Better-Man/" data-search-recent-item data-search-recent-rank="88" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-25T12:00:00+08:00">12-25</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Better Man</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%A5%9E%E8%A9%B1/" data-search-recent-item data-search-recent-rank="89" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-24T12:00:00+08:00">12-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-神話</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A4%9C%E8%A1%8C%E6%80%A7%E5%8B%95%E7%89%A9/" data-search-recent-item data-search-recent-rank="90" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-23T12:00:00+08:00">12-23</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-夜行性動物</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%99%93/" data-search-recent-item data-search-recent-rank="91" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-12-21T12:00:00+08:00">12-21</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-噓</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/" data-search-recent-item data-search-recent-rank="92" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-10-24T12:00:00+08:00">10-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-2375</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%84%A1%E7%AA%AE/" data-search-recent-item data-search-recent-rank="93" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-無窮</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/09/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%B0%8F%E9%A2%A8%E6%B3%A2/" data-search-recent-item data-search-recent-rank="94" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2025-09-08T12:00:00+08:00">09-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-小風波</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/" data-search-recent-item data-search-recent-rank="95" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2025-06-16T23:47:27+08:00">06-16</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+3天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/" data-search-recent-item data-search-recent-rank="96" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-28T00:55:27+08:00">04-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">來自地獄的法官-影片紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/" data-search-recent-item data-search-recent-rank="97" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">呼吸-書籍閱讀紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/" data-search-recent-item data-search-recent-rank="98" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">女給時代：1930年代臺灣的珈琲店文化-書籍閱讀紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/01/07/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91/" data-search-recent-item data-search-recent-rank="99" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-01-07T01:34:55+08:00">01-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">請不要在大家面前稱讚我-書籍閱讀紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2024/12/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E-%E6%88%80%E6%84%9B%E5%A7%90%E5%A6%B9%E8%88%87%E7%84%A1%E6%B3%95%E6%88%80%E6%84%9B%E7%9A%84%E6%88%91/" data-search-recent-item data-search-recent-rank="100" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2024-12-24T08:55:13+08:00">12-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">若草物語-戀愛姐妹與無法戀愛的我-影片紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/" data-search-recent-item data-search-recent-rank="101" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2024-08-06T23:47:27+08:00">08-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+2天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80/" data-search-recent-item data-search-recent-rank="102" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2022-07-31T23:21:24+08:00">07-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">明天別再來敲門-書籍閱讀紀錄</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+          </div>
+          <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有更新，可以直接搜尋完整紀錄。</p>
+        </section>
       </div>
     </div>
   </div>
@@ -202,7 +1042,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-count">103</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -239,7 +1079,7 @@
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content post-content-song" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/05/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%B4%A8%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -345,7 +1185,7 @@
             <h3 style="margin: 0 0 15px 0; font-size: 1.2em; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
               📚 延伸閱讀 (猜你也喜歡...)
             </h3>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/" title="歌曲推薦-All for you" rel="bookmark">歌曲推薦-All for you</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/12/25/歌曲推薦/歌曲推薦-Better-Man/" title="歌曲推薦-Better Man" rel="bookmark">歌曲推薦-Better Man</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/10/24/歌曲推薦/歌曲推薦-2375/" title="歌曲推薦-2375" rel="bookmark">歌曲推薦-2375</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/12/30/歌曲推薦/歌曲推薦-Don-t-You-Worry/" title="歌曲推薦-Don't You Worry" rel="bookmark">歌曲推薦-Don't You Worry</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2026/01/19/歌曲推薦/歌曲推薦-Free-Loop/" title="歌曲推薦-Free Loop" rel="bookmark">歌曲推薦-Free Loop</a></h3></div></li></ul>
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/10/24/歌曲推薦/歌曲推薦-2375/" title="歌曲推薦-2375" rel="bookmark">歌曲推薦-2375</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/" title="歌曲推薦-All for you" rel="bookmark">歌曲推薦-All for you</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/12/25/歌曲推薦/歌曲推薦-Better-Man/" title="歌曲推薦-Better Man" rel="bookmark">歌曲推薦-Better Man</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2025/12/30/歌曲推薦/歌曲推薦-Don-t-You-Worry/" title="歌曲推薦-Don't You Worry" rel="bookmark">歌曲推薦-Don't You Worry</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2026/01/08/歌曲推薦/歌曲推薦-Candy/" title="歌曲推薦-Candy" rel="bookmark">歌曲推薦-Candy</a></h3></div></li></ul>
           </div>
         
   
@@ -415,13 +1255,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">42k</span>
+    <span title="總字數">47k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">38 分鐘</span>
+    <span title="所需總閱讀時間">42 分鐘</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
