@@ -68,10 +68,12 @@ state:
   tags: 標籤
   categories: 分類
 search:
-  placeholder: 搜尋...
-  empty: "我們無法找到任何有關 %s 的搜索結果"
-  hits_time: "找到 %s 個搜索結果（用時 %s 毫秒）"
-  hits: "找到 %s 個搜索結果"
+  placeholder: 搜尋文章、標籤或關鍵字…
+  loading: 正在整理文章索引……
+  prompt: 輸入關鍵字，開始找回文章與紀錄。
+  empty: "找不到與「%s」相關的文章或紀錄"
+  hits_time: "找到 %s 篇文章（約 %s 毫秒）"
+  hits: "找到 %s 篇文章"
 cheers:
   um: 嗯..
   ok: 還行

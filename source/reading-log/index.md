@@ -98,6 +98,8 @@ comments: false
   .life-index-section-heading > span { color: var(--life-orange); font: bold 12px "Courier New", monospace; }
   .life-index-section-heading h2 { margin: 0; color: var(--life-brown); font-size: 22px; }
   .life-index-section-heading small { margin-left: auto; color: #96745e; font-size: 10px; }
+  .life-index-section-heading small a { color: inherit; border-bottom: 1px solid #b48b6d; }
+  .life-index-section-heading small a:hover { color: var(--life-orange); text-decoration: none; }
 
   .life-index-now,
   .life-index-entry-grid { display: grid; gap: 12px; margin-top: 14px; }
@@ -145,7 +147,12 @@ comments: false
   .life-index-heatmap-legend i.level-3 { background: #5e9a70; }
   .life-index-heatmap-legend i.level-4 { background: #2f5d50; }
 
-  .life-index-log { display: flex; gap: 12px; margin-top: 14px; padding-bottom: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .life-index-log-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+  .life-index-log-hint { color: #96745e; font: 10px "Courier New", monospace; letter-spacing: .6px; }
+  .life-index-log-controls { display: flex; gap: 5px; }
+  .life-index-log-control { width: 28px; height: 26px; padding: 0; color: #f8e8ca; background: var(--life-blue); border: 1px solid #6d8790; font: 14px "Courier New", monospace; cursor: pointer; }
+  .life-index-log-control:hover { color: #fff4dc; background: var(--life-orange); border-color: var(--life-orange); }
+  .life-index-log { display: flex; gap: 12px; margin-top: 8px; padding: 2px 2px 10px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
   .life-index-log::-webkit-scrollbar { display: none; }
   .life-index-log-card {
     flex: 0 0 220px;
@@ -156,8 +163,10 @@ comments: false
     background: var(--life-brown);
     border: 1px solid #6b4738;
     box-shadow: 3px 3px 0 rgba(74, 48, 40, .16);
+    scroll-snap-align: start;
   }
-  .life-index-log-card.archive { display: flex; align-items: center; justify-content: center; color: #ffe0a8; background: var(--life-blue); text-align: center; }
+  .life-index-log-card.archive,
+  .life-index-log-card.archive:visited { display: flex; align-items: center; justify-content: center; color: #fff4dc !important; background: var(--life-blue); text-align: center; text-decoration: none; }
   .life-index-log-tag { position: absolute; top: 12px; right: 12px; color: var(--life-gold); font-size: 15px; }
   .life-index-log-date { display: block; padding-bottom: 7px; color: #d19b6f; border-bottom: 1px dashed #89604b; font: 10px "Courier New", monospace; }
   .life-index-log-content { margin-top: 12px; color: #f8e8ca; font-size: 13px; line-height: 1.7; }
@@ -230,7 +239,14 @@ comments: false
   </section>
 
   <section class="life-index-section">
-    <div class="life-index-section-heading"><span>D-01</span><h2>現場紀錄</h2><small>LIVE LOG</small></div>
+    <div class="life-index-section-heading"><span>D-01</span><h2>現場紀錄</h2><small><a href="/status/">看更多紀錄 ↗</a></small></div>
+    <div class="life-index-log-toolbar">
+      <span class="life-index-log-hint">← 左右滑動查看更多 →</span>
+      <div class="life-index-log-controls" aria-label="現場紀錄左右瀏覽">
+        <button class="life-index-log-control" type="button" data-log-scroll="prev" aria-label="查看較新的紀錄">←</button>
+        <button class="life-index-log-control" type="button" data-log-scroll="next" aria-label="查看較舊的紀錄">→</button>
+      </div>
+    </div>
     <div id="life-index-log" class="life-index-log"><div class="life-index-log-card">正在讀取最近的紀錄……</div></div>
   </section>
 
@@ -336,6 +352,13 @@ comments: false
     .then(function(data) {
       var container = document.getElementById('life-index-log');
       container.innerHTML = '';
+
+      var archive = document.createElement('a');
+      archive.href = '/status/';
+      archive.className = 'life-index-log-card archive';
+      archive.innerHTML = '<span><i class="fa fa-archive"></i><br>先看完整存檔 ↗</span>';
+      container.appendChild(archive);
+
       data.slice(0, 6).forEach(function(item) {
         var card = document.createElement('article');
         card.className = 'life-index-log-card';
@@ -344,14 +367,17 @@ comments: false
           '<div class="life-index-log-content">' + item.content + '</div>';
         container.appendChild(card);
       });
-      var archive = document.createElement('a');
-      archive.href = '/status/';
-      archive.className = 'life-index-log-card archive';
-      archive.innerHTML = '<span><i class="fa fa-archive"></i><br>查看歷史存檔 ↗</span>';
-      container.appendChild(archive);
     })
     .catch(function() {
       document.getElementById('life-index-log').innerHTML = '<div class="life-index-log-card">暫時沒有現場紀錄。</div>';
     });
+
+  document.querySelectorAll('[data-log-scroll]').forEach(function(button) {
+    button.addEventListener('click', function() {
+      var container = document.getElementById('life-index-log');
+      var direction = button.getAttribute('data-log-scroll') === 'next' ? 1 : -1;
+      container.scrollBy({ left: direction * Math.max(container.clientWidth * .82, 232), behavior: 'smooth' });
+    });
+  });
 </script>
 {% endraw %}

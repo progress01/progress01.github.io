@@ -14,10 +14,34 @@
           <i class="fa fa-times-circle"></i>
         </span>
       </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="{% if theme.algolia_search.enable %}fab fa-algolia{% elif theme.local_search.enable %}fa fa-spinner fa-pulse{% endif %} fa-5x"></i>
-        </div>
+      <div class="search-result-container" aria-live="polite">
+        <section class="search-recent" data-search-recent aria-label="最近更新文章">
+          <div class="search-recent-heading">
+            <span class="search-recent-kicker">JUST IN / 最近更新</span>
+            <span class="search-recent-note" data-search-recent-note>最近 10 篇</span>
+          </div>
+
+          <div class="search-category-tabs" role="tablist" aria-label="依文章分類瀏覽">
+            <button class="search-category-tab is-active" type="button" role="tab" aria-selected="true" data-search-category="all">全部</button>
+            {%- for category in site.categories.toArray() %}
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="{{ category.name }}">{{ category.name }}</button>
+            {%- endfor %}
+          </div>
+
+          <div class="search-recent-list">
+            {%- for post in site.posts.sort('date', -1).toArray() %}
+              <a class="search-recent-item" href="{{ url_for(post.path) }}" data-search-recent-item data-search-recent-rank="{{ loop.index0 }}" data-search-recent-categories="{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %}|{% endif %}{% endfor %}"{% if loop.index > 10 %} hidden{% endif %}>
+                <time class="search-recent-date" datetime="{{ moment(post.date).format() }}">{{ date(post.date, 'MM-DD') }}</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %} / {% endif %}{% endfor %}</span>
+                  <span class="search-recent-title">{{ post.title or __('post.untitled') }}</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+            {%- endfor %}
+          </div>
+          <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有更新，可以直接搜尋完整紀錄。</p>
+        </section>
       </div>
     </div>
   </div>

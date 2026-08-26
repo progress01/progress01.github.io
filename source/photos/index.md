@@ -14,6 +14,12 @@ comments: false
   </div>
 
   <div class="ig-card">
+    <a href="/2026/08/26/閱讀影評/非正常美食文/" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/book_非正常美食文.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="/2022/07/31/閱讀影評/明天別再來敲門/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_明天別再來敲門.png">
     </a>
