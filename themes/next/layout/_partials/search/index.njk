@@ -23,7 +23,8 @@
 
           <div class="search-category-tabs" role="tablist" aria-label="依文章分類瀏覽">
             <button class="search-category-tab is-active" type="button" role="tab" aria-selected="true" data-search-category="all">全部</button>
-            {%- for category in site.categories.toArray() %}
+            {# 分類清單集中在 source/_data/content-categories.yml；站務不列入內容篩選。 #}
+            {%- for category in site.data['content-categories'] %}
               <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="{{ category.name }}">{{ category.name }}</button>
             {%- endfor %}
           </div>

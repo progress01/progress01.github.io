@@ -149,10 +149,6 @@ comments: false
     <div class="random-deck-heading"><span>A-01</span><h2>選擇抽取範圍</h2><small>OPEN THE DRAWER</small></div>
     <div class="random-filters" aria-label="隨機文章分類">
       <button class="random-filter is-active" type="button" data-category="all">全部</button>
-      <button class="random-filter" type="button" data-category="音樂">音樂</button>
-      <button class="random-filter" type="button" data-category="閱讀與影視">閱讀與影視</button>
-      <button class="random-filter" type="button" data-category="觀念與實驗">觀念與實驗</button>
-      <button class="random-filter" type="button" data-category="生活紀錄">生活紀錄</button>
     </div>
     <div id="random-status" class="random-status">正在整理 1988 以來的記憶……</div>
 
@@ -176,9 +172,10 @@ comments: false
   (function() {
     var dataUrl = '/random.json';
     var records = [];
+    var contentCategories = [];
     var currentCategory = 'all';
     var historyKey = 'random-tape-history';
-    var categoryButtons = document.querySelectorAll('.random-filter');
+    var filters = document.querySelector('.random-filters');
     var status = document.getElementById('random-status');
     var card = document.getElementById('random-card');
     var empty = document.getElementById('random-empty');
@@ -207,10 +204,14 @@ comments: false
       return records.filter(function(item) { return item.categories.indexOf(category) !== -1; });
     }
 
+    function categoryButtons() {
+      return filters.querySelectorAll('.random-filter');
+    }
+
     function chooseRecord() {
       var pool = poolFor(currentCategory);
       if (currentCategory === 'all') {
-        var categories = ['音樂', '閱讀與影視', '觀念與實驗', '生活紀錄'].filter(function(category) {
+        var categories = contentCategories.filter(function(category) {
           return records.some(function(item) { return item.categories.indexOf(category) !== -1; });
         });
         if (categories.length) {
@@ -243,26 +244,37 @@ comments: false
 
     function draw() { renderRecord(chooseRecord()); }
 
-    categoryButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        currentCategory = button.getAttribute('data-category');
-        categoryButtons.forEach(function(item) { item.classList.toggle('is-active', item === button); });
-        draw();
-      });
+    filters.addEventListener('click', function(event) {
+      var button = event.target.closest('.random-filter');
+      if (!button) return;
+      currentCategory = button.getAttribute('data-category');
+      categoryButtons().forEach(function(item) { item.classList.toggle('is-active', item === button); });
+      draw();
     });
 
     again.addEventListener('click', draw);
 
-    fetch(dataUrl)
-      .then(function(response) {
+    Promise.all([
+      fetch(dataUrl).then(function(response) {
         if (!response.ok) throw new Error('random data unavailable');
         return response.json();
+      }),
+      fetch('/content-categories.json').then(function(response) {
+        if (!response.ok) throw new Error('content categories unavailable');
+        return response.json();
       })
-      .then(function(data) {
-        records = data.filter(function(item) { return item && item.url && item.title; });
-        categoryButtons.forEach(function(button) {
-          var category = button.getAttribute('data-category');
-          if (category !== 'all' && !poolFor(category).length) button.classList.add('is-empty');
+    ])
+      .then(function(results) {
+        records = results[0].filter(function(item) { return item && item.url && item.title; });
+        contentCategories = results[1].map(function(category) { return category.name; });
+        results[1].forEach(function(category) {
+          var button = document.createElement('button');
+          button.className = 'random-filter';
+          button.type = 'button';
+          button.setAttribute('data-category', category.name);
+          button.textContent = category.name;
+          if (!poolFor(category.name).length) button.classList.add('is-empty');
+          filters.appendChild(button);
         });
         draw();
       })

@@ -212,15 +212,12 @@ comments: false
 
   <section class="life-index-section">
     <div class="life-index-section-heading"><span>B-01</span><h2>內容入口</h2><small>OPEN THE DRAWER</small></div>
-    <div class="life-index-entry-grid">
-      <a class="life-index-entry-card" href="/categories/音樂/"><i class="fa fa-music life-index-card-icon"></i><span class="life-index-card-label">01 / AUDIO</span><h3>音樂</h3><p>歌曲推薦與聽歌時的片段。</p></a>
-      <a class="life-index-entry-card" href="/categories/閱讀與影視/"><i class="fa fa-book life-index-card-icon"></i><span class="life-index-card-label">02 / SCREEN</span><h3>閱讀與影視</h3><p>書籍、電影與連續劇留下的紀錄。</p></a>
-      <a class="life-index-entry-card" href="/categories/觀念與實驗/"><i class="fa fa-flask life-index-card-icon"></i><span class="life-index-card-label">03 / LAB</span><h3>觀念與實驗</h3><p>問題情境、發現過程與真正原因。</p></a>
-      <a class="life-index-entry-card" href="/categories/生活紀錄/"><i class="fa fa-pencil life-index-card-icon"></i><span class="life-index-card-label">04 / DAILY</span><h3>生活紀錄</h3><p>工作、情緒與那些還在整理的日子。</p></a>
-      <a class="life-index-entry-card" href="/photos/"><i class="fa fa-camera life-index-card-icon"></i><span class="life-index-card-label">05 / MEMORY</span><h3>記憶圖牆</h3><p>用圖片留下來的片段與收藏。</p></a>
-      <a class="life-index-entry-card" href="/status/"><i class="fa fa-comment life-index-card-icon"></i><span class="life-index-card-label">06 / STATUS</span><h3>碎碎念</h3><p>短一點、即時一點的現場紀錄。</p></a>
-      <a class="life-index-entry-card" href="/calendar/"><i class="fa fa-calendar life-index-card-icon"></i><span class="life-index-card-label">07 / CALENDAR</span><h3>更新熱力圖</h3><p>回頭看自己什麼時候留下了紀錄。</p></a>
-      <a class="life-index-entry-card" href="/random/"><i class="fa fa-random life-index-card-icon"></i><span class="life-index-card-label">08 / RANDOM</span><h3>隨機文章</h3><p>不預設主題，讓下一篇自己出現。</p></a>
+    <div class="life-index-entry-grid" id="life-index-entry-grid">
+      <div class="life-index-entry-card">正在整理內容入口……</div>
+      <a class="life-index-entry-card" data-life-utility href="/photos/"><i class="fa fa-camera life-index-card-icon"></i><span class="life-index-card-label">05 / MEMORY</span><h3>記憶圖牆</h3><p>用圖片留下來的片段與收藏。</p></a>
+      <a class="life-index-entry-card" data-life-utility href="/status/"><i class="fa fa-comment life-index-card-icon"></i><span class="life-index-card-label">06 / STATUS</span><h3>碎碎念</h3><p>短一點、即時一點的現場紀錄。</p></a>
+      <a class="life-index-entry-card" data-life-utility href="/calendar/"><i class="fa fa-calendar life-index-card-icon"></i><span class="life-index-card-label">07 / CALENDAR</span><h3>更新日曆</h3><p>回頭看自己什麼時候留下了紀錄。</p></a>
+      <a class="life-index-entry-card" data-life-utility href="/random/"><i class="fa fa-random life-index-card-icon"></i><span class="life-index-card-label">08 / RANDOM</span><h3>隨機文章</h3><p>不預設主題，讓下一篇自己出現。</p></a>
     </div>
   </section>
 
@@ -229,7 +226,7 @@ comments: false
     <div class="life-index-heatmap-panel">
       <div class="life-index-heatmap-top">
         <span id="life-index-heatmap-label">正在讀取最近的紀錄……</span>
-        <a href="/calendar/">OPEN FULL CALENDAR ↗</a>
+        <a href="/calendar/">OPEN UPDATE CALENDAR ↗</a>
       </div>
       <div class="life-index-heatmap-scroll">
         <div id="life-index-heatmap" class="life-index-heatmap" aria-label="文章產出熱力圖"></div>
@@ -297,6 +294,49 @@ comments: false
       .then(renderLifeIndex)
       .catch(function() {
         currentContainer.innerHTML = '<div class="life-index-entry-card">目前的內容暫時無法讀取。</div>';
+      });
+  })();
+
+  (function() {
+    var grid = document.getElementById('life-index-entry-grid');
+    var utilityCards = Array.prototype.slice.call(grid.querySelectorAll('[data-life-utility]'));
+
+    function addText(parent, tagName, className, value) {
+      var element = document.createElement(tagName);
+      element.className = className;
+      element.textContent = value || '';
+      parent.appendChild(element);
+      return element;
+    }
+
+    function appendUtilities() {
+      utilityCards.forEach(function(card) { grid.appendChild(card); });
+    }
+
+    fetch('/content-categories.json')
+      .then(function(response) {
+        if (!response.ok) throw new Error('找不到 content-categories.json');
+        return response.json();
+      })
+      .then(function(categories) {
+        grid.innerHTML = '';
+        categories.forEach(function(category, index) {
+          var card = document.createElement('a');
+          card.className = 'life-index-entry-card';
+          card.href = category.url || '#';
+          var icon = document.createElement('i');
+          icon.className = (category.icon || 'fa fa-folder') + ' life-index-card-icon';
+          card.appendChild(icon);
+          addText(card, 'span', 'life-index-card-label', String(index + 1).padStart(2, '0') + ' / ' + (category.code || 'TOPIC'));
+          addText(card, 'h3', '', category.name || '未命名分類');
+          addText(card, 'p', '', category.description || '查看這個內容分類。');
+          grid.appendChild(card);
+        });
+        appendUtilities();
+      })
+      .catch(function() {
+        grid.innerHTML = '<div class="life-index-entry-card">內容入口暫時無法讀取。</div>';
+        appendUtilities();
       });
   })();
 
