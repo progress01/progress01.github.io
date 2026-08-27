@@ -95,6 +95,16 @@ listMarkdownFiles('source/_posts').forEach(file => {
   postCategories.forEach(category => {
     if (!allowedCategories.has(category)) errors.push(`${relativePath} 使用未設定的分類「${category}」。`);
   });
+
+  const coverLine = frontmatter[1].match(/^cover:\s*(.*)$/m);
+  if (coverLine) {
+    const cover = coverLine[1].trim().replace(/^['"]|['"]$/g, '');
+    const relativeCoverPath = decodeURIComponent(cover).replace(/^\//, '').replaceAll('/', path.sep);
+    const sourceCoverPath = path.join(root, 'source', relativeCoverPath);
+    if (!cover.startsWith('/images/') || !fs.existsSync(sourceCoverPath)) {
+      errors.push(`${relativePath} 的 cover 圖片不存在或不是 /images/ 路徑：${cover}`);
+    }
+  }
 });
 
 const photoWall = read('source/photos/index.md');

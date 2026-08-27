@@ -8,6 +8,18 @@ comments: false
 <div class="ig-grid">
 
   <div class="ig-card">
+    <a href="/2025/12/28/閱讀影評/失業白領的職場漂流/" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/book_失業白領的職場漂流.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="/2022/07/25/閱讀影評/詭秘之主/" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/book_詭秘之主.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="/2026/08/25/閱讀影評/基地/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_基地.png">
     </a>
@@ -586,6 +598,42 @@ comments: false
   <div class="ig-card">
     <a href="https://open.spotify.com/track/0K25zmumCzn2kFmh9zcLWy?si=6ed7fe04fc3e482d" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_Candy.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://www.youtube.com/watch?v=7uo5d_5UHJE&amp;list=RD7uo5d_5UHJE&amp;start_radio=1" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_非常時期.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2LouHht0S8wELWS8W1nTBu?si=1063d49a172d4d33" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_關於愛的定義.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0DF6ogOpB1CYZF0PlG7WdR?si=b6291c100bce44dd" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_就改天.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2t2oaAtkWfGAR98NBYgkSt?si=4a78612203ae41ef" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_全世界我最喜歡你（可是你都不知道）.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2m3CrcFgbKUJv2uEFE7ihT?si=f293ab783fe2491c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_因為愛.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7pZYb3XtZ0wMtORwnVY9SE?si=dd18fda79f2c4b5f" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_像我這樣的人.png">
     </a>
   </div>
 </div>

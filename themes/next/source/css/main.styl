@@ -184,11 +184,32 @@ body {
   }
 }
 
-/* 一般文章閱讀軌：保留寬版卡片，避免文字行寬過長 */
-.main-inner.post .post-body {
-  max-width: 860px;
+/* 單篇文章閱讀軌：外部入口維持原本版型，點進文章後收窄閱讀欄 */
+.post-content-single > .post-header {
+  margin-bottom: 38px;
+}
+
+.post-content-single .post-body {
+  max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.02em;
+  line-height: 1.92;
+  text-align: left;
+}
+
+.post-content-single .post-body > p {
+  margin-bottom: 1.55em;
+}
+
+.post-content-single .post-body > h2 {
+  margin-top: 2.7em;
+  padding-bottom: 8px;
+}
+
+.post-content-single .post-body > h3 {
+  margin-top: 2.1em;
+  padding-bottom: 5px;
 }
 
 /* 長文閱讀模式：保留標題，降低連續閱讀的疲勞感 */
@@ -316,6 +337,20 @@ body {
     .post-body > div:first-child > div:last-child img {
       max-width: 180px;
     }
+  }
+
+  .post-content-single > .post-header {
+    margin-bottom: 26px;
+  }
+
+  .post-content-single .post-body {
+    max-width: none;
+    font-size: 1em;
+    line-height: 1.95;
+  }
+
+  .post-content-single .post-body > p {
+    margin-bottom: 1.4em;
   }
 }
 
@@ -627,5 +662,99 @@ body {
 
   .search-popup .search-category-tabs {
     margin-bottom: 14px;
+  }
+}
+
+/* 閱讀與影視：沿用歌曲文章的資料卡，但不把資料寫死在版型裡 */
+.posts-expand .post-feature-card {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  gap: 20px;
+  max-width: 760px;
+  margin: 30px auto 18px;
+  padding: 20px 22px;
+  border: 1px solid #d8c8b4;
+  background: #f8f1e4;
+}
+
+.posts-expand .post-feature-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+.posts-expand .post-feature-label {
+  margin-bottom: 9px;
+  color: #e36f32;
+  font: 11px/1.5 "Courier New", monospace;
+  letter-spacing: .12em;
+}
+
+.posts-expand .post-feature-kind {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 11px;
+}
+
+.posts-expand .post-feature-kind span {
+  padding: 3px 7px;
+  border: 1px solid #cdb9a2;
+  color: #96745e;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.posts-expand .post-feature-excerpt {
+  color: #4a3028;
+  font-size: 1em;
+  line-height: 1.85;
+}
+
+.posts-expand .post-feature-excerpt > p {
+  margin: 0;
+}
+
+.posts-expand .post-feature-reading-time {
+  margin-top: 13px;
+  color: #96745e;
+  font: 11px/1.6 "Courier New", monospace;
+  letter-spacing: .04em;
+}
+
+.posts-expand .post-feature-reading-time i {
+  margin-right: 5px;
+  color: #e36f32;
+}
+
+.posts-expand .post-feature-media {
+  flex: 0 0 150px;
+  width: 150px;
+}
+
+.posts-expand .post-feature-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+}
+
+@media (max-width: 767px) {
+  .posts-expand .post-feature-card {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 22px;
+    padding: 16px;
+  }
+
+  .posts-expand .post-feature-media {
+    order: -1;
+    align-self: center;
+    flex-basis: auto;
+    max-width: 180px;
+    width: 100%;
   }
 }
