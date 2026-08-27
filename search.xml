@@ -271,6 +271,50 @@
       </categories>
   </entry>
   <entry>
+    <title>混亂日常的一個「存檔點」工具設計</title>
+    <url>/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</url>
+    <content><![CDATA[<h3 id="先把「作品展示」拿掉"><a href="#先把「作品展示」拿掉" class="headerlink" title="先把「作品展示」拿掉"></a>先把「作品展示」拿掉</h3><p>這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。</p>
+<p>這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。</p>
+<p>目前的原型仍可另外開啟：</p>
+<p><a href="https://progress01.github.io/lifecheck/">開啟 Life Check 原型 →</a></p>
+<span id="more"></span>
+
+<h3 id="問題不是少一個待辦清單"><a href="#問題不是少一個待辦清單" class="headerlink" title="問題不是少一個待辦清單"></a>問題不是少一個待辦清單</h3><p>很多混亂並不是因為事情太多，而是不同性質的東西被放在同一個清單裡：今天必須完成的事情、一直掛在心上的念頭、還沒有想好怎麼處理的問題，以及只是想留下來的紀錄。</p>
+<p>如果每一項都用「完成／未完成」表示，清單最後很容易變成另一種壓力來源。沒有完成的項目看起來像失敗，暫時不想處理的情緒也被迫變成工作，原本想減少混亂，卻只是把混亂換了一種格式保存。</p>
+<p>所以「存檔點」和一般任務管理工具不太一樣。它不急著替所有事情排出順序，也不要求使用者立刻找到答案，而是先承認：此刻的狀態可以被放在某個地方，暫時不用繼續佔據注意力。</p>
+<h3 id="先分辨：行動、情緒與紀錄"><a href="#先分辨：行動、情緒與紀錄" class="headerlink" title="先分辨：行動、情緒與紀錄"></a>先分辨：行動、情緒與紀錄</h3><p>這個設計值得繼續討論的地方，是它其實同時面對三種不同需求。</p>
+<ol>
+<li><strong>行動</strong>：有下一步，而且完成後可以得到明確回饋。</li>
+<li><strong>情緒</strong>：不一定需要解決，但需要先被看見、被放下。</li>
+<li><strong>紀錄</strong>：事情已經過去，留下來是為了之後回頭理解自己。</li>
+</ol>
+<p>三者如果全部使用同一套按鈕和同一種顏色，介面會很簡單，意思卻會變得模糊。勾掉一項任務代表完成；讓一個念頭消失，可能只代表今天不再處理；保存一段紀錄，則不應該被理解成問題已經解決。</p>
+<p>這也是「存檔點」比「效率工具」更適合的地方：重點不是累積更多完成項目，而是讓不同狀態不要互相冒充。</p>
+<h3 id="介面語言的矛盾"><a href="#介面語言的矛盾" class="headerlink" title="介面語言的矛盾"></a>介面語言的矛盾</h3><p>目前的原型使用了不少帶有遊戲感與避難所想像的詞彙，例如挑戰、結界、精神足跡。這些詞彙有一個好處：它們可以讓日常壓力與自己拉開一點距離，讓整理變得沒有那麼嚴肅。</p>
+<p>但另一個問題也同時出現了。<strong>Life Quest</strong> 比較像一套要持續闖關的生活系統；「存檔點」則比較像允許暫停、回頭查看的地方。前者要求前進，後者允許停留，兩種設計方向如果同時存在，使用者就必須先理解這個世界觀，才能理解自己現在要做什麼。</p>
+<p>如果核心目標是降低焦慮，介面不應該增加太多需要學習的隱喻。比起讓每一個功能都有特別的名稱，更重要的是讓人一眼看出：現在這個項目是要採取行動、暫時放下，還是留作日後回顧。</p>
+<h3 id="復古視覺應該服務於「保存」"><a href="#復古視覺應該服務於「保存」" class="headerlink" title="復古視覺應該服務於「保存」"></a>復古視覺應該服務於「保存」</h3><p>復古電腦視窗的方向仍然有意義，因為它和「存檔」的概念相近：畫面不是一個要求人變得更有效率的儀表板，而是一個可以把當下狀態保存下來的介面。</p>
+<p>不過，這種風格不需要靠大量裝飾或動畫來證明自己。視窗標題、狀態文字、有限的色彩和清楚的區塊關係就已經足夠。顏色也不應該只代表「表現很好」，例如變綠不必等於生活變得完美，而可以只是表示「這件事已經被看見，暫時有一個位置」。</p>
+<p>這樣的設計會比較接近 1988 的懷舊感：不是模仿某一個年代的介面，而是保留那種有限、安靜、可以慢慢整理資料的感覺。</p>
+<h3 id="目前還沒有解完的問題"><a href="#目前還沒有解完的問題" class="headerlink" title="目前還沒有解完的問題"></a>目前還沒有解完的問題</h3><p>這個原型暫時不需要被包裝成完成的產品。真正值得留下的問題反而是：</p>
+<ul>
+<li>人是在什麼時候需要一個存檔點，而不是另一個待辦清單？</li>
+<li>勾選完成之後，壓力真的減少了，還是只是獲得短暫的控制感？</li>
+<li>哪些內容值得被保存，哪些只是當下需要暫時移開？</li>
+<li>介面要鼓勵前進，還是允許人停留在尚未想清楚的狀態？</li>
+</ul>
+<p>這些問題比列出使用了哪些技術更接近設計本身。作品未完成不一定是缺點，因為概念還沒有被過早固定，反而可以繼續觀察「整理生活」與「管理生活」之間的差異。</p>
+<p>這篇先把它留在這裡，作為一個關於問題情境的設計筆記，而不是一頁需要被展示完成度的作品集。</p>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>問題情境</tag>
+        <tag>設計思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>討論GEO篇一</title>
     <url>/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/</url>
     <content><![CDATA[<h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
@@ -359,6 +403,79 @@
       </tags>
   </entry>
   <entry>
+    <title>有工作的第N+2天</title>
+    <url>/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/</url>
+    <content><![CDATA[<p>當我開始逃避想晚點進辦公室位置的時候，那種想換工作的想法總是一再的重複出現<br> <span id="more"></span> </p>
+<h2 id="當我開始逃避想晚點進辦公室位置的時候"><a href="#當我開始逃避想晚點進辦公室位置的時候" class="headerlink" title="當我開始逃避想晚點進辦公室位置的時候"></a>當我開始逃避想晚點進辦公室位置的時候</h2><p>一切的變化是來自於辦公室氛圍的轉變，同事從可信賴的夥伴，變成那種爛工作犧牲對象的可能者，犧牲他去做爛工作就不是我了！輪調是目前工作的傳統，目的在於培養能了解各項工作的人，以能做全方位的規劃與討論為未來發展藍圖，但那只是藍圖…</p>
+<p>事實上每次輪調都可能去到不想去的地方，以及接到不想接的工作，這次的衝突也因此而生，當我開始因為可能因為莫名其妙的理由被喚去做那項工作的時候，大家還是很給我肯定的，說有機會去說看看或是調整整個工作項目，到後來就是一路失控的過程了，越級呈報、閒言閒語以及一堆莫名其妙的辦公室壓力。</p>
+<p>辦公室突然像是一個火爐，每天燒掉一點自己的信心、燒掉一點工作的樂趣，而燃料很多，一些是自己的愧疚，一些可能是想回到以前的落差感，最多就是那種無能為力吧？而當我開始追究我到底做錯什麼這一個死胡同的時候，代表我也沒有想找到答案，我只是想要有一個悲傷的地方讓我自己可以躺著，那種就算黑掉我也不在乎的勇氣消逝的無影無蹤….</p>
+<p>想換工作的想法一再出現，但走了就好嗎？我其實沒有成功拯救自己，也沒有任何排解掉這種煩悶心情的出口，他就是卡在胸口，深呼吸的瞬間可能有消失一點，但我不可能每一口都是深呼吸，當我一疏忽…就像是會被所有的痛苦追上。但除了快被燃燒殆盡的我之外，其他人也沒受到什麼影響，我也能試著像大家一樣不去在乎這些情緒嗎？ 或是造成別人痛苦的人本來就感受不到這些。</p>
+<h2 id="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"><a href="#沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈" class="headerlink" title="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"></a>沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈</h2><p>困擾的狀況重複出現，我就發現無論我想讓我心裡好過一點，以沒有我是損失的方向來看，還是換一個角度用我是輸家的論點，我認賠來看，怎麼樣的在意都讓我一再的因為前後對比與怎麼搞成這樣的失落感，想放棄感。</p>
+<p>疲倦的心靈找不到一個停損的點可以棲身，似乎在情緒的起伏之中我也變成了無趣之人，今天的工作有趣嗎？ 我可能只想趕快下班逃離這個是非之地。但又怎麼能逃呢？沒有能力面試到能去的工作，履歷寫了一半就丟在那邊沒更新，放下一去去其他地方的我是有能力面對不同工作的嗎？</p>
+<p>我雖然總是沒信心，但對能力的培養與挑戰我總是沒什麼勇氣做更多的嘗試。</p>
+<h2 id="是我自己性格上的缺陷嗎？"><a href="#是我自己性格上的缺陷嗎？" class="headerlink" title="是我自己性格上的缺陷嗎？"></a>是我自己性格上的缺陷嗎？</h2><p>我也想過是不是因為自己性格上的缺陷，導致我在這個情緒上陷入過久，又或是生命中第一個感覺到不友善與無法替自己主張沒問題的地方？</p>
+<p>我發現我自己除了一些道德上的潔癖之外，我想我好像非常希望自己是一個不被眾人討論壞名聲的人，成為議論對象可能還行，但壞事或奇怪的事情真的是一介意起來就停不下來，因此我也會注意自己的品行是否端正（盡量）。但其實也沒有誰對誰錯，只是這樣結果之下，這個污點就像是一塊清不掉的黑點，潔癖在我的內心隱隱的責備，而我的道德也反過來用愧疚感來給我壓力。</p>
+<p>但老實說，真的沒有誰對誰錯的問題，忽視與冷漠也只代表了我自己心靈上不夠自立自強，不夠強大，所幸在遊戲之中我找到了我自己可以的感覺，能慢慢地給自己安慰，但遊戲仍然不是生活，我還是得在生活裡面成長起來才行。</p>
+<h2 id="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"><a href="#知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值" class="headerlink" title="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"></a>知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值</h2><p>查了一些霸凌的知識與反擊手段，但我發現與其說和解，其實在這些事情上我要能夠壓著我的自卑感，不僅僅是肯定我的特質，也認可自己的價值。</p>
+<p>我在這裡並不是因為怎麼樣，而是作為館員，在推動事務上自己有想努力的內容，很多事情也不會因為怎樣而改變，而且相對於被霸凌，被忽視與冷漠對待反倒是稍微輕鬆一點的（應該）</p>
+<h2 id="隨時失去的轉職可能性與履歷撰寫"><a href="#隨時失去的轉職可能性與履歷撰寫" class="headerlink" title="隨時失去的轉職可能性與履歷撰寫"></a>隨時失去的轉職可能性與履歷撰寫</h2><p>要我不懷念過去是不可能的，我想念我剛來的工作環境以及能討論，願意交流的大家，完成的任務有人分享，失敗的宣傳有人能夠檢討，為了更好的推廣而討論著的大家，但莫名其妙在不同事物的同時衝擊下都搞砸了。</p>
+<p>之前本來幸災樂禍地想說，即使要離職，離不開圖書館的也不是我，但真的是這樣嗎？其實我也抱著不確定的心態，之前找工作的不順利又有一點浮上心頭，但我的忍耐是不是也代表我正失去轉職的可能性？ 我也不知道。</p>
+<p>但在害怕之中時間確實不斷滴答的流逝。</p>
+<h2 id="誠實面對自己"><a href="#誠實面對自己" class="headerlink" title="誠實面對自己"></a>誠實面對自己</h2><p>肯認自己之外，關於缺點跟弱點仍然是要誠實面對的，至少我要能夠回答，工作到底要不要換，目前有哪些能力，哪些可以作為之後的名片，我想怎樣經營自己的品牌這幾個問題，若沒有答案我會對我自己很失望。</p>
+<p>麻痺的一天只有麻痺沒有未來，為自己規劃是我該為自己負責的地方。 </p>
+]]></content>
+      <categories>
+        <category>生活紀錄</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+        <tag>困擾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有工作的第N+3天</title>
+    <url>/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/</url>
+    <content><![CDATA[<p>當生活出現變故而無法有效消化的話，勢必會在日常相處中造成他人的困擾，因為下意識的連自己都在尋找能協助的地方<br> <span id="more"></span> </p>
+<h2 id="不知道怎樣消化的情緒"><a href="#不知道怎樣消化的情緒" class="headerlink" title="不知道怎樣消化的情緒"></a>不知道怎樣消化的情緒</h2><p>承接第Ｎ＋2天的內容，老實說真的因為這樣的煩惱非常低潮，即使自己努力消化，但仍然下意識的想在還算有交流中親近的朋友裡面，尋找一個解方，無論是訴苦或是討論，然而這樣負面的交流與未充分顧及情緒的交流，實際上是充滿風險的。第一是交流時你的哀傷與渴望對方能懂你的心情，勢必焦慮而去忽略掉那些平常時會注意的內容，例如失去意識到快吵起來的當下，仍在意對方是否懂你的意識表達。第二是即使注意到了狀況正在失控，但你因為自己的關係，可能踩到對方雷點或是錯誤的玩笑，那只會讓交流狀況更惡化，因為你仍然希望對方能體諒你的情境，但忽略了對方此刻因雷點觸動而產生的情緒。</p>
+<p>在那時低潮時就因為一些小事情跟親近的朋友短時間內發生了不同的爭吵，一人一次總共兩人（忽略掉那個沒爭吵就失去交流機會的同事的話）。明明內容上還好，卻在後續有點類似於絕交了，或是直接喪失了日常交流的勇氣，現在想來還是覺得如果當時我能處理得更好一點就好了。</p>
+<h2 id="我隱藏在內心深處的害怕"><a href="#我隱藏在內心深處的害怕" class="headerlink" title="我隱藏在內心深處的害怕"></a>我隱藏在內心深處的害怕</h2><blockquote>
+<p>我似乎能夠可以坦誠的說：我的人際需要我的維繫，可能要扮演主動的角色，而當我下意識的猶豫是否能聯繫對方，大概率我可能要失去這段友情了，無法有效消化情緒的我就是這樣關係中的未爆彈。</p>
+</blockquote>
+<p>曾經有過一個想法是，假如因為不小心在低潮時觸發雷點的人際關係是否是我的問題？還是更需要去考慮到這段關係的不穩固？錯來自於雙方而不是我單方面的反省？</p>
+<p>但實際審視下來，我發現我除了能完全信任的人際交往之外，很多的朋友更多來自於我的主動維繫，假如我因為吵架而下意識不敢直接向對方交流，那大概率這段友情就無疾而終了吧，因為我也從來沒有重要到是誰的前幾順位過。</p>
+<p>實際上只要發生在我自己低潮或無法控制情緒的時刻，大概率交流中都很容易吵架，訊息上機率又會更高，法律學習的經驗讓我習慣分割成兩個論點，並且試圖在吵架中下意識的證明即使我錯了，也來自於我行為導致，想法上應該仍要給我緩頰的空間。</p>
+<p>但又仔細的推理，造成短時間爭執到絕交的變故應該能歸納成</p>
+<ol>
+<li><p>我的自我意識偏強，總是特別在意對方在對話中有無感受到我的論述，或至少讓這個論述有傳達到對方的腦海中思索過，這往往也是爭吵升級的開端。</p>
+</li>
+<li><p>特別在意自我的正面形象，總是在對話過程中在意自己有沒有被黑掉，有點類似於對父母的頂嘴，希望能對針對我的針對性指責做出反擊，彷彿只要能保持住這個自我的認同感就能讓自己在這段人際關係中保持自己的信心，但這通常只能是爭吵崩潰的爭辯，因為對方根本不懂你在糾結的地方。</p>
+</li>
+</ol>
+<p>當我在意這兩點，又在爭吵時，對涉及以上內容的部分反應激烈（雖然重點會想放在事情上面，但我的說理方式也會讓對方失控，或認為我不可溝通），接著也可能單純講不好，導致對方不回應或講一些重話。例如宣達本次討論是我以為自己很重要，但他根本不在意這些，或是宣達我的無理取鬧根本有問題，或是直接表示本次共購雲端的行為因為我不小心觸犯到他的雷點還以此開玩笑，決定終止共購行為。</p>
+<h2 id="當一切失控但無法暫停"><a href="#當一切失控但無法暫停" class="headerlink" title="當一切失控但無法暫停"></a>當一切失控但無法暫停</h2><blockquote>
+<p>當一切開始在對話中失控的感覺真的是糟透了，我無法看自己無法參與討論的過程，腦海中像是你快聽我說跟我要終止這場對話不然之後很難有愉快的交流了，總之，糟透了。</p>
+</blockquote>
+<p>我開始發現，或許我能先解決掉的不是情緒或是強迫我不要在低潮時交流，而是自我意識跟形象維持這兩件事情，當我有意識地放棄這個去參加討論，似乎這樣的處理方式才是好的，畢竟能這麼讓雙方沒有顧忌的友情是有限的，我完全不想考驗任何一段友情，我不知道他們能不能禁得起考驗 (明顯很多不行)。</p>
+<blockquote>
+<p>事情糟糕的一個方向的時候，隨意調解氣氛也要多注意，開玩笑化解但卻剛好是對方很在意的地方那只會讓一切更糟糕，伴隨著剛剛不好的交流累積的火藥一起</p>
+</blockquote>
+<p>以在雲端共購的吵架來說，如果我不開玩笑地說，如果下次她能回應快一點，可能就不會讓對方生氣了，在當時對方以道歉發洩情緒，表示：除了家人之外抱歉本來就不會回應這麼快！</p>
+<p>但我沒注意到對方很在意這件事情的雷點或是被講好幾次的痛處，沒有評估後果隨意找自以為輕鬆的話題開玩笑，結果直接戳到炸彈，她想何時回訊息確實是她的自由，而為了轉移上面的尷尬，沒注意到對方不喜歡甚麼這件事情是我的疏失。</p>
+<p>以在好奇資料庫權限爭議來說，如果我不繼續向對方有負擔的人追問，並轉告追問的答案給對方，導致向我反映問題的人很介意，「可能被知道這個問題的詢問來自於他」因為我沒有消彌這一點不安，導致後續很尷尬，即使我說是自己問的對方也不想相信，認為我開他玩笑。</p>
+<h2 id="那之後呢？"><a href="#那之後呢？" class="headerlink" title="那之後呢？"></a>那之後呢？</h2><blockquote>
+<p>雖然似乎認真檢討了自己，但誠實面對自己最糟糕的地方是這到底要算改進還是追憶，或許這些友情也都並沒有這麼脆弱，而是基於第二點總結，我自己害怕得不敢去聯繫而以？</p>
+</blockquote>
+<p>也不知道答案是什麼，也不知道什麼樣的信任能被考驗，我開始珍惜每一次開心的相處，並試著記得很多當下的時刻，這些時間的快樂至少要被肯認是真實的吧，有工作的第N+3天後，我得試著記得教訓並改進。</p>
+]]></content>
+      <categories>
+        <category>生活紀錄</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+        <tag>困擾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-2375</title>
     <url>/2025/10/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-2375/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -395,50 +512,6 @@
       <tags>
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>混亂日常的一個「存檔點」工具設計</title>
-    <url>/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</url>
-    <content><![CDATA[<h3 id="先把「作品展示」拿掉"><a href="#先把「作品展示」拿掉" class="headerlink" title="先把「作品展示」拿掉"></a>先把「作品展示」拿掉</h3><p>這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。</p>
-<p>這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。</p>
-<p>目前的原型仍可另外開啟：</p>
-<p><a href="https://progress01.github.io/lifecheck/">開啟 Life Check 原型 →</a></p>
-<span id="more"></span>
-
-<h3 id="問題不是少一個待辦清單"><a href="#問題不是少一個待辦清單" class="headerlink" title="問題不是少一個待辦清單"></a>問題不是少一個待辦清單</h3><p>很多混亂並不是因為事情太多，而是不同性質的東西被放在同一個清單裡：今天必須完成的事情、一直掛在心上的念頭、還沒有想好怎麼處理的問題，以及只是想留下來的紀錄。</p>
-<p>如果每一項都用「完成／未完成」表示，清單最後很容易變成另一種壓力來源。沒有完成的項目看起來像失敗，暫時不想處理的情緒也被迫變成工作，原本想減少混亂，卻只是把混亂換了一種格式保存。</p>
-<p>所以「存檔點」和一般任務管理工具不太一樣。它不急著替所有事情排出順序，也不要求使用者立刻找到答案，而是先承認：此刻的狀態可以被放在某個地方，暫時不用繼續佔據注意力。</p>
-<h3 id="先分辨：行動、情緒與紀錄"><a href="#先分辨：行動、情緒與紀錄" class="headerlink" title="先分辨：行動、情緒與紀錄"></a>先分辨：行動、情緒與紀錄</h3><p>這個設計值得繼續討論的地方，是它其實同時面對三種不同需求。</p>
-<ol>
-<li><strong>行動</strong>：有下一步，而且完成後可以得到明確回饋。</li>
-<li><strong>情緒</strong>：不一定需要解決，但需要先被看見、被放下。</li>
-<li><strong>紀錄</strong>：事情已經過去，留下來是為了之後回頭理解自己。</li>
-</ol>
-<p>三者如果全部使用同一套按鈕和同一種顏色，介面會很簡單，意思卻會變得模糊。勾掉一項任務代表完成；讓一個念頭消失，可能只代表今天不再處理；保存一段紀錄，則不應該被理解成問題已經解決。</p>
-<p>這也是「存檔點」比「效率工具」更適合的地方：重點不是累積更多完成項目，而是讓不同狀態不要互相冒充。</p>
-<h3 id="介面語言的矛盾"><a href="#介面語言的矛盾" class="headerlink" title="介面語言的矛盾"></a>介面語言的矛盾</h3><p>目前的原型使用了不少帶有遊戲感與避難所想像的詞彙，例如挑戰、結界、精神足跡。這些詞彙有一個好處：它們可以讓日常壓力與自己拉開一點距離，讓整理變得沒有那麼嚴肅。</p>
-<p>但另一個問題也同時出現了。<strong>Life Quest</strong> 比較像一套要持續闖關的生活系統；「存檔點」則比較像允許暫停、回頭查看的地方。前者要求前進，後者允許停留，兩種設計方向如果同時存在，使用者就必須先理解這個世界觀，才能理解自己現在要做什麼。</p>
-<p>如果核心目標是降低焦慮，介面不應該增加太多需要學習的隱喻。比起讓每一個功能都有特別的名稱，更重要的是讓人一眼看出：現在這個項目是要採取行動、暫時放下，還是留作日後回顧。</p>
-<h3 id="復古視覺應該服務於「保存」"><a href="#復古視覺應該服務於「保存」" class="headerlink" title="復古視覺應該服務於「保存」"></a>復古視覺應該服務於「保存」</h3><p>復古電腦視窗的方向仍然有意義，因為它和「存檔」的概念相近：畫面不是一個要求人變得更有效率的儀表板，而是一個可以把當下狀態保存下來的介面。</p>
-<p>不過，這種風格不需要靠大量裝飾或動畫來證明自己。視窗標題、狀態文字、有限的色彩和清楚的區塊關係就已經足夠。顏色也不應該只代表「表現很好」，例如變綠不必等於生活變得完美，而可以只是表示「這件事已經被看見，暫時有一個位置」。</p>
-<p>這樣的設計會比較接近 1988 的懷舊感：不是模仿某一個年代的介面，而是保留那種有限、安靜、可以慢慢整理資料的感覺。</p>
-<h3 id="目前還沒有解完的問題"><a href="#目前還沒有解完的問題" class="headerlink" title="目前還沒有解完的問題"></a>目前還沒有解完的問題</h3><p>這個原型暫時不需要被包裝成完成的產品。真正值得留下的問題反而是：</p>
-<ul>
-<li>人是在什麼時候需要一個存檔點，而不是另一個待辦清單？</li>
-<li>勾選完成之後，壓力真的減少了，還是只是獲得短暫的控制感？</li>
-<li>哪些內容值得被保存，哪些只是當下需要暫時移開？</li>
-<li>介面要鼓勵前進，還是允許人停留在尚未想清楚的狀態？</li>
-</ul>
-<p>這些問題比列出使用了哪些技術更接近設計本身。作品未完成不一定是缺點，因為概念還沒有被過早固定，反而可以繼續觀察「整理生活」與「管理生活」之間的差異。</p>
-<p>這篇先把它留在這裡，作為一個關於問題情境的設計筆記，而不是一頁需要被展示完成度的作品集。</p>
-]]></content>
-      <categories>
-        <category>觀念與實驗</category>
-      </categories>
-      <tags>
-        <tag>問題情境</tag>
-        <tag>設計思考</tag>
       </tags>
   </entry>
   <entry>
@@ -648,6 +721,41 @@
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-Hyehwa dong</title>
+    <url>/2026/01/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Hyehwa-dong/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 zoo 的 Hyehwa dong
+      <br>
+      出自專輯 Zoo 2nd Album
+      <br>
+      <a href="https://open.spotify.com/track/6KsUOp85auZgdfgau8gSiZ?si=16d266d1e376424d" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_Hyehwa_dong.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span>
+轉載自個人ig每日點播> chjuhsu05
+<br>
+意外的發現我對民謠的情有獨鍾，韓國的民謠在表現上有時候又更輕更柔，因為請回答1988認識這個團體，之後我應該會聽完整個專輯看看，超級期待，另外我真的很喜歡這首，淡淡的懷舊跟溫暖的感覺。
+<br>
+非常推薦啊啊啊
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-How long will I love you</title>
     <url>/2026/07/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-How-long-will-I-love-you/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -674,6 +782,41 @@
 
 <pre><code>這種近乎笨拙卻又無比溫柔的執著，總能深深觸動內心。而這份小心翼翼追求的完美，最終在那場狂風暴雨的婚禮中迎來了翻轉。滂沱的大雨雖然打亂了一切，卻沒有毀掉任何美好，反而讓他們在混亂中笑得無所畏懼。無論我們多渴望透過重來去追求毫無瑕疵的完美，最終能陪伴我們抵擋現實風雨的，依然是那份最真摯且不加掩飾的情感。
 </code></pre>
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-My Heart Will Go On</title>
+    <url>/2026/07/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-My-heart-will-go-on/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Celine Dion 的 My Heart Will Go On
+      <br>
+      出自專輯 Lets talk about love
+      <br>
+      <a href="https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq?si=32c9f4e989e84c2b" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_my_heart_will_go_on.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    《My Heart Will Go On》這首歌在《鐵達尼號》最需要情感升華的時刻，像是把船上的悲傷推向最高點。歌手的唱法帶點法語的味道，雖然說不清楚，讓我聽了會想到「我心永恆」的情緒。雖然對電影情節已模糊，但每次聽到副歌那種鐵達尼與情感託付的情緒又會被拉起！
+
 <p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
@@ -720,41 +863,6 @@
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-Hyehwa dong</title>
-    <url>/2026/01/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Hyehwa-dong/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 zoo 的 Hyehwa dong
-      <br>
-      出自專輯 Zoo 2nd Album
-      <br>
-      <a href="https://open.spotify.com/track/6KsUOp85auZgdfgau8gSiZ?si=16d266d1e376424d" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Hyehwa_dong.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span>
-轉載自個人ig每日點播> chjuhsu05
-<br>
-意外的發現我對民謠的情有獨鍾，韓國的民謠在表現上有時候又更輕更柔，因為請回答1988認識這個團體，之後我應該會聽完整個專輯看看，超級期待，另外我真的很喜歡這首，淡淡的懷舊跟溫暖的感覺。
-<br>
-非常推薦啊啊啊
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-Nothing‘s Gonna Stop Us Now</title>
     <url>/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -780,41 +888,6 @@
 我聽過這首但我當時沒感受到這首歌的熱情，我現在超喜歡let them say後面這段，充滿力量的聲音跟那種隨之轉變的磅礴，整首歌也是現在這個時空裡很難感受到的朝氣。
 <br>
 非常推薦啊啊啊
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-My Heart Will Go On</title>
-    <url>/2026/07/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-My-heart-will-go-on/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Celine Dion 的 My Heart Will Go On
-      <br>
-      出自專輯 Lets talk about love
-      <br>
-      <a href="https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq?si=32c9f4e989e84c2b" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_my_heart_will_go_on.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    《My Heart Will Go On》這首歌在《鐵達尼號》最需要情感升華的時刻，像是把船上的悲傷推向最高點。歌手的唱法帶點法語的味道，雖然說不清楚，讓我聽了會想到「我心永恆」的情緒。雖然對電影情節已模糊，但每次聽到副歌那種鐵達尼與情感託付的情緒又會被拉起！
-
-<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1038,6 +1111,42 @@
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-You are not alone</title>
+    <url>/2026/01/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-You-are-not-alone/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Michael Jackson 的 You are not alone
+      <br>
+      出自專輯 HIStory: Past, Present and Future, Book I
+      <br>
+      <a href="https://youtu.be/pAyKJAtDNCw?si=v-UYqB0XobeLuaoa" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_you_are_not_alone.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    Michael的太多抹黑讓這首歌承擔了很多眼光？但我自己第一次聽到這首歌的時候就馬上去找原唱跟大聽特聽了,我想無論如何他都很耐聽而且溫暖（他歌裡面類似換氣他的短音很酷？
+ 
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-free magic</title>
     <url>/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -1098,42 +1207,6 @@
     這首歌很夢幻，一開始浪漫的感覺竟然透過這種聲音與那種稍微拖慢的漸進出現，接下來整首歌鋪陳出了，Leigh Nash甜美的聲線幾乎形成了我對這首歌全部的印象(笑)，SO KISS ME.
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-You are not alone</title>
-    <url>/2026/01/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-You-are-not-alone/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Michael Jackson 的 You are not alone
-      <br>
-      出自專輯 HIStory: Past, Present and Future, Book I
-      <br>
-      <a href="https://youtu.be/pAyKJAtDNCw?si=v-UYqB0XobeLuaoa" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_you_are_not_alone.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    Michael的太多抹黑讓這首歌承擔了很多眼光？但我自己第一次聽到這首歌的時候就馬上去找原唱跟大聽特聽了,我想無論如何他都很耐聽而且溫暖（他歌裡面類似換氣他的短音很酷？
- 
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1250,6 +1323,44 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-一世情緣</title>
+    <url>/2026/05/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E4%B8%96%E6%83%85%E7%B7%A3/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 姜育恆 的 一世情緣
+      <br>
+      出自專輯 一世情緣
+      <br>
+      <a href="https://open.spotify.com/track/3wEOiRXa4hZlHlvspbPhBV?si=bfe945efea04426b" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_一世情緣.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    先前提到的憂鬱，這首歌手展現了憂鬱的另外一種特質，懷念的訴說與那種若有所思的想念，很特別的唱法，有一種特別的力量！
+
+
+ 
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-一切再重來</title>
     <url>/2026/05/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E5%88%87%E5%86%8D%E9%87%8D%E4%BE%86/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -1318,23 +1429,23 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-一世情緣</title>
-    <url>/2026/05/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E4%B8%96%E6%83%85%E7%B7%A3/</url>
+    <title>歌曲推薦-一見鍾情</title>
+    <url>/2026/05/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 姜育恆 的 一世情緣
+      推薦 藍心湄 的 一見鍾情
       <br>
-      出自專輯 一世情緣
+      出自專輯 一見鍾情
       <br>
-      <a href="https://open.spotify.com/track/3wEOiRXa4hZlHlvspbPhBV?si=bfe945efea04426b" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/6vd1nL0a9KvymEBx1api9K?si=fa4ae5e3a42a41f2" target="_blank">收聽連結 -> 點此前往</a>
     </p>
 </div>
 
 <div style="width: 150px; flex-shrink: 0;">
 
-<img src="/images/song_一世情緣.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+<img src="/images/song_一見鍾情.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 
 </div>
 
@@ -1342,8 +1453,7 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    先前提到的憂鬱，這首歌手展現了憂鬱的另外一種特質，懷念的訴說與那種若有所思的想念，很特別的唱法，有一種特別的力量！
-
+    這首除了真誠之外，其實從整首都能聽出那種天真但就是你的絕對感，也因為特殊的唱法並不會在歌曲循環中感覺到很膩，我自己非常喜歡。
 
  
 ]]></content>
@@ -1391,33 +1501,62 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-一見鍾情</title>
-    <url>/2026/05/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85/</url>
+    <title>歌曲推薦-一輩子的孤單</title>
+    <url>/2026/01/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%BC%A9%E5%AD%90%E7%9A%84%E5%AD%A4%E5%96%AE/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 藍心湄 的 一見鍾情
+      推薦 劉若英 的 一輩子的孤單
       <br>
-      出自專輯 一見鍾情
+      出自專輯 Love and the City
       <br>
-      <a href="https://open.spotify.com/track/6vd1nL0a9KvymEBx1api9K?si=fa4ae5e3a42a41f2" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/260uNZaYf0d6f4FeHJPUtn?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
     </p>
-</div>
+  </div>
 
 <div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_一見鍾情.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
+<img src="/images/song_一輩子的孤單.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    這首除了真誠之外，其實從整首都能聽出那種天真但就是你的絕對感，也因為特殊的唱法並不會在歌曲循環中感覺到很膩，我自己非常喜歡。
+    陽光冷風與週五，恰似mv的場景，今天真的超級適合這首，我反而因為詞曲太好而不知道怎麼評價，只能說我很喜歡這樣的清新感。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-上上籤</title>
+    <url>/2026/01/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%8A%E4%B8%8A%E7%B1%A4/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 周華健 的 上上籤
+      <br>
+      出自專輯 現在
+      <br>
+      <a href="https://open.spotify.com/track/4wtbzZS5VkDF8V4YYowYg9?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
 
- 
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_上上籤.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首的youtube下面都是留言老婆的上上籤真的超級有趣，如果帶入時代的記憶再來聽這首歌會突然又更昇華了一點，之前可能被副歌很影響，但我現在更愛那句「那一年上上的籤」，真的很有畫面感。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1463,39 +1602,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-上上籤</title>
-    <url>/2026/01/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%8A%E4%B8%8A%E7%B1%A4/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 周華健 的 上上籤
-      <br>
-      出自專輯 現在
-      <br>
-      <a href="https://open.spotify.com/track/4wtbzZS5VkDF8V4YYowYg9?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_上上籤.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首的youtube下面都是留言老婆的上上籤真的超級有趣，如果帶入時代的記憶再來聽這首歌會突然又更昇華了一點，之前可能被副歌很影響，但我現在更愛那句「那一年上上的籤」，真的很有畫面感。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-你不在</title>
     <url>/2026/07/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E4%B8%8D%E5%9C%A8/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -1521,39 +1627,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 與〈第一個清晨〉的氛圍截然不同，王力宏在〈你不在〉透著一種小心翼翼的試探。雖然訴說著不在的身影，卻彷彿在某個期盼的瞬間，那份存在感又會突然降臨，在缺席與浮現之間游移的微妙切換但實際上就是你不在，營造出了一個特別的聽感，矛盾但詮釋的非常真實，你不在但我希望你在！
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-一輩子的孤單</title>
-    <url>/2026/01/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%BC%A9%E5%AD%90%E7%9A%84%E5%AD%A4%E5%96%AE/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 劉若英 的 一輩子的孤單
-      <br>
-      出自專輯 Love and the City
-      <br>
-      <a href="https://open.spotify.com/track/260uNZaYf0d6f4FeHJPUtn?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_一輩子的孤單.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    陽光冷風與週五，恰似mv的場景，今天真的超級適合這首，我反而因為詞曲太好而不知道怎麼評價，只能說我很喜歡這樣的清新感。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1590,6 +1663,76 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
     專輯名稱真的是非常出乎意料但我很喜歡這首，鋪陳到情緒到上升的你好嗎，真誠之外這首歌的鼓聲跟配樂都顯得很服務這個真誠，我自己覺得只在必要的時刻特別搭配，讓歌手的歌聲特別的突出，也不知道是不是風格的差異導致的錯覺，至少我很喜歡類似的表現方式。
  
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-全世界我最喜歡你（可是你都不知道）</title>
+    <url>/2026/08/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%A8%E4%B8%96%E7%95%8C%E6%88%91%E6%9C%80%E5%96%9C%E6%AD%A1%E4%BD%A0%EF%BC%88%E5%8F%AF%E6%98%AF%E4%BD%A0%E9%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%EF%BC%89/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 來吧焙焙 的 全世界我最喜歡你（可是你都不知道）
+      <br>
+      出自專輯 無所畏懼與寬容
+      <br>
+      <a href="https://open.spotify.com/track/2t2oaAtkWfGAR98NBYgkSt?si=4a78612203ae41ef" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_全世界我最喜歡你（可是你都不知道）.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+這首歌其實是難得推薦但我可能只重複不到20次單曲循環的，比起聽感這首歌我最喜歡的地方大概是這個可愛與概念吧，那種不計較對方想法的喜歡，但有偷偷期許想拜託對方喜歡自己的心意。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-像我這樣的人</title>
+    <url>/2026/08/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%83%8F%E6%88%91%E9%80%99%E6%A8%A3%E7%9A%84%E4%BA%BA/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 毛不易 的 像我這樣的人
+      <br>
+      出自專輯 平凡的一天
+      <br>
+      <a href="https://open.spotify.com/track/7pZYb3XtZ0wMtORwnVY9SE?si=dd18fda79f2c4b5f" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_像我這樣的人.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+這首我第一次聽到就整個被擊中，這種對自己小心翼翼的解釋，不甘平凡但要接受平凡，有時候更多的迷茫與尋找真的占據了更大部分的焦慮，而又有時候我們總是不禁想著像我這樣的人會怎樣做呢？沒有像我這樣的人大概就是這樣聽著歌慢慢讓傷口與無力自己努力癒合一點，最後整首歌收在"會不會有人心疼"真的是最被擊中的地方，像我這樣莫名其妙的人也想要能想像擁有著我實際上摸不到的東西。
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1637,35 +1780,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-再會啦心愛的無緣的人</title>
-    <url>/2026/04/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%86%8D%E6%9C%83%E5%95%A6%E5%BF%83%E6%84%9B%E7%9A%84%E7%84%A1%E7%B7%A3%E7%9A%84%E4%BA%BA/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 施文彬 的 再會啦心愛的無緣的人
-      <br>
-      出自同名專輯
-      <br>
-      <a href="https://open.spotify.com/track/5XZKK64s6wjd0P5MowNuB1?si=9895f4cd8a5041e7" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_再會啦心愛的無緣的人.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    手跟臉真的是有夠難，今天再次大爆炸了，推薦這首我喜歡裡面的感情，祝福這件事情本來就很難，這首的釋懷跟祝福的感覺收斂的很棒！
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-  </entry>
-  <entry>
     <title>歌曲推薦-其實都沒有</title>
     <url>/2026/08/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%B6%E5%AF%A6%E9%83%BD%E6%B2%92%E6%9C%89/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -1699,6 +1813,35 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
         <tag>音樂推薦</tag>
         <tag>專輯插圖</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-再會啦心愛的無緣的人</title>
+    <url>/2026/04/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%86%8D%E6%9C%83%E5%95%A6%E5%BF%83%E6%84%9B%E7%9A%84%E7%84%A1%E7%B7%A3%E7%9A%84%E4%BA%BA/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 施文彬 的 再會啦心愛的無緣的人
+      <br>
+      出自同名專輯
+      <br>
+      <a href="https://open.spotify.com/track/5XZKK64s6wjd0P5MowNuB1?si=9895f4cd8a5041e7" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_再會啦心愛的無緣的人.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    手跟臉真的是有夠難，今天再次大爆炸了，推薦這首我喜歡裡面的感情，祝福這件事情本來就很難，這首的釋懷跟祝福的感覺收斂的很棒！
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
   </entry>
   <entry>
     <title>歌曲推薦-動不動就說愛我</title>
@@ -1769,6 +1912,43 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-噓</title>
+    <url>/2025/12/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%99%93/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 蛋堡與徐佳瑩合作的 噓
+      <br>
+      出自專輯 踩.腳.踏.車
+      <br>
+      <a href="https://open.spotify.com/track/6GmRxBfE68sxJBRcMsKvtU?si=cf9bd1d1aabf4c37" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_噓.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span>
+轉載自個人ig每日點播> chjuhsu05
+<br>
+節奏歌詞還有聲音全部都結合的很好，而且那種手術刀一般的狀態描寫非常厲害
+<br>
+我特別喜歡去比照電影的想像的地方，這部電影從來沒有人看懂
+<br>
+非常推薦啊啊啊啊
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-回到過去</title>
     <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -1802,33 +1982,65 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-噓</title>
-    <url>/2025/12/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%99%93/</url>
+    <title>歌曲推薦-因為寂寞</title>
+    <url>/2026/04/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%A0%E7%82%BA%E5%AF%82%E5%AF%9E/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 蛋堡與徐佳瑩合作的 噓
+      推薦 張艾嘉 的 因為寂寞
       <br>
-      出自專輯 踩.腳.踏.車
+      出自專輯 愛的代價
       <br>
-      <a href="https://open.spotify.com/track/6GmRxBfE68sxJBRcMsKvtU?si=cf9bd1d1aabf4c37" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/7dzfkAauigVOAiHPbAAENJ?si=4c1b6a748f6442c4" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_噓.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_因為寂寞.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>
-<span id="more"></span>
+<span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
-<br>
-節奏歌詞還有聲音全部都結合的很好，而且那種手術刀一般的狀態描寫非常厲害
-<br>
-我特別喜歡去比照電影的想像的地方，這部電影從來沒有人看懂
-<br>
-非常推薦啊啊啊啊
+    <br>
+     這首歌詞與歌聲真的是一聽就感覺到驚艷，雖然總說因為寂寞，但中間又隱隱聽出那種反話的內心反駁感，中間又透過層層的鋪墊去表達內心深層的不安與期待。
+
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-因為愛</title>
+    <url>/2026/08/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%A0%E7%82%BA%E6%84%9B/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 韋禮安 的 因為愛
+      <br>
+      出自專輯 首張同名全創作專輯
+      <br>
+      <a href="https://open.spotify.com/track/2m3CrcFgbKUJv2uEFE7ihT?si=f293ab783fe2491c" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_因為愛.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+偷偷說這首歌我當初有想過想要在圖韻獎唱看看，我喜歡這首歌的概念，而且又適合單曲循環！喜歡與因為愛有時候就是這樣把真心拿出來。
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1874,40 +2086,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-因為寂寞</title>
-    <url>/2026/04/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%A0%E7%82%BA%E5%AF%82%E5%AF%9E/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 張艾嘉 的 因為寂寞
-      <br>
-      出自專輯 愛的代價
-      <br>
-      <a href="https://open.spotify.com/track/7dzfkAauigVOAiHPbAAENJ?si=4c1b6a748f6442c4" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_因為寂寞.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     這首歌詞與歌聲真的是一聽就感覺到驚艷，雖然總說因為寂寞，但中間又隱隱聽出那種反話的內心反駁感，中間又透過層層的鋪墊去表達內心深層的不安與期待。
-
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-如你所願</title>
     <url>/2026/01/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A6%82%E4%BD%A0%E6%89%80%E9%A1%98/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -1932,6 +2110,39 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
     我真的每次畫萬芳的專輯都失手的很嚴重
     但我還是很喜歡萬芳的，尤其最近學長傳了現場給我聽，又感覺到那種整個晚上就算聽同一首歌也不會膩的那種細微的唱法用心跟變化了。這首如你所願特別的地方是他營造了一個回聲的聽感，又唱的這麼又輕又重，真的超級特別，假設心情不差的話超級推薦，但心情鬱悶可能怕歌太慢。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-小風波</title>
+    <url>/2025/09/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%B0%8F%E9%A2%A8%E6%B3%A2/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 譚詠麟 的 小風波
+      <br>
+      出自專輯 忘不了您
+      <br>
+      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_小風波.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     這首由 譚詠麟 翻唱的版本能感覺出來所謂"粵語的魅力"，英文原唱是all out of love(air supply)，這首的音域跟整體感覺就整個從高音下來了，但也是完全不失風采的翻唱（而且耐聽），我蠻喜歡這一個版本的。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -1977,29 +2188,32 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-小風波</title>
-    <url>/2025/09/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%B0%8F%E9%A2%A8%E6%B3%A2/</url>
+    <title>歌曲推薦-就改天</title>
+    <url>/2026/08/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%B0%B1%E6%94%B9%E5%A4%A9/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 譚詠麟 的 小風波
+      推薦 葛仲珊 的 就改天
       <br>
-      出自專輯 忘不了您
+      出自專輯 皇后區的皇后
       <br>
-      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/0DF6ogOpB1CYZF0PlG7WdR?si=b6291c100bce44dd" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_小風波.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_就改天.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-     這首由 譚詠麟 翻唱的版本能感覺出來所謂"粵語的魅力"，英文原唱是all out of love(air supply)，這首的音域跟整體感覺就整個從高音下來了，但也是完全不失風采的翻唱（而且耐聽），我蠻喜歡這一個版本的。
+葛仲珊不同於以往直率明快的節奏，這首歌帶著一種特殊的沉澱與頓挫，不用刻意高亢地唱，卻在每一個呼吸與節奏的停頓裡，精準地安放了最真實的情感與力量。歌詞裡透出的那些真摯與直白，像是撥開日常迷霧後的清澈，讓人看見在沉重現實背後，依然值得期待的積極與堅持。
+
+<p>讓人想起關於記憶與離別的課題——真正的消失從不是物理上的離開，而是徹底被遺忘；只要心裡依然記得，那份為了彼此努力的承諾就有了重量。耳邊留下的那句「就改天」分量很重。</p>
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2044,31 +2258,29 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-愛丫愛丫</title>
-    <url>/2026/07/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9B%E4%B8%AB%E6%84%9B%E4%B8%AB/</url>
+    <title>歌曲推薦-忘了你忘了我</title>
+    <url>/2026/02/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%BF%98%E4%BA%86%E4%BD%A0%E5%BF%98%E4%BA%86%E6%88%91/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 By2 的 愛丫愛丫
+      推薦 王傑 的 忘了你忘了我
       <br>
-      出自專輯 16未成年
+      出自同名專輯(忘了你忘了我)
       <br>
-      <a href="https://open.spotify.com/track/1zCSc8I5104P9uiIajdZuT?si=ba99c97a581245ab" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/52baP0Nwp6bJyI95JMW9gF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_愛丫愛丫.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_忘了你忘了我.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-我喜歡這首歌的副歌充滿青春活力的感覺，少女的朝氣很自然，雖然有時候有點口水歌的感覺，但那種特有的時代氛圍讓我一聽就覺得自己正好好聽歌。
-
-<p>非常推薦啊啊啊</p>
+    這首不知道是不是因為音高或其他關係是難得我唱覺得還算能聽的歌，在任賢齊跟陳小春之外的新選擇？ 我也蠻喜歡類似的唱法，類似於2-3個字到一段中間有一個小空檔，可能很芭樂但這首歌真的非常推薦用來聽跟用來唱，用來共鳴可能少一點點味道就是了。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2112,29 +2324,31 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-忘了你忘了我</title>
-    <url>/2026/02/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%BF%98%E4%BA%86%E4%BD%A0%E5%BF%98%E4%BA%86%E6%88%91/</url>
+    <title>歌曲推薦-愛丫愛丫</title>
+    <url>/2026/07/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9B%E4%B8%AB%E6%84%9B%E4%B8%AB/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 王傑 的 忘了你忘了我
+      推薦 By2 的 愛丫愛丫
       <br>
-      出自同名專輯(忘了你忘了我)
+      出自專輯 16未成年
       <br>
-      <a href="https://open.spotify.com/track/52baP0Nwp6bJyI95JMW9gF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/1zCSc8I5104P9uiIajdZuT?si=ba99c97a581245ab" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_忘了你忘了我.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_愛丫愛丫.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    這首不知道是不是因為音高或其他關係是難得我唱覺得還算能聽的歌，在任賢齊跟陳小春之外的新選擇？ 我也蠻喜歡類似的唱法，類似於2-3個字到一段中間有一個小空檔，可能很芭樂但這首歌真的非常推薦用來聽跟用來唱，用來共鳴可能少一點點味道就是了。
+我喜歡這首歌的副歌充滿青春活力的感覺，少女的朝氣很自然，雖然有時候有點口水歌的感覺，但那種特有的時代氛圍讓我一聽就覺得自己正好好聽歌。
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2250,39 +2464,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-戀曲1990</title>
-    <url>/2026/05/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%80%E6%9B%B21990/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      羅大佑 的戀曲1990
-      <br>
-      出自專輯 昨日情歌
-      <br>
-      <a href="https://open.spotify.com/track/1Lnul9LTyxvEOyuULqATFy?si=95f18105cbe64d7b" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_戀曲1990.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     倦鳥歸巢的戀曲感，多了一種沉穩與悠長，好像不再是非你不可的絕對，歸途感異常特別，好像會特別的安靜下來。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-戀戀風塵</title>
     <url>/2026/02/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%80%E6%88%80%E9%A2%A8%E5%A1%B5/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2319,31 +2500,29 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-我們的歌</title>
-    <url>/2026/07/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%AD%8C/</url>
+    <title>歌曲推薦-戀曲1990</title>
+    <url>/2026/05/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%80%E6%9B%B21990/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 王力宏 的 我們的歌
+      羅大佑 的戀曲1990
       <br>
-      出自專輯 改變自己
+      出自專輯 昨日情歌
       <br>
-      <a href="https://open.spotify.com/track/26so7ajU82ioMhfYQTuIhR?si=76a4628773ff4c19" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/1Lnul9LTyxvEOyuULqATFy?si=95f18105cbe64d7b" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_我們的歌.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_戀曲1990.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-我喜歡這首歌，因為它描繪了情侶相處的信任與甜蜜，以及彼此的特別感受。王力宏在情歌的表現非常到位，例如我感受到這首歌對我的特別意義，兩人的相處與其他人不同，情緣分分合合。雖然可以感受到情歌的氛圍，但旋律中的回應與真誠讓我特別喜歡。這首歌的唱法我也很喜歡，常常在路上拿起來聽，偶爾會想要跟著唱。
-
-<p>非常推薦啊啊啊</p>
+     倦鳥歸巢的戀曲感，多了一種沉穩與悠長，好像不再是非你不可的絕對，歸途感異常特別，好像會特別的安靜下來。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2391,39 +2570,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-我在紐約打電話給你</title>
-    <url>/2026/02/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%9C%A8%E7%B4%90%E7%B4%84%E6%89%93%E9%9B%BB%E8%A9%B1%E7%B5%A6%E4%BD%A0/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 魏如萱 的 我在紐約打電話給你
-      <br>
-      出自專輯 同名單曲專輯
-      <br>
-      <a href="https://open.spotify.com/track/3vTnGxlxui3i9mWrAepise" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_我在紐約打電話給你.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首的輕重轉換跟氣音讓我充分感受到歌手唱歌的魅力，尤其是那種超級突然的轉換，不同於空靈的氣質感，這感覺是另外一種魅力。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-我們的故事</title>
     <url>/2026/02/12/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%95%85%E4%BA%8B/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2450,6 +2596,74 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
     我大概隔了25才認識這首歌，這種R and B的團體跟唱法真的好酷，尤其是副歌重重疊疊的部分特別豐富好聽！
  
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-我們的歌</title>
+    <url>/2026/07/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%AD%8C/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 王力宏 的 我們的歌
+      <br>
+      出自專輯 改變自己
+      <br>
+      <a href="https://open.spotify.com/track/26so7ajU82ioMhfYQTuIhR?si=76a4628773ff4c19" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_我們的歌.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+我喜歡這首歌，因為它描繪了情侶相處的信任與甜蜜，以及彼此的特別感受。王力宏在情歌的表現非常到位，例如我感受到這首歌對我的特別意義，兩人的相處與其他人不同，情緣分分合合。雖然可以感受到情歌的氛圍，但旋律中的回應與真誠讓我特別喜歡。這首歌的唱法我也很喜歡，常常在路上拿起來聽，偶爾會想要跟著唱。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-我在紐約打電話給你</title>
+    <url>/2026/02/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%9C%A8%E7%B4%90%E7%B4%84%E6%89%93%E9%9B%BB%E8%A9%B1%E7%B5%A6%E4%BD%A0/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 魏如萱 的 我在紐約打電話給你
+      <br>
+      出自專輯 同名單曲專輯
+      <br>
+      <a href="https://open.spotify.com/track/3vTnGxlxui3i9mWrAepise" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_我在紐約打電話給你.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首的輕重轉換跟氣音讓我充分感受到歌手唱歌的魅力，尤其是那種超級突然的轉換，不同於空靈的氣質感，這感覺是另外一種魅力。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2592,41 +2806,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-淚海</title>
-    <url>/2026/02/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B7%9A%E6%B5%B7/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 推薦 許茹芸 的 淚海
-      <br>
-      出自專輯 淚海
-      <br>
-      <a href="https://open.spotify.com/track/3NXr1tLoDTEjz5V13vbLXG" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_淚海.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首從對我來說是首有領域的歌，不知道是音樂的重還是副歌的旋律朗朗上口，每次聽到都滿融入歌曲的，缺點大概就是不能單曲循環吧！太重了。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-期待愛</title>
     <url>/2026/07/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%9F%E5%BE%85%E6%84%9B/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2652,6 +2831,41 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     這首單純會喜歡大概是神話裡面的金莎真的太我見猶憐了，意外聽到這首就想到假如星月神話如果有另一個版本的話想聽他唱這首，輕鬆期待而且沒有那些煩惱。
 
 <p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-淚海</title>
+    <url>/2026/02/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B7%9A%E6%B5%B7/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 推薦 許茹芸 的 淚海
+      <br>
+      出自專輯 淚海
+      <br>
+      <a href="https://open.spotify.com/track/3NXr1tLoDTEjz5V13vbLXG" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_淚海.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首從對我來說是首有領域的歌，不知道是音樂的重還是副歌的旋律朗朗上口，每次聽到都滿融入歌曲的，缺點大概就是不能單曲循環吧！太重了。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2769,39 +2983,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-理想</title>
-    <url>/2026/05/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%90%86%E6%83%B3/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 趙雷 的 理想
-      <br>
-      出自專輯 吉姆餐廳
-      <br>
-      <a href="https://open.spotify.com/track/2aIHo5BAdpQoSEMnXIFsKM?si=7900a59d0a424d8d" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_理想.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     理想這首大概是記憶裡面的經典民謠吧，北方、孤獨與很多的現實與理想差距，尤其是那個想紀念你幾歲真的是陡然間被穿透了心情，有時候民謠的共鳴很強，不一定正面也不一定要有回應，就跟著民謠的鋪陳與陳述去回望的感覺，有時候會有種哀而不傷的奇怪感，但我喜歡這樣有情緒的民謠。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-燃燒一瞬間</title>
     <url>/2026/04/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%87%83%E7%87%92%E4%B8%80%E7%9E%AC%E9%96%93/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2826,6 +3007,39 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
      這首的高音有一種圓潤感，是我感覺到高音特色與游刃有餘的歌，尤其是在"我願愛你用我每一個今天 相信真心經得起考驗"這個副歌的時候，雖然好聽但好像也不知道怎麼形容，只能說這個因為這個表現方式非常可以單曲循環。
 
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-理想</title>
+    <url>/2026/05/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%90%86%E6%83%B3/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 趙雷 的 理想
+      <br>
+      出自專輯 吉姆餐廳
+      <br>
+      <a href="https://open.spotify.com/track/2aIHo5BAdpQoSEMnXIFsKM?si=7900a59d0a424d8d" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_理想.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     理想這首大概是記憶裡面的經典民謠吧，北方、孤獨與很多的現實與理想差距，尤其是那個想紀念你幾歲真的是陡然間被穿透了心情，有時候民謠的共鳴很強，不一定正面也不一定要有回應，就跟著民謠的鋪陳與陳述去回望的感覺，有時候會有種哀而不傷的奇怪感，但我喜歡這樣有情緒的民謠。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2906,41 +3120,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-第一個清晨</title>
-    <url>/2026/07/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%AC%AC%E4%B8%80%E5%80%8B%E6%B8%85%E6%99%A8/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 王力宏 的 第一個清晨
-      <br>
-      出自專輯 蓋世英雄
-      <br>
-      <a href="https://open.spotify.com/track/4ugY7kSA3vbhvE6YrgDv28?si=6dac9cc020f8492d" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_第一個清晨.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-王力宏的〈清晨〉將清晨的光，與期盼交織一起，那種藏著些許不確定，卻又無比渴望，彷彿能真切感受到那個輕輕相擁的瞬間的感覺非常特別，它的旋律並不走向尋常的寂寞，而是在小心翼翼的試探中，傾注了滿滿的期待，讓人聽見對一份感情最深沉的重視。我自己覺得這樣溫柔且別具用心的詮釋實屬難得？
-
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-答案</title>
     <url>/2026/08/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%AD%94%E6%A1%88/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2976,31 +3155,31 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-給電影人的情書</title>
-    <url>/2026/02/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E9%9B%BB%E5%BD%B1%E4%BA%BA%E7%9A%84%E6%83%85%E6%9B%B8/</url>
+    <title>歌曲推薦-第一個清晨</title>
+    <url>/2026/07/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%AC%AC%E4%B8%80%E5%80%8B%E6%B8%85%E6%99%A8/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦  蔡琴 的 給電影人的情書
+      推薦 王力宏 的 第一個清晨
       <br>
-      出自專輯 不悔
+      出自專輯 蓋世英雄
       <br>
-      <a href="https://open.spotify.com/track/7dZiEriz7QNBToCqbqlTjH?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/4ugY7kSA3vbhvE6YrgDv28?si=6dac9cc020f8492d" target="_blank">收聽連結 -> 點此前往</a>
     </p>
-</div>
+  </div>
 
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_給電影人的情書.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_第一個清晨.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    第一次在金馬獎聽到之時真的很震撼，尤其是歌詞裡面對以身外身做夢這件事情真的把某種電影的寄託具體出來！飽滿的情感與演唱方式真的很配，我想電影與電影人仍然是各自獨自閃亮的個體啦！並沒有要哪一個自己成就或襯托對方，但身外身這個概念真的很棒。
+王力宏的〈清晨〉將清晨的光，與期盼交織一起，那種藏著些許不確定，卻又無比渴望，彷彿能真切感受到那個輕輕相擁的瞬間的感覺非常特別，它的旋律並不走向尋常的寂寞，而是在小心翼翼的試探中，傾注了滿滿的期待，讓人聽見對一份感情最深沉的重視。我自己覺得這樣溫柔且別具用心的詮釋實屬難得？
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3036,6 +3215,41 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 轉載自個人ig每日點播> chjuhsu05
     <br>
     最近開始想像如果我的青春2009，假如也有個請回答2009的話會是怎麼樣的感覺，跨越類比與數位，fb的流行以及全部共同記憶這件事情慢慢的消逝，這樣的青春時代有什麼是深刻特別而且讓這個世代的人都共同懷舊的情感呢？ 這時朋友跟我說2009年的歌都超神的，頓時想到那個畢業旅行跟校外教學大家高唱周杰倫的日子。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-給電影人的情書</title>
+    <url>/2026/02/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E9%9B%BB%E5%BD%B1%E4%BA%BA%E7%9A%84%E6%83%85%E6%9B%B8/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦  蔡琴 的 給電影人的情書
+      <br>
+      出自專輯 不悔
+      <br>
+      <a href="https://open.spotify.com/track/7dZiEriz7QNBToCqbqlTjH?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_給電影人的情書.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    第一次在金馬獎聽到之時真的很震撼，尤其是歌詞裡面對以身外身做夢這件事情真的把某種電影的寄託具體出來！飽滿的情感與演唱方式真的很配，我想電影與電影人仍然是各自獨自閃亮的個體啦！並沒有要哪一個自己成就或襯托對方，但身外身這個概念真的很棒。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3249,6 +3463,39 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-說，你愛我</title>
+    <url>/2026/01/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%AA%AA%EF%BC%8C%E4%BD%A0%E6%84%9B%E6%88%91/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 陳淑華 的 說，你愛我
+      <br>
+      出自專輯 淑樺盛開Forever
+      <br>
+      <a href="https://www.kkbox.com/tw/tc/song/1_Q7nEuk_TKl6iW5rD" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_說你愛我.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    週三可能需要一點肯定感？這首說吧說你愛我可能可以算一點點，我喜歡歌手在歌曲中的那種放鬆的感覺，挺適合週三下午的！雖然說是節奏R&B，但由陳淑華演唱又帶了一點早期老歌特有的味道，我自己非常喜歡。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-逍遙嘆</title>
     <url>/2026/07/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%8D%E9%81%99%E5%98%86/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3276,39 +3523,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     「逍遙」與「嘆」本身就是一組殘酷的對比。曾經嚮往的無拘無束，最終卻只能化作一聲無可奈何的嘆息。這不僅僅是一首回憶裡的經典曲目，每當眼前浮現新的仙俠故事，總會讓人再次想起那份獨特的悸動。在安靜的片刻重新感受這首歌，那些關於成長的重量與失去的遺憾，彷彿也跟著慢慢暈染開來。
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-        <tag>專輯插圖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-說，你愛我</title>
-    <url>/2026/01/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%AA%AA%EF%BC%8C%E4%BD%A0%E6%84%9B%E6%88%91/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 陳淑華 的 說，你愛我
-      <br>
-      出自專輯 淑樺盛開Forever
-      <br>
-      <a href="https://www.kkbox.com/tw/tc/song/1_Q7nEuk_TKl6iW5rD" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_說你愛我.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    週三可能需要一點肯定感？這首說吧說你愛我可能可以算一點點，我喜歡歌手在歌曲中的那種放鬆的感覺，挺適合週三下午的！雖然說是節奏R&B，但由陳淑華演唱又帶了一點早期老歌特有的味道，我自己非常喜歡。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3353,6 +3567,41 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-關於愛的定義</title>
+    <url>/2026/08/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%97%9C%E6%96%BC%E6%84%9B%E7%9A%84%E5%AE%9A%E7%BE%A9/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 方大同 的 關於愛的定義
+      <br>
+      出自專輯 回到未來
+      <br>
+      <a href="https://open.spotify.com/track/2LouHht0S8wELWS8W1nTBu?si=1063d49a172d4d33" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_關於愛的定義.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+這首歌看似平鋪直敘，卻巧妙地用了一種近乎數學方程式的精準與理性，試圖去推導與拆解那個自古以來最難以捉摸的命題。他將愛情的樣貌一層層剖開、釐清，又在旋律與音符的交錯間重新拼湊成形，反覆的定義後試圖讓這份情感化成具體行動的那種特別，最終落下的依然是炙熱的真心。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-雲中月圓</title>
     <url>/2026/03/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9B%B2%E4%B8%AD%E6%9C%88%E5%9C%93/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3380,6 +3629,41 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       <categories>
         <category>音樂</category>
       </categories>
+  </entry>
+  <entry>
+    <title>歌曲推薦-非常時期</title>
+    <url>/2026/08/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9E%E5%B8%B8%E6%99%82%E6%9C%9F/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 DR. Mundo 的 非常時期
+      <br>
+      出自專輯 youtube個人頻道創作單曲（非專輯）
+      <br>
+      <a href="https://www.youtube.com/watch?v=7uo5d_5UHJE&amp;list=RD7uo5d_5UHJE&amp;start_radio=1" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_非常時期.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+我喜歡音樂裡面搭配的那個水聲，它凝聚了非常時期的忍耐與捫心自問，這首真摯的表達了內心深處的世界。有時候會不禁幻想被這麼想念的感覺（雖然不是這首歌的主軸）。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+        <tag>專輯插圖</tag>
+      </tags>
   </entry>
   <entry>
     <title>歌曲推薦-鴨子</title>
@@ -3450,76 +3734,22 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>有工作的第N+2天</title>
-    <url>/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/</url>
-    <content><![CDATA[<p>當我開始逃避想晚點進辦公室位置的時候，那種想換工作的想法總是一再的重複出現<br> <span id="more"></span> </p>
-<h2 id="當我開始逃避想晚點進辦公室位置的時候"><a href="#當我開始逃避想晚點進辦公室位置的時候" class="headerlink" title="當我開始逃避想晚點進辦公室位置的時候"></a>當我開始逃避想晚點進辦公室位置的時候</h2><p>一切的變化是來自於辦公室氛圍的轉變，同事從可信賴的夥伴，變成那種爛工作犧牲對象的可能者，犧牲他去做爛工作就不是我了！輪調是目前工作的傳統，目的在於培養能了解各項工作的人，以能做全方位的規劃與討論為未來發展藍圖，但那只是藍圖…</p>
-<p>事實上每次輪調都可能去到不想去的地方，以及接到不想接的工作，這次的衝突也因此而生，當我開始因為可能因為莫名其妙的理由被喚去做那項工作的時候，大家還是很給我肯定的，說有機會去說看看或是調整整個工作項目，到後來就是一路失控的過程了，越級呈報、閒言閒語以及一堆莫名其妙的辦公室壓力。</p>
-<p>辦公室突然像是一個火爐，每天燒掉一點自己的信心、燒掉一點工作的樂趣，而燃料很多，一些是自己的愧疚，一些可能是想回到以前的落差感，最多就是那種無能為力吧？而當我開始追究我到底做錯什麼這一個死胡同的時候，代表我也沒有想找到答案，我只是想要有一個悲傷的地方讓我自己可以躺著，那種就算黑掉我也不在乎的勇氣消逝的無影無蹤….</p>
-<p>想換工作的想法一再出現，但走了就好嗎？我其實沒有成功拯救自己，也沒有任何排解掉這種煩悶心情的出口，他就是卡在胸口，深呼吸的瞬間可能有消失一點，但我不可能每一口都是深呼吸，當我一疏忽…就像是會被所有的痛苦追上。但除了快被燃燒殆盡的我之外，其他人也沒受到什麼影響，我也能試著像大家一樣不去在乎這些情緒嗎？ 或是造成別人痛苦的人本來就感受不到這些。</p>
-<h2 id="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"><a href="#沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈" class="headerlink" title="沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈"></a>沒有贏家也沒有輸家，只有怎麼樣也無法適應的我與疲倦的心靈</h2><p>困擾的狀況重複出現，我就發現無論我想讓我心裡好過一點，以沒有我是損失的方向來看，還是換一個角度用我是輸家的論點，我認賠來看，怎麼樣的在意都讓我一再的因為前後對比與怎麼搞成這樣的失落感，想放棄感。</p>
-<p>疲倦的心靈找不到一個停損的點可以棲身，似乎在情緒的起伏之中我也變成了無趣之人，今天的工作有趣嗎？ 我可能只想趕快下班逃離這個是非之地。但又怎麼能逃呢？沒有能力面試到能去的工作，履歷寫了一半就丟在那邊沒更新，放下一去去其他地方的我是有能力面對不同工作的嗎？</p>
-<p>我雖然總是沒信心，但對能力的培養與挑戰我總是沒什麼勇氣做更多的嘗試。</p>
-<h2 id="是我自己性格上的缺陷嗎？"><a href="#是我自己性格上的缺陷嗎？" class="headerlink" title="是我自己性格上的缺陷嗎？"></a>是我自己性格上的缺陷嗎？</h2><p>我也想過是不是因為自己性格上的缺陷，導致我在這個情緒上陷入過久，又或是生命中第一個感覺到不友善與無法替自己主張沒問題的地方？</p>
-<p>我發現我自己除了一些道德上的潔癖之外，我想我好像非常希望自己是一個不被眾人討論壞名聲的人，成為議論對象可能還行，但壞事或奇怪的事情真的是一介意起來就停不下來，因此我也會注意自己的品行是否端正（盡量）。但其實也沒有誰對誰錯，只是這樣結果之下，這個污點就像是一塊清不掉的黑點，潔癖在我的內心隱隱的責備，而我的道德也反過來用愧疚感來給我壓力。</p>
-<p>但老實說，真的沒有誰對誰錯的問題，忽視與冷漠也只代表了我自己心靈上不夠自立自強，不夠強大，所幸在遊戲之中我找到了我自己可以的感覺，能慢慢地給自己安慰，但遊戲仍然不是生活，我還是得在生活裡面成長起來才行。</p>
-<h2 id="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"><a href="#知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值" class="headerlink" title="知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值"></a>知識也沒有太幫得上忙，與自己和解之外，更重要的是肯認自己的價值</h2><p>查了一些霸凌的知識與反擊手段，但我發現與其說和解，其實在這些事情上我要能夠壓著我的自卑感，不僅僅是肯定我的特質，也認可自己的價值。</p>
-<p>我在這裡並不是因為怎麼樣，而是作為館員，在推動事務上自己有想努力的內容，很多事情也不會因為怎樣而改變，而且相對於被霸凌，被忽視與冷漠對待反倒是稍微輕鬆一點的（應該）</p>
-<h2 id="隨時失去的轉職可能性與履歷撰寫"><a href="#隨時失去的轉職可能性與履歷撰寫" class="headerlink" title="隨時失去的轉職可能性與履歷撰寫"></a>隨時失去的轉職可能性與履歷撰寫</h2><p>要我不懷念過去是不可能的，我想念我剛來的工作環境以及能討論，願意交流的大家，完成的任務有人分享，失敗的宣傳有人能夠檢討，為了更好的推廣而討論著的大家，但莫名其妙在不同事物的同時衝擊下都搞砸了。</p>
-<p>之前本來幸災樂禍地想說，即使要離職，離不開圖書館的也不是我，但真的是這樣嗎？其實我也抱著不確定的心態，之前找工作的不順利又有一點浮上心頭，但我的忍耐是不是也代表我正失去轉職的可能性？ 我也不知道。</p>
-<p>但在害怕之中時間確實不斷滴答的流逝。</p>
-<h2 id="誠實面對自己"><a href="#誠實面對自己" class="headerlink" title="誠實面對自己"></a>誠實面對自己</h2><p>肯認自己之外，關於缺點跟弱點仍然是要誠實面對的，至少我要能夠回答，工作到底要不要換，目前有哪些能力，哪些可以作為之後的名片，我想怎樣經營自己的品牌這幾個問題，若沒有答案我會對我自己很失望。</p>
-<p>麻痺的一天只有麻痺沒有未來，為自己規劃是我該為自己負責的地方。 </p>
+    <title>呼吸-書籍閱讀紀錄</title>
+    <url>/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/</url>
+    <content><![CDATA[<p>也許就像我喜歡奇幻小說一樣，在科幻的世界中我體驗的是另外一種想像的樂趣，之後會可能多加一個，不同情境類比的樂趣。<br> <span id="more"></span></p>
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>印象中當初準備要去圖書館上班的時候，友人請我注意一下館藏有沒有這一本，並強烈推薦了英文原作，因為能力不足只閱讀了中文，但還是非常感謝他向我介紹了這個短篇，充滿人文關懷與想像的科幻作品我真的比較少看，一讀之下就非常喜歡，也買了電子書打算之後要來看。</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>每個故事都不算是太長但充滿後勁我覺得是這些短篇小說的特色，而且閱讀之中會充滿那種仔細思考是否真的是這樣的同理心放大效果，但卻不會到換位思考的太不愉快，帶出不少那種換個角度之下我竟然是這樣看的感覺，非常有趣。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>科幻這件事情之前對我來說更像是一種類型創作，精神內核可能仍然跟其他小說區別不大，但這本小說顛覆了我的想像，如果說知名的故事如流浪地球，我比較是感受到故事之中為了生存，舉世流浪的破釜沉舟，以及關於宇宙的諸多想像，在鄉村教師則是感受到最後文化傳承與知識的重量等等，但這些科幻的主體仍然是人，或說科技是我們站在現在能夠想像的，但呼吸之中的科幻卻總是讓我屏氣凝神，有些害怕又有些期待作者會怎樣透過科幻的設計讓我重新定位自己內心的看法。</p>
+<p>除了好看之外，呼吸給我更深的感覺是透過科幻讓你重新想像平常面對的事情，時空部份可能還好，但是否是記憶型塑了我們？是否為電子寵物付出的深情是否有無意義？等等，拋離現實之下的情境，進入科幻但情境依舊的情形之下我卻無法像是往常這樣順口的給出答案，是很特別的科幻體驗，也讓我對作者的其他部小說及改編電影充滿期待。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>充滿人文及換為思考的科幻式小說體驗，一種軟科幻。因為實際探討的科技部分反而用電影裡面早就出現的方式去呈現，但一樣非常有趣，也許就像我喜歡奇幻小說一樣，在科幻的世界中我體驗的是另外一種想像的樂趣，之後會可能多加一個，不同情境類比的樂趣。</p>
+<p><img src="/images/book_%E5%91%BC%E5%90%B8.png"><br><em>(圖片來源：喵喵書評)</em></p>
 ]]></content>
       <categories>
-        <category>生活紀錄</category>
+        <category>閱讀與影視</category>
       </categories>
       <tags>
-        <tag>心情</tag>
-        <tag>困擾</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有工作的第N+3天</title>
-    <url>/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/</url>
-    <content><![CDATA[<p>當生活出現變故而無法有效消化的話，勢必會在日常相處中造成他人的困擾，因為下意識的連自己都在尋找能協助的地方<br> <span id="more"></span> </p>
-<h2 id="不知道怎樣消化的情緒"><a href="#不知道怎樣消化的情緒" class="headerlink" title="不知道怎樣消化的情緒"></a>不知道怎樣消化的情緒</h2><p>承接第Ｎ＋2天的內容，老實說真的因為這樣的煩惱非常低潮，即使自己努力消化，但仍然下意識的想在還算有交流中親近的朋友裡面，尋找一個解方，無論是訴苦或是討論，然而這樣負面的交流與未充分顧及情緒的交流，實際上是充滿風險的。第一是交流時你的哀傷與渴望對方能懂你的心情，勢必焦慮而去忽略掉那些平常時會注意的內容，例如失去意識到快吵起來的當下，仍在意對方是否懂你的意識表達。第二是即使注意到了狀況正在失控，但你因為自己的關係，可能踩到對方雷點或是錯誤的玩笑，那只會讓交流狀況更惡化，因為你仍然希望對方能體諒你的情境，但忽略了對方此刻因雷點觸動而產生的情緒。</p>
-<p>在那時低潮時就因為一些小事情跟親近的朋友短時間內發生了不同的爭吵，一人一次總共兩人（忽略掉那個沒爭吵就失去交流機會的同事的話）。明明內容上還好，卻在後續有點類似於絕交了，或是直接喪失了日常交流的勇氣，現在想來還是覺得如果當時我能處理得更好一點就好了。</p>
-<h2 id="我隱藏在內心深處的害怕"><a href="#我隱藏在內心深處的害怕" class="headerlink" title="我隱藏在內心深處的害怕"></a>我隱藏在內心深處的害怕</h2><blockquote>
-<p>我似乎能夠可以坦誠的說：我的人際需要我的維繫，可能要扮演主動的角色，而當我下意識的猶豫是否能聯繫對方，大概率我可能要失去這段友情了，無法有效消化情緒的我就是這樣關係中的未爆彈。</p>
-</blockquote>
-<p>曾經有過一個想法是，假如因為不小心在低潮時觸發雷點的人際關係是否是我的問題？還是更需要去考慮到這段關係的不穩固？錯來自於雙方而不是我單方面的反省？</p>
-<p>但實際審視下來，我發現我除了能完全信任的人際交往之外，很多的朋友更多來自於我的主動維繫，假如我因為吵架而下意識不敢直接向對方交流，那大概率這段友情就無疾而終了吧，因為我也從來沒有重要到是誰的前幾順位過。</p>
-<p>實際上只要發生在我自己低潮或無法控制情緒的時刻，大概率交流中都很容易吵架，訊息上機率又會更高，法律學習的經驗讓我習慣分割成兩個論點，並且試圖在吵架中下意識的證明即使我錯了，也來自於我行為導致，想法上應該仍要給我緩頰的空間。</p>
-<p>但又仔細的推理，造成短時間爭執到絕交的變故應該能歸納成</p>
-<ol>
-<li><p>我的自我意識偏強，總是特別在意對方在對話中有無感受到我的論述，或至少讓這個論述有傳達到對方的腦海中思索過，這往往也是爭吵升級的開端。</p>
-</li>
-<li><p>特別在意自我的正面形象，總是在對話過程中在意自己有沒有被黑掉，有點類似於對父母的頂嘴，希望能對針對我的針對性指責做出反擊，彷彿只要能保持住這個自我的認同感就能讓自己在這段人際關係中保持自己的信心，但這通常只能是爭吵崩潰的爭辯，因為對方根本不懂你在糾結的地方。</p>
-</li>
-</ol>
-<p>當我在意這兩點，又在爭吵時，對涉及以上內容的部分反應激烈（雖然重點會想放在事情上面，但我的說理方式也會讓對方失控，或認為我不可溝通），接著也可能單純講不好，導致對方不回應或講一些重話。例如宣達本次討論是我以為自己很重要，但他根本不在意這些，或是宣達我的無理取鬧根本有問題，或是直接表示本次共購雲端的行為因為我不小心觸犯到他的雷點還以此開玩笑，決定終止共購行為。</p>
-<h2 id="當一切失控但無法暫停"><a href="#當一切失控但無法暫停" class="headerlink" title="當一切失控但無法暫停"></a>當一切失控但無法暫停</h2><blockquote>
-<p>當一切開始在對話中失控的感覺真的是糟透了，我無法看自己無法參與討論的過程，腦海中像是你快聽我說跟我要終止這場對話不然之後很難有愉快的交流了，總之，糟透了。</p>
-</blockquote>
-<p>我開始發現，或許我能先解決掉的不是情緒或是強迫我不要在低潮時交流，而是自我意識跟形象維持這兩件事情，當我有意識地放棄這個去參加討論，似乎這樣的處理方式才是好的，畢竟能這麼讓雙方沒有顧忌的友情是有限的，我完全不想考驗任何一段友情，我不知道他們能不能禁得起考驗 (明顯很多不行)。</p>
-<blockquote>
-<p>事情糟糕的一個方向的時候，隨意調解氣氛也要多注意，開玩笑化解但卻剛好是對方很在意的地方那只會讓一切更糟糕，伴隨著剛剛不好的交流累積的火藥一起</p>
-</blockquote>
-<p>以在雲端共購的吵架來說，如果我不開玩笑地說，如果下次她能回應快一點，可能就不會讓對方生氣了，在當時對方以道歉發洩情緒，表示：除了家人之外抱歉本來就不會回應這麼快！</p>
-<p>但我沒注意到對方很在意這件事情的雷點或是被講好幾次的痛處，沒有評估後果隨意找自以為輕鬆的話題開玩笑，結果直接戳到炸彈，她想何時回訊息確實是她的自由，而為了轉移上面的尷尬，沒注意到對方不喜歡甚麼這件事情是我的疏失。</p>
-<p>以在好奇資料庫權限爭議來說，如果我不繼續向對方有負擔的人追問，並轉告追問的答案給對方，導致向我反映問題的人很介意，「可能被知道這個問題的詢問來自於他」因為我沒有消彌這一點不安，導致後續很尷尬，即使我說是自己問的對方也不想相信，認為我開他玩笑。</p>
-<h2 id="那之後呢？"><a href="#那之後呢？" class="headerlink" title="那之後呢？"></a>那之後呢？</h2><blockquote>
-<p>雖然似乎認真檢討了自己，但誠實面對自己最糟糕的地方是這到底要算改進還是追憶，或許這些友情也都並沒有這麼脆弱，而是基於第二點總結，我自己害怕得不敢去聯繫而以？</p>
-</blockquote>
-<p>也不知道答案是什麼，也不知道什麼樣的信任能被考驗，我開始珍惜每一次開心的相處，並試著記得很多當下的時刻，這些時間的快樂至少要被肯認是真實的吧，有工作的第N+3天後，我得試著記得教訓並改進。</p>
-]]></content>
-      <categories>
-        <category>生活紀錄</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-        <tag>困擾</tag>
+        <tag>書籍</tag>
+        <tag>閱讀心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3552,25 +3782,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       <tags>
         <tag>影片</tag>
         <tag>觀影心得</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>呼吸-書籍閱讀紀錄</title>
-    <url>/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/</url>
-    <content><![CDATA[<p>也許就像我喜歡奇幻小說一樣，在科幻的世界中我體驗的是另外一種想像的樂趣，之後會可能多加一個，不同情境類比的樂趣。<br> <span id="more"></span></p>
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>印象中當初準備要去圖書館上班的時候，友人請我注意一下館藏有沒有這一本，並強烈推薦了英文原作，因為能力不足只閱讀了中文，但還是非常感謝他向我介紹了這個短篇，充滿人文關懷與想像的科幻作品我真的比較少看，一讀之下就非常喜歡，也買了電子書打算之後要來看。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>每個故事都不算是太長但充滿後勁我覺得是這些短篇小說的特色，而且閱讀之中會充滿那種仔細思考是否真的是這樣的同理心放大效果，但卻不會到換位思考的太不愉快，帶出不少那種換個角度之下我竟然是這樣看的感覺，非常有趣。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>科幻這件事情之前對我來說更像是一種類型創作，精神內核可能仍然跟其他小說區別不大，但這本小說顛覆了我的想像，如果說知名的故事如流浪地球，我比較是感受到故事之中為了生存，舉世流浪的破釜沉舟，以及關於宇宙的諸多想像，在鄉村教師則是感受到最後文化傳承與知識的重量等等，但這些科幻的主體仍然是人，或說科技是我們站在現在能夠想像的，但呼吸之中的科幻卻總是讓我屏氣凝神，有些害怕又有些期待作者會怎樣透過科幻的設計讓我重新定位自己內心的看法。</p>
-<p>除了好看之外，呼吸給我更深的感覺是透過科幻讓你重新想像平常面對的事情，時空部份可能還好，但是否是記憶型塑了我們？是否為電子寵物付出的深情是否有無意義？等等，拋離現實之下的情境，進入科幻但情境依舊的情形之下我卻無法像是往常這樣順口的給出答案，是很特別的科幻體驗，也讓我對作者的其他部小說及改編電影充滿期待。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>充滿人文及換為思考的科幻式小說體驗，一種軟科幻。因為實際探討的科技部分反而用電影裡面早就出現的方式去呈現，但一樣非常有趣，也許就像我喜歡奇幻小說一樣，在科幻的世界中我體驗的是另外一種想像的樂趣，之後會可能多加一個，不同情境類比的樂趣。</p>
-<p><img src="/images/book_%E5%91%BC%E5%90%B8.png"><br><em>(圖片來源：喵喵書評)</em></p>
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>書籍</tag>
-        <tag>閱讀心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3617,6 +3828,49 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>失業白領的職場漂流-書籍閱讀紀錄</title>
+    <url>/2025/12/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A4%B1%E6%A5%AD%E7%99%BD%E9%A0%98%E7%9A%84%E8%81%B7%E5%A0%B4%E6%BC%82%E6%B5%81/</url>
+    <content><![CDATA[<p>《失業白領的職場漂流》讓我最難放下的，不只是失業之後重新找工作的困難，而是它讓我看見：一個人即使曾經努力、受過良好教育，也不代表離開原本的位置之後，還能順利回到同一個世界。當工作開始讓我失望、我也開始投履歷時，書裡那種對職涯失去控制的焦慮，突然變得離自己非常近。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>在對工作失望、開始投履歷的時候，真的存在著一點內心也難以解釋的躁動。不知道解答要怎樣才有一個出口時，在圖書館上班的小優勢，就是可以衝動地拿下書架上我認為有用的書。那些關於職涯憂慮、改進或方向的討論，常常會在我不知道該怎麼辦的時候，暫時提供一個可以思考的地方。</p>
+<p>但書怎樣也比想像中多，職涯又是一個熱門主題，那種拿著書卻不知道怎麼讀完的恐慌也再次出現了，真的是有點苦笑。這本社會觀察大概就是這樣出現在我的書籍閱讀清單裡，也大概是這樣讀完的。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>這本書其實是一份社會調查。作者以一個失業白領的身分，體驗約 2008 年前後白領失業後，如何積極地重新回到職場。過程中作者並沒有把很多情緒焦慮直接寫出來，但從他的思考過程、對話脈絡與最後的結果，仍然可以看見這種「重新開始」有多麼令人沮喪。</p>
+<p>作者終究是一個帶著調查目的進入其中的觀察者，但他在過程中碰到的企業偏見、企業文化、自我催眠與自我肯定，卻都是真實存在的職場故事。這也使它不只是「一個人找工作失敗」的紀錄，而是把失業後那些看似積極、實際上又不一定能帶來幫助的制度與建議，一個一個攤開來看。</p>
+<p>出版社的內容簡介裡有幾個問題，我覺得很能抓住這本書的核心：</p>
+<blockquote>
+<p>學經歷耀眼的白領階級，他們的前半生彷彿「什麼事都做對了」，又為什麼一旦離開職場就再也回不去了？</p>
+</blockquote>
+<p>重新找到一份還過得去的白領工作到底有多難？強調專業、熱情、高效能與創意的主流企業文化，以及職涯訓練顧問，又是如何一再將白領工作者推入深淵？</p>
+<p>從內容簡介其實還是很難想像這一切有多讓人沮喪，尤其失去工作的原因往往沒有一種固定模式。有人是被裁員，有人是產業變化，有人是職位消失，也有人只是因為年齡、履歷空白或企業對求職者的偏見，慢慢被排除在原本熟悉的職場之外。</p>
+<p>失業之後，重新開始的過程也好像沒有辦法真正避免。待業者交流聚會充滿心靈雞湯式的無意義教條；經理人訓練班更像是信仰佈道大會；職涯教練用誇張的方式替你諮商，還有永遠做不完的性向測驗，但九型人格與 MBTI 的結果卻可能完全相反。</p>
+<p>最後，找工作逐漸變成失業者的「正職」，求職則成了另一群人的商機。失業者背負家庭生計與求職費用的壓力，最後可能只能打零工、從事勞動工作，社經地位不斷下墜，也越來越難回到原本的世界。</p>
+<p>我覺得這本書有趣的地方，就是它沒有把這些事情寫成某個人不夠努力的結果。它反而讓人看到，當整個環境不斷要求一個人保持專業、熱情、高效能、創意與向心力時，這些正面的詞彙也可能變成另一種壓力。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>很難想像這本書的背景來自 2008 年，但內容裡討論的事情，到現在仍然讓我覺得很接近。出版社介紹裡有一句話，我讀到時特別有感：</p>
+<blockquote>
+<p>強調專業、熱情、高效能、創意、向心力的主流企業文化和職涯訓練顧問，實質上是如何以正面的言語剝削個人價值，將專業人力視為隨時可拋的免洗餐具。</p>
+</blockquote>
+<p>我正想要轉換的工作，是由「只要不犯大錯」就不會有問題的單位，轉到必須靠個人展現能力才能繼續工作的私人企業。中間真的遇到很多抉擇，而最大的恐懼來自於：我到底有沒有在工作上生存的能力？</p>
+<p>我想要讓自己有信心，不會因為被前一份工作淘汰，就只能做一些特定的工作，或乾脆變得很難找到工作。但這個想法其實就和書裡討論的白領慘況有一點像：一個人很害怕自己離開原本的位置之後，就再也證明不了自己有能力留在職場。</p>
+<p>失業的白領並非沒有能力，而是沒有合適的機會，也沒有辦法回到之前的職等。問題是，書中並沒有一個真正能解決這件事的方法。常見的應酬、介紹、訓練與面試練習，確實可以讓人再次包裝自己，在面試中脫穎而出，但對已經有過工作經驗的人來說，這些經驗反而讓他們更加清楚，自己正在被什麼樣的規則篩選。</p>
+<p>私人企業裡謀職這件事情，有時候荒謬得讓人不知道該如何接受並努力。努力不一定會換來機會，經驗也不一定能換回原本的職位；你越想證明自己值得被留下，就越容易被要求用更多正面的話語包裝自己，證明自己仍然熱情、彈性、積極，卻不能太明顯地表現出疲憊、不安或對制度的懷疑。</p>
+<p>這也是我讀這本書時最有壓力的地方。它不是單純告訴我「失業很辛苦」，而是讓我看到，失業之後連焦慮都可能被要求用正面的方式表達。你不能只是害怕找不到工作，還要把害怕轉換成成長；不能只是覺得自己被淘汰，還要說這是一個重新認識自己的機會。</p>
+<p>但如果一個人已經在承受家庭生計、履歷空白、職等下降與求職費用的壓力，這些話真的能夠幫助他嗎？還是只是在他已經很難受的時候，再要求他把自己整理成一個看起來值得被雇用的人？</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>這本書也並非沒有缺點。老實說，作者設定的人物本來在找工作上就會面臨不少困境，像是履歷空白、謀求公司的主管職位，雖然聘請職涯教練、參加類似前高層的俱樂部等行動看起來很積極，但中間仍然有些落差是難以想像的。</p>
+<p>不過也正因為這些不完全，書中仍然讓我看見精簡人力、重回職場的困難，以及那些潛規則與被迫樂觀的求職過程。努力的人不應該被這樣對待，但一切卻又確實這樣發生了。偏見造就了奇怪的景象，而最讓人無助的部分是，我可能正走在其中。</p>
+<p>原書名是 <em>Bait and Switch: The (Futile) Pursuit of the American Dream</em>，並不是我熟悉的那種美國夢；但台灣書名替它取作《失業白領的職場漂流》，我覺得反而更貼近讀完之後留下來的感覺。漂流不是完全沒有努力，而是努力的方向、可以停靠的地方，以及最後能不能回到原本的位置，都不在自己手上。</p>
+<p>所以我最後留下的問題是：真的有一種職涯韌性，是可以靠自己慢慢累積的嗎？還是我們只能在每一次被推離原本的位置之後，再努力讓自己看起來仍然值得被接住？</p>
+<p><img src="/images/book_%E5%A4%B1%E6%A5%AD%E7%99%BD%E9%A0%98%E7%9A%84%E8%81%B7%E5%A0%B4%E6%BC%82%E6%B5%81.png"><br><em>(圖片來源：博客來網路書店)</em></p>
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>書籍</tag>
+        <tag>閱讀心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>女給時代：1930年代臺灣的珈琲店文化-書籍閱讀紀錄</title>
     <url>/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/</url>
     <content><![CDATA[<p>這本書教我什麼叫做看見，而不是你覺得歷史的時間、空間與人就該是用現代的偏見來解釋。用這個角度我們將能更靠近，而不是被偏見與特質給帶入了太多類比。</p>
@@ -3638,6 +3892,64 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 <p>當我開始用既定的印象去尋找我想類比的連結點的時候，我會開始只看到特質！我的認知會隨著覺得而忽略掉那些當時代觀點或作者想呈現的內容，說實話這是由讀者權力誤讀的另外一點案例（我自己說的，想到之前那個翻譯的背叛）</p>
 <p>這本書教我什麼叫做看見，而不是你覺得，或許可以照作者說的抓幾個要素去看，更不會受到類似特質的影響，歷史的時間、空間與人。用這個角度我們將能更同感而不是被偏見與特質給帶入了太多類比。</p>
 <p><img src="/images/book_%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3.png"><br><em>(圖片來源：博客來網路書店)</em></p>
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>書籍</tag>
+        <tag>閱讀心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>明天別再來敲門-書籍閱讀紀錄</title>
+    <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80/</url>
+    <content><![CDATA[<p>這是一本關於失去與重生的書，機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
+ <span id="more"></span> 
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>在計畫助理的工作真的超級不順利，不只遇到三年計畫臨時中止，配套措施仍彼時依然充滿變數，有時憂鬱不只需要一個理解的出口，向自己和解我認為也有相當的價值，於是憂鬱的書名開始成為我的清單，只要書名夠憂鬱就行(疑)？機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
+<p>會決定開始寫網誌紀錄，一方面是朋友提到他以前連載的觀影系列至今回憶仍然有趣，若有機會想拾筆重耕，一方面則是這本書給了我的感動，因此網誌下面那句「紀錄並凝視」才成為我的網誌副題名，當然這不是書中人物的口頭禪或回憶，只是他給我的感覺我很想這樣去總結而已。</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>明天別再來敲門是描述一個失去妻子的老人 Ove 設法自殺的故事，從故事一開始 Ove 一路積極的處理離世前需要理清的各種關係，目標是進行一個沒有包袱的追隨，例如房子的產權、保險的理賠等等，儘管他積極向死亡前進，卻出現很多阻礙讓他無法達成他完全沒有包袱的目標(當然還有幾次的自殺失敗)，而他是一個追求盡善盡美的人，在這些社會網路的交流與支持下，他開始意識到再晚幾年追隨亡妻並不再是一件難以接受的事情，儘管他仍然偶爾會思念到想趕快見到亡妻。</p>
+<p>小說的特色在自殺失敗以及包袱增加下展現了 Ove 的生命以及他充滿個人風格的生活態度，作者塑造了一個充滿生命力的 Ove，正直、敢於抗爭等等，例如退貨自殺失敗的道具之類的橋段，也因為充滿責任感而不願自己的生命終結來自於他人，這代表那人得背負他生命的重量，透過回憶以及現階段與角色的認識，我們來回在 Ove 的生命歷程裡穿梭，體會著他的生活，這體驗非常特別，透過這些我們也更認識這位希望明天別再來敲門的老人，以及他信仰的品格。</p>
+<p>Ove 他不是一個非典型的角色，吝嗇、脾氣暴躁、抗爭及懷疑的激進態度，他以一個完全沒有魅力的方式吸引人的目光，不管怎麼樣我喜歡他的世界觀，同時能理解他，透過這本小說你似乎會獲得凝視回憶的力量，儘管生活在一個格格不入的世界。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>凝視回憶是這本書給我最深的感動，書中有非常多凝視的環節，妻子在 Ove 生命中的重量難以估計，書中曾經這樣去形容她，世界上只有她是彩色的，這大概可以看出她到底有多獨特且吸引人，每當我們跟著 Ove 凝視回憶時，世界對他來說並非格格不入，但當角度轉回現在，我們才理解為何明天別再來敲門。</p>
+<p>伴隨著失去愛以及想念但因為現實阻礙而無法追隨的苦惱，讀完甚至有一瞬間空洞的感覺，但當我們開始願意去凝視，這一切將會開始不同，故事中有非常多類似的情感，幸好作者安排了一個總是需要他幫忙的鄰居以及喜歡他的鄰居小孩，幫助我們與Ove去克服一些難受的情緒，我也喜歡故事中亡妻父親與他陪伴的動物的故事，凝視與紀錄這部分的感動也來自於他們。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>也許很難說得太多，這本小說的感受很特別，也許我得多看幾次才能更了解，也有人提到關於書中「各自獨立，彼此牽掛」，或相關於生命的看法，不過也許那些又更深刻一點等待我之後重看再體會吧，先讓我總結一部分就好。</p>
+<blockquote>
+<p>附註：妻子的名字是桑雅，總是以亡妻稱呼大概 Ove 得氣的跟我理論三百回合。</p>
+</blockquote>
+<p><img src="/images/book_%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80.png"><br><em>(圖片來源：博客來網路書店)</em></p>
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>書籍</tag>
+        <tag>閱讀心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>畫出心之所嚮-書籍閱讀紀錄</title>
+    <url>/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/</url>
+    <content><![CDATA[<p>對我來說讀完整本藝術札記，重要的反而是對心態的分析，與他自己的解決方式，這些心態我也有但我沒有仔細想過，做更多的逃避但又跑得不夠快，被追上又憂鬱的我只能期待著下一個假日…<br> <span id="more"></span> </p>
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>我朋友考上圖書館的缺，為了拜訪他久違的造訪家附近的圖書館，意外注目到新書區的這本書，他的其他作品集其實我在書店稍微翻過，很漂亮充滿氛圍我超喜歡，但這本不是作品集是創作心得部落格彙整，抱著期待又不確定的心情先借起來！</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>作者Mateusz Urbanowicz是人氣插畫家，在他的作品裡面你能感受到日本的感覺，我第一次去日本的京都等城市旅行就是這樣的感覺，這本書雖然不是作品集但是是由作者本人分析自己的創作歷程，遇到過的困難，思考過的問題，以及一些突破還有關於藝術的觀點等等。</p>
+<p>假如你喜歡他的創作，透過這本書可以更靠近作品，假如是個好奇如我的讀者，書裡面可以看到他自己關於想法的敘述與梳理，雖然突破過程有時候有一點糾結？或仍然只有一個他自己認可的答案，但這何嘗不是一種消化詮釋呢！至少我喜歡他保持思考並真誠面對自己，面對作品，面對喜歡他作品的人以及對創作保持熱情的分享。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>插畫集真的滿貴的，假如我不知道創作的細節那我大概不會買單，下次如果在書籍看到我應該會想要買一本來當成發呆時候的讀物，因為線條用心，因為他設計過，因為他收集的素材，因為他創作的過程，在AI盛行的現在，我想我會願意為了很多心意買單。</p>
+<p>回到書籍來說其實這本書是一個藝術家的自我突破思考札記，出版社是這樣寫介紹的</p>
+<blockquote>
+<p>「藝術創作」、「藝術工具」、「日常」、「藝術問答」四個面向，分享在藝術路上的掙扎與領悟，既談理念與方法，也細細描繪對街景與日常的關懷，展現他作為完美主義創作者與資深文具迷的敏銳觀察。</p>
+</blockquote>
+<p>我自己的話感想會更集中在作者想成為自己認可的藝術家並且創作自己滿意大家欣賞作品上的思考上，有幾個地方很值得參考</p>
+<ol>
+<li>藝術家必須有想像力嗎<br>Mateusz Urbanowicz在這裡討論了想像力的恐懼，他認為自己創作很大程度依靠素材，恐懼缺乏想像力的藝術家特質這件事情，就如同我們擔心自己沒有職業的特質與能力，他思考後認為「技能、經驗、創作過程和知識」這些透過鑽研與修練能提升的更為核心。</li>
+<li>累積學習曲線<br>Mateusz Urbanowicz在這裡討論他離開動畫公司後想做的突破，以漫畫為挑戰尋求藝術家本領的成長，但體趕上卻發現並沒有太多的變化，他在以建築物為主題的水彩風景畫領域的學習曲線已經在山頂附近了，他以工作缺乏新的挑戰來思考，使用熟悉的鉛筆與水彩畫做法，即使設計了角色與分鏡，但因只是仰賴過去的知識技能，對他來說能力並沒有任何成長，要如何讓時間與精力能有相應的成長回報呢？<br>Mateusz Urbanowicz在思考上提出區分作品成就感與能力成長這兩件事情，若以提升後者來說，在目前學習曲線再畫上另外一條學習曲線是一個可嘗試的做法，畫人物角色、學習新工具或技法等等，有趣的是他比較傾向於在創作中去多練習某項事情的方式來累積，例如在他的建築物中加上人物的嘗試，跳脫純練習的作業感，以作品的方式來創作，樂趣之外又累積他的作品，加上有熟悉的事物創作起來還是有一些獨屬於自己欣賞的趣味的。<br>這段思考對我的體悟是學習曲線這件事情，我在閱讀或學習上很企圖一步登天，學習曲線這件事情長期被我忽視，我會把他多加入我的規畫之中(?)</li>
+<li>如何使用參考資料<br>Mateusz Urbanowicz在這裡坦承了他的創作困境，他受限於需要參考照片才能畫出完成度高又好看的作品，但擺脫現實束縛的創作力是他自己認為理想藝術需要有的能力，透過閱讀跟嘗試他提出了一套流程，先專注在草圖(思考+想像力)，在氛圍、情緒與感覺上勾勒整體樣貌與嘗試上色，此時他認為要降低對作品的執著(完美追求)直到他對作品的核心有了清晰的想法和情緒，這是為了孕育出創意的核心，若仍缺少具體的東西才會開始找參考資料，但為了不受照片的魔力影響，在收集完必要資訊，他會遠離參考資料不在眼前放任何一張可能影響作品的照片(或用黑白照片降低影響)，如此一來他的想像力不再受參考資料直接影響，更多的來自於腦海中發酵的創意。<br>這種壓力重重的創作肌肉鍛鍊，從空白的素描本開始的練習，讓此刻慣用AI拿到大綱的我有點反思，Mateusz Urbanowicz找回了他的創作自由，他讓自己的意識能描繪鄉愁並畫出一個佇立在秋天森林中的神社(推薦這張真的氛圍滿滿)</li>
+<li>一廂情願成為干擾<br>Mateusz Urbanowicz確實是一個對藝術有信仰的人，他這裡描述了他的不安與完美主義，他認為完美主義屬於一種「事情應該處於其應有狀態，維持很高的水準」，但事實上這個完美的狀態評估可能是一個問題，或是作者自己感受到的，他像是一個「危險的一廂情願」，對可以實現並可能具體化的東西有一個精緻的印象(此時更像是一個計劃)，但因為過於追求完美的結果忽略達成結果所需要的實際過程，或許更存在一個危機是壯麗的泡影，真的在紙上下筆時願景隨時可能瓦解，計畫的時間和精力的付出不等於紙和筆捕捉的實質內容。<br>伴隨造訪的是不安、焦慮與失望，危險的一廂情願和完美主義帶來了負面影響，腦海中描繪的是手下創作不出的願景，即使克服障礙下筆但與理想存在差距，心中也會出現失敗與假貨的情緒，無論事情進展是否順利，結果卻總是讓人失望不已，明明在規劃中能完美，現實卻最終有差距，找不出原因卻經常對自己感到失望與生氣，對批評的以防禦的心態甚至惱羞成怒也是對自己失望的一部分，總是重複過程，並壓抑情緒修改期待更靠近理想，結果仍然無法呈現又帶來更大的心情低谷，自我厭惡風暴的惡性循環…心生恐懼與想避免失敗，創作伴隨而來的極度不安無法緩解。<br>Mateusz Urbanowicz認為這可能與讀書&#x2F;工作中慢慢養成用完美主義過度思考的壞習慣有關，若沉浸在自己的期待:一定可以創作出這樣的作品，一定可以成為這樣的藝術家的一廂情願，那就很難跳出悲慘和不安的情緒，要「回歸現實」，所謂的浪漫的藝術家形象與一廂情願的理想與「在藝術創作過程中要珍惜些什麼」並不一定不能互補，例如設定為遙遠的方針，而非具體當下就要抵達的目的，專注在原稿與故事&gt;有一天的好故事；專注在草圖與線條&gt;好插圖…等，小心讓自己不要陷入一廂情願，更專注於當下，利用深呼吸對抗不安與失望，用對當下富饒的心情抵抗完美主義的內心警告(?)<br>這段思考若回到我身上，那就是滿滿的擅自期待了，我也有強烈的期待與完美主義困擾，但從沒有仔細思考過這段，透過作者對於自己創作困境的分析，好像更能感受到心態上對於自己的困擾與可以嘗試調整的方向。</li>
+<li>焦躁感與野心<br>Mateusz Urbanowicz描述在轉換為全職藝術家後，他遇到一種心理障礙，藝術工作心態的焦躁感與野心，焦躁感催促著自己要立刻著手下一件作品，監視自己不偷懶讓心情容易跌到谷底，野心則關於檢查作品的完成度是否到達最高水準，這兩種向量的壓力不是不好，但他們不分時機出現又無法忽略的時候，壓力就來，心情跟專注度也馬上受影響，他認為透過常常反省跟協調應該有能力改善，里程碑、對話等等方式都可以嘗試。<br>對我來說，這議題跟前一個一廂情願很像，若任憑心情向量自由成長，結果只會越來越糟糕，也許比較逃避，更可怕的是不對話不處理，逃避雖然可恥但有用時，其實逃避的人的心態相對來說是焦躁跟野心還有完美主義都沒有追上的逃逸速度！</li>
+</ol>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>這本書後面還談了很多關於藝術的看法以及創作歷程，我自己也很喜歡作者分享自己怎樣挑選畫畫工具，喜歡的手感，怎樣收集素材並且不排斥改變作畫過程的回憶錄等等，關於藝術看法部分我其實滿喜換「必要的心態」這邊的討論，這章節作者論述了他認為了不起的作品，以及對了不起作品的定義，對我來說這個標準等於他畫出了一個學習對象與藝術眼光，作品意義及共鳴這段的討論很有趣。對我來說我更欣賞作者的創意以及那一小段靈光，所以我可能不會採納這樣的評價系統，但知道這樣的評價體系跟眼光是有幫助的，好不好能不能傳遞思想，這個思想有沒有共鳴，與畫的好不好，畫作傳達的內容等等。</p>
+<p>對我來說讀完整本藝術札記，重要的反而是對心態的分析，與他自己的解決方式，這些心態我也有但我沒有仔細想過，做更多的逃避但又跑得不夠快，被追上又憂鬱的我只能期待著下一個假日，我需要更多的向自己解決這方面的問題(?) 好吧我期待。</p>
+<p><img src="/images/book_%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE.png"><br><em>(圖片來源：誠品線上書店)</em></p>
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -3693,22 +4005,38 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>明天別再來敲門-書籍閱讀紀錄</title>
-    <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80/</url>
-    <content><![CDATA[<p>這是一本關於失去與重生的書，機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
- <span id="more"></span> 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>在計畫助理的工作真的超級不順利，不只遇到三年計畫臨時中止，配套措施仍彼時依然充滿變數，有時憂鬱不只需要一個理解的出口，向自己和解我認為也有相當的價值，於是憂鬱的書名開始成為我的清單，只要書名夠憂鬱就行(疑)？機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
-<p>會決定開始寫網誌紀錄，一方面是朋友提到他以前連載的觀影系列至今回憶仍然有趣，若有機會想拾筆重耕，一方面則是這本書給了我的感動，因此網誌下面那句「紀錄並凝視」才成為我的網誌副題名，當然這不是書中人物的口頭禪或回憶，只是他給我的感覺我很想這樣去總結而已。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>明天別再來敲門是描述一個失去妻子的老人 Ove 設法自殺的故事，從故事一開始 Ove 一路積極的處理離世前需要理清的各種關係，目標是進行一個沒有包袱的追隨，例如房子的產權、保險的理賠等等，儘管他積極向死亡前進，卻出現很多阻礙讓他無法達成他完全沒有包袱的目標(當然還有幾次的自殺失敗)，而他是一個追求盡善盡美的人，在這些社會網路的交流與支持下，他開始意識到再晚幾年追隨亡妻並不再是一件難以接受的事情，儘管他仍然偶爾會思念到想趕快見到亡妻。</p>
-<p>小說的特色在自殺失敗以及包袱增加下展現了 Ove 的生命以及他充滿個人風格的生活態度，作者塑造了一個充滿生命力的 Ove，正直、敢於抗爭等等，例如退貨自殺失敗的道具之類的橋段，也因為充滿責任感而不願自己的生命終結來自於他人，這代表那人得背負他生命的重量，透過回憶以及現階段與角色的認識，我們來回在 Ove 的生命歷程裡穿梭，體會著他的生活，這體驗非常特別，透過這些我們也更認識這位希望明天別再來敲門的老人，以及他信仰的品格。</p>
-<p>Ove 他不是一個非典型的角色，吝嗇、脾氣暴躁、抗爭及懷疑的激進態度，他以一個完全沒有魅力的方式吸引人的目光，不管怎麼樣我喜歡他的世界觀，同時能理解他，透過這本小說你似乎會獲得凝視回憶的力量，儘管生活在一個格格不入的世界。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>凝視回憶是這本書給我最深的感動，書中有非常多凝視的環節，妻子在 Ove 生命中的重量難以估計，書中曾經這樣去形容她，世界上只有她是彩色的，這大概可以看出她到底有多獨特且吸引人，每當我們跟著 Ove 凝視回憶時，世界對他來說並非格格不入，但當角度轉回現在，我們才理解為何明天別再來敲門。</p>
-<p>伴隨著失去愛以及想念但因為現實阻礙而無法追隨的苦惱，讀完甚至有一瞬間空洞的感覺，但當我們開始願意去凝視，這一切將會開始不同，故事中有非常多類似的情感，幸好作者安排了一個總是需要他幫忙的鄰居以及喜歡他的鄰居小孩，幫助我們與Ove去克服一些難受的情緒，我也喜歡故事中亡妻父親與他陪伴的動物的故事，凝視與紀錄這部分的感動也來自於他們。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>也許很難說得太多，這本小說的感受很特別，也許我得多看幾次才能更了解，也有人提到關於書中「各自獨立，彼此牽掛」，或相關於生命的看法，不過也許那些又更深刻一點等待我之後重看再體會吧，先讓我總結一部分就好。</p>
-<blockquote>
-<p>附註：妻子的名字是桑雅，總是以亡妻稱呼大概 Ove 得氣的跟我理論三百回合。</p>
-</blockquote>
-<p><img src="/images/book_%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80.png"><br><em>(圖片來源：博客來網路書店)</em></p>
+    <title>詭秘之主(網路小說閱讀紀錄)</title>
+    <url>/2022/07/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%A9%AD%E7%A7%98%E4%B9%8B%E4%B8%BB/</url>
+    <content><![CDATA[<p>《詭秘之主》給我的閱讀感，不只是神秘、危險與瘋狂的氛圍，而是在這樣的世界裡，所有力量、信仰與命運的饋贈都可能需要付出代價；即使如此，人還是得想辦法找到一個錨，讓自己不在失控的世界裡失去原本的樣子。這也是我讀完之後最想留下來的感受。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>《詭秘之主》是愛潛水的烏賊近幾年的西幻大作，結合克蘇魯神話的元素，在神秘、危險並且瘋狂的工業時代背景下，描述一個尋找生命出路的故事。主角克萊恩也曾經連續數個月登上起點最受歡迎角色第一名，作品受歡迎的程度可見一斑。</p>
+<p>甚至在論文撰寫期間，也有不少訪談者提到這本小說。不過如果在作品紅到發紫的當下馬上閱讀，對我來說好像有一點過於人云亦云，所以我一直等到覺得作者的番外篇應該寫得差不多了，才正式開始看。</p>
+<p>殊不知作者後來說會醞釀第二部，所以沒有我期待中的番外篇，真是糗出新高度。最後直到 2021 年，我才正式把這本小說讀完。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>《詭秘之主》的特色，應該是結合克蘇魯神話後，讓整本小說有一種神秘、不可預料與瘋狂的感覺。這點其實非常不網路小說，因為神秘與瘋狂代表著部分節奏是灰暗的，也很難營造出一般升級流小說那種明確的成長感，對習慣快速推進和戰力提升的讀者來說，需要花一點時間才能融入。</p>
+<p>過去以克蘇魯神話為核心而受到歡迎的網路小說並不多，但作者成功營造出了屬於這本書的時代感。工業時代的城市、宗教、報紙、警察、社交與生活細節，讓神秘事件不是飄在世界外面的背景，而是會發生在人物每天走過的街道、工作的地方和必須維持的生活裡。</p>
+<p>他的文字也很有節奏感，有時候甚至會讓我想起初看柯南電影《貝克街的亡靈》時的激動。故事一方面保有神秘和瘋狂，另一方面又透過人物衝突，讓主角不只是為了展示世界觀而存在。這本小說也沒有完全依靠大中華文化的天朝觀去解釋異世界，而是建立出一個有自己的宗教、歷史與社會脈絡的世界，因此有非常高的閱讀沉浸感。</p>
+<p>力量體系和途徑也是小說有趣的一部分。它提供了符合背景設定的提升方式，跟著主角向前時，有時候甚至會感覺到並不是主角主動選擇變強，而是時代與危險逼著他必須繼續往前。在瘋狂與神秘之下堅持，是因為還有想要守護的東西；透過生活細節的描寫，以及人物在生活壓力下做出的決定，主角的智慧、悲傷與無奈，也削弱了快速升級可能帶來的不適感。</p>
+<p>它本質上並不是一段升級打怪、征服異世界的旅程，更像是一種異世界漂泊生存記。能力的提升不是單純得到更大的力量，還要理解途徑、扮演角色、消化魔藥，並且時刻面對失控的風險。力量越接近神秘，代價也越不可能被忽略。</p>
+<p>從一些小片段可以更體驗小說的特色：</p>
+<ol>
+<li>所有命運的饋贈，早已在暗中標注好了價格。（來源應該是 <em>Marie Antoinette: The Portrait of an Average Woman</em>，很有名的一句話。）</li>
+<li>相信神靈的威能，不要相信祂們的仁慈。</li>
+<li>我們是守護者，也是一群時刻對抗著危險和瘋狂的可憐蟲。</li>
+</ol>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>如果真的有神的話，根本不可能幫助如此渺小的人類，除非……祂們懷有惡意。</p>
+<p>《詭秘之主》的神也是如此，所有饋贈都並非沒有代價。在一個個不懷好意的神、信徒和穿越者互相影響之下，小說形成了一個真正神秘的世界觀。神秘代表未知的恐懼與探索的趣味，也是貫穿整本書的重點：人要怎麼在危險和瘋狂裡繼續活下來？</p>
+<p>其中有一些設定讓我印象很深刻。神與信徒的關係不是單方面的崇拜，神也需要透過信徒維繫自身的存在，因此神話與信仰的設定必須符合神想要維持的形象。信徒一方面是神在世界上的錨，另一方面，他們的信仰也讓神能夠維持自我。</p>
+<p>而對抗危險和瘋狂的特殊能力者同樣需要錨。錨意味著他們還能找到自己，不會迷失在瘋狂之中；失控往往就意味著失去自己。也因為如此，小說才發展出「消化」、「扮演」等特殊技巧，能力者不能只是把魔藥喝下去、得到力量，還必須理解自己正在成為什麼樣的人。</p>
+<p>讓我覺得特別有意思的是，無論身分如何，他們都需要錨，讓自己與自己想要存在的世界保持關聯。這個錨有時候也會被具現在我的生活裡。</p>
+<p>在工作、壓力或其他接近瘋狂的情形下，我會感覺連靈魂都無法安定，心靈像是懸在空中。我應該要快樂地享受自己的時光，卻因為仍在對抗那些事情，而沒有一個錨將自己定位住。像前陣子即使我在《薩爾達傳說》的遊戲裡奔跑，卻一刻也放鬆不下來；我並沒有逃跑，卻也無法好好休息。</p>
+<p>但打桌球或學習，卻能讓我稍微有一點定位。有時候我也不確定這個錨究竟是什麼樣的存在，是一種帶有意義的踏實感，讓我能安心放鬆、重新找到自己；還是對生活的不安全感，迫使我透過某些活動維持住自己。</p>
+<p>不過透過這些類似踏實的活動，即使我常常覺得自己只是在原地踏步，卻還是會感覺自己比較像自己。也許錨不一定要帶我前往什麼地方，它有時候只是讓我在混亂裡知道自己還站在哪裡。</p>
+<p>因此我很喜歡《詭秘之主》裡「錨」的概念。它不只是一個力量體系中的設定，也不是用來解釋神與信徒關係的工具，而是讓我想到：當一個人面對工作、壓力、恐懼，甚至自己的失控時，要怎麼把自己抓回當下的生活裡。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>《詭秘之主》是一部非傳統的網路小說，融入克蘇魯神話後，神秘的氛圍、瘋狂的狀態與詭異的世界，增添了很多特殊的魅力。它沒有完全按照一般網路小說的方式快速升級，反而讓主角在一個充滿危險的時代裡，透過生活、選擇和守護的東西慢慢向前走。</p>
+<p>整體來說，這本小說各方面都非常優秀。雖然後續還有很多故事沒有描述完全，但作者既然說會繼續拓展詭秘世界，我仍然很期待外神與序列的設定，希望在戰力升級的同時，也能維持這些真正吸引人的特色。</p>
+<p>改天再重看一次，並考慮找找看相關的同人小說！</p>
+<p><img src="/images/book_%E8%A9%AD%E7%A7%98%E4%B9%8B%E4%B8%BB.png"><br><em>(圖片來源：起點中文網)</em></p>
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -3741,38 +4069,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 </ol>
 <p>要如何讓自己試著不去「激烈的消極」，而是清楚想法後，能從安心感之外的地方去調整跟努力，這本書的很多面向真實到讓我害怕。</p>
 <p><img src="/images/book_%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91.png"><br><em>(圖片來源：博客來網路書店)</em></p>
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>書籍</tag>
-        <tag>閱讀心得</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>畫出心之所嚮-書籍閱讀紀錄</title>
-    <url>/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/</url>
-    <content><![CDATA[<p>對我來說讀完整本藝術札記，重要的反而是對心態的分析，與他自己的解決方式，這些心態我也有但我沒有仔細想過，做更多的逃避但又跑得不夠快，被追上又憂鬱的我只能期待著下一個假日…<br> <span id="more"></span> </p>
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>我朋友考上圖書館的缺，為了拜訪他久違的造訪家附近的圖書館，意外注目到新書區的這本書，他的其他作品集其實我在書店稍微翻過，很漂亮充滿氛圍我超喜歡，但這本不是作品集是創作心得部落格彙整，抱著期待又不確定的心情先借起來！</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>作者Mateusz Urbanowicz是人氣插畫家，在他的作品裡面你能感受到日本的感覺，我第一次去日本的京都等城市旅行就是這樣的感覺，這本書雖然不是作品集但是是由作者本人分析自己的創作歷程，遇到過的困難，思考過的問題，以及一些突破還有關於藝術的觀點等等。</p>
-<p>假如你喜歡他的創作，透過這本書可以更靠近作品，假如是個好奇如我的讀者，書裡面可以看到他自己關於想法的敘述與梳理，雖然突破過程有時候有一點糾結？或仍然只有一個他自己認可的答案，但這何嘗不是一種消化詮釋呢！至少我喜歡他保持思考並真誠面對自己，面對作品，面對喜歡他作品的人以及對創作保持熱情的分享。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>插畫集真的滿貴的，假如我不知道創作的細節那我大概不會買單，下次如果在書籍看到我應該會想要買一本來當成發呆時候的讀物，因為線條用心，因為他設計過，因為他收集的素材，因為他創作的過程，在AI盛行的現在，我想我會願意為了很多心意買單。</p>
-<p>回到書籍來說其實這本書是一個藝術家的自我突破思考札記，出版社是這樣寫介紹的</p>
-<blockquote>
-<p>「藝術創作」、「藝術工具」、「日常」、「藝術問答」四個面向，分享在藝術路上的掙扎與領悟，既談理念與方法，也細細描繪對街景與日常的關懷，展現他作為完美主義創作者與資深文具迷的敏銳觀察。</p>
-</blockquote>
-<p>我自己的話感想會更集中在作者想成為自己認可的藝術家並且創作自己滿意大家欣賞作品上的思考上，有幾個地方很值得參考</p>
-<ol>
-<li>藝術家必須有想像力嗎<br>Mateusz Urbanowicz在這裡討論了想像力的恐懼，他認為自己創作很大程度依靠素材，恐懼缺乏想像力的藝術家特質這件事情，就如同我們擔心自己沒有職業的特質與能力，他思考後認為「技能、經驗、創作過程和知識」這些透過鑽研與修練能提升的更為核心。</li>
-<li>累積學習曲線<br>Mateusz Urbanowicz在這裡討論他離開動畫公司後想做的突破，以漫畫為挑戰尋求藝術家本領的成長，但體趕上卻發現並沒有太多的變化，他在以建築物為主題的水彩風景畫領域的學習曲線已經在山頂附近了，他以工作缺乏新的挑戰來思考，使用熟悉的鉛筆與水彩畫做法，即使設計了角色與分鏡，但因只是仰賴過去的知識技能，對他來說能力並沒有任何成長，要如何讓時間與精力能有相應的成長回報呢？<br>Mateusz Urbanowicz在思考上提出區分作品成就感與能力成長這兩件事情，若以提升後者來說，在目前學習曲線再畫上另外一條學習曲線是一個可嘗試的做法，畫人物角色、學習新工具或技法等等，有趣的是他比較傾向於在創作中去多練習某項事情的方式來累積，例如在他的建築物中加上人物的嘗試，跳脫純練習的作業感，以作品的方式來創作，樂趣之外又累積他的作品，加上有熟悉的事物創作起來還是有一些獨屬於自己欣賞的趣味的。<br>這段思考對我的體悟是學習曲線這件事情，我在閱讀或學習上很企圖一步登天，學習曲線這件事情長期被我忽視，我會把他多加入我的規畫之中(?)</li>
-<li>如何使用參考資料<br>Mateusz Urbanowicz在這裡坦承了他的創作困境，他受限於需要參考照片才能畫出完成度高又好看的作品，但擺脫現實束縛的創作力是他自己認為理想藝術需要有的能力，透過閱讀跟嘗試他提出了一套流程，先專注在草圖(思考+想像力)，在氛圍、情緒與感覺上勾勒整體樣貌與嘗試上色，此時他認為要降低對作品的執著(完美追求)直到他對作品的核心有了清晰的想法和情緒，這是為了孕育出創意的核心，若仍缺少具體的東西才會開始找參考資料，但為了不受照片的魔力影響，在收集完必要資訊，他會遠離參考資料不在眼前放任何一張可能影響作品的照片(或用黑白照片降低影響)，如此一來他的想像力不再受參考資料直接影響，更多的來自於腦海中發酵的創意。<br>這種壓力重重的創作肌肉鍛鍊，從空白的素描本開始的練習，讓此刻慣用AI拿到大綱的我有點反思，Mateusz Urbanowicz找回了他的創作自由，他讓自己的意識能描繪鄉愁並畫出一個佇立在秋天森林中的神社(推薦這張真的氛圍滿滿)</li>
-<li>一廂情願成為干擾<br>Mateusz Urbanowicz確實是一個對藝術有信仰的人，他這裡描述了他的不安與完美主義，他認為完美主義屬於一種「事情應該處於其應有狀態，維持很高的水準」，但事實上這個完美的狀態評估可能是一個問題，或是作者自己感受到的，他像是一個「危險的一廂情願」，對可以實現並可能具體化的東西有一個精緻的印象(此時更像是一個計劃)，但因為過於追求完美的結果忽略達成結果所需要的實際過程，或許更存在一個危機是壯麗的泡影，真的在紙上下筆時願景隨時可能瓦解，計畫的時間和精力的付出不等於紙和筆捕捉的實質內容。<br>伴隨造訪的是不安、焦慮與失望，危險的一廂情願和完美主義帶來了負面影響，腦海中描繪的是手下創作不出的願景，即使克服障礙下筆但與理想存在差距，心中也會出現失敗與假貨的情緒，無論事情進展是否順利，結果卻總是讓人失望不已，明明在規劃中能完美，現實卻最終有差距，找不出原因卻經常對自己感到失望與生氣，對批評的以防禦的心態甚至惱羞成怒也是對自己失望的一部分，總是重複過程，並壓抑情緒修改期待更靠近理想，結果仍然無法呈現又帶來更大的心情低谷，自我厭惡風暴的惡性循環…心生恐懼與想避免失敗，創作伴隨而來的極度不安無法緩解。<br>Mateusz Urbanowicz認為這可能與讀書&#x2F;工作中慢慢養成用完美主義過度思考的壞習慣有關，若沉浸在自己的期待:一定可以創作出這樣的作品，一定可以成為這樣的藝術家的一廂情願，那就很難跳出悲慘和不安的情緒，要「回歸現實」，所謂的浪漫的藝術家形象與一廂情願的理想與「在藝術創作過程中要珍惜些什麼」並不一定不能互補，例如設定為遙遠的方針，而非具體當下就要抵達的目的，專注在原稿與故事&gt;有一天的好故事；專注在草圖與線條&gt;好插圖…等，小心讓自己不要陷入一廂情願，更專注於當下，利用深呼吸對抗不安與失望，用對當下富饒的心情抵抗完美主義的內心警告(?)<br>這段思考若回到我身上，那就是滿滿的擅自期待了，我也有強烈的期待與完美主義困擾，但從沒有仔細思考過這段，透過作者對於自己創作困境的分析，好像更能感受到心態上對於自己的困擾與可以嘗試調整的方向。</li>
-<li>焦躁感與野心<br>Mateusz Urbanowicz描述在轉換為全職藝術家後，他遇到一種心理障礙，藝術工作心態的焦躁感與野心，焦躁感催促著自己要立刻著手下一件作品，監視自己不偷懶讓心情容易跌到谷底，野心則關於檢查作品的完成度是否到達最高水準，這兩種向量的壓力不是不好，但他們不分時機出現又無法忽略的時候，壓力就來，心情跟專注度也馬上受影響，他認為透過常常反省跟協調應該有能力改善，里程碑、對話等等方式都可以嘗試。<br>對我來說，這議題跟前一個一廂情願很像，若任憑心情向量自由成長，結果只會越來越糟糕，也許比較逃避，更可怕的是不對話不處理，逃避雖然可恥但有用時，其實逃避的人的心態相對來說是焦躁跟野心還有完美主義都沒有追上的逃逸速度！</li>
-</ol>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>這本書後面還談了很多關於藝術的看法以及創作歷程，我自己也很喜歡作者分享自己怎樣挑選畫畫工具，喜歡的手感，怎樣收集素材並且不排斥改變作畫過程的回憶錄等等，關於藝術看法部分我其實滿喜換「必要的心態」這邊的討論，這章節作者論述了他認為了不起的作品，以及對了不起作品的定義，對我來說這個標準等於他畫出了一個學習對象與藝術眼光，作品意義及共鳴這段的討論很有趣。對我來說我更欣賞作者的創意以及那一小段靈光，所以我可能不會採納這樣的評價系統，但知道這樣的評價體系跟眼光是有幫助的，好不好能不能傳遞思想，這個思想有沒有共鳴，與畫的好不好，畫作傳達的內容等等。</p>
-<p>對我來說讀完整本藝術札記，重要的反而是對心態的分析，與他自己的解決方式，這些心態我也有但我沒有仔細想過，做更多的逃避但又跑得不夠快，被追上又憂鬱的我只能期待著下一個假日，我需要更多的向自己解決這方面的問題(?) 好吧我期待。</p>
-<p><img src="/images/book_%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE.png"><br><em>(圖片來源：誠品線上書店)</em></p>
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
