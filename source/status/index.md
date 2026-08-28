@@ -100,11 +100,58 @@ comments: false
   .status-section-heading h2 { margin: 0; color: var(--status-brown); font-size: 22px; }
   .status-section-heading small { margin-left: auto; color: #96745e; font-size: 10px; }
   .status-summary { margin: 14px 0 0; color: #96745e; font-size: 10px; }
+  .status-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .status-search-label { color: #96745e; font: 10px "Courier New", monospace; letter-spacing: 1px; }
+  .status-search {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 9px 11px;
+    color: var(--status-ink);
+    background: rgba(255, 252, 243, .86);
+    border: 1px solid var(--status-line);
+    font: 14px Georgia, "Noto Serif TC", serif;
+  }
+  .status-search:focus { outline: 2px solid var(--status-orange); outline-offset: 2px; }
+  .status-button {
+    padding: 9px 13px;
+    color: #f9e9ca;
+    background: var(--status-blue);
+    border: 1px solid #182d37;
+    font: 11px "Courier New", monospace;
+    cursor: pointer;
+  }
+  .status-button:hover { color: #fff4dc; background: var(--status-orange); border-color: var(--status-orange); }
+  .status-button:disabled { opacity: .5; cursor: not-allowed; }
 
   .status-list {
+    margin-top: 14px;
+  }
+  .status-year { margin: 0 0 16px; border: 1px solid var(--status-line); background: rgba(255, 252, 243, .35); }
+  .status-year + .status-year { margin-top: 16px; }
+  .status-year-summary {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 13px;
+    color: var(--status-brown);
+    background: rgba(231, 221, 208, .62);
+    font: bold 14px "Courier New", monospace;
+    cursor: pointer;
+    list-style: none;
+  }
+  .status-year-summary::-webkit-details-marker { display: none; }
+  .status-year-summary::before { content: "+"; color: var(--status-orange); font-size: 17px; line-height: 1; }
+  .status-year[open] > .status-year-summary::before { content: "−"; }
+  .status-year-count { margin-left: auto; color: #96745e; font-size: 10px; font-weight: normal; }
+  .status-year-list {
     position: relative;
-    margin: 14px 0 0 9px;
-    padding: 2px 0 2px 28px;
+    margin: 0 0 0 9px;
+    padding: 16px 0 2px 28px;
     border-left: 2px solid #b48b6d;
   }
   .status-item { position: relative; margin: 0 0 26px; }
@@ -141,6 +188,7 @@ comments: false
   .status-empty,
   .status-error { padding: 20px; color: #6b5547; background: rgba(255, 252, 243, .86); border: 1px solid var(--status-line); line-height: 1.8; }
   .status-error { color: #8b4a35; }
+  .status-actions { display: flex; justify-content: center; margin-top: 18px; }
   .status-footnote { margin: 24px 0 0; color: #96745e; font: 11px "Courier New", monospace; letter-spacing: .8px; text-align: right; }
 
   @media (max-width: 767px) {
@@ -152,7 +200,10 @@ comments: false
   @media (max-width: 430px) {
     .status-section-heading { flex-wrap: wrap; }
     .status-section-heading small { width: 100%; margin-left: 0; }
-    .status-list { margin-left: 5px; padding-left: 22px; }
+    .status-controls { align-items: stretch; flex-wrap: wrap; }
+    .status-search-label { width: 100%; }
+    .status-search { flex-basis: calc(100% - 65px); }
+    .status-year-list { margin-left: 5px; padding-left: 22px; }
     .status-item::before { left: -31px; }
     .status-content { padding: 13px 14px; }
   }
@@ -176,8 +227,16 @@ comments: false
   <section class="status-section">
     <div class="status-section-heading"><span>A-01</span><h2>現場紀錄</h2><small>KEEP THE TAPE ROLLING</small></div>
     <div id="status-summary" class="status-summary">正在整理微型資料庫……</div>
+    <div class="status-controls" role="search" aria-label="搜尋碎碎念">
+      <label class="status-search-label" for="status-search">搜尋</label>
+      <input id="status-search" class="status-search" type="search" placeholder="搜尋文字、日期或標籤……" autocomplete="off">
+      <button id="status-clear" class="status-button" type="button">清除</button>
+    </div>
     <div id="status-list" class="status-list">
       <div class="status-empty">正在連線至微型資料庫……</div>
+    </div>
+    <div id="status-actions" class="status-actions" hidden>
+      <button id="status-load-more" class="status-button" type="button">載入更多</button>
     </div>
   </section>
 
@@ -188,6 +247,14 @@ comments: false
   (function() {
     var list = document.getElementById('status-list');
     var summary = document.getElementById('status-summary');
+    var search = document.getElementById('status-search');
+    var clear = document.getElementById('status-clear');
+    var actions = document.getElementById('status-actions');
+    var loadMore = document.getElementById('status-load-more');
+    var pageSize = 20;
+    var visibleLimit = pageSize;
+    var query = '';
+    var data = [];
 
     function textElement(tagName, className, value) {
       var element = document.createElement(tagName);
@@ -196,49 +263,138 @@ comments: false
       return element;
     }
 
-    function render(data) {
-      if (!Array.isArray(data) || !data.length) {
+    function plainContent(value) {
+      var holder = document.createElement('div');
+      holder.innerHTML = value || '';
+      return holder.textContent || holder.innerText || '';
+    }
+
+    function yearOf(item) {
+      var match = String(item.date || '').match(/^\d{4}/);
+      return match ? match[0] : '未分類';
+    }
+
+    function createEntry(item) {
+      var entry = document.createElement('article');
+      entry.className = 'status-item';
+
+      var meta = document.createElement('div');
+      meta.className = 'status-meta';
+      var date = textElement('time', 'status-date', item.date);
+      if (item.date) date.setAttribute('datetime', item.date);
+      meta.appendChild(date);
+      if (item.tag) meta.appendChild(textElement('span', 'status-tag', item.tag));
+
+      var content = document.createElement('div');
+      content.className = 'status-content';
+      // microblog.json 是站內自己維護的內容，保留其中的連結與換行標記。
+      content.innerHTML = item.content || '（這則紀錄沒有文字。）';
+
+      entry.appendChild(meta);
+      entry.appendChild(content);
+      return entry;
+    }
+
+    function render() {
+      var normalizedQuery = query.trim().toLowerCase();
+      var filtered = data.filter(function(item) {
+        if (!normalizedQuery) return true;
+        var haystack = [item.date, item.tag, plainContent(item.content)].join(' ').toLowerCase();
+        return haystack.indexOf(normalizedQuery) !== -1;
+      });
+      var visible = filtered.slice(0, visibleLimit);
+
+      list.innerHTML = '';
+      if (!data.length) {
         list.innerHTML = '<div class="status-empty">這卷錄音帶目前還沒有內容。</div>';
         summary.textContent = 'SIDE B / 目前沒有現場紀錄';
+        actions.hidden = true;
         return;
       }
 
-      var fragment = document.createDocumentFragment();
-      data.forEach(function(item) {
-        var entry = document.createElement('article');
-        entry.className = 'status-item';
+      if (!filtered.length) {
+        list.innerHTML = '<div class="status-empty">找不到符合的紀錄，換個關鍵字試試看。</div>';
+        summary.textContent = 'SIDE B / 搜尋不到符合的紀錄';
+        actions.hidden = true;
+        return;
+      }
 
-        var meta = document.createElement('div');
-        meta.className = 'status-meta';
-        var date = textElement('time', 'status-date', item.date);
-        if (item.date) date.setAttribute('datetime', item.date);
-        meta.appendChild(date);
-        if (item.tag) meta.appendChild(textElement('span', 'status-tag', item.tag));
-
-        var content = document.createElement('div');
-        content.className = 'status-content';
-        // microblog.json 是站內自己維護的內容，保留其中的連結與換行標記。
-        content.innerHTML = item.content || '（這則紀錄沒有文字。）';
-
-        entry.appendChild(meta);
-        entry.appendChild(content);
-        fragment.appendChild(entry);
+      var groups = Object.create(null);
+      var years = [];
+      visible.forEach(function(item) {
+        var year = yearOf(item);
+        if (!groups[year]) {
+          groups[year] = [];
+          years.push(year);
+        }
+        groups[year].push(item);
       });
 
-      list.innerHTML = '';
+      var fragment = document.createDocumentFragment();
+      years.forEach(function(year, index) {
+        var yearBlock = document.createElement('details');
+        yearBlock.className = 'status-year';
+        yearBlock.open = index === 0 || Boolean(normalizedQuery);
+
+        var yearSummary = document.createElement('summary');
+        yearSummary.className = 'status-year-summary';
+        yearSummary.appendChild(textElement('span', 'status-year-label', year));
+        yearSummary.appendChild(textElement('span', 'status-year-count', groups[year].length + ' 則'));
+
+        var yearList = document.createElement('div');
+        yearList.className = 'status-year-list';
+        groups[year].forEach(function(item) {
+          yearList.appendChild(createEntry(item));
+        });
+
+        yearBlock.appendChild(yearSummary);
+        yearBlock.appendChild(yearList);
+        fragment.appendChild(yearBlock);
+      });
+
       list.appendChild(fragment);
-      summary.textContent = 'SIDE B / ' + data.length + ' 則現場紀錄';
+      if (normalizedQuery) {
+        summary.textContent = 'SIDE B / 搜尋「' + query.trim() + '」：顯示 ' + visible.length + ' / ' + filtered.length + ' 則（共 ' + data.length + ' 則）';
+      } else {
+        summary.textContent = 'SIDE B / 顯示最新 ' + visible.length + ' / ' + data.length + ' 則現場紀錄';
+      }
+      actions.hidden = visible.length >= filtered.length;
+      loadMore.textContent = '載入更多（還有 ' + (filtered.length - visible.length) + ' 則）';
     }
+
+    search.addEventListener('input', function() {
+      query = search.value;
+      visibleLimit = pageSize;
+      render();
+    });
+
+    clear.addEventListener('click', function() {
+      search.value = '';
+      query = '';
+      visibleLimit = pageSize;
+      search.focus();
+      render();
+    });
+
+    loadMore.addEventListener('click', function() {
+      visibleLimit += pageSize;
+      render();
+    });
 
     fetch('/microblog.json')
       .then(function(response) {
         if (!response.ok) throw new Error('找不到 microblog.json');
         return response.json();
       })
-      .then(render)
+      .then(function(payload) {
+        if (!Array.isArray(payload)) throw new Error('microblog.json 格式錯誤');
+        data = payload;
+        render();
+      })
       .catch(function() {
         list.innerHTML = '<div class="status-error">時光機暫時無法讀取，請稍後再試。</div>';
         summary.textContent = 'SIDE B / 讀取失敗';
+        actions.hidden = true;
       });
   })();
 </script>

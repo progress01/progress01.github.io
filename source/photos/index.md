@@ -8,6 +8,12 @@ comments: false
 <div class="ig-grid">
 
   <div class="ig-card">
+    <a href="/2026/08/29/閱讀影評/以早乙女佳奈子為例/" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/drama_以早乙女佳奈子為例.png">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="/2025/12/28/閱讀影評/失業白領的職場漂流/" target="_blank">
       <img loading="lazy" decoding="async" src="/images/book_失業白領的職場漂流.png">
     </a>
