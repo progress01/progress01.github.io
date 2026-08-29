@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffe2d0;
+    background: #c416c6;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3005,6 +3005,23 @@ body {
   margin-top: 2.1em;
   padding-bottom: 5px;
 }
+/* Blogger 匯入文章：封面沿用首頁資料卡，內文圖片統一成紙張式閱讀尺寸 */
+.post-content.post-content-imported:not(.post-content-song) .post-body .blogger-import-image {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 640px;
+  padding: 6px;
+  border: 1px solid #d8c8b4;
+  background: #f8f1e4;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.12);
+}
+.post-content.post-content-imported:not(.post-content-song) .post-body .blogger-import-image + p {
+  margin-top: -8px;
+  color: #96745e;
+  font-size: 0.88em;
+  line-height: 1.7;
+  text-align: center;
+}
 /* 延伸閱讀：沿用文章閱讀欄與 1988 紙張配色，避免內嵌樣式造成字級不一致 */
 .post-content-single .post-related-reading {
   box-sizing: border-box;
@@ -3129,6 +3146,10 @@ body {
   color: #fff !important;
 }
 @media (max-width: 767px) {
+  .post-content.post-content-imported:not(.post-content-song) .post-body .blogger-import-image {
+    max-width: 100%;
+    padding: 4px;
+  }
   .post-content.post-content-longform .post-body {
     max-width: none;
     font-size: 1em;
@@ -3518,6 +3539,28 @@ body {
   margin: 0;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+.posts-expand .post-feature-media-empty {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #cdb9a2;
+  background: #f3e8d6;
+  color: #c6aa8d;
+  text-align: center;
+}
+.posts-expand .post-feature-media-empty span {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  font-size: 24px;
+}
+.posts-expand .post-feature-media-empty em {
+  font: 10px/1.4 "Courier New", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 @media (max-width: 767px) {
   .posts-expand .post-feature-card {
