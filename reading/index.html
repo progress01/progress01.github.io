@@ -27,7 +27,7 @@
 <meta property="og:description" content="#reading-desk {     --reading-ink: #2d2521;     --reading-brown: #4a3028;     --reading-blue: #243d4b;     --reading-orange: #e36b2f;     --reading-gold: #f1aa58;     --reading-paper: #f7eedc;">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-29T14:35:45.057Z">
+<meta property="article:modified_time" content="2026-08-29T16:34:58.939Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -171,19 +171,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/volleyball-attack-arm-swing/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="觀念與實驗">
-                <time class="search-recent-date" datetime="2026-08-29T12:00:00+08:00">08-29</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">排球攻擊揮臂機制｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/cms-content-modeling-field-review/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="觀念與實驗">
+              <a class="search-recent-item" href="/learning/cms-content-modeling-field-review/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="觀念與實驗">
                 <time class="search-recent-date" datetime="2026-08-29T12:00:00+08:00">08-29</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/volleyball-attack-arm-swing/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="觀念與實驗">
+                <time class="search-recent-date" datetime="2026-08-29T12:00:00+08:00">08-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">排球攻擊揮臂機制｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -1876,7 +1876,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.</span> <span class="nav-text">草稿夾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reading-drafts-title"><span class="nav-number">1.1.</span> <span class="nav-text">月份熱力圖與分類統計</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-collection-detail-title"><span class="nav-number">1.1.1.</span> <span class="nav-text">所有草稿題目</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.</span> <span class="nav-text">草稿夾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reading-drafts-title"><span class="nav-number">1.1.</span> <span class="nav-text">待解決問題熱力圖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-collection-detail-title"><span class="nav-number">1.1.1.</span> <span class="nav-text">目前仍在處理的問題</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -2059,6 +2059,40 @@
     .reading-section-heading, .reading-details-heading { flex-wrap: wrap; }
     .reading-section-heading small, .reading-details-heading small { width: 100%; margin-left: 0; }
   }
+
+  .reading-backlog-summary { display: grid; grid-template-columns: minmax(170px, .6fr) minmax(0, 1.4fr); gap: 10px; margin-top: 14px; }
+  .reading-backlog-count,
+  .reading-backlog-copy { padding: 16px; background: rgba(255, 252, 243, .82); border: 1px solid var(--reading-line); }
+  .reading-backlog-count strong { display: block; color: var(--reading-orange); font-size: 38px; line-height: 1; }
+  .reading-backlog-count span { display: block; margin-top: 8px; color: #96745e; font: 10px "Courier New", monospace; letter-spacing: 1px; }
+  .reading-backlog-copy { color: #6b5547; font-size: 13px; line-height: 1.8; }
+  .reading-backlog-copy strong { color: var(--reading-brown); font-weight: normal; }
+  .reading-backlog-panel { margin-top: 18px; padding: 16px; background: rgba(255, 252, 243, .78); border: 1px solid var(--reading-line); }
+  .reading-backlog-panel-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: #96745e; font: 10px "Courier New", monospace; letter-spacing: 1px; }
+  .reading-backlog-panel-top strong { color: var(--reading-orange); font-weight: normal; }
+  .reading-backlog-scroll { margin-top: 14px; overflow-x: auto; padding-bottom: 5px; }
+  .reading-backlog-heatmap { display: grid; grid-template-columns: repeat(12, minmax(42px, 1fr)); gap: 5px; min-width: 620px; }
+  .reading-backlog-cell { display: flex; min-height: 72px; flex-direction: column; justify-content: space-between; align-items: flex-start; padding: 9px; color: var(--reading-brown); background: #eee5d4; border: 1px solid rgba(74, 48, 40, .1); cursor: pointer; text-align: left; }
+  .reading-backlog-cell strong { font-size: 24px; line-height: 1; }
+  .reading-backlog-cell small { color: #96745e; font: 10px "Courier New", monospace; letter-spacing: 1px; }
+  .reading-backlog-cell.level-1 { background: #d7e4d0 !important; }
+  .reading-backlog-cell.level-2 { background: #a7c89b !important; }
+  .reading-backlog-cell.level-3 { color: #fff4dc; background: #5e9a70 !important; }
+  .reading-backlog-cell.level-4 { color: #fff4dc; background: #2f5d50 !important; }
+  .reading-backlog-cell.is-future { opacity: .45; cursor: default; }
+  .reading-backlog-cell.is-selected,
+  .reading-backlog-cell:not(.is-future):hover,
+  .reading-backlog-cell:not(.is-future):focus-visible { outline: 2px solid var(--reading-orange); outline-offset: 1px; }
+  .reading-backlog-legend { margin-top: 10px; color: #96745e; font: 10px "Courier New", monospace; letter-spacing: .5px; }
+  .reading-backlog-legend i { display: inline-block; width: 10px; height: 10px; margin: 0 3px; vertical-align: -1px; background: #eee5d4; }
+  .reading-backlog-legend i.level-1 { background: #d7e4d0; }
+  .reading-backlog-legend i.level-2 { background: #a7c89b; }
+  .reading-backlog-legend i.level-3 { background: #5e9a70; }
+  .reading-backlog-legend i.level-4 { background: #2f5d50; }
+  .reading-backlog-note { margin-top: 10px; color: #96745e; font: 10px "Courier New", monospace; line-height: 1.7; }
+  @media (max-width: 767px) {
+    .reading-backlog-summary { grid-template-columns: 1fr; }
+  }
 </style>
 
 <div id="reading-desk">
@@ -2077,22 +2111,19 @@
   </section>
 
   <section class="reading-pane" aria-labelledby="reading-drafts-title">
-    <div class="reading-section-heading"><span>L-01</span><h2 id="reading-drafts-title">月份熱力圖與分類統計</h2><small>ONE IDEA AT A TIME</small></div>
-    <div class="reading-summary" aria-label="草稿狀態統計">
-      <div class="reading-summary-card is-collected"><strong id="reading-summary-collected">0</strong><span>待整理 COLLECTED</span></div>
-      <div class="reading-summary-card is-learning"><strong id="reading-summary-learning">0</strong><span>學習中 LEARNING</span></div>
-      <div class="reading-summary-card is-published"><strong id="reading-summary-published">0</strong><span>已成文 PUBLISHED</span></div>
+    <div class="reading-section-heading"><span>L-01</span><h2 id="reading-drafts-title">待解決問題熱力圖</h2><small>OPEN QUESTIONS OVER TIME</small></div>
+    <div class="reading-backlog-summary">
+      <div class="reading-backlog-count"><strong id="reading-backlog-current">0</strong><span>目前待解決 OPEN QUESTIONS</span></div>
+      <div class="reading-backlog-copy">每格代表該月份月底仍未解決的累積問題數。<strong>顏色越深，表示當時堆積的問題越多</strong>；點選月份可以查看那個時間點還有哪些題目。</div>
     </div>
-    <div class="reading-filter-bar" role="group" aria-label="草稿狀態篩選">
-      <button type="button" class="reading-filter is-active" data-reading-filter="all">全部</button>
-      <button type="button" class="reading-filter" data-reading-filter="collected">待整理</button>
-      <button type="button" class="reading-filter" data-reading-filter="learning">學習中</button>
-      <button type="button" class="reading-filter" data-reading-filter="published">已成文</button>
+    <div class="reading-backlog-panel">
+      <div class="reading-backlog-panel-top"><span id="reading-backlog-period">2026 / MONTHLY BACKLOG</span><strong id="reading-backlog-peak">正在整理……</strong></div>
+      <div class="reading-backlog-scroll"><div id="reading-backlog-heatmap" class="reading-backlog-heatmap" aria-label="每月待解決問題熱力圖"></div></div>
+      <div class="reading-backlog-legend">少 <i></i><i class="level-1"></i><i class="level-2"></i><i class="level-3"></i><i class="level-4"></i> 多</div>
+      <div class="reading-backlog-note">尚未設定解決日期的「待整理」與「學習中」資料會繼續累積；完成題目時，請在資料中補上 resolved_date。</div>
     </div>
-    <div class="reading-collection-scroll"><div id="reading-collection-grid" class="reading-collection-grid" aria-label="草稿月份熱力圖"></div></div>
-    <div class="reading-collection-legend"><strong>目前資料</strong>：每格代表該議題在該月份留下的資料；點選後查看文章和目前狀態。</div>
     <div class="reading-details">
-      <div class="reading-details-heading"><span>DRAFTS / LEARNING</span><h3 id="reading-collection-detail-title">所有草稿題目</h3><small id="reading-collection-detail-note">目前整理中的學習題目</small></div>
+      <div class="reading-details-heading"><span>OPEN / QUESTIONS</span><h3 id="reading-collection-detail-title">目前仍在處理的問題</h3><small id="reading-collection-detail-note">正在整理草稿資料……</small></div>
       <div id="reading-collection-details"><div class="reading-empty">正在整理草稿資料……</div></div>
     </div>
   </section>
@@ -2102,21 +2133,17 @@
 
 <script>
   (function() {
-    var grid = document.getElementById('reading-collection-grid');
+    var heatmap = document.getElementById('reading-backlog-heatmap');
+    var currentCount = document.getElementById('reading-backlog-current');
+    var periodLabel = document.getElementById('reading-backlog-period');
+    var peakLabel = document.getElementById('reading-backlog-peak');
     var details = document.getElementById('reading-collection-details');
     var detailTitle = document.getElementById('reading-collection-detail-title');
     var detailNote = document.getElementById('reading-collection-detail-note');
-    var summary = {
-      collected: document.getElementById('reading-summary-collected'),
-      learning: document.getElementById('reading-summary-learning'),
-      published: document.getElementById('reading-summary-published')
-    };
-    var filterButtons = Array.prototype.slice.call(document.querySelectorAll('[data-reading-filter]'));
-    var currentFilter = 'all';
     var data = { year: new Date().getFullYear(), topics: [] };
-    var selectedCell = null;
-    var stageLabels = { collected: '待整理', learning: '學習中', published: '已成文' };
+    var selectedMonth;
     var months = Array.from({ length: 12 }, function(_, index) { return index + 1; });
+    var stageLabels = { collected: '待整理', learning: '學習中', published: '已成文' };
 
     function createText(parent, tag, className, value) {
       var element = document.createElement(tag);
@@ -2126,10 +2153,12 @@
       return element;
     }
 
-    function filteredItems(items) {
-      return (items || []).filter(function(item) {
-        return currentFilter === 'all' || item.state === currentFilter;
-      });
+    function pad(value) {
+      return String(value).padStart(2, '0');
+    }
+
+    function dateKey(year, month, day) {
+      return String(year) + '-' + pad(month) + '-' + pad(day);
     }
 
     function allItems() {
@@ -2138,38 +2167,52 @@
       }, []);
     }
 
-    function monthKey(month) {
-      return String(data.year) + '-' + String(month).padStart(2, '0');
+    function currentMonth() {
+      var today = new Date();
+      return today.getFullYear() === Number(data.year) ? today.getMonth() + 1 : 12;
     }
 
-    function updateSummary() {
-      var counts = { collected: 0, learning: 0, published: 0 };
-      allItems().forEach(function(item) {
-        if (counts[item.state] !== undefined) counts[item.state] += 1;
-      });
-      Object.keys(summary).forEach(function(state) {
-        summary[state].textContent = counts[state];
-      });
+    function monthEnd(month) {
+      return dateKey(data.year, month, new Date(Number(data.year), month, 0).getDate());
     }
 
-    function renderItemCard(item, topic) {
+    function resolvedDate(item) {
+      if (item.resolved_date) return String(item.resolved_date).slice(0, 10);
+      if (item.state === 'published') return String(item.date || '').slice(0, 10);
+      return '';
+    }
+
+    function isOpenAt(item, endDate) {
+      var addedDate = String(item.date || '').slice(0, 10);
+      var closedDate = resolvedDate(item);
+      return addedDate && addedDate <= endDate && (!closedDate || closedDate > endDate);
+    }
+
+    function recordsForMonth(month) {
+      var endDate = monthEnd(month);
+      return data.topics.reduce(function(records, topic) {
+        return records.concat((topic.items || []).filter(function(item) {
+          return isOpenAt(item, endDate);
+        }).map(function(item) {
+          return { item: item, topic: topic };
+        }));
+      }, []);
+    }
+
+    function renderItemCard(record) {
+      var item = record.item;
+      var topic = record.topic;
       var card = document.createElement('article');
       card.className = 'reading-collection-card';
-      var time = createText(card, 'time', '', item.date || '未標日期');
-      time.setAttribute('datetime', item.date || '');
-
+      createText(card, 'time', '', item.date || '未標日期');
       var copy = document.createElement('div');
       copy.className = 'reading-detail-copy';
       var meta = createText(copy, 'span', 'reading-detail-meta', (topic.name || '未分類') + ' / ' + (item.source || '未標來源'));
-      var stage = document.createElement('span');
-      stage.className = 'reading-stage ' + (item.state || 'collected');
-      stage.textContent = stageLabels[item.state] || item.state || '待整理';
-      meta.appendChild(document.createTextNode(' '));
-      meta.appendChild(stage);
+      var stage = createText(meta, 'span', 'reading-stage ' + (item.state || 'collected'), stageLabels[item.state] || item.state || '待整理');
+      stage.setAttribute('aria-label', '目前狀態：' + (stageLabels[item.state] || item.state || '待整理'));
       createText(copy, 'h4', '', item.title || '未命名資料');
       createText(copy, 'p', '', item.note || '還沒有留下筆記。');
       card.appendChild(copy);
-
       var links = document.createElement('div');
       links.className = 'reading-collection-links';
       if (item.url) {
@@ -2177,107 +2220,64 @@
         link.href = item.url;
         link.textContent = '查看筆記 ↗';
         links.appendChild(link);
-      } else {
-        links.appendChild(createText(links, 'span', '', '等待建立文章'));
       }
       card.appendChild(links);
       return card;
     }
 
-    function renderDetails(topic, month) {
-      var records = [];
-      var title = '所有草稿題目';
-      var note = '目前整理中的學習題目';
-
-      if (topic) {
-        filteredItems(topic.items)
-          .filter(function(item) { return !month || String(item.date || '').slice(0, 7) === monthKey(month); })
-          .forEach(function(item) { records.push({ item: item, topic: topic }); });
-        title = topic.name + (month ? '・' + month + ' 月' : '');
-        note = topic.description || '這個議題留下的資料';
-      } else {
-        data.topics.forEach(function(itemTopic) {
-          filteredItems(itemTopic.items).forEach(function(item) {
-            records.push({ item: item, topic: itemTopic });
-          });
-        });
-      }
-
-      records.sort(function(a, b) {
-        return String(b.item.date || '').localeCompare(String(a.item.date || ''));
-      });
-      detailTitle.textContent = title;
-      detailNote.textContent = note;
+    function renderDetails(month) {
+      var records = recordsForMonth(month);
+      detailTitle.textContent = data.year + ' 年 ' + pad(month) + ' 月底仍待解決';
+      detailNote.textContent = records.length ? records.length + ' 個問題尚未結束' : '這個月份沒有待解決問題';
       details.innerHTML = '';
-
       if (!records.length) {
-        details.innerHTML = '<div class="reading-empty">這個範圍目前沒有符合條件的資料。</div>';
+        details.innerHTML = '<div class="reading-empty">這個月份沒有尚未解決的問題。</div>';
         return;
       }
       records.forEach(function(record) {
-        details.appendChild(renderItemCard(record.item, record.topic));
+        details.appendChild(renderItemCard(record));
       });
     }
 
-    function renderGrid() {
-      var max = 0;
-      data.topics.forEach(function(topic) {
-        months.forEach(function(month) {
-          var count = filteredItems(topic.items).filter(function(item) {
-            return String(item.date || '').slice(0, 7) === monthKey(month);
-          }).length;
-          max = Math.max(max, count);
-        });
+    function renderHeatmap() {
+      var visibleMonth = currentMonth();
+      var counts = months.map(function(month) {
+        return month <= visibleMonth || Number(data.year) !== new Date().getFullYear() ? recordsForMonth(month).length : null;
       });
+      var max = counts.reduce(function(value, count) { return Math.max(value, count || 0); }, 0);
+      var activeMonth = selectedMonth || visibleMonth;
+      heatmap.innerHTML = '';
 
-      grid.innerHTML = '';
-      grid.style.gridTemplateColumns = 'minmax(150px, 1fr) repeat(12, 20px)';
-
-      var corner = document.createElement('span');
-      corner.className = 'reading-collection-topic';
-      corner.textContent = data.year + ' / 議題';
-      grid.appendChild(corner);
-
-      months.forEach(function(month) {
-        createText(grid, 'span', 'reading-collection-month', String(month).padStart(2, '0'));
-      });
-
-      data.topics.forEach(function(topic) {
-        var label = document.createElement('span');
-        label.className = 'reading-collection-topic';
-        label.textContent = topic.name || '未命名議題';
-        createText(label, 'small', '', topic.code || 'TOPIC');
-        grid.appendChild(label);
-
-        months.forEach(function(month) {
-          var count = filteredItems(topic.items).filter(function(item) {
-            return String(item.date || '').slice(0, 7) === monthKey(month);
-          }).length;
-          var level = count === 0 ? 0 : Math.min(4, Math.ceil((count / Math.max(1, max)) * 4));
-          var cell = document.createElement('button');
-          cell.type = 'button';
-          cell.className = 'reading-collection-cell level-' + level;
-          cell.title = topic.name + '／' + month + ' 月：' + count + ' 筆資料';
-          cell.setAttribute('aria-label', topic.name + ' ' + month + ' 月：' + count + ' 筆資料');
-          if (selectedCell && selectedCell.topic === topic.id && selectedCell.month === month) cell.classList.add('is-selected');
+      months.forEach(function(month, index) {
+        var count = counts[index];
+        var future = count === null;
+        var level = future || count === 0 ? 0 : Math.min(4, Math.ceil((count / Math.max(1, max)) * 4));
+        var cell = document.createElement('button');
+        cell.type = 'button';
+        cell.className = 'reading-backlog-cell level-' + level + (future ? ' is-future' : '');
+        createText(cell, 'small', '', pad(month));
+        createText(cell, 'strong', '', future ? '—' : String(count));
+        cell.title = future ? data.year + ' 年 ' + pad(month) + ' 月：尚未到達' : data.year + ' 年 ' + pad(month) + ' 月底：' + count + ' 個待解決問題';
+        cell.setAttribute('aria-label', cell.title);
+        if (month === activeMonth && !future) cell.classList.add('is-selected');
+        if (!future) {
           cell.addEventListener('click', function() {
-            selectedCell = { topic: topic.id, month: month };
-            renderGrid();
-            renderDetails(topic, month);
+            selectedMonth = month;
+            renderHeatmap();
+            renderDetails(month);
           });
-          grid.appendChild(cell);
-        });
+        }
+        heatmap.appendChild(cell);
       });
-    }
 
-    filterButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        currentFilter = button.getAttribute('data-reading-filter');
-        filterButtons.forEach(function(item) { item.classList.toggle('is-active', item === button); });
-        renderGrid();
-        renderDetails();
-      });
-    });
+      var activeCount = counts[activeMonth - 1];
+      currentCount.textContent = activeCount === null ? '0' : String(activeCount || 0);
+      periodLabel.textContent = data.year + ' / MONTHLY BACKLOG';
+      var peak = max ? counts.reduce(function(best, count, index) {
+        return count !== null && count > best.count ? { month: index + 1, count: count } : best;
+      }, { month: 0, count: 0 }) : null;
+      peakLabel.textContent = peak ? '最高 ' + pad(peak.month) + ' 月：' + peak.count + ' 題' : '目前沒有待解決問題';
+    }
 
     fetch('/reading-desk.json')
       .then(function(response) {
@@ -2286,15 +2286,19 @@
       })
       .then(function(result) {
         data = result || data;
-        updateSummary();
-        renderGrid();
-        renderDetails();
+        selectedMonth = currentMonth();
+        renderHeatmap();
+        renderDetails(selectedMonth);
       })
       .catch(function() {
+        currentCount.textContent = '—';
+        peakLabel.textContent = '資料讀取失敗';
         details.innerHTML = '<div class="reading-empty">草稿資料暫時無法讀取。</div>';
       });
   })();
 </script>
+
+
 
 
 
