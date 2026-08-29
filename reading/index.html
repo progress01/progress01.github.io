@@ -27,7 +27,7 @@
 <meta property="og:description" content="#reading-desk {     --reading-ink: #2d2521;     --reading-brown: #4a3028;     --reading-blue: #243d4b;     --reading-orange: #e36b2f;     --reading-gold: #f1aa58;     --reading-paper: #f7eedc;">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-29T16:34:58.939Z">
+<meta property="article:modified_time" content="2026-08-29T16:41:59.971Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -1876,7 +1876,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.</span> <span class="nav-text">草稿夾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reading-drafts-title"><span class="nav-number">1.1.</span> <span class="nav-text">待解決問題熱力圖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-collection-detail-title"><span class="nav-number">1.1.1.</span> <span class="nav-text">目前仍在處理的問題</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.</span> <span class="nav-text">草稿夾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reading-drafts-title"><span class="nav-number">1.1.</span> <span class="nav-text">每日待解決問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-collection-detail-title"><span class="nav-number">1.1.1.</span> <span class="nav-text">今日仍在處理的問題</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -2093,6 +2093,27 @@
   @media (max-width: 767px) {
     .reading-backlog-summary { grid-template-columns: 1fr; }
   }
+
+  .reading-backlog-years { display: grid; gap: 16px; margin-top: 14px; }
+  .reading-backlog-year { padding: 12px 14px 14px; background: rgba(255, 252, 243, .48); border: 1px solid var(--reading-line); }
+  .reading-backlog-year-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: #96745e; font: 10px "Courier New", monospace; letter-spacing: 1px; }
+  .reading-backlog-year-heading strong { color: var(--reading-brown); font: 20px Georgia, "Noto Serif TC", serif; letter-spacing: 0; }
+  .reading-backlog-year-heading span { color: var(--reading-orange); }
+  .reading-backlog-calendar { margin-top: 10px; overflow-x: auto; padding-bottom: 5px; }
+  .reading-backlog-months,
+  .reading-backlog-day-grid { display: grid; grid-template-columns: repeat(53, 12px); column-gap: 3px; min-width: 792px; }
+  .reading-backlog-months { min-height: 18px; color: #96745e; font: 10px "Courier New", monospace; }
+  .reading-backlog-month-label { align-self: end; white-space: nowrap; }
+  .reading-backlog-day-grid { grid-template-rows: repeat(7, 12px); row-gap: 3px; }
+  .reading-backlog-day-cell { width: 12px; height: 12px; padding: 0; background: #eee5d4; border: 1px solid rgba(74, 48, 40, .08); cursor: pointer; }
+  .reading-backlog-day-cell.level-1 { background: #d7e4d0 !important; }
+  .reading-backlog-day-cell.level-2 { background: #a7c89b !important; }
+  .reading-backlog-day-cell.level-3 { background: #5e9a70 !important; }
+  .reading-backlog-day-cell.level-4 { background: #2f5d50 !important; }
+  .reading-backlog-day-cell.is-future { opacity: .4; cursor: default; }
+  .reading-backlog-day-cell.is-selected,
+  .reading-backlog-day-cell:not(.is-future):hover,
+  .reading-backlog-day-cell:not(.is-future):focus-visible { outline: 2px solid var(--reading-orange); outline-offset: 1px; }
 </style>
 
 <div id="reading-desk">
@@ -2100,7 +2121,7 @@
     <div>
       <div class="reading-label">PERSONAL INDEX // DRAFTS</div>
       <h1>草稿夾</h1>
-      <p>先把還沒想好的題目放在這裡。用月份熱力圖看見哪些想法正在累積，再慢慢整理成可以公開的文章。</p>
+      <p>先把還沒想好的題目放在這裡。用每日熱力圖看見哪些問題正在累積，再慢慢整理成可以公開的文章。</p>
       <div class="reading-stamp">COLLECT / LEARN / REWRITE</div>
     </div>
     <div class="reading-screen">
@@ -2111,19 +2132,19 @@
   </section>
 
   <section class="reading-pane" aria-labelledby="reading-drafts-title">
-    <div class="reading-section-heading"><span>L-01</span><h2 id="reading-drafts-title">待解決問題熱力圖</h2><small>OPEN QUESTIONS OVER TIME</small></div>
+    <div class="reading-section-heading"><span>L-01</span><h2 id="reading-drafts-title">每日待解決問題</h2><small>DAILY OPEN QUESTIONS</small></div>
     <div class="reading-backlog-summary">
-      <div class="reading-backlog-count"><strong id="reading-backlog-current">0</strong><span>目前待解決 OPEN QUESTIONS</span></div>
-      <div class="reading-backlog-copy">每格代表該月份月底仍未解決的累積問題數。<strong>顏色越深，表示當時堆積的問題越多</strong>；點選月份可以查看那個時間點還有哪些題目。</div>
+      <div class="reading-backlog-count"><strong id="reading-backlog-current">0</strong><span>今日待解決 OPEN QUESTIONS</span></div>
+      <div class="reading-backlog-copy">每天一格，顯示當天結束時還沒有解決的問題數。<strong>顏色越深，表示當時累積的待處理問題越多</strong>；點選日期可以查看那一天仍在處理的題目。</div>
     </div>
     <div class="reading-backlog-panel">
-      <div class="reading-backlog-panel-top"><span id="reading-backlog-period">2026 / MONTHLY BACKLOG</span><strong id="reading-backlog-peak">正在整理……</strong></div>
-      <div class="reading-backlog-scroll"><div id="reading-backlog-heatmap" class="reading-backlog-heatmap" aria-label="每月待解決問題熱力圖"></div></div>
+      <div class="reading-backlog-panel-top"><span id="reading-backlog-period">2026 / DAILY BACKLOG</span><strong id="reading-backlog-focus">正在整理……</strong></div>
+      <div id="reading-backlog-years" class="reading-backlog-years" aria-label="跨年份每日待解決問題熱力圖"></div>
       <div class="reading-backlog-legend">少 <i></i><i class="level-1"></i><i class="level-2"></i><i class="level-3"></i><i class="level-4"></i> 多</div>
-      <div class="reading-backlog-note">尚未設定解決日期的「待整理」與「學習中」資料會繼續累積；完成題目時，請在資料中補上 resolved_date。</div>
+      <div class="reading-backlog-note">每格代表一天；尚未設定 resolved_date 的「待整理」與「學習中」資料，會從加入日期開始持續計入。</div>
     </div>
     <div class="reading-details">
-      <div class="reading-details-heading"><span>OPEN / QUESTIONS</span><h3 id="reading-collection-detail-title">目前仍在處理的問題</h3><small id="reading-collection-detail-note">正在整理草稿資料……</small></div>
+      <div class="reading-details-heading"><span>OPEN / QUESTIONS</span><h3 id="reading-collection-detail-title">今日仍在處理的問題</h3><small id="reading-collection-detail-note">點選熱力圖中的日期</small></div>
       <div id="reading-collection-details"><div class="reading-empty">正在整理草稿資料……</div></div>
     </div>
   </section>
@@ -2133,16 +2154,15 @@
 
 <script>
   (function() {
-    var heatmap = document.getElementById('reading-backlog-heatmap');
+    var yearsElement = document.getElementById('reading-backlog-years');
     var currentCount = document.getElementById('reading-backlog-current');
     var periodLabel = document.getElementById('reading-backlog-period');
-    var peakLabel = document.getElementById('reading-backlog-peak');
+    var focusLabel = document.getElementById('reading-backlog-focus');
     var details = document.getElementById('reading-collection-details');
     var detailTitle = document.getElementById('reading-collection-detail-title');
     var detailNote = document.getElementById('reading-collection-detail-note');
     var data = { year: new Date().getFullYear(), topics: [] };
-    var selectedMonth;
-    var months = Array.from({ length: 12 }, function(_, index) { return index + 1; });
+    var selectedDate;
     var stageLabels = { collected: '待整理', learning: '學習中', published: '已成文' };
 
     function createText(parent, tag, className, value) {
@@ -2157,8 +2177,8 @@
       return String(value).padStart(2, '0');
     }
 
-    function dateKey(year, month, day) {
-      return String(year) + '-' + pad(month) + '-' + pad(day);
+    function dateKey(date) {
+      return String(date.getFullYear()) + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
     }
 
     function allItems() {
@@ -2167,32 +2187,22 @@
       }, []);
     }
 
-    function currentMonth() {
-      var today = new Date();
-      return today.getFullYear() === Number(data.year) ? today.getMonth() + 1 : 12;
-    }
-
-    function monthEnd(month) {
-      return dateKey(data.year, month, new Date(Number(data.year), month, 0).getDate());
-    }
-
     function resolvedDate(item) {
       if (item.resolved_date) return String(item.resolved_date).slice(0, 10);
       if (item.state === 'published') return String(item.date || '').slice(0, 10);
       return '';
     }
 
-    function isOpenAt(item, endDate) {
+    function isOpenAt(item, key) {
       var addedDate = String(item.date || '').slice(0, 10);
       var closedDate = resolvedDate(item);
-      return addedDate && addedDate <= endDate && (!closedDate || closedDate > endDate);
+      return addedDate && addedDate <= key && (!closedDate || closedDate > key);
     }
 
-    function recordsForMonth(month) {
-      var endDate = monthEnd(month);
+    function recordsForDate(key) {
       return data.topics.reduce(function(records, topic) {
         return records.concat((topic.items || []).filter(function(item) {
-          return isOpenAt(item, endDate);
+          return isOpenAt(item, key);
         }).map(function(item) {
           return { item: item, topic: topic };
         }));
@@ -2205,14 +2215,15 @@
       var card = document.createElement('article');
       card.className = 'reading-collection-card';
       createText(card, 'time', '', item.date || '未標日期');
+
       var copy = document.createElement('div');
       copy.className = 'reading-detail-copy';
       var meta = createText(copy, 'span', 'reading-detail-meta', (topic.name || '未分類') + ' / ' + (item.source || '未標來源'));
-      var stage = createText(meta, 'span', 'reading-stage ' + (item.state || 'collected'), stageLabels[item.state] || item.state || '待整理');
-      stage.setAttribute('aria-label', '目前狀態：' + (stageLabels[item.state] || item.state || '待整理'));
+      createText(meta, 'span', 'reading-stage ' + (item.state || 'collected'), stageLabels[item.state] || item.state || '待整理');
       createText(copy, 'h4', '', item.title || '未命名資料');
       createText(copy, 'p', '', item.note || '還沒有留下筆記。');
       card.appendChild(copy);
+
       var links = document.createElement('div');
       links.className = 'reading-collection-links';
       if (item.url) {
@@ -2225,13 +2236,14 @@
       return card;
     }
 
-    function renderDetails(month) {
-      var records = recordsForMonth(month);
-      detailTitle.textContent = data.year + ' 年 ' + pad(month) + ' 月底仍待解決';
-      detailNote.textContent = records.length ? records.length + ' 個問題尚未結束' : '這個月份沒有待解決問題';
+    function renderDetails(key) {
+      var records = recordsForDate(key);
+      detailTitle.textContent = key + ' 待解決問題';
+      detailNote.textContent = records.length ? records.length + ' 個問題尚未結束' : '這一天沒有待解決問題';
       details.innerHTML = '';
+
       if (!records.length) {
-        details.innerHTML = '<div class="reading-empty">這個月份沒有尚未解決的問題。</div>';
+        details.innerHTML = '<div class="reading-empty">這一天沒有尚未解決的問題。</div>';
         return;
       }
       records.forEach(function(record) {
@@ -2239,44 +2251,115 @@
       });
     }
 
-    function renderHeatmap() {
-      var visibleMonth = currentMonth();
-      var counts = months.map(function(month) {
-        return month <= visibleMonth || Number(data.year) !== new Date().getFullYear() ? recordsForMonth(month).length : null;
-      });
-      var max = counts.reduce(function(value, count) { return Math.max(value, count || 0); }, 0);
-      var activeMonth = selectedMonth || visibleMonth;
-      heatmap.innerHTML = '';
+    function renderMonthLabels(element, year, start, columns) {
+      element.innerHTML = '';
+      element.style.gridTemplateColumns = 'repeat(' + columns + ', 12px)';
+      var monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+      for (var month = 0; month < 12; month += 1) {
+        var monthStart = new Date(year, month, 1);
+        var week = Math.floor((start.getDay() + Math.floor((monthStart - start) / 86400000)) / 7);
+        var label = createText(element, 'span', 'reading-backlog-month-label', monthNames[month]);
+        label.style.gridColumn = String(week + 1);
+      }
+    }
 
-      months.forEach(function(month, index) {
-        var count = counts[index];
-        var future = count === null;
-        var level = future || count === 0 ? 0 : Math.min(4, Math.ceil((count / Math.max(1, max)) * 4));
+    function dataYears() {
+      var years = [Number(data.year) || new Date().getFullYear()];
+      allItems().forEach(function(item) {
+        var match = String(item.date || '').match(/^([0-9]{4})-/);
+        if (match) years.push(Number(match[1]));
+      });
+      var first = Math.min.apply(null, years);
+      var last = Math.max.apply(null, years);
+      var result = [];
+      for (var year = first; year <= last; year += 1) result.push(year);
+      return result;
+    }
+
+    function buildYearEntries(year) {
+      var start = new Date(year, 0, 1);
+      var daysInYear = (new Date(year + 1, 0, 1) - start) / 86400000;
+      var todayKeyValue = dateKey(new Date());
+      var entries = [];
+      for (var dayIndex = 0; dayIndex < daysInYear; dayIndex += 1) {
+        var date = new Date(year, 0, dayIndex + 1);
+        var key = dateKey(date);
+        var future = key > todayKeyValue;
+        entries.push({ date: date, key: key, count: future ? null : recordsForDate(key).length });
+      }
+      return { start: start, entries: entries, columns: Math.ceil((daysInYear + start.getDay()) / 7) };
+    }
+
+    function renderYear(year, yearData, max) {
+      var section = document.createElement('section');
+      section.className = 'reading-backlog-year';
+      var heading = document.createElement('div');
+      heading.className = 'reading-backlog-year-heading';
+      createText(heading, 'strong', '', String(year));
+      var visibleEntries = yearData.entries.filter(function(entry) { return entry.count !== null; });
+      var yearTotal = visibleEntries.length ? visibleEntries[visibleEntries.length - 1].count : 0;
+      createText(heading, 'span', '', yearTotal + ' 題仍在累積');
+      section.appendChild(heading);
+
+      var scroll = document.createElement('div');
+      scroll.className = 'reading-backlog-calendar';
+      var months = document.createElement('div');
+      months.className = 'reading-backlog-months';
+      months.setAttribute('aria-hidden', 'true');
+      var heatmap = document.createElement('div');
+      heatmap.className = 'reading-backlog-day-grid';
+      heatmap.setAttribute('aria-label', year + ' 年每日待解決問題熱力圖');
+      heatmap.style.gridTemplateColumns = 'repeat(' + yearData.columns + ', 12px)';
+      renderMonthLabels(months, year, yearData.start, yearData.columns);
+      scroll.appendChild(months);
+      scroll.appendChild(heatmap);
+      section.appendChild(scroll);
+      yearsElement.appendChild(section);
+
+      yearData.entries.forEach(function(entry) {
+        var future = entry.count === null;
+        var level = future || entry.count === 0 ? 0 : Math.min(4, Math.ceil((entry.count / Math.max(1, max)) * 4));
         var cell = document.createElement('button');
         cell.type = 'button';
-        cell.className = 'reading-backlog-cell level-' + level + (future ? ' is-future' : '');
-        createText(cell, 'small', '', pad(month));
-        createText(cell, 'strong', '', future ? '—' : String(count));
-        cell.title = future ? data.year + ' 年 ' + pad(month) + ' 月：尚未到達' : data.year + ' 年 ' + pad(month) + ' 月底：' + count + ' 個待解決問題';
+        cell.className = 'reading-backlog-day-cell level-' + level + (future ? ' is-future' : '');
+        var dayIndex = Math.floor((entry.date - yearData.start) / 86400000);
+        cell.style.gridColumn = String(Math.floor((yearData.start.getDay() + dayIndex) / 7) + 1);
+        cell.style.gridRow = String(entry.date.getDay() + 1);
+        cell.title = future ? entry.key + '：尚未到達' : entry.key + '：' + entry.count + ' 個待解決問題';
         cell.setAttribute('aria-label', cell.title);
-        if (month === activeMonth && !future) cell.classList.add('is-selected');
+        if (entry.key === selectedDate && !future) cell.classList.add('is-selected');
         if (!future) {
-          cell.addEventListener('click', function() {
-            selectedMonth = month;
-            renderHeatmap();
-            renderDetails(month);
-          });
+          cell.addEventListener('click', function(key) {
+            return function() {
+              selectedDate = key;
+              renderHeatmap();
+              renderDetails(key);
+            };
+          }(entry.key));
         }
         heatmap.appendChild(cell);
       });
+    }
 
-      var activeCount = counts[activeMonth - 1];
-      currentCount.textContent = activeCount === null ? '0' : String(activeCount || 0);
-      periodLabel.textContent = data.year + ' / MONTHLY BACKLOG';
-      var peak = max ? counts.reduce(function(best, count, index) {
-        return count !== null && count > best.count ? { month: index + 1, count: count } : best;
-      }, { month: 0, count: 0 }) : null;
-      peakLabel.textContent = peak ? '最高 ' + pad(peak.month) + ' 月：' + peak.count + ' 題' : '目前沒有待解決問題';
+    function renderHeatmap() {
+      var years = dataYears();
+      var yearData = years.map(function(year) { return { year: year, data: buildYearEntries(year) }; });
+      var visibleEntries = yearData.reduce(function(result, block) {
+        return result.concat(block.data.entries.filter(function(entry) { return entry.count !== null; }));
+      }, []);
+      var max = visibleEntries.reduce(function(value, entry) { return Math.max(value, entry.count || 0); }, 0);
+      yearsElement.innerHTML = '';
+      yearData.forEach(function(block) { renderYear(block.year, block.data, max); });
+
+      var focusKey = selectedDate || dateKey(new Date());
+      var focusEntry = visibleEntries.filter(function(entry) { return entry.key === focusKey; })[0];
+      if (!focusEntry) {
+        focusEntry = visibleEntries[visibleEntries.length - 1];
+        selectedDate = focusEntry ? focusEntry.key : '';
+      }
+      currentCount.textContent = focusEntry ? String(focusEntry.count) : '0';
+      periodLabel.textContent = years[0] + '—' + years[years.length - 1] + ' / DAILY BACKLOG';
+      focusLabel.textContent = focusEntry ? focusEntry.key + '：' + focusEntry.count + ' 題' : '目前沒有資料';
     }
 
     fetch('/reading-desk.json')
@@ -2286,13 +2369,13 @@
       })
       .then(function(result) {
         data = result || data;
-        selectedMonth = currentMonth();
+        selectedDate = dateKey(new Date());
         renderHeatmap();
-        renderDetails(selectedMonth);
+        renderDetails(selectedDate || dateKey(new Date()));
       })
       .catch(function() {
         currentCount.textContent = '—';
-        peakLabel.textContent = '資料讀取失敗';
+        focusLabel.textContent = '資料讀取失敗';
         details.innerHTML = '<div class="reading-empty">草稿資料暫時無法讀取。</div>';
       });
   })();
