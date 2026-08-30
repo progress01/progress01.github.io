@@ -27,7 +27,7 @@
 <meta property="og:description" content="讀取草稿資料中……                         Loading Graph...                                      RECENT &#x2F; 草稿紀錄       最近累積的學習題目       點選上方格子查看當天                 正在整理草稿紀錄……                  (function() {">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-30T03:44:01.388Z">
+<meta property="article:modified_time" content="2026-08-30T03:49:17.778Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -2046,10 +2046,25 @@
       return dates[dates.length - 1] || '';
     }
 
+    function latestDataDate() {
+      var dates = allItems().map(function(record) {
+        return String(record.item.date || '').slice(0, 10);
+      }).filter(function(date) {
+        return /^\d{4}-\d{2}-\d{2}$/.test(date);
+      }).sort();
+      return dates[dates.length - 1] || todayKey();
+    }
+
+    function getOpenRecords() {
+      return allItems().filter(function(record) {
+        return !resolvedDate(record.item);
+      });
+    }
+
     function buildBacklogData(year) {
       var start = new Date(Number(year), 0, 1);
       var daysInYear = (new Date(Number(year) + 1, 0, 1) - start) / 86400000;
-      var latestDate = todayKey();
+      var latestDate = latestDataDate();
       var data = {};
       for (var dayIndex = 0; dayIndex < daysInYear; dayIndex += 1) {
         var date = new Date(Number(year), 0, dayIndex + 1);
@@ -2098,7 +2113,7 @@
       for (var dayIndex = 0; dayIndex < dayCount; dayIndex += 1) {
         var date = new Date(Number(year), 0, dayIndex + 1);
         var key = dateKey(date);
-        var future = key > todayKey();
+        var future = key > latestDataDate();
         var count = future ? 0 : getRecords(key).length;
         var button = document.createElement('button');
         button.type = 'button';
@@ -2125,7 +2140,7 @@
         var date = Array.isArray(data) ? data[0] : (params && params.value);
         if (Array.isArray(date)) date = date[0];
         date = String(date || '').slice(0, 10);
-        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date > todayKey()) return;
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date > latestDataDate()) return;
         renderUpdates(getRecords(date), date + ' 待解決內容', '顯示該日仍未完成的題目');
       });
     }
@@ -2145,14 +2160,19 @@
       bindCalendarClick(chart);
 
       var latestDate = latestItemDate(selectedYear);
+      var currentRecords = getOpenRecords().filter(function(record) {
+        return String(record.item.date || '').slice(0, 4) === selectedYear;
+      });
       var latestCount = latestDate ? getRecords(latestDate).length : 0;
-      statusElement.textContent = '顯示 ' + selectedYear + ' 年：' + latestCount + ' 個累積待解決題目';
+      statusElement.textContent = '顯示 ' + selectedYear + ' 年：' + currentRecords.length + ' 個目前未完成題目';
 
       Array.prototype.forEach.call(yearsElement.querySelectorAll('button'), function(button) {
         button.classList.toggle('is-active', button.getAttribute('data-year') === selectedYear);
       });
 
-      if (latestDate) {
+      if (currentRecords.length) {
+        renderUpdates(currentRecords, '目前仍在整理的學習題目', '共 ' + currentRecords.length + ' 個未完成題目；點選熱力圖查看指定日期');
+      } else if (latestDate) {
         renderUpdates(getRecords(latestDate), latestDate + ' 待解決內容', '顯示該日仍未完成的題目');
       } else {
         renderUpdates([], selectedYear + ' 年待解決內容', '點選熱力圖格子查看其他日期');
