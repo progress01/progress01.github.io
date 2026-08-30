@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #870fe5;
+    background: #ff2e85;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2860,9 +2860,9 @@ header.header {
    ========================================= */
 .ig-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  margin-top: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 14px;
 }
 .ig-card {
   aspect-ratio: 1/1;
@@ -2883,6 +2883,109 @@ header.header {
   filter: sepia(0.4);
   transform: scale(1.05);
   transition: transform 0.3s;
+}
+.photo-wall-index {
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+  margin: 0 0 30px;
+  padding: 12px 14px;
+  border: 1px solid #d8c5ae;
+  background: #fbf6eb;
+}
+.photo-wall-index__label {
+  margin-right: auto;
+  color: #e36f32;
+  font: 11px/1.5 "Courier New", monospace;
+  letter-spacing: 0.08em;
+}
+.photo-wall-index a,
+.photo-wall-index button {
+  padding: 4px 8px;
+  border: 1px solid #d8c5ae;
+  background: transparent;
+  color: #6c4b3d;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.photo-wall-index button span {
+  margin-left: 3px;
+  color: #96745e;
+  font: 11px/1.5 "Courier New", monospace;
+}
+.photo-wall-index a:hover,
+.photo-wall-index button:hover,
+.photo-wall-index button:focus-visible {
+  border-color: #e36f32;
+  color: #e36f32;
+}
+.photo-wall-index button.is-active {
+  border-color: #2c3e50;
+  background: #2c3e50;
+  color: #fff;
+}
+.photo-wall-index button.is-active span {
+  color: #f3d6bd;
+}
+.photo-wall-section {
+  margin-top: 44px;
+}
+.photo-wall-section:first-of-type {
+  margin-top: 0;
+}
+.photo-wall-section__header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #5b392e;
+}
+.photo-wall-section__eyebrow {
+  flex: 0 0 auto;
+  color: #e36f32;
+  font: 11px/1.5 "Courier New", monospace;
+  letter-spacing: 0.08em;
+}
+.photo-wall-section__header h2 {
+  margin: 0;
+  color: #4a3028;
+  font-size: 1.6em;
+}
+.photo-wall-section__header p {
+  margin: 0 0 0 auto;
+  color: #96745e;
+  font-size: 13px;
+}
+@media (max-width: 1100px) {
+  .ig-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .ig-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .photo-wall-index__label {
+    flex-basis: 100%;
+  }
+  .photo-wall-section {
+    margin-top: 34px;
+  }
+  .photo-wall-section__header {
+    display: block;
+  }
+  .photo-wall-section__header h2 {
+    margin-top: 3px;
+  }
+  .photo-wall-section__header p {
+    margin-top: 5px;
+  }
 }
 /* =========================================
    雙門洞 1988 懷舊配色 (安全注入版)

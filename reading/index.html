@@ -27,7 +27,7 @@
 <meta property="og:description" content="#reading-desk {     --reading-ink: #2d2521;     --reading-brown: #4a3028;     --reading-blue: #243d4b;     --reading-orange: #e36b2f;     --reading-gold: #f1aa58;     --reading-paper: #f7eedc;">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-29T17:13:21.898Z">
+<meta property="article:modified_time" content="2026-08-30T03:14:38.200Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -2134,8 +2134,8 @@
   <section class="reading-pane" aria-labelledby="reading-drafts-title">
     <div class="reading-section-heading"><span>L-01</span><h2 id="reading-drafts-title">每日待解決問題</h2><small>DAILY OPEN QUESTIONS</small></div>
     <div class="reading-backlog-summary">
-      <div class="reading-backlog-count"><strong id="reading-backlog-current">0</strong><span>今日待解決 OPEN QUESTIONS</span></div>
-      <div class="reading-backlog-copy">每天一格，顯示當天結束時還沒有解決的問題數。<strong>顏色越深，表示當時累積的待處理問題越多</strong>；點選日期可以查看那一天仍在處理的題目。</div>
+      <div class="reading-backlog-count"><strong id="reading-backlog-current">0</strong><span>目前累積 OPEN QUESTIONS</span></div>
+      <div class="reading-backlog-copy">上方數字是目前仍未完成的題目總數；每天一格，顯示當天結束時還沒有解決的問題數。<strong>顏色越深，表示當時累積的待處理問題越多</strong>；點選日期可以查看那一天仍在處理的題目。</div>
     </div>
     <div class="reading-backlog-panel">
       <div class="reading-backlog-panel-top"><span id="reading-backlog-period">2026 / DAILY BACKLOG</span><strong id="reading-backlog-focus">正在整理……</strong></div>
@@ -2212,6 +2212,12 @@
           return { item: item, topic: topic };
         }));
       }, []);
+    }
+
+    function currentBacklogCount() {
+      return allItems().filter(function(item) {
+        return !resolvedDate(item);
+      }).length;
     }
 
     function renderItemCard(record) {
@@ -2380,8 +2386,9 @@
         focusEntry = visibleEntries[visibleEntries.length - 1];
         selectedDate = focusEntry ? focusEntry.key : '';
       }
-      currentCount.textContent = focusEntry ? String(focusEntry.count) : '0';
-      periodLabel.textContent = years[0] + '—' + years[years.length - 1] + ' / DAILY BACKLOG';
+      currentCount.textContent = String(currentBacklogCount());
+      var yearRange = years.length === 1 ? String(years[0]) : years[0] + '—' + years[years.length - 1];
+      periodLabel.textContent = yearRange + ' / DAILY BACKLOG';
       focusLabel.textContent = focusEntry ? focusEntry.key + '：' + focusEntry.count + ' 題' : '目前沒有資料';
     }
 
@@ -2405,8 +2412,6 @@
       });
   })();
 </script>
-
-
 
 
       </div>
