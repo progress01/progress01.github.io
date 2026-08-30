@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Don't You Worry
 date: 2025-12-30 12:00:00
-tags: [音樂推薦, 專輯插圖]
+tags: [音樂推薦]
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -18,7 +18,7 @@ tags: [音樂推薦, 專輯插圖]
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Don_t_You_Worry.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_Don_t_You_Worry.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>

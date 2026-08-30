@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-When you say nothing at all
 date: 2026-01-22 12:00:30
-tags: [音樂推薦, 專輯插圖]
+tags: [音樂推薦]
 ---
 
 
@@ -20,7 +20,7 @@ tags: [音樂推薦, 專輯插圖]
 
 <div style="width: 150px; flex-shrink: 0;">
 
-<img src="/images/song_when_you_say_nothing_at_all.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+<img src="/images/song_when_you_say_nothing_at_all.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 
 </div>
 

@@ -214,10 +214,11 @@ comments: false
     <div class="life-index-section-heading"><span>B-01</span><h2>內容入口</h2><small>OPEN THE DRAWER</small></div>
     <div class="life-index-entry-grid" id="life-index-entry-grid">
       <div class="life-index-entry-card">正在整理內容入口……</div>
-      <a class="life-index-entry-card" data-life-utility href="/photos/"><i class="fa fa-camera life-index-card-icon"></i><span class="life-index-card-label">05 / MEMORY</span><h3>記憶圖牆</h3><p>用圖片留下來的片段與收藏。</p></a>
-      <a class="life-index-entry-card" data-life-utility href="/status/"><i class="fa fa-comment life-index-card-icon"></i><span class="life-index-card-label">06 / STATUS</span><h3>碎碎念</h3><p>短一點、即時一點的現場紀錄。</p></a>
-      <a class="life-index-entry-card" data-life-utility href="/calendar/"><i class="fa fa-calendar life-index-card-icon"></i><span class="life-index-card-label">07 / CALENDAR</span><h3>更新日曆</h3><p>回頭看自己什麼時候留下了紀錄。</p></a>
-      <a class="life-index-entry-card" data-life-utility href="/random/"><i class="fa fa-random life-index-card-icon"></i><span class="life-index-card-label">08 / RANDOM</span><h3>隨機文章</h3><p>不預設主題，讓下一篇自己出現。</p></a>
+      <a class="life-index-entry-card" data-life-utility href="/photos/"><i class="fa fa-camera life-index-card-icon"></i><span class="life-index-card-label">05 / MEMORY</span><h3>記憶圖牆</h3><p>用圖片留下來的片段與收藏。</p><span class="life-index-card-link">OPEN MEMORY ↗</span></a>
+      <a class="life-index-entry-card" data-life-utility href="/status/"><i class="fa fa-comment life-index-card-icon"></i><span class="life-index-card-label">06 / STATUS</span><h3>碎碎念</h3><p>短一點、即時一點的現場紀錄。</p><span class="life-index-card-link">OPEN STATUS ↗</span></a>
+      <a class="life-index-entry-card" data-life-utility href="/calendar/"><i class="fa fa-calendar life-index-card-icon"></i><span class="life-index-card-label">07 / CALENDAR</span><h3>更新日曆</h3><p>回頭看自己什麼時候留下了紀錄。</p><span class="life-index-card-link">OPEN CALENDAR ↗</span></a>
+      <a class="life-index-entry-card" data-life-utility href="/reading/"><i class="fa fa-book life-index-card-icon"></i><span class="life-index-card-label">09 / DRAFTS</span><h3>草稿夾</h3><p>把還沒想好的題目放進來，慢慢整理成文章。</p><span class="life-index-card-link">OPEN DRAFTS ↗</span></a>
+      <a class="life-index-entry-card" data-life-utility href="/random/"><i class="fa fa-random life-index-card-icon"></i><span class="life-index-card-label">08 / RANDOM</span><h3>隨機文章</h3><p>不預設主題，讓下一篇自己出現。</p><span class="life-index-card-link">OPEN RANDOM ↗</span></a>
     </div>
   </section>
 
@@ -330,6 +331,7 @@ comments: false
           addText(card, 'span', 'life-index-card-label', String(index + 1).padStart(2, '0') + ' / ' + (category.code || 'TOPIC'));
           addText(card, 'h3', '', category.name || '未命名分類');
           addText(card, 'p', '', category.description || '查看這個內容分類。');
+          addText(card, 'span', 'life-index-card-link', 'OPEN ' + (category.code || 'TOPIC') + ' ↗');
           grid.appendChild(card);
         });
         appendUtilities();

@@ -13,19 +13,20 @@
 {%- endif %}
 <link rel="canonical" href="{{ canonical }}">
 
-{%- set page_url = url %}
+{%- set page_url = canonical %}
 {%- set page_name = page.title or config.title %}
-{%- set page_description = page.description or config.description %}
+{%- set page_description = page.description or (page.excerpt and truncate(strip_html(page.excerpt), {length: 200, separator: ' '})) or config.description %}
 {%- set is_article = page.layout === 'post' or page.type === 'post' %}
 {%- set is_homepage = is_home() %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": {% if is_article %}"Article"{% elif is_homepage %}"WebSite"{% else %}"WebPage"{% endif %},
+  "@type": {% if is_article %}"BlogPosting"{% elif is_homepage %}"WebSite"{% else %}"WebPage"{% endif %},
   "@id": {{ page_url | dump | safe }},
   "url": {{ page_url | dump | safe }},
   "name": {{ page_name | dump | safe }},
-  "description": {{ page_description | dump | safe }}{% if is_article %},
+  "description": {{ page_description | dump | safe }},
+  "inLanguage": {{ (page.lang or config.language or 'zh-TW') | dump | safe }}{% if is_article %},
   "headline": {{ page.title | dump | safe }},
   "datePublished": {{ moment(page.date).format() | dump | safe }},
   "dateModified": {{ moment(page.updated or page.date).format() | dump | safe }},
@@ -40,7 +41,18 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": {{ page_url | dump | safe }}
-  }{% endif %}
+  }{% if page.cover %},
+  "image": {{ full_url_for(page.cover) | dump | safe }}{% endif %}{% if page.categories and page.categories.length %},
+  "articleSection": [
+    {%- for category in page.categories.toArray() %}
+    {{ category.name | dump | safe }}{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]{% endif %}{% if page.tags and page.tags.length %},
+  "keywords": [
+    {%- for tag in page.tags.toArray() %}
+    {{ tag.name | dump | safe }}{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]{% endif %}{% endif %}
 }
 </script>
 

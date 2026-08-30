@@ -104,11 +104,13 @@ open_graph:
 menu:
   home: / || fa fa-home
   categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
   reading: /reading-log/ || fa fa-book
   photos: /photos/ || fa fa-camera
   random: /random/ || fa fa-dice
   calendar: /calendar/ || fa fa-calendar
-  # 標籤與歸檔保留頁面，但不放在主要導覽列。
+  reading_desk: /reading/ || fa fa-book-open
+  # 歸檔保留頁面，但不放在主要導覽列。
 
 # Enable / Disable menu icons / item badges.
 menu_settings:

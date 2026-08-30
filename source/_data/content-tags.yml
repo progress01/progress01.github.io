@@ -1,0 +1,37 @@
+# 訪客可瀏覽的七個主標籤。
+# 文章 front matter 使用主標籤；建置時仍由 scripts/tags-normalizer.js 再次正規化。
+- name: 音樂推薦
+  code: AUDIO
+  icon: fa fa-music
+  url: /tags/音樂推薦/
+  description: 歌曲、歌手與反覆播放的旋律。
+- name: 閱讀紀錄
+  code: READ
+  icon: fa fa-book
+  url: /tags/閱讀紀錄/
+  description: 書籍、小說與讀完後留下的想法。
+- name: 觀影紀錄
+  code: SCREEN
+  icon: fa fa-film
+  url: /tags/觀影紀錄/
+  description: 電影、影集與影像作品的觀看筆記。
+- name: 學習筆記
+  code: STUDY
+  icon: fa fa-flask
+  url: /tags/學習筆記/
+  description: 技術、研究、工作方法與問題拆解。
+- name: 生活感受
+  code: LIFE
+  icon: fa fa-heart
+  url: /tags/生活感受/
+  description: 情緒、困擾與日常觀察。
+- name: 旅行
+  code: TRAVEL
+  icon: fa fa-map-marker
+  url: /tags/旅行/
+  description: 出門走走與地方記憶。
+- name: 站務
+  code: SITE
+  icon: fa fa-wrench
+  url: /tags/站務/
+  description: 部落格改版與網站維護紀錄。

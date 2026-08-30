@@ -1,16 +1,27 @@
-<div class="tag-index-page">
-  <div class="tag-index-title">常用標籤（顯示文章數量）</div>
-  <p class="tag-index-note">
-    音樂推薦、專輯插圖已由內容分類承擔；舊標籤連結仍保留相容。
+<div class="tag-all-page">
+  <div class="tag-all-title">
+    主要標籤
+    <small>{{ site.tags.length }} 個主題</small>
+  </div>
+  <p class="tag-all-note">
+    用主標籤整理跨分類的閱讀方式；每列都會顯示目前收錄的文章數量。
   </p>
-  <ul class="tag-index-list" itemprop="keywords">
-    {% for tag in site.tags.sort('name', 1).toArray() %}
-      {% if tag.name != '音樂推薦' and tag.name != '專輯插圖' and tag.name != '實驗室' %}
-        <li class="tag-index-list-item">
-          <a class="tag-index-list-link" href="{{ url_for(tag.path) }}" rel="tag">{{ tag.name }}</a>
-          <span class="tag-index-list-count">{{ tag.length }}</span>
+  <ul class="tag-all-list" itemprop="keywords">
+    {%- for tagDefinition in site.data['content-tags'] %}
+      {%- set tagQuery = site.tags.find({name: tagDefinition.name}, {lean: true}) %}
+      {%- if tagQuery.length %}
+        {%- set tag = tagQuery[0] %}
+        <li class="tag-all-item">
+          <a class="tag-all-link" href="{{ url_for(tag.path) }}" rel="tag">
+            <span class="tag-all-icon"><i class="{{ tagDefinition.icon }}" aria-hidden="true"></i></span>
+            <span class="tag-all-copy">
+              <strong>{{ tagDefinition.name }}</strong>
+              <small>{{ tagDefinition.description }}</small>
+            </span>
+          </a>
+          <span class="tag-all-count">{{ tag.length }}</span>
         </li>
-      {% endif %}
-    {% endfor %}
+      {%- endif %}
+    {%- endfor %}
   </ul>
 </div>

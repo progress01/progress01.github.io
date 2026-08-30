@@ -2,7 +2,7 @@
 categories: [觀念與實驗]
 title: "討論GEO篇一"
 date: 2026-04-06 17:00:00
-tags: [GEO, 網站流量]
+tags: [學習筆記]
 ---
 
 ### 現況討論

@@ -1,0 +1,43 @@
+# 閱讀台目前正在整理的學習題目。
+# date 記錄加入草稿夾的日期；state 表示目前整理階段；完成後可補 resolved_date。
+year: 2026
+sample: false
+topics:
+  - id: reading-learning
+    code: A-01
+    name: 排球攻擊揮臂機制
+    description: 釐清攻擊動作從步伐、起跳到手臂加速的連續機制。
+    items:
+        - id: reading-topic-01
+          date: 2026-08-29
+          title: 排球攻擊揮臂機制
+          source: 待補來源
+          url: /learning/volleyball-attack-arm-swing/
+          state: learning
+          note: 公開持續更新的學習筆記，先拆解攻擊步伐、起跳、軀幹旋轉與手臂加速如何連成一個動作鏈。
+
+  - id: cms-understanding
+    code: A-02
+    name: CMS 前後台理解
+    description: 建立前台呈現、後台欄位與規格審查之間的對照。
+    items:
+      - id: reading-topic-02
+        date: 2026-08-29
+        title: 前後台欄位對照與規格審查
+        source: 待補來源
+        url: /learning/cms-content-modeling-field-review/
+        state: learning
+        note: 公開持續更新的 CMS 學習筆記，先整理前台顯示、後台欄位與規格文件之間的對照關係。
+
+  - id: agentic-transaction
+    code: A-03
+    name: Agentic Transaction
+    description: 理解代理系統如何處理交易一致性與可靠性。
+    items:
+      - id: reading-topic-03
+        date: 2026-08-29
+        title: "Agentic Transaction: Towards ACID-Compliant Agent Systems"
+        source: 待補來源
+        url: /learning/agentic-transaction-acid-agent/
+        state: learning
+        note: 公開持續更新的研究筆記，先理解 Agentic Transaction 如何處理代理系統中的一致性與交易邊界。

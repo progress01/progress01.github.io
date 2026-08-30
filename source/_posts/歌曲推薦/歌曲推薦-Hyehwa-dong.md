@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Hyehwa dong
 date: 2026-01-06 12:00:00
-tags: [音樂推薦, 專輯插圖]
+tags: [音樂推薦]
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -18,7 +18,7 @@ tags: [音樂推薦, 專輯插圖]
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Hyehwa_dong.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_Hyehwa_dong.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>

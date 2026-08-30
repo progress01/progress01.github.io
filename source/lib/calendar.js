@@ -44,19 +44,19 @@ Calendar.init = function(container, options) {
             position: 'top',
             formatter: function(p) {
                 var format = echarts.format.formatTime('yyyy-MM-dd', p.data[0]);
-                return format + ': ' + p.data[1] + ' 篇文章';
+                return format + ': ' + p.data[1] + ' ' + (options.tooltipUnit || '篇文章');
             }
         },
         visualMap: {
             min: 0,
-            max: Math.max(1, maxValue),
+            max: Number(options.maxValue) || Math.max(1, maxValue),
             calculable: !isMobile,
             orient: 'horizontal',
             left: 'center',
             top: 0,
             itemWidth: isMobile ? 10 : 20,
             itemHeight: isMobile ? 10 : 140,
-            inRange: { color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'] }
+            inRange: { color: options.colors || ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'] }
         },
         calendar: {
             top: titleTop + 20,

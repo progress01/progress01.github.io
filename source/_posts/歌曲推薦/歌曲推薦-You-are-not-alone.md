@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-You are not alone
 date: 2026-01-27 12:00:18
-tags: [音樂推薦, 專輯插圖]
+tags: [音樂推薦]
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -19,7 +19,7 @@ tags: [音樂推薦, 專輯插圖]
 
 <div style="width: 150px; flex-shrink: 0;">
 
-<img src="/images/song_you_are_not_alone.png" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+<img src="/images/song_you_are_not_alone.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 
 </div>
 
