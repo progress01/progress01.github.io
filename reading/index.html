@@ -27,7 +27,7 @@
 <meta property="og:description" content="#reading-desk {     --reading-ink: #2d2521;     --reading-brown: #4a3028;     --reading-blue: #243d4b;     --reading-orange: #e36b2f;     --reading-gold: #f1aa58;     --reading-paper: #f7eedc;">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-30T03:14:38.200Z">
+<meta property="article:modified_time" content="2026-08-30T03:18:27.528Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -2140,7 +2140,7 @@
     <div class="reading-backlog-panel">
       <div class="reading-backlog-panel-top"><span id="reading-backlog-period">2026 / DAILY BACKLOG</span><strong id="reading-backlog-focus">正在整理……</strong></div>
       <div id="reading-backlog-years" class="reading-backlog-years" aria-label="跨年份每日待解決問題熱力圖"></div>
-      <div class="reading-backlog-legend">少 <i></i><i class="level-1"></i><i class="level-2"></i><i class="level-3"></i><i class="level-4"></i> 多</div>
+      <div class="reading-backlog-legend">0 <i></i>1 <i class="level-1"></i>2 <i class="level-2"></i>3 <i class="level-3"></i>4+ <i class="level-4"></i></div>
       <div class="reading-backlog-note">每格代表一天；尚未設定 resolved_date 的「待整理」與「學習中」資料，會從加入日期開始持續計入。</div>
     </div>
     <div class="reading-details">
@@ -2319,7 +2319,7 @@
       return { start: start, entries: entries, columns: Math.ceil((daysInYear + start.getDay()) / 7) };
     }
 
-    function renderYear(year, yearData, max) {
+    function renderYear(year, yearData) {
       var section = document.createElement('section');
       section.className = 'reading-backlog-year';
       var heading = document.createElement('div');
@@ -2347,7 +2347,7 @@
 
       yearData.entries.forEach(function(entry) {
         var future = entry.count === null;
-        var level = future || entry.count === 0 ? 0 : Math.min(4, Math.ceil((entry.count / Math.max(1, max)) * 4));
+        var level = future ? 0 : Math.min(4, entry.count);
         var cell = document.createElement('button');
         cell.type = 'button';
         cell.className = 'reading-backlog-day-cell level-' + level + (future ? ' is-future' : '');
@@ -2376,9 +2376,8 @@
       var visibleEntries = yearData.reduce(function(result, block) {
         return result.concat(block.data.entries.filter(function(entry) { return entry.count !== null; }));
       }, []);
-      var max = visibleEntries.reduce(function(value, entry) { return Math.max(value, entry.count || 0); }, 0);
       yearsElement.innerHTML = '';
-      yearData.forEach(function(block) { renderYear(block.year, block.data, max); });
+      yearData.forEach(function(block) { renderYear(block.year, block.data); });
 
       var focusKey = selectedDate || dateKey(new Date());
       var focusEntry = visibleEntries.filter(function(entry) { return entry.key === focusKey; })[0];
