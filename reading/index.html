@@ -27,7 +27,7 @@
 <meta property="og:description" content="#reading-desk {     --reading-ink: #2d2521;     --reading-brown: #4a3028;     --reading-blue: #243d4b;     --reading-orange: #e36b2f;     --reading-gold: #f1aa58;     --reading-paper: #f7eedc;">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-30T03:18:27.528Z">
+<meta property="article:modified_time" content="2026-08-30T03:36:12.993Z">
 <meta property="article:author" content="Ch-Ju">
 <meta name="twitter:card" content="summary">
 
@@ -1876,7 +1876,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.</span> <span class="nav-text">草稿夾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reading-drafts-title"><span class="nav-number">1.1.</span> <span class="nav-text">每日待解決問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-collection-detail-title"><span class="nav-number">1.1.1.</span> <span class="nav-text">今日仍在處理的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.1.2.</span> <span class="nav-text">持續更新的學習筆記</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reading-desk"><span class="nav-number">1.</span> <span class="nav-text">草稿夾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reading-drafts-title"><span class="nav-number">1.1.</span> <span class="nav-text">每日待解決問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reading-collection-detail-title"><span class="nav-number">1.1.1.</span> <span class="nav-text">選取日期的學習筆記</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -2144,12 +2144,8 @@
       <div class="reading-backlog-note">每格代表一天；尚未設定 resolved_date 的「待整理」與「學習中」資料，會從加入日期開始持續計入。</div>
     </div>
     <div class="reading-details">
-      <div class="reading-details-heading"><span>OPEN / QUESTIONS</span><h3 id="reading-collection-detail-title">今日仍在處理的問題</h3><small id="reading-collection-detail-note">點選熱力圖中的日期</small></div>
+      <div class="reading-details-heading"><span>LEARNING / NOTES</span><h3 id="reading-collection-detail-title">選取日期的學習筆記</h3><small id="reading-collection-detail-note">點選熱力圖中的日期</small></div>
       <div id="reading-collection-details"><div class="reading-empty">正在整理草稿資料……</div></div>
-    </div>
-    <div class="reading-details">
-      <div class="reading-details-heading"><span>LEARNING / NOTES</span><h3>持續更新的學習筆記</h3><small>OPEN PUBLIC NOTES</small></div>
-      <div id="reading-learning-notes"><div class="reading-empty">正在整理學習筆記……</div></div>
     </div>
   </section>
 
@@ -2163,7 +2159,6 @@
     var periodLabel = document.getElementById('reading-backlog-period');
     var focusLabel = document.getElementById('reading-backlog-focus');
     var details = document.getElementById('reading-collection-details');
-    var learningNotes = document.getElementById('reading-learning-notes');
     var detailTitle = document.getElementById('reading-collection-detail-title');
     var detailNote = document.getElementById('reading-collection-detail-note');
     var data = { year: new Date().getFullYear(), topics: [] };
@@ -2220,6 +2215,15 @@
       }).length;
     }
 
+    function latestItemDate() {
+      var dates = allItems().map(function(item) {
+        return String(item.date || '').slice(0, 10);
+      }).filter(function(value) {
+        return /^\d{4}-\d{2}-\d{2}$/.test(value);
+      }).sort();
+      return dates[dates.length - 1] || dateKey(new Date());
+    }
+
     function renderItemCard(record) {
       var item = record.item;
       var topic = record.topic;
@@ -2259,24 +2263,6 @@
       }
       records.forEach(function(record) {
         details.appendChild(renderItemCard(record));
-      });
-    }
-
-    function renderLearningNotes() {
-      var records = data.topics.reduce(function(result, topic) {
-        return result.concat((topic.items || []).map(function(item) {
-          return { item: item, topic: topic };
-        }));
-      }, []).sort(function(left, right) {
-        return String(right.item.date || '').localeCompare(String(left.item.date || ''));
-      });
-      learningNotes.innerHTML = '';
-      if (!records.length) {
-        learningNotes.innerHTML = '<div class="reading-empty">目前還沒有持續更新的學習筆記。</div>';
-        return;
-      }
-      records.forEach(function(record) {
-        learningNotes.appendChild(renderItemCard(record));
       });
     }
 
@@ -2398,16 +2384,14 @@
       })
       .then(function(result) {
         data = result || data;
-        selectedDate = dateKey(new Date());
+        selectedDate = latestItemDate();
         renderHeatmap();
         renderDetails(selectedDate || dateKey(new Date()));
-        renderLearningNotes();
       })
       .catch(function() {
         currentCount.textContent = '—';
         focusLabel.textContent = '資料讀取失敗';
         details.innerHTML = '<div class="reading-empty">草稿資料暫時無法讀取。</div>';
-        learningNotes.innerHTML = '<div class="reading-empty">學習筆記暫時無法讀取。</div>';
       });
   })();
 </script>
