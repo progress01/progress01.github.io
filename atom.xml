@@ -6,7 +6,7 @@
   <link href="https://progress01.github.io/atom.xml" rel="self"/>
   
   <link href="https://progress01.github.io/"/>
-  <updated>2026-08-29T14:09:03.000Z</updated>
+  <updated>2026-08-31T04:00:00.000Z</updated>
   <id>https://progress01.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</title>
+    <link href="https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/"/>
+    <id>https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/</id>
+    <published>2026-08-31T04:00:00.000Z</published>
+    <updated>2026-08-31T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>這是一篇針對〈Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學〉的持續閱讀筆記。先不急著把功能整理成教學，而是想弄清楚：當 AI 不只是回答問題，而是能搜尋、分析、寫程式並產出可下載文件時，我要怎麼判斷它真的幫我完成了工作。</p><p><strong>原文</strong>：<a href="https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html">Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學</a></p><span id="more"></span><blockquote><p><strong>資料狀態：先建立問題，等待實際回答與後續實測</strong></p><p>文章中的方案資格、功能開放時間、檔案格式與中文輸出效果，都屬於會變動的產品資訊；這篇先保存閱讀方向，不把單次實測直接當成穩定保證。</p></blockquote><h2 id="為什麼想繼續讀"><a href="#為什麼想繼續讀" class="headerlink" title="為什麼想繼續讀"></a>為什麼想繼續讀</h2><p>這篇文章吸引我的地方，不只是 Gemini Notebook Agent 可以產出 Word、Excel 與 PowerPoint，而是它把一個資料處理流程往後推了一步：</p><blockquote><p>資料庫 → 找出相關內容 → 分析與重組 → 產出檔案 → 下載、編輯、交接</p></blockquote><p>文章用四種案例說明這件事：把多份方法論整理成 30 天工作重整計畫、把多封讀者問題整理成回信與追蹤表、根據資料庫產出簡報，以及依照既有講義格式產出新的 Word 文件。這讓我想研究的核心，從「AI 能不能生成檔案」變成「怎麼把檔案生成納入一個可靠的工作流程」。</p><h2 id="先請我回答的問題"><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p>以下問題先留下來，你可以挑最有感的回答，不用一次全部完成：</p><ol><li><strong>你最想把哪一種工作交給這類 Agent？</strong> 是整理資料、做 Excel 追蹤表、產出簡報、寫文件，還是把多種產出串成一個工作包？</li><li><strong>你手上的「資料庫」會是什麼？</strong> 例如部落格文章、專案文件、會議紀錄、表格、研究資料，或目前仍然分散在不同工具裡？</li><li><strong>對你來說，什麼才算「可以直接使用」的產出？</strong> 內容正確、格式好看、公式能運作、來源可追溯、能交接，這幾項請怎麼排序？</li><li><strong>哪些判斷你希望 AI 做，哪些判斷一定要自己保留？</strong> 例如資料篩選、結構安排、語氣、風險判斷、最後核准。</li><li><strong>如果 AI 產出一份看起來很完整的文件，你會用什麼方式驗證它？</strong> 你會檢查來源、逐項對照、實際執行公式，還是請另一個工具複核？</li><li><strong>你比較在意省下哪一種時間？</strong> 找資料、整理脈絡、排版組裝、重複輸入，或是把成果交接給別人？</li><li><strong>如果單次指令可以成功，你仍然會想拆成多輪嗎？</strong> 你覺得拆解的價值會在於提高正確率、方便修改，還是讓自己更理解過程？</li><li><strong>這篇文章最值得帶走的是工具能力，還是工作流程的設計方式？</strong> 如果只能留下其中一項，你會選哪一項？</li></ol><h2 id="我目前的暫時理解"><a href="#我目前的暫時理解" class="headerlink" title="我目前的暫時理解"></a>我目前的暫時理解</h2><ul><li>Agent 和一般摘要工具的差別，不只在輸出格式，而在於它會把資料重新組織成下一個工作可以接手的交付物。</li><li>可編輯的文件很重要，因為成果不是停在對話框裡，而是要能被修改、檢查、保存與交接。</li><li>資料庫品質會影響輸出品質。來源是否整理好、命名是否清楚、彼此是否有衝突，可能比提示詞寫得長不長更重要。</li><li>「成功產出檔案」不等於「工作完成」。內容、公式、版面、來源、權限與後續維護仍然需要驗證。</li></ul><h2 id="後續想實驗的最小案例"><a href="#後續想實驗的最小案例" class="headerlink" title="後續想實驗的最小案例"></a>後續想實驗的最小案例</h2><p>等問題回答得比較清楚後，可以先選一個小型案例，不要一開始就追求完整自動化：</p><ol><li>選一組已經存在、但目前分散的資料。</li><li>先定義一個實際要交付的檔案，以及它的驗收條件。</li><li>請 Agent 產出初稿，同時保留來源與處理過程。</li><li>人工檢查內容、格式、公式與可交接性。</li><li>記錄它真正省下的時間，以及新增的檢查成本。</li></ol><h2 id="待查證與待補充"><a href="#待查證與待補充" class="headerlink" title="待查證與待補充"></a>待查證與待補充</h2><ul><li>Gemini Notebook Agent 的目前方案資格、功能範圍與檔案支援格式。</li><li>中文 PDF、SVG、Excel 公式與 PowerPoint 排版的實際穩定度。</li><li>來源引用能否精確回到原始資料，而不只是產出一個看似合理的文件。</li><li>產出文件是否能在後續任務中被再次讀取、修改與版本化。</li><li>這套流程和目前使用的 ChatGPT、Codex 或其他工具，應該如何分工。</li></ul><h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table><thead><tr><th>日期</th><th>進度</th><th>新增理解</th><th>還沒回答的問題</th></tr></thead><tbody><tr><td>2026-08-31</td><td>建立筆記</td><td>先把重點放在「資料庫到交付物」的流程，而不是功能清單</td><td>以上 8 題，等待依實際工作情境調整</td></tr></tbody></table><h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li><strong>2026-08-31</strong>：建立公開持續學習筆記，保存文章來源、四種案例的觀察，以及後續用來調整閱讀方向的問題。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;這是一篇針對〈Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學〉的持續閱讀筆記。先不急著把功能整理成教學，而是想弄清楚：當 AI 不只是回答問題，而是能搜尋、分析、寫程式並產出可下載文件時，我要怎麼判斷它真的幫我完成了工作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原文&lt;/strong&gt;：&lt;a href=&quot;https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html&quot;&gt;Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="觀念與實驗" scheme="https://progress01.github.io/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/"/>
+    
+    
+    <category term="學習筆記" scheme="https://progress01.github.io/tags/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在台灣設立實驗室十一年｜校準責任、內耗與自己｜思考方式筆記</title>
+    <link href="https://progress01.github.io/learning/lab-eleven-years-reflective-thinking/"/>
+    <id>https://progress01.github.io/learning/lab-eleven-years-reflective-thinking/</id>
+    <published>2026-08-31T04:00:00.000Z</published>
+    <updated>2026-08-31T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>這是一篇針對〈在台灣設立實驗室十一年：校準責任、內耗與自己〉的閱讀與思考方式筆記。你特別喜歡這篇文章的思考方式，所以這裡先不把它整理成摘要，而是觀察它如何面對未完成、矛盾與責任，並留下幾個可以回到自己身上的問題。</p><p><strong>原文</strong>：<a href="https://dogoodscience.biodiv.tw/2026/05/31/lab11years/">在台灣設立實驗室十一年：校準責任、內耗與自己</a></p><span id="more"></span><blockquote><p><strong>資料狀態：思考方式觀察，尚未套用到自己的完整案例</strong></p><p>這篇筆記不把作者的生命經驗直接套到自己身上。先學習它的寫法與思考順序：從具體生活狀況開始，承認內在衝突，回頭辨認角色變化，再重新決定哪些責任需要承擔、哪些不必全部扛在自己身上。</p></blockquote><h2 id="我目前觀察到的思考方式"><a href="#我目前觀察到的思考方式" class="headerlink" title="我目前觀察到的思考方式"></a>我目前觀察到的思考方式</h2><h3 id="1-從具體狀況開始，而不是先講大道理"><a href="#1-從具體狀況開始，而不是先講大道理" class="headerlink" title="1. 從具體狀況開始，而不是先講大道理"></a>1. 從具體狀況開始，而不是先講大道理</h3><p>文章先寫身體、家庭、工作與時間被切碎的狀況，再慢慢走到「我到底要什麼」。問題不是突然憑空出現，而是從生活裡累積出來。這使得後面的反思有經驗作為支點，不只是漂亮的自我分析。</p><h3 id="2-同時保留成果與疲累"><a href="#2-同時保留成果與疲累" class="headerlink" title="2. 同時保留成果與疲累"></a>2. 同時保留成果與疲累</h3><p>文章沒有因為有獎項、演講或外界肯定，就否認那一年其實很辛苦；也沒有因為疲累，就假裝過去的成果不重要。好的回顧似乎不是選邊站，而是讓互相矛盾的事實同時存在。</p><h3 id="3-把角色變化寫成需要重新設計的問題"><a href="#3-把角色變化寫成需要重新設計的問題" class="headerlink" title="3. 把角色變化寫成需要重新設計的問題"></a>3. 把角色變化寫成需要重新設計的問題</h3><p>從 hands-on 研究者走向 PI、mentor 或管理者，不被簡化成「應該放手」或「應該繼續親自做」。文章把問題改寫成：哪些地方仍要親自投入，哪些地方要放手，哪些地方要成為教練，讓角色可以重新設計。</p><h3 id="4-把責任和虧欠分開"><a href="#4-把責任和虧欠分開" class="headerlink" title="4. 把責任和虧欠分開"></a>4. 把責任和虧欠分開</h3><p>文章很重要的一個轉折，是重新分辨「我對共同工作有責任」與「別人的選擇變成我欠他們一個結果」並不是同一件事。這種分辨讓照顧、標準與界線可以同時存在，也減少把每次不順利都解讀成自己的人格失敗。</p><h3 id="5-允許文章停在還沒有答案的地方"><a href="#5-允許文章停在還沒有答案的地方" class="headerlink" title="5. 允許文章停在還沒有答案的地方"></a>5. 允許文章停在還沒有答案的地方</h3><p>最後不是用一句結論把所有問題收掉，而是承認仍然有惑，並把問題寫清楚當成下一段路的開始。這可能正是我想學的地方：完成一篇文章，不一定等於完成一個答案。</p><h2 id="先請我回答的問題"><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p>這組問題是為了確認你真正喜歡的是哪一種思考方式，也方便之後把筆記改得更貼近你：</p><ol><li><strong>你最喜歡這篇文章的哪一個部分？</strong> 是誠實、不急著正能量收尾、能同時放進成果與疲累，還是把抽象問題拉回具體生活？</li><li><strong>你希望學的是寫作方法，還是這篇文章裡的自我校準方法？</strong> 如果兩者都有，哪一個要放在這篇筆記的主軸？</li><li><strong>你目前最想重新校準的是哪個角色？</strong> 例如工作者、專案管理者、學習者、家人、創作者，或同時被幾個角色拉扯的人。</li><li><strong>你最近有沒有一件事，表面上算是完成或得到肯定，但內心知道其實付出了很大代價？</strong> 這可以成為後續回顧的起點。</li><li><strong>哪些責任確實是你的，哪些責任只是你習慣性地先扛起來？</strong> 你希望用什麼標準來區分「負責」和「內耗」？</li><li><strong>如果把自己的角色重新拆成 hands-on、放手、coach 三種，你現在各自需要保留或增加什麼？</strong> 不一定要套用原文的名詞，也可以換成你的語言。</li><li><strong>在 AI 介入工作之後，你最想保留哪一種不能被流暢文字取代的能力？</strong> 例如判斷、追問、驗證、感受脈絡，或對結果負責。</li><li><strong>你希望未來的自己讀這篇筆記時，得到的是一個答案、一套問題，還是一個可以繼續寫下去的入口？</strong></li></ol><h2 id="暫時保留的閱讀框架"><a href="#暫時保留的閱讀框架" class="headerlink" title="暫時保留的閱讀框架"></a>暫時保留的閱讀框架</h2><p>之後每次回來讀這篇文章，可以先沿著這五層記錄，不急著寫成完整心得：</p><ol><li><strong>發生了什麼</strong>：具體事件、時間、身體或工作狀態。</li><li><strong>我感受到什麼</strong>：焦慮、疲累、驕傲、愧疚、鬆動或期待。</li><li><strong>我原本怎麼解釋</strong>：當時把問題歸因給誰、歸因給什麼。</li><li><strong>現在想重新辨認什麼</strong>：角色、界線、責任、代價與真正想保留的部分。</li><li><strong>下一個可以觀察的小問題</strong>：不求立刻解決，只先讓它能被看見。</li></ol><h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table><thead><tr><th>日期</th><th>進度</th><th>新增理解</th><th>還沒回答的問題</th></tr></thead><tbody><tr><td>2026-08-31</td><td>建立筆記</td><td>先把喜歡的地方拆成「具體起點、容納矛盾、角色重設、責任分界、保留未解」</td><td>以上 8 題，等待用你的經驗調整</td></tr></tbody></table><h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li><strong>2026-08-31</strong>：建立公開持續學習筆記，先保存文章的思考方式觀察與待回答問題，後續依回答改寫成更貼近自己的反思框架。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;這是一篇針對〈在台灣設立實驗室十一年：校準責任、內耗與自己〉的閱讀與思考方式筆記。你特別喜歡這篇文章的思考方式，所以這裡先不把它整理成摘要，而是觀察它如何面對未完成、矛盾與責任，並留下幾個可以回到自己身上的問題。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原文&lt;/strong&gt;：&lt;a href=&quot;https://dogoodscience.biodiv.tw/2026/05/31/lab11years/&quot;&gt;在台灣設立實驗室十一年：校準責任、內耗與自己&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="觀念與實驗" scheme="https://progress01.github.io/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/"/>
+    
+    
+    <category term="學習筆記" scheme="https://progress01.github.io/tags/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記</title>
@@ -573,80 +617,6 @@
 
   &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
     &lt;img src=&quot;/images/song_how_long_will_i_love_you.webp&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
-  &lt;/div&gt;
-
-&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="音樂" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82/"/>
-    
-    
-    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌曲推薦-Way back into love</title>
-    <link href="https://progress01.github.io/2026/07/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Way-back-into-love/"/>
-    <id>https://progress01.github.io/2026/07/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Way-back-into-love/</id>
-    <published>2026-07-28T04:00:00.000Z</published>
-    <updated>2026-08-30T12:11:43.240Z</updated>
-    
-    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;">      推薦 Hugh Grant 和 Haley Bennett 的 Way back into love      <br>      出自專輯 music and lyrics Music from the motion picture      <br>      <a href="https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae" target="_blank">收聽連結 -> 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_way_back_into_love.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播> chjuhsu05    <br>    Way Back Into Love這首來自電影《K歌情人》的主題曲，講述著一個過氣歌手在創作的過程中，重新找回自我與愛的軌跡。我一直很喜歡它歌詞裡傳遞的意境，那不僅是一首動人的旋律，更深刻地描繪了帶著過去的傷痕，如何一步步重新摸索、走回愛裡面的勇氣。    <br>    這首歌帶著一種很特別的甜蜜感，不是單方面的一廂情願，而是兩個人願意為了彼此重新投入、互相理解的深刻連結。或許正是這種早期情歌才有的單純與真摯，沒有太多複雜的包裝，只有互相陪伴的純粹，讓人在靜靜聆聽時，能感受到一種難以言喻的踏實與溫暖。<p>非常推薦啊啊啊</p>]]></content>
-    
-    
-    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
-  
-  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
-    &lt;p style=&quot;margin-top: 0;&quot;&gt;
-      推薦 Hugh Grant 和 Haley Bennett 的 Way back into love
-      &lt;br&gt;
-      出自專輯 music and lyrics Music from the motion picture
-      &lt;br&gt;
-      &lt;a href=&quot;https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
-    &lt;img src=&quot;/images/song_way_back_into_love.webp&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
-  &lt;/div&gt;
-
-&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="音樂" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82/"/>
-    
-    
-    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌曲推薦-逍遙嘆</title>
-    <link href="https://progress01.github.io/2026/07/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%8D%E9%81%99%E5%98%86/"/>
-    <id>https://progress01.github.io/2026/07/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%8D%E9%81%99%E5%98%86/</id>
-    <published>2026-07-27T04:00:00.000Z</published>
-    <updated>2026-08-30T12:11:43.306Z</updated>
-    
-    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;">      推薦 胡歌 的 逍遙嘆      <br>      出自專輯 仙劍奇俠傳電視原聲帶      <br>      <a href="https://open.spotify.com/track/4vJMCBtcBSr6JbAtdGIWS8?si=507a8f4e274f471e" target="_blank">收聽連結 -> 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_逍遙嘆.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播> chjuhsu05    <br>    胡歌的《逍遙嘆》總能瞬間將思緒拉回那個仙俠的世界。聽著他以近乎平鋪直敘的內斂口吻唱著，其實是在詮釋李逍遙這個角色從最初的純粹，到歷經滄桑後的無盡孤獨。那是一種昇華過後的情感，當身邊再無人能傾訴時，所有的寂寞都被揉捏進了平靜的歌聲裡。    <br>    「逍遙」與「嘆」本身就是一組殘酷的對比。曾經嚮往的無拘無束，最終卻只能化作一聲無可奈何的嘆息。這不僅僅是一首回憶裡的經典曲目，每當眼前浮現新的仙俠故事，總會讓人再次想起那份獨特的悸動。在安靜的片刻重新感受這首歌，那些關於成長的重量與失去的遺憾，彷彿也跟著慢慢暈染開來。<p>非常推薦啊啊啊</p>]]></content>
-    
-    
-    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
-  
-  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
-    &lt;p style=&quot;margin-top: 0;&quot;&gt;
-      推薦 胡歌 的 逍遙嘆
-      &lt;br&gt;
-      出自專輯 仙劍奇俠傳電視原聲帶
-      &lt;br&gt;
-      &lt;a href=&quot;https://open.spotify.com/track/4vJMCBtcBSr6JbAtdGIWS8?si=507a8f4e274f471e&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
-    &lt;img src=&quot;/images/song_逍遙嘆.webp&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
   &lt;/div&gt;
 
 &lt;/div&gt;</summary>
