@@ -10,7 +10,7 @@ comments: false
   <p id="reading-calendar-status" class="reading-calendar-status" aria-live="polite">讀取草稿資料中……</p>
   <div class="reading-calendar-scroll">
     <div class="reading-calendar-chart-wrap">
-      <div id="reading-calendar" class="reading-calendar-chart" aria-label="草稿夾每日累積熱力圖">
+      <div id="reading-calendar" class="reading-calendar-chart" aria-label="草稿夾每日新增熱力圖">
         <div class="reading-calendar-loading"><i class="fa fa-spinner fa-spin"></i> Loading Graph...</div>
       </div>
       <div id="reading-calendar-grid-controls" class="reading-calendar-grid-controls" aria-label="選擇草稿日期"></div>
@@ -20,7 +20,7 @@ comments: false
   <section class="reading-calendar-details" aria-live="polite">
     <div class="reading-calendar-details-heading">
       <span>RECENT / 草稿紀錄</span>
-      <h2 id="reading-calendar-detail-title">最近累積的學習題目</h2>
+      <h2 id="reading-calendar-detail-title">最近新增的學習題目</h2>
       <small id="reading-calendar-detail-note">點選上方格子查看當天</small>
     </div>
     <div id="reading-calendar-updates" class="reading-calendar-updates">
@@ -87,9 +87,10 @@ comments: false
       return addedDate && addedDate <= key && (!closedDate || closedDate > key);
     }
 
-    function getRecords(key) {
+    function getAddedRecords(key) {
       return allItems().filter(function(record) {
-        return isOpenAt(record.item, key);
+        var itemDate = String(record.item.date || '').slice(0, 10);
+        return itemDate === key && isOpenAt(record.item, key);
       });
     }
 
@@ -124,12 +125,6 @@ comments: false
       return dates[dates.length - 1] || todayKey();
     }
 
-    function getOpenRecords() {
-      return allItems().filter(function(record) {
-        return !resolvedDate(record.item);
-      });
-    }
-
     function buildBacklogData(year) {
       var start = new Date(Number(year), 0, 1);
       var daysInYear = (new Date(Number(year) + 1, 0, 1) - start) / 86400000;
@@ -138,7 +133,10 @@ comments: false
       for (var dayIndex = 0; dayIndex < daysInYear; dayIndex += 1) {
         var date = new Date(Number(year), 0, dayIndex + 1);
         var key = dateKey(date);
-        if (key <= latestDate) data[key] = Math.min(4, getRecords(key).length);
+        if (key <= latestDate) {
+          // 每個日期只保留當日新增，避免未完稿讓同一批問題持續累積並讓顏色變深。
+          data[key] = Math.min(4, getAddedRecords(key).length);
+        }
       }
       return data;
     }
@@ -149,7 +147,7 @@ comments: false
       updatesElement.innerHTML = '';
 
       if (!records.length) {
-        updatesElement.innerHTML = '<div class="reading-calendar-empty">這一天沒有仍在處理的學習題目；可以點選其他日期查看累積狀態。</div>';
+        updatesElement.innerHTML = '<div class="reading-calendar-empty">這一天沒有新增的學習題目；可以點選其他日期查看當日紀錄。</div>';
         return;
       }
 
@@ -183,18 +181,18 @@ comments: false
         var date = new Date(Number(year), 0, dayIndex + 1);
         var key = dateKey(date);
         var future = key > latestDataDate();
-        var count = future ? 0 : getRecords(key).length;
+        var count = future ? 0 : getAddedRecords(key).length;
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'reading-calendar-grid-button' + (future ? ' is-future' : '');
         button.style.gridColumn = String(Math.floor((startDay + dayIndex) / 7) + 1);
         button.style.gridRow = String(date.getDay() + 1);
-        button.setAttribute('aria-label', key + ' 累積 ' + count + ' 個待解決題目');
-        button.title = future ? key + '：尚未到達' : key + '：' + count + ' 個待解決題目';
+        button.setAttribute('aria-label', key + ' 新增 ' + count + ' 個題目');
+        button.title = future ? key + '：尚未到達' : key + '：新增 ' + count + ' 個題目';
         if (!future) {
           button.addEventListener('click', function(selectedDate) {
             return function() {
-              renderUpdates(getRecords(selectedDate), selectedDate + ' 待解決內容', '顯示該日仍未完成的題目');
+              renderUpdates(getAddedRecords(selectedDate), selectedDate + ' 新增內容', '只顯示該日新增的學習題目');
             };
           }(key));
         }
@@ -210,7 +208,7 @@ comments: false
         if (Array.isArray(date)) date = date[0];
         date = String(date || '').slice(0, 10);
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date > latestDataDate()) return;
-        renderUpdates(getRecords(date), date + ' 待解決內容', '顯示該日仍未完成的題目');
+        renderUpdates(getAddedRecords(date), date + ' 新增內容', '只顯示該日新增的學習題目');
       });
     }
 
@@ -223,28 +221,25 @@ comments: false
         year: selectedYear,
         colors: readingColors,
         maxValue: 4,
-        tooltipUnit: '個待解決題目'
+        tooltipUnit: '個當日新增題目'
       });
       renderGridControls(selectedYear);
       bindCalendarClick(chart);
 
       var latestDate = latestItemDate(selectedYear);
-      var currentRecords = getOpenRecords().filter(function(record) {
-        return String(record.item.date || '').slice(0, 4) === selectedYear;
-      });
-      var latestCount = latestDate ? getRecords(latestDate).length : 0;
-      statusElement.textContent = '顯示 ' + selectedYear + ' 年：' + currentRecords.length + ' 個目前未完成題目';
+      var latestRecords = latestDate ? getAddedRecords(latestDate) : [];
+      statusElement.textContent = latestDate
+        ? '顯示 ' + selectedYear + ' 年：' + latestDate + ' 新增 ' + latestRecords.length + ' 個題目'
+        : '顯示 ' + selectedYear + ' 年：尚無新增題目';
 
       Array.prototype.forEach.call(yearsElement.querySelectorAll('button'), function(button) {
         button.classList.toggle('is-active', button.getAttribute('data-year') === selectedYear);
       });
 
-      if (currentRecords.length) {
-        renderUpdates(currentRecords, '目前仍在整理的學習題目', '共 ' + currentRecords.length + ' 個未完成題目；點選熱力圖查看指定日期');
-      } else if (latestDate) {
-        renderUpdates(getRecords(latestDate), latestDate + ' 待解決內容', '顯示該日仍未完成的題目');
+      if (latestDate) {
+        renderUpdates(latestRecords, latestDate + ' 新增內容', '只顯示該日新增的學習題目；點選其他日期查看當日紀錄');
       } else {
-        renderUpdates([], selectedYear + ' 年待解決內容', '點選熱力圖格子查看其他日期');
+        renderUpdates([], selectedYear + ' 年新增內容', '點選熱力圖格子查看其他日期');
       }
     }
 

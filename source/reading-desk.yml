@@ -41,3 +41,29 @@ topics:
         url: /learning/agentic-transaction-acid-agent/
         state: learning
         note: 公開持續更新的研究筆記，先理解 Agentic Transaction 如何處理代理系統中的一致性與交易邊界。
+
+  - id: ai-office-agent-workflow
+    code: A-04
+    name: AI Agent 文件產出工作流
+    description: 理解 AI 如何從整理過的資料庫，推進到可下載、可編輯與可交接的 Office 產出。
+    items:
+      - id: reading-topic-04
+        date: 2026-08-31
+        title: "Gemini Notebook Agent：從資料庫到可交付文件的工作流"
+        source: 電腦玩物｜Esor Huang
+        url: /learning/gemini-notebook-agent-office-workflow/
+        state: learning
+        note: 以 Gemini Notebook Agent 的 Word、Excel、PPT 實測為入口，先釐清資料庫、提示、人工判斷、驗證與交付物之間的工作流程。
+
+  - id: reflective-thinking-and-role-calibration
+    code: A-05
+    name: 持續思考與角色校準
+    description: 練習把工作、責任、內耗與角色變化寫成可以持續修正的問題，而不是急著下結論。
+    items:
+      - id: reading-topic-05
+        date: 2026-08-31
+        title: "在台灣設立實驗室十一年：校準責任、內耗與自己｜思考方式筆記"
+        source: Do good science｜Jason Tsai
+        url: /learning/lab-eleven-years-reflective-thinking/
+        state: learning
+        note: 以文章的回顧、承認矛盾、重新定義角色與保留未完成答案為參考，先整理自己真正喜歡的思考方式，以及它能如何用在工作與生活。

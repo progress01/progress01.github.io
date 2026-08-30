@@ -496,7 +496,7 @@ comments: false
           </div>
 
   <div class="ig-card">
-            <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">
+            <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H?si=91efecec259441db" target="_blank">
               <img loading="lazy" decoding="async" src="/images/song_better_man.webp">
             </a>
           </div>
@@ -532,7 +532,7 @@ comments: false
           </div>
 
   <div class="ig-card">
-            <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">
+            <a href="https://open.spotify.com/track/3x84xRaXhYMP8ftrL9oNkM?si=f2531394f1f14b93" target="_blank">
               <img loading="lazy" decoding="async" src="/images/song_小風波.webp">
             </a>
           </div>
@@ -587,26 +587,26 @@ comments: false
 
 <!-- BLOGGER_IMPORT_PHOTO_WALL:MUSIC:START -->
   <div class="ig-card">
-    <a href="/2025/10/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%BE%A9%E5%88%BB%E5%9B%9E%E6%86%B6/" target="_blank">
-      <img loading="lazy" decoding="async" src="/images/blogger-import/thumbs/blogger-4a258fbdfb/01.webp" alt="歌曲推薦-復刻回憶｜主圖">
+    <a href="https://open.spotify.com/track/13tCl0OoBldLiDPsxS18Kf?si=9874c504a59c48d9" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_復刻回憶.webp" alt="歌曲推薦-復刻回憶｜主圖">
     </a>
   </div>
 
   <div class="ig-card">
-    <a href="/2025/10/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%80%81%E7%94%B7%E5%AD%A9/" target="_blank">
-      <img loading="lazy" decoding="async" src="/images/blogger-import/thumbs/blogger-865736839a/01.webp" alt="歌曲推薦-老男孩｜主圖">
+    <a href="https://open.spotify.com/track/3obsARE8dcVylLhsZUshvq?si=29d8ee0267a4446a" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_老男孩.webp" alt="歌曲推薦-老男孩｜主圖">
     </a>
   </div>
 
   <div class="ig-card">
-    <a href="/2025/10/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%89%E6%B2%92%E6%9C%89%E9%82%A3%E9%BA%BC%E4%B8%80%E9%A6%96%E6%AD%8C%E6%9C%83%E8%AE%93%E4%BD%A0%E6%83%B3%E8%B5%B7%E6%88%91/" target="_blank">
-      <img loading="lazy" decoding="async" src="/images/blogger-import/thumbs/blogger-bc61dc5201/01.webp" alt="歌曲推薦-有沒有那麼一首歌會讓你想起我｜主圖">
+    <a href="https://open.spotify.com/track/2YOECkGti9IFHkPYTZAHWl?si=0506e26353a147d0" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_有沒有那麼一首歌會讓你想起我.webp" alt="歌曲推薦-有沒有那麼一首歌會讓你想起我｜主圖">
     </a>
   </div>
 
   <div class="ig-card">
-    <a href="/2025/10/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8C%97%E6%A5%B5%E9%9B%AA/" target="_blank">
-      <img loading="lazy" decoding="async" src="/images/blogger-import/thumbs/blogger-70c1218ba0/01.webp" alt="歌曲推薦-北極雪｜主圖">
+    <a href="https://open.spotify.com/track/0qgiLB55D9B2hHFeX7L9hC?si=3b1d465f362c42b1" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_北極雪.webp" alt="歌曲推薦-北極雪｜主圖">
     </a>
   </div>
 

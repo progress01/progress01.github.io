@@ -13,7 +13,7 @@ tags: [音樂推薦]
       <br>
       出自專輯 Sing When You're Winning
       <br>
-      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H?si=91efecec259441db" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
