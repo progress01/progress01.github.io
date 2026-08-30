@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #8bffdb;
+    background: #beff88;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3018,43 +3018,85 @@ body {
   border-radius: 4px;
 }
 /* =========================================
-   標籤索引：與分類、歸檔統一顯示文章數量
+   標籤索引：沿用分類頁的清單邏輯，集中顯示主標籤與文章數量
    ========================================= */
-.tag-index-page {
+.tag-all-page {
   text-align: left;
 }
-.tag-index-title {
+.tag-all-title {
   text-align: center;
 }
-.tag-index-note {
+.tag-all-title small {
+  margin-left: 8px;
+  color: #96745e;
+  font-size: 12px;
+}
+.tag-all-note {
+  margin: 8px 0 20px;
   color: #96745e;
   font-size: 13px;
   text-align: center;
-  margin: 8px 0 20px;
 }
-.tag-index-list {
+.tag-all-list {
   list-style: none;
   margin: 20px 0 0;
   padding: 0;
 }
-.tag-index-list-item {
+.tag-all-item {
   display: flex;
   align-items: center;
+  gap: 12px;
   border-bottom: 1px solid #eee;
-  padding: 8px 0;
+  padding: 10px 0;
 }
-.tag-index-list-link {
+.tag-all-link {
+  display: flex;
   flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
   color: #555 !important;
 }
-.tag-index-list-link:hover {
-  background-color: #f5f5f5;
+.tag-all-link:hover {
   color: #222 !important;
-  padding-left: 10px;
   text-decoration: none;
-  transition: all 0.2s;
 }
-.tag-index-list-count {
+.tag-all-link:hover .tag-all-icon {
+  border-color: #e36f32;
+  background: #f7ead9;
+  color: #e36f32;
+}
+.tag-all-icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8c5ae;
+  color: #96745e;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.tag-all-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+.tag-all-copy strong {
+  color: #4a3028;
+  font-size: 1.05em;
+  font-weight: normal;
+}
+.tag-all-copy small {
+  overflow: hidden;
+  color: #96745e;
+  font-size: 12px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tag-all-count {
   background: #ccc;
   border-radius: 10px;
   color: var(--content-bg-color);
@@ -3063,7 +3105,13 @@ body {
   margin-left: 0.35em;
   padding: 2px 5px;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+  flex: 0 0 auto;
   margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .tag-all-copy small {
+    white-space: normal;
+  }
 }
 /* 修改 Header 背景：深藍色 + 顆粒質感 */
 .site-brand-container {
@@ -3112,7 +3160,10 @@ body {
 .post-content.post-content-imported:not(.post-content-song) .post-body .blogger-import-image {
   box-sizing: border-box;
   width: auto;
+  height: auto;
   max-width: 640px;
+  display: block;
+  margin: 1.4em auto 0.5em;
   padding: 6px;
   border: 1px solid #d8c8b4;
   background: #f8f1e4;
