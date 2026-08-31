@@ -67,3 +67,16 @@ topics:
         url: /learning/lab-eleven-years-reflective-thinking/
         state: learning
         note: 以文章的回顧、承認矛盾、重新定義角色與保留未完成答案為參考，先整理自己真正喜歡的思考方式，以及它能如何用在工作與生活。
+
+  - id: lis-research-content-analysis
+    code: A-06
+    name: LIS 研究演變與內容分析
+    description: 透過長期文獻內容分析，理解圖書資訊學研究的主題、方法與學科邊界如何變化。
+    items:
+      - id: reading-topic-06
+        date: 2026-08-31
+        title: "LIS Research 1965–2025：圖書資訊學研究的主題與方法演變"
+        source: Journal of Documentation｜Emerald Publishing
+        url: /learning/lis-research-1965-2025-content-analysis/
+        state: learning
+        note: 以 1965–2025 的長期內容分析為入口，先釐清研究資料如何選取、分類如何維持可比性，以及主題與方法的變化可以如何被解讀。
