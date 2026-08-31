@@ -17,6 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</title>
+    <link href="https://progress01.github.io/learning/lis-research-1965-2025-content-analysis/"/>
+    <id>https://progress01.github.io/learning/lis-research-1965-2025-content-analysis/</id>
+    <published>2026-08-31T04:00:00.000Z</published>
+    <updated>2026-08-31T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>這是一篇針對〈LIS Research 1965–2025: a content analysis of topics and methods in journal articles〉的持續閱讀筆記。先不急著把它整理成一份「圖書資訊學六十年發展史」，而是想弄清楚：一篇研究是如何透過固定資料範圍、分類架構與跨年份比較，讓「一個學科正在改變」這句話變得可以被檢查。</p><p><strong>原文</strong>：<a href="https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of">LIS Research 1965–2025: a content analysis of topics and methods in journal articles</a></p><span id="more"></span><blockquote><p><strong>資料狀態：已讀文章頁面與摘要，建立初步問題；完整閱讀與數據核對待後續進行</strong></p><p>文章由 Kalervo Järvelin 與 Pertti Vakkari 撰寫，刊於 <em>Journal of Documentation</em>，2026 年第 82 卷第 7 期，頁 472–498。這篇筆記先根據文章頁面可取得的研究目的、摘要、研究設計與部分結果建立閱讀入口；表格細節、分類規則與長期趨勢仍要回到全文逐項核對。</p></blockquote><h2 id="為什麼想讀"><a href="#為什麼想讀" class="headerlink" title="為什麼想讀"></a>為什麼想讀</h2><p>我想讀的不是單純的學科趨勢，而是作者怎麼處理「研究對象本身一直在變」這個問題。</p><p>如果一個領域從圖書館服務、資訊儲存與檢索，逐漸延伸到科學與專業傳播、資訊尋求、資料科學或人工智慧，那麼我們要怎麼判斷它仍然是同一個領域？如果分類表也跟著時代修改，又要怎麼避免把不同年代硬塞進今天的概念？</p><p>這篇文章吸引我的地方，是它把這些問題放進研究設計裡處理：研究者使用約 30 本國際 LIS 期刊，分析 1965–2025 的研究文章，並維持期刊集合與主要分類架構的穩定，再比較不同年份的主題與研究方法。這使「學科如何變化」不只是印象，而是可以回頭查看資料來源、分類方式與比較基準的分析主張。</p><h2 id="先請我回答的問題"><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p>這組問題先留下來，之後可以依你的回答把筆記改成更貼近你的閱讀目的：</p><ol><li><strong>你想從這篇文章讀懂什麼？</strong> 是圖書資訊學的發展、內容分析這個研究方法，還是如何觀察一個領域的研究焦點變化？</li><li><strong>你對「LIS」的直覺範圍到哪裡？</strong> 圖書館服務、資訊檢索、資訊行為、學術傳播、資料科學與 AI，哪些你會認為屬於同一個領域？</li><li><strong>作者把文章分類時，你最想追查哪一個決定？</strong> 例如期刊怎麼選、文章怎麼判斷是 LIS、每篇文章為什麼只放進每個面向的一個主要類別。</li><li><strong>長期比較中，「分類架構保持穩定」和「分類架構跟著時代更新」哪一個更重要？</strong> 你會怎麼在可比性與時代敏感度之間取捨？</li><li><strong>如果某本 LIS 期刊有很多來自電腦科學或管理學的文章，你會把它看成學科跨域成功，還是 LIS 邊界正在變薄？</strong></li><li><strong>看到某個主題比例上升時，你會先想到什麼可能原因？</strong> 真實研究興趣改變、期刊選擇改變、出版量改變、分類規則改變，或資料庫與關鍵字的變化？</li><li><strong>你比較相信人工內容分類、引用／書目計量，還是 topic modeling？</strong> 什麼情況下你會希望幾種方法互相驗證？</li><li><strong>如果把這套方法用在自己的閱讀 archive，你想觀察什麼？</strong> 例如自己長期最常讀的主題、方法、來源類型，或「原本想讀但一直沒有完成」的內容。</li></ol><h2 id="目前已確認的研究輪廓"><a href="#目前已確認的研究輪廓" class="headerlink" title="目前已確認的研究輪廓"></a>目前已確認的研究輪廓</h2><h3 id="研究問題"><a href="#研究問題" class="headerlink" title="研究問題"></a>研究問題</h3><p>文章有兩個主要問題：</p><ol><li>2025 年 LIS 研究的主題與方法狀態是什麼？</li><li>LIS 研究從 1965 到 2025 如何演變？</li></ol><p>2025 年的橫斷面分析，進一步觀察主題、研究策略、資料蒐集方法、分析類型與研究貢獻類型；長期分析則比較 1965、1975、1985、2005、2015 與 2025 等年份的研究焦點與方法選擇。</p><h3 id="資料與範圍"><a href="#資料與範圍" class="headerlink" title="資料與範圍"></a>資料與範圍</h3><ul><li>研究材料是英文學術期刊文章。</li><li>期刊來源是選定的國際 LIS 期刊，約 30 本；2025 年資料表列出 29 本期刊、共 1,839 篇文章。</li><li>2025 年先排除 729 篇被判定為其他學科、65 篇非學術文章，主要分析資料為 1,145 篇；若只看 LIS 研究文章的主題與方法，表格中的樣本數為 1,045。</li><li>研究者希望用相對穩定的期刊集合與分類架構，增加跨年代比較的可比性。</li></ul><p>這裡有一個我想特別留意的數字關係：研究資料不等於最後納入的 LIS 文章。從 1,839 篇到 1,145 篇，再到不同分析表格中的 1,045 篇，之後閱讀全文時要確認每個分母分別代表什麼，不能看到百分比就直接拿來比較。</p><h3 id="分類方式"><a href="#分類方式" class="headerlink" title="分類方式"></a>分類方式</h3><p>文章採用多面向的 faceted classification。主題分類有十個主要類別，其中包含：LIS 脈絡、LIS 教育、方法論、LIS 分析、圖書與資訊服務、資訊儲存與檢索、資訊尋求、科學與專業傳播、其他 LIS 面向，以及其他學科。</p><p>方法面向則分成四個主要部分：</p><ul><li>研究策略</li><li>資料蒐集方法</li><li>分析類型（質性、量化、混合或非實證）</li><li>調查／研究貢獻的類型</li></ul><p>每篇文章原則上依每個面向各選一個主要類別，主要根據摘要判斷，必要時再略讀全文。研究者也明確表示，他們分類的是文章聲稱採取的研究方式與貢獻類型，不進一步判斷文章的主張是否真的成立。</p><h2 id="暫時理解：這篇文章真正分析的是「學科如何被定義」"><a href="#暫時理解：這篇文章真正分析的是「學科如何被定義」" class="headerlink" title="暫時理解：這篇文章真正分析的是「學科如何被定義」"></a>暫時理解：這篇文章真正分析的是「學科如何被定義」</h2><h3 id="1-先定義範圍，才談趨勢"><a href="#1-先定義範圍，才談趨勢" class="headerlink" title="1. 先定義範圍，才談趨勢"></a>1. 先定義範圍，才談趨勢</h3><p>作者不是先把所有看起來與圖書、資訊、資料有關的文章都算進來，而是用分類系統作為 LIS 的操作性定義：能被歸入 LIS 主題類別的文章，才被當作 LIS 研究；「其他學科」則排除在主要 LIS 分析之外。</p><p>這個選擇不代表分類就是 LIS 的唯一真實邊界，而是讓跨年份比較有一個固定的操作規則。它也提醒我，任何「某領域變得更重視某主題」的結論，都要一起問：這個領域是怎麼被定義出來的？</p><h3 id="2-穩定的分類讓比較變得可能，也會遮住新東西"><a href="#2-穩定的分類讓比較變得可能，也會遮住新東西" class="headerlink" title="2. 穩定的分類讓比較變得可能，也會遮住新東西"></a>2. 穩定的分類讓比較變得可能，也會遮住新東西</h3><p>長期研究需要某種穩定性，否則 1965 年和 2025 年的分類不在同一套語言裡，比例就很難比較。但如果分類太穩定，新的研究對象可能只能被勉強塞進舊類別，甚至被歸為「其他學科」。</p><p>因此，分類架構不是中性的背景工具，而是研究結果的一部分。它一方面產生可比性，另一方面也決定了哪些變化容易被看見、哪些變化可能被判定為偏離原本的學科。</p><h3 id="3-「跨域」和「失去邊界」可能是同一個現象的兩種讀法"><a href="#3-「跨域」和「失去邊界」可能是同一個現象的兩種讀法" class="headerlink" title="3. 「跨域」和「失去邊界」可能是同一個現象的兩種讀法"></a>3. 「跨域」和「失去邊界」可能是同一個現象的兩種讀法</h3><p>文章摘要指出，2025 年約 41% 的核心期刊文章被判定為不屬於 LIS 主題。作者把這看成出版範圍擴張、研究典範變化，也提出 LIS 可能走向碎片化的警訊。</p><p>但這個結果也可以有另一種讀法：LIS 的研究對象正在和電腦科學、管理學、社會科學等領域互相滲透。接下來要讀全文，看看作者如何在「學科被其他領域取代」與「學科建立新的整合議題」之間提出兩種可能未來，而不是只把跨域當成好或壞。</p><h3 id="4-研究方法變多，不等於研究品質自動變好"><a href="#4-研究方法變多，不等於研究品質自動變好" class="headerlink" title="4. 研究方法變多，不等於研究品質自動變好"></a>4. 研究方法變多，不等於研究品質自動變好</h3><p>摘要提到，調查、科學計量、實驗、個案研究與質性研究的使用都變得更普遍，代表 LIS 在分析研究對象時變得更多樣。</p><p>這裡要先保留一個區分：方法多樣化說明研究工具箱變大，不直接等於研究變得更嚴謹、更有解釋力或更接近真實。作者也沒有在分類時判斷文章主張是否被充分支持，所以後續要把「研究採用什麼方法」和「方法用得好不好」分開閱讀。</p><h2 id="先記下的趨勢線索"><a href="#先記下的趨勢線索" class="headerlink" title="先記下的趨勢線索"></a>先記下的趨勢線索</h2><p>以下不是我已完成的全文摘要，而是文章摘要與研究設計中值得回頭核對的線索：</p><table><thead><tr><th>面向</th><th>目前線索</th><th>後續要核對的問題</th></tr></thead><tbody><tr><td>研究主題</td><td>科學與專業傳播在後期成為重要主題；資訊儲存與檢索不再維持早期的強勢位置；資訊尋求的比重上升</td><td>各年份的分母、比例與分類細節是否一致？</td></tr><tr><td>圖書館服務</td><td>對圖書與資訊服務的關注長期下降，但 2025 年仍占一定比例</td><td>下降是否代表研究消失，還是被其他期刊與研究語言承接？</td></tr><tr><td>研究方法</td><td>調查、科學計量、實驗、個案與質性研究都更常見</td><td>這些方法是在哪些主題中增加？是互補還是分化？</td></tr><tr><td>學科邊界</td><td>2025 年核心期刊文章中，約 41% 被判定為其他學科</td><td>這是期刊範圍擴張、作者來源改變，還是 LIS 分類本身的限制？</td></tr><tr><td>研究量</td><td>LIS 研究文章數從 2015 年的 1,210 篇降到 2025 年的 1,045 篇</td><td>這能否代表研究活動下降？期刊集合外的研究是否增加？</td></tr></tbody></table><h2 id="我想用來讀全文的五層框架"><a href="#我想用來讀全文的五層框架" class="headerlink" title="我想用來讀全文的五層框架"></a>我想用來讀全文的五層框架</h2><p>回來讀每一段時，先不急著記所有數字，可以依這五層留下摘要：</p><ol><li><strong>資料層</strong>：研究者收了哪些文章？哪些被排除？</li><li><strong>定義層</strong>：什麼條件讓一篇文章算 LIS？什麼情況會被歸到其他學科？</li><li><strong>分類層</strong>：主題、方法與貢獻如何被編碼？分類者之間怎麼校準？</li><li><strong>比較層</strong>：不同年份是否真的使用相同的分母、期刊集合與分類語言？</li><li><strong>解釋層</strong>：數字變化被解讀成研究興趣變化、出版結構變化，還是學科邊界變化？</li></ol><h2 id="可能與我現在的學習系統連結"><a href="#可能與我現在的學習系統連結" class="headerlink" title="可能與我現在的學習系統連結"></a>可能與我現在的學習系統連結</h2><p>這篇文章也可以反過來幫我思考自己的閱讀 archive。現在的草稿夾不是只有「我讀了哪些文章」，還可以慢慢觀察：</p><ul><li>我長期最常回到哪些主題？</li><li>我偏好讀工具實測、研究論文、經驗回顧，還是方法論文章？</li><li>同一個主題在不同時間出現時，我的問題有沒有改變？</li><li>我把文章歸類時，是按照來源、主題、用途，還是按照自己當下的問題？</li><li>有哪些文章被我標成學習中，但其實已經不再回到它？這種狀態要怎麼和真正持續累積的主題區分？</li></ul><p>我不一定要立刻仿照論文做統計，但可以先學它的精神：先把資料範圍、分類規則與比較單位說清楚，再談自己的閱讀趨勢。尤其「當天新增」和「累積未完成」是兩種不同的計數概念，也應該在 archive 裡分開保存。</p><h2 id="待查證與待補充"><a href="#待查證與待補充" class="headerlink" title="待查證與待補充"></a>待查證與待補充</h2><ul><li>完整的 2025 年文章分類表，以及 1965、1975、1985、2005、2015、2025 各年份的分母差異。</li><li>2025 年資料從 1,839 篇、1,145 篇到 1,045 篇的實際篩選流程與表格對應。</li><li>約 30 本期刊的完整名單，以及期刊集合在不同年份如何維持可比性。</li><li>六個分類面向的完整定義、子類別與 2025 年修改之處。</li><li>兩位研究者如何進行 100 篇文章的獨立重分類，以及 Fleiss’ Kappa 的數值與解讀。</li><li>「其他學科」比例上升在多大程度上反映期刊出版政策或作者來源的變化。</li><li>研究者提出的 LIS 未來兩種可能：走向被鄰近學科吸收，或整合成研究資訊互動的跨學科議程。</li><li>這套人工內容分析與 topic modeling、書目計量分析各自能看見什麼、看不見什麼。</li></ul><h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table><thead><tr><th>日期</th><th>進度</th><th>新增理解</th><th>還沒回答的問題</th></tr></thead><tbody><tr><td>2026-08-31</td><td>建立筆記</td><td>先把重點放在「資料範圍、分類架構、跨年份可比性與學科邊界」</td><td>以上 8 題，以及資料篩選、分類可靠度與趨勢表格的全文核對</td></tr></tbody></table><h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li><strong>2026-08-31</strong>：建立公開持續學習筆記，保存文章來源、研究輪廓、初步趨勢線索與後續閱讀問題。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;這是一篇針對〈LIS Research 1965–2025: a content analysis of topics and methods in journal articles〉的持續閱讀筆記。先不急著把它整理成一份「圖書資訊學六十年發展史」，而是想弄清楚：一篇研究是如何透過固定資料範圍、分類架構與跨年份比較，讓「一個學科正在改變」這句話變得可以被檢查。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原文&lt;/strong&gt;：&lt;a href=&quot;https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of&quot;&gt;LIS Research 1965–2025: a content analysis of topics and methods in journal articles&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="觀念與實驗" scheme="https://progress01.github.io/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/"/>
+    
+    
+    <category term="學習筆記" scheme="https://progress01.github.io/tags/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</title>
     <link href="https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/"/>
     <id>https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/</id>
@@ -580,43 +602,6 @@
 
   &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
     &lt;img src=&quot;/images/song_my_heart_will_go_on.webp&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
-  &lt;/div&gt;
-
-&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="音樂" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82/"/>
-    
-    
-    <category term="音樂推薦" scheme="https://progress01.github.io/tags/%E9%9F%B3%E6%A8%82%E6%8E%A8%E8%96%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌曲推薦-How long will I love you</title>
-    <link href="https://progress01.github.io/2026/07/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-How-long-will-I-love-you/"/>
-    <id>https://progress01.github.io/2026/07/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-How-long-will-I-love-you/</id>
-    <published>2026-07-29T04:00:00.000Z</published>
-    <updated>2026-08-30T12:11:43.236Z</updated>
-    
-    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;">      推薦 Ellie Goulding 的 How long will I love you      <br>      出自專輯 about time      <br>      <a href="https://open.spotify.com/track/30pUVEgP0CXceGGTZslhXs?si=37f2b8bfcd184b52" target="_blank">收聽連結 -> 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_how_long_will_i_love_you.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播> chjuhsu05    <br>    〈How Long Will I Love You〉是電影《真愛每一天》的超級主題曲。這部電影揉合了深沉的父子牽絆與純粹的愛情，男主角無數次地穿越回過去，只為了能以最剛好的姿態，自然地走進女主角的生命與記憶中。<pre><code>這種近乎笨拙卻又無比溫柔的執著，總能深深觸動內心。而這份小心翼翼追求的完美，最終在那場狂風暴雨的婚禮中迎來了翻轉。滂沱的大雨雖然打亂了一切，卻沒有毀掉任何美好，反而讓他們在混亂中笑得無所畏懼。無論我們多渴望透過重來去追求毫無瑕疵的完美，最終能陪伴我們抵擋現實風雨的，依然是那份最真摯且不加掩飾的情感。</code></pre><p>非常推薦啊啊啊</p>]]></content>
-    
-    
-    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
-  
-  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
-    &lt;p style=&quot;margin-top: 0;&quot;&gt;
-      推薦 Ellie Goulding 的 How long will I love you
-      &lt;br&gt;
-      出自專輯 about time
-      &lt;br&gt;
-      &lt;a href=&quot;https://open.spotify.com/track/30pUVEgP0CXceGGTZslhXs?si=37f2b8bfcd184b52&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
-    &lt;img src=&quot;/images/song_how_long_will_i_love_you.webp&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
   &lt;/div&gt;
 
 &lt;/div&gt;</summary>
