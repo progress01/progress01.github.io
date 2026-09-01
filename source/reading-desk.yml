@@ -11,10 +11,10 @@ topics:
         - id: reading-topic-01
           date: 2026-08-29
           title: 排球攻擊揮臂機制
-          source: 待補來源
+          source: HackMD｜60715009E
           url: /learning/volleyball-attack-arm-swing/
           state: learning
-          note: 公開持續更新的學習筆記，先拆解攻擊步伐、起跳、軀幹旋轉與手臂加速如何連成一個動作鏈。
+          note: 以 HackMD 原始筆記為主，重新聚焦混排實戰中的發力方式、髖部與身體旋轉、手臂順勢甩出、肩膀負荷與擊球點選擇，補充相關影片與延伸搜尋關鍵字，保留朋友討論後尚未驗證的動作假設。
 
   - id: cms-understanding
     code: A-02
