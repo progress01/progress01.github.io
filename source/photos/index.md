@@ -22,6 +22,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+            <a href="https://open.spotify.com/track/42suymP38HAIBl0wiDfpst?si=82b89bacda4f4ae0" target="_blank">
+              <img loading="lazy" decoding="async" src="/images/song_千千闋歌.webp">
+            </a>
+          </div>
+
+  <div class="ig-card">
+            <a href="https://open.spotify.com/track/4acnLs25ZReXBedSsPMmgg?si=53145418aafc4441" target="_blank">
+              <img loading="lazy" decoding="async" src="/images/song_시청_앞_지하철_역에서.webp">
+            </a>
+          </div>
+
+  <div class="ig-card">
             <a href="https://www.youtube.com/watch?v=7uo5d_5UHJE&amp;list=RD7uo5d_5UHJE&amp;start_radio=1" target="_blank">
               <img loading="lazy" decoding="async" src="/images/song_非常時期.webp">
             </a>

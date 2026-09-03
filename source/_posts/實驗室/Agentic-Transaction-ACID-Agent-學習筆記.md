@@ -167,6 +167,16 @@ ACID-Agent 的整理方向是：
 - 把「代理修改網站檔案」當成小型案例，整理一次快照、驗證、提交與回滾流程。
 - 比較 Agentic Transaction 與 Saga、工作流引擎、事件溯源及傳統資料庫交易的差異。
 
+## 預先收集：先分清楚論文主張與實作證據
+
+1. [Agentic Transaction: Towards ACID-Compliant Agent Systems](https://arxiv.org/abs/2608.13900)：原始論文頁面，先核對 Semantic Atomicity、Consistency、Isolation、Durability 的正式定義，以及 10.6% 改善幅度所對應的基準與實驗條件。
+2. [TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)：開放原始碼專案，適合檢查論文描述的快照、驗證、失敗隔離與工作流是否真的有對應實作。
+3. [PostgreSQL 18｜Transactions](https://www.postgresql.org/docs/18/tutorial-transactions.html)：用來補回傳統交易的基本概念，先分清楚 `BEGIN`、`COMMIT`、`ROLLBACK` 與 `SAVEPOINT`，再判斷「ACID for Agents」到底是沿用、改寫還是借用資料庫術語。
+
+## 我的參考意見
+
+這個題目最值得先保留的不是「代理也有 ACID」這句口號，而是把代理的工作拆成探索、執行、驗證、提交與失敗後處理。論文目前應先視為一個研究框架與設計假說，不能直接當成已經成熟的工程標準；閱讀順序應該是原論文定義 → 原始碼結構 → 實驗表格 → 自己的小案例。對我的網站工作來說，最容易落地的部分可能是修改前快照、驗證閘門、差異檢查與可追溯紀錄，而不是一開始就追求完整的語義交易系統。
+
 ## 更新紀錄
 
 - **2026-08-29 22:09**：建立 Agentic Transaction 公開研究筆記，加入語義 ACID、失敗隔離、驗證閘門、基準測試與實務檢查清單；全文暫列為待核對整理。

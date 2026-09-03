@@ -1,4 +1,4 @@
-# 訪客可瀏覽的四個內容分類。
+# 訪客可瀏覽的五個內容分類。
 # 站務文章仍可存在，但不列入一般內容入口與隨機抽取。
 - name: 音樂
   code: AUDIO
@@ -15,6 +15,11 @@
   icon: fa fa-flask
   url: /categories/觀念與實驗/
   description: 問題情境、發現過程與真正原因。
+- name: 工作知識
+  code: WORK
+  icon: fa fa-briefcase
+  url: /categories/工作知識/
+  description: 工作流程、問題排查與可移植的方法。
 - name: 生活紀錄
   code: DAILY
   icon: fa fa-pencil

@@ -167,6 +167,17 @@ learning_status: 進行中
 - 核對參考書籍中對 Content Modeling、IA 與 Component 的原始定義。
 - 把這篇筆記中的「應該」逐項改成已有來源或專案決策支持的說法。
 
+## 預先收集：把欄位變成可交付的規格
+
+1. [Content models｜Contentful Help](https://www.contentful.com/help/content-models/)：把內容模型理解成內容類型、欄位與彼此參照的總體結構，也提供視覺化建模與 API 建模的入口。
+2. [Schemas and forms｜Sanity Docs](https://www.sanity.io/docs/studio/schemas-and-forms)：清楚區分 schema、document type 與 field type，適合對照「後台欄位」和「內容實體」不是同一層概念。
+3. [Sanity TypeGen](https://www.sanity.io/docs/apis-and-sdks/sanity-typegen)：示範如何從 schema 與查詢產生型別，讓前後端在欄位名稱、資料型態與必要欄位上有可檢查的契約。
+4. [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)：補上 API 的 request、response 與 schema 描述，適合拿來把前台顯示欄位和後端實際回傳欄位對起來。
+
+## 我的參考意見
+
+這幾份資料共同支持一個很實用的判斷：CMS 欄位不是切版細節，而是內容模型、API 契約、編輯流程與前台呈現的交界。PM 可以先做一張單一真實來源的欄位表，至少包含「顯示名稱、API key、資料型態、必填／選填、驗證規則、空值處理、前台使用位置、負責人與範例值」。如果這些資訊沒有文件或決策紀錄，前端、後端與 PM 都只能靠猜，工時自然不可能估得準。
+
 ## 更新紀錄
 
 - **2026-08-29 22:09**：建立 CMS 前後台理解的公開學習筆記，加入內容建模、資訊架構、元件化、動態套版與規格審查矩陣。

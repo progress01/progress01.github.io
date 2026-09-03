@@ -66,6 +66,17 @@ learning_status: 進行中
 - 產出文件是否能在後續任務中被再次讀取、修改與版本化。
 - 這套流程和目前使用的 ChatGPT、Codex 或其他工具，應該如何分工。
 
+## 預先收集：先核對產品能力，再看案例
+
+1. [Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學](https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html)：保留原本的四個工作案例，重點看它如何從資料庫走到可交付檔案，而不是只看產出畫面。
+2. [Learn about Gemini Notebook｜Google 說明](https://support.google.com/gemininotebook/answer/16164461?hl=en)：確認目前可加入的來源類型、引用方式、研究整理功能與帳號／地區可用性。
+3. [Do your best research with NotebookLM｜Google](https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/)：了解官方目前對來源探索、程式分析、報告、試算表與簡報產出的描述；這些產品能力會更新，不能只依單篇實測文章判斷長期穩定度。
+4. [Notebooks in Gemini Apps｜Google 說明](https://support.google.com/notebooklm/answer/17003757)：用來區分 Gemini Notebook 與 NotebookLM 的功能邊界，避免把不同產品或不同方案的能力混在一起。
+
+## 我的參考意見
+
+這篇最值得實驗的不是「AI 能不能生出 Word、Excel、PPT」，而是它能不能把來源、判斷與產出一起交接。第一個小實驗可以固定一組資料，要求它產出一份文件和一張表，再逐項檢查：來源是否找對、引用能否回溯、內容是否漏掉、公式是否可運作、版面是否能編輯，以及別人能不能接手。產品功能與方案資格會變動，所以官方說明負責確認能力邊界，原文實測負責提供工作流靈感，最後仍要靠自己的小案例驗收。
+
 ## 閱讀紀錄
 
 | 日期 | 進度 | 新增理解 | 還沒回答的問題 |

@@ -1,4 +1,4 @@
-# 訪客可瀏覽的七個主標籤。
+# 訪客可瀏覽的九個主標籤。
 # 文章 front matter 使用主標籤；建置時仍由 scripts/tags-normalizer.js 再次正規化。
 - name: 音樂推薦
   code: AUDIO
@@ -20,6 +20,16 @@
   icon: fa fa-flask
   url: /tags/學習筆記/
   description: 技術、研究、工作方法與問題拆解。
+- name: 工作方法
+  code: WORK_METHOD
+  icon: fa fa-cogs
+  url: /tags/工作方法/
+  description: 工作流程、問題排查與可移植的判斷方法。
+- name: 重要紀錄
+  code: WORK_LOG
+  icon: fa fa-briefcase
+  url: /tags/重要紀錄/
+  description: 值得長期保留的工作事件與思考轉折。
 - name: 生活感受
   code: LIFE
   icon: fa fa-heart

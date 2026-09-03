@@ -5,7 +5,7 @@
   {# Gallery support #}
   {{ post_gallery(post.photos) }}
 
-    <article itemscope itemtype="http://schema.org/Article" class="post-content{% if not is_index %} post-content-single{% endif %}{% if post.longform %} post-content-longform{% endif %}{% if post.learning %} post-content-learning{% endif %}{% if post.blogger_import %} post-content-imported{% endif %}{% if post.source and post.source.indexOf('歌曲推薦') !== -1 %} post-content-song{% endif %}" lang="{{ post.lang }}">
+    <article itemscope itemtype="http://schema.org/Article" class="post-content{% if not is_index %} post-content-single{% endif %}{% if post.longform %} post-content-longform{% endif %}{% if post.learning %} post-content-learning{% endif %}{% if post.work_knowledge %} post-content-work{% endif %}{% if post.blogger_import %} post-content-imported{% endif %}{% if post.source and post.source.indexOf('歌曲推薦') !== -1 %} post-content-song{% endif %}" lang="{{ post.lang }}">
     <link itemprop="mainEntityOfPage" href="{{ post.permalink }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -59,12 +59,14 @@
     </header>
     {%- endif %}
 
-    {# Reading, film, diary, and learning posts use the same lightweight entry card on archive feeds. #}
-    {%- if is_index and post.source and (post.source.indexOf('閱讀影評') !== -1 or post.source.indexOf('隨筆') !== -1 or post.learning) %}
-      <div class="post-feature-card post-feature-card-reading">
+    {# Reading, film, diary, learning, and work posts use a lightweight entry card on archive feeds. #}
+    {%- if is_index and (post.work_knowledge or (post.source and (post.source.indexOf('閱讀影評') !== -1 or post.source.indexOf('隨筆') !== -1 or post.learning))) %}
+      <div class="post-feature-card{% if post.work_knowledge %} post-feature-card-work{% else %} post-feature-card-reading{% endif %}">
         <div class="post-feature-copy">
           <div class="post-feature-label">
-            {%- if post.learning %}
+            {%- if post.work_knowledge %}
+              WORK / 工作知識
+            {%- elif post.learning %}
               LAB / 學習筆記
             {%- elif post.source and post.source.indexOf('隨筆') !== -1 %}
               DAILY / 生活紀錄
@@ -79,6 +81,9 @@
               {%- endfor %}
             </div>
           {%- endif %}
+          {%- if post.work_knowledge %}
+            <div class="post-feature-note"><i class="fa fa-sticky-note"></i> NOTE / {{ post.work_note or '去脈絡化工作紀錄' }}</div>
+          {%- endif %}
           {%- if post.excerpt %}
             <div class="post-feature-excerpt">{{ post.excerpt }}</div>
           {%- endif %}
@@ -90,9 +95,9 @@
           {%- endif %}
         </div>
 
-        <div class="post-feature-media{% if not post.cover or post.learning %} post-feature-media-empty{% endif %}{% if post.learning %} post-feature-media-learning{% endif %}">
-          {%- if post.learning %}
-            <div class="post-feature-learning-placeholder" aria-label="學習筆記進行中">
+        <div class="post-feature-media{% if not post.cover or post.learning or post.work_knowledge %} post-feature-media-empty{% endif %}{% if post.learning or post.work_knowledge %} post-feature-media-learning{% endif %}{% if post.work_knowledge %} post-feature-media-work{% endif %}">
+          {%- if post.learning or post.work_knowledge %}
+            <div class="post-feature-learning-placeholder" aria-label="文件紀錄">
               <small><i class="fas fa-film"></i> TAPE: LEARNING_NOTE</small>
               <div><i class="fas fa-book"></i> TYPE: STUDY LOG</div>
               <div><i class="fas fa-circle"></i> STATUS: {{ post.learning_status or '持續更新' }}</div>
