@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ee8506;
+    background: #f6462a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3638,6 +3638,12 @@ body {
   border: 1px solid #d8c8b4;
   background: #f8f1e4;
 }
+.posts-expand .post-feature-card-work {
+  border-top: 3px solid #e36f32;
+  border-color: #d8c8b4;
+  border-top-color: #e36f32;
+  background: #f4f0e6;
+}
 .posts-expand .post-feature-copy {
   flex: 1 1 auto;
   min-width: 0;
@@ -3648,6 +3654,9 @@ body {
   color: #e36f32;
   font: 11px/1.5 "Courier New", monospace;
   letter-spacing: 0.12em;
+}
+.posts-expand .post-feature-card-work .post-feature-label {
+  color: #e36f32;
 }
 .posts-expand .post-feature-kind {
   display: flex;
@@ -3664,6 +3673,24 @@ body {
   font-size: 11px;
   line-height: 1.4;
 }
+.posts-expand .post-feature-card-work .post-feature-kind span {
+  border-color: #cdb9a2;
+  color: #96745e;
+}
+.posts-expand .post-feature-note {
+  display: inline-block;
+  margin-bottom: 11px;
+  padding: 4px 8px;
+  border-left: 3px solid #e36f32;
+  background: #efe2cc;
+  color: #6b5547;
+  font: 10px/1.5 "Courier New", monospace;
+  letter-spacing: 0.04em;
+}
+.posts-expand .post-feature-note i {
+  margin-right: 4px;
+  color: #e36f32;
+}
 .posts-expand .post-feature-excerpt {
   color: #4a3028;
   font-size: 1em;
@@ -3671,6 +3698,9 @@ body {
 }
 .posts-expand .post-feature-excerpt > p {
   margin: 0;
+}
+.posts-expand .post-feature-card-work .post-feature-excerpt {
+  color: #4a3028;
 }
 .posts-expand .post-feature-reading-time {
   margin-top: 13px;
@@ -3681,6 +3711,10 @@ body {
 .posts-expand .post-feature-reading-time i {
   margin-right: 5px;
   color: #e36f32;
+}
+.posts-expand .post-feature-card-work .post-feature-reading-time,
+.posts-expand .post-feature-card-work .post-feature-reading-time i {
+  color: #96745e;
 }
 .posts-expand .post-feature-media {
   flex: 0 0 150px;
@@ -3693,6 +3727,11 @@ body {
   margin: 0;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+.posts-expand .post-feature-media-work img {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 .posts-expand .post-feature-media-empty {
   display: flex;
