@@ -269,6 +269,173 @@
       </tags>
   </entry>
   <entry>
+    <title>CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記</title>
+    <url>//learning/cms-content-modeling-field-review/</url>
+    <content><![CDATA[<p>這是一篇公開的持續學習筆記，先把我對 CMS 前後台、內容建模、動態套版與規格審查的理解整理在同一個地方。現在的版本比較像一份 PM 在專案討論前可以拿來對照的工作手冊，之後會再補上實際案例、欄位規格與查證過的參考資料。</p>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>資料狀態：研究整理、持續修正</strong></p>
+<p>以下內容是目前的理解與工作假設。書籍、文章與業界方法的說法，還需要回到原始資料核對；實際專案仍應依需求、技術環境與團隊約定確認，不能只靠這份筆記直接決定規格。</p>
+</blockquote>
+<h2 id="CMS-系統架構與建置全貌指南"><a href="#CMS-系統架構與建置全貌指南" class="headerlink" title="CMS 系統架構與建置全貌指南"></a>CMS 系統架構與建置全貌指南</h2><h3 id="從「功能執行」升級為「全站架構思維」"><a href="#從「功能執行」升級為「全站架構思維」" class="headerlink" title="從「功能執行」升級為「全站架構思維」"></a>從「功能執行」升級為「全站架構思維」</h3><p>專案經理在 CMS 專案會議中感到跟不上討論或失焦，常常不是因為不理解某個按鈕，而是過早陷入局部視覺或單一功能，沒有同時看見內容如何建立、儲存、分類、發布、被套版，以及最後如何呈現在不同頁面。</p>
+<p>我目前把這個問題整理成兩條主線：</p>
+<ul>
+<li><strong>系統連貫性</strong>：同一份內容是否能被不同頁面、模組與渠道正確使用？</li>
+<li><strong>資料生命週期</strong>：內容從建立、審核、發布、修改到下架，過程中的狀態與責任是否清楚？</li>
+</ul>
+<p>這篇筆記希望先建立一個由上而下的觀察框架，再慢慢把它轉成實際可用的欄位對照與規格審查表。</p>
+<h2 id="一、核心概念的操作型定義"><a href="#一、核心概念的操作型定義" class="headerlink" title="一、核心概念的操作型定義"></a>一、核心概念的操作型定義</h2><h3 id="1-資料與內容建模"><a href="#1-資料與內容建模" class="headerlink" title="1. 資料與內容建模"></a>1. 資料與內容建模</h3><p>內容建模是把業務需求抽象成獨立於視覺呈現之外的結構，包括實體、欄位、關聯與驗證規則。換句話說，先決定「這是什麼內容」以及「這份內容需要保存什麼資料」，再討論它要在哪個頁面呈現。</p>
+<p>目前先用以下四個部分理解：</p>
+<ul>
+<li><strong>實體／內容類型</strong>：例如公告、文章、活動、人物或下載資源。</li>
+<li><strong>屬性／欄位</strong>：例如標題、摘要、封面、日期、作者與狀態。</li>
+<li><strong>關聯</strong>：例如文章與分類、活動與報名表、公告與附件之間的關係。</li>
+<li><strong>驗證規則</strong>：例如必填、字數上限、格式、權限與空值處理。</li>
+</ul>
+<p>這裡先記下兩個參考方向，之後需要再核對內容與引用範圍：</p>
+<ul>
+<li><a href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a>：把內容管理系統放回內容模型與管理流程中理解。</li>
+<li><a href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a>：從 Content-First 的方向思考內容如何被不同介面重複使用。</li>
+</ul>
+<h3 id="2-資訊架構與分類法"><a href="#2-資訊架構與分類法" class="headerlink" title="2. 資訊架構與分類法"></a>2. 資訊架構與分類法</h3><p>資訊架構不只是把選單排得好看，而是讓使用者能找到內容，也讓系統知道內容之間如何組織。暫時先拆成四個部分：</p>
+<ul>
+<li><strong>組織系統</strong>：內容依什麼規則分組。</li>
+<li><strong>標籤系統</strong>：用哪些詞描述內容。</li>
+<li><strong>導覽系統</strong>：使用者如何從入口走到內容。</li>
+<li><strong>檢索系統</strong>：搜尋、篩選與排序如何運作。</li>
+</ul>
+<p>分類、標籤、URL 與搜尋結果其實會互相影響，因此不能只在切版階段才決定。參考方向是 <a href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture for the World Wide Web</a>，之後要再把書中的架構概念對照到實際 CMS。</p>
+<h3 id="3-前端切版與介面元件化"><a href="#3-前端切版與介面元件化" class="headerlink" title="3. 前端切版與介面元件化"></a>3. 前端切版與介面元件化</h3><p>前端切版是把視覺設計轉成語意化 HTML、響應式斷點與可重用的 UI 元件。重點不只是「畫面看起來一樣」，還包括：</p>
+<ul>
+<li>元件是否有清楚的資料輸入與輸出？</li>
+<li>不同內容長度是否會破壞版面？</li>
+<li>圖片、表格、按鈕與表單在不同螢幕上是否仍然可用？</li>
+<li>元件是否具備基本的無障礙語意？</li>
+</ul>
+<p>這部分先以 <a href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> 作為理解介面層級的參考，但仍要小心：分類方法本身不是目的，真正重要的是元件能否穩定地被重複使用。</p>
+<h3 id="4-動態套版與樣板引擎"><a href="#4-動態套版與樣板引擎" class="headerlink" title="4. 動態套版與樣板引擎"></a>4. 動態套版與樣板引擎</h3><p>動態套版可以先理解成：樣板提供呈現結構，內容模型提供資料，樣板引擎再依照條件、迴圈、資料管道與快取規則輸出頁面。</p>
+<p>因此前後台對照時，不應該只問「這個欄位在後台放哪裡」，還要問：</p>
+<ul>
+<li>這個欄位會被哪個模板使用？</li>
+<li>空值時前台要隱藏、顯示預設文字，還是改用其他欄位？</li>
+<li>內容是純文字、Markdown、富文本，還是結構化區塊？</li>
+<li>這個欄位在列表頁與詳細頁是否有不同的呈現規則？</li>
+</ul>
+<h2 id="二、建站者視角：全站工程發問矩陣"><a href="#二、建站者視角：全站工程發問矩陣" class="headerlink" title="二、建站者視角：全站工程發問矩陣"></a>二、建站者視角：全站工程發問矩陣</h2><h3 id="維度-1：資料邊界與屬性約束"><a href="#維度-1：資料邊界與屬性約束" class="headerlink" title="維度 1：資料邊界與屬性約束"></a>維度 1：資料邊界與屬性約束</h3><ol>
+<li>內容是純文字、結構化欄位，還是可能產生雜訊 HTML 的富文本？</li>
+<li>標題、摘要與內文的字數上下限是多少？</li>
+<li>欄位為空時，前台的 fallback 邏輯是什麼？</li>
+<li>圖片與影音的長寬比、格式、容量與替代文字如何限制？</li>
+<li>是否有自動轉檔、縮圖、壓縮與檔案版本管理？</li>
+</ol>
+<h3 id="維度-2：分類法與實體關聯"><a href="#維度-2：分類法與實體關聯" class="headerlink" title="維度 2：分類法與實體關聯"></a>維度 2：分類法與實體關聯</h3><ol>
+<li>分類與標籤是一對多還是多對多？</li>
+<li>是否需要支援巢狀層級？層級上限與管理責任是什麼？</li>
+<li>相關文章是透過標籤自動查詢，還是由小編手動綁定？</li>
+<li>關聯內容被下架、刪除或改名時，前台如何處理？</li>
+</ol>
+<h3 id="維度-3：版型映射與元件重用"><a href="#維度-3：版型映射與元件重用" class="headerlink" title="維度 3：版型映射與元件重用"></a>維度 3：版型映射與元件重用</h3><ol>
+<li>全站頁面能否收斂成少數幾種內容類型與模板？</li>
+<li>不同頁面的卡片是共用帶參數的元件，還是各自維護結構？</li>
+<li>同一份資料需要在哪些頁面、搜尋結果或推薦模組出現？</li>
+<li>元件的變體是由資料欄位控制，還是由編輯者選擇？</li>
+</ol>
+<h3 id="維度-4：狀態容錯與例外處理"><a href="#維度-4：狀態容錯與例外處理" class="headerlink" title="維度 4：狀態容錯與例外處理"></a>維度 4：狀態容錯與例外處理</h3><ol>
+<li>搜尋或篩選結果為零時，要顯示什麼 Empty State？</li>
+<li>文章是否有草稿、預約發布、已下架、權限限制與版本回溯？</li>
+<li>富文本是否有 HTML 白名單與淨化機制？</li>
+<li>外部連結失效、圖片不存在或欄位缺漏時，前台要如何降級？</li>
+</ol>
+<h2 id="三、AI-時代的漸進式結構化釐清法"><a href="#三、AI-時代的漸進式結構化釐清法" class="headerlink" title="三、AI 時代的漸進式結構化釐清法"></a>三、AI 時代的漸進式結構化釐清法</h2><p>我目前把 PM 使用 AI 協助釐清規格的流程拆成四步。AI 可以幫忙找出遺漏與衝突，但最後仍要由人確認業務語意與交付責任。</p>
+<h3 id="步驟-1：全域實體提取"><a href="#步驟-1：全域實體提取" class="headerlink" title="步驟 1：全域實體提取"></a>步驟 1：全域實體提取</h3><p>先把網站類型、頁面清單、既有需求與內容來源交給 AI，請它從系統架構角度提取核心內容類型，並整理實體之間的一對多、多對多關係。</p>
+<p>重點不是讓 AI 立刻產出資料庫，而是先避免每一頁都被當成完全獨立的功能。</p>
+<h3 id="步驟-2：階層與分類法對齊"><a href="#步驟-2：階層與分類法對齊" class="headerlink" title="步驟 2：階層與分類法對齊"></a>步驟 2：階層與分類法對齊</h3><p>針對已確認的內容類型，逐一確認哪些適合用分類，哪些只需要標籤，以及是否存在跨實體的動態引用。這一步也要檢查是否因為追求彈性而產生過度複雜的架構。</p>
+<h3 id="步驟-3：微觀欄位與邊界探勘"><a href="#步驟-3：微觀欄位與邊界探勘" class="headerlink" title="步驟 3：微觀欄位與邊界探勘"></a>步驟 3：微觀欄位與邊界探勘</h3><p>針對某一個內容類型，請 AI 扮演技術主管，提出需要向客戶確認的型態、Fallback、字數、富文本與例外處理問題。這可以作為會議提問清單，但不能直接當成客戶已同意的規格。</p>
+<h3 id="步驟-4：規格落地與交付閉環"><a href="#步驟-4：規格落地與交付閉環" class="headerlink" title="步驟 4：規格落地與交付閉環"></a>步驟 4：規格落地與交付閉環</h3><p>最後把討論結果整理成單一真實來源的規格表：</p>
+<table>
+<thead>
+<tr>
+<th>欄位名稱</th>
+<th>資料型態</th>
+<th>必填／選填</th>
+<th>限制條件</th>
+<th>空值處理</th>
+<th>後台元件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>待補</td>
+<td>待補</td>
+<td>待補</td>
+<td>待補</td>
+<td>待補</td>
+<td>待補</td>
+</tr>
+</tbody></table>
+<p>這張表之後應該要能同時交給 PM、設計、前端、後端與內容編輯者使用，讓每個人看到的是同一套欄位定義。</p>
+<h2 id="四、客戶語言與系統架構語言"><a href="#四、客戶語言與系統架構語言" class="headerlink" title="四、客戶語言與系統架構語言"></a>四、客戶語言與系統架構語言</h2><table>
+<thead>
+<tr>
+<th>客戶需求</th>
+<th>容易誤解的焦點</th>
+<th>建站者真正要確認的問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首頁想放最新公告，點進去可以看內容</td>
+<td>輪播特效、標題顏色</td>
+<td>公告是否為獨立 Content Type？排序與內頁模板是什麼？</td>
+</tr>
+<tr>
+<td>文章底部希望推薦相關文章</td>
+<td>推薦三篇還是四篇</td>
+<td>依標籤自動查詢，還是由小編手動綁定？不足時如何補齊？</td>
+</tr>
+<tr>
+<td>下載專區要放很多檔案</td>
+<td>下載按鈕圖示</td>
+<td>支援哪些格式？檔案是文章附屬，還是全域資產庫？</td>
+</tr>
+<tr>
+<td>首頁區塊希望小編自由拖拉排序</td>
+<td>直接答應可以拖拉</td>
+<td>區塊有幾種？資料是動態查詢還是靜態填入？版本如何維護？</td>
+</tr>
+</tbody></table>
+<p>這個轉換的價值，不是把客戶的話翻成艱深術語，而是把一句看似單純的需求拆出它會影響哪些資料、模板、權限與維護成本。</p>
+<h2 id="五、核心參考資料"><a href="#五、核心參考資料" class="headerlink" title="五、核心參考資料"></a>五、核心參考資料</h2><ol>
+<li><a href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a> — Deane Barker。</li>
+<li><a href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a> — Mike Atherton、Carrie Hane。</li>
+<li><a href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture: For the Web and Beyond</a> — Louis Rosenfeld、Peter Morville、Jorge Arango。</li>
+<li><a href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> — Brad Frost。</li>
+</ol>
+<h2 id="後續查證與實作清單"><a href="#後續查證與實作清單" class="headerlink" title="後續查證與實作清單"></a>後續查證與實作清單</h2><ul>
+<li>找一個實際 CMS 專案，把前台頁面反推成內容類型與欄位。</li>
+<li>選一個內容類型，完成前台、後台、資料庫與 API 的欄位對照表。</li>
+<li>補上欄位空值、字數限制、圖片規格與發布狀態的例外處理。</li>
+<li>核對參考書籍中對 Content Modeling、IA 與 Component 的原始定義。</li>
+<li>把這篇筆記中的「應該」逐項改成已有來源或專案決策支持的說法。</li>
+</ul>
+<h2 id="預先收集：把欄位變成可交付的規格"><a href="#預先收集：把欄位變成可交付的規格" class="headerlink" title="預先收集：把欄位變成可交付的規格"></a>預先收集：把欄位變成可交付的規格</h2><ol>
+<li><a href="https://www.contentful.com/help/content-models/">Content models｜Contentful Help</a>：把內容模型理解成內容類型、欄位與彼此參照的總體結構，也提供視覺化建模與 API 建模的入口。</li>
+<li><a href="https://www.sanity.io/docs/studio/schemas-and-forms">Schemas and forms｜Sanity Docs</a>：清楚區分 schema、document type 與 field type，適合對照「後台欄位」和「內容實體」不是同一層概念。</li>
+<li><a href="https://www.sanity.io/docs/apis-and-sdks/sanity-typegen">Sanity TypeGen</a>：示範如何從 schema 與查詢產生型別，讓前後端在欄位名稱、資料型態與必要欄位上有可檢查的契約。</li>
+<li><a href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a>：補上 API 的 request、response 與 schema 描述，適合拿來把前台顯示欄位和後端實際回傳欄位對起來。</li>
+</ol>
+<h2 id="我的參考意見"><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p>這幾份資料共同支持一個很實用的判斷：CMS 欄位不是切版細節，而是內容模型、API 契約、編輯流程與前台呈現的交界。PM 可以先做一張單一真實來源的欄位表，至少包含「顯示名稱、API key、資料型態、必填／選填、驗證規則、空值處理、前台使用位置、負責人與範例值」。如果這些資訊沒有文件或決策紀錄，前端、後端與 PM 都只能靠猜，工時自然不可能估得準。</p>
+<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li><strong>2026-08-29 22:09</strong>：建立 CMS 前後台理解的公開學習筆記，加入內容建模、資訊架構、元件化、動態套版與規格審查矩陣。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記</title>
     <url>//learning/agentic-transaction-acid-agent/</url>
     <content><![CDATA[<p>這是一篇針對〈Agentic Transaction: Towards ACID-Compliant Agent Systems〉的公開研究筆記，先把論文報告中的核心問題、形式化模型、系統機制與實務檢查清單整理起來。它目前是研究摘記，不是已完成的論文評讀；論文資訊、實驗數據與開放原始碼專案都還需要回到原始來源逐項核對。</p>
@@ -493,173 +660,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記</title>
-    <url>//learning/cms-content-modeling-field-review/</url>
-    <content><![CDATA[<p>這是一篇公開的持續學習筆記，先把我對 CMS 前後台、內容建模、動態套版與規格審查的理解整理在同一個地方。現在的版本比較像一份 PM 在專案討論前可以拿來對照的工作手冊，之後會再補上實際案例、欄位規格與查證過的參考資料。</p>
-<span id="more"></span>
-
-<blockquote>
-<p><strong>資料狀態：研究整理、持續修正</strong></p>
-<p>以下內容是目前的理解與工作假設。書籍、文章與業界方法的說法，還需要回到原始資料核對；實際專案仍應依需求、技術環境與團隊約定確認，不能只靠這份筆記直接決定規格。</p>
-</blockquote>
-<h2 id="CMS-系統架構與建置全貌指南"><a href="#CMS-系統架構與建置全貌指南" class="headerlink" title="CMS 系統架構與建置全貌指南"></a>CMS 系統架構與建置全貌指南</h2><h3 id="從「功能執行」升級為「全站架構思維」"><a href="#從「功能執行」升級為「全站架構思維」" class="headerlink" title="從「功能執行」升級為「全站架構思維」"></a>從「功能執行」升級為「全站架構思維」</h3><p>專案經理在 CMS 專案會議中感到跟不上討論或失焦，常常不是因為不理解某個按鈕，而是過早陷入局部視覺或單一功能，沒有同時看見內容如何建立、儲存、分類、發布、被套版，以及最後如何呈現在不同頁面。</p>
-<p>我目前把這個問題整理成兩條主線：</p>
-<ul>
-<li><strong>系統連貫性</strong>：同一份內容是否能被不同頁面、模組與渠道正確使用？</li>
-<li><strong>資料生命週期</strong>：內容從建立、審核、發布、修改到下架，過程中的狀態與責任是否清楚？</li>
-</ul>
-<p>這篇筆記希望先建立一個由上而下的觀察框架，再慢慢把它轉成實際可用的欄位對照與規格審查表。</p>
-<h2 id="一、核心概念的操作型定義"><a href="#一、核心概念的操作型定義" class="headerlink" title="一、核心概念的操作型定義"></a>一、核心概念的操作型定義</h2><h3 id="1-資料與內容建模"><a href="#1-資料與內容建模" class="headerlink" title="1. 資料與內容建模"></a>1. 資料與內容建模</h3><p>內容建模是把業務需求抽象成獨立於視覺呈現之外的結構，包括實體、欄位、關聯與驗證規則。換句話說，先決定「這是什麼內容」以及「這份內容需要保存什麼資料」，再討論它要在哪個頁面呈現。</p>
-<p>目前先用以下四個部分理解：</p>
-<ul>
-<li><strong>實體／內容類型</strong>：例如公告、文章、活動、人物或下載資源。</li>
-<li><strong>屬性／欄位</strong>：例如標題、摘要、封面、日期、作者與狀態。</li>
-<li><strong>關聯</strong>：例如文章與分類、活動與報名表、公告與附件之間的關係。</li>
-<li><strong>驗證規則</strong>：例如必填、字數上限、格式、權限與空值處理。</li>
-</ul>
-<p>這裡先記下兩個參考方向，之後需要再核對內容與引用範圍：</p>
-<ul>
-<li><a href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a>：把內容管理系統放回內容模型與管理流程中理解。</li>
-<li><a href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a>：從 Content-First 的方向思考內容如何被不同介面重複使用。</li>
-</ul>
-<h3 id="2-資訊架構與分類法"><a href="#2-資訊架構與分類法" class="headerlink" title="2. 資訊架構與分類法"></a>2. 資訊架構與分類法</h3><p>資訊架構不只是把選單排得好看，而是讓使用者能找到內容，也讓系統知道內容之間如何組織。暫時先拆成四個部分：</p>
-<ul>
-<li><strong>組織系統</strong>：內容依什麼規則分組。</li>
-<li><strong>標籤系統</strong>：用哪些詞描述內容。</li>
-<li><strong>導覽系統</strong>：使用者如何從入口走到內容。</li>
-<li><strong>檢索系統</strong>：搜尋、篩選與排序如何運作。</li>
-</ul>
-<p>分類、標籤、URL 與搜尋結果其實會互相影響，因此不能只在切版階段才決定。參考方向是 <a href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture for the World Wide Web</a>，之後要再把書中的架構概念對照到實際 CMS。</p>
-<h3 id="3-前端切版與介面元件化"><a href="#3-前端切版與介面元件化" class="headerlink" title="3. 前端切版與介面元件化"></a>3. 前端切版與介面元件化</h3><p>前端切版是把視覺設計轉成語意化 HTML、響應式斷點與可重用的 UI 元件。重點不只是「畫面看起來一樣」，還包括：</p>
-<ul>
-<li>元件是否有清楚的資料輸入與輸出？</li>
-<li>不同內容長度是否會破壞版面？</li>
-<li>圖片、表格、按鈕與表單在不同螢幕上是否仍然可用？</li>
-<li>元件是否具備基本的無障礙語意？</li>
-</ul>
-<p>這部分先以 <a href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> 作為理解介面層級的參考，但仍要小心：分類方法本身不是目的，真正重要的是元件能否穩定地被重複使用。</p>
-<h3 id="4-動態套版與樣板引擎"><a href="#4-動態套版與樣板引擎" class="headerlink" title="4. 動態套版與樣板引擎"></a>4. 動態套版與樣板引擎</h3><p>動態套版可以先理解成：樣板提供呈現結構，內容模型提供資料，樣板引擎再依照條件、迴圈、資料管道與快取規則輸出頁面。</p>
-<p>因此前後台對照時，不應該只問「這個欄位在後台放哪裡」，還要問：</p>
-<ul>
-<li>這個欄位會被哪個模板使用？</li>
-<li>空值時前台要隱藏、顯示預設文字，還是改用其他欄位？</li>
-<li>內容是純文字、Markdown、富文本，還是結構化區塊？</li>
-<li>這個欄位在列表頁與詳細頁是否有不同的呈現規則？</li>
-</ul>
-<h2 id="二、建站者視角：全站工程發問矩陣"><a href="#二、建站者視角：全站工程發問矩陣" class="headerlink" title="二、建站者視角：全站工程發問矩陣"></a>二、建站者視角：全站工程發問矩陣</h2><h3 id="維度-1：資料邊界與屬性約束"><a href="#維度-1：資料邊界與屬性約束" class="headerlink" title="維度 1：資料邊界與屬性約束"></a>維度 1：資料邊界與屬性約束</h3><ol>
-<li>內容是純文字、結構化欄位，還是可能產生雜訊 HTML 的富文本？</li>
-<li>標題、摘要與內文的字數上下限是多少？</li>
-<li>欄位為空時，前台的 fallback 邏輯是什麼？</li>
-<li>圖片與影音的長寬比、格式、容量與替代文字如何限制？</li>
-<li>是否有自動轉檔、縮圖、壓縮與檔案版本管理？</li>
-</ol>
-<h3 id="維度-2：分類法與實體關聯"><a href="#維度-2：分類法與實體關聯" class="headerlink" title="維度 2：分類法與實體關聯"></a>維度 2：分類法與實體關聯</h3><ol>
-<li>分類與標籤是一對多還是多對多？</li>
-<li>是否需要支援巢狀層級？層級上限與管理責任是什麼？</li>
-<li>相關文章是透過標籤自動查詢，還是由小編手動綁定？</li>
-<li>關聯內容被下架、刪除或改名時，前台如何處理？</li>
-</ol>
-<h3 id="維度-3：版型映射與元件重用"><a href="#維度-3：版型映射與元件重用" class="headerlink" title="維度 3：版型映射與元件重用"></a>維度 3：版型映射與元件重用</h3><ol>
-<li>全站頁面能否收斂成少數幾種內容類型與模板？</li>
-<li>不同頁面的卡片是共用帶參數的元件，還是各自維護結構？</li>
-<li>同一份資料需要在哪些頁面、搜尋結果或推薦模組出現？</li>
-<li>元件的變體是由資料欄位控制，還是由編輯者選擇？</li>
-</ol>
-<h3 id="維度-4：狀態容錯與例外處理"><a href="#維度-4：狀態容錯與例外處理" class="headerlink" title="維度 4：狀態容錯與例外處理"></a>維度 4：狀態容錯與例外處理</h3><ol>
-<li>搜尋或篩選結果為零時，要顯示什麼 Empty State？</li>
-<li>文章是否有草稿、預約發布、已下架、權限限制與版本回溯？</li>
-<li>富文本是否有 HTML 白名單與淨化機制？</li>
-<li>外部連結失效、圖片不存在或欄位缺漏時，前台要如何降級？</li>
-</ol>
-<h2 id="三、AI-時代的漸進式結構化釐清法"><a href="#三、AI-時代的漸進式結構化釐清法" class="headerlink" title="三、AI 時代的漸進式結構化釐清法"></a>三、AI 時代的漸進式結構化釐清法</h2><p>我目前把 PM 使用 AI 協助釐清規格的流程拆成四步。AI 可以幫忙找出遺漏與衝突，但最後仍要由人確認業務語意與交付責任。</p>
-<h3 id="步驟-1：全域實體提取"><a href="#步驟-1：全域實體提取" class="headerlink" title="步驟 1：全域實體提取"></a>步驟 1：全域實體提取</h3><p>先把網站類型、頁面清單、既有需求與內容來源交給 AI，請它從系統架構角度提取核心內容類型，並整理實體之間的一對多、多對多關係。</p>
-<p>重點不是讓 AI 立刻產出資料庫，而是先避免每一頁都被當成完全獨立的功能。</p>
-<h3 id="步驟-2：階層與分類法對齊"><a href="#步驟-2：階層與分類法對齊" class="headerlink" title="步驟 2：階層與分類法對齊"></a>步驟 2：階層與分類法對齊</h3><p>針對已確認的內容類型，逐一確認哪些適合用分類，哪些只需要標籤，以及是否存在跨實體的動態引用。這一步也要檢查是否因為追求彈性而產生過度複雜的架構。</p>
-<h3 id="步驟-3：微觀欄位與邊界探勘"><a href="#步驟-3：微觀欄位與邊界探勘" class="headerlink" title="步驟 3：微觀欄位與邊界探勘"></a>步驟 3：微觀欄位與邊界探勘</h3><p>針對某一個內容類型，請 AI 扮演技術主管，提出需要向客戶確認的型態、Fallback、字數、富文本與例外處理問題。這可以作為會議提問清單，但不能直接當成客戶已同意的規格。</p>
-<h3 id="步驟-4：規格落地與交付閉環"><a href="#步驟-4：規格落地與交付閉環" class="headerlink" title="步驟 4：規格落地與交付閉環"></a>步驟 4：規格落地與交付閉環</h3><p>最後把討論結果整理成單一真實來源的規格表：</p>
-<table>
-<thead>
-<tr>
-<th>欄位名稱</th>
-<th>資料型態</th>
-<th>必填／選填</th>
-<th>限制條件</th>
-<th>空值處理</th>
-<th>後台元件</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>待補</td>
-<td>待補</td>
-<td>待補</td>
-<td>待補</td>
-<td>待補</td>
-<td>待補</td>
-</tr>
-</tbody></table>
-<p>這張表之後應該要能同時交給 PM、設計、前端、後端與內容編輯者使用，讓每個人看到的是同一套欄位定義。</p>
-<h2 id="四、客戶語言與系統架構語言"><a href="#四、客戶語言與系統架構語言" class="headerlink" title="四、客戶語言與系統架構語言"></a>四、客戶語言與系統架構語言</h2><table>
-<thead>
-<tr>
-<th>客戶需求</th>
-<th>容易誤解的焦點</th>
-<th>建站者真正要確認的問題</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>首頁想放最新公告，點進去可以看內容</td>
-<td>輪播特效、標題顏色</td>
-<td>公告是否為獨立 Content Type？排序與內頁模板是什麼？</td>
-</tr>
-<tr>
-<td>文章底部希望推薦相關文章</td>
-<td>推薦三篇還是四篇</td>
-<td>依標籤自動查詢，還是由小編手動綁定？不足時如何補齊？</td>
-</tr>
-<tr>
-<td>下載專區要放很多檔案</td>
-<td>下載按鈕圖示</td>
-<td>支援哪些格式？檔案是文章附屬，還是全域資產庫？</td>
-</tr>
-<tr>
-<td>首頁區塊希望小編自由拖拉排序</td>
-<td>直接答應可以拖拉</td>
-<td>區塊有幾種？資料是動態查詢還是靜態填入？版本如何維護？</td>
-</tr>
-</tbody></table>
-<p>這個轉換的價值，不是把客戶的話翻成艱深術語，而是把一句看似單純的需求拆出它會影響哪些資料、模板、權限與維護成本。</p>
-<h2 id="五、核心參考資料"><a href="#五、核心參考資料" class="headerlink" title="五、核心參考資料"></a>五、核心參考資料</h2><ol>
-<li><a href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a> — Deane Barker。</li>
-<li><a href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a> — Mike Atherton、Carrie Hane。</li>
-<li><a href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture: For the Web and Beyond</a> — Louis Rosenfeld、Peter Morville、Jorge Arango。</li>
-<li><a href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> — Brad Frost。</li>
-</ol>
-<h2 id="後續查證與實作清單"><a href="#後續查證與實作清單" class="headerlink" title="後續查證與實作清單"></a>後續查證與實作清單</h2><ul>
-<li>找一個實際 CMS 專案，把前台頁面反推成內容類型與欄位。</li>
-<li>選一個內容類型，完成前台、後台、資料庫與 API 的欄位對照表。</li>
-<li>補上欄位空值、字數限制、圖片規格與發布狀態的例外處理。</li>
-<li>核對參考書籍中對 Content Modeling、IA 與 Component 的原始定義。</li>
-<li>把這篇筆記中的「應該」逐項改成已有來源或專案決策支持的說法。</li>
-</ul>
-<h2 id="預先收集：把欄位變成可交付的規格"><a href="#預先收集：把欄位變成可交付的規格" class="headerlink" title="預先收集：把欄位變成可交付的規格"></a>預先收集：把欄位變成可交付的規格</h2><ol>
-<li><a href="https://www.contentful.com/help/content-models/">Content models｜Contentful Help</a>：把內容模型理解成內容類型、欄位與彼此參照的總體結構，也提供視覺化建模與 API 建模的入口。</li>
-<li><a href="https://www.sanity.io/docs/studio/schemas-and-forms">Schemas and forms｜Sanity Docs</a>：清楚區分 schema、document type 與 field type，適合對照「後台欄位」和「內容實體」不是同一層概念。</li>
-<li><a href="https://www.sanity.io/docs/apis-and-sdks/sanity-typegen">Sanity TypeGen</a>：示範如何從 schema 與查詢產生型別，讓前後端在欄位名稱、資料型態與必要欄位上有可檢查的契約。</li>
-<li><a href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a>：補上 API 的 request、response 與 schema 描述，適合拿來把前台顯示欄位和後端實際回傳欄位對起來。</li>
-</ol>
-<h2 id="我的參考意見"><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p>這幾份資料共同支持一個很實用的判斷：CMS 欄位不是切版細節，而是內容模型、API 契約、編輯流程與前台呈現的交界。PM 可以先做一張單一真實來源的欄位表，至少包含「顯示名稱、API key、資料型態、必填／選填、驗證規則、空值處理、前台使用位置、負責人與範例值」。如果這些資訊沒有文件或決策紀錄，前端、後端與 PM 都只能靠猜，工時自然不可能估得準。</p>
-<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
-<li><strong>2026-08-29 22:09</strong>：建立 CMS 前後台理解的公開學習筆記，加入內容建模、資訊架構、元件化、動態套版與規格審查矩陣。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>觀念與實驗</category>
-      </categories>
-      <tags>
-        <tag>學習筆記</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</title>
     <url>//learning/gemini-notebook-agent-office-workflow/</url>
     <content><![CDATA[<p>這是一篇針對〈Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學〉的持續閱讀筆記。先不急著把功能整理成教學，而是想弄清楚：當 AI 不只是回答問題，而是能搜尋、分析、寫程式並產出可下載文件時，我要怎麼判斷它真的幫我完成了工作。</p>
@@ -742,40 +742,70 @@
       </tags>
   </entry>
   <entry>
-    <title>混亂日常的一個「存檔點」工具設計</title>
-    <url>/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</url>
-    <content><![CDATA[<h3 id="先把「作品展示」拿掉"><a href="#先把「作品展示」拿掉" class="headerlink" title="先把「作品展示」拿掉"></a>先把「作品展示」拿掉</h3><p>這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。</p>
-<p>這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。</p>
-<p>目前的原型仍可另外開啟：</p>
-<p><a href="https://progress01.github.io/lifecheck/">開啟 Life Check 原型 →</a></p>
+    <title>Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記</title>
+    <url>//learning/web-automation-python-pytest-playwright/</url>
+    <content><![CDATA[<p>這篇是「網站品質與軟體測試」系列的第三階段。目標不是證明我會寫幾支瀏覽器腳本，而是挑出穩定、重複價值高的案例，讓電腦協助執行回歸測試，並在失敗時留下足夠證據。</p>
+<p><strong>系列索引</strong>：<a href="../website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
 <span id="more"></span>
 
-<h3 id="問題不是少一個待辦清單"><a href="#問題不是少一個待辦清單" class="headerlink" title="問題不是少一個待辦清單"></a>問題不是少一個待辦清單</h3><p>很多混亂並不是因為事情太多，而是不同性質的東西被放在同一個清單裡：今天必須完成的事情、一直掛在心上的念頭、還沒有想好怎麼處理的問題，以及只是想留下來的紀錄。</p>
-<p>如果每一項都用「完成／未完成」表示，清單最後很容易變成另一種壓力來源。沒有完成的項目看起來像失敗，暫時不想處理的情緒也被迫變成工作，原本想減少混亂，卻只是把混亂換了一種格式保存。</p>
-<p>所以「存檔點」和一般任務管理工具不太一樣。它不急著替所有事情排出順序，也不要求使用者立刻找到答案，而是先承認：此刻的狀態可以被放在某個地方，暫時不用繼續佔據注意力。</p>
-<h3 id="先分辨：行動、情緒與紀錄"><a href="#先分辨：行動、情緒與紀錄" class="headerlink" title="先分辨：行動、情緒與紀錄"></a>先分辨：行動、情緒與紀錄</h3><p>這個設計值得繼續討論的地方，是它其實同時面對三種不同需求。</p>
-<ol>
-<li><strong>行動</strong>：有下一步，而且完成後可以得到明確回饋。</li>
-<li><strong>情緒</strong>：不一定需要解決，但需要先被看見、被放下。</li>
-<li><strong>紀錄</strong>：事情已經過去，留下來是為了之後回頭理解自己。</li>
-</ol>
-<p>三者如果全部使用同一套按鈕和同一種顏色，介面會很簡單，意思卻會變得模糊。勾掉一項任務代表完成；讓一個念頭消失，可能只代表今天不再處理；保存一段紀錄，則不應該被理解成問題已經解決。</p>
-<p>這也是「存檔點」比「效率工具」更適合的地方：重點不是累積更多完成項目，而是讓不同狀態不要互相冒充。</p>
-<h3 id="介面語言的矛盾"><a href="#介面語言的矛盾" class="headerlink" title="介面語言的矛盾"></a>介面語言的矛盾</h3><p>目前的原型使用了不少帶有遊戲感與避難所想像的詞彙，例如挑戰、結界、精神足跡。這些詞彙有一個好處：它們可以讓日常壓力與自己拉開一點距離，讓整理變得沒有那麼嚴肅。</p>
-<p>但另一個問題也同時出現了。<strong>Life Quest</strong> 比較像一套要持續闖關的生活系統；「存檔點」則比較像允許暫停、回頭查看的地方。前者要求前進，後者允許停留，兩種設計方向如果同時存在，使用者就必須先理解這個世界觀，才能理解自己現在要做什麼。</p>
-<p>如果核心目標是降低焦慮，介面不應該增加太多需要學習的隱喻。比起讓每一個功能都有特別的名稱，更重要的是讓人一眼看出：現在這個項目是要採取行動、暫時放下，還是留作日後回顧。</p>
-<h3 id="復古視覺應該服務於「保存」"><a href="#復古視覺應該服務於「保存」" class="headerlink" title="復古視覺應該服務於「保存」"></a>復古視覺應該服務於「保存」</h3><p>復古電腦視窗的方向仍然有意義，因為它和「存檔」的概念相近：畫面不是一個要求人變得更有效率的儀表板，而是一個可以把當下狀態保存下來的介面。</p>
-<p>不過，這種風格不需要靠大量裝飾或動畫來證明自己。視窗標題、狀態文字、有限的色彩和清楚的區塊關係就已經足夠。顏色也不應該只代表「表現很好」，例如變綠不必等於生活變得完美，而可以只是表示「這件事已經被看見，暫時有一個位置」。</p>
-<p>這樣的設計會比較接近 1988 的懷舊感：不是模仿某一個年代的介面，而是保留那種有限、安靜、可以慢慢整理資料的感覺。</p>
-<h3 id="目前還沒有解完的問題"><a href="#目前還沒有解完的問題" class="headerlink" title="目前還沒有解完的問題"></a>目前還沒有解完的問題</h3><p>這個原型暫時不需要被包裝成完成的產品。真正值得留下的問題反而是：</p>
-<ul>
-<li>人是在什麼時候需要一個存檔點，而不是另一個待辦清單？</li>
-<li>勾選完成之後，壓力真的減少了，還是只是獲得短暫的控制感？</li>
-<li>哪些內容值得被保存，哪些只是當下需要暫時移開？</li>
-<li>介面要鼓勵前進，還是允許人停留在尚未想清楚的狀態？</li>
+<blockquote>
+<p><strong>資料狀態：建立工具學習順序，尚未完成可重複執行的測試專案</strong></p>
+</blockquote>
+<h2 id="本單元一定要會"><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
+<li>能用 Python、Pytest 與 Playwright 從命令列執行瀏覽器測試。</li>
+<li>能使用穩定的 Locator 完成基本操作，並用 Assertion 驗證需求結果。</li>
+<li>能把至少 5 個手動案例轉成可執行測試，並說明哪些案例值得自動化。</li>
+<li>能在一次測試失敗時留下截圖或 Trace，知道如何查看失敗證據。</li>
 </ul>
-<p>這些問題比列出使用了哪些技術更接近設計本身。作品未完成不一定是缺點，因為概念還沒有被過早固定，反而可以繼續觀察「整理生活」與「管理生活」之間的差異。</p>
-<p>這篇先把它留在這裡，作為一個關於問題情境的設計筆記，而不是一頁需要被展示完成度的作品集。</p>
+<h3 id="本單元先不學"><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p>JavaScript／TypeScript、API 測試、跨瀏覽器矩陣、Docker 與複雜框架抽象先不加入；先讓一條小而穩定的 Web 測試流程跑通。</p>
+<h3 id="過關條件"><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p>在不含工作機密的練習專案中，從乾淨環境執行至少 5 個測試，並在 README 寫清楚安裝方式、執行指令、測試範圍與已知限制。只貼程式碼、不知道怎麼重跑，不算過關。</p>
+<h2 id="為什麼先用-Python-Pytest-Playwright"><a href="#為什麼先用-Python-Pytest-Playwright" class="headerlink" title="為什麼先用 Python + Pytest + Playwright"></a>為什麼先用 Python + Pytest + Playwright</h2><p>我已經有 Python 基礎，也希望先把手動測試與 Web 自動化接起來，因此第一輪不再同時增加 JavaScript、Appium、Maestro 等新工具。先用一組範圍清楚的技術完成最小可行專案，比收集很多工具名稱更能看出自己是否真的理解測試。</p>
+<h2 id="學習順序"><a href="#學習順序" class="headerlink" title="學習順序"></a>學習順序</h2><h3 id="1-先讓瀏覽器完成最小流程"><a href="#1-先讓瀏覽器完成最小流程" class="headerlink" title="1. 先讓瀏覽器完成最小流程"></a>1. 先讓瀏覽器完成最小流程</h3><p>先做到：開啟瀏覽器、進入測試頁面、找到元素、執行一個操作、關閉瀏覽器。這一步的目的是確認環境、瀏覽器與測試資料可以運作，不急著設計複雜框架。</p>
+<h3 id="2-學會定位、操作與驗證"><a href="#2-學會定位、操作與驗證" class="headerlink" title="2. 學會定位、操作與驗證"></a>2. 學會定位、操作與驗證</h3><p>目前先整理這組基本能力：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">page.goto()</span><br><span class="line">get_by_role() / get_by_text() / locator()</span><br><span class="line">click() / fill()</span><br><span class="line">expect(...)</span><br></pre></td></tr></table></figure>
+
+<p>真正要理解的是：定位方式是否穩定、操作後要觀察什麼、Assertion 是否真的對應需求，而不是把 API 名稱背起來。</p>
+<h3 id="3-接回-Pytest"><a href="#3-接回-Pytest" class="headerlink" title="3. 接回 Pytest"></a>3. 接回 Pytest</h3><p>把不同情境拆成容易理解的測試函式，例如登入成功、錯誤密碼、搜尋與基本導覽。每個測試都應該有清楚的目的、前置資料與可判斷的結果。</p>
+<h3 id="4-再學維護性"><a href="#4-再學維護性" class="headerlink" title="4. 再學維護性"></a>4. 再學維護性</h3><p>當測試能跑後，再加入：</p>
+<ul>
+<li><strong>Fixture</strong>：集中處理測試前準備、測試執行與清理。</li>
+<li><strong>Parameterization</strong>：用多組資料重複執行同一測試，不複製整份程式。</li>
+<li><strong>Screenshot／Trace</strong>：失敗時保留畫面、步驟與紀錄，方便回溯。</li>
+<li><strong>Page Object Model</strong>：把頁面定位與操作整理在適當的物件中，降低測試案例互相綁死。</li>
+</ul>
+<h2 id="從手動案例挑自動化對象"><a href="#從手動案例挑自動化對象" class="headerlink" title="從手動案例挑自動化對象"></a>從手動案例挑自動化對象</h2><p>不是每個 Test Case 都值得自動化。第一輪優先選：</p>
+<ul>
+<li>需求穩定、近期會反覆執行的流程。</li>
+<li>操作步驟固定、預期結果明確的案例。</li>
+<li>失敗會影響主要使用路徑的案例。</li>
+<li>人工重複執行成本高，但自動化後容易維護的案例。</li>
+</ul>
+<p>先把第一階段的登入成功、錯誤密碼與搜尋案例各挑一個，完成 3 個最小測試；再補到至少 5 個，並記錄哪些案例刻意保留手動執行，以及原因。</p>
+<h2 id="建議的練習專案結構"><a href="#建議的練習專案結構" class="headerlink" title="建議的練習專案結構"></a>建議的練習專案結構</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">qa-demo/</span><br><span class="line">├─ README.md</span><br><span class="line">├─ requirements.txt</span><br><span class="line">├─ pages/</span><br><span class="line">│  ├─ login_page.py</span><br><span class="line">│  └─ search_page.py</span><br><span class="line">├─ tests/</span><br><span class="line">│  ├─ test_login.py</span><br><span class="line">│  └─ test_search.py</span><br><span class="line">└─ testcases/</span><br><span class="line">   └─ test-cases.md</span><br></pre></td></tr></table></figure>
+
+<p>這只是起始結構，不代表每個專案都必須使用 Page Object Model。當測試數量很少或頁面仍頻繁變動時，過早抽象也可能增加理解成本。</p>
+<h2 id="自動化測試不能替代的事情"><a href="#自動化測試不能替代的事情" class="headerlink" title="自動化測試不能替代的事情"></a>自動化測試不能替代的事情</h2><ul>
+<li>需求是否合理，仍需要產品與使用者脈絡。</li>
+<li>視覺、內容、無障礙與可理解性，不能只靠幾個 DOM assertion 判斷。</li>
+<li>測試通過只表示特定條件下的檢查通過，不代表整個產品沒有問題。</li>
+<li>不穩定的定位器、共享狀態與不乾淨的測試資料，會讓失敗結果失去可信度。</li>
+</ul>
+<h2 id="這篇的實作作業"><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><ol>
+<li>建立一個不含工作機密的練習專案。</li>
+<li>先讓瀏覽器成功開啟並執行一個簡單操作。</li>
+<li>寫出 5 個可以執行的自動化測試，至少涵蓋成功與失敗情境。</li>
+<li>加入一組參數化測試與一個失敗證據輸出。</li>
+<li>將至少一個頁面的操作整理成 Page Object，並在 README 說明測試範圍與限制。</li>
+</ol>
+<h2 id="還沒回答的問題"><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
+<li>什麼情況下 locator 算穩定？</li>
+<li>測試資料要如何建立、重置與隔離？</li>
+<li>測試失敗時，如何區分產品缺陷、測試腳本問題與環境問題？</li>
+<li>哪些工作上的規則檢核適合當作 API 或資料層測試，而不是瀏覽器測試？</li>
+</ul>
+<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li><strong>2026-09-04</strong>：建立系列第三階段筆記，整理 Python、Pytest、Playwright 與可維護 Web 測試專案的學習順序。</li>
+</ul>
 ]]></content>
       <categories>
         <category>觀念與實驗</category>
@@ -926,6 +956,49 @@
 <h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
 <li><strong>2026-08-31</strong>：建立公開持續學習筆記，保存文章來源、研究輪廓、初步趨勢線索與後續閱讀問題。</li>
 </ul>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>混亂日常的一個「存檔點」工具設計</title>
+    <url>/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/</url>
+    <content><![CDATA[<h3 id="先把「作品展示」拿掉"><a href="#先把「作品展示」拿掉" class="headerlink" title="先把「作品展示」拿掉"></a>先把「作品展示」拿掉</h3><p>這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。</p>
+<p>這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。</p>
+<p>目前的原型仍可另外開啟：</p>
+<p><a href="https://progress01.github.io/lifecheck/">開啟 Life Check 原型 →</a></p>
+<span id="more"></span>
+
+<h3 id="問題不是少一個待辦清單"><a href="#問題不是少一個待辦清單" class="headerlink" title="問題不是少一個待辦清單"></a>問題不是少一個待辦清單</h3><p>很多混亂並不是因為事情太多，而是不同性質的東西被放在同一個清單裡：今天必須完成的事情、一直掛在心上的念頭、還沒有想好怎麼處理的問題，以及只是想留下來的紀錄。</p>
+<p>如果每一項都用「完成／未完成」表示，清單最後很容易變成另一種壓力來源。沒有完成的項目看起來像失敗，暫時不想處理的情緒也被迫變成工作，原本想減少混亂，卻只是把混亂換了一種格式保存。</p>
+<p>所以「存檔點」和一般任務管理工具不太一樣。它不急著替所有事情排出順序，也不要求使用者立刻找到答案，而是先承認：此刻的狀態可以被放在某個地方，暫時不用繼續佔據注意力。</p>
+<h3 id="先分辨：行動、情緒與紀錄"><a href="#先分辨：行動、情緒與紀錄" class="headerlink" title="先分辨：行動、情緒與紀錄"></a>先分辨：行動、情緒與紀錄</h3><p>這個設計值得繼續討論的地方，是它其實同時面對三種不同需求。</p>
+<ol>
+<li><strong>行動</strong>：有下一步，而且完成後可以得到明確回饋。</li>
+<li><strong>情緒</strong>：不一定需要解決，但需要先被看見、被放下。</li>
+<li><strong>紀錄</strong>：事情已經過去，留下來是為了之後回頭理解自己。</li>
+</ol>
+<p>三者如果全部使用同一套按鈕和同一種顏色，介面會很簡單，意思卻會變得模糊。勾掉一項任務代表完成；讓一個念頭消失，可能只代表今天不再處理；保存一段紀錄，則不應該被理解成問題已經解決。</p>
+<p>這也是「存檔點」比「效率工具」更適合的地方：重點不是累積更多完成項目，而是讓不同狀態不要互相冒充。</p>
+<h3 id="介面語言的矛盾"><a href="#介面語言的矛盾" class="headerlink" title="介面語言的矛盾"></a>介面語言的矛盾</h3><p>目前的原型使用了不少帶有遊戲感與避難所想像的詞彙，例如挑戰、結界、精神足跡。這些詞彙有一個好處：它們可以讓日常壓力與自己拉開一點距離，讓整理變得沒有那麼嚴肅。</p>
+<p>但另一個問題也同時出現了。<strong>Life Quest</strong> 比較像一套要持續闖關的生活系統；「存檔點」則比較像允許暫停、回頭查看的地方。前者要求前進，後者允許停留，兩種設計方向如果同時存在，使用者就必須先理解這個世界觀，才能理解自己現在要做什麼。</p>
+<p>如果核心目標是降低焦慮，介面不應該增加太多需要學習的隱喻。比起讓每一個功能都有特別的名稱，更重要的是讓人一眼看出：現在這個項目是要採取行動、暫時放下，還是留作日後回顧。</p>
+<h3 id="復古視覺應該服務於「保存」"><a href="#復古視覺應該服務於「保存」" class="headerlink" title="復古視覺應該服務於「保存」"></a>復古視覺應該服務於「保存」</h3><p>復古電腦視窗的方向仍然有意義，因為它和「存檔」的概念相近：畫面不是一個要求人變得更有效率的儀表板，而是一個可以把當下狀態保存下來的介面。</p>
+<p>不過，這種風格不需要靠大量裝飾或動畫來證明自己。視窗標題、狀態文字、有限的色彩和清楚的區塊關係就已經足夠。顏色也不應該只代表「表現很好」，例如變綠不必等於生活變得完美，而可以只是表示「這件事已經被看見，暫時有一個位置」。</p>
+<p>這樣的設計會比較接近 1988 的懷舊感：不是模仿某一個年代的介面，而是保留那種有限、安靜、可以慢慢整理資料的感覺。</p>
+<h3 id="目前還沒有解完的問題"><a href="#目前還沒有解完的問題" class="headerlink" title="目前還沒有解完的問題"></a>目前還沒有解完的問題</h3><p>這個原型暫時不需要被包裝成完成的產品。真正值得留下的問題反而是：</p>
+<ul>
+<li>人是在什麼時候需要一個存檔點，而不是另一個待辦清單？</li>
+<li>勾選完成之後，壓力真的減少了，還是只是獲得短暫的控制感？</li>
+<li>哪些內容值得被保存，哪些只是當下需要暫時移開？</li>
+<li>介面要鼓勵前進，還是允許人停留在尚未想清楚的狀態？</li>
+</ul>
+<p>這些問題比列出使用了哪些技術更接近設計本身。作品未完成不一定是缺點，因為概念還沒有被過早固定，反而可以繼續觀察「整理生活」與「管理生活」之間的差異。</p>
+<p>這篇先把它留在這裡，作為一個關於問題情境的設計筆記，而不是一頁需要被展示完成度的作品集。</p>
 ]]></content>
       <categories>
         <category>觀念與實驗</category>
@@ -1440,93 +1513,6 @@
       <tags>
         <tag>工作方法</tag>
         <tag>重要紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>討論GEO篇一</title>
-    <url>/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/</url>
-    <content><![CDATA[<h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
- <span id="more"></span>
-
-<h3 id="1-挑戰與痛點"><a href="#1-挑戰與痛點" class="headerlink" title="1.挑戰與痛點"></a>1.挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
-<p><strong>思考方向轉向</strong></p>
-<ol>
-<li>民眾如果不點到政府網頁</li>
-<li>政府資訊無法準確傳達</li>
-<li>政績與績效(或相對的流量)將出現問題</li>
-</ol>
-<p><strong>在不點到網頁”實際觀測資訊”時</strong></p>
-<ol>
-<li>以關鍵字與網頁排序為主的SEO重要性降低</li>
-<li>以直接出現在引用資源且被AI總結重要性提高</li>
-</ol>
-<p><strong>政府網頁的挑戰</strong></p>
-<ol>
-<li>時事性資訊逐漸轉向社群平台公布</li>
-<li>重要的補助與政策宣導績效仍然會透過網頁但”層層堆疊”</li>
-<li>多數牽涉民眾與廠商的業務很多轉入特定系統</li>
-</ol>
-<p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
-<blockquote>
-<p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
-</blockquote>
-<h3 id="2-GEO的定義"><a href="#2-GEO的定義" class="headerlink" title="2.GEO的定義"></a>2.GEO的定義</h3><p>生成式引擎優話(GEO)是專注於創建和優化內容，使其更容易被人工智慧聊天機器人和生成式搜尋引擎發現、理解和使用的一種實踐。</p>
-<blockquote>
-<p>Generative Engine Optimization (GEO) is an emerging practice focused on creating and optimizing content to be easily discovered, understood, and used by AI chatbots and generative search engines.</p>
-</blockquote>
-<p>但對我來說，GEO 的概念，更像是數位世界裡對「網頁意義」的<strong>涵攝 (Subsumption)</strong>。</p>
-<p><strong>涵攝說明</strong><br>這是一個法律概念。在法律適用時會遇到，通常會透過大小前提形成結論：將「生活事實」，通過路徑歸入「法律規範要件」，最終產生「特定法律效果」。</p>
-<ul>
-<li><strong>法規範(大前提)</strong> <code>&lt;-&gt;</code> <strong>具體生活事實(小前提)</strong> <code>&lt;-&gt;</code> <strong>特定法律效果(結論)</strong>：<br>這個概念特別在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實(任意變數)合於規範要件 (<code>f(x)</code>)，則會產出對應的法律效果 (<code>y</code>)。</li>
-<li>事實不是放入函數中的給定的(<code>x</code>)值，而是想像法律規範在現實有一個具體的規範範圍，當具體事實在現實中與函數交集，則開始討論涵攝（歸入）：將事實套入法律，確認是否符合要件。<blockquote>
-<p><strong>舉例來說</strong><br>法律規定（大前提）：刑法第320條規定，意圖為自己或第三人不法之所有，而竊取他人之動產者，為竊盜罪。<br>案件事實（小前提）：甲偷偷拿走了乙的錢包。<br>涵攝過程：甲的行為符合「竊取他人動產」的構成要件。<br>法律結論：甲觸犯刑法上的竊盜罪。</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>SEO 與 GEO 的區別實益</strong><br>回到 GEO 的操作型定義，要讓 AI 理解我們的網頁，操作上我認為可理解是一種數位效果 (<code>y</code>)。因此，透過尋找數位內容中(案件事實)並讓它合於 <code>f(x)</code> 的要件，這個涵攝動作往更深度討論的話應是學術界發展許久的本體論 (Ontology) 與知識圖譜，若實際一點，這應是 SEO 與 GEO 的分野：</p>
-<ul>
-<li><strong>SEO (面對人)</strong>：網頁像是一個貼滿「關鍵字」的紙箱。搜尋引擎的排序是一種觀察關鍵字相似度的「模糊機率關聯」，「計算」使用者的意圖跟網頁的關聯，想像世界裡面沒有 <code>y = f(x)</code>。</li>
-<li><strong>GEO (面對 AI)</strong>：偏向透過精準的「實體定義 (Entities)」，進行數位涵攝，讓 AI 能明確發現、理解和使用，想像的世界裡若符合設定規範則可做出推論(透過<a href="https://schema.org/%E8%A6%8F%E7%AF%84)%E3%80%82">https://schema.org/規範)。</a></li>
-</ul>
-<blockquote>
-<p>Schema.org是一個協作性的社群活動，其使命是創建、維護和推廣互聯網、網頁、電子郵件等平台上的結構化資料模式。<br>Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.</p>
-</blockquote>
-<h3 id="3-實踐-GEO-的涵攝路徑"><a href="#3-實踐-GEO-的涵攝路徑" class="headerlink" title="3.實踐 GEO 的涵攝路徑"></a>3.實踐 GEO 的涵攝路徑</h3><p>在這個思考方向下，我們該如何實踐 GEO？</p>
-<ol>
-<li><strong>將 Schema.org 視為「規範要件」</strong>：例如將 <code>GovernmentOrganization</code> 視為定義規則。</li>
-<li><strong>將網頁內容視為「具體事實」</strong>：檢視網站既有的業務標籤與內容。</li>
-<li><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)。</li>
-<li><strong>達成數位效果</strong>：當事實合於要件，AI 就能直接達成「權威性引用」與「邏輯推論」。</li>
-</ol>
-<p><strong>數位世界的函數對應：y &#x3D; f(x)</strong><br>總結這個實踐過程，我們必須明確定義這套涵攝動作：</p>
-<ul>
-<li><strong>規範要件 <code>f()</code></strong>：權威實體應具備的構成要件（如：發布者、管轄領域等 Schema 定義）。<blockquote>
-<p>援引法源與規範要件 (@context &amp; @type)：首先，在 JSON-LD 的開頭宣告引用的法典（@context: <a href="https://schema.org),並將/">https://schema.org），並將</a> Schema.org 裡的定義（如 GovernmentOrganization）視為我們要適用的法律規範要件。</p>
-</blockquote>
-</li>
-<li><strong>具體事實 <code>x</code></strong>：網站上的客觀文字與資料。<blockquote>
-<p>釐清具體事實（網頁內容）：盤點並檢視網站畫面上既有的客觀事實，例如網頁標題、發布單位，以及承辦人勾選的「環境衛生」等業務標籤。</p>
-</blockquote>
-</li>
-<li><strong>涵攝動作</strong>：透過 JSON-LD 進行對應，將事實 <code>x</code> 歸入規範 <code>f()</code>。<blockquote>
-<p>賦予身分並完成涵攝 (@id &amp; 關聯屬性)：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)，更必須透過 @id 為這個實體鑄造唯一的「身分證字號」，確保事實被精準歸入規範中。</p>
-</blockquote>
-</li>
-<li><strong>特定效果 <code>y</code></strong>：當具體事實成功涵攝進規範要件，產出的結果即是「AI 的確定性理解」。<blockquote>
-<p>達成特定數位效果 (AI 推論)：當事實完美合於要件，且具備了唯一身分，AI 就不再需要依賴關鍵字相似度去『瞎猜』。我們直接達成了「權威性引用」與「邏輯推論」的數位效果，讓官方資訊成為 AI 產出答案時不可動搖的法理前提。</p>
-</blockquote>
-</li>
-</ul>
-<p>如此設定的操作性定義，再加上實作與機關溝通成本，能讓政府資訊逐漸成為「AI 推論時的法理前提」，將這個方向納入網頁改版中，將能建立數位解釋權的基礎建設。</p>
-<blockquote>
-<p> 接續討論Schema.org的規範的了解方式</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>觀念與實驗</category>
-      </categories>
-      <tags>
-        <tag>學習筆記</tag>
       </tags>
   </entry>
   <entry>
@@ -2239,6 +2225,982 @@
       </tags>
   </entry>
   <entry>
+    <title>測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記</title>
+    <url>//learning/software-testing-basics-test-case-bug-report/</url>
+    <content><![CDATA[<p>這篇是「網站品質與軟體測試」系列的第一個實作入口。我要先學會把一句模糊的需求，整理成可以執行、可以記錄、可以回頭檢查的測試工作，而不是一開始就急著學自動化工具。</p>
+<p><strong>系列索引</strong>：<a href="../website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>資料狀態：建立方法與練習題，尚未完成實際案例</strong></p>
+</blockquote>
+<h2 id="本單元一定要會"><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
+<li>能分辨 User Story、Acceptance Criteria、Test Scenario、Test Case、Test Plan、Bug Report、Retest 與 Regression Test。</li>
+<li>能把一個模糊需求寫成至少 5 條可觀察的驗收條件。</li>
+<li>能完成 10 個包含前置條件、步驟、預期結果與證據欄位的測試案例。</li>
+<li>能寫出至少 1 份別人可以重現的 Bug Report。</li>
+</ul>
+<h3 id="本單元先不學"><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p>ISTQB 證照準備、測試管理平台、完整測試自動化框架與效能／資安測試先放到系列總路徑的學習停車場。</p>
+<h3 id="過關條件"><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p>找一個不含工作機密的登入或搜尋功能，讓另一個人只看你的 Test Plan 與 Test Cases，就能知道測試範圍、執行步驟與通過判斷。做不到時，先修文件，不增加工具。</p>
+<h2 id="這一階段要學會什麼"><a href="#這一階段要學會什麼" class="headerlink" title="這一階段要學會什麼"></a>這一階段要學會什麼</h2><p>面對「使用者可以登入」這類需求，我要能繼續追問：</p>
+<ul>
+<li>什麼條件算成功？</li>
+<li>錯誤帳密、空白欄位與異常輸入怎麼處理？</li>
+<li>哪些行為是使用者真的會遇到的風險？</li>
+<li>測試結果要留下什麼證據，別人才能重現？</li>
+</ul>
+<p>這一階段的目標不是寫出完美文件，而是建立一條基本的測試語言。</p>
+<h2 id="名詞先對齊"><a href="#名詞先對齊" class="headerlink" title="名詞先對齊"></a>名詞先對齊</h2><table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>目前的操作型理解</th>
+<th>要留下的產物</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>User Story</td>
+<td>從使用者角度描述想完成的事情與目的</td>
+<td>一句需求與角色、目標、價值</td>
+</tr>
+<tr>
+<td>Acceptance Criteria</td>
+<td>判斷需求是否達成的條件</td>
+<td>可檢查的成功與限制條件</td>
+</tr>
+<tr>
+<td>Test Scenario</td>
+<td>一個值得驗證的情境或方向</td>
+<td>測試範圍清單</td>
+</tr>
+<tr>
+<td>Test Case</td>
+<td>包含前置條件、步驟、資料與預期結果的可執行案例</td>
+<td>測試案例表</td>
+</tr>
+<tr>
+<td>Bug Report</td>
+<td>描述實際結果與預期不一致的問題</td>
+<td>可重現的缺陷紀錄</td>
+</tr>
+<tr>
+<td>Retest</td>
+<td>修正後，重新檢查原本的問題是否解決</td>
+<td>修正驗證結果</td>
+</tr>
+<tr>
+<td>Regression Test</td>
+<td>確認修改沒有破壞其他既有功能</td>
+<td>受影響範圍的回歸結果</td>
+</tr>
+</tbody></table>
+<p>這些名稱不是文件格式遊戲。它們分別回答「要做什麼」「怎麼判斷」「出錯怎麼溝通」與「修好後如何建立信心」。</p>
+<h2 id="第一個練習：把需求變成測試"><a href="#第一個練習：把需求變成測試" class="headerlink" title="第一個練習：把需求變成測試"></a>第一個練習：把需求變成測試</h2><p>先用不涉及工作機密的登入功能作為練習：</p>
+<p><strong>User Story</strong></p>
+<blockquote>
+<p>身為註冊使用者，我希望輸入正確帳號與密碼後登入，以便使用需要登入的功能。</p>
+</blockquote>
+<p><strong>Acceptance Criteria 初稿</strong></p>
+<ol>
+<li>輸入有效帳密並送出後，系統進入登入後頁面。</li>
+<li>輸入錯誤密碼時，系統顯示可理解的錯誤訊息，不洩漏不必要的帳號資訊。</li>
+<li>帳號或密碼為空白時，系統提示必要欄位，且不應送出無效請求。</li>
+<li>登入失敗後，使用者仍能修正資料並再次嘗試。</li>
+<li>測試結束後，帳號狀態與測試資料不應污染下一個案例。</li>
+</ol>
+<p>這些條件仍然只是練習用的初稿，之後要依實際產品規格、資安要求與團隊約定確認。</p>
+<h2 id="Test-Case-最小欄位"><a href="#Test-Case-最小欄位" class="headerlink" title="Test Case 最小欄位"></a>Test Case 最小欄位</h2><p>第一版先不要追求複雜工具，使用表格即可：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>要寫什麼</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID</td>
+<td>穩定且容易引用的編號，例如 TC-LOGIN-001</td>
+</tr>
+<tr>
+<td>前置條件</td>
+<td>使用者狀態、瀏覽器、測試資料與環境</td>
+</tr>
+<tr>
+<td>測試資料</td>
+<td>帳號、密碼或其他輸入值；敏感資料不可直接放入公開筆記</td>
+</tr>
+<tr>
+<td>操作步驟</td>
+<td>任何人依序執行都能得到相同方向的步驟</td>
+</tr>
+<tr>
+<td>預期結果</td>
+<td>可觀察、可判斷，不寫「應該正常」</td>
+</tr>
+<tr>
+<td>實際結果</td>
+<td>執行後真實看到的結果</td>
+</tr>
+<tr>
+<td>狀態</td>
+<td>Not Run、Pass、Fail、Blocked 等</td>
+</tr>
+<tr>
+<td>證據</td>
+<td>截圖、錯誤訊息、紀錄檔或重現連結</td>
+</tr>
+</tbody></table>
+<p>第一輪至少寫出：正確帳密、錯誤密碼、錯誤帳號、帳號空白、密碼空白、超長輸入、重複送出、登入失敗後重試、工作階段逾時與不同裝置／瀏覽器等情境。這張清單之後還要用測試設計方法重新檢查，不代表每一項都同樣重要。</p>
+<h2 id="Bug-Report-的基本結構"><a href="#Bug-Report-的基本結構" class="headerlink" title="Bug Report 的基本結構"></a>Bug Report 的基本結構</h2><p>一份好的問題紀錄，不是只寫「登入壞了」，而是讓另一個人能在相同條件下看到同一件事：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">標題：在有效帳密下送出登入，頁面停留在登入頁且沒有錯誤提示</span><br><span class="line">環境：測試環境、瀏覽器與版本、裝置</span><br><span class="line">前置條件：使用已啟用的測試帳號</span><br><span class="line">重現步驟：</span><br><span class="line">1. 開啟登入頁</span><br><span class="line">2. 輸入有效帳號</span><br><span class="line">3. 輸入有效密碼</span><br><span class="line">4. 點擊登入</span><br><span class="line">預期結果：進入登入後頁面</span><br><span class="line">實際結果：頁面停留在原處，無成功或錯誤訊息</span><br><span class="line">影響與證據：附上截圖、時間、版本與相關紀錄</span><br></pre></td></tr></table></figure>
+
+<p>嚴重度、優先度與是否為真正缺陷，仍要依產品影響、發生範圍與團隊定義判斷；不能只因為自己覺得嚴重就直接替團隊下結論。</p>
+<h2 id="我需要特別避免的誤區"><a href="#我需要特別避免的誤區" class="headerlink" title="我需要特別避免的誤區"></a>我需要特別避免的誤區</h2><ul>
+<li>把「看起來沒問題」當成測試通過。</li>
+<li>只有操作步驟，沒有明確預期結果。</li>
+<li>只記錄失敗，不保存環境與證據。</li>
+<li>修正後只重跑原本案例，沒有確認可能受影響的既有功能。</li>
+<li>把所有想得到的情境都列進來，卻沒有依風險與使用頻率排序。</li>
+<li>直接把工作上的網址、帳號、畫面或內部資料放進公開作品。</li>
+</ul>
+<h2 id="這篇的實作作業"><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><p>選一個公開 Demo 或自己建立的簡單功能，完成：</p>
+<ol>
+<li>一份 User Story 與 Acceptance Criteria。</li>
+<li>一份簡短 Test Plan，寫清楚範圍、環境、限制與通過條件。</li>
+<li>10–20 個 Test Cases。</li>
+<li>2 份去識別化 Bug Reports；如果沒有真實 Bug，可以用「預期失敗情境」練習，但要標明是模擬案例。</li>
+<li>一筆 Retest 與一筆 Regression Test 紀錄。</li>
+</ol>
+<h2 id="還沒回答的問題"><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
+<li>什麼條件下可以停止測試並建議發布？</li>
+<li>測試案例的優先度要由誰決定？</li>
+<li>發現問題時，如何區分需求不清、實作缺陷與環境問題？</li>
+<li>一份測試文件怎麼保持足夠清楚，又不變成沒有人維護的文件堆？</li>
+</ul>
+<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li><strong>2026-09-04</strong>：建立系列第一階段筆記，整理需求、驗收條件、Test Case、Bug Report、Retest 與 Regression Test 的練習架構。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</title>
+    <url>//learning/release-quality-git-ci-cd-checklist/</url>
+    <content><![CDATA[<p>這篇是「網站品質與軟體測試」系列的第四階段。前面的測試如果只存在自己的電腦裡，還沒有真正接到團隊工作；這一階段要理解版本、環境、測試報告與發布判斷如何連成一個可交接的流程。</p>
+<p><strong>系列索引</strong>：<a href="../website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>資料狀態：建立發布品質框架，尚未完成 CI 練習專案</strong></p>
+</blockquote>
+<h2 id="本單元一定要會"><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
+<li>能用 Git status、diff、add、commit、branch、switch、push、pull 與 merge 保留變更脈絡。</li>
+<li>能描述測試環境、依賴、環境變數與本機／CI 差異。</li>
+<li>能讓一種 CI 平台在 push 後安裝依賴並執行測試。</li>
+<li>能讀懂一次成功與一次失敗的測試結果，並建立功能、內容、連結、無障礙、響應式與資料檢查的 Release Checklist。</li>
+<li>能說明上線後要觀察什麼，以及問題發生時如何回報或回復。</li>
+</ul>
+<h3 id="本單元先不學"><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p>Appium、Maestro、Jenkins、Docker、複雜部署架構與多平台 CI 先不加入；這一輪只選一種 CI 平台把閉環跑過一次。</p>
+<h3 id="過關條件"><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p>交付一個有清楚 commit 歷史的練習 repository：push 後會自動跑測試，README 能說明失敗排查方式，並附上去識別化 Release Checklist。只會在本機手動執行，不算完成本單元。</p>
+<h2 id="這一階段的核心問題"><a href="#這一階段的核心問題" class="headerlink" title="這一階段的核心問題"></a>這一階段的核心問題</h2><p>我要從：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">修改程式 → 自己在本機跑一次 → 說應該可以</span><br></pre></td></tr></table></figure>
+
+<p>逐步理解成：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">建立變更 → 留下版本紀錄 → 在可辨識的環境執行測試</span><br><span class="line">→ 產出結果與證據 → 依風險判斷是否發布 → 上線後觀察</span><br></pre></td></tr></table></figure>
+
+<p>CI&#x2F;CD 不是一個很大的口號，而是把這些步驟變成團隊能重複、能追蹤的流程。</p>
+<h2 id="Git：先學會保留變更脈絡"><a href="#Git：先學會保留變更脈絡" class="headerlink" title="Git：先學會保留變更脈絡"></a>Git：先學會保留變更脈絡</h2><p>第一輪先掌握：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">clone、status、add、commit、push、pull</span><br><span class="line">branch、switch、diff、merge</span><br></pre></td></tr></table></figure>
+
+<p>練習時直接使用 Web 自動化測試專案：先建立初始版本，再新增測試、查看差異、建立分支、合併變更。每次 commit 應該能讓人看懂「這次改了什麼」，不要把所有修改都塞進一個沒有意義的提交。</p>
+<h2 id="基本環境能力"><a href="#基本環境能力" class="headerlink" title="基本環境能力"></a>基本環境能力</h2><p>QA 不必一開始研究作業系統核心，但要能在測試環境中自我排查：</p>
+<ul>
+<li>目前在哪個目錄、有哪些檔案與設定。</li>
+<li>Python 與套件版本是否符合專案要求。</li>
+<li>環境變數是否存在，敏感值是否被安全保存。</li>
+<li>測試程序是否仍在執行、失敗紀錄放在哪裡。</li>
+<li>本機成功、CI 失敗時，兩邊的瀏覽器、依賴與資料是否一致。</li>
+</ul>
+<p>這些基本能力的目的，是讓問題描述不只停在「我的電腦可以」。</p>
+<h2 id="一個最小-CI-練習"><a href="#一個最小-CI-練習" class="headerlink" title="一個最小 CI 練習"></a>一個最小 CI 練習</h2><p>先設計最小目標：每次 push 時，系統自動完成以下工作：</p>
+<ol>
+<li>建立指定的 Python 環境。</li>
+<li>安裝專案依賴與瀏覽器測試需要的元件。</li>
+<li>執行一組穩定的 Pytest／Playwright 測試。</li>
+<li>在失敗時保留測試輸出或報告。</li>
+<li>顯示成功或失敗，讓團隊知道這次變更是否需要處理。</li>
+</ol>
+<p>第一輪不必同時學 Jenkins、GitLab CI 與 GitHub Actions；先選一種平台，把完整流程跑過一次即可。</p>
+<h2 id="Release-Checklist-的分層"><a href="#Release-Checklist-的分層" class="headerlink" title="Release Checklist 的分層"></a>Release Checklist 的分層</h2><p>我希望最後留下的檢查表，不是「全部都看過」的口號，而是能指出檢查範圍與證據：</p>
+<table>
+<thead>
+<tr>
+<th>層次</th>
+<th>例子</th>
+<th>判斷證據</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能</td>
+<td>主要流程、錯誤處理、權限與資料保存</td>
+<td>Test Case 結果、截圖或紀錄</td>
+</tr>
+<tr>
+<td>內容與結構</td>
+<td>文字、連結、表格、圖片與附件</td>
+<td>前台頁面、HTML 或內容檢查結果</td>
+</tr>
+<tr>
+<td>使用情境</td>
+<td>手機／桌機、不同狀態、操作中斷與恢復</td>
+<td>情境紀錄與裝置／瀏覽器資訊</td>
+</tr>
+<tr>
+<td>品質風險</td>
+<td>無障礙、效能、資安或第三方服務</td>
+<td>對應檢查結果與已知限制</td>
+</tr>
+<tr>
+<td>發布後</td>
+<td>監測、錯誤回報、回復方式與負責人</td>
+<td>監測項目、聯絡窗口與處理紀錄</td>
+</tr>
+</tbody></table>
+<p>每個專案不一定都要有相同深度，但應該清楚知道哪些已檢查、哪些未檢查、哪些風險被接受，以及誰做最後決定。</p>
+<h2 id="上線不是「所有測試都-Pass」"><a href="#上線不是「所有測試都-Pass」" class="headerlink" title="上線不是「所有測試都 Pass」"></a>上線不是「所有測試都 Pass」</h2><p>發布判斷通常還要一起看：</p>
+<ul>
+<li>目前版本改了什麼，影響範圍多大？</li>
+<li>高風險案例是否已執行？</li>
+<li>尚未修正的問題是否有明確影響與接受者？</li>
+<li>是否有回復版本、監測與上線後處理方式？</li>
+<li>測試環境與正式環境的差異，是否可能讓結果失真？</li>
+</ul>
+<p>我需要學會的是提供品質資訊與風險，不是單獨替整個團隊宣布「可以上線」。</p>
+<h2 id="這篇的實作作業"><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><ol>
+<li>把 Web 自動化練習專案建立 Git repository。</li>
+<li>用至少兩個有意義的 commit 記錄變更，並練習分支與差異檢查。</li>
+<li>選一個 CI 平台，讓測試在 push 後自動執行。</li>
+<li>保留一次成功與一次失敗的測試結果，說明失敗原因與處理方式。</li>
+<li>建立一份去識別化的 Release Checklist，列出已檢查、未檢查與已知限制。</li>
+</ol>
+<h2 id="核心之後的延伸"><a href="#核心之後的延伸" class="headerlink" title="核心之後的延伸"></a>核心之後的延伸</h2><p>Appium、Maestro 與 Jenkins 暫時不列入第一輪必修。等 Web 測試、版本控制與 CI 能完整跑過一次，再選一個 Android sample app 做最小 UI 自動化；屆時要重新學習行動裝置、driver、測試資料與執行環境的差異。</p>
+<h2 id="還沒回答的問題"><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
+<li>測試失敗時，誰負責判斷是阻擋發布的問題？</li>
+<li>測試報告要保留多久，才能支援後續追蹤與稽核？</li>
+<li>正式環境不能直接測試時，如何建立足夠可信的替代證據？</li>
+<li>上線後的監測，怎麼和上線前的測試案例互相補足？</li>
+</ul>
+<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li><strong>2026-09-04</strong>：建立系列第四階段筆記，整理 Git、環境排查、CI&#x2F;CD、Release Checklist 與上線後觀察。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</title>
+    <url>//learning/website-quality-testing-roadmap/</url>
+    <content><![CDATA[<p>這是一個以「我想正式學會怎麼判斷網站能不能安心上線」為核心的學習系列。它不是把自己包裝成已經具備完整 QA 經驗，而是把目前的政府網站專案、網站檢核、問題追蹤與 Python 應用，逐步接到較完整的品質工程流程。</p>
+<p><strong>系列來源</strong>：使用者提供的 HyRead QA 職缺與網站品質學習對話整理</p>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>資料狀態：建立 42 天挑戰，尚未完成各階段實作</strong></p>
+<p>這份筆記是自己的課程設計與問題地圖，不是正式證照教材。後續遇到標準、工具或流程的細節，仍要回到官方文件、實際專案與可重現的測試結果核對。</p>
+</blockquote>
+<h2 id="我真正想學的是什麼"><a href="#我真正想學的是什麼" class="headerlink" title="我真正想學的是什麼"></a>我真正想學的是什麼</h2><p>目前最重要的問題不是「我要不要立刻轉職 QA」，而是：</p>
+<blockquote>
+<p><strong>一個網站從做完到可以上線，中間要用什麼方法取得足夠的品質證據？</strong></p>
+</blockquote>
+<p>我過去比較常從三個位置看事情：</p>
+<ul>
+<li><strong>使用者／圖資</strong>：使用者想完成什麼，資訊怎麼被找到與使用。</li>
+<li><strong>PM／維運</strong>：需求怎麼整理、問題怎麼追蹤、不同角色怎麼協作。</li>
+<li><strong>品質／工程</strong>：怎麼證明功能符合預期，以及一次修改沒有讓其他地方壞掉。</li>
+</ul>
+<p>這個系列要補的是第三個角度，但不把前兩個丟掉。品質判斷應該能回到使用者情境，也要能被團隊討論、執行與留下證據。</p>
+<h2 id="一條完整的網站品質流程"><a href="#一條完整的網站品質流程" class="headerlink" title="一條完整的網站品質流程"></a>一條完整的網站品質流程</h2><p>先把「我操作看看」改寫成一條可以檢查的流程：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">需求與使用者情境</span><br><span class="line">        ↓</span><br><span class="line">驗收條件與風險</span><br><span class="line">        ↓</span><br><span class="line">測試情境與 Test Case</span><br><span class="line">        ↓</span><br><span class="line">執行測試與紀錄證據</span><br><span class="line">        ↓</span><br><span class="line">缺陷回報與修正追蹤</span><br><span class="line">        ↓</span><br><span class="line">Retest 修正驗證</span><br><span class="line">        ↓</span><br><span class="line">Regression Test 回歸測試</span><br><span class="line">        ↓</span><br><span class="line">Release 判斷與上線後觀察</span><br></pre></td></tr></table></figure>
+
+<p>這條線上的每個名詞，都要能用一個實際例子說明，而不是只記住英文名稱。</p>
+<h2 id="系列地圖"><a href="#系列地圖" class="headerlink" title="系列地圖"></a>系列地圖</h2><h3 id="第一階段：測試基本功"><a href="#第一階段：測試基本功" class="headerlink" title="第一階段：測試基本功"></a>第一階段：測試基本功</h3><p>對應筆記：<a href="../software-testing-basics-test-case-bug-report/">測試基本功：User Story、Test Case 與 Bug Report</a></p>
+<p>學習重點：</p>
+<ul>
+<li>User Story 與 Acceptance Criteria。</li>
+<li>Test Scenario、Test Case 與 Test Plan 的差異。</li>
+<li>Bug Report 應包含的重現條件、預期結果與實際結果。</li>
+<li>Retest、Regression Test 與 Exploratory Testing。</li>
+</ul>
+<p>預計產出：一份功能 Test Plan、10–20 個 Test Cases、2 個去識別化 Bug Reports，以及修正驗證紀錄。</p>
+<h3 id="第二階段：測試設計"><a href="#第二階段：測試設計" class="headerlink" title="第二階段：測試設計"></a>第二階段：測試設計</h3><p>對應筆記：<a href="../test-design-boundary-risk-based-testing/">測試設計：等價類別、邊界值與風險導向測試</a></p>
+<p>學習重點：</p>
+<ul>
+<li>等價類別與邊界值分析。</li>
+<li>決策表與狀態轉換。</li>
+<li>探索式測試與例外情境。</li>
+<li>依影響程度、發生可能性與使用頻率排序測試風險。</li>
+</ul>
+<p>預計產出：以電子閱讀服務為情境，針對登入、搜尋、閱讀器、書籤與閱讀進度等功能，建立約 30 個有理由的測試案例。</p>
+<h3 id="第三階段：Web-自動化測試"><a href="#第三階段：Web-自動化測試" class="headerlink" title="第三階段：Web 自動化測試"></a>第三階段：Web 自動化測試</h3><p>對應筆記：<a href="../web-automation-python-pytest-playwright/">Web 自動化測試：Python、Pytest 與 Playwright</a></p>
+<p>學習重點：</p>
+<ul>
+<li>用 Python、Pytest 與 Playwright 執行瀏覽器測試。</li>
+<li>Locator、操作、Assertion 與測試資料。</li>
+<li>Fixture、參數化、失敗截圖與 Trace。</li>
+<li>Page Object Model 與可維護的測試專案結構。</li>
+</ul>
+<p>預計產出：至少 5 個能實際執行的 Web 自動化測試，並把其中一部分對應回第一、二階段的手動案例。</p>
+<h3 id="第四階段：發布品質"><a href="#第四階段：發布品質" class="headerlink" title="第四階段：發布品質"></a>第四階段：發布品質</h3><p>對應筆記：<a href="../release-quality-git-ci-cd-checklist/">發布品質：Git、CI&#x2F;CD 與 Release Checklist</a></p>
+<p>學習重點：</p>
+<ul>
+<li>Git 的基本分支、提交與差異檢查。</li>
+<li>測試環境、環境變數與基本 Linux 操作。</li>
+<li>CI&#x2F;CD 如何在 push 或合併後自動執行測試。</li>
+<li>Test Report、Release Checklist 與上線後觀察。</li>
+</ul>
+<p>預計產出：一個能在版本更新後自動執行測試的練習專案，以及一份自己的網站上線檢查表。</p>
+<h3 id="核心之後：App-測試"><a href="#核心之後：App-測試" class="headerlink" title="核心之後：App 測試"></a>核心之後：App 測試</h3><p>Appium、Maestro 與 Jenkins 先不列入第一輪核心。等 Web 測試、測試設計與 CI 流程能跑過一次，再選一個 Android sample app 做最小實作：啟動、定位元件、點擊、驗證結果。這樣可以分辨「真的想學行動測試」和「只是被職缺上的工具清單追著跑」。</p>
+<h2 id="42-天鐵人挑戰"><a href="#42-天鐵人挑戰" class="headerlink" title="42 天鐵人挑戰"></a>42 天鐵人挑戰</h2><h3 id="42-天後的「會」是什麼"><a href="#42-天後的「會」是什麼" class="headerlink" title="42 天後的「會」是什麼"></a>42 天後的「會」是什麼</h3><p>這不是 42 天學會所有 QA，也不是 42 天保證轉職。這一輪的完成定義是：</p>
+<ol>
+<li>能用自己的話解釋核心概念，而不是只背英文名稱。</li>
+<li>能在一個不含工作機密的練習功能上實際執行。</li>
+<li>能留下別人看得懂、可以重做或檢查的產物。</li>
+<li>能說出方法的限制，知道什麼情況不能只靠這個方法下結論。</li>
+</ol>
+<h3 id="六個單元的必會範圍"><a href="#六個單元的必會範圍" class="headerlink" title="六個單元的必會範圍"></a>六個單元的必會範圍</h3><table>
+<thead>
+<tr>
+<th>單元</th>
+<th align="right">天數</th>
+<th>這一單元一定要會</th>
+<th>過關產物</th>
+<th>這輪先不學</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 品質語言</td>
+<td align="right">1–7</td>
+<td>分辨 User Story、Acceptance Criteria、Scenario、Case、Plan、Bug、Retest、Regression</td>
+<td>1 份 Test Plan、1 組驗收條件、10 個 Test Cases</td>
+<td>ISTQB 考試、完整測試管理工具</td>
+</tr>
+<tr>
+<td>2. 測試設計</td>
+<td align="right">8–14</td>
+<td>等價類別、邊界值、決策表、狀態轉換、探索式與風險排序</td>
+<td>約 30 個有選擇理由的案例</td>
+<td>進階組合測試、完整測試理論</td>
+</tr>
+<tr>
+<td>3. 測試執行</td>
+<td align="right">15–21</td>
+<td>記錄環境與證據、區分 Pass／Fail／Blocked、寫 Bug、做 Retest 與 Regression</td>
+<td>20 個執行結果、2 份 Bug Report、修正驗證表</td>
+<td>效能、資安與 API 深入測試</td>
+</tr>
+<tr>
+<td>4. Web 自動化入門</td>
+<td align="right">22–28</td>
+<td>用 Python、Pytest、Playwright 做定位、操作與 Assertion</td>
+<td>5 個可執行的自動化測試</td>
+<td>JavaScript／TypeScript、跨瀏覽器矩陣</td>
+</tr>
+<tr>
+<td>5. 測試維護</td>
+<td align="right">29–35</td>
+<td>Fixture、參數化、測試資料隔離、截圖／Trace、Page Object Model</td>
+<td>可從乾淨環境執行的測試專案與 README</td>
+<td>Docker、複雜框架抽象、測試平台開發</td>
+</tr>
+<tr>
+<td>6. 發布品質</td>
+<td align="right">36–42</td>
+<td>Git、環境排查、CI、報告、Release Checklist 與上線後觀察</td>
+<td>Git repository、CI workflow、發布檢查表</td>
+<td>Appium、Maestro、Jenkins</td>
+</tr>
+</tbody></table>
+<h3 id="每日任務表"><a href="#每日任務表" class="headerlink" title="每日任務表"></a>每日任務表</h3><p>每天只做一個小任務。完成條件不是「看完教材」，而是完成最後一欄的產物；如果當天只有閱讀，最多算預習，不算過關。</p>
+<table>
+<thead>
+<tr>
+<th align="right">Day</th>
+<th>今日主題</th>
+<th>今日產物／過關條件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>設定挑戰範圍與練習產品</td>
+<td>寫下唯一練習情境、42 天目標與不做清單</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>使用者、PM、開發、QA、維運五種視角</td>
+<td>用同一個登入功能各寫一句關心的問題</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>對齊測試基本名詞</td>
+<td>完成一頁名詞對照表，並各寫一個例子</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>User Story 與 Acceptance Criteria</td>
+<td>1 句 User Story、至少 5 條可檢查驗收條件</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Test Scenario、Test Case、Test Plan</td>
+<td>完成 Test Plan 的範圍、環境、限制與通過條件</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>第一版測試案例</td>
+<td>寫出 10 個案例，每個都有前置條件、步驟與預期結果</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>單元 1 檢查日</td>
+<td>不看筆記說明 8 個名詞，並修正第一版文件的模糊句子</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>等價類別</td>
+<td>為一個輸入欄位分出有效、無效與空白類別</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>邊界值分析</td>
+<td>找出至少 2 組上下限及其外側值</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>決策表</td>
+<td>把兩個以上條件組合整理成決策表</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>狀態轉換</td>
+<td>畫出登入、逾時、登出或閱讀進度的狀態流程</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>探索式測試</td>
+<td>設定 30 分鐘任務，留下路徑、觀察與疑問</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>風險導向排序</td>
+<td>為案例標上影響、可能性與本次修改關聯性</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>單元 2 檢查日</td>
+<td>完成約 30 個案例，且每個案例都能說出選擇理由</td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td>測試環境與前置條件</td>
+<td>記錄網址／版本、瀏覽器、裝置、測試資料與限制</td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td>依案例執行測試</td>
+<td>執行至少 10 個案例，記錄 Pass、Fail 或 Blocked</td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td>測試證據</td>
+<td>為一個失敗或疑問案例補上截圖、訊息與時間</td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td>Bug Report</td>
+<td>寫出 1 份可重現的問題紀錄，不使用「怪怪的」等模糊描述</td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td>嚴重度與優先度</td>
+<td>為 Bug 寫出影響與優先處理理由，分開兩個概念</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>Retest 與 Regression</td>
+<td>完成一張「原問題修正驗證／受影響功能回歸」對照表</td>
+</tr>
+<tr>
+<td align="right">21</td>
+<td>單元 3 檢查日</td>
+<td>累積 20 個執行結果、2 份 Bug Report 或明確標示的模擬案例</td>
+</tr>
+<tr>
+<td align="right">22</td>
+<td>Playwright 環境與第一支測試</td>
+<td>能開啟瀏覽器、進入頁面、執行操作並正常結束</td>
+</tr>
+<tr>
+<td align="right">23</td>
+<td>Locator 與操作</td>
+<td>使用穩定定位方式完成 click、fill 等基本操作</td>
+</tr>
+<tr>
+<td align="right">24</td>
+<td>Assertion</td>
+<td>為一個成功流程寫出與需求對應的可檢查 Assertion</td>
+</tr>
+<tr>
+<td align="right">25</td>
+<td>Pytest 測試結構</td>
+<td>把成功與失敗情境拆成至少 2 個可執行測試</td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td>連回手動案例</td>
+<td>將 3 個既有 Test Case 對應到自動化測試名稱</td>
+</tr>
+<tr>
+<td align="right">27</td>
+<td>最小測試套件</td>
+<td>累積至少 5 個測試，能說明每個測試為何值得自動化</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>單元 4 檢查日</td>
+<td>從命令列重新執行測試，留下一次完整結果</td>
+</tr>
+<tr>
+<td align="right">29</td>
+<td>Fixture</td>
+<td>把共用的測試前置準備集中管理</td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>Parameterization</td>
+<td>用多組資料重跑同一類案例，不複製整份測試程式</td>
+</tr>
+<tr>
+<td align="right">31</td>
+<td>測試資料與狀態隔離</td>
+<td>寫下測試資料如何建立、重置及避免互相污染</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>失敗證據</td>
+<td>讓失敗測試留下截圖或 Trace，並實際查看一次</td>
+</tr>
+<tr>
+<td align="right">33</td>
+<td>Page Object Model</td>
+<td>把一個頁面的定位與操作抽出，測試只保留情境與驗證</td>
+</tr>
+<tr>
+<td align="right">34</td>
+<td>README 與乾淨執行</td>
+<td>說明安裝、執行指令、範圍、已知限制與結果</td>
+</tr>
+<tr>
+<td align="right">35</td>
+<td>單元 5 檢查日</td>
+<td>在乾淨環境重新跑過測試，修正至少一個可維護性問題</td>
+</tr>
+<tr>
+<td align="right">36</td>
+<td>Git 基本操作</td>
+<td>完成 status、diff、add、commit，並留下有意義的提交訊息</td>
+</tr>
+<tr>
+<td align="right">37</td>
+<td>分支與變更脈絡</td>
+<td>建立分支、修改一支測試、查看差異並合併回主線</td>
+</tr>
+<tr>
+<td align="right">38</td>
+<td>CI 最小流程</td>
+<td>push 後自動安裝依賴並執行測試</td>
+</tr>
+<tr>
+<td align="right">39</td>
+<td>CI 失敗排查</td>
+<td>保留一次失敗結果，分辨環境、腳本或產品問題</td>
+</tr>
+<tr>
+<td align="right">40</td>
+<td>Release Checklist</td>
+<td>列出功能、內容、連結、無障礙、響應式、資料與權限檢查</td>
+</tr>
+<tr>
+<td align="right">41</td>
+<td>上線後觀察</td>
+<td>寫下監測項目、錯誤回報方式、回復方式與負責角色</td>
+</tr>
+<tr>
+<td align="right">42</td>
+<td>最終檢查與回顧</td>
+<td>交付 README、測試案例、Bug、5 個自動化測試、CI 與 checklist</td>
+</tr>
+</tbody></table>
+<h3 id="固定規則：用來防止發散"><a href="#固定規則：用來防止發散" class="headerlink" title="固定規則：用來防止發散"></a>固定規則：用來防止發散</h3><ol>
+<li><strong>一個練習產品</strong>：全程只用同一個電子閱讀服務情境；自動化若需換公開 Demo，只換測試對象，不新增產品功能。</li>
+<li><strong>一個主要工具鏈</strong>：Python、Pytest、Playwright、Git 與一種 CI 平台。看到其他工具先放停車場。</li>
+<li><strong>一日一產物</strong>：每天最多一個主要產物；不要同時改筆記、履歷、作品集與工具環境。</li>
+<li><strong>卡住先縮小</strong>：同一問題超過 30 分鐘，先記錄錯誤、嘗試與下一步，改做當日較小的部分。</li>
+<li><strong>不補課式爆量</strong>：漏一天就順延，不用隔天讀兩倍；挑戰目標是建立可持續節奏。</li>
+<li><strong>完成才擴張</strong>：單元檢查日沒過，就只補該單元，不提前研究下一個工具。</li>
+</ol>
+<h3 id="遇到新知時的分流規則"><a href="#遇到新知時的分流規則" class="headerlink" title="遇到新知時的分流規則"></a>遇到新知時的分流規則</h3><p>學習前不知道的事情，不代表都要立刻加入課表。每次遇到新名詞、新工具或新的疑問，先用下面四類分流：</p>
+<table>
+<thead>
+<tr>
+<th>類別</th>
+<th>判斷問題</th>
+<th>現在怎麼處理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. 必要前置</td>
+<td>沒有它，今天的單元是否無法完成？</td>
+<td>只補最小必要知識，並替換一個原定任務，不增加總量</td>
+</tr>
+<tr>
+<td>B. 當前有幫助</td>
+<td>它能讓目前產物更可靠，但沒有它也能先完成？</td>
+<td>限時 30–60 分鐘做小補充，完成後回主線</td>
+</tr>
+<tr>
+<td>C. 之後會用</td>
+<td>它有價值，但不影響目前過關嗎？</td>
+<td>記入停車場，寫下觸發條件，不在今天展開</td>
+</tr>
+<tr>
+<td>D. 純粹好奇</td>
+<td>只是覺得有趣，與本單元產物沒有直接關係？</td>
+<td>只記一句，不搜尋、不開新專案</td>
+</tr>
+</tbody></table>
+<p>最重要的規則是：<strong>新知若真的必要，只能替換任務，不能無限加課。</strong> 例如今天原本要寫 10 個案例，卻發現必須先懂一個測試概念，就把其中一個延伸案例換成 30 分鐘的前置理解，並記錄為什麼換，不把第 11 個任務加進來。</p>
+<h3 id="進度不要只看「第幾天」"><a href="#進度不要只看「第幾天」" class="headerlink" title="進度不要只看「第幾天」"></a>進度不要只看「第幾天」</h3><p>42 天是時間框架，不是能力百分比。每個必會項目都用四層證據記錄：</p>
+<ol>
+<li><strong>接觸過</strong>：看過資料或聽過說明。</li>
+<li><strong>說得出</strong>：能用自己的例子解釋用途與限制。</li>
+<li><strong>做得到</strong>：不照著逐步複製，能完成一次練習。</li>
+<li><strong>留得下</strong>：產物可重做、可檢查，也能說明為什麼這樣做。</li>
+</ol>
+<p>只有到第 3 層，才算「會操作」；到第 4 層，才算這一輪的單元過關。若只是讀完文章，進度可以記成「接觸過」，不要提前標成完成。</p>
+<p>每週檢查日只更新一張小表，不重寫整份課表：</p>
+<table>
+<thead>
+<tr>
+<th>單元</th>
+<th>目前層級</th>
+<th>已有證據</th>
+<th>下一個最小行動</th>
+<th>是否需要改路徑</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>例：測試設計</td>
+<td>接觸過／說得出／做得到／留得下</td>
+<td>連結到檔案或段落</td>
+<td>補一個邊界值案例</td>
+<td>是／否，附原因</td>
+</tr>
+</tbody></table>
+<h3 id="路徑變更要留下紀錄"><a href="#路徑變更要留下紀錄" class="headerlink" title="路徑變更要留下紀錄"></a>路徑變更要留下紀錄</h3><p>每次真的修改課表，只記五件事：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">日期：</span><br><span class="line">我發現：</span><br><span class="line">它屬於 A／B／C／D：</span><br><span class="line">我替換或保留了什麼：</span><br><span class="line">下次檢查這個決定的條件：</span><br></pre></td></tr></table></figure>
+
+<p>這讓「學了才知道」變成可管理的發現紀錄。只有在單元檢查日，或遇到 A 類必要前置時改動主線；其他新知留在停車場，不要每天重新排課。</p>
+<h3 id="學習停車場"><a href="#學習停車場" class="headerlink" title="學習停車場"></a>學習停車場</h3><p>先記下但不在 42 天內展開：Appium、Maestro、Jenkins、API 測試、效能測試、資安測試、Docker、JavaScript／TypeScript、ISTQB 證照、測試管理平台，以及把工作內部文件整理成公開作品。Day 42 再依興趣與實際職缺決定下一輪，不在中途插隊。</p>
+<h2 id="每日固定節奏與紀錄格式"><a href="#每日固定節奏與紀錄格式" class="headerlink" title="每日固定節奏與紀錄格式"></a>每日固定節奏與紀錄格式</h2><p>每次約 30–45 分鐘；週末或檢查日可用 60–90 分鐘，但仍以一個產物為上限。建議固定分成：5 分鐘回想、20 分鐘學習、15 分鐘實作、5 分鐘紀錄。</p>
+<p>每天只留下四行：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Day __：今天的必會概念是</span><br><span class="line">我完成的產物是</span><br><span class="line">我還不會／卡住的是</span><br><span class="line">被放進停車場的題目是</span><br></pre></td></tr></table></figure>
+
+<p>每篇後續筆記也先回答三個問題：</p>
+<ol>
+<li>這個方法要解決什麼問題？</li>
+<li>我留下了什麼可以重現或檢查的證據？</li>
+<li>這個方法在哪些情況下不能直接下結論？</li>
+</ol>
+<p>進度狀態可使用：<strong>未開始、接觸中、實作中、待驗證、已過關、暫停</strong>。這些是學習紀錄用的細部狀態；閱讀台的 <code>state: learning</code> 仍代表這個主題保留在永久 archive，不需要因為某個單元完成就刪除或搬移。</p>
+<h2 id="英文伴走軌：碎碎念先行，喜歡再成文"><a href="#英文伴走軌：碎碎念先行，喜歡再成文" class="headerlink" title="英文伴走軌：碎碎念先行，喜歡再成文"></a>英文伴走軌：碎碎念先行，喜歡再成文</h2><p>英文不另外開一套高壓課程，而是搭在現在的 QA 主線旁邊。這樣可以讓英文和真正正在學的內容連在一起，也不需要每天在 QA、英文、休息之間重新分配力氣。</p>
+<h3 id="碎碎念適合放什麼"><a href="#碎碎念適合放什麼" class="headerlink" title="碎碎念適合放什麼"></a>碎碎念適合放什麼</h3><ul>
+<li>今天遇到的一個英文詞或短句，例如 <code>expected result</code>、<code>reproduce</code>、<code>blocked</code>。</li>
+<li>讀文件時只看懂的一小段，或一個還不確定的用法。</li>
+<li>用很簡單的英文寫一行測試結果或工作感受。</li>
+<li>今天有學習，但很累，只留下「我今天碰到什麼」的紀錄。</li>
+</ul>
+<p>碎碎念不需要完整、不需要像文章，也不要求一次解決文法。它的任務只是保存接觸痕跡，讓之後有材料可以回看。</p>
+<h3 id="什麼時候升級成文章"><a href="#什麼時候升級成文章" class="headerlink" title="什麼時候升級成文章"></a>什麼時候升級成文章</h3><p>符合下列任一情況，再考慮寫成文章：</p>
+<ol>
+<li>同一個英文主題在碎碎念出現至少三次。</li>
+<li>我真的喜歡這個主題，之後會想再次閱讀或整理。</li>
+<li>已經能用自己的話說明意思，並找到至少一個實際例子。</li>
+<li>這個內容對 QA 主線、工作或生活有長期參考價值。</li>
+</ol>
+<p>沒有達到條件時，留在碎碎念就已經完成，不需要為了「看起來完整」硬寫文章。</p>
+<h3 id="英文伴走軌的能量版本"><a href="#英文伴走軌的能量版本" class="headerlink" title="英文伴走軌的能量版本"></a>英文伴走軌的能量版本</h3><ul>
+<li><strong>很累</strong>：只看一個詞，或把今天遇到的英文貼進碎碎念；3 分鐘也算完成。</li>
+<li><strong>普通</strong>：讀一小段目前單元相關的文件，記下 1–3 個詞。</li>
+<li><strong>有精神</strong>：用英文寫 3–5 句測試結果、Bug 摘要或 README 內容。</li>
+<li><strong>需要休息</strong>：不做英文，也不補課；休息本身是維持這條路徑的一部分。</li>
+</ul>
+<p>英文的進度先用「看得懂 → 說得出大意 → 能在情境中使用 → 能自己留下簡單紀錄」觀察，不用用背了幾個單字計算。碎碎念是日常紀錄，學習文章才是經過挑選、整理與沉澱的長期 archive。</p>
+<h2 id="目前的自我定位"><a href="#目前的自我定位" class="headerlink" title="目前的自我定位"></a>目前的自我定位</h2><p>我可以把過去的經驗說成：</p>
+<blockquote>
+<p>目前從事政府網站專案相關工作，接觸網站檢核、問題追蹤、資料整理及部分自動化工具應用；現在開始系統性學習軟體測試與品質管理方法。</p>
+</blockquote>
+<p>這比直接宣稱自己已經熟悉完整 QA 流程準確。這個草稿夾的作用，是把「接觸過」逐步轉成「能解釋、能實作、能留下證據」。</p>
+<h2 id="42-天完成後再做的事"><a href="#42-天完成後再做的事" class="headerlink" title="42 天完成後再做的事"></a>42 天完成後再做的事</h2><ul>
+<li>依作品與實作感受，決定要深入 Web QA、測試自動化、App 測試或回到 PM 的品質協作。</li>
+<li>回頭檢查停車場，只選一個延伸主題進入下一輪。</li>
+<li>將工作經驗去識別化後，評估是否能整理成網站品質檢核作品；不直接公開客戶資料、網址、帳號或內部畫面。</li>
+</ul>
+<h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>進度</th>
+<th>新增理解</th>
+<th>還沒回答的問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026-09-04</td>
+<td>改為 42 天挑戰</td>
+<td>把系列拆成 6 個有過關條件的單元，並用每日產物與停車場限制發散</td>
+<td>第一個練習產品與第一天的測試範圍要如何定得足夠小？</td>
+</tr>
+<tr>
+<td>2026-09-04</td>
+<td>加入進度管理</td>
+<td>新知先分成必要前置、當前有幫助、之後會用與純粹好奇；進度以證據層級而不是天數計算</td>
+<td>第一個遇到的必要前置會不會需要替換哪個原定任務？</td>
+</tr>
+<tr>
+<td>2026-09-04</td>
+<td>加入英文伴走軌</td>
+<td>英文日常先放碎碎念，反覆出現或真的喜歡的主題才整理成文章，並保留休息版本</td>
+<td>第一個想升級成文章的英文主題會是什麼？</td>
+</tr>
+</tbody></table>
+<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li><strong>2026-09-04</strong>：建立網站品質與軟體測試系列，改為 42 天、6 單元的鐵人挑戰，加入必會範圍、每日產物、過關條件、學習停車場、新知分流規則與英文伴走軌。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</title>
+    <url>//learning/test-design-boundary-risk-based-testing/</url>
+    <content><![CDATA[<p>這篇是「網站品質與軟體測試」系列的第二階段。重點不是把測試案例越寫越多，而是學會說明：為什麼選這些條件、哪些案例可以代表一群輸入、哪些例外值得優先確認。</p>
+<p><strong>系列索引</strong>：<a href="../website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>資料狀態：建立測試設計框架，尚未以完整功能案例驗證</strong></p>
+</blockquote>
+<h2 id="本單元一定要會"><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
+<li>能用等價類別與邊界值分析，說明為什麼挑選某些輸入值。</li>
+<li>能用決策表整理兩個以上條件組合的預期結果。</li>
+<li>能用狀態轉換描述登入、逾時、登出或閱讀進度等狀態變化。</li>
+<li>能進行一次有任務、有時間範圍、有紀錄的探索式測試。</li>
+<li>能依影響、可能性與本次修改關聯性替測試案例排序。</li>
+</ul>
+<h3 id="本單元先不學"><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p>進階組合測試、完整測試理論、效能／資安測試工具與複雜統計模型先不展開；這一輪只要能用方法選出合理案例。</p>
+<h3 id="過關條件"><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p>針對 3 個電子閱讀功能完成約 30 個案例，每個案例都標示使用的設計方法或風險理由；如果只是增加案例數，卻說不出為什麼要測，不算過關。</p>
+<h2 id="從「我還能測什麼」改成「我為什麼測這個」"><a href="#從「我還能測什麼」改成「我為什麼測這個」" class="headerlink" title="從「我還能測什麼」改成「我為什麼測這個」"></a>從「我還能測什麼」改成「我為什麼測這個」</h2><p>如果欄位規格是「允許 1–20 個字元」，逐一測試每個長度通常沒有必要。比較有理由的第一輪可以是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">0、1、20、21</span><br></pre></td></tr></table></figure>
+
+<p>它們分別碰到下界之外、下界、上界與上界之外。之後是否需要補更多值，要看功能風險、實作方式與錯誤紀錄，而不是只追求案例數量。</p>
+<h2 id="四種先學的設計方法"><a href="#四種先學的設計方法" class="headerlink" title="四種先學的設計方法"></a>四種先學的設計方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>它在解決什麼問題</th>
+<th>登入／閱讀服務例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>等價類別</td>
+<td>將預期行為相同的輸入分組，減少重複測試</td>
+<td>有效帳號、無效帳號、空白帳號</td>
+</tr>
+<tr>
+<td>邊界值分析</td>
+<td>找出限制值附近最容易出錯的位置</td>
+<td>密碼長度下限、檔案大小上限、頁碼第一頁與最後一頁</td>
+</tr>
+<tr>
+<td>決策表</td>
+<td>多個條件組合後，預期結果可能不同</td>
+<td>帳號狀態、密碼正確性、登入次數與驗證碼是否同時成立</td>
+</tr>
+<tr>
+<td>狀態轉換</td>
+<td>確認不同狀態與操作順序是否正確</td>
+<td>未登入、登入中、已登入、逾時、登出後重新登入</td>
+</tr>
+</tbody></table>
+<p>這些方法不是互斥的。同一個功能可以先用等價類別縮小範圍，再用邊界值補強限制值，最後用狀態轉換檢查操作順序。</p>
+<h2 id="把測試設計放進電子閱讀情境"><a href="#把測試設計放進電子閱讀情境" class="headerlink" title="把測試設計放進電子閱讀情境"></a>把測試設計放進電子閱讀情境</h2><p>可以選擇一個不含工作機密的閱讀服務或自建練習頁，先拆出以下功能：</p>
+<ul>
+<li>登入與登出。</li>
+<li>書籍搜尋與零結果處理。</li>
+<li>書籍清單與排序／篩選。</li>
+<li>開啟閱讀器、上一頁與下一頁。</li>
+<li>目錄、書籤、字體調整與閱讀進度。</li>
+<li>重新登入後的進度或書籤狀態。</li>
+</ul>
+<p>每個功能都先寫「主要成功路徑」，再補「輸入邊界」「狀態變化」「中斷與恢復」「裝置差異」等測試方向。這樣可以把我作為長期數位閱讀使用者的直覺，轉成別人也能執行的測試條件。</p>
+<h2 id="探索式測試：保留直覺，但給它任務邊界"><a href="#探索式測試：保留直覺，但給它任務邊界" class="headerlink" title="探索式測試：保留直覺，但給它任務邊界"></a>探索式測試：保留直覺，但給它任務邊界</h2><p>探索式測試不是漫無目的地亂按，而是在有限時間內，一邊學習產品、一邊設計與執行測試。可以先設定任務，例如：</p>
+<blockquote>
+<p>在 30 分鐘內確認閱讀器從搜尋結果開啟、翻頁、調整字體、加入書籤、返回列表，再重新開啟時，主要狀態是否一致。</p>
+</blockquote>
+<p>執行時記錄：</p>
+<ul>
+<li>測試任務與時間範圍。</li>
+<li>實際走過的路徑與使用資料。</li>
+<li>觀察到的疑問、異常與待確認事項。</li>
+<li>哪些行為值得在之後固定成 Test Case。</li>
+</ul>
+<h2 id="用風險決定先測什麼"><a href="#用風險決定先測什麼" class="headerlink" title="用風險決定先測什麼"></a>用風險決定先測什麼</h2><p>初步可用三個問題排序：</p>
+<ol>
+<li>如果失敗，對使用者或產品的影響有多大？</li>
+<li>這個情境發生的可能性有多高？</li>
+<li>這次修改與它的關聯程度有多高？</li>
+</ol>
+<p>登入、付費、閱讀權限、進度同步與資料保存，通常比單純的文字間距更需要先確認；但這只是起點，仍要依實際產品與發布範圍調整。風險排序不是替測試找藉口少做，而是讓有限時間先用在最可能造成重大影響的地方。</p>
+<h2 id="這篇的實作作業"><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><ol>
+<li>選 3 個電子閱讀相關功能。</li>
+<li>每個功能先列主要成功路徑，再用至少 2 種測試設計方法補案例。</li>
+<li>累積約 30 個 Test Cases，並在每個案例旁寫下選擇理由。</li>
+<li>做一次 30 分鐘探索式測試，留下測試任務、路徑與觀察紀錄。</li>
+<li>為案例標上優先度，說明哪些會進入日後的回歸測試。</li>
+</ol>
+<h2 id="我需要留意的限制"><a href="#我需要留意的限制" class="headerlink" title="我需要留意的限制"></a>我需要留意的限制</h2><ul>
+<li>邊界值只能指出值得檢查的位置，不能證明其他輸入都正確。</li>
+<li>等價類別是否真的等價，要看需求與實作，不能只按數字猜。</li>
+<li>風險排序需要產品脈絡，不是測試人員單方面決定的絕對真理。</li>
+<li>探索式測試的觀察仍要整理成可溝通的證據，不能只留下個人印象。</li>
+</ul>
+<h2 id="還沒回答的問題"><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
+<li>測試案例要細到什麼程度，才能讓不同人執行仍有一致結果？</li>
+<li>同一個案例適合保留為手動測試，還是值得轉成自動化？</li>
+<li>如何把內容、無障礙、響應式與資料狀態等非功能風險放入同一份發布判斷？</li>
+</ul>
+<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li><strong>2026-09-04</strong>：建立系列第二階段筆記，整理等價類別、邊界值、決策表、狀態轉換、探索式與風險導向測試。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>討論GEO篇一</title>
+    <url>/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/</url>
+    <content><![CDATA[<h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
+ <span id="more"></span>
+
+<h3 id="1-挑戰與痛點"><a href="#1-挑戰與痛點" class="headerlink" title="1.挑戰與痛點"></a>1.挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
+<p><strong>思考方向轉向</strong></p>
+<ol>
+<li>民眾如果不點到政府網頁</li>
+<li>政府資訊無法準確傳達</li>
+<li>政績與績效(或相對的流量)將出現問題</li>
+</ol>
+<p><strong>在不點到網頁”實際觀測資訊”時</strong></p>
+<ol>
+<li>以關鍵字與網頁排序為主的SEO重要性降低</li>
+<li>以直接出現在引用資源且被AI總結重要性提高</li>
+</ol>
+<p><strong>政府網頁的挑戰</strong></p>
+<ol>
+<li>時事性資訊逐漸轉向社群平台公布</li>
+<li>重要的補助與政策宣導績效仍然會透過網頁但”層層堆疊”</li>
+<li>多數牽涉民眾與廠商的業務很多轉入特定系統</li>
+</ol>
+<p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
+<blockquote>
+<p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
+</blockquote>
+<h3 id="2-GEO的定義"><a href="#2-GEO的定義" class="headerlink" title="2.GEO的定義"></a>2.GEO的定義</h3><p>生成式引擎優話(GEO)是專注於創建和優化內容，使其更容易被人工智慧聊天機器人和生成式搜尋引擎發現、理解和使用的一種實踐。</p>
+<blockquote>
+<p>Generative Engine Optimization (GEO) is an emerging practice focused on creating and optimizing content to be easily discovered, understood, and used by AI chatbots and generative search engines.</p>
+</blockquote>
+<p>但對我來說，GEO 的概念，更像是數位世界裡對「網頁意義」的<strong>涵攝 (Subsumption)</strong>。</p>
+<p><strong>涵攝說明</strong><br>這是一個法律概念。在法律適用時會遇到，通常會透過大小前提形成結論：將「生活事實」，通過路徑歸入「法律規範要件」，最終產生「特定法律效果」。</p>
+<ul>
+<li><strong>法規範(大前提)</strong> <code>&lt;-&gt;</code> <strong>具體生活事實(小前提)</strong> <code>&lt;-&gt;</code> <strong>特定法律效果(結論)</strong>：<br>這個概念特別在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實(任意變數)合於規範要件 (<code>f(x)</code>)，則會產出對應的法律效果 (<code>y</code>)。</li>
+<li>事實不是放入函數中的給定的(<code>x</code>)值，而是想像法律規範在現實有一個具體的規範範圍，當具體事實在現實中與函數交集，則開始討論涵攝（歸入）：將事實套入法律，確認是否符合要件。<blockquote>
+<p><strong>舉例來說</strong><br>法律規定（大前提）：刑法第320條規定，意圖為自己或第三人不法之所有，而竊取他人之動產者，為竊盜罪。<br>案件事實（小前提）：甲偷偷拿走了乙的錢包。<br>涵攝過程：甲的行為符合「竊取他人動產」的構成要件。<br>法律結論：甲觸犯刑法上的竊盜罪。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>SEO 與 GEO 的區別實益</strong><br>回到 GEO 的操作型定義，要讓 AI 理解我們的網頁，操作上我認為可理解是一種數位效果 (<code>y</code>)。因此，透過尋找數位內容中(案件事實)並讓它合於 <code>f(x)</code> 的要件，這個涵攝動作往更深度討論的話應是學術界發展許久的本體論 (Ontology) 與知識圖譜，若實際一點，這應是 SEO 與 GEO 的分野：</p>
+<ul>
+<li><strong>SEO (面對人)</strong>：網頁像是一個貼滿「關鍵字」的紙箱。搜尋引擎的排序是一種觀察關鍵字相似度的「模糊機率關聯」，「計算」使用者的意圖跟網頁的關聯，想像世界裡面沒有 <code>y = f(x)</code>。</li>
+<li><strong>GEO (面對 AI)</strong>：偏向透過精準的「實體定義 (Entities)」，進行數位涵攝，讓 AI 能明確發現、理解和使用，想像的世界裡若符合設定規範則可做出推論(透過<a href="https://schema.org/%E8%A6%8F%E7%AF%84)%E3%80%82">https://schema.org/規範)。</a></li>
+</ul>
+<blockquote>
+<p>Schema.org是一個協作性的社群活動，其使命是創建、維護和推廣互聯網、網頁、電子郵件等平台上的結構化資料模式。<br>Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.</p>
+</blockquote>
+<h3 id="3-實踐-GEO-的涵攝路徑"><a href="#3-實踐-GEO-的涵攝路徑" class="headerlink" title="3.實踐 GEO 的涵攝路徑"></a>3.實踐 GEO 的涵攝路徑</h3><p>在這個思考方向下，我們該如何實踐 GEO？</p>
+<ol>
+<li><strong>將 Schema.org 視為「規範要件」</strong>：例如將 <code>GovernmentOrganization</code> 視為定義規則。</li>
+<li><strong>將網頁內容視為「具體事實」</strong>：檢視網站既有的業務標籤與內容。</li>
+<li><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)。</li>
+<li><strong>達成數位效果</strong>：當事實合於要件，AI 就能直接達成「權威性引用」與「邏輯推論」。</li>
+</ol>
+<p><strong>數位世界的函數對應：y &#x3D; f(x)</strong><br>總結這個實踐過程，我們必須明確定義這套涵攝動作：</p>
+<ul>
+<li><strong>規範要件 <code>f()</code></strong>：權威實體應具備的構成要件（如：發布者、管轄領域等 Schema 定義）。<blockquote>
+<p>援引法源與規範要件 (@context &amp; @type)：首先，在 JSON-LD 的開頭宣告引用的法典（@context: <a href="https://schema.org),並將/">https://schema.org），並將</a> Schema.org 裡的定義（如 GovernmentOrganization）視為我們要適用的法律規範要件。</p>
+</blockquote>
+</li>
+<li><strong>具體事實 <code>x</code></strong>：網站上的客觀文字與資料。<blockquote>
+<p>釐清具體事實（網頁內容）：盤點並檢視網站畫面上既有的客觀事實，例如網頁標題、發布單位，以及承辦人勾選的「環境衛生」等業務標籤。</p>
+</blockquote>
+</li>
+<li><strong>涵攝動作</strong>：透過 JSON-LD 進行對應，將事實 <code>x</code> 歸入規範 <code>f()</code>。<blockquote>
+<p>賦予身分並完成涵攝 (@id &amp; 關聯屬性)：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)，更必須透過 @id 為這個實體鑄造唯一的「身分證字號」，確保事實被精準歸入規範中。</p>
+</blockquote>
+</li>
+<li><strong>特定效果 <code>y</code></strong>：當具體事實成功涵攝進規範要件，產出的結果即是「AI 的確定性理解」。<blockquote>
+<p>達成特定數位效果 (AI 推論)：當事實完美合於要件，且具備了唯一身分，AI 就不再需要依賴關鍵字相似度去『瞎猜』。我們直接達成了「權威性引用」與「邏輯推論」的數位效果，讓官方資訊成為 AI 產出答案時不可動搖的法理前提。</p>
+</blockquote>
+</li>
+</ul>
+<p>如此設定的操作性定義，再加上實作與機關溝通成本，能讓政府資訊逐漸成為「AI 推論時的法理前提」，將這個方向納入網頁改版中，將能建立數位解釋權的基礎建設。</p>
+<blockquote>
+<p> 接續討論Schema.org的規範的了解方式</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>觀念與實驗</category>
+      </categories>
+      <tags>
+        <tag>學習筆記</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>台中獨旅記</title>
     <url>/2024/07/14/%E9%9A%A8%E7%AD%86/%E5%8F%B0%E4%B8%AD%E7%8D%A8%E6%97%85%E8%A8%98/</url>
     <content><![CDATA[<h2 id="旅遊紀錄：台中旅遊"><a href="#旅遊紀錄：台中旅遊" class="headerlink" title="旅遊紀錄：台中旅遊"></a>旅遊紀錄：台中旅遊</h2><h3 id="旅遊歷程"><a href="#旅遊歷程" class="headerlink" title="旅遊歷程"></a>旅遊歷程</h3><p>學校暑假的時候有時候會多放週五，之前因為朋友決定結束北漂回台中遠距工作，就答應要去台中找他，趁著暑假有比較多假期的時候立即前往，但老實說獨旅的時候很少，有目的性的獨自旅行這應該是第一次，但既然決定就出發了吧。</p>
@@ -2555,6 +3517,38 @@
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-From The Start</title>
+    <url>/2026/05/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-From-The-Start/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Laufey 的 From The Start
+      <br>
+      出自專輯 Bewitched
+      <br>
+      <a href="https://open.spotify.com/track/43iIQbw5hx986dUEZbr3eN?si=3972e71ff23f41c9" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_From_The_Start.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     我喜歡這首的放鬆感，尤其是歌曲中段，而且這樣來回調整的歌曲速度也對我來說很特別，適合大概是早上起床吃麥當勞的咖啡廳情景？越聽越覺得感覺到歌曲的味道(類似奇怪的回甘，但可能這對我來說就是獨屬於爵士音樂的樂趣)
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-How long will I love you</title>
     <url>/2026/07/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-How-long-will-I-love-you/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2582,38 +3576,6 @@
 <pre><code>這種近乎笨拙卻又無比溫柔的執著，總能深深觸動內心。而這份小心翼翼追求的完美，最終在那場狂風暴雨的婚禮中迎來了翻轉。滂沱的大雨雖然打亂了一切，卻沒有毀掉任何美好，反而讓他們在混亂中笑得無所畏懼。無論我們多渴望透過重來去追求毫無瑕疵的完美，最終能陪伴我們抵擋現實風雨的，依然是那份最真摯且不加掩飾的情感。
 </code></pre>
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-From The Start</title>
-    <url>/2026/05/19/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-From-The-Start/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Laufey 的 From The Start
-      <br>
-      出自專輯 Bewitched
-      <br>
-      <a href="https://open.spotify.com/track/43iIQbw5hx986dUEZbr3eN?si=3972e71ff23f41c9" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_From_The_Start.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     我喜歡這首的放鬆感，尤其是歌曲中段，而且這樣來回調整的歌曲速度也對我來說很特別，適合大概是早上起床吃麥當勞的咖啡廳情景？越聽越覺得感覺到歌曲的味道(類似奇怪的回甘，但可能這對我來說就是獨屬於爵士音樂的樂趣)
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -2691,74 +3653,6 @@
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-My Heart Will Go On</title>
-    <url>/2026/07/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-My-heart-will-go-on/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Celine Dion 的 My Heart Will Go On
-      <br>
-      出自專輯 Lets talk about love
-      <br>
-      <a href="https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq?si=32c9f4e989e84c2b" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_my_heart_will_go_on.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    《My Heart Will Go On》這首歌在《鐵達尼號》最需要情感升華的時刻，像是把船上的悲傷推向最高點。歌手的唱法帶點法語的味道，雖然說不清楚，讓我聽了會想到「我心永恆」的情緒。雖然對電影情節已模糊，但每次聽到副歌那種鐵達尼與情感託付的情緒又會被拉起！
-
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-Nothing‘s Gonna Stop Us Now</title>
-    <url>/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Starship 的 Nothing‘s Gonna Stop Us Now
-      <br>
-      出自專輯 No Protection
-      <br>
-      <a href="https://open.spotify.com/track/3X7uFMzJrEE0sxn62qd8Ch?si=e7a08769fd0d460a" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Nothing‘s_Gonna_Stop_Us_Now.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span>
-轉載自個人ig每日點播> chjuhsu05
-<br>
-我聽過這首但我當時沒感受到這首歌的熱情，我現在超喜歡let them say後面這段，充滿力量的聲音跟那種隨之轉變的磅礴，整首歌也是現在這個時空裡很難感受到的朝氣。
-<br>
-非常推薦啊啊啊
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-Right Here Waiting</title>
     <url>/2026/07/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Right-here-waiting/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2827,6 +3721,74 @@
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-Nothing‘s Gonna Stop Us Now</title>
+    <url>/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Starship 的 Nothing‘s Gonna Stop Us Now
+      <br>
+      出自專輯 No Protection
+      <br>
+      <a href="https://open.spotify.com/track/3X7uFMzJrEE0sxn62qd8Ch?si=e7a08769fd0d460a" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_Nothing‘s_Gonna_Stop_Us_Now.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span>
+轉載自個人ig每日點播> chjuhsu05
+<br>
+我聽過這首但我當時沒感受到這首歌的熱情，我現在超喜歡let them say後面這段，充滿力量的聲音跟那種隨之轉變的磅礴，整首歌也是現在這個時空裡很難感受到的朝氣。
+<br>
+非常推薦啊啊啊
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-My Heart Will Go On</title>
+    <url>/2026/07/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-My-heart-will-go-on/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Celine Dion 的 My Heart Will Go On
+      <br>
+      出自專輯 Lets talk about love
+      <br>
+      <a href="https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq?si=32c9f4e989e84c2b" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_my_heart_will_go_on.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    《My Heart Will Go On》這首歌在《鐵達尼號》最需要情感升華的時刻，像是把船上的悲傷推向最高點。歌手的唱法帶點法語的味道，雖然說不清楚，讓我聽了會想到「我心永恆」的情緒。雖然對電影情節已模糊，但每次聽到副歌那種鐵達尼與情感託付的情緒又會被拉起！
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-Way back into love</title>
     <url>/2026/07/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Way-back-into-love/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -2854,41 +3816,6 @@
     這首歌帶著一種很特別的甜蜜感，不是單方面的一廂情願，而是兩個人願意為了彼此重新投入、互相理解的深刻連結。或許正是這種早期情歌才有的單純與真摯，沒有太多複雜的包裝，只有互相陪伴的純粹，讓人在靜靜聆聽時，能感受到一種難以言喻的踏實與溫暖。
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-When you say nothing at all</title>
-    <url>/2026/01/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-When-you-say-nothing-at-all/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 Ronan Keating 的 When you say nothing at all
-      <br>
-      出自專輯 Notting Hill
-      <br>
-      <a href="https://open.spotify.com/track/0gcjc7Vt5xtcfmJgf6g2IO?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_when_you_say_nothing_at_all.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    The smile on your face lets me know that you need me我超愛這段副歌開始前的轉折，對我來說本來是一首清新感字正腔圓的英文歌，突然間就想轉我的椅子！按下按鈕！
-    不過這首歌的立意我也是很愛的，The smile on your face lets me know that you need me
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3001,6 +3928,41 @@
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-When you say nothing at all</title>
+    <url>/2026/01/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-When-you-say-nothing-at-all/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Ronan Keating 的 When you say nothing at all
+      <br>
+      出自專輯 Notting Hill
+      <br>
+      <a href="https://open.spotify.com/track/0gcjc7Vt5xtcfmJgf6g2IO?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_when_you_say_nothing_at_all.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    The smile on your face lets me know that you need me我超愛這段副歌開始前的轉折，對我來說本來是一首清新感字正腔圓的英文歌，突然間就想轉我的椅子！按下按鈕！
+    不過這首歌的立意我也是很愛的，The smile on your face lets me know that you need me
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-free magic</title>
     <url>/2026/01/30/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-free-magic/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3069,40 +4031,6 @@
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-それぞれに</title>
-    <url>/2026/01/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%AB/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 中孝介 的 それぞれに
-      <br>
-      出自專輯 THE BEST OF KOUSUKE ATARI
-      <br>
-      <a href="https://open.spotify.com/track/2Zca2tML8v9K9gWskcKoUS?si=30f6b74d93c14041" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_それぞれに.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span>
-轉載自個人ig每日點播> chjuhsu05
-<br>
-如果要找這首歌的話可能打各自遠揚會更好找到，這首歌的唱法有時候會讓我想到張學友，原來這是很日式的唱法？ 2026的第一首歌，特別想聽這首！我喜歡找到翻譯裡面那段相逢笑容的描述，有時候真的挺想大家的，可惜沒有辦法跟大家一直保持聯繫。
-<br>
-非常推薦啊啊啊
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-Tears</title>
     <url>/2026/07/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-tears/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3129,6 +4057,40 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 
 <p>每次聽這首歌，心裡總會湧起一種說不太清楚的複雜感受。它的旋律確實瀰漫著濃厚的憂鬱氣息，但那種憂鬱卻不是深不見底的絕望，反而像是在悲傷中透著一絲堅韌與釋懷。雖然很難用精準的詞彙去完整描述這種觸動，但這份在脆弱與力量之間游移的情感，真的非常值得靜下心來好好聽一聽。</p>
 <p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-それぞれに</title>
+    <url>/2026/01/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%AB/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 中孝介 的 それぞれに
+      <br>
+      出自專輯 THE BEST OF KOUSUKE ATARI
+      <br>
+      <a href="https://open.spotify.com/track/2Zca2tML8v9K9gWskcKoUS?si=30f6b74d93c14041" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_それぞれに.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span>
+轉載自個人ig每日點播> chjuhsu05
+<br>
+如果要找這首歌的話可能打各自遠揚會更好找到，這首歌的唱法有時候會讓我想到張學友，原來這是很日式的唱法？ 2026的第一首歌，特別想聽這首！我喜歡找到翻譯裡面那段相逢笑容的描述，有時候真的挺想大家的，可惜沒有辦法跟大家一直保持聯繫。
+<br>
+非常推薦啊啊啊
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3275,40 +4237,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-一直很安靜</title>
-    <url>/2026/07/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E7%9B%B4%E5%BE%88%E5%AE%89%E9%9D%9C/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 阿桑 的 一直很安靜
-      <br>
-      出自專輯 寂寞在唱歌
-      <br>
-      <a href="https://open.spotify.com/track/3SViwkY1IP8cVvcBmcIkxn?si=450a415c89194778" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_一直很安靜.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-阿桑雖然他整首歌都用平靜的聲線，但在這裡卻隱隱帶出一種暗湧的情緒。歌詞講的是安靜，卻讓人感受到「愛」的回應與沉默之間的矛盾。整首歌從鋪陳到敘述，都讓人感受到他鋪墊的感情，彷彿在平靜的水面下，有股深沉的醞釀在悄悄翻湧。每次聽到這段，我都會想到那些說不出口的心事，一種說不清的沉重卻又有人能懂的感覺。
-
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-一見鍾情</title>
     <url>/2026/05/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E8%A6%8B%E9%8D%BE%E6%83%85/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3336,6 +4264,40 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     這首除了真誠之外，其實從整首都能聽出那種天真但就是你的絕對感，也因為特殊的唱法並不會在歌曲循環中感覺到很膩，我自己非常喜歡。
 
  
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-一直很安靜</title>
+    <url>/2026/07/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E7%9B%B4%E5%BE%88%E5%AE%89%E9%9D%9C/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 阿桑 的 一直很安靜
+      <br>
+      出自專輯 寂寞在唱歌
+      <br>
+      <a href="https://open.spotify.com/track/3SViwkY1IP8cVvcBmcIkxn?si=450a415c89194778" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_一直很安靜.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+阿桑雖然他整首歌都用平靜的聲線，但在這裡卻隱隱帶出一種暗湧的情緒。歌詞講的是安靜，卻讓人感受到「愛」的回應與沉默之間的矛盾。整首歌從鋪陳到敘述，都讓人感受到他鋪墊的感情，彷彿在平靜的水面下，有股深沉的醞釀在悄悄翻湧。每次聽到這段，我都會想到那些說不出口的心事，一種說不清的沉重卻又有人能懂的感覺。
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3477,40 +4439,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-像我這樣的人</title>
-    <url>/2026/08/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%83%8F%E6%88%91%E9%80%99%E6%A8%A3%E7%9A%84%E4%BA%BA/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 毛不易 的 像我這樣的人
-      <br>
-      出自專輯 平凡的一天
-      <br>
-      <a href="https://open.spotify.com/track/7pZYb3XtZ0wMtORwnVY9SE?si=dd18fda79f2c4b5f" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_像我這樣的人.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-這首我第一次聽到就整個被擊中，這種對自己小心翼翼的解釋，不甘平凡但要接受平凡，有時候更多的迷茫與尋找真的占據了更大部分的焦慮，而又有時候我們總是不禁想著像我這樣的人會怎樣做呢？沒有像我這樣的人大概就是這樣聽著歌慢慢讓傷口與無力自己努力癒合一點，最後整首歌收在"會不會有人心疼"真的是最被擊中的地方，像我這樣莫名其妙的人也想要能想像擁有著我實際上摸不到的東西。
-
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-你好嗎</title>
     <url>/2026/02/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E5%A5%BD%E5%97%8E/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3546,6 +4474,40 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-像我這樣的人</title>
+    <url>/2026/08/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%83%8F%E6%88%91%E9%80%99%E6%A8%A3%E7%9A%84%E4%BA%BA/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 毛不易 的 像我這樣的人
+      <br>
+      出自專輯 平凡的一天
+      <br>
+      <a href="https://open.spotify.com/track/7pZYb3XtZ0wMtORwnVY9SE?si=dd18fda79f2c4b5f" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_像我這樣的人.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+這首我第一次聽到就整個被擊中，這種對自己小心翼翼的解釋，不甘平凡但要接受平凡，有時候更多的迷茫與尋找真的占據了更大部分的焦慮，而又有時候我們總是不禁想著像我這樣的人會怎樣做呢？沒有像我這樣的人大概就是這樣聽著歌慢慢讓傷口與無力自己努力癒合一點，最後整首歌收在"會不會有人心疼"真的是最被擊中的地方，像我這樣莫名其妙的人也想要能想像擁有著我實際上摸不到的東西。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-全世界我最喜歡你（可是你都不知道）</title>
     <url>/2026/08/25/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%A8%E4%B8%96%E7%95%8C%E6%88%91%E6%9C%80%E5%96%9C%E6%AD%A1%E4%BD%A0%EF%BC%88%E5%8F%AF%E6%98%AF%E4%BD%A0%E9%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%EF%BC%89/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3571,42 +4533,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 這首歌其實是難得推薦但我可能只重複不到20次單曲循環的，比起聽感這首歌我最喜歡的地方大概是這個可愛與概念吧，那種不計較對方想法的喜歡，但有偷偷期許想拜託對方喜歡自己的心意。
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-其實我真的很在乎</title>
-    <url>/2026/05/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%B6%E5%AF%A6%E6%88%91%E7%9C%9F%E7%9A%84%E5%BE%88%E5%9C%A8%E4%B9%8E/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 姜育恆 的 其實我真的很在乎
-      <br>
-      出自專輯 其實我真的很在乎
-      <br>
-      <a href="https://open.spotify.com/track/4dSYWupeStIqSivFfWydA0?si=be1538778bf046a5" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_其實我真的很在乎.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    我覺得這首很高程度展現了歌手的特色，尤其是那種輕柔的表達方式(跟現在習慣的假音氣聲又不同)，但又在副歌情緒加強的時候能順著上去表達，保留著力度與哀愁感。
-
- 
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3679,29 +4605,33 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </categories>
   </entry>
   <entry>
-    <title>歌曲推薦-動不動就說愛我</title>
-    <url>/2026/05/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8B%95%E4%B8%8D%E5%8B%95%E5%B0%B1%E8%AA%AA%E6%84%9B%E6%88%91/</url>
+    <title>歌曲推薦-其實我真的很在乎</title>
+    <url>/2026/05/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%85%B6%E5%AF%A6%E6%88%91%E7%9C%9F%E7%9A%84%E5%BE%88%E5%9C%A8%E4%B9%8E/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 芝麻龍眼 的 動不動就說愛我
+      推薦 姜育恆 的 其實我真的很在乎
       <br>
-      出自專輯 芝麻&龍眼精選輯2
+      出自專輯 其實我真的很在乎
       <br>
-      <a href="https://open.spotify.com/track/58Qw7or324Ci84R42VcPGX?si=dfd67df6523f4abf" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/4dSYWupeStIqSivFfWydA0?si=be1538778bf046a5" target="_blank">收聽連結 -> 點此前往</a>
     </p>
-  </div>
+</div>
 
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_動不動就說愛我.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_其實我真的很在乎.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-     渾厚與高音這首真的搭配得很適合，尤其是我喜歡後面的重唱配合，動不動就說愛我雖然不長但記憶點卻非常深刻，從開頭的低音切入高音搭配再到重唱與收尾，尤其兩次切入都有換唱法，可能歌詞還好但我真的覺得這首很不錯。
+    我覺得這首很高程度展現了歌手的特色，尤其是那種輕柔的表達方式(跟現在習慣的假音氣聲又不同)，但又在副歌情緒加強的時候能順著上去表達，保留著力度與哀愁感。
+
+ 
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3740,29 +4670,132 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-回到過去</title>
-    <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
+    <title>歌曲推薦-動不動就說愛我</title>
+    <url>/2026/05/20/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8B%95%E4%B8%8D%E5%8B%95%E5%B0%B1%E8%AA%AA%E6%84%9B%E6%88%91/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
   
   <div style="flex: 1; text-align: left;">
     <p style="margin-top: 0;">
-      推薦 周杰倫 的 回到過去
+      推薦 芝麻龍眼 的 動不動就說愛我
       <br>
-      出自專輯 八度空間
+      出自專輯 芝麻&龍眼精選輯2
       <br>
-      <a href="https://open.spotify.com/track/7n6RsQEj7Tjd5QwJ1xm0dF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/58Qw7or324Ci84R42VcPGX?si=dfd67df6523f4abf" target="_blank">收聽連結 -> 點此前往</a>
     </p>
   </div>
 
-<div style="width: 150px; flex-shrink: 0;">
-<img src="/images/song_回到過去.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-</div>
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_動不動就說愛我.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
 
 </div>
 <span id="more"></span> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    我一直很喜歡這首歌，有天突然發現mv是在輔大拍的就更喜歡了，消失的舊文園，熟悉的濟時樓跟校園的各個角落，從來沒有發現我是這麼的喜歡輔大，或是單純的想回到過去？拋棄掉關於回憶的部分，這首歌我覺得周杰倫真的有一個能稱為特色的地方是有時候歌詞也能當成旋律，作為歌好聽，不想聽歌詞的時候整體搭配起來並不會覺得出戲，這首歌在最後用漸弱的處理我也很喜歡。
+     渾厚與高音這首真的搭配得很適合，尤其是我喜歡後面的重唱配合，動不動就說愛我雖然不長但記憶點卻非常深刻，從開頭的低音切入高音搭配再到重唱與收尾，尤其兩次切入都有換唱法，可能歌詞還好但我真的覺得這首很不錯。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-千千闋歌</title>
+    <url>/2026/08/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8D%83%E5%8D%83%E9%97%8B%E6%AD%8C/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 陳慧嫻 的 千千闋歌
+      <br>
+      出自專輯 永遠是你的朋友
+      <br>
+      <a href="https://open.spotify.com/track/42suymP38HAIBl0wiDfpst?si=82b89bacda4f4ae0" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_千千闋歌.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+這首歌一開始是因為張國榮，但陳慧嫻的歌聲中有那種清冷與克制。整首歌的詞意極為工整對稱，甚至抽離了關於相守的細瑣糾纏，僅僅把所有重量壓在「今晚的月光」與「來日的晚星」之間。陳慧嫻的聲線始終冷靜端莊，，反而給了聽者最大的安全感與留白，讓每個人都能安心把自己的心事投射進去，而不覺得被冒犯。
+
+<p>不知道是不是那種清醒的宿命感會更精準一點，但至少這種情歌意外地也上口好聽。</p>
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-告白（고백합니다）</title>
+    <url>/2026/09/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%91%8A%E7%99%BD%EF%BC%88%EA%B3%A0%EB%B0%B1%ED%95%A9%EB%8B%88%EB%8B%A4%EF%BC%89/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 ftisland 的 告白（고백합니다）
+      <br>
+      出自專輯 Return
+      <br>
+      <a href="https://open.spotify.com/track/2SEUyfGwcVgTQaU2ctBYfP?si=74ecf3df305942ae" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_告白（고백합니다）.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+最初是在《我們結婚了》的片段裡聽見的，只是一段簡單的彈唱，那種近乎赤裸的告白與傾訴感真的是讓人印象深刻，這首歌展現的是一種毫無保留的少年氣，那種把所有的笨拙、忐忑與真誠全部交付，鼓足了全身的勇氣，把胸口裡積壓已久的心意，一字一句、毫無防禦地交到對方手裡的那種絕對。就像定格在螢幕裡的特寫鏡頭，一雙無比坦率、只想把全世界最好的自己全都給予的特寫。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-唯一</title>
+    <url>/2026/07/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%94%AF%E4%B8%80/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 王力宏 的 唯一
+      <br>
+      出自歌曲同名專輯 唯一
+      <br>
+      <a href="https://open.spotify.com/track/6LLyiqMoNoex4Zu0ka4iF2?si=2932adf7905846af" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_唯一.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    雖然是早期的作品，但那種純樸的流行旋律和深情的唱腔，真的很有感染力，它總能把我拉回那個年代。那種感受其實很難具體形容，但就是會讓人忍不住沉浸。
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3808,6 +4841,38 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-回到過去</title>
+    <url>/2026/01/26/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%9E%E5%88%B0%E9%81%8E%E5%8E%BB/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 周杰倫 的 回到過去
+      <br>
+      出自專輯 八度空間
+      <br>
+      <a href="https://open.spotify.com/track/7n6RsQEj7Tjd5QwJ1xm0dF?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+<div style="width: 150px; flex-shrink: 0;">
+<img src="/images/song_回到過去.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    我一直很喜歡這首歌，有天突然發現mv是在輔大拍的就更喜歡了，消失的舊文園，熟悉的濟時樓跟校園的各個角落，從來沒有發現我是這麼的喜歡輔大，或是單純的想回到過去？拋棄掉關於回憶的部分，這首歌我覺得周杰倫真的有一個能稱為特色的地方是有時候歌詞也能當成旋律，作為歌好聽，不想聽歌詞的時候整體搭配起來並不會覺得出戲，這首歌在最後用漸弱的處理我也很喜歡。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-因為寂寞</title>
     <url>/2026/04/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%9B%A0%E7%82%BA%E5%AF%82%E5%AF%9E/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -3832,41 +4897,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
      這首歌詞與歌聲真的是一聽就感覺到驚艷，雖然總說因為寂寞，但中間又隱隱聽出那種反話的內心反駁感，中間又透過層層的鋪墊去表達內心深層的不安與期待。
 
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-千千闋歌</title>
-    <url>/2026/08/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8D%83%E5%8D%83%E9%97%8B%E6%AD%8C/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 陳慧嫻 的 千千闋歌
-      <br>
-      出自專輯 永遠是你的朋友
-      <br>
-      <a href="https://open.spotify.com/track/42suymP38HAIBl0wiDfpst?si=82b89bacda4f4ae0" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_千千闋歌.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-這首歌一開始是因為張國榮，但陳慧嫻的歌聲中有那種清冷與克制。整首歌的詞意極為工整對稱，甚至抽離了關於相守的細瑣糾纏，僅僅把所有重量壓在「今晚的月光」與「來日的晚星」之間。陳慧嫻的聲線始終冷靜端莊，，反而給了聽者最大的安全感與留白，讓每個人都能安心把自己的心事投射進去，而不覺得被冒犯。
-
-<p>不知道是不是那種清醒的宿命感會更精準一點，但至少這種情歌意外地也上口好聽。</p>
-<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -3901,40 +4931,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 偷偷說這首歌我當初有想過想要在圖韻獎唱看看，我喜歡這首歌的概念，而且又適合單曲循環！喜歡與因為愛有時候就是這樣把真心拿出來。
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-夜行性動物</title>
-    <url>/2025/12/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A4%9C%E8%A1%8C%E6%80%A7%E5%8B%95%E7%89%A9/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 法蘭 的 夜行性動物
-      <br>
-      出自專輯 夜行性動物（徐珮芬詩集同名主題曲）
-      <br>
-      <a href="https://open.spotify.com/track/0L5voMzioUFL6Pm07tfvRW?si=c77add712f7b4ae5" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_夜行性動物.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span>
-來自提姆哥的投稿！
-<br>
-2025的年度總結我的聽歌年齡大概有47歲（滑稽），我習慣了王菲空靈的表達方式，意外的是這首大概聽了5-6次之後，會開始驚訝和音配合的方式，以及歌手在獨唱時的偏向呢喃的唱法開始覺得能夠單曲循環了！這首我真的蠻喜歡不如這樣後面開始的地方，然後再循環到歌手自己獨唱，似乎跨越了什麼時代的感覺！！
-<br>
-非常推薦
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -4009,6 +5005,40 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-夜行性動物</title>
+    <url>/2025/12/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A4%9C%E8%A1%8C%E6%80%A7%E5%8B%95%E7%89%A9/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 法蘭 的 夜行性動物
+      <br>
+      出自專輯 夜行性動物（徐珮芬詩集同名主題曲）
+      <br>
+      <a href="https://open.spotify.com/track/0L5voMzioUFL6Pm07tfvRW?si=c77add712f7b4ae5" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_夜行性動物.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span>
+來自提姆哥的投稿！
+<br>
+2025的年度總結我的聽歌年齡大概有47歲（滑稽），我習慣了王菲空靈的表達方式，意外的是這首大概聽了5-6次之後，會開始驚訝和音配合的方式，以及歌手在獨唱時的偏向呢喃的唱法開始覺得能夠單曲循環了！這首我真的蠻喜歡不如這樣後面開始的地方，然後再循環到歌手自己獨唱，似乎跨越了什麼時代的感覺！！
+<br>
+非常推薦
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-就值得愛了</title>
     <url>/2026/01/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%B0%B1%E5%80%BC%E5%BE%97%E6%84%9B%E4%BA%86/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -4068,40 +5098,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 葛仲珊不同於以往直率明快的節奏，這首歌帶著一種特殊的沉澱與頓挫，不用刻意高亢地唱，卻在每一個呼吸與節奏的停頓裡，精準地安放了最真實的情感與力量。歌詞裡透出的那些真摯與直白，像是撥開日常迷霧後的清澈，讓人看見在沉重現實背後，依然值得期待的積極與堅持。
 
 <p>讓人想起關於記憶與離別的課題——真正的消失從不是物理上的離開，而是徹底被遺忘；只要心裡依然記得，那份為了彼此努力的承諾就有了重量。耳邊留下的那句「就改天」分量很重。</p>
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-唯一</title>
-    <url>/2026/07/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%94%AF%E4%B8%80/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 王力宏 的 唯一
-      <br>
-      出自歌曲同名專輯 唯一
-      <br>
-      <a href="https://open.spotify.com/track/6LLyiqMoNoex4Zu0ka4iF2?si=2932adf7905846af" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_唯一.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    雖然是早期的作品，但那種純樸的流行旋律和深情的唱腔，真的很有感染力，它總能把我拉回那個年代。那種感受其實很難具體形容，但就是會讓人忍不住沉浸。
-
 <p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
@@ -4439,6 +5435,41 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>歌曲推薦-我們的故事</title>
+    <url>/2026/02/12/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%95%85%E4%BA%8B/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 天泫男孩 的 我們的故事
+      <br>
+      出自專輯 smart?
+      <br>
+      <a href="https://open.spotify.com/track/5jHui9rDOvE84VzyddLHVh" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_我們的故事.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    我大概隔了25才認識這首歌，這種R and B的團體跟唱法真的好酷，尤其是副歌重重疊疊的部分特別豐富好聽！
+ 
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌曲推薦-我一個人住</title>
     <url>/2026/05/06/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E4%B8%80%E5%80%8B%E4%BA%BA%E4%BD%8F/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -4500,41 +5531,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 我喜歡這首歌，因為它描繪了情侶相處的信任與甜蜜，以及彼此的特別感受。王力宏在情歌的表現非常到位，例如我感受到這首歌對我的特別意義，兩人的相處與其他人不同，情緣分分合合。雖然可以感受到情歌的氛圍，但旋律中的回應與真誠讓我特別喜歡。這首歌的唱法我也很喜歡，常常在路上拿起來聽，偶爾會想要跟著唱。
 
 <p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-我們的故事</title>
-    <url>/2026/02/12/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E5%80%91%E7%9A%84%E6%95%85%E4%BA%8B/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 天泫男孩 的 我們的故事
-      <br>
-      出自專輯 smart?
-      <br>
-      <a href="https://open.spotify.com/track/5jHui9rDOvE84VzyddLHVh" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_我們的故事.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    我大概隔了25才認識這首歌，這種R and B的團體跟唱法真的好酷，尤其是副歌重重疊疊的部分特別豐富好聽！
- 
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -4640,40 +5636,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-星月神話</title>
-    <url>/2026/07/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%98%9F%E6%9C%88%E7%A5%9E%E8%A9%B1/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 金莎 的 星月神話
-      <br>
-      出自歌曲同名專輯 星月神話
-      <br>
-      <a href="https://open.spotify.com/track/5bj04W68MNmSK1n6Tbndgz?si=0583843200164df8" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_星月神話.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首是當初神話的插曲，編曲用詞即使不複雜但當呂素來演唱時就真的是完全不行了，如果說前兩天的我期待是我希望金莎當時能唱的歌，那這首就是那個時空下最難受的時刻了，而且當時我才國三，為了看重播還熬夜倒三點爬起來看，完全是大崩潰。
-
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-放風吹</title>
     <url>/2026/04/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%94%BE%E9%A2%A8%E5%90%B9/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -4695,68 +5657,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
     放風吹有一種無奈感，搭配生生世世這部劇追起來更是如此，大時代下的無情與無奈通常是類似的表達方式，歌詞那種放心底放你飛的表達內斂又切合主題，相較之下同樣的大時代動盪但請回答1988卻把重心放在人物上面，我更喜歡！
 
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-期待愛</title>
-    <url>/2026/07/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%9F%E5%BE%85%E6%84%9B/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 林俊傑 和 金莎 的 期待愛
-      <br>
-      出自專輯 JJ陸
-      <br>
-      <a href="https://open.spotify.com/track/3IVh5aVZdYYxKtJ0yTap1h?si=a4d72f72496746b8" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_期待愛.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    這首單純會喜歡大概是神話裡面的金莎真的太我見猶憐了，意外聽到這首就想到假如星月神話如果有另一個版本的話想聽他唱這首，輕鬆期待而且沒有那些煩惱。
-
-<p>非常推薦啊啊啊</p>
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌曲推薦-有沒有那麼一首歌會讓你想起我</title>
-    <url>/2025/10/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%89%E6%B2%92%E6%9C%89%E9%82%A3%E9%BA%BC%E4%B8%80%E9%A6%96%E6%AD%8C%E6%9C%83%E8%AE%93%E4%BD%A0%E6%83%B3%E8%B5%B7%E6%88%91/</url>
-    <content><![CDATA[<div class="legacy-song-card" style="display: flex; gap: 20px; align-items: flex-start;">
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      總有些歌能跨越回憶，在不同的天氣跟時間裡攻擊你？
-      <br>
-      <a href="https://open.spotify.com/track/2YOECkGti9IFHkPYTZAHWl?si=0506e26353a147d0" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-  <div style="width: 150px; flex-shrink: 0;">
-    <img class="blogger-import-image" loading="lazy" decoding="async" width="312" height="317" src="/images/song_有沒有那麼一首歌會讓你想起我.webp" alt="圖片 1" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-</div>
-<span id="more"></span>
-
-<p>我自己是希望在生活之中能讓別人認為，跟我相處愉快的人，聽到這首就會讓我開始回想那些跟不同時候的自己與朋友間密切交集的時光。而這首的角度跟提問方式讓這個我們共同回憶裡面的一首歌去自由發揮，其中我還滿喜歡3:30左右那邊的表現方式，背景音樂突然減弱，有點去強調內心深處呢喃的突擊感，最近試著介紹歌曲偶爾能發現這種以前沒注意到的小設計！</p>
-<p>真誠推薦!</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2025/10/blog-post_21.html -->
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -4791,6 +5691,40 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 轉載自個人ig每日點播> chjuhsu05
     <br>
     這首從對我來說是首有領域的歌，不知道是音樂的重還是副歌的旋律朗朗上口，每次聽到都滿融入歌曲的，缺點大概就是不能單曲循環吧！太重了。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-期待愛</title>
+    <url>/2026/07/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%9F%E5%BE%85%E6%84%9B/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 林俊傑 和 金莎 的 期待愛
+      <br>
+      出自專輯 JJ陸
+      <br>
+      <a href="https://open.spotify.com/track/3IVh5aVZdYYxKtJ0yTap1h?si=a4d72f72496746b8" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_期待愛.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首單純會喜歡大概是神話裡面的金莎真的太我見猶憐了，意外聽到這首就想到假如星月神話如果有另一個版本的話想聽他唱這首，輕鬆期待而且沒有那些煩惱。
+
+<p>非常推薦啊啊啊</p>
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -4904,38 +5838,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-理想</title>
-    <url>/2026/05/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%90%86%E6%83%B3/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 趙雷 的 理想
-      <br>
-      出自專輯 吉姆餐廳
-      <br>
-      <a href="https://open.spotify.com/track/2aIHo5BAdpQoSEMnXIFsKM?si=7900a59d0a424d8d" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_理想.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     理想這首大概是記憶裡面的經典民謠吧，北方、孤獨與很多的現實與理想差距，尤其是那個想紀念你幾歲真的是陡然間被穿透了心情，有時候民謠的共鳴很強，不一定正面也不一定要有回應，就跟著民謠的鋪陳與陳述去回望的感覺，有時候會有種哀而不傷的奇怪感，但我喜歡這樣有情緒的民謠。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-燃燒一瞬間</title>
     <url>/2026/04/29/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%87%83%E7%87%92%E4%B8%80%E7%9E%AC%E9%96%93/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -4960,6 +5862,38 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     <br>
      這首的高音有一種圓潤感，是我感覺到高音特色與游刃有餘的歌，尤其是在"我願愛你用我每一個今天 相信真心經得起考驗"這個副歌的時候，雖然好聽但好像也不知道怎麼形容，只能說這個因為這個表現方式非常可以單曲循環。
 
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-理想</title>
+    <url>/2026/05/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%90%86%E6%83%B3/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 趙雷 的 理想
+      <br>
+      出自專輯 吉姆餐廳
+      <br>
+      <a href="https://open.spotify.com/track/2aIHo5BAdpQoSEMnXIFsKM?si=7900a59d0a424d8d" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_理想.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     理想這首大概是記憶裡面的經典民謠吧，北方、孤獨與很多的現實與理想差距，尤其是那個想紀念你幾歲真的是陡然間被穿透了心情，有時候民謠的共鳴很強，不一定正面也不一定要有回應，就跟著民謠的鋪陳與陳述去回望的感覺，有時候會有種哀而不傷的奇怪感，但我喜歡這樣有情緒的民謠。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -5071,40 +6005,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-給電影人的情書</title>
-    <url>/2026/02/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E9%9B%BB%E5%BD%B1%E4%BA%BA%E7%9A%84%E6%83%85%E6%9B%B8/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦  蔡琴 的 給電影人的情書
-      <br>
-      出自專輯 不悔
-      <br>
-      <a href="https://open.spotify.com/track/7dZiEriz7QNBToCqbqlTjH?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-</div>
-
-<div style="width: 150px; flex-shrink: 0;">
-
-<img src="/images/song_給電影人的情書.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-
-</div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-    第一次在金馬獎聽到之時真的很震撼，尤其是歌詞裡面對以身外身做夢這件事情真的把某種電影的寄託具體出來！飽滿的情感與演唱方式真的很配，我想電影與電影人仍然是各自獨自閃亮的個體啦！並沒有要哪一個自己成就或襯托對方，但身外身這個概念真的很棒。
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-答案</title>
     <url>/2026/08/05/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%AD%94%E6%A1%88/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -5164,6 +6064,68 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 轉載自個人ig每日點播> chjuhsu05
     <br>
     最近開始想像如果我的青春2009，假如也有個請回答2009的話會是怎麼樣的感覺，跨越類比與數位，fb的流行以及全部共同記憶這件事情慢慢的消逝，這樣的青春時代有什麼是深刻特別而且讓這個世代的人都共同懷舊的情感呢？ 這時朋友跟我說2009年的歌都超神的，頓時想到那個畢業旅行跟校外教學大家高唱周杰倫的日子。
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-有沒有那麼一首歌會讓你想起我</title>
+    <url>/2025/10/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%9C%89%E6%B2%92%E6%9C%89%E9%82%A3%E9%BA%BC%E4%B8%80%E9%A6%96%E6%AD%8C%E6%9C%83%E8%AE%93%E4%BD%A0%E6%83%B3%E8%B5%B7%E6%88%91/</url>
+    <content><![CDATA[<div class="legacy-song-card" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      總有些歌能跨越回憶，在不同的天氣跟時間裡攻擊你？
+      <br>
+      <a href="https://open.spotify.com/track/2YOECkGti9IFHkPYTZAHWl?si=0506e26353a147d0" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+  <div style="width: 150px; flex-shrink: 0;">
+    <img class="blogger-import-image" loading="lazy" decoding="async" width="312" height="317" src="/images/song_有沒有那麼一首歌會讓你想起我.webp" alt="圖片 1" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+</div>
+<span id="more"></span>
+
+<p>我自己是希望在生活之中能讓別人認為，跟我相處愉快的人，聽到這首就會讓我開始回想那些跟不同時候的自己與朋友間密切交集的時光。而這首的角度跟提問方式讓這個我們共同回憶裡面的一首歌去自由發揮，其中我還滿喜歡3:30左右那邊的表現方式，背景音樂突然減弱，有點去強調內心深處呢喃的突擊感，最近試著介紹歌曲偶爾能發現這種以前沒注意到的小設計！</p>
+<p>真誠推薦!</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2025/10/blog-post_21.html -->
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-給電影人的情書</title>
+    <url>/2026/02/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B5%A6%E9%9B%BB%E5%BD%B1%E4%BA%BA%E7%9A%84%E6%83%85%E6%9B%B8/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦  蔡琴 的 給電影人的情書
+      <br>
+      出自專輯 不悔
+      <br>
+      <a href="https://open.spotify.com/track/7dZiEriz7QNBToCqbqlTjH?autoplay=true" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+</div>
+
+<div style="width: 150px; flex-shrink: 0;">
+
+<img src="/images/song_給電影人的情書.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+
+</div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    第一次在金馬獎聽到之時真的很震撼，尤其是歌詞裡面對以身外身做夢這件事情真的把某種電影的寄託具體出來！飽滿的情感與演唱方式真的很配，我想電影與電影人仍然是各自獨自閃亮的個體啦！並沒有要哪一個自己成就或襯托對方，但身外身這個概念真的很棒。
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -5430,39 +6392,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>歌曲推薦-這些日子以來</title>
-    <url>/2026/04/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%99%E4%BA%9B%E6%97%A5%E5%AD%90%E4%BB%A5%E4%BE%86/</url>
-    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
-  
-  <div style="flex: 1; text-align: left;">
-    <p style="margin-top: 0;">
-      推薦 范怡文 張清芳 的 這些日子以來
-      <br>
-      出自專輯 張清芳專輯
-      <br>
-      <a href="https://open.spotify.com/track/46JgXFM4ealcaHRwMqX5X5?si=3a585aefb21a47d6" target="_blank">收聽連結 -> 點此前往</a>
-    </p>
-  </div>
-
-  <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_這些日子以來.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-  </div>
-
-</div>
-<span id="more"></span> 
-轉載自個人ig每日點播> chjuhsu05
-    <br>
-     從YT上感覺到這首歌除了高低音與合音都很棒之外，同時由高低音扮演兩個女孩對著失戀的痛苦，面對自己的質問，在抽離和珍惜間徘徊，歌曲最後也沒有答案但這樣討論跟好聽的歌曲真的很少聽到。
-
-]]></content>
-      <categories>
-        <category>音樂</category>
-      </categories>
-      <tags>
-        <tag>音樂推薦</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>歌曲推薦-逍遙嘆</title>
     <url>/2026/07/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%8D%E9%81%99%E5%98%86/</url>
     <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
@@ -5490,6 +6419,39 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
     「逍遙」與「嘆」本身就是一組殘酷的對比。曾經嚮往的無拘無束，最終卻只能化作一聲無可奈何的嘆息。這不僅僅是一首回憶裡的經典曲目，每當眼前浮現新的仙俠故事，總會讓人再次想起那份獨特的悸動。在安靜的片刻重新感受這首歌，那些關於成長的重量與失去的遺憾，彷彿也跟著慢慢暈染開來。
 
 <p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌曲推薦-這些日子以來</title>
+    <url>/2026/04/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%80%99%E4%BA%9B%E6%97%A5%E5%AD%90%E4%BB%A5%E4%BE%86/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 范怡文 張清芳 的 這些日子以來
+      <br>
+      出自專輯 張清芳專輯
+      <br>
+      <a href="https://open.spotify.com/track/46JgXFM4ealcaHRwMqX5X5?si=3a585aefb21a47d6" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_這些日子以來.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+     從YT上感覺到這首歌除了高低音與合音都很棒之外，同時由高低音扮演兩個女孩對著失戀的痛苦，面對自己的質問，在抽離和珍惜間徘徊，歌曲最後也沒有答案但這樣討論跟好聽的歌曲真的很少聽到。
+
 ]]></content>
       <categories>
         <category>音樂</category>
@@ -5560,6 +6522,40 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       <categories>
         <category>音樂</category>
       </categories>
+  </entry>
+  <entry>
+    <title>歌曲推薦-星月神話</title>
+    <url>/2026/07/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%98%9F%E6%9C%88%E7%A5%9E%E8%A9%B1/</url>
+    <content><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 金莎 的 星月神話
+      <br>
+      出自歌曲同名專輯 星月神話
+      <br>
+      <a href="https://open.spotify.com/track/5bj04W68MNmSK1n6Tbndgz?si=0583843200164df8" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_星月神話.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<span id="more"></span> 
+轉載自個人ig每日點播> chjuhsu05
+    <br>
+    這首是當初神話的插曲，編曲用詞即使不複雜但當呂素來演唱時就真的是完全不行了，如果說前兩天的我期待是我希望金莎當時能唱的歌，那這首就是那個時空下最難受的時刻了，而且當時我才國三，為了看重播還熬夜倒三點爬起來看，完全是大崩潰。
+
+<p>非常推薦啊啊啊</p>
+]]></content>
+      <categories>
+        <category>音樂</category>
+      </categories>
+      <tags>
+        <tag>音樂推薦</tag>
+      </tags>
   </entry>
   <entry>
     <title>歌曲推薦-非常時期</title>
@@ -5802,35 +6798,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>不誤解、不離題，誰都喜歡你的精準表達技術（書籍閱讀紀錄）</title>
-    <url>/2024/07/17/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%B8%8D%E8%AA%A4%E8%A7%A3%E3%80%81%E4%B8%8D%E9%9B%A2%E9%A1%8C%EF%BC%8C%E8%AA%B0%E9%83%BD%E5%96%9C%E6%AD%A1%E4%BD%A0%E7%9A%84%E7%B2%BE%E6%BA%96%E8%A1%A8%E9%81%94%E6%8A%80%E8%A1%93(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《不誤解、不離題，誰都喜歡你的精準表達技術》用圖文拆解表達、溝通與回應的問題。它不一定每個觀點都能說服我，但在職場摩擦之後重新思考如何把話說清楚，仍然提供了一些可以帶走的提醒。</p>
-<span id="more"></span>
-
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>其實在職場事件之後我有因為無法靠交情辦事情，試圖讓表達更精準以減少我可能以為存在的摩擦，剛好遇到就拿來看的書籍就是這樣，但老實說工作或表達的書因為我自己原有的原則，常常會讓我不一定讀的下去，只希望有一點點收穫能幫助我改善我的困境。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>如同前文所述，書中確實有不少的純粹是作者觀點的論述方式，像是提到精準表達跟不誤解等等的說法，但滿多時刻圖文之中會讓人有種重點是，讓誰都喜歡你的部分會再多一點就好，例如總和意見的時候會讓人有種其實就是綜合意見的那個人，而不是所謂的說話術。</p>
-<p>雖然特色算是以圖文讓人更容易理解，但可能書籍的三個主題，不誤解與離題的部分對我來說稍微比較有用。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>算是認同書籍中的部分觀點，拋開影響力、好感等我需求之外的書中內容，書籍提到</p>
-<p>1.在對話中加入數字</p>
-<p>2.試著先講出結論或讓對方對談話有期待感</p>
-<p>3.力圖簡潔對話內容並少用雙重否定之類的轉折詞…等倒是滿有總結性的。</p>
-<p>我應該會試著在表達中嘗試看看</p>
-<p>另外我也認為書籍談到遇到反抗性的對談方面(對方以反抗意見為主)，也算是讀後感覺起來有收穫的，一方面上下關係本來就難掌握，同事爭執之間也會因為討論意見的拉扯而有很多的反應，而不希望衝突擴散的我，往往到最後其實往往都沒有提出我該提出或爭取的部分，這邊算是有給出一些處理上的意見能夠參考。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>因為讀得太零散，內容失望太多只筆記到了反抗性對談的緩和，處理方面好像沒特別有印象了，但若要選擇重看也感覺有點壞了胃口，這部分試著從其書裡面去找找答案好了。</p>
-<p>覺得這邊的提示反而是要好好留好我認為有收穫的地方，否則有些時候就只會看那一次了。</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="304" height="387" src="/images/blogger-import/blogger-527ea94d92/01.webp" alt="圖片 1">
-
-<p>(圖片來源: 喵喵書評)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_17.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>閱讀紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>about time（觀影紀錄）</title>
     <url>/2022/08/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/about-time(%E8%A7%80%E5%BD%B1%E7%B4%80%E9%8C%84)/</url>
     <content><![CDATA[<p>《真愛每一天》用家族男性可以回到過去的能力，寫親情、愛情與接受無法改變的事情。它沒有把穿越變成拯救一切的力量，而是讓主角慢慢明白，真正珍惜每一天，有時比重新修改每一個遺憾更重要。</p>
@@ -5860,22 +6827,26 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>人氣條漫這樣畫（書籍閱讀紀錄）</title>
-    <url>/2024/07/22/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BA%BA%E6%B0%A3%E6%A2%9D%E6%BC%AB%E9%80%99%E6%A8%A3%E7%95%AB(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《人氣條漫這樣畫》不只是在教人如何畫出受歡迎的漫畫，也整理了成為職業創作者需要面對的能力、準備與連載現實。它讓我從創作技巧之外，看見韓國長條漫畫產業與作品誕生的另一面。</p>
+    <title>不誤解、不離題，誰都喜歡你的精準表達技術（書籍閱讀紀錄）</title>
+    <url>/2024/07/17/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%B8%8D%E8%AA%A4%E8%A7%A3%E3%80%81%E4%B8%8D%E9%9B%A2%E9%A1%8C%EF%BC%8C%E8%AA%B0%E9%83%BD%E5%96%9C%E6%AD%A1%E4%BD%A0%E7%9A%84%E7%B2%BE%E6%BA%96%E8%A1%A8%E9%81%94%E6%8A%80%E8%A1%93(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《不誤解、不離題，誰都喜歡你的精準表達技術》用圖文拆解表達、溝通與回應的問題。它不一定每個觀點都能說服我，但在職場摩擦之後重新思考如何把話說清楚，仍然提供了一些可以帶走的提醒。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>如同網路小說在中國大陸的地位，韓國長條漫畫似乎也是文化輸出的重點，偶然書架中看到介紹產業的書籍一定不能錯過，雖然類型上看起來偏向於如何做出人氣漫畫，但其中希望有涉及產業的觀點。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>書籍以”該如何以漫畫家為職業”為目標，列出了需要具備的能力跟準備出道及連載的書。</p>
-<p>扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，反而繪畫的部分就比較少了，畢竟成為職業創作者的基本功假設不過關應該也無法有之後的故事了，畢竟強如一拳超人的原作者，要不是有人幫他轉畫成後來熟知的模樣，我一定會直接放棄這部漫畫…。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我本來預期討論產業的部分會更多，因為畢竟類似的書籍會給出一些產業的特定術語或狀況，但大概只佔了本書的1&#x2F;5的份量而已，有趣的是這本書滿溫暖的，有很多連載的職業作者的鼓勵與心得，讓想以職業創作者為道路的人有勇氣繼續努力。</p>
-<p>但我其實是屬於讀者的角色，有時候被揭露太多創作公式或是情節走向老實說會有點不太開心，因為我的情緒原來全是這樣被拉扯的嗎？我有時候寧願是更早期我在小說裡面看到作者說，我的腦袋裡面的角色告訴我他迫不急待地要出現，因此我只能轉寫他的故事(印象中像是我在雨中等你的&gt;恩佐)！</p>
-<p>扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，這部分算是我覺得滿有趣的地方，類似的書籍就如同先讓英雄去救貓之類的一樣，可能是某方面創作者的自我修養吧，如果轉換角色我一定能在書裏面收穫更多！</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>因為這本書我也期待網路小說家那本作品的，不知道能不能做一個橫向的差別比較，在這本書中其實可以發現，除了成功地引起追獨之外，事件、情節以及人物的吸引力等等，條漫不只是閱讀方向的差別，節奏以及與編輯的互動，光是以網路為連載地，所造成的影響就跟日本週刊完全不同了，可能要閱讀更多類似的書籍或文獻才能一探究竟了，但他們是有區別實益的。</p>
- <img class="blogger-import-image" loading="lazy" decoding="async" width="301" height="374" src="/images/blogger-import/blogger-b21f29d102/01.webp" alt="圖片 1">
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>其實在職場事件之後我有因為無法靠交情辦事情，試圖讓表達更精準以減少我可能以為存在的摩擦，剛好遇到就拿來看的書籍就是這樣，但老實說工作或表達的書因為我自己原有的原則，常常會讓我不一定讀的下去，只希望有一點點收穫能幫助我改善我的困境。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>如同前文所述，書中確實有不少的純粹是作者觀點的論述方式，像是提到精準表達跟不誤解等等的說法，但滿多時刻圖文之中會讓人有種重點是，讓誰都喜歡你的部分會再多一點就好，例如總和意見的時候會讓人有種其實就是綜合意見的那個人，而不是所謂的說話術。</p>
+<p>雖然特色算是以圖文讓人更容易理解，但可能書籍的三個主題，不誤解與離題的部分對我來說稍微比較有用。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>算是認同書籍中的部分觀點，拋開影響力、好感等我需求之外的書中內容，書籍提到</p>
+<p>1.在對話中加入數字</p>
+<p>2.試著先講出結論或讓對方對談話有期待感</p>
+<p>3.力圖簡潔對話內容並少用雙重否定之類的轉折詞…等倒是滿有總結性的。</p>
+<p>我應該會試著在表達中嘗試看看</p>
+<p>另外我也認為書籍談到遇到反抗性的對談方面(對方以反抗意見為主)，也算是讀後感覺起來有收穫的，一方面上下關係本來就難掌握，同事爭執之間也會因為討論意見的拉扯而有很多的反應，而不希望衝突擴散的我，往往到最後其實往往都沒有提出我該提出或爭取的部分，這邊算是有給出一些處理上的意見能夠參考。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>因為讀得太零散，內容失望太多只筆記到了反抗性對談的緩和，處理方面好像沒特別有印象了，但若要選擇重看也感覺有點壞了胃口，這部分試著從其書裡面去找找答案好了。</p>
+<p>覺得這邊的提示反而是要好好留好我認為有收穫的地方，否則有些時候就只會看那一次了。</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="304" height="387" src="/images/blogger-import/blogger-527ea94d92/01.webp" alt="圖片 1">
 
 <p>(圖片來源: 喵喵書評)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_22.html -->
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_17.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -5913,6 +6884,31 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>人氣條漫這樣畫（書籍閱讀紀錄）</title>
+    <url>/2024/07/22/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BA%BA%E6%B0%A3%E6%A2%9D%E6%BC%AB%E9%80%99%E6%A8%A3%E7%95%AB(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《人氣條漫這樣畫》不只是在教人如何畫出受歡迎的漫畫，也整理了成為職業創作者需要面對的能力、準備與連載現實。它讓我從創作技巧之外，看見韓國長條漫畫產業與作品誕生的另一面。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>如同網路小說在中國大陸的地位，韓國長條漫畫似乎也是文化輸出的重點，偶然書架中看到介紹產業的書籍一定不能錯過，雖然類型上看起來偏向於如何做出人氣漫畫，但其中希望有涉及產業的觀點。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>書籍以”該如何以漫畫家為職業”為目標，列出了需要具備的能力跟準備出道及連載的書。</p>
+<p>扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，反而繪畫的部分就比較少了，畢竟成為職業創作者的基本功假設不過關應該也無法有之後的故事了，畢竟強如一拳超人的原作者，要不是有人幫他轉畫成後來熟知的模樣，我一定會直接放棄這部漫畫…。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我本來預期討論產業的部分會更多，因為畢竟類似的書籍會給出一些產業的特定術語或狀況，但大概只佔了本書的1&#x2F;5的份量而已，有趣的是這本書滿溫暖的，有很多連載的職業作者的鼓勵與心得，讓想以職業創作者為道路的人有勇氣繼續努力。</p>
+<p>但我其實是屬於讀者的角色，有時候被揭露太多創作公式或是情節走向老實說會有點不太開心，因為我的情緒原來全是這樣被拉扯的嗎？我有時候寧願是更早期我在小說裡面看到作者說，我的腦袋裡面的角色告訴我他迫不急待地要出現，因此我只能轉寫他的故事(印象中像是我在雨中等你的&gt;恩佐)！</p>
+<p>扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，這部分算是我覺得滿有趣的地方，類似的書籍就如同先讓英雄去救貓之類的一樣，可能是某方面創作者的自我修養吧，如果轉換角色我一定能在書裏面收穫更多！</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>因為這本書我也期待網路小說家那本作品的，不知道能不能做一個橫向的差別比較，在這本書中其實可以發現，除了成功地引起追獨之外，事件、情節以及人物的吸引力等等，條漫不只是閱讀方向的差別，節奏以及與編輯的互動，光是以網路為連載地，所造成的影響就跟日本週刊完全不同了，可能要閱讀更多類似的書籍或文獻才能一探究竟了，但他們是有區別實益的。</p>
+ <img class="blogger-import-image" loading="lazy" decoding="async" width="301" height="374" src="/images/blogger-import/blogger-b21f29d102/01.webp" alt="圖片 1">
+
+<p>(圖片來源: 喵喵書評)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_22.html -->
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>閱讀紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>來自地獄的法官-影片紀錄</title>
     <url>/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/</url>
     <content><![CDATA[<p>劇中，加害者都有受到處罰，這是現實世界無法實現的支撐點。而到頭來整部劇也反思憤怒之時是否仍要守住自己的原則？很像是最近看HERO裡面的其中一段，律師盡力幫加害人變故其實不是一件壞事，當雙方把所有攻防都丟在法官面前之時，讓真相自己說話，雖然挺理想主義的，但現實世界就是沒有那雙全知全能的眼睛來避免問題。<br> <span id="more"></span></p>
@@ -5941,6 +6937,31 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </categories>
       <tags>
         <tag>觀影紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修真聊天群（網路小說閱讀紀錄-短）</title>
+    <url>/2024/06/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BF%AE%E7%9C%9F%E8%81%8A%E5%A4%A9%E7%BE%A4(%E7%B6%B2%E8%B7%AF%E5%B0%8F%E8%AA%AA%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84-%E7%9F%AD)/</url>
+    <content><![CDATA[<p>《修真聊天群》把原本遠離現代生活的修真者，放進手機聊天群與日常社會裡。修仙不再只是閉關、渡劫與追求長生，也成了不同性格的人在群組裡碰撞出的笑點，並重新思考修真故事該往山裡走，還是回到人群之中。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>無意中點開的熱門小說，應該是在各大書單推薦榜上面，那時候真的挺認真查榜的，但也幸好沒錯過這本，最近都是隨波逐流的點推薦好像有點不行，明明榜單也有人在更新，有點迷失在不知道要怎麼找書的循環裡面，或有點自信要親身試讀(毒)</p>
+<p>或許單純只是因為累積的書太多而沒有動力？</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>修仙之人用手機嗎？他們聊天嘛？現代生活中他們怎麼隱藏自己？修真的追求是否有轉變等等，透過聊天群的形式，作者讓每個人物都生動了起來，雖然後續因為情節拉長的關係，有些片段刻意使用了好幾次來增加跟讀者互動(網路小說的互文)，但至少整個場面並不能算是特別冷場，我也會在有點厭倦情節的時刻感受到作者的一些小用心，不算是爛尾而且好看的書。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>早期的修仙來自於對自然的觀察敬畏，到模仿接著往仙人的方向走，記憶中縹緲之旅真的是非常轟動，後續接著的誅仙等赫赫有名的作品(註:仙劍奇俠也很紅但他不是網路小說系列的)，你會發現似乎整個修仙的體系被固化的很厲害，該怎麼往前走總有很多的預定認知要能夠自圓其說。</p>
+<p>例如說，靈氣、靈根及你在作品中的修仙體系，接著是作品中仙俠類型的來源該來自於哪裡？如果拋棄了江湖或是擁抱了江湖你的仙俠該如何表述？修真系列難就難在好像似乎沒有一個中間值，選擇要往山裡走還是往人裡走，靈氣衰竭的現代修仙是這系列小說最讓人驚喜的地方。</p>
+<p>對我來說這應該是聊天群系列的開山作品，後面還有興起的是聊天式小說我某陣子也很認真追，但再後來好像又沒落了，可能是單純用對話推動的小說還是有侷限性吧，可能再找找分析的文章，這樣的流派跟嘗試其實挺有趣的！</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>創意、劇情、人物等等，其實有趣的是最有趣的不是主角，即使某些時刻作者刻意放大了他的戲份，但說是群像劇又不算，因為最出彩的角色其實也是憑幾個強人設立足，例如白前輩。</p>
+<p>但整體小說節奏跟情節又是控制得滿不錯的，也許有趣跟新奇就是這本這麼轟動的原因吧！還有不少流行語的塑造？可能過陣子重看一次才能再補充為何有趣吧？</p>
+<p>有時候又想說這需要分析嗎？但畢竟感動是我的，得了解為何而喜歡吧！不然就太AI時代了。</p>
+<p><img class="blogger-import-image" loading="lazy" decoding="async" width="308" height="396" src="/images/blogger-import/blogger-59f0558b4f/01.webp" alt="圖片 1"> (圖片來源：起點中文網)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/blog-post_26.html -->
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>閱讀紀錄</tag>
       </tags>
   </entry>
   <entry>
@@ -6051,31 +7072,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 (圖片來源: 博客來網路書店)
 
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/blog-post_22.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>閱讀紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修真聊天群（網路小說閱讀紀錄-短）</title>
-    <url>/2024/06/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BF%AE%E7%9C%9F%E8%81%8A%E5%A4%A9%E7%BE%A4(%E7%B6%B2%E8%B7%AF%E5%B0%8F%E8%AA%AA%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84-%E7%9F%AD)/</url>
-    <content><![CDATA[<p>《修真聊天群》把原本遠離現代生活的修真者，放進手機聊天群與日常社會裡。修仙不再只是閉關、渡劫與追求長生，也成了不同性格的人在群組裡碰撞出的笑點，並重新思考修真故事該往山裡走，還是回到人群之中。</p>
-<span id="more"></span>
-
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>無意中點開的熱門小說，應該是在各大書單推薦榜上面，那時候真的挺認真查榜的，但也幸好沒錯過這本，最近都是隨波逐流的點推薦好像有點不行，明明榜單也有人在更新，有點迷失在不知道要怎麼找書的循環裡面，或有點自信要親身試讀(毒)</p>
-<p>或許單純只是因為累積的書太多而沒有動力？</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>修仙之人用手機嗎？他們聊天嘛？現代生活中他們怎麼隱藏自己？修真的追求是否有轉變等等，透過聊天群的形式，作者讓每個人物都生動了起來，雖然後續因為情節拉長的關係，有些片段刻意使用了好幾次來增加跟讀者互動(網路小說的互文)，但至少整個場面並不能算是特別冷場，我也會在有點厭倦情節的時刻感受到作者的一些小用心，不算是爛尾而且好看的書。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>早期的修仙來自於對自然的觀察敬畏，到模仿接著往仙人的方向走，記憶中縹緲之旅真的是非常轟動，後續接著的誅仙等赫赫有名的作品(註:仙劍奇俠也很紅但他不是網路小說系列的)，你會發現似乎整個修仙的體系被固化的很厲害，該怎麼往前走總有很多的預定認知要能夠自圓其說。</p>
-<p>例如說，靈氣、靈根及你在作品中的修仙體系，接著是作品中仙俠類型的來源該來自於哪裡？如果拋棄了江湖或是擁抱了江湖你的仙俠該如何表述？修真系列難就難在好像似乎沒有一個中間值，選擇要往山裡走還是往人裡走，靈氣衰竭的現代修仙是這系列小說最讓人驚喜的地方。</p>
-<p>對我來說這應該是聊天群系列的開山作品，後面還有興起的是聊天式小說我某陣子也很認真追，但再後來好像又沒落了，可能是單純用對話推動的小說還是有侷限性吧，可能再找找分析的文章，這樣的流派跟嘗試其實挺有趣的！</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>創意、劇情、人物等等，其實有趣的是最有趣的不是主角，即使某些時刻作者刻意放大了他的戲份，但說是群像劇又不算，因為最出彩的角色其實也是憑幾個強人設立足，例如白前輩。</p>
-<p>但整體小說節奏跟情節又是控制得滿不錯的，也許有趣跟新奇就是這本這麼轟動的原因吧！還有不少流行語的塑造？可能過陣子重看一次才能再補充為何有趣吧？</p>
-<p>有時候又想說這需要分析嗎？但畢竟感動是我的，得了解為何而喜歡吧！不然就太AI時代了。</p>
-<p><img class="blogger-import-image" loading="lazy" decoding="async" width="308" height="396" src="/images/blogger-import/blogger-59f0558b4f/01.webp" alt="圖片 1"> (圖片來源：起點中文網)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/blog-post_26.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -6601,31 +7597,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>嫌疑犯X的獻身（書籍閱讀紀錄）</title>
-    <url>/2024/06/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%AB%8C%E7%96%91%E7%8A%AFX%E7%9A%84%E7%8D%BB%E8%BA%AB(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《嫌疑犯 X 的獻身》是一部被我拖了很久才真正讀完的經典推理小說。它不只把謎題設計得精密，也讓讀者在真相、犧牲與一個人願意為另一個人走到哪裡之間，重新思考「獻身」這兩個字的重量。</p>
-<span id="more"></span>
-
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>這本小說真的知道很久了，但拖很久才看完，真的是非常經典的小說，我在猜我應該要都把我自己清單上的經典書單清一清，畢竟當年認真收藏想看的心情都是非常期待的！像是好久以前買的I的悲劇之類的(不是MBTI&lt;最近大家都瘋ㄌ)。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>絕妙設計的推理小說，特色應該算是人物刻畫的很成功，也成功把所有真相都寫著但就是猜不到，一路看到最後的時候甚至會有那種我可能早該知道了，但我沒想到一切會是這樣的震驚感，書名也很棒，這個獻身是多種含意的。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我自己覺得小說的看點，在於即使一開始我們就知道兇手，也知道被害人已身亡，但仍然被作者的非常多隱藏及設計所誤導，甚至於最後的獻身也別具深意，在對決及結局之下又多了深深的後勁。</p>
-<p>這本書對我來說特別在於不同於東野的其他小說，冷冷的文字之下隱含著比想像中多的情緒，尤其是看完第一次後第二次在看的時候，不再是很冷靜地跟著推理節奏走，在推理結束之後內心的情緒也跟著有點失控找不到案件破解的暢快感。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>文中非常多推理是單純以對話互動所呈現，如果不習慣類似的推理小說形式的話可能需要稍微耐住性子，因為這樣才能看到整本小說有趣的部分！</p>
-<p>最讓我震驚的誤導也是在對話之中這樣子被攤開的(我可能是找錯方向的那個)，並且與以往大雪紛飛的封閉山莊類型不同的是，封閉的現場之下，重要人物竟然只有五位！</p>
-<p>其中一個還是被害人在一開始就作為最大的謎題，因此無論是劇情、對話以及風格都讓我非常推薦，後續也有改編成電影，聽說其中的張力也非常足夠，但我仍然非常推薦原作小說，至於獻身與否的後勁則見仁見智，至少我滿吃這套的，認為無損於前面的精采設計。</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="401" height="509" src="/images/blogger-import/blogger-0d71ebfd31/01.webp" alt="圖片 1">
-(圖片來源: 博客來網路書店)
-
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/x.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>閱讀紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>專案管理革命（書籍閱讀紀錄）</title>
     <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%B0%88%E6%A1%88%E7%AE%A1%E7%90%86%E9%9D%A9%E5%91%BD(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
     <content><![CDATA[<p>《專案管理革命》試著把專案經理的經驗、規畫圖與工具整理成讀者可以想像的工作輪廓。它讓我看見專案裡來自客戶、長官與合作團隊的壓力，也提醒我理論與真正進入現場之間仍有一段距離。</p>
@@ -6651,6 +7622,31 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
  <img class="blogger-import-image" loading="lazy" decoding="async" width="1583" height="1322" src="/images/blogger-import/blogger-ba8435d7f1/02.webp" alt="圖片 2">
 
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/blog-post_2.html -->
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>閱讀紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>嫌疑犯X的獻身（書籍閱讀紀錄）</title>
+    <url>/2024/06/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%AB%8C%E7%96%91%E7%8A%AFX%E7%9A%84%E7%8D%BB%E8%BA%AB(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《嫌疑犯 X 的獻身》是一部被我拖了很久才真正讀完的經典推理小說。它不只把謎題設計得精密，也讓讀者在真相、犧牲與一個人願意為另一個人走到哪裡之間，重新思考「獻身」這兩個字的重量。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>這本小說真的知道很久了，但拖很久才看完，真的是非常經典的小說，我在猜我應該要都把我自己清單上的經典書單清一清，畢竟當年認真收藏想看的心情都是非常期待的！像是好久以前買的I的悲劇之類的(不是MBTI&lt;最近大家都瘋ㄌ)。</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>絕妙設計的推理小說，特色應該算是人物刻畫的很成功，也成功把所有真相都寫著但就是猜不到，一路看到最後的時候甚至會有那種我可能早該知道了，但我沒想到一切會是這樣的震驚感，書名也很棒，這個獻身是多種含意的。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我自己覺得小說的看點，在於即使一開始我們就知道兇手，也知道被害人已身亡，但仍然被作者的非常多隱藏及設計所誤導，甚至於最後的獻身也別具深意，在對決及結局之下又多了深深的後勁。</p>
+<p>這本書對我來說特別在於不同於東野的其他小說，冷冷的文字之下隱含著比想像中多的情緒，尤其是看完第一次後第二次在看的時候，不再是很冷靜地跟著推理節奏走，在推理結束之後內心的情緒也跟著有點失控找不到案件破解的暢快感。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>文中非常多推理是單純以對話互動所呈現，如果不習慣類似的推理小說形式的話可能需要稍微耐住性子，因為這樣才能看到整本小說有趣的部分！</p>
+<p>最讓我震驚的誤導也是在對話之中這樣子被攤開的(我可能是找錯方向的那個)，並且與以往大雪紛飛的封閉山莊類型不同的是，封閉的現場之下，重要人物竟然只有五位！</p>
+<p>其中一個還是被害人在一開始就作為最大的謎題，因此無論是劇情、對話以及風格都讓我非常推薦，後續也有改編成電影，聽說其中的張力也非常足夠，但我仍然非常推薦原作小說，至於獻身與否的後勁則見仁見智，至少我滿吃這套的，認為無損於前面的精采設計。</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="401" height="509" src="/images/blogger-import/blogger-0d71ebfd31/01.webp" alt="圖片 1">
+(圖片來源: 博客來網路書店)
+
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/x.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -7009,32 +8005,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>數學奧林匹亞特訓班的一年（書籍閱讀紀錄）</title>
-    <url>/2022/08/11/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%95%B8%E5%AD%B8%E5%A5%A7%E6%9E%97%E5%8C%B9%E4%BA%9E%E7%89%B9%E8%A8%93%E7%8F%AD%E7%9A%84%E4%B8%80%E5%B9%B4(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《數學奧林匹亞特訓班的一年》沒有完整記錄特訓班的一年，卻透過選手的背景、解題經驗與比賽困境，描繪資優生如何看待數學。它讓我看見競賽金牌之外的學習感受，也重新思考數學教育與天分的關係。</p>
-<span id="more"></span>
-
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>圖書館想成立一區新的校園人文庫，開始收集各系所的著作，用以展現學校的凝聚力以及實力。偶然間逛到這本書名非常吸引人，馬上借來瞧瞧。</p>
-<p>院士及各界教育人士的提詞也讓人很有期待感，看完我真的會對數學教育更有想法嗎？其實我更想知道是特訓班一年的故事，畢竟在以學習為主軸的網路小說中，競賽往往是一個重要的劇情巔峰，然而除了金牌外，真實世界選手是如何看待這些的呢？期待這本書能給我一些資訊。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>雖然沒有寫到所謂的特訓班一年記錄，但透過了解選手入選前的背景，接觸數學的經驗這些可以了解對於參加競賽的態度，其中也有特別去了解選手對於數學的感覺，到後續比賽中面臨的困境跟自己的解題直覺，似乎我們能感覺到資優生的特質。</p>
-<p>至於數學之美跟特訓班的一年倒是其中著墨比較少的地方，整體書籍閱讀具流暢感，漫談了數學教育以及資優生們那些不同於刻板印象的特質。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>這本書如同書籍特色所寫還原了資優生跟他們相處的過程，以及他認為這群參加競賽的高中生身上的特質，例如洞察力、創意、專注等等。之前透過看類似主題的小說，其實特質這部分反而是比較不好奇的部分，我想知道的是他們參加競賽的樂趣，書中以數學之美以及相關的成長經歷輔助說明，他們不完全是功利性的想爭取榮譽，更多支撐的是屬於數學的熱誠。</p>
-<p>不過，書中最令我感到意外的是關於解題文化這部分的解釋，故事是描述年代很早的競賽，大約2000年左右，當時東歐仍然是數學強國，而美國則是剛準備要參加競賽，兩國關於數學與解題文化這件事情從對數學職業看法、授課方式等等都能有所觀察。可以說授課方式與態度應該是來自於社會的文化傳承，如果只是去會算數學更像是一種經驗的傳授，類似於社會的生存經驗？然而當解題文化跟去解題這件事情帶入其中的話，思考才是數學的重點，而東歐當時就具備這種文化，甚至有東歐的數學老師說他不論是數學好的資優生還是數學普通的一般生，他都使用同一種得去試著解題的教材，思考以及解題讓數學開始充滿樂趣。</p>
-<p>這很像高中老師某堂課的喃喃自語，他說如果音樂課是教我們怎麼欣賞音樂那一定很有趣，也不會苦於樂器演湊或唱歌等等的困境，也讓我想到近年來的國文教育，好像總是想減少文言文的比例，從當年我的古文四十篇，不知道現在剩幾篇了，從經驗的傳承走出來在學習及思考上我們應該能擁有更多？</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>有時候總覺得類似的書會有點難閱讀，當你帶著觀點看你似乎會開始反駁跟印證，但當你帶著好奇看，若無法有所填補則會陷入些許煩躁，這本不是我平常擅於看的書，看完也不是特別恍然大悟，天才的世界總難以理解，除了還是有點羨慕之外，書裡面特別有觀察到一點！天才在感興趣的事情上投入的專注跟熱情，有時候我也討厭自己無法傾其所有。</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="3024" height="4032" src="/images/blogger-import/blogger-943e7c9f62/01.webp" alt="圖片 1">
-
-<p>(圖片來源：師大圖書館)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2022/08/blog-post_11.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>閱讀紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我跟地球掰掰了：超有事滅絕動物圖鑑（書籍閱讀紀錄）</title>
     <url>/2024/07/13/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%88%91%E8%B7%9F%E5%9C%B0%E7%90%83%E6%8E%B0%E6%8E%B0%E4%BA%86%EF%BC%9A%E8%B6%85%E6%9C%89%E4%BA%8B%E6%BB%85%E7%B5%95%E5%8B%95%E7%89%A9%E5%9C%96%E9%91%91(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
     <content><![CDATA[<p>《我跟地球掰掰了：超有事滅絕動物圖鑑》用圖文與帶點幽默的翻譯，介紹那些已經離開地球的動物。它從滅絕原因延伸到演化與生物特性，讓一聲再見不只有可愛，也帶著重新觀看世界的提醒。</p>
@@ -7058,24 +8028,23 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>文學大數據（書籍閱讀紀錄）</title>
-    <url>/2024/08/08/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%96%87%E5%AD%B8%E5%A4%A7%E6%95%B8%E6%93%9A(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《文學大數據》把文字探勘放進文學閱讀裡，嘗試從詞彙、寫作指紋與文本特徵追問作家的秘密。它讓我看見資料分析不只可以處理數字，也能用來重新觀察小說與作者的創作習慣。</p>
+    <title>數學奧林匹亞特訓班的一年（書籍閱讀紀錄）</title>
+    <url>/2022/08/11/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%95%B8%E5%AD%B8%E5%A5%A7%E6%9E%97%E5%8C%B9%E4%BA%9E%E7%89%B9%E8%A8%93%E7%8F%AD%E7%9A%84%E4%B8%80%E5%B9%B4(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《數學奧林匹亞特訓班的一年》沒有完整記錄特訓班的一年，卻透過選手的背景、解題經驗與比賽困境，描繪資優生如何看待數學。它讓我看見競賽金牌之外的學習感受，也重新思考數學教育與天分的關係。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>因為第一個工作是因為做過文字探勘的報告而有後續的談話的，總是在想著是不是能在這方面了解更多或是要更進一步會更好，但能力部分雖然原地踏步，見識還是得長的，就這樣決定看看這本文學大數據，不過探勘的對象不是中文，是英文的小說。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>以小說為主題，用文字探勘的方式探討作家的寫作秘密。有別於中英文的組成結構，英文的探勘在分析上有時候顯得更加的直觀且成果可見，書中挑選了很多有趣的議題，像是作家開了分身(小號)寫作的話我們看得出來嗎？或是名作家提出的寫作守則自己是否有遵守？同人小說的英國腔調模仿以及國別寫作差異？作家寫作是否真的有他的創作指紋？</p>
-<p>書籍中都有舉例並試圖做出分析，而且為了讓分析合理，去除的字詞以及變換的調整也都有紀錄，個人覺得這樣的嘗試非常有趣。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>例如我們都知道加上ly變成副詞之後可以讓句子用少少的變化描述更多的事情，但寫作上這卻可能讓作家文字的傳遞過於直接的缺點，不是由景生情而是直接走到底的，但暢銷書有符合這個寫作建議嗎？中文譯本唯一可惜的是部分我想知道的名言金句(中間也有討論小說震撼開場白)，沒有附上英文原句…</p>
-<p>最後我覺得書籍有給出研究方法與書單，這部分也是文學大數據中重要的部分，感謝作者給出了這個他想法及文字來源的清單，換成中文的話似乎也有辦法以類似方式嘗試看看</p>
-<p>但我先要熟練使用CKIP。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>網路上有不少人分享歌詞的成果，例如民歌歌手最喜歡的城市、或是五月天等等，我自己也做過方文山還有周杰倫的比較(差異可能需要進一步做統計的檢定？)，這本書則是以小說為主題，在統計的鑑別力之外，就可以有這麼多有趣的想法跟嘗試，想法與行動，真的默默的很羨慕有這樣能力的人。</p>
-<p>楓之谷的遊戲中也是，看著別人談論著數據及分析，但我卻好像不是很懂….</p>
-<p>不是很喜歡這樣的自己。</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="226" height="325" src="/images/blogger-import/blogger-991f26ff7b/01.webp" alt="圖片 1">
-(圖片來源: 喵喵書評)
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>圖書館想成立一區新的校園人文庫，開始收集各系所的著作，用以展現學校的凝聚力以及實力。偶然間逛到這本書名非常吸引人，馬上借來瞧瞧。</p>
+<p>院士及各界教育人士的提詞也讓人很有期待感，看完我真的會對數學教育更有想法嗎？其實我更想知道是特訓班一年的故事，畢竟在以學習為主軸的網路小說中，競賽往往是一個重要的劇情巔峰，然而除了金牌外，真實世界選手是如何看待這些的呢？期待這本書能給我一些資訊。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>雖然沒有寫到所謂的特訓班一年記錄，但透過了解選手入選前的背景，接觸數學的經驗這些可以了解對於參加競賽的態度，其中也有特別去了解選手對於數學的感覺，到後續比賽中面臨的困境跟自己的解題直覺，似乎我們能感覺到資優生的特質。</p>
+<p>至於數學之美跟特訓班的一年倒是其中著墨比較少的地方，整體書籍閱讀具流暢感，漫談了數學教育以及資優生們那些不同於刻板印象的特質。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>這本書如同書籍特色所寫還原了資優生跟他們相處的過程，以及他認為這群參加競賽的高中生身上的特質，例如洞察力、創意、專注等等。之前透過看類似主題的小說，其實特質這部分反而是比較不好奇的部分，我想知道的是他們參加競賽的樂趣，書中以數學之美以及相關的成長經歷輔助說明，他們不完全是功利性的想爭取榮譽，更多支撐的是屬於數學的熱誠。</p>
+<p>不過，書中最令我感到意外的是關於解題文化這部分的解釋，故事是描述年代很早的競賽，大約2000年左右，當時東歐仍然是數學強國，而美國則是剛準備要參加競賽，兩國關於數學與解題文化這件事情從對數學職業看法、授課方式等等都能有所觀察。可以說授課方式與態度應該是來自於社會的文化傳承，如果只是去會算數學更像是一種經驗的傳授，類似於社會的生存經驗？然而當解題文化跟去解題這件事情帶入其中的話，思考才是數學的重點，而東歐當時就具備這種文化，甚至有東歐的數學老師說他不論是數學好的資優生還是數學普通的一般生，他都使用同一種得去試著解題的教材，思考以及解題讓數學開始充滿樂趣。</p>
+<p>這很像高中老師某堂課的喃喃自語，他說如果音樂課是教我們怎麼欣賞音樂那一定很有趣，也不會苦於樂器演湊或唱歌等等的困境，也讓我想到近年來的國文教育，好像總是想減少文言文的比例，從當年我的古文四十篇，不知道現在剩幾篇了，從經驗的傳承走出來在學習及思考上我們應該能擁有更多？</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>有時候總覺得類似的書會有點難閱讀，當你帶著觀點看你似乎會開始反駁跟印證，但當你帶著好奇看，若無法有所填補則會陷入些許煩躁，這本不是我平常擅於看的書，看完也不是特別恍然大悟，天才的世界總難以理解，除了還是有點羨慕之外，書裡面特別有觀察到一點！天才在感興趣的事情上投入的專注跟熱情，有時候我也討厭自己無法傾其所有。</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="3024" height="4032" src="/images/blogger-import/blogger-943e7c9f62/01.webp" alt="圖片 1">
 
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/08/blog-post_71.html -->
+<p>(圖片來源：師大圖書館)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2022/08/blog-post_11.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -7118,22 +8087,24 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>明天別再來敲門-書籍閱讀紀錄</title>
-    <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80/</url>
-    <content><![CDATA[<p>這是一本關於失去與重生的書，機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
- <span id="more"></span> 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>在計畫助理的工作真的超級不順利，不只遇到三年計畫臨時中止，配套措施仍彼時依然充滿變數，有時憂鬱不只需要一個理解的出口，向自己和解我認為也有相當的價值，於是憂鬱的書名開始成為我的清單，只要書名夠憂鬱就行(疑)？機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
-<p>會決定開始寫網誌紀錄，一方面是朋友提到他以前連載的觀影系列至今回憶仍然有趣，若有機會想拾筆重耕，一方面則是這本書給了我的感動，因此網誌下面那句「紀錄並凝視」才成為我的網誌副題名，當然這不是書中人物的口頭禪或回憶，只是他給我的感覺我很想這樣去總結而已。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>明天別再來敲門是描述一個失去妻子的老人 Ove 設法自殺的故事，從故事一開始 Ove 一路積極的處理離世前需要理清的各種關係，目標是進行一個沒有包袱的追隨，例如房子的產權、保險的理賠等等，儘管他積極向死亡前進，卻出現很多阻礙讓他無法達成他完全沒有包袱的目標(當然還有幾次的自殺失敗)，而他是一個追求盡善盡美的人，在這些社會網路的交流與支持下，他開始意識到再晚幾年追隨亡妻並不再是一件難以接受的事情，儘管他仍然偶爾會思念到想趕快見到亡妻。</p>
-<p>小說的特色在自殺失敗以及包袱增加下展現了 Ove 的生命以及他充滿個人風格的生活態度，作者塑造了一個充滿生命力的 Ove，正直、敢於抗爭等等，例如退貨自殺失敗的道具之類的橋段，也因為充滿責任感而不願自己的生命終結來自於他人，這代表那人得背負他生命的重量，透過回憶以及現階段與角色的認識，我們來回在 Ove 的生命歷程裡穿梭，體會著他的生活，這體驗非常特別，透過這些我們也更認識這位希望明天別再來敲門的老人，以及他信仰的品格。</p>
-<p>Ove 他不是一個非典型的角色，吝嗇、脾氣暴躁、抗爭及懷疑的激進態度，他以一個完全沒有魅力的方式吸引人的目光，不管怎麼樣我喜歡他的世界觀，同時能理解他，透過這本小說你似乎會獲得凝視回憶的力量，儘管生活在一個格格不入的世界。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>凝視回憶是這本書給我最深的感動，書中有非常多凝視的環節，妻子在 Ove 生命中的重量難以估計，書中曾經這樣去形容她，世界上只有她是彩色的，這大概可以看出她到底有多獨特且吸引人，每當我們跟著 Ove 凝視回憶時，世界對他來說並非格格不入，但當角度轉回現在，我們才理解為何明天別再來敲門。</p>
-<p>伴隨著失去愛以及想念但因為現實阻礙而無法追隨的苦惱，讀完甚至有一瞬間空洞的感覺，但當我們開始願意去凝視，這一切將會開始不同，故事中有非常多類似的情感，幸好作者安排了一個總是需要他幫忙的鄰居以及喜歡他的鄰居小孩，幫助我們與Ove去克服一些難受的情緒，我也喜歡故事中亡妻父親與他陪伴的動物的故事，凝視與紀錄這部分的感動也來自於他們。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>也許很難說得太多，這本小說的感受很特別，也許我得多看幾次才能更了解，也有人提到關於書中「各自獨立，彼此牽掛」，或相關於生命的看法，不過也許那些又更深刻一點等待我之後重看再體會吧，先讓我總結一部分就好。</p>
-<blockquote>
-<p>附註：妻子的名字是桑雅，總是以亡妻稱呼大概 Ove 得氣的跟我理論三百回合。</p>
-</blockquote>
-<p><img src="/images/book_%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80.webp"><br><em>(圖片來源：博客來網路書店)</em></p>
+    <title>文學大數據（書籍閱讀紀錄）</title>
+    <url>/2024/08/08/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%96%87%E5%AD%B8%E5%A4%A7%E6%95%B8%E6%93%9A(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《文學大數據》把文字探勘放進文學閱讀裡，嘗試從詞彙、寫作指紋與文本特徵追問作家的秘密。它讓我看見資料分析不只可以處理數字，也能用來重新觀察小說與作者的創作習慣。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>因為第一個工作是因為做過文字探勘的報告而有後續的談話的，總是在想著是不是能在這方面了解更多或是要更進一步會更好，但能力部分雖然原地踏步，見識還是得長的，就這樣決定看看這本文學大數據，不過探勘的對象不是中文，是英文的小說。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>以小說為主題，用文字探勘的方式探討作家的寫作秘密。有別於中英文的組成結構，英文的探勘在分析上有時候顯得更加的直觀且成果可見，書中挑選了很多有趣的議題，像是作家開了分身(小號)寫作的話我們看得出來嗎？或是名作家提出的寫作守則自己是否有遵守？同人小說的英國腔調模仿以及國別寫作差異？作家寫作是否真的有他的創作指紋？</p>
+<p>書籍中都有舉例並試圖做出分析，而且為了讓分析合理，去除的字詞以及變換的調整也都有紀錄，個人覺得這樣的嘗試非常有趣。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>例如我們都知道加上ly變成副詞之後可以讓句子用少少的變化描述更多的事情，但寫作上這卻可能讓作家文字的傳遞過於直接的缺點，不是由景生情而是直接走到底的，但暢銷書有符合這個寫作建議嗎？中文譯本唯一可惜的是部分我想知道的名言金句(中間也有討論小說震撼開場白)，沒有附上英文原句…</p>
+<p>最後我覺得書籍有給出研究方法與書單，這部分也是文學大數據中重要的部分，感謝作者給出了這個他想法及文字來源的清單，換成中文的話似乎也有辦法以類似方式嘗試看看</p>
+<p>但我先要熟練使用CKIP。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>網路上有不少人分享歌詞的成果，例如民歌歌手最喜歡的城市、或是五月天等等，我自己也做過方文山還有周杰倫的比較(差異可能需要進一步做統計的檢定？)，這本書則是以小說為主題，在統計的鑑別力之外，就可以有這麼多有趣的想法跟嘗試，想法與行動，真的默默的很羨慕有這樣能力的人。</p>
+<p>楓之谷的遊戲中也是，看著別人談論著數據及分析，但我卻好像不是很懂….</p>
+<p>不是很喜歡這樣的自己。</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="226" height="325" src="/images/blogger-import/blogger-991f26ff7b/01.webp" alt="圖片 1">
+(圖片來源: 喵喵書評)
+
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/08/blog-post_71.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -7174,6 +8145,31 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>明天別再來敲門-書籍閱讀紀錄</title>
+    <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80/</url>
+    <content><![CDATA[<p>這是一本關於失去與重生的書，機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
+ <span id="more"></span> 
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>在計畫助理的工作真的超級不順利，不只遇到三年計畫臨時中止，配套措施仍彼時依然充滿變數，有時憂鬱不只需要一個理解的出口，向自己和解我認為也有相當的價值，於是憂鬱的書名開始成為我的清單，只要書名夠憂鬱就行(疑)？機緣巧合看到這本有翻拍成電影的挪威小說，甚至電影也有得獎，相信其中應該也蘊含著什麼力量吧！</p>
+<p>會決定開始寫網誌紀錄，一方面是朋友提到他以前連載的觀影系列至今回憶仍然有趣，若有機會想拾筆重耕，一方面則是這本書給了我的感動，因此網誌下面那句「紀錄並凝視」才成為我的網誌副題名，當然這不是書中人物的口頭禪或回憶，只是他給我的感覺我很想這樣去總結而已。</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>明天別再來敲門是描述一個失去妻子的老人 Ove 設法自殺的故事，從故事一開始 Ove 一路積極的處理離世前需要理清的各種關係，目標是進行一個沒有包袱的追隨，例如房子的產權、保險的理賠等等，儘管他積極向死亡前進，卻出現很多阻礙讓他無法達成他完全沒有包袱的目標(當然還有幾次的自殺失敗)，而他是一個追求盡善盡美的人，在這些社會網路的交流與支持下，他開始意識到再晚幾年追隨亡妻並不再是一件難以接受的事情，儘管他仍然偶爾會思念到想趕快見到亡妻。</p>
+<p>小說的特色在自殺失敗以及包袱增加下展現了 Ove 的生命以及他充滿個人風格的生活態度，作者塑造了一個充滿生命力的 Ove，正直、敢於抗爭等等，例如退貨自殺失敗的道具之類的橋段，也因為充滿責任感而不願自己的生命終結來自於他人，這代表那人得背負他生命的重量，透過回憶以及現階段與角色的認識，我們來回在 Ove 的生命歷程裡穿梭，體會著他的生活，這體驗非常特別，透過這些我們也更認識這位希望明天別再來敲門的老人，以及他信仰的品格。</p>
+<p>Ove 他不是一個非典型的角色，吝嗇、脾氣暴躁、抗爭及懷疑的激進態度，他以一個完全沒有魅力的方式吸引人的目光，不管怎麼樣我喜歡他的世界觀，同時能理解他，透過這本小說你似乎會獲得凝視回憶的力量，儘管生活在一個格格不入的世界。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>凝視回憶是這本書給我最深的感動，書中有非常多凝視的環節，妻子在 Ove 生命中的重量難以估計，書中曾經這樣去形容她，世界上只有她是彩色的，這大概可以看出她到底有多獨特且吸引人，每當我們跟著 Ove 凝視回憶時，世界對他來說並非格格不入，但當角度轉回現在，我們才理解為何明天別再來敲門。</p>
+<p>伴隨著失去愛以及想念但因為現實阻礙而無法追隨的苦惱，讀完甚至有一瞬間空洞的感覺，但當我們開始願意去凝視，這一切將會開始不同，故事中有非常多類似的情感，幸好作者安排了一個總是需要他幫忙的鄰居以及喜歡他的鄰居小孩，幫助我們與Ove去克服一些難受的情緒，我也喜歡故事中亡妻父親與他陪伴的動物的故事，凝視與紀錄這部分的感動也來自於他們。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>也許很難說得太多，這本小說的感受很特別，也許我得多看幾次才能更了解，也有人提到關於書中「各自獨立，彼此牽掛」，或相關於生命的看法，不過也許那些又更深刻一點等待我之後重看再體會吧，先讓我總結一部分就好。</p>
+<blockquote>
+<p>附註：妻子的名字是桑雅，總是以亡妻稱呼大概 Ove 得氣的跟我理論三百回合。</p>
+</blockquote>
+<p><img src="/images/book_%E6%98%8E%E5%A4%A9%E5%88%A5%E5%86%8D%E4%BE%86%E6%95%B2%E9%96%80.webp"><br><em>(圖片來源：博客來網路書店)</em></p>
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>閱讀紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>有氧減肥大迷思（書籍閱讀紀錄）</title>
     <url>/2024/07/05/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%9C%89%E6%B0%A7%E6%B8%9B%E8%82%A5%E5%A4%A7%E8%BF%B7%E6%80%9D(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
     <content><![CDATA[<p>《有氧減肥大迷思》從運動傷害與減重效果切入，拆解人們對有氧運動的常見想像。它不只是告訴讀者該不該跑步，也提醒我在追求體重與表現時，應該重新衡量訓練方式、身體負擔與真正能長久維持的習慣。</p>
@@ -7196,29 +8192,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 
 <p>(圖片來源: 喵喵書評)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_5.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>閱讀紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>村裡來了個暴走女外科（書籍閱讀紀錄）</title>
-    <url>/2024/07/01/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%9D%91%E8%A3%A1%E4%BE%86%E4%BA%86%E5%80%8B%E6%9A%B4%E8%B5%B0%E5%A5%B3%E5%A4%96%E7%A7%91(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《村裡來了個暴走女外科》把外科醫師放進鄉下生活，寫行醫、人情與地方衛教。故事有一些尋找初心的遲疑，卻也讓我看見醫療不只發生在大醫院，還牽涉一個地方如何照顧彼此。</p>
-<span id="more"></span>
-
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>那陣子電視劇很紅，因此就對原作小說有點好奇，再加上書名結合了非常多的元素，鄉下、外科以及醫師的性格，走過路過就拿起來瞧瞧了，不過好像是在電視劇結束很久之後，難怪這麼容易就借到了。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>樸實的文字以及在整個尋頓尋找自己的過程中在找到自己初心的過程，也許是參雜了作者實際的經驗以及過於想要描寫那些困頓的情景，其實過程中揭露的部分有點缺少，導致很難更深入的參與故事，閱讀的流暢感部分是少了一點的，但鄉下的行醫是有趣的，人情味以及奇聞軼事，也從中帶出鄉下的衛教問題。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>不會說不好看，但我覺得在遠遁尋找自己的過程中，本書之中有比較多想當然耳的片段(或許會有點公式化的感覺)，因為有稍多的內容透過稍微提到及片段回憶的方式展現，沒有徹底展開的情節讓我在閱讀上遇到了一點障礙，直到最近在電影院看完了蒼鷺與少年之後我才覺得類似的處理手法並不一定有問題，而是我不能總是當一個想知道故事全貌的作者，算是作者跟讀者之間建構世界的互相吧？</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>我想這些不同於城市出現狀況的詫異性讓閱讀起來有種不知道該如何應對的無助與有趣感？</p>
-<p>我想這是一個一群需要幫助的病人，一個不同於都市的行醫環境，一個遭受挫折的外科醫生找回初心的故事(當然有點是被環境稍微強迫的，畢竟能開刀的醫生很少，同時那些開刀的設備不夠實力可能也無法運用自如吧)，所以可能還要加一點，一個遭受挫折但仍然願意為大家奉獻的，會享受外科成就感及挑戰的外科醫生。</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="217" height="307" src="/images/blogger-import/blogger-c23b7f2712/01.webp" alt="圖片 1">
-(圖片來源: 喵喵書評)
-
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -7263,6 +8236,57 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </categories>
       <tags>
         <tag>閱讀紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>村裡來了個暴走女外科（書籍閱讀紀錄）</title>
+    <url>/2024/07/01/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%9D%91%E8%A3%A1%E4%BE%86%E4%BA%86%E5%80%8B%E6%9A%B4%E8%B5%B0%E5%A5%B3%E5%A4%96%E7%A7%91(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《村裡來了個暴走女外科》把外科醫師放進鄉下生活，寫行醫、人情與地方衛教。故事有一些尋找初心的遲疑，卻也讓我看見醫療不只發生在大醫院，還牽涉一個地方如何照顧彼此。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>那陣子電視劇很紅，因此就對原作小說有點好奇，再加上書名結合了非常多的元素，鄉下、外科以及醫師的性格，走過路過就拿起來瞧瞧了，不過好像是在電視劇結束很久之後，難怪這麼容易就借到了。</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>樸實的文字以及在整個尋頓尋找自己的過程中在找到自己初心的過程，也許是參雜了作者實際的經驗以及過於想要描寫那些困頓的情景，其實過程中揭露的部分有點缺少，導致很難更深入的參與故事，閱讀的流暢感部分是少了一點的，但鄉下的行醫是有趣的，人情味以及奇聞軼事，也從中帶出鄉下的衛教問題。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>不會說不好看，但我覺得在遠遁尋找自己的過程中，本書之中有比較多想當然耳的片段(或許會有點公式化的感覺)，因為有稍多的內容透過稍微提到及片段回憶的方式展現，沒有徹底展開的情節讓我在閱讀上遇到了一點障礙，直到最近在電影院看完了蒼鷺與少年之後我才覺得類似的處理手法並不一定有問題，而是我不能總是當一個想知道故事全貌的作者，算是作者跟讀者之間建構世界的互相吧？</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>我想這些不同於城市出現狀況的詫異性讓閱讀起來有種不知道該如何應對的無助與有趣感？</p>
+<p>我想這是一個一群需要幫助的病人，一個不同於都市的行醫環境，一個遭受挫折的外科醫生找回初心的故事(當然有點是被環境稍微強迫的，畢竟能開刀的醫生很少，同時那些開刀的設備不夠實力可能也無法運用自如吧)，所以可能還要加一點，一個遭受挫折但仍然願意為大家奉獻的，會享受外科成就感及挑戰的外科醫生。</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="217" height="307" src="/images/blogger-import/blogger-c23b7f2712/01.webp" alt="圖片 1">
+(圖片來源: 喵喵書評)
+
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post.html -->
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>閱讀紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>梅艷芳（觀影紀錄）</title>
+    <url>/2024/07/11/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%A2%85%E8%89%B7%E8%8A%B3(%E8%A7%80%E5%BD%B1%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《梅艷芳》以傳記電影的方式整理她的成長、成功、感情與舞台人生。它沒有只挑出幾個代表事件，而是試著把不同階段的選擇串起來，讓原本只知道名字的觀眾，也能靠近她為什麼如此令人難忘。</p>
+<span id="more"></span>
+
+<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>迪士尼串流系列的再更新，一直挺不習慣為何我瀏覽串流會這麼被推薦所影響，不能有一個方式是提供好好進行瀏覽的嗎？有時候想看到的電影卻被藏的有點後面，確實挺費心的，還好挑的這部還不錯看，女人花是我某陣子的單曲循環。</p>
+<h2 id="電影特色"><a href="#電影特色" class="headerlink" title="電影特色"></a>電影特色</h2><p>傳記類型的電影其實我是第一次看，好久之前的波希米亞狂想曲沒去看成，通常電影會挑出幾個標誌性的事件去重新演繹，梅艷芳這部我覺得挺好看的，無論是成功、感情與張國榮的故事、最後嫁給舞台的演唱會全部都有帶到，並且是有感情的去做那個事件的關聯，梅姐的個性以及吸引人的地方應該是都沒有漏掉，對稍微知道但不甚了解的我來說很不錯。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>當歌手終於跳脫了特定的歌曲來到眼前的時刻，感受還是不同的，聽著女人花開始在歌詞中感受到他的心情，就好像是看畫如果對畫家的生平有更深的理解，是能有更多連結的！</p>
+<p>梅姐的故事是不同於一般人的，若不以補充資料來看，單純以電影呈現來討論的話，我喜歡跟張國榮的相處，以及給觀眾舞台的呈現，尤其是最後要給大家演唱會的1:99還有自己的最後一場，其實感受是複雜的，最感動是明星對於觀眾的回應還有他們反饋的支持，其他更深層的可能因為故事始終沒有太深入地去剖析情感，所以仔細想來除了一些強烈的個性之外，人物是稍微有一點平面化的，尤其故事之中又常常的去互動兒時的舞台回憶。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>稍微讓我有點出戲的地方是轉折的處理沒有時間線的標明也有些缺乏脈絡，髮型以及事件的變換會讓人知道時間的流逝，但這種像是翻篇的單元劇跳場讓不太熟的人很難去做區分，因此有些醞釀的情感其實早該爆發，但卻也一路拖到了最後一刻才有點感受。</p>
+<p>但至少架構上，人物上，劇情上，我還是覺得電影不錯看的。</p>
+<p>最後推薦聆聽：夕陽之歌</p>
+<p>註：電影人物其實有做部分改編，例如日本男星那邊(剛剛偷查才知道)</p>
+<p>註：梅艷芳電影其實批評也不算少，很多人認為電影沒有展現梅姐的風采</p>
+<p>註：最後一場演唱會跟中間的真實畫面轉接問題也被批評不夠流暢</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="431" height="251" src="/images/blogger-import/blogger-10c40f82b4/01.webp" alt="圖片 1">
+
+<p>(圖片來源: 迪士尼串流影音平台)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_11.html -->
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>觀影紀錄</tag>
       </tags>
   </entry>
   <entry>
@@ -7375,34 +8399,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>梅艷芳（觀影紀錄）</title>
-    <url>/2024/07/11/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%A2%85%E8%89%B7%E8%8A%B3(%E8%A7%80%E5%BD%B1%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《梅艷芳》以傳記電影的方式整理她的成長、成功、感情與舞台人生。它沒有只挑出幾個代表事件，而是試著把不同階段的選擇串起來，讓原本只知道名字的觀眾，也能靠近她為什麼如此令人難忘。</p>
-<span id="more"></span>
-
-<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>迪士尼串流系列的再更新，一直挺不習慣為何我瀏覽串流會這麼被推薦所影響，不能有一個方式是提供好好進行瀏覽的嗎？有時候想看到的電影卻被藏的有點後面，確實挺費心的，還好挑的這部還不錯看，女人花是我某陣子的單曲循環。</p>
-<h2 id="電影特色"><a href="#電影特色" class="headerlink" title="電影特色"></a>電影特色</h2><p>傳記類型的電影其實我是第一次看，好久之前的波希米亞狂想曲沒去看成，通常電影會挑出幾個標誌性的事件去重新演繹，梅艷芳這部我覺得挺好看的，無論是成功、感情與張國榮的故事、最後嫁給舞台的演唱會全部都有帶到，並且是有感情的去做那個事件的關聯，梅姐的個性以及吸引人的地方應該是都沒有漏掉，對稍微知道但不甚了解的我來說很不錯。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>當歌手終於跳脫了特定的歌曲來到眼前的時刻，感受還是不同的，聽著女人花開始在歌詞中感受到他的心情，就好像是看畫如果對畫家的生平有更深的理解，是能有更多連結的！</p>
-<p>梅姐的故事是不同於一般人的，若不以補充資料來看，單純以電影呈現來討論的話，我喜歡跟張國榮的相處，以及給觀眾舞台的呈現，尤其是最後要給大家演唱會的1:99還有自己的最後一場，其實感受是複雜的，最感動是明星對於觀眾的回應還有他們反饋的支持，其他更深層的可能因為故事始終沒有太深入地去剖析情感，所以仔細想來除了一些強烈的個性之外，人物是稍微有一點平面化的，尤其故事之中又常常的去互動兒時的舞台回憶。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>稍微讓我有點出戲的地方是轉折的處理沒有時間線的標明也有些缺乏脈絡，髮型以及事件的變換會讓人知道時間的流逝，但這種像是翻篇的單元劇跳場讓不太熟的人很難去做區分，因此有些醞釀的情感其實早該爆發，但卻也一路拖到了最後一刻才有點感受。</p>
-<p>但至少架構上，人物上，劇情上，我還是覺得電影不錯看的。</p>
-<p>最後推薦聆聽：夕陽之歌</p>
-<p>註：電影人物其實有做部分改編，例如日本男星那邊(剛剛偷查才知道)</p>
-<p>註：梅艷芳電影其實批評也不算少，很多人認為電影沒有展現梅姐的風采</p>
-<p>註：最後一場演唱會跟中間的真實畫面轉接問題也被批評不夠流暢</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="431" height="251" src="/images/blogger-import/blogger-10c40f82b4/01.webp" alt="圖片 1">
-
-<p>(圖片來源: 迪士尼串流影音平台)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_11.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>觀影紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>為什麼書賣這麼貴（書籍閱讀紀錄）</title>
     <url>/2024/08/03/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9B%B8%E8%B3%A3%E9%80%99%E9%BA%BC%E8%B2%B4(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
     <content><![CDATA[<p>《為什麼書賣這麼貴》把讀者不容易看見的出版產業攤開來，討論書籍如何被製作、推廣與定價。它讓我發現文字創作與出版市場並不是同一件事，也重新思考一本書的價格究竟由什麼組成。</p>
@@ -7485,21 +8481,22 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>百年爛漫：漫畫與臺灣美術的相遇（書籍閱讀紀錄）</title>
-    <url>/2024/07/15/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%99%BE%E5%B9%B4%E7%88%9B%E6%BC%AB%EF%BC%9A%E6%BC%AB%E7%95%AB%E8%88%87%E8%87%BA%E7%81%A3%E7%BE%8E%E8%A1%93%E7%9A%84%E7%9B%B8%E9%81%87(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《百年爛漫：漫畫與臺灣美術的相遇》用三個人物的故事，從畫家、修復師與收藏家的角度靠近美術作品。它沒有把藝術講成遙遠的知識，而是讓作品背後的人、選擇與觀看方式慢慢浮現。</p>
+    <title>生活系遊戲（網路小說閱讀紀錄）</title>
+    <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%94%9F%E6%B4%BB%E7%B3%BB%E9%81%8A%E6%88%B2(%E7%B6%B2%E8%B7%AF%E5%B0%8F%E8%AA%AA%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《生活系遊戲》表面上是廚師與料理的故事，真正讓我一再重看的，卻是食物如何把人帶回那些不願忘記的回憶。每一道菜都連著一段人生，讓已經過去的人與事，重新在當下被理解。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>工讀生中有一位是藝術史研究所的研究生，聽他介紹了不少美術的觀點與故事，其中了解作者的生平以及創意歷程能夠讓我們對作品有更多的體會，而怎樣有這一個體會則是撰寫介紹的人所努力的方向，於是有類似輕鬆了解美術的書籍我就會想拿起來翻翻。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>書中透過三個人物的故事展現了美術館的某一個角落或是感動，我覺得非常有拋磚引玉的趣味性，圍繞著美術這件事情，在三個角度裡面去會會看他們的故事，畫家之外圍繞著畫家的畫作修復師，畫家心之所向想描繪的景中人以及收藏畫的收藏家，每一個都是點到為止而且留下了不少韻味。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>因為故事都是點到為止，讓我也不禁思考美術館或是博物館文字介紹上的呈現，看過了故事之後再看，手冊之外更完整的故事，之前在國台圖實習的時候有協助蔣渭水的畫展，但儘管我怎麼的導覽或是費心記憶，其實這些都是短暫的，故事之中他們的情感與交集都很難在站立談論的短暫時間裡面傳達，所以漫畫跟台灣美術的相遇我真的滿喜歡的，給我一種不同的參展體驗，而且無論是水彩到後面創作的筆觸，都很用心。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>看完書，並稍微討論之後分享了現代藝術的某種觀點？像是自已誤會以兒童的角度來繪畫這個有點偏的角度是某種現代藝術的時候，就有一點羞愧，像是想拿著某種特別的知識來炫耀的人，而不是一個合格的觀眾？</p>
-<p>討論完之後，我覺得應該說兒童的角度是某一個結果或成果的展示，而不是一個直接要知道的答案，因為現代藝術家早就過了畫的漂亮的時期，可能更多時候是在尋找意義或是與觀看人的互動，至於這個互動是怎樣發生可能就有賴於藝術產業以及觀看人了。</p>
-<p>跟工讀生討論的過程中，他總是會請我先緩緩，問我看到了什麼？<br>(但我可能很多都沒看到，囧)</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="251" height="340" src="/images/blogger-import/blogger-e4aa2f7b8f/01.webp" alt="圖片 1">
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>生活系遊戲應該是書荒的時候從閱讀推薦裡面挖到的書，有陣子起點推出推薦書單功能，各路書單主常常都以十年老書蟲開頭(連結：<a href="https://book.qidian.com/booklist/)%EF%BC%8C%E5%BE%80%E5%BE%80%E4%B9%9F%E4%B8%8D%E7%9F%A5%E9%81%93%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E5%A6%82%E6%AD%A4%EF%BC%8C%E4%BD%86%E9%80%99%E6%9C%AC%E6%9B%B8%E6%88%91%E5%9C%A8%E5%A4%9A%E5%80%8B%E6%9B%B8%E5%96%AE%E8%A3%A1%E9%83%BD%E7%99%BC%E7%8F%BE%E4%BB%96%E7%9A%84%E8%B9%A4%E8%B7%A1%EF%BC%8C%E5%B0%B1%E6%87%89%E8%A9%B2%E6%98%AF%E7%9C%9F%E7%9A%84%E4%B8%8D%E9%8C%AF%E4%BA%86%E5%90%A7%EF%BC%81%E5%BE%8C%E4%BE%86%E7%99%BC%E7%8F%BE%E5%96%9C%E6%AD%A1%E7%9A%84%E6%9B%B8%E5%96%AE%E4%B8%BB%E5%BE%88%E5%B0%91%E6%9B%B4%E6%96%B0%E5%B0%B1%E9%99%B8%E7%BA%8C%E6%B2%92%E9%97%9C%E6%B3%A8%E4%BA%86%EF%BC%8C%E4%BD%86%E9%80%99%E7%9C%9F%E7%9A%84%E6%98%AF%E4%B8%80%E5%80%8B%E5%BE%88%E6%A3%92%E7%9A%84%E4%BA%92%E5%8B%95%E5%8A%9F%E8%83%BD%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%9C%96%E6%9B%B8%E9%A4%A8%E6%9C%89%E9%80%99%E5%80%8B%E6%B8%85%E5%96%AE%E6%88%91%E6%87%89%E8%A9%B2%E6%9C%83%E6%8C%BA%E5%96%9C%E6%AD%A1%E9%80%9B%E7%9A%84%EF%BC%81">https://book.qidian.com/booklist/)，往往也不知道是否真的如此，但這本書我在多個書單裡都發現他的蹤跡，就應該是真的不錯了吧！後來發現喜歡的書單主很少更新就陸續沒關注了，但這真的是一個很棒的互動功能，如果圖書館有這個清單我應該會挺喜歡逛的！</a></p>
+<p>結果雖然把它加入了清單，也還是過了快半年才開始看，結果這本真得超乎想像，我陸續看了大概三遍，還是仍然覺得趣味十足，就連過年我也在看這本，即使作者自己說不會做菜但也沒關係，好看就行。</p>
+<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>這本是以廚師為主角的美食小說，透過食物與吃連結記憶與情感，連系統設計都非常有意思，主角可以透過當事人的記憶來試圖練習學會對方記憶中的美食，無論長輩們是歷經了戰爭或文革(民國舊影)，他們那些珍藏的回憶與這段記憶連結的美食是能跨越傷痛的。</p>
+<p>每個人都有自己珍藏的美食記憶，這道美味的菜是重要的人做給我的，這道是分別前最後一起吃的食物等等，大時代下的身不由己，艱難生活下的人力有限，過去已經無法改變，但透過這些美味食物及味道的尋找，我們在小說中看到他們凝視回憶的勇氣，更溫馨的是這份味道不只凝視，更進一步的在口中重現。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>在我看的小說中描寫親情的小說很少，這本書寫了生活，寫了圓夢，寫了那些過去在小說中被忽視的長輩們的故事，很難想像吃這件事情在回憶中佔了這麼重要的分量，不過我也仍然記得小時候騎著機車去吃鍋貼的回憶。</p>
+<p>延續凝視回憶的說法，總還是有些片段我們可能平常不會特別想起來，但透過食物連結可以發現那些其實我們不想忘記的回憶，有時候也會想到神隱少女那句「其實你並沒有忘記，你只是想不起來罷了」。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>生活系遊戲寫了很多生活裡面回憶的故事，有時候即使悲傷，想起關心自己的人及和他們相處的回憶也可能會讓自己心情好過很多，尤其書中雖然每個人還是有自己的缺點與不堪(例如三爺爺的偏心造成家庭失和)，但沒什麼反派人物，而且有趣的情節構思與可愛而真實的廚師日常，讓你想跟著探究並以食物來重新連結彼此。</p>
+ <img class="blogger-import-image" loading="lazy" decoding="async" width="194" height="259" src="/images/blogger-import/blogger-a608a1ecb0/01.webp" alt="圖片 1">
 
-<p>(圖片來源: 喵喵書評)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_15.html -->
+<p>(圖片來源：起點中文網)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/blog-post_68.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -7540,22 +8537,21 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
-    <title>生活系遊戲（網路小說閱讀紀錄）</title>
-    <url>/2022/07/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%94%9F%E6%B4%BB%E7%B3%BB%E9%81%8A%E6%88%B2(%E7%B6%B2%E8%B7%AF%E5%B0%8F%E8%AA%AA%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《生活系遊戲》表面上是廚師與料理的故事，真正讓我一再重看的，卻是食物如何把人帶回那些不願忘記的回憶。每一道菜都連著一段人生，讓已經過去的人與事，重新在當下被理解。</p>
+    <title>百年爛漫：漫畫與臺灣美術的相遇（書籍閱讀紀錄）</title>
+    <url>/2024/07/15/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%99%BE%E5%B9%B4%E7%88%9B%E6%BC%AB%EF%BC%9A%E6%BC%AB%E7%95%AB%E8%88%87%E8%87%BA%E7%81%A3%E7%BE%8E%E8%A1%93%E7%9A%84%E7%9B%B8%E9%81%87(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《百年爛漫：漫畫與臺灣美術的相遇》用三個人物的故事，從畫家、修復師與收藏家的角度靠近美術作品。它沒有把藝術講成遙遠的知識，而是讓作品背後的人、選擇與觀看方式慢慢浮現。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>生活系遊戲應該是書荒的時候從閱讀推薦裡面挖到的書，有陣子起點推出推薦書單功能，各路書單主常常都以十年老書蟲開頭(連結：<a href="https://book.qidian.com/booklist/)%EF%BC%8C%E5%BE%80%E5%BE%80%E4%B9%9F%E4%B8%8D%E7%9F%A5%E9%81%93%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E5%A6%82%E6%AD%A4%EF%BC%8C%E4%BD%86%E9%80%99%E6%9C%AC%E6%9B%B8%E6%88%91%E5%9C%A8%E5%A4%9A%E5%80%8B%E6%9B%B8%E5%96%AE%E8%A3%A1%E9%83%BD%E7%99%BC%E7%8F%BE%E4%BB%96%E7%9A%84%E8%B9%A4%E8%B7%A1%EF%BC%8C%E5%B0%B1%E6%87%89%E8%A9%B2%E6%98%AF%E7%9C%9F%E7%9A%84%E4%B8%8D%E9%8C%AF%E4%BA%86%E5%90%A7%EF%BC%81%E5%BE%8C%E4%BE%86%E7%99%BC%E7%8F%BE%E5%96%9C%E6%AD%A1%E7%9A%84%E6%9B%B8%E5%96%AE%E4%B8%BB%E5%BE%88%E5%B0%91%E6%9B%B4%E6%96%B0%E5%B0%B1%E9%99%B8%E7%BA%8C%E6%B2%92%E9%97%9C%E6%B3%A8%E4%BA%86%EF%BC%8C%E4%BD%86%E9%80%99%E7%9C%9F%E7%9A%84%E6%98%AF%E4%B8%80%E5%80%8B%E5%BE%88%E6%A3%92%E7%9A%84%E4%BA%92%E5%8B%95%E5%8A%9F%E8%83%BD%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%9C%96%E6%9B%B8%E9%A4%A8%E6%9C%89%E9%80%99%E5%80%8B%E6%B8%85%E5%96%AE%E6%88%91%E6%87%89%E8%A9%B2%E6%9C%83%E6%8C%BA%E5%96%9C%E6%AD%A1%E9%80%9B%E7%9A%84%EF%BC%81">https://book.qidian.com/booklist/)，往往也不知道是否真的如此，但這本書我在多個書單裡都發現他的蹤跡，就應該是真的不錯了吧！後來發現喜歡的書單主很少更新就陸續沒關注了，但這真的是一個很棒的互動功能，如果圖書館有這個清單我應該會挺喜歡逛的！</a></p>
-<p>結果雖然把它加入了清單，也還是過了快半年才開始看，結果這本真得超乎想像，我陸續看了大概三遍，還是仍然覺得趣味十足，就連過年我也在看這本，即使作者自己說不會做菜但也沒關係，好看就行。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>這本是以廚師為主角的美食小說，透過食物與吃連結記憶與情感，連系統設計都非常有意思，主角可以透過當事人的記憶來試圖練習學會對方記憶中的美食，無論長輩們是歷經了戰爭或文革(民國舊影)，他們那些珍藏的回憶與這段記憶連結的美食是能跨越傷痛的。</p>
-<p>每個人都有自己珍藏的美食記憶，這道美味的菜是重要的人做給我的，這道是分別前最後一起吃的食物等等，大時代下的身不由己，艱難生活下的人力有限，過去已經無法改變，但透過這些美味食物及味道的尋找，我們在小說中看到他們凝視回憶的勇氣，更溫馨的是這份味道不只凝視，更進一步的在口中重現。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>在我看的小說中描寫親情的小說很少，這本書寫了生活，寫了圓夢，寫了那些過去在小說中被忽視的長輩們的故事，很難想像吃這件事情在回憶中佔了這麼重要的分量，不過我也仍然記得小時候騎著機車去吃鍋貼的回憶。</p>
-<p>延續凝視回憶的說法，總還是有些片段我們可能平常不會特別想起來，但透過食物連結可以發現那些其實我們不想忘記的回憶，有時候也會想到神隱少女那句「其實你並沒有忘記，你只是想不起來罷了」。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>生活系遊戲寫了很多生活裡面回憶的故事，有時候即使悲傷，想起關心自己的人及和他們相處的回憶也可能會讓自己心情好過很多，尤其書中雖然每個人還是有自己的缺點與不堪(例如三爺爺的偏心造成家庭失和)，但沒什麼反派人物，而且有趣的情節構思與可愛而真實的廚師日常，讓你想跟著探究並以食物來重新連結彼此。</p>
- <img class="blogger-import-image" loading="lazy" decoding="async" width="194" height="259" src="/images/blogger-import/blogger-a608a1ecb0/01.webp" alt="圖片 1">
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>工讀生中有一位是藝術史研究所的研究生，聽他介紹了不少美術的觀點與故事，其中了解作者的生平以及創意歷程能夠讓我們對作品有更多的體會，而怎樣有這一個體會則是撰寫介紹的人所努力的方向，於是有類似輕鬆了解美術的書籍我就會想拿起來翻翻。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>書中透過三個人物的故事展現了美術館的某一個角落或是感動，我覺得非常有拋磚引玉的趣味性，圍繞著美術這件事情，在三個角度裡面去會會看他們的故事，畫家之外圍繞著畫家的畫作修復師，畫家心之所向想描繪的景中人以及收藏畫的收藏家，每一個都是點到為止而且留下了不少韻味。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>因為故事都是點到為止，讓我也不禁思考美術館或是博物館文字介紹上的呈現，看過了故事之後再看，手冊之外更完整的故事，之前在國台圖實習的時候有協助蔣渭水的畫展，但儘管我怎麼的導覽或是費心記憶，其實這些都是短暫的，故事之中他們的情感與交集都很難在站立談論的短暫時間裡面傳達，所以漫畫跟台灣美術的相遇我真的滿喜歡的，給我一種不同的參展體驗，而且無論是水彩到後面創作的筆觸，都很用心。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>看完書，並稍微討論之後分享了現代藝術的某種觀點？像是自已誤會以兒童的角度來繪畫這個有點偏的角度是某種現代藝術的時候，就有一點羞愧，像是想拿著某種特別的知識來炫耀的人，而不是一個合格的觀眾？</p>
+<p>討論完之後，我覺得應該說兒童的角度是某一個結果或成果的展示，而不是一個直接要知道的答案，因為現代藝術家早就過了畫的漂亮的時期，可能更多時候是在尋找意義或是與觀看人的互動，至於這個互動是怎樣發生可能就有賴於藝術產業以及觀看人了。</p>
+<p>跟工讀生討論的過程中，他總是會請我先緩緩，問我看到了什麼？<br>(但我可能很多都沒看到，囧)</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="251" height="340" src="/images/blogger-import/blogger-e4aa2f7b8f/01.webp" alt="圖片 1">
 
-<p>(圖片來源：起點中文網)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/blog-post_68.html -->
+<p>(圖片來源: 喵喵書評)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_15.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
@@ -7643,6 +8639,32 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
       </tags>
   </entry>
   <entry>
+    <title>紅嬰仔（書籍閱讀紀錄）</title>
+    <url>/2024/06/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%B4%85%E5%AC%B0%E4%BB%94(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
+    <content><![CDATA[<p>《紅嬰仔》從母親的角度寫不婚、結婚、懷孕與育兒，也在現在與過去的時間軸之間來回。簡媜把身體、家庭與記憶寫得細膩而有想像力，讓育兒不只是生活經驗，也成為重新理解自己的過程。</p>
+<span id="more"></span>
+
+<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>從老師的十二樣見面禮的初見，後來偶然閱讀的水問，我就一直很欣賞簡媜的作品，一路挑挑揀揀的閱讀，借了沒看完，想看的沒借到，一整個系列真的站時就看完這本，看類似的作品果然是很需要排除萬難的，情緒上是飽滿而且讓你有想像空間的書尤其是。</p>
+<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>這本書是十二樣見面禮的主角的故事，從母親角度所呈現的不婚&gt;結婚&gt;懷孕及育子的各種心理狀態於所思所想，比起我看過作者的其他幾部作品，我覺得這本友善很多，每有地方看不懂！</p>
+<p>文中有兩個時間軸在同一個篇章裡面同時進行，一個是簡媜育兒，一個是透過育兒回想自己的過去經驗，無論哪方面都精彩，即使有些時候你會覺得某些意見對於你自己來說有點刺耳到偏見，但這完全無損於內容精彩、溫馨以及想像力。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我一直困惑到底喜歡簡媜的文字還是什麼？畢竟偶爾會看不懂，但我猜我喜歡他對於文字的想像而且讀起來是輕靈的(有點像看曹燕子的棋)，就像是他後記裡面寫到，文字提供了一個之後重聚的地方。</p>
+<p>有些書好像不一定要獲得什麼，能從中感受到很多的感情與珍惜，想像那些父母回憶裡的樣子，如果要總結書的話，在湯裡放鹽，在愛裡放責任。</p>
+<p>我寫書評除了凝視回憶，我也想與各個時刻的我相聚，但FB的部分奇怪貼文我還是得選擇忽略(那時候怎麼這麼中二)。</p>
+<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>除了以上的推薦以及感想，書中有很多掙扎跟成長的地方(生兒育子)。例如現代女性若完全地融入家庭而當作唯一成就是超級危險的，但這也是一個重要的旅程，身為男生的我也默默在書中體會了不少，即使這書很早就出版了也一樣！</p>
+<p>最後我喜歡其中一個回想中寫到的，寂寞是你心靈敲門的聲音。</p>
+<img class="blogger-import-image" loading="lazy" decoding="async" width="247" height="319" src="/images/blogger-import/blogger-cb2febd468/01.webp" alt="圖片 1">
+
+<p>(圖片來源: 喵喵書評網站)</p>
+<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/blog-post_24.html -->
+]]></content>
+      <categories>
+        <category>閱讀與影視</category>
+      </categories>
+      <tags>
+        <tag>閱讀紀錄</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>簡易的資料整理法（書籍閱讀紀錄—短）</title>
     <url>/2023/09/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%B0%A1%E6%98%93%E7%9A%84%E8%B3%87%E6%96%99%E6%95%B4%E7%90%86%E6%B3%95(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84%E2%80%94%E7%9F%AD)/</url>
     <content><![CDATA[<p>《簡易的資料整理法》從一九八○年代的資料與名片整理出發，展示一套屬於當時的工作方法與生活觀察。它未必每個做法都適合現在，卻讓我看見整理的核心不只在工具，也在執行力、自省與能否真正回頭使用那些資料。</p>
@@ -7708,32 +8730,6 @@ X JAPAN 的音樂總是有著極具張力的史詩感，而這首歌最讓我著
 <p>特別是對於生活有自己想像這點，代表你很清楚自己快樂是如何形成的，知道喜歡的樣子，並且學習成熟的面對他，這部分是我一直缺乏的，平常更多像是隨波逐流的生活著，希望我能盡快有自己的想像。</p>
 <p> <img class="blogger-import-image" loading="lazy" decoding="async" width="426" height="263" src="/images/blogger-import/blogger-8f74ce781b/01.webp" alt="圖片 1"> (圖片來源：起點中文網)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/blog-post_7.html -->
-]]></content>
-      <categories>
-        <category>閱讀與影視</category>
-      </categories>
-      <tags>
-        <tag>閱讀紀錄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>紅嬰仔（書籍閱讀紀錄）</title>
-    <url>/2024/06/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%B4%85%E5%AC%B0%E4%BB%94(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/</url>
-    <content><![CDATA[<p>《紅嬰仔》從母親的角度寫不婚、結婚、懷孕與育兒，也在現在與過去的時間軸之間來回。簡媜把身體、家庭與記憶寫得細膩而有想像力，讓育兒不只是生活經驗，也成為重新理解自己的過程。</p>
-<span id="more"></span>
-
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>從老師的十二樣見面禮的初見，後來偶然閱讀的水問，我就一直很欣賞簡媜的作品，一路挑挑揀揀的閱讀，借了沒看完，想看的沒借到，一整個系列真的站時就看完這本，看類似的作品果然是很需要排除萬難的，情緒上是飽滿而且讓你有想像空間的書尤其是。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>這本書是十二樣見面禮的主角的故事，從母親角度所呈現的不婚&gt;結婚&gt;懷孕及育子的各種心理狀態於所思所想，比起我看過作者的其他幾部作品，我覺得這本友善很多，每有地方看不懂！</p>
-<p>文中有兩個時間軸在同一個篇章裡面同時進行，一個是簡媜育兒，一個是透過育兒回想自己的過去經驗，無論哪方面都精彩，即使有些時候你會覺得某些意見對於你自己來說有點刺耳到偏見，但這完全無損於內容精彩、溫馨以及想像力。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我一直困惑到底喜歡簡媜的文字還是什麼？畢竟偶爾會看不懂，但我猜我喜歡他對於文字的想像而且讀起來是輕靈的(有點像看曹燕子的棋)，就像是他後記裡面寫到，文字提供了一個之後重聚的地方。</p>
-<p>有些書好像不一定要獲得什麼，能從中感受到很多的感情與珍惜，想像那些父母回憶裡的樣子，如果要總結書的話，在湯裡放鹽，在愛裡放責任。</p>
-<p>我寫書評除了凝視回憶，我也想與各個時刻的我相聚，但FB的部分奇怪貼文我還是得選擇忽略(那時候怎麼這麼中二)。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>除了以上的推薦以及感想，書中有很多掙扎跟成長的地方(生兒育子)。例如現代女性若完全地融入家庭而當作唯一成就是超級危險的，但這也是一個重要的旅程，身為男生的我也默默在書中體會了不少，即使這書很早就出版了也一樣！</p>
-<p>最後我喜歡其中一個回想中寫到的，寂寞是你心靈敲門的聲音。</p>
-<img class="blogger-import-image" loading="lazy" decoding="async" width="247" height="319" src="/images/blogger-import/blogger-cb2febd468/01.webp" alt="圖片 1">
-
-<p>(圖片來源: 喵喵書評網站)</p>
-<!-- Blogger 原文：https://eric402040531.blogspot.com/2024/06/blog-post_24.html -->
 ]]></content>
       <categories>
         <category>閱讀與影視</category>
