@@ -8,6 +8,9 @@ hexo.extend.generator.register('random_json', function(locals) {
     const categories = post.categories && typeof post.categories.toArray === 'function'
       ? post.categories.toArray().map(category => category.name)
       : [];
+    const tags = post.tags && typeof post.tags.toArray === 'function'
+      ? post.tags.toArray().map(tag => tag.name)
+      : [];
 
     // 入口頁與站務文章不列入隨機內容，避免抽到控制頁或系統頁。
     if (!path || post.type === 'random' || categories.includes('站務')) return;
@@ -23,6 +26,7 @@ hexo.extend.generator.register('random_json', function(locals) {
       url: '/' + path,
       date: post.date.format('YYYY-MM-DD'),
       categories: categories.length ? categories : ['未分類'],
+      tags,
       excerpt
     });
   });

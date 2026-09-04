@@ -7,8 +7,129 @@
 
 {% block content %}
 
-  {%- for post in page.posts.toArray() %}
-    {{ partial('_macro/post.njk', {post: post, is_index: true}) }}
+  {% set home_posts = page.posts.toArray() %}
+  {% set has_pinned_post = home_posts[0] and home_posts[0].sticky %}
+
+  {% if has_pinned_post %}
+    <div class="home-pinned-post">
+      {{ partial('_macro/post.njk', {post: home_posts[0], is_index: true}) }}
+    </div>
+  {% endif %}
+
+  <section class="home-landing" aria-label="首頁內容入口">
+    <div class="home-archive-rail">
+      <div class="home-archive-rail-main">
+        <span class="home-archive-rail-label">A-01 / DJ PLAYBACK</span>
+        <strong class="home-archive-rail-heading">隨機點播</strong>
+        <div class="home-pick-grid">
+          <a id="home-dj-audio" class="home-pick" href="/random/">
+            <span class="home-pick-label">♫ AUDIO</span>
+            <strong data-dj-title>隨機選曲中…</strong>
+            <small data-dj-meta>DJ / LOADING</small>
+          </a>
+          <a id="home-dj-book" class="home-pick" href="/random/">
+            <span class="home-pick-label">▣ BOOK</span>
+            <strong data-dj-title>隨機選書中…</strong>
+            <small data-dj-meta>DJ / LOADING</small>
+          </a>
+        </div>
+        <small id="home-dj-status" class="home-pick-updated">DJ / RANDOM PLAYBACK</small>
+      </div>
+      <a class="home-archive-rail-index" href="/reading-log/">OPEN INDEX ↗</a>
+    </div>
+
+    <script>
+      (function () {
+        var audio = document.getElementById('home-dj-audio');
+        var book = document.getElementById('home-dj-book');
+        var status = document.getElementById('home-dj-status');
+        if (!audio || !book) return;
+
+        function randomItem(items) {
+          return items[Math.floor(Math.random() * items.length)];
+        }
+
+        function cleanTitle(title) {
+          return String(title || '未命名文章')
+            .replace(/^歌曲推薦\s*[-:：]?\s*/, '')
+            .replace(/\s*[-｜|]\s*歌曲推薦.*$/, '')
+            .replace(/\s*[-｜|]\s*書籍閱讀紀錄.*$/, '')
+            .replace(/\s*[（(]書籍閱讀紀錄[^）)]*[）)]\s*$/, '')
+            .trim();
+        }
+
+        function setPick(target, item) {
+          var title = target.querySelector('[data-dj-title]');
+          var meta = target.querySelector('[data-dj-meta]');
+          target.href = item.url || '/random/';
+          title.textContent = cleanTitle(item.title);
+          meta.textContent = 'REC / ' + (item.date || 'UNKNOWN');
+        }
+
+        fetch('/random.json')
+          .then(function (response) {
+            if (!response.ok) throw new Error('random archive request failed');
+            return response.json();
+          })
+          .then(function (items) {
+            var records = Array.isArray(items) ? items : [];
+            var songs = records.filter(function (item) {
+              return item && item.categories && item.categories.indexOf('音樂') !== -1;
+            });
+            var books = records.filter(function (item) {
+              return item && item.categories && item.categories.indexOf('閱讀與影視') !== -1 &&
+                item.tags && item.tags.indexOf('閱讀紀錄') !== -1;
+            });
+            if (!songs.length || !books.length) throw new Error('no DJ records available');
+
+            setPick(audio, randomItem(songs));
+            setPick(book, randomItem(books));
+            if (status) status.textContent = 'DJ / RANDOM PLAYBACK · NEW SET';
+          })
+          .catch(function () {
+            if (status) status.textContent = 'DJ / PLAYBACK STANDBY';
+          });
+      })();
+    </script>
+
+    <nav class="home-landing-entry-grid" aria-label="內容入口">
+      <a class="home-landing-entry" href="/reading-log/">
+        <span class="home-landing-label">01 / INDEX</span>
+        <h2>生活索引</h2>
+        <p>看完整的內容入口與長期紀錄。</p>
+        <span class="home-landing-link">OPEN INDEX ↗</span>
+      </a>
+      <a class="home-landing-entry" href="/reading/">
+        <span class="home-landing-label">02 / DRAFTS</span>
+        <h2>草稿夾</h2>
+        <p>把還沒想好的題目放進來。</p>
+        <span class="home-landing-link">OPEN DRAFTS ↗</span>
+      </a>
+      <a class="home-landing-entry" href="/photos/">
+        <span class="home-landing-label">03 / MEMORY</span>
+        <h2>記憶圖牆</h2>
+        <p>讓圖片替文字留下一點空氣。</p>
+        <span class="home-landing-link">OPEN MEMORY ↗</span>
+      </a>
+      <a class="home-landing-entry" href="/random/">
+        <span class="home-landing-label">04 / RANDOM</span>
+        <h2>隨機文章</h2>
+        <p>不預設主題，讓下一篇自己出現。</p>
+        <span class="home-landing-link">OPEN RANDOM ↗</span>
+      </a>
+    </nav>
+
+    <div class="home-landing-section-heading">
+      <span>B-01</span>
+      <h2>最近留下的紀錄</h2>
+      <small>RECENT ENTRIES</small>
+    </div>
+  </section>
+
+  {%- for post in home_posts %}
+    {% if not (has_pinned_post and loop.first) %}
+      {{ partial('_macro/post.njk', {post: post, is_index: true}) }}
+    {% endif %}
   {%- endfor %}
 
   {%- include '_partials/pagination.njk' -%}

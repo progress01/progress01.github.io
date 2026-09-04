@@ -80,3 +80,44 @@ topics:
         url: /learning/lis-research-1965-2025-content-analysis/
         state: learning
         note: 以 1965–2025 的長期內容分析為入口，先釐清研究資料如何選取、分類如何維持可比性，以及主題與方法的變化可以如何被解讀。
+
+  - id: website-quality-testing
+    code: A-07
+    name: 網站品質與軟體測試
+    description: 以網站能否安心上線為主軸，從需求、風險與測試設計，逐步建立回歸測試、自動化與發布品質觀點。
+    items:
+      - id: reading-topic-07
+        date: 2026-09-04
+        title: "網站品質與軟體測試：42 天鐵人挑戰學習路徑"
+        source: ChatGPT 對話整理｜HyRead QA 職缺與網站品質學習規劃
+        url: /learning/website-quality-testing-roadmap/
+        state: learning
+        note: 用 42 天、6 個單元把目前的政府網站專案、網站檢核與 Python 應用，接到正規的需求、風險、測試、缺陷、回歸與發布流程；每個單元都設定必會、暫不學、過關產物與新知分流規則，英文則以碎碎念伴走，喜歡或值得回看的內容再升級成文章。
+      - id: reading-topic-08
+        date: 2026-09-04
+        title: "測試基本功：User Story、Test Case 與 Bug Report"
+        source: ChatGPT 對話整理｜網站 QA 基礎訓練
+        url: /learning/software-testing-basics-test-case-bug-report/
+        state: learning
+        note: 先學會把使用者需求轉成驗收條件、測試情境、測試案例與缺陷紀錄，並用修正驗證與回歸測試描述「怎麼知道它真的好了」。
+      - id: reading-topic-09
+        date: 2026-09-04
+        title: "測試設計：等價類別、邊界值與風險導向測試"
+        source: ChatGPT 對話整理｜網站 QA 基礎訓練
+        url: /learning/test-design-boundary-risk-based-testing/
+        state: learning
+        note: 練習有根據地選擇測試條件，而不是無限增加案例；先掌握等價類別、邊界值、決策表、狀態轉換、探索式測試與風險排序。
+      - id: reading-topic-10
+        date: 2026-09-04
+        title: "Web 自動化測試：Python、Pytest 與 Playwright"
+        source: ChatGPT 對話整理｜網站 QA 基礎訓練
+        url: /learning/web-automation-python-pytest-playwright/
+        state: learning
+        note: 將少量且穩定的手動案例轉成可重複執行的 Web 測試，依序學習 locator、assertion、fixture、參數化、失敗證據與 Page Object Model。
+      - id: reading-topic-11
+        date: 2026-09-04
+        title: "發布品質：Git、CI/CD 與 Release Checklist"
+        source: ChatGPT 對話整理｜網站 QA 基礎訓練
+        url: /learning/release-quality-git-ci-cd-checklist/
+        state: learning
+        note: 把測試放回真實開發流程，理解版本控制、測試環境、CI 執行、報告、發布判斷與上線後觀察；Appium、Maestro 與 Jenkins 先列為核心之後的延伸。

@@ -1156,3 +1156,593 @@ body {
     width: 100%;
   }
 }
+
+/* Homepage landing layer: add breathing room before the existing post stream. */
+.home-landing {
+  margin: 30px 0 34px;
+}
+
+.home-landing * {
+  box-sizing: border-box;
+}
+
+.home-landing a {
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.home-archive-rail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 16px 14px 17px;
+  background: #eee2cf;
+  border-top: 1px solid #cdb9a2;
+  border-bottom: 1px solid #cdb9a2;
+}
+
+.home-archive-rail-label,
+.home-archive-rail-main small,
+.home-archive-rail-index {
+  color: #e36b2f;
+  font: 10px/1.5 "Courier New", monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.home-archive-rail-main a {
+  display: block;
+  margin-top: 4px;
+  color: #4a3028;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.home-archive-rail-heading {
+  display: block;
+  margin-top: 5px;
+  color: #4a3028;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.home-archive-rail-main a:hover {
+  color: #e36b2f;
+}
+
+.home-pick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 7px;
+}
+
+.home-pick {
+  display: block;
+  margin-top: 0 !important;
+  padding-left: 13px;
+  border-left: 1px dashed #cdb9a2;
+}
+
+.home-pick:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.home-pick-label,
+.home-pick small,
+.home-pick-updated {
+  display: block;
+  color: #96745e;
+  font: 10px/1.5 "Courier New", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.home-pick-label {
+  color: #e36b2f;
+}
+
+.home-pick strong {
+  display: block;
+  margin-top: 5px;
+  color: #4a3028;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.home-pick:hover strong {
+  color: #e36b2f;
+}
+
+.home-pick small {
+  margin-top: 2px;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+
+.home-pick-updated {
+  margin-top: 9px;
+  color: #b08e73;
+  letter-spacing: .06em;
+}
+
+.home-archive-rail-main small {
+  display: block;
+  margin-top: 3px;
+  color: #96745e;
+  letter-spacing: .06em;
+}
+
+.home-archive-rail-empty {
+  display: block;
+  margin-top: 5px;
+  color: #6b5547;
+}
+
+.home-archive-rail-index {
+  color: #243d4b;
+  white-space: nowrap;
+}
+
+.home-archive-rail-index:hover {
+  color: #e36b2f;
+}
+
+.home-landing-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(230px, .8fr);
+  gap: 18px;
+  padding: 17px 20px;
+  color: #4a3028;
+  background: #efe2cc;
+  border: 1px solid #d8c8b4;
+  border-top: 3px solid #e36b2f;
+  box-shadow: 3px 3px 0 rgba(74, 48, 40, .12);
+}
+
+.home-landing-eyebrow,
+.home-landing-label,
+.home-landing-screen-top,
+.home-landing-stamp,
+.home-landing-entry .home-landing-link,
+.home-landing-section-heading small {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.home-landing-eyebrow {
+  color: #f1aa58;
+}
+
+.home-landing-copy h1 {
+  margin: 10px 0 6px;
+  color: #4a3028;
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: 2px;
+  line-height: 1.05;
+}
+
+.home-landing-copy p {
+  margin: 0;
+  color: #6b5547;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.home-landing-stamp {
+  display: inline-block;
+  margin-top: 13px;
+  padding: 4px 8px;
+  color: #e36b2f;
+  border: 1px solid #e36b2f;
+  transform: rotate(-3deg);
+}
+
+.home-landing-screen {
+  display: flex;
+  min-height: 132px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 13px;
+  background: #191414;
+  border: 1px solid #6d4637;
+  box-shadow: inset 0 0 0 4px #2e211d;
+}
+
+.home-landing-screen-top {
+  display: flex;
+  justify-content: space-between;
+  color: #e36b2f;
+}
+
+.home-landing-screen strong {
+  color: #ffe0a8;
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+.home-landing-screen a {
+  color: #f1aa58;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.home-landing-screen a:hover {
+  color: #fff4dc;
+}
+
+.home-landing-screen small {
+  color: #b48b6d;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+}
+
+.home-landing-current {
+  display: grid;
+  grid-template-columns: minmax(160px, .8fr) minmax(0, 1.2fr);
+  gap: 18px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 14px 17px;
+  background: #f8f1e4;
+  border: 1px solid #d8c8b4;
+}
+
+.home-landing-current h2 {
+  margin: 5px 0 0;
+  color: #4a3028;
+  font-size: 19px;
+}
+
+.home-landing-current p {
+  margin: 0;
+  color: #6b5547;
+  line-height: 1.8;
+}
+
+.home-landing-label {
+  color: #e36b2f;
+  font-size: 10px;
+}
+
+.home-landing-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.home-landing-entry {
+  display: flex;
+  min-height: 126px;
+  flex-direction: column;
+  padding: 14px;
+  background: #f5ead9;
+  border: 1px solid #d8c8b4;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.home-landing-entry:hover {
+  color: #4a3028;
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 0 rgba(74, 48, 40, .14);
+}
+
+.home-landing-entry h2 {
+  margin: 9px 0 5px;
+  color: #4a3028;
+  font-size: 17px;
+}
+
+.home-landing-entry p {
+  margin: 0;
+  color: #6b5547;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.home-landing-link {
+  display: block;
+  margin-top: auto;
+  padding-top: 11px;
+  color: #243d4b;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.home-landing-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 24px;
+  padding-bottom: 9px;
+  border-bottom: 2px solid #4a3028;
+}
+
+.home-landing-section-heading > span {
+  color: #e36b2f;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.home-landing-section-heading h2 {
+  margin: 0;
+  color: #4a3028;
+  font-size: 22px;
+}
+
+.home-landing-section-heading small {
+  margin-left: auto;
+  color: #96745e;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .home-landing-entry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .home-landing-hero {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .home-landing-screen {
+    min-height: 128px;
+  }
+
+  .home-landing-current {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .home-archive-rail {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .home-archive-rail-index {
+    justify-self: start;
+  }
+
+  .home-pick-grid {
+    gap: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .home-landing-entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-landing-section-heading {
+    flex-wrap: wrap;
+  }
+
+  .home-landing-section-heading small {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-landing-entry {
+    transition: none;
+  }
+
+  .home-landing-entry:hover {
+    transform: none;
+  }
+}
+
+/* 首頁置頂播放卡是獨立視覺，不使用一般文章的白色容器。 */
+.index .home-pinned-post {
+  margin-bottom: 30px;
+}
+
+.index .home-pinned-post > .post-block {
+  margin-bottom: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.index .home-pinned-post .post-header {
+  display: none;
+}
+
+.index .home-pinned-post .post-body {
+  margin: 0;
+  padding: 0;
+}
+
+.index .home-pinned-post #my-dashboard {
+  margin-top: 0 !important;
+  padding: 22px 25px !important;
+}
+
+/* 首頁首屏略微收緊，讓第一篇紀錄能在畫面下方露出。 */
+.index .home-pinned-post .terminal-left > div:nth-child(2) {
+  margin-top: 18px !important;
+}
+
+.index .home-pinned-post .terminal-right {
+  padding-left: 22px !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+.index .home-landing {
+  margin: 20px 0 25px;
+}
+
+.index .home-archive-rail {
+  padding: 12px 13px 13px;
+  background: #ebddc8;
+}
+
+.index .home-archive-rail-heading {
+  margin-top: 3px;
+  font-size: 18px;
+}
+
+.index .home-pick-grid {
+  gap: 14px;
+  margin-top: 5px;
+}
+
+.index .home-pick strong {
+  margin-top: 3px;
+  font-size: 15px;
+}
+
+.index .home-pick-updated {
+  margin-top: 6px;
+}
+
+.index .home-landing-entry-grid {
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.index .home-landing-entry {
+  min-height: 108px;
+  padding: 11px;
+  background: #f1e4d1;
+}
+
+.index .home-landing-entry h2 {
+  margin: 7px 0 3px;
+}
+
+.index .home-landing-entry p {
+  color: #5d4639;
+  line-height: 1.5;
+}
+
+.index .home-landing-link {
+  padding-top: 8px;
+}
+
+.index .home-landing-section-heading {
+  margin-top: 18px;
+  padding-bottom: 7px;
+}
+
+/* 下方入口的標籤降低橘色亮度，讓小字更穩定、容易讀。 */
+.index .home-archive-rail-label,
+.index .home-pick-label,
+.index .home-landing-label,
+.index .home-landing-section-heading > span {
+  color: #a65f43;
+}
+
+.index .home-archive-rail-index {
+  color: #8d7056;
+}
+
+.index .home-archive-rail-index:hover,
+.index .home-pick:hover strong,
+.index .home-landing-entry:hover .home-landing-link {
+  color: #e36b2f;
+}
+
+/* DJ 點播收成一條資訊列，避免首頁上方堆疊太多區塊。 */
+.index .home-archive-rail-main {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 1px;
+  align-items: center;
+}
+
+.index .home-archive-rail-label {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+}
+
+.index .home-archive-rail-heading {
+  margin-top: 0;
+  white-space: nowrap;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+}
+
+.index .home-pick-grid {
+  margin-top: 0;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+.index .home-pick-updated {
+  margin-top: 0;
+  white-space: nowrap;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+@media (max-width: 767px) {
+  .index .home-archive-rail-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 4px;
+  }
+
+  .index .home-archive-rail-label,
+  .index .home-archive-rail-heading,
+  .index .home-pick-grid,
+  .index .home-pick-updated {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .index .home-archive-rail-heading {
+    white-space: normal;
+  }
+
+  .index .home-pick-grid {
+    margin-top: 3px;
+  }
+
+  .index .home-pick-updated {
+    margin-top: 3px;
+  }
+}
+
+/* 第二列入口保留索引標籤即可，整張卡仍然維持可點擊。 */
+.index .home-landing-entry {
+  min-height: 82px;
+  justify-content: flex-start;
+}
+
+.index .home-landing-entry h2,
+.index .home-landing-entry p,
+.index .home-landing-entry .home-landing-link {
+  display: none;
+}
+
+/* 保留入口名稱；只收起說明與次要連結文字。 */
+.index .home-landing-entry h2 {
+  display: block;
+  margin: 7px 0 0;
+  font-size: 16px;
+}
