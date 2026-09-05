@@ -95,12 +95,20 @@
           {%- endif %}
         </div>
 
-        <div class="post-feature-media{% if not post.cover or post.learning or post.work_knowledge %} post-feature-media-empty{% endif %}{% if post.learning or post.work_knowledge %} post-feature-media-learning{% endif %}{% if post.work_knowledge %} post-feature-media-work{% endif %}">
+        <div class="post-feature-media{% if not post.cover or post.learning or post.work_knowledge or (post.source and post.source.indexOf('隨筆') !== -1) %} post-feature-media-empty{% endif %}{% if post.learning or post.work_knowledge or (post.source and post.source.indexOf('隨筆') !== -1 and not post.cover) %} post-feature-media-learning{% endif %}{% if post.work_knowledge %} post-feature-media-work{% endif %}">
           {%- if post.learning or post.work_knowledge %}
             <div class="post-feature-learning-placeholder" aria-label="文件紀錄">
               <small><i class="fas fa-film"></i> TAPE: LEARNING_NOTE</small>
               <div><i class="fas fa-book"></i> TYPE: STUDY LOG</div>
               <div><i class="fas fa-circle"></i> STATUS: {{ post.learning_status or '持續更新' }}</div>
+              <div>TIME: {{ post.date.format('YYYY-MM-DD') }}</div>
+              <em><i class="fas fa-circle"></i> REC</em>
+            </div>
+          {%- elif post.source and post.source.indexOf('隨筆') !== -1 and not post.cover %}
+            <div class="post-feature-learning-placeholder" aria-label="生活紀錄">
+              <small><i class="fas fa-film"></i> TAPE: LIFE_NOTE</small>
+              <div><i class="fas fa-book"></i> TYPE: DAILY LOG</div>
+              <div><i class="fas fa-circle"></i> STATUS: 持續更新</div>
               <div>TIME: {{ post.date.format('YYYY-MM-DD') }}</div>
               <em><i class="fas fa-circle"></i> REC</em>
             </div>
