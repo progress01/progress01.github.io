@@ -22,6 +22,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/4AYwnYSqFkdaT0LL7Lm0o1?si=aed8c2cfa3d24dce" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_感謝勞力.webp">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0anQLN7HKhIItFINXYahFp?si=b0878b32885046f6" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_sailing back to you.webp">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/1rYYJVlUV2EcgehVUnwJvy?si=144ccdc531324b7c" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_the day you went away.webp">
     </a>

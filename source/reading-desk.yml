@@ -14,7 +14,7 @@ topics:
           source: HackMD｜60715009E
           url: /learning/volleyball-attack-arm-swing/
           state: learning
-          note: 以 HackMD 原始筆記為主，重新聚焦混排實戰中的發力方式、髖部與身體旋轉、手臂順勢甩出、肩膀負荷與擊球點選擇，補充相關影片與延伸搜尋關鍵字，保留朋友討論後尚未驗證的動作假設。
+          note: 以 HackMD 原始筆記為主，重新聚焦混排實戰中的發力方式、髖部與身體旋轉、手臂順勢甩出、肩膀負荷與擊球點選擇；新增第一次有球實戰紀錄，先把起跳高度、空中旋轉與左手找球瞄準列為更上游的待確認問題，並記錄空中注意力無法同時涵蓋全部身體感覺的限制。
 
   - id: cms-understanding
     code: A-02
@@ -121,3 +121,29 @@ topics:
         url: /learning/release-quality-git-ci-cd-checklist/
         state: learning
         note: 把測試放回真實開發流程，理解版本控制、測試環境、CI 執行、報告、發布判斷與上線後觀察；Appium、Maestro 與 Jenkins 先列為核心之後的延伸。
+
+  - id: mixed-volleyball-positioning
+    code: A-08
+    name: 混排攻擊與防守站位
+    description: 從實戰問題出發，釐清 6 號位防守範圍，以及 2、4 號位在攻擊與攔網後的覆蓋責任。
+    items:
+      - id: reading-topic-12
+        date: 2026-09-06
+        title: 混排攻擊與防守站位
+        source: 實戰觀察與後續查證
+        url: /learning/mixed-volleyball-defense-positioning/
+        state: learning
+        note: 先整理混排實戰中的防守範圍問題，聚焦 6 號位的防守方式，以及 2、4 號位在攻擊、攔網與回防後如何覆蓋；規則與固定站位仍待查證，先用責任地圖與實戰紀錄逐步確認。
+
+  - id: pain-improvement-research
+    code: A-09
+    name: 痠痛改善研究
+    description: 以家人與自身的下背、肩膀與小腿不適為觀察起點，建立安全、可回顧的放鬆與改善紀錄。
+    items:
+      - id: reading-topic-13
+        date: 2026-09-06
+        title: 痠痛改善研究：從下背、肩膀與小腿開始
+        source: 個人觀察與對話整理｜下背痠痛討論、研究肩膀放鬆
+        url: /learning/pain-improvement-research/
+        state: learning
+        note: 以 2026 年 3–4 月的家人肩頸、下背與小腿不適觀察為起點，把腰方肌、提肩胛肌、脛前肌等解剖名詞降級為待驗證假說，改用部位、誘發情境、介入方式、當下與隔日反應建立可持續更新的紀錄；同時整理按摩、熱敷、伸展與筋膜槍的安全界線及需要專業評估的警訊。
