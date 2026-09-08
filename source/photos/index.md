@@ -22,6 +22,12 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/album/4kD4hofrRPVPPF5PW1OkLQ?si=2c3d9dc075744293" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_練習.webp">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/4AYwnYSqFkdaT0LL7Lm0o1?si=aed8c2cfa3d24dce" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_感謝勞力.webp">
     </a>
