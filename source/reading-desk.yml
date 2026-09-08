@@ -40,7 +40,7 @@ topics:
         source: 待補來源
         url: /learning/agentic-transaction-acid-agent/
         state: learning
-        note: 公開持續更新的研究筆記，先理解 Agentic Transaction 如何處理代理系統中的一致性與交易邊界。
+        note: 公開持續更新的研究筆記，從代理系統的可靠執行、語義 ACID、探索／執行／驗證循環、失敗隔離與提交／重試出發，進一步把學術 AI 驗證轉成工作流程的交易邊界、驗證閘門、回滾／補償、持久化 trace 與推動證據包；新增 SAGAS、Transactional Outbox、Temporal、W3C PROV、HELM、τ-bench、Inspect AI 與 The Turing Way 作為搭配閱讀；論文數據、實作程度與工程泛化性仍待逐項核對。
 
   - id: ai-office-agent-workflow
     code: A-04
@@ -160,3 +160,16 @@ topics:
         url: /learning/presentation-workflow-open-slide/
         state: learning
         note: 從 open-slide 2.0 視覺編輯器分享截圖出發，整理簡報困擾其實同時包含目的、故事結構、視覺輔助與上台呈現；參考 open-slide 官方 GitHub／Inspector 文件、Duarte 故事結構、Garr Reynolds、BFA 簡報流程與中文視覺化教學，先建立「一句話主旨→故事卡片→最小視覺系統→工具迭代→完整排練」的工作流，並為 2026-09-10 的報告安排六張最小骨架與 PDF／現場格式檢查。
+
+  - id: ai-question-judgment-order
+    code: A-11
+    name: AI 提問與問題判斷
+    description: 以情境、目標、限制與暫定判斷整理 AI 提問，依問題狀態切換診斷、設計與驗證方式。
+    items:
+      - id: reading-topic-15
+        date: 2026-09-08
+        title: AI 提問判斷順序：情境、目標與診斷／設計／驗證
+        source: ChatGPT 對話整理｜AI提問判斷順序
+        url: /learning/ai-question-judgment-order/
+        state: learning
+        note: 從「主觀判斷是否太早」的問題出發，整理情境、目標、限制、感受與原因假設的不同位置；再依問題狀態區分診斷型、設計型與驗證型提問，加入可接受取捨與「先獨立分析、再比較假設」的兩輪問法，避免文字接龍發散；補充 Google、Anthropic、OpenAI、Simon Willison 與 Tom's Guide 的提示設計、迭代測試、高訊號 context、代表性範例與建設性反駁經驗。

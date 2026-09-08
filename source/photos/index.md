@@ -22,6 +22,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/67Yg0uYQB14o3gQ3RLwD7x?si=72689eee444945a2" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_잊어야 한다는 마음으로（忘記他這件事）.webp">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7CGfeNaZoVLJRBKB15B1jK?si=1831959dff7d419a" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_miles are wide.webp">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/album/4kD4hofrRPVPPF5PW1OkLQ?si=2c3d9dc075744293" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_練習.webp">
     </a>

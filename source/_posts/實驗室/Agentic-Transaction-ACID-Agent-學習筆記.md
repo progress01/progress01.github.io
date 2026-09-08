@@ -1,16 +1,18 @@
 ---
 title: Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記
 date: 2026-08-29 12:00:00
-updated: 2026-08-29 22:09:03
+updated: 2026-09-08 21:30:00
 permalink: /learning/agentic-transaction-acid-agent/
 categories: [觀念與實驗]
-tags: [學習筆記]
+tags: [學習筆記, AI Agent, 資料庫, 工作流程, 驗證]
 longform: true
 learning: true
 learning_status: 進行中
 ---
 
-這是一篇針對〈Agentic Transaction: Towards ACID-Compliant Agent Systems〉的公開研究筆記，先把論文報告中的核心問題、形式化模型、系統機制與實務檢查清單整理起來。它目前是研究摘記，不是已完成的論文評讀；論文資訊、實驗數據與開放原始碼專案都還需要回到原始來源逐項核對。
+這是一篇針對〈Agentic Transaction: Towards ACID-Compliant Agent Systems〉的公開研究筆記，先把論文報告中的核心問題、形式化模型、系統機制與實務檢查清單整理起來。我真正想往下討論的，不只是代理系統如何提高可靠度，而是如何把這種「探索—執行—驗證—提交／重試」的結構，變成我推動各種工作流程時可以共同使用的底層方法。
+
+它目前仍是研究摘記，不是已完成的論文評讀；論文細節、實驗數據、實作程度與工程泛化性，仍要分別回到原始論文與開放原始碼逐項核對。
 
 <!-- more -->
 
@@ -22,9 +24,9 @@ learning_status: 進行中
 
 - **論文標題**：Agentic Transaction: Towards ACID-Compliant Agent Systems
 - **發表平台與編號**：arXiv:2608.13900v1 [cs.DB]
-- **報告中的發表日期**：2026 年 8 月 14 日，待回到原始頁面核對
-- **研究團隊**：報告記載為清華大學資料庫實驗室，作者為 Zhaoyan Sun、Xiaoxiao Wang、Guoliang Li，待核對
-- **開放原始碼專案**：報告記載為 [TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，待核對
+- **發表日期**：2026 年 8 月 14 日，已回到 [arXiv 原始頁面](https://arxiv.org/abs/2608.13900)核對
+- **作者**：Zhaoyan Sun、Xiaoxiao Wang、Guoliang Li，已回到原始頁面核對
+- **開放原始碼專案**：[TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，已確認專案頁面存在；實作與論文是否完全對應仍待逐項檢查
 
 ## 一、研究背景與核心問題
 
@@ -123,7 +125,94 @@ ACID-Agent 的整理方向是：
 
 這一節目前最需要查證的不只是數字，而是不同表格中的任務範圍、模型與分數是否一致，以及「移除失敗隔離」造成的差異能否被單獨歸因於記憶污染。
 
-## 六、實務落地檢查清單
+## 六、從學術 AI 驗證回到 Agentic Transaction
+
+我前面原本把「AI 驗證」想成一個獨立流程：先問問題、找證據、測試輸出，再決定能不能使用。但讀到 Agentic Transaction 後，我開始覺得這樣還不夠。驗證不應該只是工作完成後的檢查，而應該是代理事務能不能提交的條件。
+
+學術研究重視的是：問題與方法能不能說清楚、資料與分析能不能追溯、結果能不能被複核、限制能不能被承認。Agentic Transaction 則提供一個系統語言，把這些要求放進代理的執行生命週期。這和 [National Academies 對 foundation models 用於科學工作的整理](https://www.nationalacademies.org/read/29212/chapter/2)相互呼應：AI 可以加速文獻回顧、實驗規劃、資料分析與程式開發，但可靠性、有效性、可重現性與 VVUQ 仍然是關鍵缺口。
+
+我目前想採用的對照是：
+
+| 學術研究中的元素 | Agentic Transaction 中的元素 | 工作上的對應物 |
+| --- | --- | --- |
+| 研究問題與目的 | Transaction intent | 這次工作要改變什麼、交付什麼 |
+| 資料、方法與研究設計 | Input、context、tool 與版本 | 來源、檔案、權限、prompt 與設定 |
+| 分析或實驗 | Exploration–execution | 在暫存區提出方案、執行修改或產出 |
+| 驗證、複核與限制 | Validation gate | 測試、來源查證、人工審查與失敗分類 |
+| 發表或採用結果 | Commit | 合併變更、交付文件、發布或通知他人 |
+| 實驗紀錄與方法揭露 | Durable trace | diff、輸出、證據、版本、責任人與決策紀錄 |
+
+因此，我真正想推動的是：
+
+> **不要讓 Agent 直接把「生成結果」當成「已完成工作」；要讓它先在交易邊界內探索與執行，經過驗證閘門後，才把結果提交到真實工作環境。**
+
+這裡的「交易」不是把 LLM 假裝成傳統資料庫，而是借用資料庫最有用的控制思想：中間狀態不要直接公開，失敗不要默默留下污染，完成要有可持久化的證據，提交要有條件。
+
+### 語義 ACID 如何支撐工作流程推動
+
+傳統資料庫把多個更新包成 all-or-nothing 的操作，失敗時回滾，提交後保留永久紀錄；[PostgreSQL 的交易文件](https://www.postgresql.org/docs/18/tutorial-transactions.html)也用 `BEGIN`、`COMMIT`、`ROLLBACK` 與 `SAVEPOINT` 說明這個基本結構。Agentic Transaction 的難點在於，代理修改的不只是一列資料，還可能是檔案、程式碼、外部 API、文件內容與人的決策。
+
+我會把四個語義保證改寫成工作語言：
+
+| 語義保證 | 對工作流程的要求 | 可落地的控制 |
+| --- | --- | --- |
+| Semantic Atomicity | 一組相關變更不能只完成一半就被當成成果 | 暫存工作區、快照、diff、提交或回滾；不可逆副作用放在人工閘門後 |
+| Semantic Consistency | 結果要符合前置條件、後置條件、來源與工作規格 | 驗收條件、schema、測試、來源查證與不變量檢查 |
+| Semantic Isolation | 未完成或失敗的 Agent 狀態不能污染別人的工作 | 分支、沙盒、版本化 context、獨立暫存區與結構化合併 |
+| Semantic Durability | 提交後不只留下最後檔案，也留下能追問的依據 | 版本、輸出、測試報告、引用、trace、責任人與決策紀錄 |
+
+這樣一來，學術 AI 驗證就不再是事務外面的一張 checklist，而是直接進入 Semantic Consistency 與 Semantic Durability。驗證通過，才有資格提交；驗證不通過，就必須重試、修正、降級成人工處理，或停止這次事務。
+
+### 一個我想實作的代理事務循環
+
+```text
+BEGIN：建立任務邊界、來源、版本與預期結果
+  ↓
+EXPLORE：理解資料，提出候選計畫，不修改正式環境
+  ↓
+EXECUTE：在快照／分支／沙盒中執行工具與檔案變更
+  ↓
+VALIDATE：檢查主張、資料、測試、格式、限制與副作用
+  ↓
+  ├─ 通過 → COMMIT：合併變更，保存證據與 trace
+  ├─ 可修正 → RETRY：只傳遞結構化失敗原因，不重播全部污染歷史
+  ├─ 可補償 → COMPENSATE：執行反向動作或人工收尾
+  └─ 不可接受 → ROLLBACK：回復快照並停止提交
+```
+
+這個循環和論文摘要中的 transactional exploration–execution–validation cycles、commit-or-retry semantics 相符；開放原始碼 README 也列出 candidate、retry、evidence review、execution trace 與 cost logging 等模組。不過，專案有這些檔案不代表所有語義保證都已被證明，我仍要區分「論文提出的架構」、「程式碼中的實作」與「我的工作情境是否適用」。
+
+### 驗證閘門要驗證什麼
+
+我不想只用一個模糊的 confidence score 決定是否提交。比較實際的驗證閘門應該至少包含：
+
+1. **輸入完整性**：來源、欄位、日期、權限與版本是否正確。
+2. **主張可追溯**：重要結論、數字與引用是否能回到原始資料。
+3. **操作正確性**：程式、公式、檔案或 API 是否真的執行成功。
+4. **流程一致性**：結果是否符合前置條件、後置條件與使用者意圖。
+5. **例外可處理**：缺值、衝突資料、格式變動、權限失敗與外部服務中斷時是否能安全停止。
+6. **交付可接手**：別人能不能理解做了什麼、重做一次或從失敗點繼續。
+7. **效益值得**：節省的時間或提升的品質，是否大於驗證與人工收尾的成本。
+
+這和 [NIST AI RMF 的 TEVV 與 Measure 要求](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)很接近：測試集、指標、工具細節、部署情境、獨立複核與限制都要被記錄，而且上線後仍要持續監測。對我來說，最重要的轉換是：
+
+> **驗證結果不是報告最後的一段文字，而是 Agent 能不能取得 COMMIT 權限的依據。**
+
+### 失敗也要是交易的一部分
+
+如果失敗只被當成「AI 再試一次」，工作流程很容易留下無法追溯的半成品。失敗應該被分成幾種可處理的狀態：
+
+| 失敗類型 | 可能處理方式 |
+| --- | --- |
+| 輸入錯誤 | 回到資料來源、權限或任務定義修正 |
+| 方法錯誤 | 回到探索階段，比較另一個方案 |
+| 執行錯誤 | 保留錯誤證據，修正程式或工具呼叫後重試 |
+| 驗證錯誤 | 不提交，縮小範圍、補測試或轉人工複核 |
+| 不可逆副作用 | 停止自動執行，改由人工確認或補償流程處理 |
+
+這裡也要保留論文目前最值得懷疑的地方：外部 API、寄信、扣款、物流與對外發布未必真的能 rollback。對這些操作，較實際的設計可能是 SAGA 式補償、預覽後確認，或把它們放在整個 Agent 事務的最後一個人工 commit gate。
+
+## 七、實務落地檢查清單
 
 如果要在既有 Agent 系統中導入類似的事務保障，目前先整理成以下工程問題：
 
@@ -133,8 +222,12 @@ ACID-Agent 的整理方向是：
 - [ ] **多代理沙盒與分支隔離**：並行子 Agent 是否有獨立工作區，完成後再結構化合併？
 - [ ] **驗證閘門**：重大決策是否有規則、測試、證據或輕量模型作為提交條件？
 - [ ] **提交證據與溯源**：提交結果是否同時保存做了什麼、依據什麼、由哪個代理完成？
+- [ ] **交易邊界**：是否清楚定義從哪一步開始、哪一步才算提交？
+- [ ] **語義不變量**：除了程式沒有報錯，是否還有「來源正確、格式完整、沒有未授權變更」等條件？
+- [ ] **提交狀態**：每個工作最後是否明確標記為 committed、retry、compensated 或 rolled back？
+- [ ] **推動證據包**：是否能用基準線、測試結果、失敗紀錄與人工成本向團隊說明為什麼值得採用？
 
-## 七、限制與開放問題
+## 八、限制與開放問題
 
 ### 外部不可逆副作用
 
@@ -158,13 +251,18 @@ ACID-Agent 的整理方向是：
 2. [ACID-Agent 開放原始碼專案](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，作者、內容與可重現性待核對。
 3. Claude Code 與 Agentic Workflow 的技術資料，需回到官方文件確認版本與說法。
 4. KramaBench 研究資料，需確認基準測試的正式名稱、資料集範圍與結果表格。
+5. [NIST AI RMF Core：Measure 與 TEVV](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)，補充測試集、指標、部署情境、獨立複核與持續監測。
+6. [European Commission：Living guidelines on the responsible use of generative AI in research](https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en)，補充研究者責任、透明、交叉驗證、可重現與資料界線。
+7. [National Academies：Foundation Models for Scientific Discovery and Innovation](https://www.nationalacademies.org/read/29212/chapter/2)，補充科學工作中的可靠性、有效性、可重現性與 VVUQ。
+8. [PostgreSQL 18：Transactions](https://www.postgresql.org/docs/18/tutorial-transactions.html)，補回傳統資料庫中的 atomic、commit、rollback 與 savepoint 基礎。
 
 ## 後續研究清單
 
-- 讀原論文，確認 Agentic Transaction 的正式定義與語義 ACID 是否為論文原用語。
+- 讀原論文，確認 Agentic Transaction 的正式定義、語義 ACID 與 validation gate 是否為論文原用語，並把「學術驗證」和「系統提交」的對照寫成正式模型。
 - 核對所有實驗表格，確認模型、任務、分數、成本與重複次數。
 - 了解 ACID-Agent 是否提供可執行程式碼、工作區快照與失敗隔離的具體實作。
-- 把「代理修改網站檔案」當成小型案例，整理一次快照、驗證、提交與回滾流程。
+- 把「代理修改網站檔案」當成小型案例，整理一次快照、驗證、提交與回滾流程，並記錄哪些步驟可以自動化、哪些必須人工核准。
+- 建立一份可重用的工作流程推動證據包，讓不同 AI 專案共用任務邊界、驗證閘門與交付紀錄。
 - 比較 Agentic Transaction 與 Saga、工作流引擎、事件溯源及傳統資料庫交易的差異。
 
 ## 預先收集：先分清楚論文主張與實作證據
@@ -173,10 +271,60 @@ ACID-Agent 的整理方向是：
 2. [TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)：開放原始碼專案，適合檢查論文描述的快照、驗證、失敗隔離與工作流是否真的有對應實作。
 3. [PostgreSQL 18｜Transactions](https://www.postgresql.org/docs/18/tutorial-transactions.html)：用來補回傳統交易的基本概念，先分清楚 `BEGIN`、`COMMIT`、`ROLLBACK` 與 `SAVEPOINT`，再判斷「ACID for Agents」到底是沿用、改寫還是借用資料庫術語。
 
+## 搭配閱讀：從交易到可驗證的工作流程
+
+這篇論文比較像核心概念：它提出 Agent 如何透過探索、執行、驗證與提交／重試，取得接近交易系統的可靠性。下面的材料則分別補上長流程的失敗處理、持久化執行、結果追溯與 Agent 評估。先不必一次全部讀完，可以依照自己的工作問題選擇。
+
+### 第一階段：先理解交易為什麼需要補償
+
+1. [SAGAS：Long-Lived Transactions](https://www.cs.princeton.edu/techreports/1987/070.pdf)：長時間交易的經典研究。適合用來理解為什麼跨系統、長流程工作通常不能依賴單一資料庫的全有或全無回滾，而要拆成多個可補償的局部交易。
+2. [AWS：Saga Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-patterns.html)：把 Saga 的 continuation、compensation、choreography 與 orchestration 說得比較工程化。讀這篇時可以對照 Agent 的 `RETRY`、`COMPENSATE` 與 `ROLLBACK`，並注意補償不一定等於恢復成完全相同的原狀。
+3. [AWS：Transactional Outbox Pattern](https://docs.aws.amazon.com/en_en/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html)：補充「狀態已提交但通知沒有送出」的 dual-write 問題。它適合對照 Agent 的 commit：不只要保存變更，也要保存後續事件、證據或工作佇列，而且消費端要能承受重複訊息。
+
+讀完這一階段，我希望能回答：
+
+> 如果 Agent 做到一半失敗，我要回復什麼、補償什麼、保留什麼，以及如何避免同一個副作用被重複執行？
+
+### 第二階段：再看工作流如何持久化與恢復
+
+4. [Temporal Durable Execution](https://docs.temporal.io/)：從實際工作流引擎理解長時間執行、狀態保存、重試、暫停與故障恢復。它可以幫我把「持久性」從抽象的 Semantic Durability，轉成可觀察的 workflow state、history、retry policy 與人工介入點。
+5. [W3C PROV Primer](https://www.w3.org/TR/prov-primer/)：補上 provenance 的基本模型，整理一個結果涉及哪些 entity、activity 與 agent。對我的工作來說，就是追蹤哪份資料、哪個 prompt、哪個工具與哪次執行產生了最後的檔案或決策。
+6. [The Turing Way](https://book.the-turing-way.org/)：以可重現、協作與研究倫理為主的開放手冊。它適合把「留下 trace」從工程要求轉成團隊習慣，思考別人能不能重做、接手與理解限制。
+
+這一階段最值得帶回工作流程的，不是一定要導入 Temporal，而是學會把每一個步驟的輸入、輸出、狀態、失敗原因與恢復位置保存下來。
+
+### 第三階段：最後建立 Agent 的實際評估方法
+
+7. [HELM：Holistic Evaluation of Language Models](https://nyaspubs.onlinelibrary.wiley.com/doi/full/10.1111/nyas.15007)：提醒我不要用單一成功率代表模型品質，而要用不同情境與多個指標觀察準確性、穩健性、效率、偏誤與其他限制。
+8. [τ-bench：A Benchmark for Tool-Agent-User Interaction](https://arxiv.org/abs/2406.12045)：聚焦 Agent 使用工具、遵守領域政策與和使用者多輪互動的能力，適合思考「任務完成」之外，是否也遵守了流程條件。
+9. [Inspect AI](https://inspect.aisi.org.uk/?lang=en-US)：由英國 AI Security Institute 發展的開源評估框架，將資料集、Agent、工具、評分器與沙盒組合成可以執行的測試。它比較接近未來真的要做 Agent workflow eval 時的工具層。
+
+這一階段可以對照我自己的驗證閘門：正常案例、邊界案例、失敗案例、人工基準線、可接受錯誤與不可接受副作用。
+
+### 我會怎麼搭配這些材料
+
+| 讀完的材料 | 回到 ACID-Agent 筆記時要補問的問題 |
+| --- | --- |
+| SAGAS／Transactional Outbox | 這一步是真的 rollback，還是只能 compensation？提交時是否同時保存狀態與事件？ |
+| Temporal | Agent 中斷後能從哪個 checkpoint 恢復？哪些步驟可以安全重試？ |
+| W3C PROV／The Turing Way | 能不能說明資料、活動、Agent 與最後成果之間的關係？別人能不能重做？ |
+| HELM／τ-bench／Inspect | 測試的是模型回答、工具操作、政策遵循、流程完成，還是整個工作結果？ |
+
+這些材料先作為搭配閱讀，不把不同領域的術語直接當成同義詞。Saga 的補償交易、Temporal 的 durable execution、W3C 的 provenance 與 ACID-Agent 的語義保證，彼此可以互相參照，但仍要回到各自的問題範圍與實作條件。
+
 ## 我的參考意見
 
-這個題目最值得先保留的不是「代理也有 ACID」這句口號，而是把代理的工作拆成探索、執行、驗證、提交與失敗後處理。論文目前應先視為一個研究框架與設計假說，不能直接當成已經成熟的工程標準；閱讀順序應該是原論文定義 → 原始碼結構 → 實驗表格 → 自己的小案例。對我的網站工作來說，最容易落地的部分可能是修改前快照、驗證閘門、差異檢查與可追溯紀錄，而不是一開始就追求完整的語義交易系統。
+這個題目最值得先保留的不是「代理也有 ACID」這句口號，而是把代理的工作拆成探索、執行、驗證、提交與失敗後處理。對我真正重要的轉換是：把學術上的驗證要求，變成 Agent 能否提交工作成果的系統條件；再把每次提交留下的證據，變成推動下一個工作流程時可以被團隊檢查的依據。
+
+論文目前應先視為一個研究框架與設計假說，不能直接當成已經成熟的工程標準；閱讀順序應該是原論文定義 → 原始碼結構 → 實驗表格 → 自己的小案例。對我的網站工作來說，最容易落地的部分可能是修改前快照、驗證閘門、差異檢查、狀態標記與可追溯紀錄，而不是一開始就追求完整的語義交易系統。
+
+## 相關工作筆記
+
+- [AI 提問判斷順序｜從情境、目標到診斷、設計與驗證](/learning/ai-question-judgment-order/)：處理如何在 Agent 開始工作前，把情境、目標、限制與暫定假設分開。
+- [Gemini Notebook Agent｜從資料庫到可交付文件的工作流](/learning/gemini-notebook-agent-office-workflow/)：處理資料庫、AI 產出、人工判斷、驗證與交付物之間的流程。
+- [網站品質與軟體測試｜42 天鐵人挑戰學習路徑](/learning/website-quality-testing-roadmap/)：提供測試案例、缺陷、回歸與發布品質的工程語言。
 
 ## 更新紀錄
 
 - **2026-08-29 22:09**：建立 Agentic Transaction 公開研究筆記，加入語義 ACID、失敗隔離、驗證閘門、基準測試與實務檢查清單；全文暫列為待核對整理。
+- **2026-09-08**：把學術 AI 驗證流程放回 Agentic Transaction 的語義層，補上交易邊界、驗證閘門、提交／重試／補償／回滾、持久化 trace 與工作流程推動證據包。
