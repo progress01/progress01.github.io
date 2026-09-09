@@ -22,6 +22,12 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/1mKXFLRA179hdOWQBwUk9e?si=8de5ab9ca992411e" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Just Give Me A Reason.webp">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/67Yg0uYQB14o3gQ3RLwD7x?si=72689eee444945a2" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_잊어야 한다는 마음으로（忘記他這件事）.webp">
     </a>
