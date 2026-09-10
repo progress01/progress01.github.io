@@ -48,7 +48,11 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
     }
 
     .popup-btn-close {
+      background: transparent;
+      border: 0;
       cursor: pointer;
+      font: inherit;
+      line-height: 1;
 
       &:hover .fa {
         color: $black-deep;

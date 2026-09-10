@@ -1,6 +1,6 @@
 {%- if theme.algolia_search.enable or theme.local_search.enable %}
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
+  <div class="search-pop-overlay" aria-hidden="true">
+    <div class="popup search-popup" role="dialog" aria-modal="true" aria-label="站內搜尋" tabindex="-1">
       <div class="search-header">
         <span class="search-icon">
           <i class="fa fa-search"></i>
@@ -10,9 +10,9 @@
                 placeholder="{{ __('search.placeholder') }}" spellcheck="false"
                 type="search" class="search-input">
         </div>
-        <span class="popup-btn-close" role="button">
+        <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
-        </span>
+        </button>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -30,8 +30,9 @@
           </div>
 
           <div class="search-recent-list">
-            {%- for post in site.posts.sort('date', -1).toArray() %}
-              <a class="search-recent-item" href="{{ url_for(post.path) }}" data-search-recent-item data-search-recent-rank="{{ loop.index0 }}" data-search-recent-categories="{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %}|{% endif %}{% endfor %}"{% if loop.index > 10 %} hidden{% endif %}>
+            {%- for record in search_recent_posts() %}
+              {%- set post = record.post %}
+              <a class="search-recent-item" href="{{ url_for(post.path) }}" data-search-recent-item data-search-recent-rank="{{ record.rank }}" data-search-recent-categories="{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %}|{% endif %}{% endfor %}"{% if record.rank >= 10 %} hidden{% endif %}>
                 <time class="search-recent-date" datetime="{{ moment(post.date).format() }}">{{ date(post.date, 'MM-DD') }}</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %} / {% endif %}{% endfor %}</span>

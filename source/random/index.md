@@ -175,6 +175,8 @@ comments: false
     var contentCategories = [];
     var currentCategory = 'all';
     var historyKey = 'random-tape-history';
+    var memoryHistory = [];
+    var storageDisabled = false;
     var filters = document.querySelector('.random-filters');
     var status = document.getElementById('random-status');
     var card = document.getElementById('random-card');
@@ -186,13 +188,28 @@ comments: false
     var again = document.getElementById('random-again');
 
     function getHistory() {
-      try { return JSON.parse(sessionStorage.getItem(historyKey) || '[]'); } catch (error) { return []; }
+      if (storageDisabled) return memoryHistory.slice();
+      try {
+        var stored = JSON.parse(window.sessionStorage.getItem(historyKey) || '[]');
+        if (!Array.isArray(stored)) throw new Error('invalid random history');
+        memoryHistory = stored.slice(0, 3);
+        return memoryHistory.slice();
+      } catch (error) {
+        storageDisabled = true;
+        return memoryHistory.slice();
+      }
     }
 
     function saveHistory(url) {
       var history = getHistory().filter(function(item) { return item !== url; });
       history.unshift(url);
-      sessionStorage.setItem(historyKey, JSON.stringify(history.slice(0, 3)));
+      memoryHistory = history.slice(0, 3);
+      if (storageDisabled) return;
+      try {
+        window.sessionStorage.setItem(historyKey, JSON.stringify(memoryHistory));
+      } catch (error) {
+        storageDisabled = true;
+      }
     }
 
     function randomItem(items) {
@@ -210,17 +227,20 @@ comments: false
 
     function chooseRecord() {
       var pool = poolFor(currentCategory);
+      var history = getHistory();
       if (currentCategory === 'all') {
+        var freshRecords = pool.filter(function(item) { return history.indexOf(item.url) === -1; });
         var categories = contentCategories.filter(function(category) {
-          return records.some(function(item) { return item.categories.indexOf(category) !== -1; });
+          return freshRecords.some(function(item) { return item.categories.indexOf(category) !== -1; });
         });
         if (categories.length) {
           var selectedCategory = randomItem(categories);
-          pool = pool.filter(function(item) { return item.categories.indexOf(selectedCategory) !== -1; });
+          pool = freshRecords.filter(function(item) { return item.categories.indexOf(selectedCategory) !== -1; });
+        } else if (freshRecords.length) {
+          pool = freshRecords;
         }
       }
 
-      var history = getHistory();
       var freshPool = pool.filter(function(item) { return history.indexOf(item.url) === -1; });
       return randomItem(freshPool.length ? freshPool : pool);
     }

@@ -75,22 +75,10 @@ comments: false
       }, []);
     }
 
-    function resolvedDate(item) {
-      if (item.resolved_date) return String(item.resolved_date).slice(0, 10);
-      if (item.state === 'published') return String(item.date || '').slice(0, 10);
-      return '';
-    }
-
-    function isOpenAt(item, key) {
-      var addedDate = String(item.date || '').slice(0, 10);
-      var closedDate = resolvedDate(item);
-      return addedDate && addedDate <= key && (!closedDate || closedDate > key);
-    }
-
     function getAddedRecords(key) {
       return allItems().filter(function(record) {
         var itemDate = String(record.item.date || '').slice(0, 10);
-        return itemDate === key && isOpenAt(record.item, key);
+        return itemDate === key;
       });
     }
 

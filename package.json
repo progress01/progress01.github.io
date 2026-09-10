@@ -5,15 +5,18 @@
   "scripts": {
     "build": "hexo generate",
     "check:content": "node tools/content-check.js",
-    "verify": "npm run check:content && npm run build",
+    "check:site": "node tools/site-check.js",
+    "test:regression": "node --test tools/tests/*.test.js",
+    "verify": "npm run check:content && npm run test:regression && npm run clean && npm run build && npm run check:site",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "npm run verify && hexo deploy",
     "server": "hexo server"
   },
   "hexo": {
     "version": "8.1.1"
   },
   "dependencies": {
+    "cheerio": "^1.2.0",
     "echarts": "^6.0.0",
     "hexo": "^8.0.0",
     "hexo-calendar": "^1.1.1",
@@ -33,6 +36,7 @@
     "hexo-server": "^3.0.0",
     "hexo-symbols-count-time": "^0.7.1",
     "hexo-theme-landscape": "^1.0.0",
+    "js-yaml": "^4.1.1",
     "object-assign": "^4.1.1"
   }
 }

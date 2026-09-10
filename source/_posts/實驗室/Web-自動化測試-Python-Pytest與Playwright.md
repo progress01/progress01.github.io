@@ -12,7 +12,7 @@ learning_status: 進行中
 
 這篇是「網站品質與軟體測試」系列的第三階段。目標不是證明我會寫幾支瀏覽器腳本，而是挑出穩定、重複價值高的案例，讓電腦協助執行回歸測試，並在失敗時留下足夠證據。
 
-**系列索引**：[從需求到上線驗證的學習路徑](../website-quality-testing-roadmap/)
+**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)
 
 <!-- more -->
 

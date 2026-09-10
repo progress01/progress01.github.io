@@ -13,18 +13,50 @@ NexT.motion.integrator = {
     this.queue.push(sequence);
     return this;
   },
-  bootstrap() {
-    if (!CONFIG.motion.async) this.queue = [this.queue.flat()];
-    this.queue.forEach(sequence => {
-      const timeline = window.anime.timeline({
-        duration: CONFIG.motion?.duration ?? 200,
-        easing  : 'linear'
-      });
-      sequence.forEach(item => {
-        if (item.deltaT) timeline.add(item, item.deltaT);
-        else timeline.add(item);
-      });
+  reveal() {
+    document.querySelectorAll([
+      '.use-motion .menu-item',
+      '.use-motion .sidebar',
+      '.use-motion .sidebar-inner',
+      '.use-motion .post-block',
+      '.use-motion .pagination',
+      '.use-motion .comments',
+      '.use-motion .post-header',
+      '.use-motion .post-body',
+      '.use-motion .collection-header',
+      '.use-motion .column',
+      '.use-motion .site-brand-container .toggle',
+      '.use-motion .footer',
+      '.use-motion .site-title',
+      '.use-motion .site-subtitle',
+      '.use-motion .custom-logo-image'
+    ].join(',')).forEach(element => {
+      element.style.visibility = 'visible';
+      element.style.opacity = '1';
+      element.style.top = 'initial';
     });
+    document.querySelectorAll('.use-motion .logo-line').forEach(element => {
+      element.style.transform = 'scaleX(1)';
+    });
+  },
+  bootstrap() {
+    try {
+      if (!window.anime || typeof window.anime.timeline !== 'function') throw new Error('anime.js unavailable');
+      if (!CONFIG.motion.async) this.queue = [this.queue.flat()];
+      this.queue.forEach(sequence => {
+        const timeline = window.anime.timeline({
+          duration: CONFIG.motion?.duration ?? 200,
+          easing  : 'linear'
+        });
+        sequence.forEach(item => {
+          if (item.deltaT) timeline.add(item, item.deltaT);
+          else timeline.add(item);
+        });
+      });
+    } catch (error) {
+      console.warn('Motion animation unavailable; showing page content.', error);
+      this.reveal();
+    }
   }
 };
 

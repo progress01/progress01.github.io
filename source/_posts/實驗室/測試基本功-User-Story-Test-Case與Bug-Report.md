@@ -12,7 +12,7 @@ learning_status: 進行中
 
 這篇是「網站品質與軟體測試」系列的第一個實作入口。我要先學會把一句模糊的需求，整理成可以執行、可以記錄、可以回頭檢查的測試工作，而不是一開始就急著學自動化工具。
 
-**系列索引**：[從需求到上線驗證的學習路徑](../website-quality-testing-roadmap/)
+**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)
 
 <!-- more -->
 

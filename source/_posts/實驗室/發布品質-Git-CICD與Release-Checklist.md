@@ -12,7 +12,7 @@ learning_status: 進行中
 
 這篇是「網站品質與軟體測試」系列的第四階段。前面的測試如果只存在自己的電腦裡，還沒有真正接到團隊工作；這一階段要理解版本、環境、測試報告與發布判斷如何連成一個可交接的流程。
 
-**系列索引**：[從需求到上線驗證的學習路徑](../website-quality-testing-roadmap/)
+**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)
 
 <!-- more -->
 
