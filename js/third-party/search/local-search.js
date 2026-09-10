@@ -14,9 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const input = document.querySelector('.search-input');
   const container = document.querySelector('.search-result-container');
+  const overlay = document.querySelector('.search-pop-overlay');
+  const popup = document.querySelector('.search-popup');
+  const closeButton = document.querySelector('.popup-btn-close');
   const emptyMessageTemplate = CONFIG.i18n.empty || '找不到與「${query}」相關的文章或紀錄';
   const recentMarkup = container.innerHTML;
   let selectedCategory = 'all';
+  let searchState = 'idle';
+  let searchTrigger;
+  let focusTimer;
+  const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
   const escapeHtml = text => text.replace(/[&<>"']/g, character => ({
     '&': '&amp;',
     '<': '&lt;',
@@ -25,7 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "'": '&#39;'
   })[character]);
   const renderEmptyState = (icon, message) => `<div class="search-empty-state"><i class="${icon} fa-3x"></i><p>${message}</p></div>`;
-  const renderRecent = (category = selectedCategory) => {
+  const renderLoadingState = () => {
+    container.innerHTML = '<div class="search-empty-state"><i class="fa fa-spinner fa-spin fa-3x"></i><p>正在載入搜尋索引……</p></div>';
+  };
+  const renderFailureState = () => {
+    container.innerHTML = '<div class="search-empty-state"><i class="far fa-frown fa-3x"></i><p>搜尋索引暫時無法載入，請稍後重試。</p><button type="button" class="search-retry" data-search-retry>重新載入</button></div>';
+  };
+  const renderRecent = (category = selectedCategory, restoreFocus = false) => {
     selectedCategory = category;
     container.innerHTML = recentMarkup;
     const recent = container.querySelector('[data-search-recent]');
@@ -54,10 +67,69 @@ document.addEventListener('DOMContentLoaded', () => {
     if (recentNote) recentNote.textContent = selectedCategory === 'all' ? '最近 10 篇' : '分類內最新 10 篇';
     const emptyState = recent.querySelector('[data-search-recent-empty]');
     if (emptyState) emptyState.hidden = visibleItems.length > 0;
+    if (restoreFocus) {
+      const selectedButton = [...recent.querySelectorAll('[data-search-category]')]
+        .find(button => button.dataset.searchCategory === selectedCategory);
+      if (selectedButton) selectedButton.focus();
+    }
   };
 
+  const stripSearchTags = value => {
+    const holder = document.createElement('template');
+    holder.innerHTML = value;
+    return holder.content.textContent || '';
+  };
+
+  const parseSearchData = responseText => {
+    const isJson = String(CONFIG.path).toLowerCase().endsWith('json');
+    let data;
+    if (isJson) {
+      data = JSON.parse(responseText);
+    } else {
+      const xml = new DOMParser().parseFromString(responseText, 'text/xml');
+      if (xml.querySelector('parsererror') || !xml.documentElement || xml.documentElement.nodeName.toLowerCase() !== 'search') {
+        throw new Error('search index XML is invalid');
+      }
+      data = [...xml.querySelectorAll('entry')].map(entry => ({
+        title  : entry.querySelector('title')?.textContent || '',
+        content: entry.querySelector('content')?.textContent || '',
+        url    : entry.querySelector('url')?.textContent || ''
+      }));
+    }
+    if (!Array.isArray(data)) throw new Error('search index must be an array');
+    return data.filter(item => item && item.title).map(item => ({
+      title  : String(item.title).trim(),
+      content: stripSearchTags(String(item.content || '').trim()),
+      url    : decodeURIComponent(String(item.url || '')).replace(/\/{2,}/g, '/')
+    })).filter(item => item.title);
+  };
+
+  const fetchSearchData = () => {
+    if (searchState === 'loading' || searchState === 'loaded') return;
+    searchState = 'loading';
+    renderLoadingState();
+    fetch(CONFIG.path)
+      .then(response => {
+        if (!response.ok) throw new Error(`search index request failed (${response.status})`);
+        return response.text();
+      })
+      .then(responseText => {
+        localSearch.datas = parseSearchData(responseText);
+        localSearch.isfetched = true;
+        searchState = 'loaded';
+        window.dispatchEvent(new Event('search:loaded'));
+      })
+      .catch(error => {
+        localSearch.isfetched = false;
+        searchState = 'error';
+        console.error(error);
+        renderFailureState();
+      });
+  };
+  localSearch.fetchData = fetchSearchData;
+
   const inputEventFunction = () => {
-    if (!localSearch.isfetched) return;
+    if (searchState !== 'loaded') return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
     let resultItems = [];
@@ -96,26 +168,53 @@ document.addEventListener('DOMContentLoaded', () => {
   input.addEventListener('input', inputEventFunction);
   window.addEventListener('search:loaded', inputEventFunction);
   container.addEventListener('click', event => {
+    const retry = event.target.closest('[data-search-retry]');
+    if (retry) {
+      input.focus();
+      fetchSearchData();
+      return;
+    }
     const button = event.target.closest('[data-search-category]');
     if (!button || input.value.trim()) return;
-    renderRecent(button.dataset.searchCategory);
+    renderRecent(button.dataset.searchCategory, true);
   });
+
+  const openPopup = trigger => {
+    const wasOpen = document.body.classList.contains('search-active');
+    if (!wasOpen && trigger && trigger !== popup && typeof trigger.focus === 'function') searchTrigger = trigger;
+    NexT.utils.setGutter();
+    document.body.classList.add('search-active');
+    overlay.setAttribute('aria-hidden', 'false');
+    clearTimeout(focusTimer);
+    focusTimer = setTimeout(() => {
+      focusTimer = null;
+      if (document.body.classList.contains('search-active')) input.focus();
+    }, 500);
+    if (searchState !== 'loaded') fetchSearchData();
+  };
 
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
-    element.addEventListener('click', () => {
-      NexT.utils.setGutter();
-      document.body.classList.add('search-active');
-      // Wait for search-popup animation to complete
-      setTimeout(() => input.focus(), 500);
-      if (!localSearch.isfetched) localSearch.fetchData();
-    });
+    element.setAttribute('tabindex', '0');
+    element.addEventListener('click', () => openPopup(element));
+    if (element.tagName !== 'BUTTON') {
+      element.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        openPopup(element);
+      });
+    }
   });
 
   // Monitor main search box
   const onPopupClose = () => {
+    clearTimeout(focusTimer);
+    focusTimer = null;
     NexT.utils.setGutter('0');
     document.body.classList.remove('search-active');
+    if (searchTrigger && document.contains(searchTrigger)) searchTrigger.focus();
+    overlay.setAttribute('aria-hidden', 'true');
+    searchTrigger = null;
   };
 
   document.querySelector('.search-pop-overlay').addEventListener('click', event => {
@@ -123,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       onPopupClose();
     }
   });
-  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  closeButton.addEventListener('click', onPopupClose);
   document.addEventListener('pjax:success', () => {
     localSearch.highlightSearchWords(document.querySelector('.post-body'));
     onPopupClose();
@@ -131,15 +230,41 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
       event.preventDefault();
-      NexT.utils.setGutter();
-      document.body.classList.add('search-active');
-      setTimeout(() => input.focus(), 500);
-      if (!localSearch.isfetched) localSearch.fetchData();
+      const activeElement = document.activeElement;
+      const trigger = activeElement === document.body
+        ? [...document.querySelectorAll('.popup-trigger')].find(element => {
+          if (element.hidden || element.closest('[hidden]')) return false;
+          return typeof element.getClientRects !== 'function' || element.getClientRects().length > 0;
+        })
+        : activeElement;
+      openPopup(trigger);
+      return;
     }
-  });
-  window.addEventListener('keyup', event => {
+    if (!document.body.classList.contains('search-active')) return;
     if (event.key === 'Escape') {
+      event.preventDefault();
       onPopupClose();
+      return;
+    }
+    if (event.key === 'Tab') {
+      const focusable = [...popup.querySelectorAll(focusableSelector)]
+        .filter(element => {
+          if (element.hidden || element.closest('[hidden]') || element.getAttribute('aria-hidden') === 'true') return false;
+          return typeof element.getClientRects !== 'function' || element.getClientRects().length > 0;
+        });
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (!popup.contains(document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      } else if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
   });
 });

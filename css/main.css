@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c2ffff;
+    background: #ffffd5;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2464,7 +2464,11 @@ ul.breadcrumb li:last-child {
   padding: 0 10px;
 }
 .search-popup .popup-btn-close {
+  background: transparent;
+  border: 0;
   cursor: pointer;
+  font: inherit;
+  line-height: 1;
 }
 .search-popup .popup-btn-close:hover .fa {
   color: #222;
@@ -3810,7 +3814,6 @@ body {
     width: 100%;
   }
 }
-/* Homepage landing layer: add breathing room before the existing post stream. */
 .home-landing {
   margin: 30px 0 34px;
 }
@@ -4144,7 +4147,6 @@ body {
     transform: none;
   }
 }
-/* 首頁置頂播放卡是獨立視覺，不使用一般文章的白色容器。 */
 .index .home-pinned-post {
   margin-bottom: 30px;
 }
@@ -4166,7 +4168,6 @@ body {
   margin-top: 0 !important;
   padding: 22px 25px !important;
 }
-/* 首頁首屏略微收緊，讓第一篇紀錄能在畫面下方露出。 */
 .index .home-pinned-post .terminal-left > div:nth-child(2) {
   margin-top: 18px !important;
 }
@@ -4183,31 +4184,45 @@ body {
   background: #ebddc8;
 }
 .index .home-archive-rail-heading {
-  margin-top: 3px;
+  margin-top: 0;
   font-size: 18px;
+  white-space: nowrap;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
 }
 .index .home-pick-grid {
   gap: 14px;
-  margin-top: 5px;
+  margin-top: 0;
+  grid-column: 2;
+  grid-row: 1/span 2;
+  align-self: center;
 }
 .index .home-pick strong {
   margin-top: 3px;
   font-size: 15px;
 }
 .index .home-pick-updated {
-  margin-top: 6px;
+  margin-top: 0;
+  white-space: nowrap;
+  grid-column: 3;
+  grid-row: 1/span 2;
+  align-self: center;
 }
 .index .home-landing-entry-grid {
   gap: 8px;
   margin-top: 10px;
 }
 .index .home-landing-entry {
-  min-height: 108px;
+  min-height: 82px;
   padding: 11px;
   background: #f1e4d1;
+  justify-content: flex-start;
 }
 .index .home-landing-entry h2 {
-  margin: 7px 0 3px;
+  display: block;
+  margin: 7px 0 0;
+  font-size: 16px;
 }
 .index .home-landing-entry p {
   color: #5d4639;
@@ -4220,7 +4235,6 @@ body {
   margin-top: 18px;
   padding-bottom: 7px;
 }
-/* 下方入口的標籤降低橘色亮度，讓小字更穩定、容易讀。 */
 .index .home-archive-rail-label,
 .index .home-pick-label,
 .index .home-landing-label,
@@ -4235,7 +4249,6 @@ body {
 .index .home-landing-entry:hover .home-landing-link {
   color: #e36b2f;
 }
-/* DJ 點播收成一條資訊列，避免首頁上方堆疊太多區塊。 */
 .index .home-archive-rail-main {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr) max-content;
@@ -4248,26 +4261,6 @@ body {
   grid-column: 1;
   grid-row: 1;
   align-self: end;
-}
-.index .home-archive-rail-heading {
-  margin-top: 0;
-  white-space: nowrap;
-  grid-column: 1;
-  grid-row: 2;
-  align-self: start;
-}
-.index .home-pick-grid {
-  margin-top: 0;
-  grid-column: 2;
-  grid-row: 1/span 2;
-  align-self: center;
-}
-.index .home-pick-updated {
-  margin-top: 0;
-  white-space: nowrap;
-  grid-column: 3;
-  grid-row: 1/span 2;
-  align-self: center;
 }
 @media (max-width: 767px) {
   .index .home-archive-rail-main {
@@ -4292,19 +4285,7 @@ body {
     margin-top: 3px;
   }
 }
-/* 第二列入口保留索引標籤即可，整張卡仍然維持可點擊。 */
-.index .home-landing-entry {
-  min-height: 82px;
-  justify-content: flex-start;
-}
-.index .home-landing-entry h2,
 .index .home-landing-entry p,
 .index .home-landing-entry .home-landing-link {
   display: none;
-}
-/* 保留入口名稱；只收起說明與次要連結文字。 */
-.index .home-landing-entry h2 {
-  display: block;
-  margin: 7px 0 0;
-  font-size: 16px;
 }
