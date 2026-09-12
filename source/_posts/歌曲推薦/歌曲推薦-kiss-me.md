@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-kiss me
 date: 2026-08-04 12:00:00
 tags: [音樂推薦]
+cover: /images/song_kiss_me.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

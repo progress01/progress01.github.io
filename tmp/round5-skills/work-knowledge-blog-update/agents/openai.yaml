@@ -1,0 +1,5 @@
+interface:
+  display_name: "工作知識文章維護"
+  short_description: "將工作經驗整理成去脈絡化、可維護且具系列辨識的公開文章"
+  brand_color: "#E36F32"
+  default_prompt: "Use $work-knowledge-blog-update to turn this work record into a de-contextualized public article with the fixed series metadata and verified build."

@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-the day you went away
 date: 2026-09-03 12:00:00
 tags: [音樂推薦, 專輯插圖]
+cover: /images/song_the day you went away.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

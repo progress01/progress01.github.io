@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-From The Start
 date: 2026-05-19 12:00
 tags: [音樂推薦]
+cover: /images/song_From_The_Start.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

@@ -22,6 +22,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/73Cw4sdOwn2NsmGRE4hoMA?si=537f0504851e4b3d" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_靜靜的.webp" alt="庾澄慶 - 靜靜的 - 戒不掉">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7DQOE8yIchm7bPPvJ0w6Bf?si=6b2958a3bc974e7d" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_好心分手.webp" alt="盧巧音 和 王力宏 - 好心分手 - 不能不愛…盧巧音精選">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/1mKXFLRA179hdOWQBwUk9e?si=8de5ab9ca992411e" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_Just Give Me A Reason.webp">
     </a>

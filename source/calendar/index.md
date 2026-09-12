@@ -7,24 +7,24 @@ comments: false
 
 <div class="calendar-page">
   <div id="calendar-years" class="calendar-years" aria-label="選擇年份"></div>
-  <p id="calendar-status" class="calendar-status" aria-live="polite">讀取文章資料中……</p>
+  <p id="calendar-status" class="calendar-status" aria-live="polite">讀取文章發表資料中……</p>
   <div class="calendar-scroll">
     <div class="calendar-chart-wrap">
-      <div id="calendar" class="calendar-chart" aria-label="文章更新熱力圖">
+      <div id="calendar" class="calendar-chart" aria-label="文章發表熱力圖">
         <div class="calendar-loading"><i class="fa fa-spinner fa-spin"></i> Loading Graph...</div>
       </div>
-      <div id="calendar-grid-controls" class="calendar-grid-controls" aria-label="選擇更新日期"></div>
+      <div id="calendar-grid-controls" class="calendar-grid-controls" aria-label="選擇發表日期"></div>
     </div>
   </div>
 
   <section class="calendar-details" aria-live="polite">
     <div class="calendar-details-heading">
-      <span>RECENT / 更新紀錄</span>
-      <h2 id="calendar-detail-title">近一週有更新的文章</h2>
+      <span>RECENT / 發表紀錄</span>
+      <h2 id="calendar-detail-title">近一週發表的文章</h2>
       <small id="calendar-detail-note">點選上方格子查看當天</small>
     </div>
     <div id="calendar-updates" class="calendar-updates">
-      <div class="calendar-empty">正在整理更新紀錄……</div>
+      <div class="calendar-empty">正在整理發表紀錄……</div>
     </div>
   </section>
 </div>
@@ -73,10 +73,9 @@ comments: false
     }
 
     function getRecentDates(posts) {
-      var today = new Date();
-      today.setHours(23, 59, 59, 999);
-      var cutoff = new Date(today);
-      cutoff.setDate(cutoff.getDate() - 6);
+      var now = new Date();
+      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+      var cutoff = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 6, 0, 0, 0, 0);
 
       return Object.keys(posts)
         .filter(function(date) {
@@ -120,7 +119,7 @@ comments: false
       updatesElement.innerHTML = '';
 
       if (!records.length) {
-        updatesElement.innerHTML = '<div class="calendar-empty">這段時間沒有更新紀錄；可以點選其他日期找回以前的文章。</div>';
+        updatesElement.innerHTML = '<div class="calendar-empty">這段時間沒有發表紀錄；可以點選其他日期找回以前的文章。</div>';
         return;
       }
 
@@ -152,7 +151,7 @@ comments: false
         if (Array.isArray(date)) date = date[0];
         date = normalizeDateKey(date);
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
-        renderUpdates(posts, [date], date + ' 更新內容', '點選其他格子查看日期');
+        renderUpdates(posts, [date], date + ' 發表內容', '點選其他格子查看日期');
       });
     }
 
@@ -160,7 +159,7 @@ comments: false
       gridControls.innerHTML = '';
       var start = new Date(Number(year), 0, 1);
       var startDay = start.getDay();
-      var dayCount = new Date(Number(year), 1, 0).getDate() === 29 ? 366 : 365;
+      var dayCount = new Date(Number(year), 1, 29).getMonth() === 1 ? 366 : 365;
 
       for (var dayIndex = 0; dayIndex < dayCount; dayIndex += 1) {
         var date = new Date(Number(year), 0, dayIndex + 1);
@@ -171,11 +170,11 @@ comments: false
         button.className = 'calendar-grid-button';
         button.style.gridColumn = String(Math.floor((startDay + dayIndex) / 7) + 1);
         button.style.gridRow = String(date.getDay() + 1);
-        button.setAttribute('aria-label', key + ' 更新 ' + count + ' 篇文章');
+        button.setAttribute('aria-label', key + ' 發表 ' + count + ' 篇文章');
         button.title = key + '：' + count + ' 篇文章';
         button.addEventListener('click', function(selectedDate) {
           return function() {
-            renderUpdates(posts, [selectedDate], selectedDate + ' 更新內容', '點選其他格子查看日期');
+            renderUpdates(posts, [selectedDate], selectedDate + ' 發表內容', '點選其他格子查看日期');
           };
         }(key));
         gridControls.appendChild(button);
@@ -197,13 +196,13 @@ comments: false
       if (year === latestYear) {
         var recentDates = getRecentDates(posts);
         if (recentDates.length) {
-          renderUpdates(posts, recentDates, '近一週有更新的文章', '只顯示有異動的日期');
+          renderUpdates(posts, recentDates, '近一週發表的文章', '只顯示有文章發表的日期');
           return;
         }
       }
 
       var latestDate = getLatestDate(posts, year);
-      renderUpdates(posts, latestDate ? [latestDate] : [], latestDate ? latestDate + ' 更新內容' : year + ' 年更新內容', '點選熱力圖格子查看其他日期');
+      renderUpdates(posts, latestDate ? [latestDate] : [], latestDate ? latestDate + ' 發表內容' : year + ' 年發表內容', '點選熱力圖格子查看其他日期');
     }
 
     Promise.all([
@@ -236,9 +235,9 @@ comments: false
       })
       .catch(function(error) {
         console.error(error);
-        statusElement.textContent = '文章更新資料讀取失敗，請稍後再試。';
+        statusElement.textContent = '文章發表資料讀取失敗，請稍後再試。';
         calendarElement.innerHTML = '';
-        updatesElement.innerHTML = '<div class="calendar-empty">目前無法整理更新紀錄。</div>';
+        updatesElement.innerHTML = '<div class="calendar-empty">目前無法整理發表紀錄。</div>';
       });
   })();
 </script>

@@ -165,7 +165,7 @@ comments: false
     <div id="random-empty" class="random-empty" hidden>這個抽屜目前沒有可播放的文章。</div>
   </section>
 
-  <p class="random-footnote">NO REPEAT FOR THE LAST 3 TRACKS // KEEP THE TAPE ROLLING</p>
+  <p class="random-footnote">最近 3 次抽取不重複；若目前分類的未抽候選不足，候選耗盡時會允許重抽 // KEEP THE TAPE ROLLING</p>
 </div>
 
 <script>

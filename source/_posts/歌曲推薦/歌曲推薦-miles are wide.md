@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-miles are wide
 date: 2026-08-24 12:00:00
 tags: [音樂推薦, 專輯插圖]
+cover: /images/song_miles are wide.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

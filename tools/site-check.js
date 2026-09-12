@@ -39,11 +39,123 @@ function checkDocument(html, from, options) {
       if (error) errors.push(error);
     }
   });
+  const jsonLd = [];
   $('script[type="application/ld+json"]').each((_, element) => {
-    try { JSON.parse($(element).text()); } catch (error) {
+    try { jsonLd.push(JSON.parse($(element).text())); } catch (error) {
       errors.push(`JSON-LD 格式錯誤：${error.message}`);
     }
   });
+  if (options.checkStructuredData) {
+    const pagePath = String(from).replace(/\\/g, '/');
+    const isRoot = pagePath === 'index.html';
+    const isCollection = /^(?:page\/\d+(?:\/|$)|categories\/|tags\/|archives\/)/.test(pagePath);
+    const isArticle = $('article.post-content-single').length > 0;
+    if (jsonLd.length !== 1) {
+      errors.push(`JSON-LD 應恰有一個區塊，目前為 ${jsonLd.length} 個。`);
+    } else {
+      const data = jsonLd[0];
+      if (!data || typeof data !== 'object' || Array.isArray(data)) {
+        errors.push(`${pagePath} 的 JSON-LD 必須是物件。`);
+      } else {
+        const canonicalLinks = $('link[rel="canonical"]');
+        const canonical = canonicalLinks.length === 1 ? canonicalLinks.attr('href') : null;
+        const absoluteHttp = value => {
+          if (typeof value !== 'string' || !value.trim()) return null;
+          try {
+            const parsed = new URL(value);
+            return /^https?:$/.test(parsed.protocol) ? parsed : null;
+          } catch { return null; }
+        };
+        const canonicalUrl = absoluteHttp(canonical);
+        const dataUrlObject = absoluteHttp(data.url);
+        const outputRoute = pagePath === 'index.html'
+          ? '/'
+          : '/' + pagePath.replace(/\/index\.html$/, '/');
+        const outputUrl = new URL(outputRoute, options.origin + '/');
+        if (canonicalLinks.length !== 1 || !canonicalUrl) errors.push(`${pagePath} 必須有唯一的絕對 HTTP(S) canonical。`);
+        if (canonicalUrl && canonicalUrl.href !== outputUrl.href) errors.push(`${pagePath} 的本站 canonical 應對齊目前頁面：${canonical} ≠ ${outputUrl.href}`);
+        if (!dataUrlObject) errors.push(`${pagePath} 的 JSON-LD url 必須是絕對 HTTP(S) 網址。`);
+        if (canonicalUrl && dataUrlObject && canonicalUrl.href !== dataUrlObject.href) {
+          errors.push(`JSON-LD url 未對齊 canonical：${data.url} ≠ ${canonical}`);
+        }
+        if (data['@context'] !== 'https://schema.org') errors.push(`${pagePath} 的 JSON-LD @context 不正確。`);
+        const type = data['@type'];
+        const expectedType = isRoot ? 'WebSite' : (isArticle ? 'BlogPosting' : (isCollection ? 'CollectionPage' : 'WebPage'));
+        if (!['WebSite', 'CollectionPage', 'BlogPosting', 'WebPage'].includes(type)) errors.push(`${pagePath} 使用不支援的 JSON-LD 類型：${type || '缺少'}。`);
+        if (type !== expectedType) errors.push(`${pagePath} 的 JSON-LD 類型應為 ${expectedType}，目前為 ${type || '缺少'}。`);
+        for (const field of ['@id', 'url', 'name', 'inLanguage']) {
+          if (typeof data[field] !== 'string' || !data[field].trim()) errors.push(`${pagePath} 的 JSON-LD ${field} 不得為空。`);
+        }
+        if (dataUrlObject) {
+          const idSuffix = {
+            WebSite: '#website',
+            CollectionPage: '#collectionpage',
+            BlogPosting: '#article',
+            WebPage: '#webpage'
+          }[expectedType];
+          if (idSuffix && data['@id'] !== dataUrlObject.href + idSuffix) {
+            errors.push(`${pagePath} 的 ${expectedType} @id 應為 canonical+${idSuffix}。`);
+          }
+        }
+        const validIsoDate = value => {
+          if (typeof value !== 'string') return false;
+          const match = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/);
+          if (!match || Number(match[4]) > 23 || Number(match[5]) > 59 || Number(match[6]) > 59) return false;
+          const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+          return date.getUTCFullYear() === Number(match[1]) && date.getUTCMonth() === Number(match[2]) - 1 && date.getUTCDate() === Number(match[3]) && !Number.isNaN(Date.parse(value));
+        };
+        if (type === 'BlogPosting') {
+          if (typeof data.headline !== 'string' || !data.headline.trim()) errors.push(`${pagePath} 的 BlogPosting 缺少 headline。`);
+          if (!data.mainEntityOfPage || data.mainEntityOfPage['@id'] !== data.url) errors.push(`${pagePath} 的 mainEntityOfPage 應指向 canonical。`);
+          if (!data.isPartOf || data.isPartOf['@id'] !== new URL('/', options.origin + '/').href + '#website') errors.push(`${pagePath} 的 isPartOf 應引用首頁 #website。`);
+          const validPerson = value => value && typeof value === 'object' && value['@type'] === 'Person' && typeof value.name === 'string' && value.name.trim();
+          if (!validPerson(data.author)) errors.push(`${pagePath} 的 author 應是有名稱的 Person。`);
+          if (!validPerson(data.publisher)) errors.push(`${pagePath} 的 publisher 應是有名稱的 Person。`);
+          if (options.authorName) {
+            if (data.author?.name !== options.authorName) errors.push(`${pagePath} 的 author 未對齊本站作者。`);
+            if (data.publisher?.name !== options.authorName) errors.push(`${pagePath} 的 publisher 未對齊本站作者。`);
+          }
+          if (!validIsoDate(data.datePublished)) errors.push(`${pagePath} 的 datePublished 不是有效 ISO 日期。`);
+          if (!validIsoDate(data.dateModified)) errors.push(`${pagePath} 的 dateModified 不是有效 ISO 日期。`);
+          if (validIsoDate(data.datePublished) && validIsoDate(data.dateModified) && Date.parse(data.dateModified) < Date.parse(data.datePublished)) errors.push(`${pagePath} 的 dateModified 早於 datePublished。`);
+          const article = $('article[itemtype*="BlogPosting"]').filter((_, element) => $(element).hasClass('post-content-single')).first();
+          const visibleHeadline = article.find('[itemprop~="headline"]').first().text().replace(/\s+/g, ' ').trim();
+          if (!visibleHeadline || typeof data.headline !== 'string' || visibleHeadline !== data.headline.replace(/\s+/g, ' ').trim()) errors.push(`${pagePath} 的 headline 未對齊可見文章標題。`);
+          const visibleDate = article.find('[itemprop~="datePublished"]').first().attr('datetime');
+          if (!visibleDate || !validIsoDate(visibleDate) || Date.parse(visibleDate) !== Date.parse(data.datePublished)) errors.push(`${pagePath} 的 datePublished 未對齊可見文章日期。`);
+          const microdataAuthorElement = article.find('[itemprop="author"] [itemprop="name"]').first();
+          const microdataAuthor = microdataAuthorElement.attr('content') || microdataAuthorElement.text().replace(/\s+/g, ' ').trim();
+          if (!microdataAuthor || microdataAuthor !== data.author?.name) errors.push(`${pagePath} 的 Microdata author 未對齊 JSON-LD author。`);
+          const visibleLanguage = article.attr('lang') || $('html').attr('lang');
+          if (visibleLanguage && visibleLanguage !== data.inLanguage) errors.push(`${pagePath} 的 inLanguage 未對齊可見文章語言。`);
+          const itemId = article.attr('itemid');
+          if (article.attr('itemtype') !== 'https://schema.org/BlogPosting') errors.push(`${pagePath} 的 Microdata type 應為 https://schema.org/BlogPosting。`);
+          let resolvedItemId = null;
+          try { resolvedItemId = itemId ? new URL(itemId, outputUrl).href : null; } catch {}
+          if (!resolvedItemId || resolvedItemId !== data['@id']) errors.push(`${pagePath} 的 Microdata itemid 應對齊 BlogPosting @id。`);
+          for (const property of ['author', 'publisher']) {
+            const scope = article.find(`[itemprop="${property}"][itemscope]`).first();
+            const nameElement = scope.find('[itemprop="name"]').first();
+            const name = nameElement.attr('content') || nameElement.text().replace(/\s+/g, ' ').trim();
+            if (scope.attr('itemtype') !== 'https://schema.org/Person' || name !== data[property]?.name) {
+              errors.push(`${pagePath} 的 Microdata ${property} 應與 JSON-LD Person 對齊。`);
+            }
+          }
+        }
+        if (data.image) {
+          const images = Array.isArray(data.image) ? data.image : [data.image];
+          images.forEach(image => {
+            const imageUrl = absoluteHttp(image);
+            if (!imageUrl) return errors.push(`${pagePath} 的 image 必須是絕對 HTTP(S) 網址：${image}`);
+            if (imageUrl.origin === options.origin) {
+              const error = checkUrl(imageUrl.href, 'index.html', options);
+              if (error) errors.push(`${pagePath} 的 image：${error}`);
+            }
+          });
+        }
+      }
+    }
+  }
   const sections = $('[data-photo-wall-section]');
   if (sections.length) {
     const counts = new Map();
@@ -84,7 +196,7 @@ function run() {
   }
   if (!fs.existsSync(path.join(output, 'index.html'))) throw new Error('找不到首頁產物，請先執行 npm run build。');
   walk(output);
-  const options = { origin: new URL(config.url).origin, files, ...settings };
+  const options = { origin: new URL(config.url).origin, authorName: config.author, files, checkStructuredData: true, ...settings };
   const errors = new Set();
   let pages = 0;
   let references = 0;

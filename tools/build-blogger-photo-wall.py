@@ -10,11 +10,21 @@ from __future__ import annotations
 import argparse
 import html
 import re
+from io import BytesIO
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 from PIL import Image, ImageOps
+
+from blogger_scope import (
+    ScopeError,
+    add_scope_arguments,
+    display_paths,
+    parse_front_matter_fields,
+    resolve_posts,
+    resolve_repo_subpath,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,9 +34,6 @@ IMAGE_RE = re.compile(
     r'<img\s+class="blogger-import-image"[^>]*\s+src="(/images/blogger-import/[^\"]+)"[^>]*>',
     re.IGNORECASE,
 )
-TITLE_RE = re.compile(r'^title:\s*(.+?)\s*$', re.MULTILINE)
-DATE_RE = re.compile(r'^date:\s*(\d{4}-\d{2}-\d{2})', re.MULTILINE)
-CATEGORIES_RE = re.compile(r'^categories:\s*(.+?)\s*$', re.MULTILINE)
 PHOTO_WALL_CATEGORIES = {"音樂", "閱讀與影視"}
 SECTIONS = (
     {
@@ -65,20 +72,6 @@ LOCAL_DATE_RE = re.compile(r'/((?:19|20)\d{2})/(\d{2})/(\d{2})/')
 IMAGE_PATH_RE = re.compile(r'/images/[^"\'\s)]+')
 
 
-def parse_categories(front_matter: str) -> set[str]:
-    match = CATEGORIES_RE.search(front_matter)
-    if not match:
-        return set()
-    raw = match.group(1).strip()
-    if raw.startswith("[") and raw.endswith("]"):
-        raw = raw[1:-1]
-    return {
-        item.strip().strip('"').strip("'")
-        for item in raw.split(",")
-        if item.strip()
-    }
-
-
 def article_section(title: str, categories: set[str]) -> str:
     if "音樂" in categories:
         return "music"
@@ -87,37 +80,45 @@ def article_section(title: str, categories: set[str]) -> str:
     return "books"
 
 
-def parse_front_matter(text: str) -> tuple[str, str, set[str]]:
-    match = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.DOTALL)
-    if not match:
-        raise ValueError("missing front matter")
-    front_matter = match.group(1)
-    title_match = TITLE_RE.search(front_matter)
-    date_match = DATE_RE.search(front_matter)
-    if not title_match or not date_match:
+def parse_front_matter(text: str) -> tuple[str, str, set[str], str]:
+    fields = parse_front_matter_fields(text)
+    title = fields.get("title")
+    date = fields.get("date")
+    if not isinstance(title, str) or not title.strip() or date is None:
         raise ValueError("missing title or date")
-    title = title_match.group(1).strip().strip('"').strip("'")
-    return title, date_match.group(1), parse_categories(front_matter)
+    date_text = str(date)
+    date_match = re.match(r"^(\d{4}-\d{2}-\d{2})", date_text)
+    if not date_match:
+        raise ValueError("invalid article date")
+    categories = fields.get("categories", [])
+    if isinstance(categories, str):
+        categories = [categories]
+    if not isinstance(categories, list):
+        categories = []
+    permalink = fields.get("permalink", "")
+    return title.strip(), date_match.group(1), {str(item) for item in categories if item is not None}, str(permalink or "")
 
 
-def imported_articles() -> list[dict]:
+def imported_articles(posts: list[Path] | None = None) -> list[dict]:
     articles = []
-    for post_path in POSTS_DIR.rglob("*.md"):
+    for post_path in posts or list(POSTS_DIR.rglob("*.md")):
         text = post_path.read_text(encoding="utf-8")
         if "blogger-import-image" not in text:
             continue
-        title, date, categories = parse_front_matter(text)
+        title, date, categories, permalink = parse_front_matter(text)
         if not categories.intersection(PHOTO_WALL_CATEGORIES):
             continue
         refs = [match.group(1) for match in IMAGE_RE.finditer(text)]
         if not refs:
             continue
-        relative = post_path.relative_to(POSTS_DIR)
-        folder = relative.parent.as_posix()
+        relative = post_path.relative_to(POSTS_DIR.resolve())
+        folder = "" if relative.parent == Path(".") else relative.parent.as_posix()
         stem = post_path.stem
-        article_url = "/" + "/".join(
+        article_url = permalink or ("/" + "/".join(
             [date[0:4], date[5:7], date[8:10], folder, stem.replace(" ", "-")]
-        ) + "/"
+        ) + "/")
+        if not article_url.startswith("/"):
+            article_url = "/" + article_url
         articles.append(
             {
                 "path": post_path,
@@ -125,7 +126,7 @@ def imported_articles() -> list[dict]:
                 "date": date,
                 "folder": folder,
                 "stem": stem,
-                "article_url": quote(article_url, safe="/:@&+$,-_.!~*'()"),
+                "article_url": quote(article_url, safe="/%:@&+$,-_.!~*'()"),
                 "images": refs,
                 "section": article_section(title, categories),
             }
@@ -143,31 +144,51 @@ def flatten_alpha(image: Image.Image) -> Image.Image:
     return image.convert("RGB")
 
 
+def thumbnail_bytes(source_path: Path) -> bytes:
+    with Image.open(source_path) as source_image:
+        thumb = ImageOps.fit(
+            flatten_alpha(source_image),
+            (480, 480),
+            method=Image.Resampling.LANCZOS,
+            centering=(0.5, 0.5),
+        )
+        buffer = BytesIO()
+        thumb.save(buffer, "WEBP", quality=82, method=6)
+        return buffer.getvalue()
+
+
 def build_thumbnails(articles: list[dict], write: bool) -> tuple[list[dict], int]:
+    plan = plan_thumbnails(articles)
+    if write:
+        apply_thumbnail_plan(plan)
+    return plan["images"], sum(len(item["data"]) for item in plan["thumbs"])
+
+
+def plan_thumbnails(articles: list[dict]) -> dict:
     wall_images = []
-    total_bytes = 0
+    planned = {}
+    image_root = resolve_repo_subpath(ROOT / "source" / "images", ROOT, ROOT / "source", "圖片根目錄")
     for article in articles:
-        article_folder = Path("source") / "images" / "blogger-import" / "thumbs" / Path(article["images"][0]).parent.name
+        image_reference = unquote(article["images"][0])
+        image_name = re.split(r"[?#]", image_reference, maxsplit=1)[0]
+        article_folder = Path("source") / "images" / "blogger-import" / "thumbs" / Path(image_name).parent.name
         # The wall uses one representative image per article.  Extra images
         # remain available inside the article but do not make the wall longer.
         image_url = article["images"][0]
-        source_path = ROOT / "source" / image_url.lstrip("/").replace("/", "\\")
-        if not source_path.exists():
-            raise FileNotFoundError(source_path)
-        thumb_rel = article_folder / "01.webp"
+        source_path = resolve_repo_subpath(
+            image_root / image_name.removeprefix("/images/"),
+            ROOT,
+            image_root,
+            "圖牆圖片來源",
+        )
+        thumb_rel = article_folder / (Path(image_name).stem + ".webp")
         thumb_path = ROOT / thumb_rel
         thumb_url = "/" + thumb_rel.relative_to("source").as_posix()
-        if write:
-            thumb_path.parent.mkdir(parents=True, exist_ok=True)
-            with Image.open(source_path) as source_image:
-                thumb = ImageOps.fit(
-                    flatten_alpha(source_image),
-                    (480, 480),
-                    method=Image.Resampling.LANCZOS,
-                    centering=(0.5, 0.5),
-                )
-                thumb.save(thumb_path, "WEBP", quality=82, method=6)
-            total_bytes += thumb_path.stat().st_size
+        data = thumbnail_bytes(source_path)
+        if thumb_rel in planned and planned[thumb_rel] != data:
+            raise ScopeError(f"多篇選取文章產生不同縮圖內容：{thumb_rel}")
+        planned[thumb_rel] = data
+        resolve_repo_subpath(thumb_path, ROOT, image_root, "縮圖目標")
         wall_images.append(
             {
                 "title": article["title"],
@@ -178,15 +199,37 @@ def build_thumbnails(articles: list[dict], write: bool) -> tuple[list[dict], int
                 "section": article["section"],
             }
         )
-    return wall_images, total_bytes
+    return {"images": wall_images, "thumbs": [{"path": ROOT / relative, "data": data} for relative, data in planned.items()]}
+
+
+def apply_thumbnail_plan(plan: dict) -> int:
+    written = 0
+    for item in plan["thumbs"]:
+        if item["path"].exists() and item["path"].read_bytes() != item["data"]:
+            raise ScopeError(f"既有縮圖內容不同，拒絕覆寫：{item['path']}")
+    for item in plan["thumbs"]:
+        if not item["path"].exists():
+            item["path"].parent.mkdir(parents=True, exist_ok=True)
+            item["path"].write_bytes(item["data"])
+            written += 1
+    return written
+
+
+def validate_thumbnail_targets(articles: list[dict]) -> None:
+    plan = plan_thumbnails(articles)
+    for item in plan["thumbs"]:
+        if item["path"].exists() and item["path"].read_bytes() != item["data"]:
+            raise ScopeError(f"既有縮圖內容不同，拒絕覆寫：{item['path']}")
 
 
 def card_markup(item: dict) -> list[str]:
     alt = html.escape(f"{item['title']}｜主圖", quote=True)
+    href = html.escape(item["href"], quote=True)
+    src = html.escape(item["src"], quote=True)
     return [
         '  <div class="ig-card">',
-        f'    <a href="{item["href"]}" target="_blank">',
-        f'      <img loading="lazy" decoding="async" src="{item["src"]}" alt="{alt}">',
+        f'    <a href="{href}" target="_blank">',
+        f'      <img loading="lazy" decoding="async" src="{src}" alt="{alt}">',
         "    </a>",
         "  </div>",
         "",
@@ -399,35 +442,129 @@ def wall_markup(images: list[dict], manual: dict[str, list[str]]) -> str:
 
 
 def update_photo_wall(images: list[dict], write: bool) -> int:
-    raw = PHOTO_WALL.read_text(encoding="utf-8")
+    wall_bytes, added = plan_photo_wall(images)
+    if write and wall_bytes != PHOTO_WALL.read_bytes():
+        PHOTO_WALL.write_bytes(wall_bytes)
+    return added
+
+
+def plan_photo_wall(images: list[dict]) -> tuple[bytes, int]:
+    raw = PHOTO_WALL.read_bytes().decode("utf-8")
     newline = "\r\n" if "\r\n" in raw else "\n"
     text = raw.replace("\r\n", "\n")
-    manual = existing_manual_cards(text)
     front_matter = re.match(r"^---\s*\n.*?\n---\s*\n", text, re.DOTALL)
     if not front_matter:
         raise ValueError("could not find photo-wall front matter")
+    manual = existing_manual_cards(text)
     updated = front_matter.group(0) + "\n" + wall_markup(images, manual)
-    old_cards = len(CARD_RE.findall(text))
-    new_cards = len(CARD_RE.findall(updated))
-    if write:
-        PHOTO_WALL.write_bytes(updated.replace("\n", newline).encode("utf-8"))
-    return new_cards - old_cards
+    return updated.replace("\n", newline).encode("utf-8"), len(CARD_RE.findall(updated)) - len(CARD_RE.findall(text))
+
+
+def validate_scoped_wall(text: str, images: list[dict]) -> None:
+    spans = marker_spans(text)
+    for key in SECTION_KEYS:
+        starts = text.count(SECTION_START_MARKERS[key])
+        ends = text.count(SECTION_END_MARKERS[key])
+        if starts != 1 or ends != 1:
+            raise ScopeError(f"圖牆 {key} marker 必須各有一組")
+    seen = set()
+    for match in CARD_RE.finditer(text):
+        if any(start <= match.start() < end for start, end in spans):
+            continue
+        href = re.search(r'href="([^"]+)"', match.group(0))
+        if href and href.group(1) in seen:
+            raise ScopeError(f"圖牆存在重複文章卡片：{href.group(1)}")
+        if href: seen.add(href.group(1))
+    for image in images:
+        if text.count(f'href="{html.escape(image["href"], quote=True)}"') > 1:
+            raise ScopeError(f"指定文章卡片不唯一：{image['href']}")
+
+
+def update_photo_wall_scoped(images: list[dict], write: bool) -> tuple[int, bool]:
+    wall_bytes, added, changed = plan_photo_wall_scoped(images)
+    if write and changed:
+        PHOTO_WALL.write_bytes(wall_bytes)
+    return added, changed
+
+
+def plan_photo_wall_scoped(images: list[dict]) -> tuple[bytes, int, bool]:
+    raw = PHOTO_WALL.read_bytes()
+    text = raw.decode("utf-8")
+    newline = "\r\n" if b"\r\n" in raw else "\n"
+    validate_scoped_wall(text, images)
+    updated = text
+    changed = False
+    for image in images:
+        card_matches = list(re.finditer(r'<div class="ig-card">.*?</div>', updated, re.DOTALL))
+        escaped_href = html.escape(image["href"], quote=True)
+        matching = [match for match in card_matches if f'href="{escaped_href}"' in match.group(0)]
+        if matching:
+            old_card = matching[0].group(0)
+            new_card = re.sub(r'(?<=\bsrc=")[^"]+', html.escape(image["src"], quote=True), old_card, count=1)
+            updated = updated.replace(old_card, new_card, 1)
+            changed = changed or old_card != new_card
+            continue
+        marker = SECTION_END_MARKERS[image["section"]]
+        card = newline.join(card_markup(image)).rstrip()
+        insertion = "    " + card.replace(newline, newline + "    ") + newline
+        marker_position = updated.find(marker)
+        if marker_position < 0: raise ScopeError(f"找不到圖牆 {image['section']} 結束 marker")
+        updated = updated[:marker_position] + insertion + updated[marker_position:]
+        changed = True
+    return updated.encode("utf-8"), sum(1 for image in images if f'href="{html.escape(image["href"], quote=True)}"' not in text), changed
+
+
+def validate_photo_wall_path() -> Path:
+    wall_path = resolve_repo_subpath(PHOTO_WALL, ROOT, ROOT / "source", "PHOTO_WALL")
+    if not wall_path.is_file():
+        raise ScopeError(f"PHOTO_WALL 不存在或不是檔案：{wall_path}")
+    return wall_path
+
+
+def validate_wall_plan(wall_bytes: bytes, images: list[dict]) -> None:
+    try:
+        text = wall_bytes.decode("utf-8")
+    except UnicodeDecodeError as error:
+        raise ScopeError("PHOTO_WALL 不是有效 UTF-8") from error
+    validate_scoped_wall(text, images)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--write", action="store_true", help="write thumbnails and update the wall")
+    add_scope_arguments(parser)
     args = parser.parse_args()
-
-    articles = imported_articles()
-    images, thumbnail_bytes = build_thumbnails(articles, args.write)
-    added = update_photo_wall(images, args.write)
+    root = ROOT
+    try:
+        selected_posts = resolve_posts(args.post, args.all, args.write, root)
+        articles = imported_articles(selected_posts if args.post else None)
+        if args.post and len(articles) != len(selected_posts):
+            supported = {article["path"].resolve() for article in articles}
+            unsupported = [post for post in selected_posts if post.resolve() not in supported]
+            raise ScopeError("指定文章不支援 Blogger 圖牆或缺少可用圖片：" + ", ".join(display_paths(unsupported, root)))
+        validate_photo_wall_path()
+        thumbnail_plan = plan_thumbnails(articles)
+        images = thumbnail_plan["images"]
+        if args.post:
+            wall_bytes, added, wall_changed = plan_photo_wall_scoped(images)
+        else:
+            wall_bytes, added = plan_photo_wall(images)
+            wall_changed = wall_bytes != PHOTO_WALL.read_bytes()
+        validate_wall_plan(wall_bytes, images)
+    except (ScopeError, OSError, UnicodeError, ValueError) as error:
+        parser.error(str(error))
+    thumbnail_bytes = sum(len(item["data"]) for item in thumbnail_plan["thumbs"])
+    if args.write:
+        apply_thumbnail_plan(thumbnail_plan)
+        if wall_changed:
+            PHOTO_WALL.write_bytes(wall_bytes)
     mode = "已寫入" if args.write else "預覽"
     print(f"{mode}：{len(articles)} 篇文章、{len(images)} 張圖牆圖片、增加 {added} 個卡片")
     if args.write:
         print(f"圖牆縮圖：{thumbnail_bytes / 1024 / 1024:.2f} MiB（480×480 WebP）")
     else:
         print("使用 --write 才會建立縮圖並更新 source/photos/index.md")
+    print("選取：" + ("、".join(display_paths(selected_posts, root)) if selected_posts else "無"))
+    print("圖牆變更：" + ("是" if wall_changed else "否"))
 
 
 if __name__ == "__main__":

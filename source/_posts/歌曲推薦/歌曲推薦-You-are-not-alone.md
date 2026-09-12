@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-You are not alone
 date: 2026-01-27 12:00:18
 tags: [音樂推薦]
+cover: /images/song_you_are_not_alone.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

@@ -81,7 +81,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: 'date'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -146,11 +146,8 @@ mermaid:
 
 # 🔗 延伸閱讀 (Related Posts) 設定
 popular_posts:
-  action: related   # 模式：related(相關文章) 或 popular(熱門文章)
-  limit: 5          # 顯示幾篇？
-  date_format: "YYYY-MM-DD"
-  more_link: false  # 是否顯示 "更多" 按鈕
-  excerpt: false    # 是否顯示摘要 (建議關閉，保持清爽)
+  enable: true      # 是否顯示延伸閱讀
+  limit: 5          # 最多顯示幾篇
 
 # -----------------------------------------------------------
 # 📅 Hexo Calendar Plugin Settings

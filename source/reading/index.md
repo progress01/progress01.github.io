@@ -104,27 +104,15 @@ comments: false
       return dates[dates.length - 1] || '';
     }
 
-    function latestDataDate() {
-      var dates = allItems().map(function(record) {
-        return String(record.item.date || '').slice(0, 10);
-      }).filter(function(date) {
-        return /^\d{4}-\d{2}-\d{2}$/.test(date);
-      }).sort();
-      return dates[dates.length - 1] || todayKey();
-    }
-
     function buildBacklogData(year) {
       var start = new Date(Number(year), 0, 1);
-      var daysInYear = (new Date(Number(year) + 1, 0, 1) - start) / 86400000;
-      var latestDate = latestDataDate();
+      var daysInYear = new Date(Number(year), 1, 29).getMonth() === 1 ? 366 : 365;
       var data = {};
       for (var dayIndex = 0; dayIndex < daysInYear; dayIndex += 1) {
         var date = new Date(Number(year), 0, dayIndex + 1);
         var key = dateKey(date);
-        if (key <= latestDate) {
-          // 每個日期只保留當日新增，避免未完稿讓同一批問題持續累積並讓顏色變深。
-          data[key] = Math.min(4, getAddedRecords(key).length);
-        }
+        // 每個日期只保留當日新增；圖表色階由 maxValue: 4 飽和，資料值仍保留真實數量。
+        data[key] = getAddedRecords(key).length;
       }
       return data;
     }
@@ -163,27 +151,33 @@ comments: false
       gridControls.innerHTML = '';
       var start = new Date(Number(year), 0, 1);
       var startDay = start.getDay();
-      var dayCount = (new Date(Number(year) + 1, 0, 1) - start) / 86400000;
+      var dayCount = new Date(Number(year), 1, 29).getMonth() === 1 ? 366 : 365;
 
       for (var dayIndex = 0; dayIndex < dayCount; dayIndex += 1) {
         var date = new Date(Number(year), 0, dayIndex + 1);
         var key = dateKey(date);
-        var future = key > latestDataDate();
-        var count = future ? 0 : getAddedRecords(key).length;
+        var future = key > todayKey();
+        var count = getAddedRecords(key).length;
+        var planned = future && count > 0;
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'reading-calendar-grid-button' + (future ? ' is-future' : '');
         button.style.gridColumn = String(Math.floor((startDay + dayIndex) / 7) + 1);
         button.style.gridRow = String(date.getDay() + 1);
-        button.setAttribute('aria-label', key + ' 新增 ' + count + ' 個題目');
-        button.title = future ? key + '：尚未到達' : key + '：新增 ' + count + ' 個題目';
-        if (!future) {
-          button.addEventListener('click', function(selectedDate) {
-            return function() {
-              renderUpdates(getAddedRecords(selectedDate), selectedDate + ' 新增內容', '只顯示該日新增的學習題目');
-            };
-          }(key));
-        }
+        button.setAttribute('aria-label', key + (planned ? ' 預排' : '') + ' 新增 ' + count + ' 個題目');
+        button.title = key + '：' + (planned ? '預排，' : (future ? '尚未到達，' : '')) + '新增 ' + count + ' 個題目';
+        button.addEventListener('click', function(selectedDate) {
+          return function() {
+            var records = getAddedRecords(selectedDate);
+            var futureDate = selectedDate > todayKey();
+            var selectedPlanned = futureDate && records.length > 0;
+            renderUpdates(
+              records,
+              selectedDate + (selectedPlanned ? ' 預排內容' : (futureDate ? ' 尚未到達' : ' 新增內容')),
+              (selectedPlanned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的學習題目'
+            );
+          };
+        }(key));
         gridControls.appendChild(button);
       }
     }
@@ -195,8 +189,15 @@ comments: false
         var date = Array.isArray(data) ? data[0] : (params && params.value);
         if (Array.isArray(date)) date = date[0];
         date = String(date || '').slice(0, 10);
-        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date > latestDataDate()) return;
-        renderUpdates(getAddedRecords(date), date + ' 新增內容', '只顯示該日新增的學習題目');
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
+        var records = getAddedRecords(date);
+        var futureDate = date > todayKey();
+        var planned = futureDate && records.length > 0;
+        renderUpdates(
+          records,
+          date + (planned ? ' 預排內容' : (futureDate ? ' 尚未到達' : ' 新增內容')),
+          (planned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的學習題目'
+        );
       });
     }
 
@@ -209,6 +210,19 @@ comments: false
         year: selectedYear,
         colors: readingColors,
         maxValue: 4,
+        visualMap: {
+          type: 'piecewise',
+          itemWidth: 12,
+          itemHeight: 12,
+          selectedMode: false,
+          pieces: [
+            { value: 0, label: '0' },
+            { value: 1, label: '1' },
+            { value: 2, label: '2' },
+            { value: 3, label: '3' },
+            { min: 4, label: '4+' }
+          ]
+        },
         tooltipUnit: '個當日新增題目'
       });
       renderGridControls(selectedYear);
@@ -216,8 +230,9 @@ comments: false
 
       var latestDate = latestItemDate(selectedYear);
       var latestRecords = latestDate ? getAddedRecords(latestDate) : [];
+      var latestPlanned = latestDate > todayKey();
       statusElement.textContent = latestDate
-        ? '顯示 ' + selectedYear + ' 年：' + latestDate + ' 新增 ' + latestRecords.length + ' 個題目'
+        ? '顯示 ' + selectedYear + ' 年：' + latestDate + (latestPlanned ? ' 預排' : '') + ' 新增 ' + latestRecords.length + ' 個題目'
         : '顯示 ' + selectedYear + ' 年：尚無新增題目';
 
       Array.prototype.forEach.call(yearsElement.querySelectorAll('button'), function(button) {
@@ -225,7 +240,7 @@ comments: false
       });
 
       if (latestDate) {
-        renderUpdates(latestRecords, latestDate + ' 新增內容', '只顯示該日新增的學習題目；點選其他日期查看當日紀錄');
+        renderUpdates(latestRecords, latestDate + (latestPlanned ? ' 預排內容' : ' 新增內容'), (latestPlanned ? '預排日期；' : '') + '只顯示該日新增的學習題目；點選其他日期查看當日紀錄');
       } else {
         renderUpdates([], selectedYear + ' 年新增內容', '點選熱力圖格子查看其他日期');
       }
@@ -313,7 +328,7 @@ comments: false
   .reading-calendar-grid-button { min-width: 0; margin: 0; padding: 0; background: transparent; border: 0; cursor: pointer; }
   .reading-calendar-grid-button:hover { background: rgba(201, 101, 69, .16); outline: 1px solid rgba(201, 101, 69, .5); }
   .reading-calendar-grid-button:focus-visible { outline: 2px solid var(--reading-calendar-orange); outline-offset: -1px; }
-  .reading-calendar-grid-button.is-future { cursor: default; }
+  .reading-calendar-grid-button.is-future { cursor: pointer; opacity: .78; }
   .reading-calendar-loading { padding: 50px; color: #96745e; text-align: center; font: 11px "Courier New", monospace; }
 
   .reading-calendar-details { margin-top: 28px; }

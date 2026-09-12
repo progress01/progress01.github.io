@@ -14,43 +14,79 @@
 <link rel="canonical" href="{{ canonical }}">
 
 {%- set page_url = canonical %}
+{%- set page_path = page.path or '' %}
 {%- set page_name = page.title or config.title %}
 {%- set page_description = page.description or (page.excerpt and truncate(strip_html(page.excerpt), {length: 200, separator: ' '})) or config.description %}
 {%- set is_article = page.layout === 'post' or page.type === 'post' %}
-{%- set is_homepage = is_home() %}
+{%- set is_homepage = is_home() and (page_path === '' or page_path === 'index.html') %}
+{%- set is_pagination = page_path.match(r/^page\/\d+(?:\/|$)/) %}
+{%- set is_collection = not is_article and not is_homepage and (
+  page.layout === 'archive' or page.layout === 'category' or page.layout === 'tag' or
+  page.type === 'archive' or page.type === 'category' or page.type === 'tag' or
+  is_pagination or page_path.indexOf('categories/') === 0 or
+  page_path.indexOf('tags/') === 0 or page_path.indexOf('archives/') === 0
+) %}
+{%- set schema_type = 'WebPage' %}
+{%- set schema_id = page_url ~ '#webpage' %}
+{%- if is_homepage %}
+  {%- set schema_type = 'WebSite' %}
+  {%- set schema_id = page_url ~ '#website' %}
+{%- elif is_article %}
+  {%- set schema_type = 'BlogPosting' %}
+  {%- set schema_id = page_url ~ '#article' %}
+{%- elif is_collection %}
+  {%- set schema_type = 'CollectionPage' %}
+  {%- set schema_id = page_url ~ '#collectionpage' %}
+  {%- if page_path.indexOf('categories/') === 0 %}
+    {%- set page_name = '分類：' ~ (page.category or page.title or '內容') ~ (page.current and page.current > 1 and '（第 ' ~ page.current ~ ' 頁）' or '') %}
+  {%- elif page_path.indexOf('tags/') === 0 %}
+    {%- set page_name = '標籤：' ~ (page.tag or page.title or '內容') ~ (page.current and page.current > 1 and '（第 ' ~ page.current ~ ' 頁）' or '') %}
+  {%- elif page_path.indexOf('archives/') === 0 or page.layout === 'archive' %}
+    {%- set page_name = '文章彙整' ~ (page.year and '：' ~ page.year or '') ~ (page.month and ' 年第 ' ~ page.month ~ ' 月' or '') ~ (page.current and page.current > 1 and '（第 ' ~ page.current ~ ' 頁）' or '') %}
+  {%- elif is_pagination %}
+    {%- set page_name = '文章列表第 ' ~ (page.current or page_path.split('/')[1] or '2') ~ ' 頁' %}
+  {%- else %}
+    {%- set page_name = '內容集合：' ~ page_path | replace(r/index\.html$/, '') | replace(r/\/$/, '') %}
+  {%- endif %}
+{%- endif %}
+{%- set website_url = full_url_for('/') %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": {% if is_article %}"BlogPosting"{% elif is_homepage %}"WebSite"{% else %}"WebPage"{% endif %},
-  "@id": {{ page_url | dump | safe }},
-  "url": {{ page_url | dump | safe }},
-  "name": {{ page_name | dump | safe }},
-  "description": {{ page_description | dump | safe }},
-  "inLanguage": {{ (page.lang or config.language or 'zh-TW') | dump | safe }}{% if is_article %},
-  "headline": {{ page.title | dump | safe }},
-  "datePublished": {{ moment(page.date).format() | dump | safe }},
-  "dateModified": {{ moment(page.updated or page.date).format() | dump | safe }},
+  "@type": {{ schema_json(schema_type) | safe }},
+  "@id": {{ schema_json(schema_id) | safe }},
+  "url": {{ schema_json(page_url) | safe }},
+  "name": {{ schema_json(page_name) | safe }},
+  "description": {{ schema_json(page_description) | safe }},
+  "inLanguage": {{ schema_json(page.lang or config.language or 'zh-TW') | safe }}{% if is_article %},
+  "headline": {{ schema_json(page.title) | safe }},
+  "datePublished": {{ schema_json(moment(page.date).format()) | safe }},
+  "dateModified": {{ schema_json(moment(page.updated or page.date).format()) | safe }},
   "author": {
     "@type": "Person",
-    "name": {{ config.author | dump | safe }}
+    "name": {{ schema_json(config.author) | safe }}
   },
   "publisher": {
-    "@type": "Organization",
-    "name": {{ config.title | dump | safe }}
+    "@type": "Person",
+    "name": {{ schema_json(config.author) | safe }}
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": {{ page_url | dump | safe }}
-  }{% if page.cover %},
-  "image": {{ full_url_for(page.cover) | dump | safe }}{% endif %}{% if page.categories and page.categories.length %},
+    "@id": {{ schema_json(page_url) | safe }}
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": {{ schema_json(website_url ~ '#website') | safe }}
+  }{% if page.cover and page.cover !== '/images/work-knowledge-card.svg' %},
+  "image": {{ schema_json(full_url_for(page.cover)) | safe }}{% endif %}{% if page.categories and page.categories.length %},
   "articleSection": [
     {%- for category in page.categories.toArray() %}
-    {{ category.name | dump | safe }}{% if not loop.last %},{% endif %}
+    {{ schema_json(category.name) | safe }}{% if not loop.last %},{% endif %}
     {%- endfor %}
   ]{% endif %}{% if page.tags and page.tags.length %},
   "keywords": [
     {%- for tag in page.tags.toArray() %}
-    {{ tag.name | dump | safe }}{% if not loop.last %},{% endif %}
+    {{ schema_json(tag.name) | safe }}{% if not loop.last %},{% endif %}
     {%- endfor %}
   ]{% endif %}{% endif %}
 }

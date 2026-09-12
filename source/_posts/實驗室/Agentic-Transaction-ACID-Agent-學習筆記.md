@@ -1,7 +1,7 @@
 ---
 title: Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記
 date: 2026-08-29 12:00:00
-updated: 2026-09-08 21:30:00
+updated: '2026-09-11T19:02:32+08:00'
 permalink: /learning/agentic-transaction-acid-agent/
 categories: [觀念與實驗]
 tags: [學習筆記, AI Agent, 資料庫, 工作流程, 驗證]
@@ -12,13 +12,13 @@ learning_status: 進行中
 
 這是一篇針對〈Agentic Transaction: Towards ACID-Compliant Agent Systems〉的公開研究筆記，先把論文報告中的核心問題、形式化模型、系統機制與實務檢查清單整理起來。我真正想往下討論的，不只是代理系統如何提高可靠度，而是如何把這種「探索—執行—驗證—提交／重試」的結構，變成我推動各種工作流程時可以共同使用的底層方法。
 
-它目前仍是研究摘記，不是已完成的論文評讀；論文細節、實驗數據、實作程度與工程泛化性，仍要分別回到原始論文與開放原始碼逐項核對。
+它目前仍是研究摘記，不是已完成的論文評讀；本文已核對論文 v1 的正式定義、門檻與實驗表格，也核對開放原始碼 README 的結構與執行條件。獨立重現、程式碼與論文結果的完全對應，以及工程泛化性仍未完成核驗。
 
 <!-- more -->
 
-> **資料狀態：待核對的研究整理**
+> **資料狀態：論文數據與專案 README 第一輪核對完成**
 >
-> 本文先保存目前收到的研究報告內容。文中的論文細節、作者、日期、基準測試、數字與技術命名，在正式引用前應核對 [arXiv:2608.13900](https://arxiv.org/abs/2608.13900) 與原始程式碼。以下內容也不代表我已經確認論文的所有結論。
+> 本文的正式定義、門檻、KramaBench 規模與論文表格已回到 [arXiv HTML v1](https://arxiv.org/html/2608.13900v1) 核對；專案的結構、執行條件與成本限制已回到 [TsinghuaDatabaseGroup/ACID-Agent README](https://github.com/TsinghuaDatabaseGroup/ACID-Agent) 核對。論文敘述有一處模型名稱與表格不一致，成本也只代表該實驗設定；本文不宣稱獨立重現或工程泛化已被證明。
 
 ## 論文基本資訊
 
@@ -26,7 +26,7 @@ learning_status: 進行中
 - **發表平台與編號**：arXiv:2608.13900v1 [cs.DB]
 - **發表日期**：2026 年 8 月 14 日，已回到 [arXiv 原始頁面](https://arxiv.org/abs/2608.13900)核對
 - **作者**：Zhaoyan Sun、Xiaoxiao Wang、Guoliang Li，已回到原始頁面核對
-- **開放原始碼專案**：[TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，已確認專案頁面存在；實作與論文是否完全對應仍待逐項檢查
+- **開放原始碼專案**：[TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，已確認 README 所列的 ACID-Agent、KramaBench、baseline harness、trace 與 cost logging；程式碼與論文結果的獨立重現仍未執行
 
 ## 一、研究背景與核心問題
 
@@ -43,7 +43,7 @@ learning_status: 進行中
 
 ## 二、Agentic Transaction 的形式化模型
 
-報告中的暫時定義是：一個代理事務 τ，是代理與執行環境之間由 LLM 驅動的、有界且有限的互動序列：
+論文 §2.1 的定義是：一個代理事務 τ，是代理與執行環境之間由 LLM 驅動的、有界且有限的互動序列：
 
 > τ = ⟨ r₁, r₂, …, rₙ ⟩
 
@@ -72,14 +72,15 @@ learning_status: 進行中
 
 ### 1. 置信度分歧驗證
 
-報告整理的想法是，比較有探索證據摘要與沒有證據摘要的兩種 Context 下，模型對某個決策或程式碼片段的 Token Log-Probability，藉此觀察證據是否真的改變了模型的置信度。
+論文 §2.2.2 定義 confidence 為目標輸出平均 token log probability 的指數；§3.1 的實驗設定則說明，因為 API 型主模型沒有 token probability，研究使用本地 `Qwen3-0.6B` proxy 估計 confidence。對 decision，論文比較從探索摘要抽出的決策與實際執行的決策；對 code，才是比較有、沒有探索證據 context 時，決策相關程式碼片段的 confidence（[§2.2.2](https://arxiv.org/html/2608.13900v1#S2.SS2)、[§3.1](https://arxiv.org/html/2608.13900v1#S3.SS1)）。
 
-報告中記載兩個暫時門檻：
+論文 §2.2.2 與 §3.1 記載兩個實驗門檻（[§3.1](https://arxiv.org/html/2608.13900v1#S3.SS1)，不是通用信心標準）：
 
-- **Decision Confidence Divergence**：分歧度低於 `0.25` 時，可能代表決策沒有獲得實質數據支持。
-- **Code Confidence Divergence**：最大分歧度低於 `0.50` 時，可能判定為缺乏證據支持的無效程式碼。
+- **Decision Confidence Divergence**：分歧度低於 `0.25` 時，觸發 retry，論文將其解釋為執行決策沒有比替代方案獲得更強的證據支持。
+- **Code Confidence Divergence**：最大分歧度低於 `0.50` 時，觸發 retry，論文將其解釋為生成程式碼缺乏證據支撐。
+- 探索階段另有分歧度超過 `0.45` 時提前停止的設定；它和上述 retry 門檻不同。
 
-這些數字目前都要回到論文確認定義、計算方式與實驗條件，不能先當成通用的信心門檻。需要特別查的是：置信度分歧和真正的正確性之間是否有穩定關聯，以及不同模型、任務與語言下是否仍然成立。
+這些數字是該研究設定中的操作門檻，不能當成通用的信心門檻。置信度分歧和真正正確性之間是否有穩定關聯，以及不同模型、任務與語言下是否仍然成立，仍是開放問題。
 
 ### 2. 失敗步驟隔離
 
@@ -93,9 +94,9 @@ ACID-Agent 的整理方向是：
 
 這裡可以連到我目前的 CMS 與網站維護工作：如果 AI 修改檔案時只留下最後結果，日後很難知道哪些修改是已確認的，哪些只是失敗嘗試留下的殘片。版本化、差異檢查與可回復工作區，可能會是代理協作的基本設施。
 
-## 五、實驗結果與基準測試：待核對
+## 五、實驗結果與基準測試：已核對，保留論文矛盾
 
-報告記載研究團隊以 KramaBench 進行測試，範圍包括六大領域、二十四個資料庫、約一千七百個實體檔案與一百零四項多步驟資料科學任務。以下數據先保留為報告摘記，尚未核對原論文表格。
+論文 §3.1 說明 KramaBench 包含六大領域、24 個資料來源、1,700 個真實資料檔案與 104 個自然語言資料科學任務；每項任務都需要處理異質資料與多步驟流程。以下表格依[論文 HTML v1 §3.1 Table 2](https://arxiv.org/html/2608.13900v1#S3.T2)核對。
 
 ### 1. 主實驗表現
 
@@ -106,13 +107,13 @@ ACID-Agent 的整理方向是：
 | ACID-Agent | Qwen3.5-397B-A17B | 74.6% | 22.8 | 348K | $0.10 |
 | ACID-Agent | GLM-5.2 | 77.4% | 22.5 | 367K | $0.61 |
 
-報告把這組結果解讀為：架構設計可能比單純擴大模型參數更能提升長流程任務的可靠度。不過正式下結論前，需要確認基準測試、模型版本、成本計算與實驗設定是否完全可比。
+在 Table 2 的 Qwen3.5-397B-A17B 條件下，ACID-Agent 的 74.6% 減去 Claude Code 的 64.0%，是 **10.6 個百分點**。論文 §3.2 的敘述寫成 10.6%，並把該比較的模型寫成 Qwen3.5-197B-A17B；這和 §3.1 的 397B 設定及 Table 2 不一致，本文以表格與實驗設定為準，保留這個原文矛盾，不擅自替論文判定正確版本。表中的成本是作者在該平台與設定下報告的數字，不是可跨供應商泛化的價格；README 也明確說明 API pricing is provider-specific。
 
 ### 2. 執行穩定度
 
-報告以環境科學任務進行三次獨立重複執行，記載 Claude Code 的分數為 `63.9 ± 30.9`，ACID-Agent 為 `88.9 ± 18.6`。如果數據與實驗設計無誤，這代表 ACID-Agent 不只提高平均表現，也可能降低輸出變異。
+論文 §3.2 的 [Table 3](https://arxiv.org/html/2608.13900v1#S3.T3) 以 **Environment 領域、Qwen3.5-397B-A17B、三次獨立執行**為條件，記載 Claude Code 的分數為 `63.9 ± 30.9`，ACID-Agent 為 `88.9 ± 18.6`。這裡的 `±` 是每個任務分數變異的平均值再開平方根，不是整體分數的標準差；在這組條件下，表格呈現 ACID-Agent 較低的任務層級變異，不能直接泛化到其他領域或模型。
 
-但三次重複是否足以支持穩定度結論、標準差如何計算，仍然需要回到原始研究核對。
+三次重複的結果仍是論文自身的實驗證據，不等於本文已完成獨立重現。
 
 ### 3. 消融實驗
 
@@ -121,9 +122,9 @@ ACID-Agent 的整理方向是：
 | DA-Agent，無 ACID 的 ReAct 基準 | 65.2% | 8.5 | 62K | $0.01 | 基礎基準線 |
 | Claude Code，三次多數決 | 75.2% | 25.6 | 1,121K | $0.21 | Token 增加但仍落後 ACID-Agent |
 | ACID-Agent，移除失敗隔離 | 78.3% | 20.1 | 333K | $0.10 | 報告認為失敗記憶污染很重要 |
-| ACID-Agent 完整版 | 90.0% | 25.5 | 444K | $0.13 | 完整具備四項語義保證 |
+| ACID-Agent 完整版 | 90.0% | 25.5 | 444K | $0.13 | 論文完整配置 |
 
-這一節目前最需要查證的不只是數字，而是不同表格中的任務範圍、模型與分數是否一致，以及「移除失敗隔離」造成的差異能否被單獨歸因於記憶污染。
+論文 §3.3 的[Table 4](https://arxiv.org/html/2608.13900v1#S3.T4) 明確限定 **Environment 領域、Qwen3.5-397B-A17B**；因此這裡的 90.0% 不能和 Table 2 全域條件的 74.6% 直接比較。論文說移除失敗隔離使分數下降 11.7%，由 90.0% 到 78.3% 的表格差值也是 11.7 個百分點；這是消融結果，不能單獨證明因果已排除其他因素。
 
 ## 六、從學術 AI 驗證回到 Agentic Transaction
 
@@ -248,9 +249,9 @@ VALIDATE：檢查主張、資料、測試、格式、限制與副作用
 ## 參考資料與待核對項目
 
 1. Sun, Z., Wang, X., & Li, G. (2026). *Agentic Transaction: Towards ACID-Compliant Agent Systems*. arXiv preprint arXiv:2608.13900v1。
-2. [ACID-Agent 開放原始碼專案](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，作者、內容與可重現性待核對。
+2. [ACID-Agent 開放原始碼專案](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)，README 與專案結構已核對；尚未在本機執行其 Docker／模型環境，因此不宣稱可重現性。
 3. Claude Code 與 Agentic Workflow 的技術資料，需回到官方文件確認版本與說法。
-4. KramaBench 研究資料，需確認基準測試的正式名稱、資料集範圍與結果表格。
+4. KramaBench 研究資料：正式名稱、六大領域、24 個資料來源、1,700 個資料檔案、104 項任務與 Table 2–4 已依論文核對；論文 §3.2 的 197B／397B 模型名稱矛盾仍保留待釐清。
 5. [NIST AI RMF Core：Measure 與 TEVV](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)，補充測試集、指標、部署情境、獨立複核與持續監測。
 6. [European Commission：Living guidelines on the responsible use of generative AI in research](https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en)，補充研究者責任、透明、交叉驗證、可重現與資料界線。
 7. [National Academies：Foundation Models for Scientific Discovery and Innovation](https://www.nationalacademies.org/read/29212/chapter/2)，補充科學工作中的可靠性、有效性、可重現性與 VVUQ。
@@ -258,17 +259,17 @@ VALIDATE：檢查主張、資料、測試、格式、限制與副作用
 
 ## 後續研究清單
 
-- 讀原論文，確認 Agentic Transaction 的正式定義、語義 ACID 與 validation gate 是否為論文原用語，並把「學術驗證」和「系統提交」的對照寫成正式模型。
-- 核對所有實驗表格，確認模型、任務、分數、成本與重複次數。
-- 了解 ACID-Agent 是否提供可執行程式碼、工作區快照與失敗隔離的具體實作。
+- 若要繼續，將已核對的正式定義、語義 ACID 與 validation gate，和「學術驗證／系統提交」的個人對照整理成正式模型；目前不宣稱這是論文提出的等價模型。
+- 若要繼續，針對論文 §3.2 的 197B／397B 敘述矛盾向原作者或後續版本查證；Table 2–4 的現有數字與條件已記錄在 `tmp/aeo-research-evidence.md`。
+- 若要繼續，才在具備 Docker、資料集、模型與 API 條件時執行獨立重現；目前只核對 README 所列的程式結構與執行方式。
 - 把「代理修改網站檔案」當成小型案例，整理一次快照、驗證、提交與回滾流程，並記錄哪些步驟可以自動化、哪些必須人工核准。
 - 建立一份可重用的工作流程推動證據包，讓不同 AI 專案共用任務邊界、驗證閘門與交付紀錄。
 - 比較 Agentic Transaction 與 Saga、工作流引擎、事件溯源及傳統資料庫交易的差異。
 
 ## 預先收集：先分清楚論文主張與實作證據
 
-1. [Agentic Transaction: Towards ACID-Compliant Agent Systems](https://arxiv.org/abs/2608.13900)：原始論文頁面，先核對 Semantic Atomicity、Consistency、Isolation、Durability 的正式定義，以及 10.6% 改善幅度所對應的基準與實驗條件。
-2. [TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)：開放原始碼專案，適合檢查論文描述的快照、驗證、失敗隔離與工作流是否真的有對應實作。
+1. [Agentic Transaction: Towards ACID-Compliant Agent Systems](https://arxiv.org/html/2608.13900v1)：原始論文 HTML v1；已核對 Semantic Atomicity、Consistency、Isolation、Durability、0.25／0.50 門檻與 Table 2–4，並記錄 197B／397B 的原文矛盾。
+2. [TsinghuaDatabaseGroup/ACID-Agent](https://github.com/TsinghuaDatabaseGroup/ACID-Agent)：開放原始碼專案；已核對 README 的執行架構、資料與輸出位置、Docker／模型需求及 provider-specific cost 說明，尚未獨立執行。
 3. [PostgreSQL 18｜Transactions](https://www.postgresql.org/docs/18/tutorial-transactions.html)：用來補回傳統交易的基本概念，先分清楚 `BEGIN`、`COMMIT`、`ROLLBACK` 與 `SAVEPOINT`，再判斷「ACID for Agents」到底是沿用、改寫還是借用資料庫術語。
 
 ## 搭配閱讀：從交易到可驗證的工作流程
@@ -328,3 +329,4 @@ VALIDATE：檢查主張、資料、測試、格式、限制與副作用
 
 - **2026-08-29 22:09**：建立 Agentic Transaction 公開研究筆記，加入語義 ACID、失敗隔離、驗證閘門、基準測試與實務檢查清單；全文暫列為待核對整理。
 - **2026-09-08**：把學術 AI 驗證流程放回 Agentic Transaction 的語義層，補上交易邊界、驗證閘門、提交／重試／補償／回滾、持久化 trace 與工作流程推動證據包。
+- **2026-09-11 19:02:32+08:00**：依 arXiv HTML v1 與專案 README 核對正式定義、實驗門檻、KramaBench 規模與 Table 2–4；修正 10.6 個百分點、模型條件、成本與尚未獨立重現的界線，並保留論文內的 197B／397B 矛盾。

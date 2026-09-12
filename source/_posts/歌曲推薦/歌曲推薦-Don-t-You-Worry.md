@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-Don't You Worry
 date: 2025-12-30 12:00:00
 tags: [音樂推薦]
+cover: /images/song_Don_t_You_Worry.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

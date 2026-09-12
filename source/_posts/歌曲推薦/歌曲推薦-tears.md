@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-Tears
 date: 2026-07-21 12:00:00
 tags: [音樂推薦]
+cover: /images/song_tears.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

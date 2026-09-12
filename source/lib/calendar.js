@@ -39,6 +39,21 @@ Calendar.init = function(container, options) {
     dom.style.width = isMobile ? '700px' : '100%';
     chart.resize();
 
+    var visualMap = {
+        min: 0,
+        max: Number(options.maxValue) || Math.max(1, maxValue),
+        calculable: !isMobile,
+        orient: 'horizontal',
+        left: 'center',
+        top: 0,
+        itemWidth: isMobile ? 10 : 20,
+        itemHeight: isMobile ? 10 : 140,
+        inRange: { color: options.colors || ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'] }
+    };
+    Object.keys(options.visualMap || {}).forEach(function(key) {
+        visualMap[key] = options.visualMap[key];
+    });
+
     var option = {
         tooltip: {
             position: 'top',
@@ -47,17 +62,7 @@ Calendar.init = function(container, options) {
                 return format + ': ' + p.data[1] + ' ' + (options.tooltipUnit || '篇文章');
             }
         },
-        visualMap: {
-            min: 0,
-            max: Number(options.maxValue) || Math.max(1, maxValue),
-            calculable: !isMobile,
-            orient: 'horizontal',
-            left: 'center',
-            top: 0,
-            itemWidth: isMobile ? 10 : 20,
-            itemHeight: isMobile ? 10 : 140,
-            inRange: { color: options.colors || ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'] }
-        },
+        visualMap: visualMap,
         calendar: {
             top: titleTop + 20,
             left: calendarLeft,

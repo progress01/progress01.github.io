@@ -3,6 +3,7 @@ categories: [音樂]
 title: 歌曲推薦-Secret of my heart
 date: 2026-01-12 12:00:00
 tags: [音樂推薦]
+cover: /images/song_Secret_of_my_heart.webp
 ---
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">

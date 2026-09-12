@@ -1,46 +1,55 @@
 # 訪客可瀏覽的九個主標籤。
 # 文章 front matter 使用主標籤；建置時仍由 scripts/tags-normalizer.js 再次正規化。
 - name: 音樂推薦
+  aliases: [歌曲推薦, 專輯插圖]
   code: AUDIO
   icon: fa fa-music
   url: /tags/音樂推薦/
   description: 歌曲、歌手與反覆播放的旋律。
 - name: 閱讀紀錄
+  aliases: [書籍, 閱讀心得, 網路小說, 輕小說]
   code: READ
   icon: fa fa-book
   url: /tags/閱讀紀錄/
   description: 書籍、小說與讀完後留下的想法。
 - name: 觀影紀錄
+  aliases: [觀影心得, 影片]
   code: SCREEN
   icon: fa fa-film
   url: /tags/觀影紀錄/
   description: 電影、影集與影像作品的觀看筆記。
 - name: 學習筆記
+  aliases: [內容建模, 前後台, 動作分析, 問題情境, 排球, 規格審查, 設計思考, 資料庫, 網站流量, ACID, Agent Systems, Agentic Transaction, CMS, GEO]
   code: STUDY
   icon: fa fa-flask
   url: /tags/學習筆記/
   description: 技術、研究、工作方法與問題拆解。
 - name: 工作方法
+  aliases: [系統排查, 問題排查]
   code: WORK_METHOD
   icon: fa fa-cogs
   url: /tags/工作方法/
   description: 工作流程、問題排查與可移植的判斷方法。
 - name: 重要紀錄
+  aliases: [工作紀錄]
   code: WORK_LOG
   icon: fa fa-briefcase
   url: /tags/重要紀錄/
   description: 值得長期保留的工作事件與思考轉折。
 - name: 生活感受
+  aliases: [心情, 困擾]
   code: LIFE
   icon: fa fa-heart
   url: /tags/生活感受/
   description: 情緒、困擾與日常觀察。
 - name: 旅行
+  aliases: []
   code: TRAVEL
   icon: fa fa-map-marker
   url: /tags/旅行/
   description: 出門走走與地方記憶。
 - name: 站務
+  aliases: []
   code: SITE
   icon: fa fa-wrench
   url: /tags/站務/
