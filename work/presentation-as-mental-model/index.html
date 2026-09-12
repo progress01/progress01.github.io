@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋文章、標籤或關鍵字…","prompt":"輸入關鍵字，開始找回文章與紀錄。","empty":"找不到與「${query}」相關的文章或紀錄","hits_time":"找到 ${hits} 篇文章（約 ${time} 毫秒）","hits":"找到 ${hits} 篇文章"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="這是一篇把工作簡報討論去脈絡化後留下的紀錄。人物、單位、專案名稱與實際資料都不放進來，只保留一個我很常忽略、但之後應該要記得的判斷：簡報不只是把事情說清楚，還要讓聽的人能在腦中想像這件事情怎麼發生。 這次原本想說明網站檢核的執行方式、流程調整與工具輔助。整理過程中，我很容易把既有簡報、工具功能、改版內容、導入時間與需要協作的事項分開處理，結果每一塊看起來都有資料，放在一起卻不像一個完整的故事。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作">
+<meta property="og:url" content="https://progress01.github.io/work/presentation-as-mental-model/index.html">
+<meta property="og:site_name" content="DON&#39;T COUNT THE DAYS">
+<meta property="og:description" content="這是一篇把工作簡報討論去脈絡化後留下的紀錄。人物、單位、專案名稱與實際資料都不放進來，只保留一個我很常忽略、但之後應該要記得的判斷：簡報不只是把事情說清楚，還要讓聽的人能在腦中想像這件事情怎麼發生。 這次原本想說明網站檢核的執行方式、流程調整與工具輔助。整理過程中，我很容易把既有簡報、工具功能、改版內容、導入時間與需要協作的事項分開處理，結果每一塊看起來都有資料，放在一起卻不像一個完整的故事。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-07-09T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-10T04:00:00.000Z">
+<meta property="article:author" content="Ch-Ju">
+<meta property="article:tag" content="工作方法">
+<meta property="article:tag" content="重要紀錄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://progress01.github.io/work/presentation-as-mental-model/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://progress01.github.io/work/presentation-as-mental-model/#article",
+  "url": "https://progress01.github.io/work/presentation-as-mental-model/",
+  "name": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+  "description": "這是一篇把工作簡報討論去脈絡化後留下的紀錄。人物、單位、專案名稱與實際資料都不放進來，只保留一個我很常忽略、但之後應該要記得的判斷：簡報不只是把事情說清楚，還要讓聽的人能在腦中想像這件事情怎麼發生。\n這次原本想說明網站檢核的執行方式、流程調整與工具輔助。整理過程中，我很容易把既有簡報、工具功能、改版內容、導入時間與需要協作的事項分開處理，結果每一塊看起來都有資料，放在一起卻不像一個完整的故事。",
+  "inLanguage": "zh-TW",
+  "headline": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+  "datePublished": "2026-07-09T12:00:00+08:00",
+  "dateModified": "2026-09-10T12:00:00+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Ch-Ju"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ch-Ju"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://progress01.github.io/work/presentation-as-mental-model/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://progress01.github.io/#website"
+  },
+  "articleSection": [
+    "工作知識"
+  ],
+  "keywords": [
+    "工作方法",
+    "重要紀錄"
+  ]
+}
+</script>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://progress01.github.io/work/presentation-as-mental-model/","path":"/work/presentation-as-mental-model/","title":"工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作 | DON'T COUNT THE DAYS</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QR6QX786"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-L3QR6QX786","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="DON'T COUNT THE DAYS" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DON'T COUNT THE DAYS</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">紀錄並凝視</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay" aria-hidden="true">
+    <div class="popup search-popup" role="dialog" aria-modal="true" aria-label="站內搜尋" tabindex="-1">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋文章、標籤或關鍵字…" spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
+          <i class="fa fa-times-circle"></i>
+        </button>
+      </div>
+      <div class="search-result-container" aria-live="polite">
+        <section class="search-recent" data-search-recent aria-label="最近更新文章">
+          <div class="search-recent-heading">
+            <span class="search-recent-kicker">JUST IN / 最近更新</span>
+            <span class="search-recent-note" data-search-recent-note>最近 10 篇</span>
+          </div>
+
+          <div class="search-category-tabs" role="tablist" aria-label="依文章分類瀏覽">
+            <button class="search-category-tab is-active" type="button" role="tab" aria-selected="true" data-search-category="all">全部</button>
+            
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="音樂">音樂</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="閱讀與影視">閱讀與影視</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="觀念與實驗">觀念與實驗</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="工作知識">工作知識</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="生活紀錄">生活紀錄</button>
+          </div>
+
+          <div class="search-recent-list">
+              <a class="search-recent-item" href="/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/" data-search-recent-item data-search-recent-rank="0" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-11T12:00:00+08:00">09-11</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-好心分手</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E6%9C%89%E4%BA%9B%E4%BA%8B%E6%83%85%E8%A6%81%E5%88%86%E9%96%8B/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有些事情要分開：不要太快把事情上升到人的不足</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%80%BC%E5%BE%97%E7%9A%84%E7%AD%89%E5%BE%85/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="閱讀與影視">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">值得的等待（觀影紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Just%20Give%20Me%20A%20Reason/" data-search-recent-item data-search-recent-rank="4" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-09T12:00:00+08:00">09-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Just Give Me A Reason</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/ai-question-judgment-order/" data-search-recent-item data-search-recent-rank="5" data-search-recent-categories="觀念與實驗">
+                <time class="search-recent-date" datetime="2026-09-08T20:00:00+08:00">09-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">AI 提問判斷順序｜從情境、目標到診斷、設計與驗證</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%EC%9E%8A%EC%96%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EB%A7%88%EC%9D%8C%EC%9C%BC%EB%A1%9C%EF%BC%88%E5%BF%98%E8%A8%98%E4%BB%96%E9%80%99%E4%BB%B6%E4%BA%8B%EF%BC%89/" data-search-recent-item data-search-recent-rank="6" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-08T12:00:00+08:00">09-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/08/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+5%E5%A4%A9/" data-search-recent-item data-search-recent-rank="7" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-08T01:12:43+08:00">09-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+5天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/presentation-workflow-open-slide/" data-search-recent-item data-search-recent-rank="8" data-search-recent-categories="觀念與實驗">
+                <time class="search-recent-date" datetime="2026-09-07T12:00:00+08:00">09-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">簡報製作與 open-slide 2.0｜從內容、結構到上台報告的學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B7%B4%E7%BF%92/" data-search-recent-item data-search-recent-rank="9" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-07T12:00:00+08:00">09-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-練習</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/mixed-volleyball-defense-positioning/" data-search-recent-item data-search-recent-rank="10" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-06T19:55:24+08:00">09-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">混排攻擊與防守站位｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/pain-improvement-research/" data-search-recent-item data-search-recent-rank="11" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-06T12:00:00+08:00">09-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">痠痛改善研究：從下背、肩膀與小腿開始</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/watch/reply-1988-30-questions/" data-search-recent-item data-search-recent-rank="12" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-09-06T12:00:00+08:00">09-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">請回答1988｜雙門洞三十題：把故事寫下去，也把自己的問題留下來</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/05/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+4%E5%A4%A9/" data-search-recent-item data-search-recent-rank="13" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-05T21:08:29+08:00">09-05</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+4天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/web-automation-python-pytest-playwright/" data-search-recent-item data-search-recent-rank="14" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="15" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-I%20will%20love%20you/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-I will love you</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/content-publishing-and-tables/" data-search-recent-item data-search-recent-rank="20" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-03T23:55:00+08:00">09-03</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/api-requirement-troubleshooting/" data-search-recent-item data-search-recent-rank="21" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-03T23:44:45+08:00">09-03</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜API 需求排查：從前台現象回到資料來源</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-the%20day%20you%20went%20away/" data-search-recent-item data-search-recent-rank="22" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-03T12:00:00+08:00">09-03</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-the day you went away</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/project-pricing-and-cost-estimation/" data-search-recent-item data-search-recent-rank="23" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-02T23:55:00+08:00">09-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%91%8A%E7%99%BD%EF%BC%88%EA%B3%A0%EB%B0%B1%ED%95%A9%EB%8B%88%EB%8B%A4%EF%BC%89/" data-search-recent-item data-search-recent-rank="24" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-02T12:00:00+08:00">09-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-告白（고백합니다）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/" data-search-recent-item data-search-recent-rank="25" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-01T12:00:00+08:00">09-01</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-sailing back to you</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="26" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9F%E8%AC%9D%E5%8B%9E%E5%8A%9B/" data-search-recent-item data-search-recent-rank="29" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-感謝勞力</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/29/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BB%A5%E6%97%A9%E4%B9%99%E5%A5%B3%E4%BD%B3%E5%A5%88%E5%AD%90%E7%82%BA%E4%BE%8B/" data-search-recent-item data-search-recent-rank="33" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-08-29T12:00:00+08:00">08-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">以早乙女佳奈子為例（影片紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%9D%9E%E6%AD%A3%E5%B8%B8%E7%BE%8E%E9%A3%9F%E6%96%87/" data-search-recent-item data-search-recent-rank="37" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-08-26T12:00:00+08:00">08-26</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">非正常美食文（網路小說閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%9F%BA%E5%9C%B0/" data-search-recent-item data-search-recent-rank="39" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-08-25T12:00:00+08:00">08-25</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">基地（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/presentation-as-mental-model/" data-search-recent-item data-search-recent-rank="63" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-07-09T12:00:00+08:00">07-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/" data-search-recent-item data-search-recent-rank="110" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-01-24T14:21:24+08:00">01-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">畫出心之所嚮（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A4%B1%E6%A5%AD%E7%99%BD%E9%A0%98%E7%9A%84%E8%81%B7%E5%A0%B4%E6%BC%82%E6%B5%81/" data-search-recent-item data-search-recent-rank="131" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-12-28T18:00:00+08:00">12-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">失業白領的職場漂流（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/" data-search-recent-item data-search-recent-rank="144" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2025-06-16T23:47:27+08:00">06-16</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+3天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/" data-search-recent-item data-search-recent-rank="145" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-28T00:55:27+08:00">04-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">來自地獄的法官（影片紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/" data-search-recent-item data-search-recent-rank="146" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">呼吸（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/" data-search-recent-item data-search-recent-rank="147" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">女給時代：1930年代臺灣的珈琲店文化（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/" data-search-recent-item data-search-recent-rank="154" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2024-08-06T23:47:27+08:00">08-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+2天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2024/07/14/%E9%9A%A8%E7%AD%86/%E5%8F%B0%E4%B8%AD%E7%8D%A8%E6%97%85%E8%A8%98/" data-search-recent-item data-search-recent-rank="176" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2024-07-14T12:00:00+08:00">07-14</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">台中獨旅記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+          </div>
+          <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有更新，可以直接搜尋完整紀錄。</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E4%B8%80%E9%96%8B%E5%A7%8B%E5%BF%BD%E7%95%A5%E4%BA%86%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">我一開始忽略了什麼？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%8C%E8%AE%93%E4%BA%BA%E5%8F%AF%E4%BB%A5%E6%83%B3%E5%83%8F%E3%80%8D%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">「讓人可以想像」到底是什麼？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E5%A0%B1%E7%9A%84%E4%B8%BB%E8%A7%92%E4%B8%8D%E6%98%AF%E5%B7%A5%E5%85%B7%EF%BC%8C%E8%80%8C%E6%98%AF%E4%BA%8B%E6%83%85%E5%A6%82%E4%BD%95%E8%A2%AB%E5%AE%8C%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">簡報的主角不是工具，而是事情如何被完成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E4%B8%80%E4%BB%BD%E7%B0%A1%E5%A0%B1%EF%BC%8C%E8%A6%81%E8%AE%93%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%BA%E7%9C%8B%E8%A6%8B%E4%B8%8D%E5%90%8C%E7%9A%84%E6%9D%B1%E8%A5%BF"><span class="nav-number">4.</span> <span class="nav-text">同一份簡報，要讓不同的人看見不同的東西</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E9%A0%81%E7%B0%A1%E5%A0%B1%E8%87%B3%E5%B0%91%E8%A6%81%E5%AE%8C%E6%88%90%E4%B8%80%E5%80%8B%E6%83%B3%E5%83%8F%E5%8B%95%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">一頁簡報至少要完成一個想像動作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%8C%E6%83%B3%E5%83%8F%E3%80%8D%E4%B9%9F%E5%8C%85%E5%90%AB%E4%BE%8B%E5%A4%96%E8%88%87%E9%82%8A%E7%95%8C"><span class="nav-number">6.</span> <span class="nav-text">「想像」也包含例外與邊界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E9%87%8D%E8%A4%87%E4%BD%BF%E7%94%A8%E7%9A%84%E7%B0%A1%E5%A0%B1%E6%AA%A2%E6%9F%A5%E9%A0%86%E5%BA%8F"><span class="nav-number">7.</span> <span class="nav-text">可以重複使用的簡報檢查順序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%88%E5%AF%AB%E4%B8%80%E5%8F%A5%E8%A9%B1%EF%BC%8C%E8%AA%AA%E6%98%8E%E9%80%99%E5%A0%B4%E7%B0%A1%E5%A0%B1%E8%A6%81%E8%AE%93%E4%BA%BA%E7%90%86%E8%A7%A3%E4%BB%80%E9%BA%BC"><span class="nav-number">7.1.</span> <span class="nav-text">1. 先寫一句話，說明這場簡報要讓人理解什麼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%95%AB%E5%87%BA%E7%8F%BE%E6%B3%81%EF%BC%8C%E4%B8%8D%E6%80%A5%E8%91%97%E6%94%BE%E8%A7%A3%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">2. 畫出現況，不急著放解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%94%A8%E5%89%8D%E5%BE%8C%E5%B0%8D%E7%85%A7%E8%AA%AA%E6%98%8E%E6%94%B9%E8%AE%8A"><span class="nav-number">7.3.</span> <span class="nav-text">3. 用前後對照說明改變</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%94%BE%E5%85%A5%E4%B8%80%E5%80%8B%E5%85%B7%E9%AB%94%E4%BD%86%E4%B8%8D%E6%95%8F%E6%84%9F%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">7.4.</span> <span class="nav-text">4. 放入一個具體但不敏感的例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%9C%80%E5%BE%8C%E6%89%8D%E8%AA%AA%E6%99%82%E7%A8%8B%E8%88%87%E9%9C%80%E8%A6%81%E7%9A%84%E5%8D%94%E5%8A%A9"><span class="nav-number">7.5.</span> <span class="nav-text">5. 最後才說時程與需要的協助</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%99%E6%AC%A1%E7%95%99%E4%B8%8B%E4%BE%86%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E5%89%87"><span class="nav-number">8.</span> <span class="nav-text">這次留下來的工作原則</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E5%8F%A5%E8%A9%B1%E6%95%B4%E7%90%86"><span class="nav-number">9.</span> <span class="nav-text">一句話整理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B4%80%E9%8C%84"><span class="nav-number">10.</span> <span class="nav-text">更新紀錄</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Ch-Ju</p>
+  <div class="site-description" itemprop="description">生活紀錄與學習部落格</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">245</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+    <article itemscope itemtype="https://schema.org/BlogPosting" itemid="https://progress01.github.io/work/presentation-as-mental-model/#article" class="post-content post-content-single post-content-longform post-content-work" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/work/presentation-as-mental-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ch-Ju">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Ch-Ju">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2026-07-09 12:00:00" itemprop="dateCreated datePublished" datetime="2026-07-09T12:00:00+08:00">2026-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2026-09-10 12:00:00" itemprop="dateModified" datetime="2026-09-10T12:00:00+08:00">2026-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/" itemprop="url" rel="index"><span itemprop="name">工作知識</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+    </header>
+
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>這是一篇把工作簡報討論去脈絡化後留下的紀錄。人物、單位、專案名稱與實際資料都不放進來，只保留一個我很常忽略、但之後應該要記得的判斷：<strong>簡報不只是把事情說清楚，還要讓聽的人能在腦中想像這件事情怎麼發生。</strong></p>
+<p>這次原本想說明網站檢核的執行方式、流程調整與工具輔助。整理過程中，我很容易把既有簡報、工具功能、改版內容、導入時間與需要協作的事項分開處理，結果每一塊看起來都有資料，放在一起卻不像一個完整的故事。</p>
+<span id="more"></span>
+
+<h1 id="我一開始忽略了什麼？"><a href="#我一開始忽略了什麼？" class="headerlink" title="我一開始忽略了什麼？"></a>我一開始忽略了什麼？</h1><p>我常常以為，只要把以下內容列出來，別人就會理解：</p>
+<ul>
+<li>現在有哪些工作。</li>
+<li>工具可以做哪些事情。</li>
+<li>哪些流程有修改。</li>
+<li>預計什麼時候開始。</li>
+<li>希望其他人提供什麼協助。</li>
+</ul>
+<p>但這些其實只是我的資料清單，不一定是對方理解事情的順序。</p>
+<p>對我來說，工具、檢查流程與交付格式之間已經有一些連結；對第一次聽的人來說，他可能還不知道：原本的工作畫面是什麼、哪一段最耗時間、工具介入哪裡、工具做完後誰還要判斷，以及這次變動會不會改變他的工作。</p>
+<p>所以問題不一定是「內容不夠」，而可能是：</p>
+<blockquote>
+<p><strong>我把自己已經知道的關係，誤以為觀眾也能直接看見。</strong></p>
+</blockquote>
+<h1 id="「讓人可以想像」到底是什麼？"><a href="#「讓人可以想像」到底是什麼？" class="headerlink" title="「讓人可以想像」到底是什麼？"></a>「讓人可以想像」到底是什麼？</h1><p>這裡的想像不是做很多插圖，也不是把簡報做得很有氣氛。它比較接近替觀眾建立一個可以在腦中運作的模型。</p>
+<p>至少要讓對方能回答：</p>
+<ol>
+<li>事情從哪裡開始？</li>
+<li>中間會經過哪些步驟？</li>
+<li>哪一段原本容易重複、遺漏或卡住？</li>
+<li>新方法改變了哪一段？</li>
+<li>工具處理什麼，人工仍然要判斷什麼？</li>
+<li>最後會產出什麼，交給誰接續？</li>
+</ol>
+<p>例如，網站檢核不應只介紹「可以檢查網址、截圖、輸出表格與協助 AI 判讀」，而應該先讓人看見一條工作路徑：</p>
+<blockquote>
+<p>網址或資料進來<br>→ 前置檢查<br>→ 人工確認異常<br>→ 整理截圖與紀錄<br>→ 回報修正<br>→ 追蹤交付結果</p>
+</blockquote>
+<p>有了這條路徑，工具功能才有位置。否則每個功能都像獨立的按鈕，觀眾知道它存在，卻不知道為什麼需要它。</p>
+<h1 id="簡報的主角不是工具，而是事情如何被完成"><a href="#簡報的主角不是工具，而是事情如何被完成" class="headerlink" title="簡報的主角不是工具，而是事情如何被完成"></a>簡報的主角不是工具，而是事情如何被完成</h1><p>這次很容易把簡報做成工具展示：有幾個分頁、可以產生哪些檔案、支援哪些模式、遇到錯誤時怎麼處理。這些內容不是不重要，但如果太早出現，觀眾會先進入「學習操作」的狀態，還沒有理解「為什麼需要這個工具」。</p>
+<p>比較好的順序應該是：</p>
+<blockquote>
+<p><strong>工作情境 → 原本的阻力 → 流程如何調整 → 工具放在哪裡 → 人還要做什麼 → 怎麼開始試跑</strong></p>
+</blockquote>
+<p>工具在這裡是流程改善的手段，不是報告的目的。當觀眾先理解工作如何被完成，他才有辦法判斷工具的價值，也比較不會誤會成「有工具之後就完全不用人工」。</p>
+<h1 id="同一份簡報，要讓不同的人看見不同的東西"><a href="#同一份簡報，要讓不同的人看見不同的東西" class="headerlink" title="同一份簡報，要讓不同的人看見不同的東西"></a>同一份簡報，要讓不同的人看見不同的東西</h1><p>如果聽眾同時包含實際執行者與管理者，簡報不能只選一邊說明。</p>
+<p>實際執行者通常想知道：</p>
+<ul>
+<li>之後每天或每批要怎麼做？</li>
+<li>哪些步驟會被工具協助？</li>
+<li>哪些情況仍要自己判斷？</li>
+<li>出錯時要看哪份紀錄？</li>
+</ul>
+<p>管理者通常更在意：</p>
+<ul>
+<li>為什麼要調整？</li>
+<li>風險有沒有變得更可控？</li>
+<li>目前處於試跑、驗證還是正式導入？</li>
+<li>需要哪些資源、決策或協作？</li>
+</ul>
+<p>這不是要做兩份互不相干的簡報，而是同一條流程要有不同的閱讀入口。流程圖可以讓執行者看到自己的工作位置，也可以讓管理者看到風險與責任邊界；差別只在旁邊標示的資訊層級不同。</p>
+<h1 id="一頁簡報至少要完成一個想像動作"><a href="#一頁簡報至少要完成一個想像動作" class="headerlink" title="一頁簡報至少要完成一個想像動作"></a>一頁簡報至少要完成一個想像動作</h1><p>之後整理投影片時，我可以少問「這頁資料夠不夠」，多問：</p>
+<blockquote>
+<p><strong>看完這一頁，觀眾腦中多了哪一個畫面？</strong></p>
+</blockquote>
+<p>一頁可以只完成一個動作：</p>
+<ul>
+<li>看見原本的工作如何進行。</li>
+<li>看見為什麼要調整。</li>
+<li>看見新舊流程差異。</li>
+<li>看見工具與人工的分工。</li>
+<li>看見接下來的時間點。</li>
+<li>看見自己需要協助或決策的地方。</li>
+</ul>
+<p>如果一頁同時塞入背景、功能、效益、風險與時程，表面上資訊很完整，實際上反而可能沒有任何一個畫面被記住。</p>
+<p>簡報文字也可以改成帶有動作的句子。例如不要只寫「導入半自動化工具」，而是說明：</p>
+<blockquote>
+<p>工具先處理重複性的網址檢查與佐證整理，人工集中在異常判斷、修正確認與交付追蹤。</p>
+</blockquote>
+<p>這句話比列出一串功能更容易讓人想像工作會怎麼改變。</p>
+<h1 id="「想像」也包含例外與邊界"><a href="#「想像」也包含例外與邊界" class="headerlink" title="「想像」也包含例外與邊界"></a>「想像」也包含例外與邊界</h1><p>如果只展示順利完成的流程，觀眾仍然可能不知道實際使用時會遇到什麼。真正有用的想像，應該包含至少一個例外：</p>
+<ul>
+<li>網址無法開啟時，結果會被記錄在哪裡？</li>
+<li>來源頁有連結，但目標頁不能直接訪問時，兩者如何分開判斷？</li>
+<li>圖片或文字送交外部 AI 前，誰負責確認敏感資料？</li>
+<li>工具無法判斷的情況，最後由誰複核？</li>
+<li>試跑結果不穩定時，是否仍然回到人工流程？</li>
+</ul>
+<p>這些不是為了把簡報變成操作手冊，而是讓觀眾知道流程不是一條只會往前走的直線。當例外被說清楚，大家對工具能做什麼、不能做什麼的期待才會比較接近現實。</p>
+<h1 id="可以重複使用的簡報檢查順序"><a href="#可以重複使用的簡報檢查順序" class="headerlink" title="可以重複使用的簡報檢查順序"></a>可以重複使用的簡報檢查順序</h1><p>下次遇到需要說明工作調整、工具導入或流程改版的簡報，我可以先按照下面順序整理：</p>
+<h2 id="1-先寫一句話，說明這場簡報要讓人理解什麼"><a href="#1-先寫一句話，說明這場簡報要讓人理解什麼" class="headerlink" title="1. 先寫一句話，說明這場簡報要讓人理解什麼"></a>1. 先寫一句話，說明這場簡報要讓人理解什麼</h2><p>例如：</p>
+<blockquote>
+<p>這次不是介紹一個新工具，而是說明檢核工作如何從重複性前置作業，調整成工具協助、人工複核與可追蹤交付。</p>
+</blockquote>
+<p>這句話可以防止後面的內容一直長成工具功能清單。</p>
+<h2 id="2-畫出現況，不急著放解法"><a href="#2-畫出現況，不急著放解法" class="headerlink" title="2. 畫出現況，不急著放解法"></a>2. 畫出現況，不急著放解法</h2><p>先畫原本的工作路徑，標記：</p>
+<ul>
+<li>哪些地方重複。</li>
+<li>哪些地方依賴人工記憶。</li>
+<li>哪些地方容易漏掉證據。</li>
+<li>哪些地方需要不同角色來回確認。</li>
+</ul>
+<p>觀眾看見原本的阻力，後面才有機會理解變動的必要性。</p>
+<h2 id="3-用前後對照說明改變"><a href="#3-用前後對照說明改變" class="headerlink" title="3. 用前後對照說明改變"></a>3. 用前後對照說明改變</h2><p>不要只說「流程優化」，而要指出：哪一段被工具協助、哪一段仍然保留人工、哪一段新增了紀錄或驗證。</p>
+<h2 id="4-放入一個具體但不敏感的例子"><a href="#4-放入一個具體但不敏感的例子" class="headerlink" title="4. 放入一個具體但不敏感的例子"></a>4. 放入一個具體但不敏感的例子</h2><p>用一筆抽象化的資料走過流程，讓觀眾看見輸入、判斷、例外與輸出。例子不需要包含真實網址、檔名或內部資料，只要能承載流程即可。</p>
+<h2 id="5-最後才說時程與需要的協助"><a href="#5-最後才說時程與需要的協助" class="headerlink" title="5. 最後才說時程與需要的協助"></a>5. 最後才說時程與需要的協助</h2><p>當大家已經知道事情怎麼運作，再說試跑時間、正式導入條件、需要誰配合，以及哪些問題仍待確認，資訊會比較容易被放進正確的位置。</p>
+<h1 id="這次留下來的工作原則"><a href="#這次留下來的工作原則" class="headerlink" title="這次留下來的工作原則"></a>這次留下來的工作原則</h1><ol>
+<li><strong>簡報不是資訊搬運，而是幫觀眾建立一個可以運作的心智模型。</strong></li>
+<li><strong>先讓人看見工作情境，再介紹工具功能。</strong></li>
+<li><strong>流程圖的價值不是漂亮，而是讓人知道自己在哪裡、事情接下來往哪裡走。</strong></li>
+<li><strong>工具要說清楚能做什麼，也要說清楚不能代替什麼。</strong></li>
+<li><strong>一頁投影片最好只完成一個主要的理解動作。</strong></li>
+<li><strong>例外、人工複核與導入邊界，是可信任的簡報內容，不是多餘的負面資訊。</strong></li>
+</ol>
+<p>我最想留下的其實不是某一套六頁或八頁的投影片架構，而是這個提醒：</p>
+<blockquote>
+<p><strong>如果我自己腦中已經有一張流程圖，就不能假設觀眾也自動擁有同一張圖。</strong></p>
+</blockquote>
+<p>我需要把那張圖拿出來，先讓人看見事情如何發生，再談我做了什麼改善。</p>
+<h1 id="一句話整理"><a href="#一句話整理" class="headerlink" title="一句話整理"></a>一句話整理</h1><blockquote>
+<p><strong>好的工作簡報，不只是讓人聽懂你做了什麼，而是讓人能想像事情原本怎麼運作、改變後怎麼接續，以及自己要在哪裡參與。</strong></p>
+</blockquote>
+<h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
+<li><strong>2026-07-09</strong>：整理工作工具交付、流程調整與內部說明簡報的討論，保留「工具不是主角」以及需要區分執行者與管理者理解需求的觀察。</li>
+<li><strong>2026-09-10</strong>：重新聚焦文章主旨，補上「讓人可以想像事情怎麼運作」的心智模型、前後流程、例外邊界與簡報檢查順序；移除原始個案中的單位、檔名、網址與其他識別細節。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    
+      
+      
+      <section class="post-related-reading" aria-labelledby="post-related-reading-title">
+        <h3 id="post-related-reading-title">📚 延伸閱讀 (猜你也喜歡...)</h3>
+        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/work/content-publishing-and-tables/" title="工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現" rel="bookmark">工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/work/api-requirement-troubleshooting/" title="工作知識｜API 需求排查：從前台現象回到資料來源" rel="bookmark">工作知識｜API 需求排查：從前台現象回到資料來源</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/work/project-pricing-and-cost-estimation/" title="工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去" rel="bookmark">工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/ai-question-judgment-order/" title="AI 提問判斷順序｜從情境、目標到診斷、設計與驗證" rel="bookmark">AI 提問判斷順序｜從情境、目標到診斷、設計與驗證</a></h3></div></li></ul>
+      </section>
+      
+    
+  
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>歡迎關注我的其它發布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%B3%95/" rel="tag"># 工作方法</a>
+              <a href="/tags/%E9%87%8D%E8%A6%81%E7%B4%80%E9%8C%84/" rel="tag"># 重要紀錄</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/07/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%8D%E6%98%AF%E6%88%91%E4%B8%8D%E6%98%8E%E7%99%BD/" rel="prev" title="歌曲推薦-不是我不明白">
+                  <i class="fa fa-angle-left"></i> 歌曲推薦-不是我不明白
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/07/13/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E7%9B%B4%E5%BE%88%E5%AE%89%E9%9D%9C/" rel="next" title="歌曲推薦-一直很安靜">
+                  歌曲推薦-一直很安靜 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ch-Ju</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">249k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">3:46</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋文章、標籤或關鍵字…","prompt":"輸入關鍵字，開始找回文章與紀錄。","empty":"找不到與「${query}」相關的文章或紀錄","hits_time":"找到 ${hits} 篇文章（約 ${time} 毫秒）","hits":"找到 ${hits} 篇文章"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。">
+    <meta name="description" content="從法律概念「涵攝」出發，討論 GEO&#x2F;AEO 如何描述網頁語意，以及結構化資料能做什麼、不能保證什麼。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="討論GEO篇一">
 <meta property="og:url" content="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/index.html">
 <meta property="og:site_name" content="DON&#39;T COUNT THE DAYS">
-<meta property="og:description" content="現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。">
+<meta property="og:description" content="從法律概念「涵攝」出發，討論 GEO&#x2F;AEO 如何描述網頁語意，以及結構化資料能做什麼、不能保證什麼。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2026-04-06T09:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-30T12:11:43.232Z">
+<meta property="article:modified_time" content="2026-09-11T10:54:03.000Z">
 <meta property="article:author" content="Ch-Ju">
 <meta property="article:tag" content="學習筆記">
 <meta name="twitter:card" content="summary">
@@ -38,25 +38,29 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "@id": "https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/",
+  "@id": "https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/#article",
   "url": "https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/",
   "name": "討論GEO篇一",
-  "description": "現況討論現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。",
+  "description": "從法律概念「涵攝」出發，討論 GEO/AEO 如何描述網頁語意，以及結構化資料能做什麼、不能保證什麼。",
   "inLanguage": "zh-TW",
   "headline": "討論GEO篇一",
   "datePublished": "2026-04-06T17:00:00+08:00",
-  "dateModified": "2026-08-30T20:11:43+08:00",
+  "dateModified": "2026-09-11T18:54:03+08:00",
   "author": {
     "@type": "Person",
     "name": "Ch-Ju"
   },
   "publisher": {
-    "@type": "Organization",
-    "name": "DON'T COUNT THE DAYS"
+    "@type": "Person",
+    "name": "Ch-Ju"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://progress01.github.io/#website"
   },
   "articleSection": [
     "觀念與實驗"
@@ -186,7 +190,39 @@
           </div>
 
           <div class="search-recent-list">
-              <a class="search-recent-item" href="/2026/09/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Just%20Give%20Me%20A%20Reason/" data-search-recent-item data-search-recent-rank="0" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/" data-search-recent-item data-search-recent-rank="0" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-11T12:00:00+08:00">09-11</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-好心分手</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E6%9C%89%E4%BA%9B%E4%BA%8B%E6%83%85%E8%A6%81%E5%88%86%E9%96%8B/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有些事情要分開：不要太快把事情上升到人的不足</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%80%BC%E5%BE%97%E7%9A%84%E7%AD%89%E5%BE%85/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="閱讀與影視">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">值得的等待（觀影紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Just%20Give%20Me%20A%20Reason/" data-search-recent-item data-search-recent-rank="4" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-09T12:00:00+08:00">09-09</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -194,7 +230,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/ai-question-judgment-order/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="觀念與實驗">
+              <a class="search-recent-item" href="/learning/ai-question-judgment-order/" data-search-recent-item data-search-recent-rank="5" data-search-recent-categories="觀念與實驗">
                 <time class="search-recent-date" datetime="2026-09-08T20:00:00+08:00">09-08</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -202,7 +238,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%EC%9E%8A%EC%96%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EB%A7%88%EC%9D%8C%EC%9C%BC%EB%A1%9C%EF%BC%88%E5%BF%98%E8%A8%98%E4%BB%96%E9%80%99%E4%BB%B6%E4%BA%8B%EF%BC%89/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/08/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%EC%9E%8A%EC%96%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EB%A7%88%EC%9D%8C%EC%9C%BC%EB%A1%9C%EF%BC%88%E5%BF%98%E8%A8%98%E4%BB%96%E9%80%99%E4%BB%B6%E4%BA%8B%EF%BC%89/" data-search-recent-item data-search-recent-rank="6" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-08T12:00:00+08:00">09-08</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -210,7 +246,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/08/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+5%E5%A4%A9/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+              <a class="search-recent-item" href="/2026/09/08/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+5%E5%A4%A9/" data-search-recent-item data-search-recent-rank="7" data-search-recent-categories="生活紀錄">
                 <time class="search-recent-date" datetime="2026-09-08T01:12:43+08:00">09-08</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">生活紀錄</span>
@@ -218,7 +254,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/presentation-workflow-open-slide/" data-search-recent-item data-search-recent-rank="4" data-search-recent-categories="觀念與實驗">
+              <a class="search-recent-item" href="/learning/presentation-workflow-open-slide/" data-search-recent-item data-search-recent-rank="8" data-search-recent-categories="觀念與實驗">
                 <time class="search-recent-date" datetime="2026-09-07T12:00:00+08:00">09-07</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -226,7 +262,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B7%B4%E7%BF%92/" data-search-recent-item data-search-recent-rank="5" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/07/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B7%B4%E7%BF%92/" data-search-recent-item data-search-recent-rank="9" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-07T12:00:00+08:00">09-07</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -234,7 +270,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/mixed-volleyball-defense-positioning/" data-search-recent-item data-search-recent-rank="6" data-search-recent-categories="觀念與實驗">
+              <a class="search-recent-item" href="/learning/mixed-volleyball-defense-positioning/" data-search-recent-item data-search-recent-rank="10" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-06T19:55:24+08:00">09-06</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -242,7 +278,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/pain-improvement-research/" data-search-recent-item data-search-recent-rank="7" data-search-recent-categories="觀念與實驗">
+              <a class="search-recent-item" href="/learning/pain-improvement-research/" data-search-recent-item data-search-recent-rank="11" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-06T12:00:00+08:00">09-06</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -250,7 +286,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/watch/reply-1988-30-questions/" data-search-recent-item data-search-recent-rank="8" data-search-recent-categories="閱讀與影視">
+              <a class="search-recent-item" href="/watch/reply-1988-30-questions/" data-search-recent-item data-search-recent-rank="12" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2026-09-06T12:00:00+08:00">09-06</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -258,7 +294,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/05/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+4%E5%A4%A9/" data-search-recent-item data-search-recent-rank="9" data-search-recent-categories="生活紀錄">
+              <a class="search-recent-item" href="/2026/09/05/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+4%E5%A4%A9/" data-search-recent-item data-search-recent-rank="13" data-search-recent-categories="生活紀錄" hidden>
                 <time class="search-recent-date" datetime="2026-09-05T21:08:29+08:00">09-05</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">生活紀錄</span>
@@ -266,7 +302,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/web-automation-python-pytest-playwright/" data-search-recent-item data-search-recent-rank="10" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/web-automation-python-pytest-playwright/" data-search-recent-item data-search-recent-rank="14" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -274,7 +310,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="11" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="15" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -282,7 +318,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="12" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -290,7 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="13" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -298,7 +334,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="14" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -306,7 +342,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-I%20will%20love%20you/" data-search-recent-item data-search-recent-rank="15" data-search-recent-categories="音樂" hidden>
+              <a class="search-recent-item" href="/2026/09/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-I%20will%20love%20you/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="音樂" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -314,7 +350,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/work/content-publishing-and-tables/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="工作知識" hidden>
+              <a class="search-recent-item" href="/work/content-publishing-and-tables/" data-search-recent-item data-search-recent-rank="20" data-search-recent-categories="工作知識" hidden>
                 <time class="search-recent-date" datetime="2026-09-03T23:55:00+08:00">09-03</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">工作知識</span>
@@ -322,7 +358,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/work/api-requirement-troubleshooting/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="工作知識" hidden>
+              <a class="search-recent-item" href="/work/api-requirement-troubleshooting/" data-search-recent-item data-search-recent-rank="21" data-search-recent-categories="工作知識" hidden>
                 <time class="search-recent-date" datetime="2026-09-03T23:44:45+08:00">09-03</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">工作知識</span>
@@ -330,7 +366,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-the%20day%20you%20went%20away/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="音樂" hidden>
+              <a class="search-recent-item" href="/2026/09/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-the%20day%20you%20went%20away/" data-search-recent-item data-search-recent-rank="22" data-search-recent-categories="音樂" hidden>
                 <time class="search-recent-date" datetime="2026-09-03T12:00:00+08:00">09-03</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -338,7 +374,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/work/project-pricing-and-cost-estimation/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="工作知識" hidden>
+              <a class="search-recent-item" href="/work/project-pricing-and-cost-estimation/" data-search-recent-item data-search-recent-rank="23" data-search-recent-categories="工作知識" hidden>
                 <time class="search-recent-date" datetime="2026-09-02T23:55:00+08:00">09-02</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">工作知識</span>
@@ -346,7 +382,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%91%8A%E7%99%BD%EF%BC%88%EA%B3%A0%EB%B0%B1%ED%95%A9%EB%8B%88%EB%8B%A4%EF%BC%89/" data-search-recent-item data-search-recent-rank="20" data-search-recent-categories="音樂" hidden>
+              <a class="search-recent-item" href="/2026/09/02/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%91%8A%E7%99%BD%EF%BC%88%EA%B3%A0%EB%B0%B1%ED%95%A9%EB%8B%88%EB%8B%A4%EF%BC%89/" data-search-recent-item data-search-recent-rank="24" data-search-recent-categories="音樂" hidden>
                 <time class="search-recent-date" datetime="2026-09-02T12:00:00+08:00">09-02</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -354,7 +390,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/" data-search-recent-item data-search-recent-rank="21" data-search-recent-categories="音樂" hidden>
+              <a class="search-recent-item" href="/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/" data-search-recent-item data-search-recent-rank="25" data-search-recent-categories="音樂" hidden>
                 <time class="search-recent-date" datetime="2026-09-01T12:00:00+08:00">09-01</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -362,7 +398,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="22" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="26" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -370,7 +406,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/08/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9F%E8%AC%9D%E5%8B%9E%E5%8A%9B/" data-search-recent-item data-search-recent-rank="25" data-search-recent-categories="音樂" hidden>
+              <a class="search-recent-item" href="/2026/08/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9F%E8%AC%9D%E5%8B%9E%E5%8A%9B/" data-search-recent-item data-search-recent-rank="29" data-search-recent-categories="音樂" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
@@ -378,7 +414,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/08/29/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BB%A5%E6%97%A9%E4%B9%99%E5%A5%B3%E4%BD%B3%E5%A5%88%E5%AD%90%E7%82%BA%E4%BE%8B/" data-search-recent-item data-search-recent-rank="29" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2026/08/29/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BB%A5%E6%97%A9%E4%B9%99%E5%A5%B3%E4%BD%B3%E5%A5%88%E5%AD%90%E7%82%BA%E4%BE%8B/" data-search-recent-item data-search-recent-rank="33" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2026-08-29T12:00:00+08:00">08-29</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -386,23 +422,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/08/28/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%8D%83%E5%8D%83%E9%97%8B%E6%AD%8C/" data-search-recent-item data-search-recent-rank="30" data-search-recent-categories="音樂" hidden>
-                <time class="search-recent-date" datetime="2026-08-28T12:00:00+08:00">08-28</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">音樂</span>
-                  <span class="search-recent-title">歌曲推薦-千千闋歌</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/08/27/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9E%E5%B8%B8%E6%99%82%E6%9C%9F/" data-search-recent-item data-search-recent-rank="31" data-search-recent-categories="音樂" hidden>
-                <time class="search-recent-date" datetime="2026-08-27T12:00:00+08:00">08-27</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">音樂</span>
-                  <span class="search-recent-title">歌曲推薦-非常時期</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/08/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%9D%9E%E6%AD%A3%E5%B8%B8%E7%BE%8E%E9%A3%9F%E6%96%87/" data-search-recent-item data-search-recent-rank="33" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2026/08/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%9D%9E%E6%AD%A3%E5%B8%B8%E7%BE%8E%E9%A3%9F%E6%96%87/" data-search-recent-item data-search-recent-rank="37" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2026-08-26T12:00:00+08:00">08-26</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -410,7 +430,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/08/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%9F%BA%E5%9C%B0/" data-search-recent-item data-search-recent-rank="35" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2026/08/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%9F%BA%E5%9C%B0/" data-search-recent-item data-search-recent-rank="39" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2026-08-25T12:00:00+08:00">08-25</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -418,7 +438,15 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/" data-search-recent-item data-search-recent-rank="105" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/work/presentation-as-mental-model/" data-search-recent-item data-search-recent-rank="63" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-07-09T12:00:00+08:00">07-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/" data-search-recent-item data-search-recent-rank="110" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2026-01-24T14:21:24+08:00">01-24</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -426,7 +454,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2025/12/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A4%B1%E6%A5%AD%E7%99%BD%E9%A0%98%E7%9A%84%E8%81%B7%E5%A0%B4%E6%BC%82%E6%B5%81/" data-search-recent-item data-search-recent-rank="126" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2025/12/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A4%B1%E6%A5%AD%E7%99%BD%E9%A0%98%E7%9A%84%E8%81%B7%E5%A0%B4%E6%BC%82%E6%B5%81/" data-search-recent-item data-search-recent-rank="131" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2025-12-28T18:00:00+08:00">12-28</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -434,7 +462,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/" data-search-recent-item data-search-recent-rank="139" data-search-recent-categories="生活紀錄" hidden>
+              <a class="search-recent-item" href="/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/" data-search-recent-item data-search-recent-rank="144" data-search-recent-categories="生活紀錄" hidden>
                 <time class="search-recent-date" datetime="2025-06-16T23:47:27+08:00">06-16</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">生活紀錄</span>
@@ -442,7 +470,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/" data-search-recent-item data-search-recent-rank="140" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/" data-search-recent-item data-search-recent-rank="145" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2025-04-28T00:55:27+08:00">04-28</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -450,7 +478,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/" data-search-recent-item data-search-recent-rank="141" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/" data-search-recent-item data-search-recent-rank="146" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -458,7 +486,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/" data-search-recent-item data-search-recent-rank="142" data-search-recent-categories="閱讀與影視" hidden>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A5%B3%E7%B5%A6%E6%99%82%E4%BB%A3%EF%BC%9A1930%E5%B9%B4%E4%BB%A3%E8%87%BA%E7%81%A3%E7%9A%84%E7%8F%88%E7%90%B2%E5%BA%97%E6%96%87%E5%8C%96/" data-search-recent-item data-search-recent-rank="147" data-search-recent-categories="閱讀與影視" hidden>
                 <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">閱讀與影視</span>
@@ -466,15 +494,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2025/01/07/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%AB%8B%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%A4%A7%E5%AE%B6%E9%9D%A2%E5%89%8D%E7%A8%B1%E8%AE%9A%E6%88%91/" data-search-recent-item data-search-recent-rank="143" data-search-recent-categories="閱讀與影視" hidden>
-                <time class="search-recent-date" datetime="2025-01-07T01:34:55+08:00">01-07</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">閱讀與影視</span>
-                  <span class="search-recent-title">請不要在大家面前稱讚我（書籍閱讀紀錄）</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/" data-search-recent-item data-search-recent-rank="149" data-search-recent-categories="生活紀錄" hidden>
+              <a class="search-recent-item" href="/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/" data-search-recent-item data-search-recent-rank="154" data-search-recent-categories="生活紀錄" hidden>
                 <time class="search-recent-date" datetime="2024-08-06T23:47:27+08:00">08-06</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">生活紀錄</span>
@@ -482,7 +502,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2024/07/14/%E9%9A%A8%E7%AD%86/%E5%8F%B0%E4%B8%AD%E7%8D%A8%E6%97%85%E8%A8%98/" data-search-recent-item data-search-recent-rank="171" data-search-recent-categories="生活紀錄" hidden>
+              <a class="search-recent-item" href="/2024/07/14/%E9%9A%A8%E7%AD%86/%E5%8F%B0%E4%B8%AD%E7%8D%A8%E6%97%85%E8%A8%98/" data-search-recent-item data-search-recent-rank="176" data-search-recent-categories="生活紀錄" hidden>
                 <time class="search-recent-date" datetime="2024-07-14T12:00:00+08:00">07-14</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">生活紀錄</span>
@@ -515,7 +535,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8F%BE%E6%B3%81%E8%A8%8E%E8%AB%96"><span class="nav-number">1.</span> <span class="nav-text">現況討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8C%91%E6%88%B0%E8%88%87%E7%97%9B%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">1.挑戰與痛點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-GEO%E7%9A%84%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.</span> <span class="nav-text">2.GEO的定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%A6%E8%B8%90-GEO-%E7%9A%84%E6%B6%B5%E6%94%9D%E8%B7%AF%E5%BE%91"><span class="nav-number">4.</span> <span class="nav-text">3.實踐 GEO 的涵攝路徑</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8F%BE%E6%B3%81%E8%A8%8E%E8%AB%96"><span class="nav-number">1.</span> <span class="nav-text">現況討論</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8C%91%E6%88%B0%E8%88%87%E7%97%9B%E9%BB%9E"><span class="nav-number">2.</span> <span class="nav-text">1.挑戰與痛點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-GEO%E7%9A%84%E5%AE%9A%E7%BE%A9"><span class="nav-number">3.</span> <span class="nav-text">2.GEO的定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%A6%E8%B8%90-GEO-%E7%9A%84%E6%B6%B5%E6%94%9D%E8%B7%AF%E5%BE%91"><span class="nav-number">4.</span> <span class="nav-text">3.實踐 GEO 的涵攝路徑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E8%B3%87%E6%96%99%E8%88%87%E4%BF%AE%E8%A8%82%E8%A8%98%E9%8C%84"><span class="nav-number">5.</span> <span class="nav-text">官方資料與修訂記錄</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -528,7 +548,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">240</span>
+          <span class="site-state-item-count">245</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -565,22 +585,16 @@
   
   
 
-    <article itemscope itemtype="http://schema.org/Article" class="post-content post-content-single" lang="zh-TW">
+    <article itemscope itemtype="https://schema.org/BlogPosting" itemid="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/#article" class="post-content post-content-single" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://progress01.github.io/2026/04/06/%E5%AF%A6%E9%A9%97%E5%AE%A4/%E8%A8%8E%E8%AB%96GEO%E7%AF%87%E4%B8%80/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Ch-Ju">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DON'T COUNT THE DAYS">
-      <meta itemprop="description" content="生活紀錄與學習部落格">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="討論GEO篇一 | DON'T COUNT THE DAYS">
-      <meta itemprop="description" content="">
+    <span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Ch-Ju">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -602,7 +616,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2026-08-30 20:11:43" itemprop="dateModified" datetime="2026-08-30T20:11:43+08:00">2026-08-30</time>
+      <time title="修改時間：2026-09-11 18:54:03" itemprop="dateModified" datetime="2026-09-11T18:54:03+08:00">2026-09-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -621,17 +635,18 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.6k</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>3 分鐘</span>
     </span>
 </div>
 
+            <div class="post-description">從法律概念「涵攝」出發，討論 GEO/AEO 如何描述網頁語意，以及結構化資料能做什麼、不能保證什麼。</div>
         </div>
     </header>
 
@@ -640,63 +655,57 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>現階段google搜尋推出了AI摘要的搜尋參考，導致政府機關開始追求GEO(也有一說是AEO)，競爭搜尋結果內出現政府資訊。本篇先忽略流量改變這件事情，單純討論如何實現簡單的GEO做法。</p>
+    <div class="post-body" itemprop="articleBody"><h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>Google Search 現在有 AI Overviews 等 AI 功能，會在部分查詢顯示摘要與連結；這不等於每個網站都會被引用，也不代表可以靠一套 GEO 標記穩定影響結果。Google 說明 AI 功能沿用既有 SEO 基礎，不需要額外的特殊 Schema，也不保證網頁一定會被索引或呈現（<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/ai-features">官方說明</a>）。本篇先忽略流量改變，從政府資訊如何被理解的角度，討論我把 GEO／AEO 想成「涵攝」的原因與可實作的內容基礎。</p>
  <span id="more"></span>
 
-<h3 id="1-挑戰與痛點"><a href="#1-挑戰與痛點" class="headerlink" title="1.挑戰與痛點"></a>1.挑戰與痛點</h3><p>以政府網站經營者痛點變成「直接在搜尋結果頁就得到答案，根本不點進網站」這件事情之後，GEO實作這件事情在於競爭被引用資源，根本上來說是政績與資訊傳達的必爭之地(然而是黑盒子)。</p>
+<h3 id="1-挑戰與痛點"><a href="#1-挑戰與痛點" class="headerlink" title="1.挑戰與痛點"></a>1.挑戰與痛點</h3><p>如果民眾先在搜尋摘要得到答案，政府網站經營者就會在意資訊是否被正確呈現與引用。不過，排序、選取與生成仍由搜尋系統決定，外部觀察不能把它簡化成一套保證引用的操作；這仍是一個黑盒子。</p>
 <p><strong>思考方向轉向</strong></p>
 <ol>
-<li>民眾如果不點到政府網頁</li>
-<li>政府資訊無法準確傳達</li>
-<li>政績與績效(或相對的流量)將出現問題</li>
+<li>若民眾只看到摘要而未點入原頁，適用條件可能被截斷。</li>
+<li>若摘要失真，或缺少更新時間、資格限制等條件，政府資訊不一定能被準確傳達。</li>
+<li>這種情況可能影響民眾理解與網站績效觀察，但不能直接推定一定造成政績或流量問題。</li>
 </ol>
-<p><strong>在不點到網頁”實際觀測資訊”時</strong></p>
+<p><strong>在不點到網頁就取得摘要時</strong></p>
 <ol>
-<li>以關鍵字與網頁排序為主的SEO重要性降低</li>
-<li>以直接出現在引用資源且被AI總結重要性提高</li>
+<li>SEO 仍是讓頁面可抓取、可索引、可找到的基礎，不能簡化成只有關鍵字或排序。</li>
+<li>除了傳統搜尋結果，也要留意內容是否能被清楚理解、正確摘錄；這增加了內容表達的要求，卻不保證會出現在 AI 摘要。</li>
 </ol>
 <p><strong>政府網頁的挑戰</strong></p>
 <ol>
-<li>時事性資訊逐漸轉向社群平台公布</li>
-<li>重要的補助與政策宣導績效仍然會透過網頁但”層層堆疊”</li>
-<li>多數牽涉民眾與廠商的業務很多轉入特定系統</li>
+<li>時事性資訊可能同時在社群平台公布，需要考慮不同渠道的更新一致性。</li>
+<li>重要的補助與政策資訊可能分散在多層頁面，需要考慮摘要是否帶出適用條件與申請入口。</li>
+<li>牽涉民眾與廠商的業務可能轉入特定系統，需要考慮公開頁面與系統說明的銜接。</li>
 </ol>
 <p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
 <blockquote>
 <p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
 </blockquote>
-<h3 id="2-GEO的定義"><a href="#2-GEO的定義" class="headerlink" title="2.GEO的定義"></a>2.GEO的定義</h3><p>生成式引擎優話(GEO)是專注於創建和優化內容，使其更容易被人工智慧聊天機器人和生成式搜尋引擎發現、理解和使用的一種實踐。</p>
-<blockquote>
-<p>Generative Engine Optimization (GEO) is an emerging practice focused on creating and optimizing content to be easily discovered, understood, and used by AI chatbots and generative search engines.</p>
-</blockquote>
+<h3 id="2-GEO的定義"><a href="#2-GEO的定義" class="headerlink" title="2.GEO的定義"></a>2.GEO的定義</h3><p>生成式引擎優化（GEO）或答案引擎優化（AEO），可以當成一組描述內容如何被發現、理解和使用的工作方法；它們不是 Google Search 的特殊資格，也不是一個能保證 AI 引用的 Schema。Google 的說法是，AI 功能仍使用既有 SEO 基礎，沒有額外的技術要求或特殊 Schema。</p>
 <p>但對我來說，GEO 的概念，更像是數位世界裡對「網頁意義」的<strong>涵攝 (Subsumption)</strong>。</p>
-<p><strong>涵攝說明</strong><br>這是一個法律概念。在法律適用時會遇到，通常會透過大小前提形成結論：將「生活事實」，通過路徑歸入「法律規範要件」，最終產生「特定法律效果」。</p>
+<p><strong>涵攝說明</strong><br>這是一個法律概念。在法律適用時，通常會透過大小前提形成結論：將「生活事實」通過路徑歸入「法律規範要件」，最後產生「特定法律效果」。</p>
 <ul>
-<li><strong>法規範(大前提)</strong> <code>&lt;-&gt;</code> <strong>具體生活事實(小前提)</strong> <code>&lt;-&gt;</code> <strong>特定法律效果(結論)</strong>：<br>這個概念特別在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實(任意變數)合於規範要件 (<code>f(x)</code>)，則會產出對應的法律效果 (<code>y</code>)。</li>
-<li>事實不是放入函數中的給定的(<code>x</code>)值，而是想像法律規範在現實有一個具體的規範範圍，當具體事實在現實中與函數交集，則開始討論涵攝（歸入）：將事實套入法律，確認是否符合要件。<blockquote>
-<p><strong>舉例來說</strong><br>法律規定（大前提）：刑法第320條規定，意圖為自己或第三人不法之所有，而竊取他人之動產者，為竊盜罪。<br>案件事實（小前提）：甲偷偷拿走了乙的錢包。<br>涵攝過程：甲的行為符合「竊取他人動產」的構成要件。<br>法律結論：甲觸犯刑法上的竊盜罪。</p>
-</blockquote>
-</li>
+<li><strong>法規範(大前提)</strong> <code>&lt;-&gt;</code> <strong>具體生活事實(小前提)</strong> <code>&lt;-&gt;</code> <strong>特定法律效果(結論)</strong>：<br>這個概念特別在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實(任意變數)合於規範要件 (<code>f(x)</code>)，則會產出對應的法律效果 (<code>y</code>)。這裡的 <code>y = f(x)</code> 只是整理資料時的比喻，不是搜尋排名或生成效果的公式。</li>
+<li>事實不是放入函數中的給定的(<code>x</code>)值，而是想像法律規範在現實有一個具體的規範範圍，當具體事實在現實中與函數交集，則開始討論涵攝（歸入）：將事實套入法律，確認是否符合要件。</li>
 </ul>
-<p><strong>SEO 與 GEO 的區別實益</strong><br>回到 GEO 的操作型定義，要讓 AI 理解我們的網頁，操作上我認為可理解是一種數位效果 (<code>y</code>)。因此，透過尋找數位內容中(案件事實)並讓它合於 <code>f(x)</code> 的要件，這個涵攝動作往更深度討論的話應是學術界發展許久的本體論 (Ontology) 與知識圖譜，若實際一點，這應是 SEO 與 GEO 的分野：</p>
+<p><strong>SEO 與 GEO 的區別實益</strong><br>回到 GEO 的操作型定義，要讓系統較容易理解網頁，操作上我認為可以把它看成一種數位效果 (<code>y</code>)。因此，透過整理數位內容中的事實，並讓它能對應到清楚的詞彙與關係，這個涵攝動作往更深度討論會碰到本體論（Ontology）與知識圖譜；若實際一點，這可以作為 SEO 與 GEO 的討論分野：</p>
 <ul>
-<li><strong>SEO (面對人)</strong>：網頁像是一個貼滿「關鍵字」的紙箱。搜尋引擎的排序是一種觀察關鍵字相似度的「模糊機率關聯」，「計算」使用者的意圖跟網頁的關聯，想像世界裡面沒有 <code>y = f(x)</code>。</li>
-<li><strong>GEO (面對 AI)</strong>：偏向透過精準的「實體定義 (Entities)」，進行數位涵攝，讓 AI 能明確發現、理解和使用，想像的世界裡若符合設定規範則可做出推論(透過<a target="_blank" rel="noopener" href="https://schema.org/%E8%A6%8F%E7%AF%84)%E3%80%82">https://schema.org/規範)。</a></li>
+<li><strong>SEO（面對搜尋）</strong>：重點是讓內容可抓取、可索引、可找到而且對讀者有用；關鍵字只是內容表達的一部分，不能把搜尋排序等同於關鍵字相似度計算。</li>
+<li><strong>GEO（面對 AI 功能）</strong>：可以偏向清楚描述實體（Entities）、屬性與關係，讓系統有較好的語意線索；Schema.org 是可重用的詞彙與資料模型（<a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">資料模型</a>），不是把文字轉成權威事實的規則。</li>
 </ul>
 <blockquote>
-<p>Schema.org是一個協作性的社群活動，其使命是創建、維護和推廣互聯網、網頁、電子郵件等平台上的結構化資料模式。<br>Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.</p>
+<p>Schema.org 是協作性的結構化資料詞彙。它提供類型、屬性與關係的資料模型，讓不同系統可以用共同詞彙描述內容；它本身不替內容背書，也不保證搜尋或生成結果。</p>
 </blockquote>
 <h3 id="3-實踐-GEO-的涵攝路徑"><a href="#3-實踐-GEO-的涵攝路徑" class="headerlink" title="3.實踐 GEO 的涵攝路徑"></a>3.實踐 GEO 的涵攝路徑</h3><p>在這個思考方向下，我們該如何實踐 GEO？</p>
 <ol>
-<li><strong>將 Schema.org 視為「規範要件」</strong>：例如將 <code>GovernmentOrganization</code> 視為定義規則。</li>
-<li><strong>將網頁內容視為「具體事實」</strong>：檢視網站既有的業務標籤與內容。</li>
-<li><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)。</li>
-<li><strong>達成數位效果</strong>：當事實合於要件，AI 就能直接達成「權威性引用」與「邏輯推論」。</li>
+<li><strong>將 Schema.org 視為共同詞彙</strong>：例如在內容確實描述政府機關時，才考慮使用 <code>GovernmentOrganization</code>；類型不是權威性的證明。Schema.org 的類型、屬性、domain 與 range 關係可參考其<a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">資料模型</a>。</li>
+<li><strong>將網頁內容視為「具體事實」</strong>：檢視頁面上可核對的標題、發布單位、日期、業務標籤與正文，避免只在標記中聲稱頁面沒有呈現的資訊。</li>
+<li><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於詞彙與事實之間，用 <code>@id</code>、屬性與關係表達同一個實體；這是可機器讀取的描述，不是把純文字自動升格成權威實體。</li>
+<li><strong>把數位效果當成可改善的條件</strong>：清楚的內容與結構化資料可能降低理解歧義、改善檢索線索，但 AI 是否索引、引用或如何生成答案仍由系統決定。</li>
 </ol>
 <p><strong>數位世界的函數對應：y &#x3D; f(x)</strong><br>總結這個實踐過程，我們必須明確定義這套涵攝動作：</p>
 <ul>
-<li><strong>規範要件 <code>f()</code></strong>：權威實體應具備的構成要件（如：發布者、管轄領域等 Schema 定義）。<blockquote>
-<p>援引法源與規範要件 (@context &amp; @type)：首先，在 JSON-LD 的開頭宣告引用的法典（@context: <a target="_blank" rel="noopener" href="https://schema.org),並將/">https://schema.org），並將</a> Schema.org 裡的定義（如 GovernmentOrganization）視為我們要適用的法律規範要件。</p>
+<li><strong>詞彙與欄位 <code>f()</code></strong>：用來描述實體、屬性與關係的共同資料模型（如發布者、管轄領域等 Schema 詞彙）。<blockquote>
+<p>援引詞彙與類型 (@context &amp; @type)：首先，在 JSON-LD 的開頭宣告使用的詞彙（<code>@context: https://schema.org</code>），再依頁面實際內容選擇類型；這不是法律法源，也不是權威性的認證。</p>
 </blockquote>
 </li>
 <li><strong>具體事實 <code>x</code></strong>：網站上的客觀文字與資料。<blockquote>
@@ -704,18 +713,24 @@
 </blockquote>
 </li>
 <li><strong>涵攝動作</strong>：透過 JSON-LD 進行對應，將事實 <code>x</code> 歸入規範 <code>f()</code>。<blockquote>
-<p>賦予身分並完成涵攝 (@id &amp; 關聯屬性)：目光往返於規範與事實之間，將業務標籤從純文字 (String) 提升為數位實體 (Entity)，更必須透過 @id 為這個實體鑄造唯一的「身分證字號」，確保事實被精準歸入規範中。</p>
+<p>賦予身分並完成涵攝 (@id &amp; 關聯屬性)：目光往返於詞彙與事實之間，用 <code>@id</code> 表達同一個 URI／資源的識別關係，再用屬性描述頁面真正提供的資訊。W3C 的 <a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/#node-identifiers">JSON-LD Node Identifiers</a> 說明 <code>@id</code> 如何讓節點可被外部參照；它不是保證全球唯一或被系統採信的身分證字號。</p>
 </blockquote>
 </li>
-<li><strong>特定效果 <code>y</code></strong>：當具體事實成功涵攝進規範要件，產出的結果即是「AI 的確定性理解」。<blockquote>
-<p>達成特定數位效果 (AI 推論)：當事實完美合於要件，且具備了唯一身分，AI 就不再需要依賴關鍵字相似度去『瞎猜』。我們直接達成了「權威性引用」與「邏輯推論」的數位效果，讓官方資訊成為 AI 產出答案時不可動搖的法理前提。</p>
+<li><strong>可檢查的資料品質 <code>y</code></strong>：具體事實被清楚描述後，可能讓檢索與內容理解有較好的線索，但不會產生 AI 的確定性理解。<blockquote>
+<p>整理可檢查的資料品質：這裡的 <code>y = f(x)</code> 仍只是整理資料的比喻，不是搜尋或生成效果公式。當資料與頁面一致、來源可核對且關係表達清楚時，內容較容易被人與機器查找和理解；是否被引用、如何摘要，仍不能由 JSON-LD 單方面決定。</p>
 </blockquote>
 </li>
 </ul>
-<p>如此設定的操作性定義，再加上實作與機關溝通成本，能讓政府資訊逐漸成為「AI 推論時的法理前提」，將這個方向納入網頁改版中，將能建立數位解釋權的基礎建設。</p>
+<p>如此設定的操作性定義，再加上實作與機關溝通成本，可以把政府資訊的內容、來源與更新責任整理成較容易核對的基礎設施。它有助於降低數位解釋的溝通成本，但不能把政府資訊自動變成 AI 推論時不可動搖的法理前提。</p>
 <blockquote>
-<p> 接續討論Schema.org的規範的了解方式</p>
+<p> 接續討論 Schema.org 詞彙與資料模型的了解方式。</p>
 </blockquote>
+<h3 id="官方資料與修訂記錄"><a href="#官方資料與修訂記錄" class="headerlink" title="官方資料與修訂記錄"></a>官方資料與修訂記錄</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/ai-features">Google：AI features and your website</a>：AI Overviews 與 AI Mode 沿用既有 SEO 基礎，沒有額外的特殊 Schema；Google 也不保證索引、呈現或引用。</li>
+<li><a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">Schema.org：Data model</a>：說明類型、屬性、domain、range 與資料模型的彈性及限制。</li>
+<li><a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/">W3C：JSON-LD 1.1</a>：JSON-LD 1.1 的標準語法與資料交換規格；<a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/#node-identifiers">Node Identifiers</a> 說明節點識別。</li>
+</ul>
+<p>2026-09-11（Asia&#x2F;Taipei）修訂：保留「涵攝」作為個人理解框架，將 SEO、GEO／AEO、Schema.org 與 JSON-LD 的作用邊界改為可核對的描述，移除 AI 確定理解、權威引用與邏輯推論的保證性表述，並補上官方來源。</p>
 
     </div>
 
@@ -724,10 +739,13 @@
     
 
     
+      
+      
       <section class="post-related-reading" aria-labelledby="post-related-reading-title">
         <h3 id="post-related-reading-title">📚 延伸閱讀 (猜你也喜歡...)</h3>
-        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/ai-question-judgment-order/" title="AI 提問判斷順序｜從情境、目標到診斷、設計與驗證" rel="bookmark">AI 提問判斷順序｜從情境、目標到診斷、設計與驗證</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/gemini-notebook-agent-office-workflow/" title="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記" rel="bookmark">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/agentic-transaction-acid-agent/" title="Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記" rel="bookmark">Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/cms-content-modeling-field-review/" title="CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記" rel="bookmark">CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/lis-research-1965-2025-content-analysis/" title="LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記" rel="bookmark">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</a></h3></div></li></ul>
+        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/test-design-boundary-risk-based-testing/" title="測試設計｜等價類別、邊界值與風險導向測試｜學習筆記" rel="bookmark">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/cms-content-modeling-field-review/" title="CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記" rel="bookmark">CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/lis-research-1965-2025-content-analysis/" title="LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記" rel="bookmark">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/release-quality-git-ci-cd-checklist/" title="發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記" rel="bookmark">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/mixed-volleyball-defense-positioning/" title="混排攻擊與防守站位｜學習筆記" rel="bookmark">混排攻擊與防守站位｜學習筆記</a></h3></div></li></ul>
       </section>
+      
     
   
 
@@ -795,13 +813,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">238k</span>
+    <span title="總字數">249k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">3:36</span>
+    <span title="所需總閱讀時間">3:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
