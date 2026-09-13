@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #63ff4a;
+    background: #ff1c74;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2231,6 +2231,44 @@ pre code {
   position: absolute;
   transform: translate(-50%, 20px);
   z-index: 1;
+}
+.followme.followme-rss-only {
+  align-items: center;
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em 0.75em;
+  justify-content: center;
+  padding: 0.5em 0.75em;
+}
+.followme.followme-rss-only > span {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.followme.followme-rss-only .social-list {
+  align-items: center;
+  display: flex;
+  margin: 0;
+}
+.followme.followme-rss-only .social-list .social-item-rss {
+  margin: 0;
+}
+.followme.followme-rss-only .social-list .social-item-rss .social-link {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.35em;
+  min-height: 32px;
+  padding: 0.2em 0.55em;
+}
+.followme.followme-rss-only .social-list .social-item-rss .social-link .icon {
+  font-size: 1.25em;
+  line-height: 1;
+}
+.followme.followme-rss-only .social-list .social-item-rss .social-link .label {
+  display: inline;
+  font-size: 14px;
+  line-height: 1.4;
 }
 .category-all-page .category-all-title {
   text-align: center;
