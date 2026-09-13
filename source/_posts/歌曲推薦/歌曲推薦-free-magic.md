@@ -20,7 +20,7 @@ cover: /images/song_free_magic.webp
 
 <div style="width: 150px; flex-shrink: 0;">
 
-<img src="/images/song_free_magic.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+<img src="/images/song_free_magic.webp" alt="WAG - Free magic - WAG(同名專輯)" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 
 </div>
 
@@ -28,4 +28,4 @@ cover: /images/song_free_magic.webp
 <!-- more --> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。
+這首柯南的主題曲讓我每次想起來都會特別找來聽，我喜歡每次的那段free magic跟整首那種很酷的感覺。

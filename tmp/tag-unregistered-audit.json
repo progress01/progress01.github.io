@@ -1,0 +1,69 @@
+{
+  "AI Agent": [
+    "source\\_posts\\實驗室\\Agentic-Transaction-ACID-Agent-學習筆記.md",
+    "source\\_posts\\實驗室\\Gemini-Notebook-Agent-文件產出工作流.md",
+    "source\\_posts\\實驗室\\簡報製作與Open-Slide學習筆記.md"
+  ],
+  "工作流程": [
+    "source\\_posts\\實驗室\\Agentic-Transaction-ACID-Agent-學習筆記.md"
+  ],
+  "驗證": [
+    "source\\_posts\\實驗室\\Agentic-Transaction-ACID-Agent-學習筆記.md"
+  ],
+  "AI": [
+    "source\\_posts\\實驗室\\AI提問判斷順序-情境目標與問題類型.md"
+  ],
+  "提問方法": [
+    "source\\_posts\\實驗室\\AI提問判斷順序-情境目標與問題類型.md"
+  ],
+  "圖書資訊學": [
+    "source\\_posts\\實驗室\\LIS-Research-1965-2025-內容分析學習筆記.md"
+  ],
+  "研究方法": [
+    "source\\_posts\\實驗室\\LIS-Research-1965-2025-內容分析學習筆記.md"
+  ],
+  "內容分析": [
+    "source\\_posts\\實驗室\\LIS-Research-1965-2025-內容分析學習筆記.md"
+  ],
+  "軟體測試": [
+    "source\\_posts\\實驗室\\Web-自動化測試-Python-Pytest與Playwright.md",
+    "source\\_posts\\實驗室\\測試基本功-User-Story-Test-Case與Bug-Report.md",
+    "source\\_posts\\實驗室\\測試設計-等價類別邊界值與風險導向測試.md",
+    "source\\_posts\\實驗室\\發布品質-Git-CICD與Release-Checklist.md",
+    "source\\_posts\\實驗室\\網站品質與軟體測試-從需求到上線驗證的學習路徑.md"
+  ],
+  "Web 自動化": [
+    "source\\_posts\\實驗室\\Web-自動化測試-Python-Pytest與Playwright.md"
+  ],
+  "Python": [
+    "source\\_posts\\實驗室\\Web-自動化測試-Python-Pytest與Playwright.md"
+  ],
+  "思考方式": [
+    "source\\_posts\\實驗室\\在台灣設立實驗室十一年-思考方式筆記.md"
+  ],
+  "QA": [
+    "source\\_posts\\實驗室\\測試基本功-User-Story-Test-Case與Bug-Report.md",
+    "source\\_posts\\實驗室\\網站品質與軟體測試-從需求到上線驗證的學習路徑.md"
+  ],
+  "測試案例": [
+    "source\\_posts\\實驗室\\測試基本功-User-Story-Test-Case與Bug-Report.md"
+  ],
+  "測試設計": [
+    "source\\_posts\\實驗室\\測試設計-等價類別邊界值與風險導向測試.md"
+  ],
+  "風險": [
+    "source\\_posts\\實驗室\\測試設計-等價類別邊界值與風險導向測試.md"
+  ],
+  "Git": [
+    "source\\_posts\\實驗室\\發布品質-Git-CICD與Release-Checklist.md"
+  ],
+  "CI/CD": [
+    "source\\_posts\\實驗室\\發布品質-Git-CICD與Release-Checklist.md"
+  ],
+  "簡報": [
+    "source\\_posts\\實驗室\\簡報製作與Open-Slide學習筆記.md"
+  ],
+  "網站品質": [
+    "source\\_posts\\實驗室\\網站品質與軟體測試-從需求到上線驗證的學習路徑.md"
+  ]
+}

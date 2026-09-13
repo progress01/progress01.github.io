@@ -19,7 +19,7 @@ cover: /images/song_Candy.webp
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Candy.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_Candy.webp" alt="H.O.T. - Candy - We Hate All Kinds of Violence... - The 1st Album" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>

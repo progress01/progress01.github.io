@@ -137,7 +137,7 @@ function checkContent({ root = path.resolve(__dirname, '..') } = {}) {
     validateCover(frontmatter.cover, relativePath, root, errors);
     if (Object.prototype.hasOwnProperty.call(frontmatter, 'tags')) {
       const tags = asList(frontmatter.tags).map(textValue).filter(Boolean); let validTag = false;
-      tags.forEach(tag => { if (taxonomy.aliases.has(tag)) validTag = true; else warnings.push(`${relativePath} 忽略未註冊標籤「${tag}」。`); });
+      tags.forEach(tag => { if (taxonomy.aliases.has(tag)) validTag = true; else errors.push(`${relativePath} 使用未註冊標籤「${tag}」，請改用已登錄主標籤，或在 content-tags.yml 登錄相容別名。`); });
       if (!validTag) errors.push(`${relativePath} 缺少有效主標籤。`);
     } else errors.push(`${relativePath} 缺少 tags，必須設定有效主標籤。`);
   });

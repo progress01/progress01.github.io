@@ -1,0 +1,89 @@
+{
+  "purpose": "Complete reconstructed before snapshot. Original Markdown is reconstructed from the post after the one known five-space prose indentation was removed; only that line is re-indented.",
+  "checklist": {
+    "scope": "Only natural-language lines indented five spaces after song attribution <br> were changed.",
+    "preserve": [
+      "wording",
+      "front matter date/permalink",
+      "images",
+      "alt attributes",
+      "unrelated working-tree changes"
+    ],
+    "verification": [
+      "render selected posts",
+      "confirm post-body has no accidental highlight/pre",
+      "run excerpt-check per selected post"
+    ],
+    "snapshotSource": "Verified against git HEAD: these 17 files were unchanged at task start. Original file-ending newlines preserved."
+  },
+  "posts": {
+    "source/_posts/歌曲推薦/歌曲推薦-Better-Man.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-Better Man\ndate: 2025-12-25 12:00:00\ntags: [音樂推薦]\ncover: /images/song_better_man.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 Robbie Williams 的 Better Man\n      <br>\n      出自專輯 Sing When You're Winning\n      <br>\n      <a href=\"https://open.spotify.com/track/4w2Yq2cklbssmUtUy5Vh6H?si=91efecec259441db\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_better_man.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首由 Robbie Williams 演唱的版本能感覺出來所謂\"聲音的魅力\"，中文版本是由林憶蓮翻唱的，也同樣很有自己的味道，雖然兩個版本的歌詞不一定是好懂的，或說很難讓歌曲的想像跟歌詞直接關聯，但從鋪陳到最後的收尾to be a better man我都非常喜歡，即使是兩種不熟悉的語言我也會強力推薦。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-From-The-Start.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-From The Start\ndate: 2026-05-19 12:00\ntags: [音樂推薦]\ncover: /images/song_From_The_Start.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 Laufey 的 From The Start\n      <br>\n      出自專輯 Bewitched\n      <br>\n      <a href=\"https://open.spotify.com/track/43iIQbw5hx986dUEZbr3eN?si=3972e71ff23f41c9\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_From_The_Start.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     我喜歡這首的放鬆感，尤其是歌曲中段，而且這樣來回調整的歌曲速度也對我來說很特別，適合大概是早上起床吃麥當勞的咖啡廳情景？越聽越覺得感覺到歌曲的味道(類似奇怪的回甘，但可能這對我來說就是獨屬於爵士音樂的樂趣)\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-一切再重來.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-一切再重來\ndate: 2026-5-14 12:00:00\ntags: [音樂推薦]\ncover: /images/song_一切再重來.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      張震嶽 的 一切再重來\n      <br>\n      出自專輯 等我有一天\n      <br>\n      <a href=\"https://open.spotify.com/track/2YAd147feN9BvWCIT2hwA4?si=3e4a16ffc1354293\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_一切再重來.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     不是朝氣但我喜歡這種沒關係再繼續努力的態度，這首的副歌真的有種OK沒問題的那種感覺！\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-動不動就說愛我.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-動不動就說愛我\ndate: 2026-05-20 12:00\ntags: [音樂推薦]\ncover: /images/song_動不動就說愛我.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 芝麻龍眼 的 動不動就說愛我\n      <br>\n      出自專輯 芝麻&龍眼精選輯2\n      <br>\n      <a href=\"https://open.spotify.com/track/58Qw7or324Ci84R42VcPGX?si=dfd67df6523f4abf\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_動不動就說愛我.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     渾厚與高音這首真的搭配得很適合，尤其是我喜歡後面的重唱配合，動不動就說愛我雖然不長但記憶點卻非常深刻，從開頭的低音切入高音搭配再到重唱與收尾，尤其兩次切入都有換唱法，可能歌詞還好但我真的覺得這首很不錯。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-因為寂寞.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-因為寂寞\ndate: 2026-4-27 12:00:00\ntags: [音樂推薦]\ncover: /images/song_因為寂寞.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 張艾嘉 的 因為寂寞\n      <br>\n      出自專輯 愛的代價\n      <br>\n      <a href=\"https://open.spotify.com/track/7dzfkAauigVOAiHPbAAENJ?si=4c1b6a748f6442c4\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_因為寂寞.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首歌詞與歌聲真的是一聽就感覺到驚艷，雖然總說因為寂寞，但中間又隱隱聽出那種反話的內心反駁感，中間又透過層層的鋪墊去表達內心深層的不安與期待。\n\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-廣島之戀.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-廣島之戀\ndate: 2026-5-8 12:00:00\ntags: [音樂推薦]\ncover: /images/song_廣島之戀.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 莫文蔚 和 張洪量 的 廣島之戀\n      <br>\n      出自專輯 做自己\n      <br>\n      <a href=\"https://open.spotify.com/track/1VpHU8KcaoB2WVVV2KDWEn?si=c63e47f950b34fdd\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_廣島之戀.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首歌女聲部分超級加分的，清脆與斷點的唱法真的超級酷，又包辦了那種稍微空靈與迷茫的感覺，男聲就是托住這首歌的地板，但這首合唱加起來就是有種特殊的異國風情？\n\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-小風波.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-小風波\ndate: 2025-9-8 12:00:00\ntags: [音樂推薦]\ncover: /images/song_小風波.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 譚詠麟 的 小風波\n      <br>\n      出自專輯 忘不了您\n      <br>\n      <a href=\"https://open.spotify.com/track/3x84xRaXhYMP8ftrL9oNkM?si=f2531394f1f14b93\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_小風波.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首由 譚詠麟 翻唱的版本能感覺出來所謂\"粵語的魅力\"，英文原唱是all out of love(air supply)，這首的音域跟整體感覺就整個從高音下來了，但也是完全不失風采的翻唱（而且耐聽），我蠻喜歡這一個版本的。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-慢火車.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-慢火車\ndate: 2026-05-13 12:00\ntags: [音樂推薦]\ncover: /images/song_慢火車.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 萬芳 的 慢火車\n      <br>\n      出自專輯 one芳新歌+精選\n      <br>\n      <a href=\"https://open.spotify.com/track/3V5miBCXgnjIB9ktVef8ww?si=4b02013930f94708\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_慢火車.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     我喜歡這首慢火車的感覺，尤其是慢火車火車慢這段一路，一起慢慢前進的感覺，也有一點點的甜蜜的感覺，隨著也有高低起伏更體現出火車那種會抵達的確定感。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-戀曲1990.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-戀曲1990\ndate: 2026-5-18 12:00:00\ntags: [音樂推薦]\ncover: /images/song_戀曲1990.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      羅大佑 的戀曲1990\n      <br>\n      出自專輯 昨日情歌\n      <br>\n      <a href=\"https://open.spotify.com/track/1Lnul9LTyxvEOyuULqATFy?si=95f18105cbe64d7b\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_戀曲1990.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     倦鳥歸巢的戀曲感，多了一種沉穩與悠長，好像不再是非你不可的絕對，歸途感異常特別，好像會特別的安靜下來。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-我為你傷心.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-我為你傷心\ndate: 2026-05-11 12:00\ntags: [音樂推薦]\ncover: /images/song_我為你傷心.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 蘇永康 的 我為你傷心\n      <br>\n      出自專輯 愛一個人好難\n      <br>\n      <a href=\"https://open.spotify.com/track/4j6jBbfZh2XrmW70IUGcnI?si=c9cddd5920a04699\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_我為你傷心.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     喜歡這首的理由意外的很單純，那種看似向上的堆疊卻是出乎意料的我為妳傷心，旋律與歌詞都很好聽，歌手也大加分。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-抱著你.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-抱著你\ndate: 2026-5-15 12:00:00\ntags: [音樂推薦]\ncover: /images/song_抱著你.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      張震嶽 抱著你\n      <br>\n      出自專輯 我是海雅谷慕\n      <br>\n      <a href=\"https://open.spotify.com/track/3Q4WdljjmU6PQO9Nr03dob?si=1e59d0de401d40ba\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_抱著你.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首歌乾淨的讓人充滿共鳴，感覺因為足夠簡單的表達跟配樂配合才能展現如此的感動力？至少我喜歡那種就是抱著你的感覺，這是屬於我的年度歌曲級別的歌。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-燃燒一瞬間.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-燃燒一瞬間\ndate: 2026-4-29 12:00:00\ntags: [音樂推薦]\ncover: /images/song_燃燒一瞬間.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 張清芳 的 燃燒一瞬間\n      <br>\n      出自專輯 紅色張清芳\n      <br>\n      <a href=\"https://open.spotify.com/track/5czIw7sNuTCBsHbJY4QQoR?si=2c24b5e2485f418a\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_燃燒一瞬間.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首的高音有一種圓潤感，是我感覺到高音特色與游刃有餘的歌，尤其是在\"我願愛你用我每一個今天 相信真心經得起考驗\"這個副歌的時候，雖然好聽但好像也不知道怎麼形容，只能說這個因為這個表現方式非常可以單曲循環。\n\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-留不住的故事.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-留不住的故事\ndate: 2026-05-12 12:00\ntags: [音樂推薦]\ncover: /images/song_留不住的故事.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 黃鶯鶯 的 留不住的故事\n      <br>\n      出自專輯 賭徒\n      <br>\n      <a href=\"https://open.spotify.com/track/0lYMK0V3VvuqPTcrBkmJ8m?si=4d894aad804f4e56\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_留不住的故事.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     這首的副歌真的有那種留不住也沒關係這一切都是沒關係的，之後是另外故事的開始的那種溫柔，雖然只有一點點但其實滿有力量的，我很喜歡。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-理想.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-理想\ndate: 2026-05-21 12:00\ntags: [音樂推薦]\ncover: /images/song_理想.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 趙雷 的 理想\n      <br>\n      出自專輯 吉姆餐廳\n      <br>\n      <a href=\"https://open.spotify.com/track/2aIHo5BAdpQoSEMnXIFsKM?si=7900a59d0a424d8d\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_理想.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     理想這首大概是記憶裡面的經典民謠吧，北方、孤獨與很多的現實與理想差距，尤其是那個想紀念你幾歲真的是陡然間被穿透了心情，有時候民謠的共鳴很強，不一定正面也不一定要有回應，就跟著民謠的鋪陳與陳述去回望的感覺，有時候會有種哀而不傷的奇怪感，但我喜歡這樣有情緒的民謠。\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-若我告訴你其實我愛的只是你.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-若我告訴你其實我愛的只是你\ndate: 2026-4-30 12:00:00\ntags: [音樂推薦]\ncover: /images/song_若我告訴你其實我愛的只是你.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 張雨生 的 若我告訴你其實我愛的只是你\n      <br>\n      出自專輯 口是心非\n      <br>\n      <a href=\"https://open.spotify.com/track/5giaxxi6NrfkieRe2Q2AxA?si=982e992c58d64073\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_若我告訴你其實我愛的只是你.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     我是很想聽citypop的時候聽到這首歌，雖然一開始聽不習慣但突然之間有感覺到那種特別的復古感，是很特別的表達方式(華語歌類型的)迪斯可風格！\n\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-這些日子以來.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-這些日子以來\ndate: 2026-4-28 12:00:00\ntags: [音樂推薦]\ncover: /images/song_這些日子以來.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 范怡文 張清芳 的 這些日子以來\n      <br>\n      出自專輯 張清芳專輯\n      <br>\n      <a href=\"https://open.spotify.com/track/46JgXFM4ealcaHRwMqX5X5?si=3a585aefb21a47d6\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_這些日子以來.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     從YT上感覺到這首歌除了高低音與合音都很棒之外，同時由高低音扮演兩個女孩對著失戀的痛苦，面對自己的質問，在抽離和珍惜間徘徊，歌曲最後也沒有答案但這樣討論跟好聽的歌曲真的很少聽到。\n\n"
+    },
+    "source/_posts/歌曲推薦/歌曲推薦-鴨子.md": {
+      "line": 29,
+      "originalMarkdown": "---\ncategories: [音樂]\ntitle: 歌曲推薦-鴨子\ndate: 2026-05-22 12:00\ntags: [音樂推薦]\ncover: /images/song_鴨子.webp\n---\n\n<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 蘇慧倫 的 鴨子\n      <br>\n      出自專輯 鴨子(同名專輯)\n      <br>\n      <a href=\"https://open.spotify.com/track/52ZCvlqluyOzyS3u4yephB?si=9f14228f97b54c0f\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_鴨子.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>\n<!-- more --> \n轉載自個人ig每日點播> chjuhsu05\n    <br>\n     我喜歡這首很可愛的感覺，背景也模仿鴨子叫！不知不覺聽到就會隨著歌詞稍微隨著上揚一點，就像是寂寞的鴨子也可以不要你一樣，我喜歡這樣在意卻又反轉的歌，真的沒有永遠只有一個選項。\n"
+    }
+  }
+}

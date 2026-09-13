@@ -21,7 +21,7 @@ cover: /images/song_when_you_say_nothing_at_all.webp
 
 <div style="width: 150px; flex-shrink: 0;">
 
-<img src="/images/song_when_you_say_nothing_at_all.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+<img src="/images/song_when_you_say_nothing_at_all.webp" alt="Ronan Keating - When you say nothing at all - Notting Hill" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 
 </div>
 
@@ -29,5 +29,5 @@ cover: /images/song_when_you_say_nothing_at_all.webp
 <!-- more --> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    The smile on your face lets me know that you need me我超愛這段副歌開始前的轉折，對我來說本來是一首清新感字正腔圓的英文歌，突然間就想轉我的椅子！按下按鈕！
-    不過這首歌的立意我也是很愛的，The smile on your face lets me know that you need me
+The smile on your face lets me know that you need me我超愛這段副歌開始前的轉折，對我來說本來是一首清新感字正腔圓的英文歌，突然間就想轉我的椅子！按下按鈕！
+不過這首歌的立意我也是很愛的，The smile on your face lets me know that you need me

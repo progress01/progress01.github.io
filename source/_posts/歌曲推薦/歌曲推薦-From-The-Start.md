@@ -19,11 +19,11 @@ cover: /images/song_From_The_Start.webp
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_From_The_Start.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_From_The_Start.webp" alt="Laufey - From The Start - Bewitched" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>
 <!-- more --> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-     我喜歡這首的放鬆感，尤其是歌曲中段，而且這樣來回調整的歌曲速度也對我來說很特別，適合大概是早上起床吃麥當勞的咖啡廳情景？越聽越覺得感覺到歌曲的味道(類似奇怪的回甘，但可能這對我來說就是獨屬於爵士音樂的樂趣)
+我喜歡這首的放鬆感，尤其是歌曲中段，而且這樣來回調整的歌曲速度也對我來說很特別，適合大概是早上起床吃麥當勞的咖啡廳情景？越聽越覺得感覺到歌曲的味道(類似奇怪的回甘，但可能這對我來說就是獨屬於爵士音樂的樂趣)

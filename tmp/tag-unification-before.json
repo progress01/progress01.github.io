@@ -1,0 +1,1975 @@
+[
+  {
+    "file": "source\\_posts\\welcome-board.md",
+    "sha": "326894ebff7a830b348d1e02f25f7642c31a34100c1062a43352ff229df93e5a",
+    "tags": [
+      "站務"
+    ],
+    "title": "System Ready..."
+  },
+  {
+    "file": "source\\_posts\\實驗室\\Agentic-Transaction-ACID-Agent-學習筆記.md",
+    "sha": "4f9ec5f62bf38d97e0a6e9c6c606490df5818284b3494b03068e904f5c61cc32",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\AI提問判斷順序-情境目標與問題類型.md",
+    "sha": "34755bc170e5e64d829fffdf344c304ca054d67e6e6d99b79d18d3638707a8c3",
+    "tags": [
+      "學習筆記",
+      "工作方法"
+    ],
+    "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\CMS前後台理解-欄位對照與規格審查.md",
+    "sha": "2b368429f8a60d903511079be5430d74b5872f5057d1eb52a052ed33746dcd04",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\Gemini-Notebook-Agent-文件產出工作流.md",
+    "sha": "e0b39347200764ca49e1dbe432cab31cceac059c6cf9f578d59e645d6ae7f019",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\life-check-tool.md",
+    "sha": "bc1647ba1e27a909a64142cb8919ddbbf6cfdccdc4077023411ebb5288c2bdb1",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "混亂日常的一個「存檔點」工具設計"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\LIS-Research-1965-2025-內容分析學習筆記.md",
+    "sha": "50c68c324dd0f1303c854561f6d3c409f14eed14d0561a6772e32fdf5b217d0c",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\Web-自動化測試-Python-Pytest與Playwright.md",
+    "sha": "f95c187db3abd96fbffb17ade611f15864a99adaeb4d22272f16a8a9af4b91f7",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\在台灣設立實驗室十一年-思考方式筆記.md",
+    "sha": "e369acdf1a036b565ef69a0ca7c4a9d808badefbe5dc6d532e5b3863d13fec77",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "在台灣設立實驗室十一年｜校準責任、內耗與自己｜思考方式筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\工作知識-API需求排查紀錄.md",
+    "sha": "f33903fb4ede60b7a904e489d973623cb4ba4dd3655eadd2325568e50e3ee1a5",
+    "tags": [
+      "工作方法",
+      "重要紀錄"
+    ],
+    "title": "工作知識｜API 需求排查：從前台現象回到資料來源"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\工作知識-上稿與表格排查紀錄.md",
+    "sha": "3874482119dd6c4c2f95a81af58a50371e3cdefe365676a040068bd6c996599e",
+    "tags": [
+      "工作方法",
+      "重要紀錄"
+    ],
+    "title": "工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\工作知識-專案報價與成本估算.md",
+    "sha": "20f9411b23025ae40240e5af149dbbc90ec142210005e4f029fcde345d4265f7",
+    "tags": [
+      "工作方法",
+      "重要紀錄"
+    ],
+    "title": "工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\工作知識-簡報不是功能清單.md",
+    "sha": "59ef50064fffdece3b618ee750dfaaa9e8370b95bb93ddaeb64b8c7e1117a859",
+    "tags": [
+      "工作方法",
+      "重要紀錄"
+    ],
+    "title": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\排球攻擊揮臂機制.md",
+    "sha": "ac506ed08b91337b6350bc3d01f347221fbc886db83c8ff88e187916696ec3c6",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "排球攻擊揮臂機制｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\混排攻擊與防守站位.md",
+    "sha": "198a63f3903f467c9e1304de4338ae06c08152d7e51935896079b5dc2df08503",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "混排攻擊與防守站位｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\測試基本功-User-Story-Test-Case與Bug-Report.md",
+    "sha": "34172700bf718db83aa76246ced9156b4d63b5825d6524c1208eccd8525a2b32",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\測試設計-等價類別邊界值與風險導向測試.md",
+    "sha": "0a344706cb01c616dbbedecd54e548bdd0a4b365dffe0df03b32450774f9e34e",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "測試設計｜等價類別、邊界值與風險導向測試｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\痠痛改善研究-從下背肩膀與小腿開始.md",
+    "sha": "1da55c0f2c2e0b549e03910512c8475ea5dcb56d22b5a8ecb4d11fc370480ee2",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "痠痛改善研究：從下背、肩膀與小腿開始"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\發布品質-Git-CICD與Release-Checklist.md",
+    "sha": "611ca73a9112fe9e1001d3f0cf6e9a0ab1e1ade2d1754be2fe6424b02cdc644e",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\簡報製作與Open-Slide學習筆記.md",
+    "sha": "de171f1f0100c6ba44a6f87a8f34b83ccb95490d35f10737cade7d2d8a298964",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "簡報製作與 open-slide 2.0｜從內容、結構到上台報告的學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\網站品質與軟體測試-從需求到上線驗證的學習路徑.md",
+    "sha": "0769425e44ce68927c1b32b60e5de5a333f928b87c74746ba385ca8dc06a6b52",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記"
+  },
+  {
+    "file": "source\\_posts\\實驗室\\討論GEO篇一.md",
+    "sha": "5f92900085dcd7fc75b2a7572091f7a1eb26049804f64ebfb6f906cb40b898e1",
+    "tags": [
+      "學習筆記"
+    ],
+    "title": "討論GEO篇一"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-2375.md",
+    "sha": "71cc184ac6fe2bd47927ea3c9b1e0ad0eac10a6be638f9b1d97267cb53a0a22c",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-2375"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-All-for-you.md",
+    "sha": "3fb31137b2bf37a581410e3d96e06db2f45220a6a6635d524a21033f59ceb8f2",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-All for you"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Better-Man.md",
+    "sha": "b0321231cfd9888a4fa462a178b3d650fd9141ef1489cad68c0d3b4aee49826d",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Better Man"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Candy.md",
+    "sha": "f04a97c9a6f2288598f503d40181f1d20d7c55fe16c7e567cb55cee661240c12",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Candy"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Don-t-You-Worry.md",
+    "sha": "c7bebc7e0411450ac68c6b460489e71e88ebded48607391d7660835715293b1b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Don't You Worry"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Free-Loop.md",
+    "sha": "7a3f43caedfe7fd8ff4099af0a5d518bd567c1c6aecc6eeda00b1917091771a7",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Free Loop"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-free-magic.md",
+    "sha": "dbac0e40ce87d8a4f6e3d0955094d7cd2b5a96ea80f9658d1c4a46a95209b7b4",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-free magic"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-From-The-Start.md",
+    "sha": "c6e9b4a82ee3e021e1f934823a042cea7df8e0cdec89ffb503b774982bd53a28",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-From The Start"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-How-long-will-I-love-you.md",
+    "sha": "ff9652ad026aaa04e6c46dd9c4dba8aa2c8118a31ca15dfd91b218fd23e99f54",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-How long will I love you"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Hyehwa-dong.md",
+    "sha": "e6a0dcaa4da1b53f123e08b3384001df78126d94c103fff71654c40ff2cf6e8c",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Hyehwa dong"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-I will love you.md",
+    "sha": "fe3a531a0179e3ad9f64c08a404435105e1014e8504a0f50746cfdaec5a335e6",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-I will love you"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-I-love-you無望.md",
+    "sha": "df6f03766047f80e9134c03899476e5428f15ea2184c03c7be6e6bba472785ac",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-I love you無望"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Just Give Me A Reason.md",
+    "sha": "043194f41d3780f7cee5fa235a2086270ba8ec37728d7b809c14f9fa3326960b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Just Give Me A Reason"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-kiss-me.md",
+    "sha": "11a7337337381f3144464f430627dc9b2c56a5baeef5b301e3390234e858417b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-kiss me"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-miles are wide.md",
+    "sha": "8d5b94177b3b8a862d532a288e8331a503e5f8df021082dcfb13e34121f8a4a2",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-miles are wide"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-My-heart-will-go-on.md",
+    "sha": "040fa8bf7f999b4e4f0d0ab3be03319ad4f28fe07dcdfd23286adc51800acf4a",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-My Heart Will Go On"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Nothing‘s-Gonna-Stop-Us-Now.md",
+    "sha": "108c2467e13eba096dff256825c6e49a8169cc90ca82dbe702d9505cdad61535",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Nothing‘s Gonna Stop Us Now"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Right-here-waiting.md",
+    "sha": "1329fcf526f7e9ffda33842ace20aabdda90020abef25d0bb95590f7d16a891e",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Right Here Waiting"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-sailing back to you.md",
+    "sha": "09b6fa7069ba6afcd41dc8975f6888143c31635b38af489a71b6162ba78d1cb2",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-sailing back to you"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Secret-of-my-heart.md",
+    "sha": "dd7a81e446843f04505dd5255d1a870f58a175e5c5362246efd8db7b7915978b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Secret of my heart"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Tally.md",
+    "sha": "1af0682de5d29f4b8e65406355e13f6f688f0e71c49e4b42155cedc6d67bc6a9",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Tally"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-tears.md",
+    "sha": "59ffba70c672c4f1d2cea3ae6ab3a8444b6f625505e4ec96fad1a5a9d5a93849",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Tears"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-the day you went away.md",
+    "sha": "b62154c982ca964754ba872ce5e5303f07dd12faf29999a83d7f73d39640a176",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-the day you went away"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Way-back-into-love.md",
+    "sha": "311e0989f6ec4003085224fee0d61e07a6f95f5a83816ce74a17a7cfd46ed60b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Way back into love"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-When-you-say-nothing-at-all.md",
+    "sha": "85dff071b21e1e9028294da80b72c26e9589967a7c8012c00fb772cc0da9ebd4",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-When you say nothing at all"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-Wonderful-tonight.md",
+    "sha": "8a0f88bef0e1202a299f3886125207241c5b8f53ca39abb1e8f9620f32d0edc6",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-Wonderful tonight"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-You-are-not-alone.md",
+    "sha": "ba58729191dc3c6e8068a8defd3a7df2e062c09b186f6ceea9728f8867fbbbb9",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-You are not alone"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-それぞれに.md",
+    "sha": "323a4b8dc5eba37528bd5c924d99f22a624c484bea990c2ecae442578ee06dd7",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-それぞれに"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-プラスティック・ラブ.md",
+    "sha": "c643f1ea26b1ccd400ddca56956e7c92437a9a7486e3f6c0e18cad67b5b1f7a9",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-プラスティック・ラブ"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-一世情緣.md",
+    "sha": "ae5e6c8da107780218b1405b669e02a4cfd1cd87152d0c51b316fc705ab6bbb2",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-一世情緣"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-一切再重來.md",
+    "sha": "3cdc966575e34296a8f216e2e24955ae96823cb3929010ebe8372233fc8b38bc",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-一切再重來"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-一千年以後.md",
+    "sha": "97a1551cd7cb24cdd795b846d429a3f0b6e32928b2aca8cb9054dfdfca0fe8b5",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-一千年以後"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-一直很安靜.md",
+    "sha": "3542f07e4608a433f6fa77f6f4b1b1a1ba4a02450c628dbcdbbadd4b2a754075",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-一直很安靜"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-一見鍾情.md",
+    "sha": "0531744dc1f87ea43bc59300e62a77373b676776c3a3b7818bc6440d0e7f6e22",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-一見鍾情"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-一輩子的孤單.md",
+    "sha": "1df6586b6beef9e19a73cafa9257fa79c2196d060602e7fb6da03c384c958dda",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-一輩子的孤單"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-上上籤.md",
+    "sha": "bd40f4659337145bda7ba2df926fa8481472fbb13435d07765daf43e7e9100f9",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-上上籤"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-不是我不明白.md",
+    "sha": "dc7ca237f8d6c9490595ed0e6055a262fa2ae6755673460fd9f3029840010eb6",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-不是我不明白"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-你不在.md",
+    "sha": "5427dd583e7fe531a18bbd569acfb14b51c759160b879bb2e9869111b11bbca3",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-你不在"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-你好嗎.md",
+    "sha": "a24ba1d061580b05e03b9cea2f9ab05ca18879d438c483d4dfc6687b8fffe541",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-你好嗎"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-像我這樣的人.md",
+    "sha": "79f93ad8469432beb2377943b4816ca0fc3c435f63a3a22ef49dcf23cad514a5",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-像我這樣的人"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-全世界我最喜歡你（可是你都不知道）.md",
+    "sha": "9c922160015e632f35d40cca5381412c721d69c076d60a43d865546734f7e8e1",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-全世界我最喜歡你（可是你都不知道）"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-其實我真的很在乎.md",
+    "sha": "0c30ee3cb1e9b94cf6b628294f798ec163b646571a64f3b01bc08e84aaecd63b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-其實我真的很在乎"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-其實都沒有.md",
+    "sha": "5b23b3100877b87d97b3a5afa6e47f6466578f2828403a7bb96a5d524a3ea3e9",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-其實都沒有"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-再會啦心愛的無緣的人.md",
+    "sha": "ca928a03443e71fbbfa3389477a26f02369957bce8624f8b5d9e3cdbec0b0bdf",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-再會啦心愛的無緣的人"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-動不動就說愛我.md",
+    "sha": "9c770bc4872dab0dcdd4c60311767bf85af6fab7ff0333d916b1b3a870d8f5ea",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-動不動就說愛我"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-北極雪.md",
+    "sha": "a52da8b683ee30884e41aadf814be069f0299e82d092c84eb7e28d481c92f486",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-北極雪"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-千千闋歌.md",
+    "sha": "8cc17c8a1fd150c3b1064a640a299336c23c69744534dcc428a3c27a601de3d0",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-千千闋歌"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-告白（고백합니다）.md",
+    "sha": "cd11716ffdebf03a7d1c02ef364551a876241d7bd618095b879a73f6d19914a4",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-告白（고백합니다）"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-唯一.md",
+    "sha": "d8e15261ab822a60a58dc2c15628a0930bf51047870e7f58cc364f98257f349d",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-唯一"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-噓.md",
+    "sha": "675ae1675a1686e16d329c32a76ed0835b1156acfe09eb0fbf80c674331b2875",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-噓"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-回到過去.md",
+    "sha": "562bbef425eb9ad523976a1e7198bd7148a0888f1b78b28f33550ac436348017",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-回到過去"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-因為寂寞.md",
+    "sha": "dac5547641e59991cb90dcd6e464c92cbd134ddaa0b06a337bfd6f9796f3280f",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-因為寂寞"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-因為愛.md",
+    "sha": "e1addf5427176eac9280c03651adf86ff43364ac4f06272587f6fd4e0add7f33",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-因為愛"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-夜行性動物.md",
+    "sha": "1a27e5913646a0993bfea7cbeeefa1983192f1c0f9c4d383b1f26ee7eb548a58",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-夜行性動物"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-好心分手.md",
+    "sha": "0181ebdf4d4940e387e0af4b6794310f467b65c7bb4ec737e13142239993ffd0",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-好心分手"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-如你所願.md",
+    "sha": "af35814e75f58d9052507dab5b3dc0d526b8bee80315e10ce45c5c16a10755eb",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-如你所願"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-小風波.md",
+    "sha": "4901184d46fe96bc83dc24e8265383d86c88dda88fe0fc94aeab9e562fe9e450",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-小風波"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-就值得愛了.md",
+    "sha": "d09bfc1cc279ee19a0f3c73a815d2360eef808e3a2b32234ee55021b4f83f1a3",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-就值得愛了"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-就改天.md",
+    "sha": "030aec8f28899068450957a9a6256ad466aeff289d26177b904811d4df59845d",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-就改天"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-廣島之戀.md",
+    "sha": "d14ee7b018519e7e2ce29d41306dad81bbd01841f6ed1cf42f8ab2bcc3062b0e",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-廣島之戀"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-復刻回憶.md",
+    "sha": "4777ced1a808da00b8e4bad8a58ba44c3d29a2e128bcf0c37239279f4faf23fb",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-復刻回憶"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-忘了你忘了我.md",
+    "sha": "d39fc056b4d29bd150af508dfc665bb78bf39587d5d4c0758cc06cdd8635b17c",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-忘了你忘了我"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-悄悄告訴她.md",
+    "sha": "7b7dcc17e2ad51ffdc472b57b8879e7aadff276c3e864ecf05bc1529dba10cac",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-悄悄告訴她"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-愛丫愛丫.md",
+    "sha": "25524711ca26f494ffc4d549ca21c6849329019c833b6fe8edb4d400da553dce",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-愛丫愛丫"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-愛作夢的人.md",
+    "sha": "e9b6bf361509b086eb6489e8726b0c6aa53d5517d6ad650185b279ca73f8a6d1",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-愛作夢的人"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-感謝勞力.md",
+    "sha": "d1bbc136f2e7a737d1f125d80f14f89c64f4e00948e578f7754618a3304b55ca",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-感謝勞力"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-愫.md",
+    "sha": "21111991e9b6e800fe5fe547c32922feb01509095f8b60e9f9082dbe6927b271",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-愫"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-慢火車.md",
+    "sha": "7a562f32b4d36e63122abab20fb2aab08f2f7d6a361dbe36579018677212c75b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-慢火車"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-戀戀風塵.md",
+    "sha": "caee043e4de4cde4d8da93af23f66fd14715a48a8e6e6a24cf7cf68a56f16cf0",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-戀戀風塵"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-戀曲1990.md",
+    "sha": "0a57e8620a8b6527778e19206e9d4e738c1381f7c963e6821effbb68cbc0c7f7",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-戀曲1990"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-我一個人住.md",
+    "sha": "7d677aff4ee84dcf383f61169a8de1cefeb6504e55b46b7325f92cfb4ae10019",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-我一個人住"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-我們的故事.md",
+    "sha": "5c2ac5ade00892d7755872f5adba770cfacec9b6d2ee859ac0842ea9458a50e0",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-我們的故事"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-我們的歌.md",
+    "sha": "ddad75326890ee1515dcb5e9363e87b062d03d4ad7b5374d71025dd008838467",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-我們的歌"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-我在紐約打電話給你.md",
+    "sha": "ab023e944f61127e0801ad575287bbbd8ed15cdae2a717931e47dd1847b11916",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-我在紐約打電話給你"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-我為你傷心.md",
+    "sha": "bc193812cb4c554a540918b8c6c782edb553fb87de01698bf37b6cca948b07a6",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-我為你傷心"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-抱著你.md",
+    "sha": "f17b7752441ba463344ed4b11ae3d46daa5acb87f44e21322aa7dadb2e90e69d",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-抱著你"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-放風吹.md",
+    "sha": "8cd8d33b547c199e17c110e3e2b08fc1a6257d458c05a88e7a71c6036a6710ce",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-放風吹"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-星月神話.md",
+    "sha": "054dd1daa2a99bb4332a7b62c9341f78636e6539d8721bdbea0c52110045e822",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-星月神話"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-有沒有那麼一首歌會讓你想起我.md",
+    "sha": "bd1678f7b9b6343c549ea92ddeb5d74a1c1f1014028a08222719e1f242f57058",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-有沒有那麼一首歌會讓你想起我"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-期待愛.md",
+    "sha": "33543337696b8835445136a14ce99aec3d2452bc5298e93d4fca465580693252",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-期待愛"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-淚海.md",
+    "sha": "963a3adb0b32c0f0cb6ce2780c2dbee222af603b6850495d91a2193fb362c121",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-淚海"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-無底洞.md",
+    "sha": "5bc82e7ae7a7e4ff41a1c3f0d5c9c87e1bd67de05dbd7223616c87d4923a9056",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-無底洞"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-無眠.md",
+    "sha": "f7145da6a8921dfe9e368bf399d897058787870321166e46c23deb8fac4838b4",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-無眠"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-無窮.md",
+    "sha": "612f0df78de7ec17905ac2319312dd36ed1b4d49f1d9adfba726065332300c29",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-無窮"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-燃燒一瞬間.md",
+    "sha": "f45551fac1d3d61e2e1edd28fe12cd492bd1a29719b513fa7c2dbcac9bc45502",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-燃燒一瞬間"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-理想.md",
+    "sha": "34a7761f92246699ddf1e44ac0a1fc54b53d87ec36ab7b2ae9c8549c468a5e83",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-理想"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-留不住的故事.md",
+    "sha": "86cd7fd125df8ce846e7a357485643eb005f6a34876d642ae21f1c3ae8c48df7",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-留不住的故事"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-神話.md",
+    "sha": "54df12843a92fcec55260c2ddb1b3e72bb1f2869302636bf2ccea79b3bc9d07e",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-神話"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-第一個清晨.md",
+    "sha": "474626da2b59ddae7479905ec9b60debc7ed33105db08cf43097641ec37285d5",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-第一個清晨"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-答案.md",
+    "sha": "17785ddb982db3124778fbda6c0109ab71cbc25f990b73b7a5bf44a40e414f1a",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-答案"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-給我一首歌的時間.md",
+    "sha": "6787cfdfd2bda85a612f7dabf7366968f03a21e76e740609d4a27b138d95f21a",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-給我一首歌的時間"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-給電影人的情書.md",
+    "sha": "be679d5fe9513c209095c9ba87b19e655fa8fbb24650fe4fb2e4187f427c3f5c",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-給電影人的情書"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-練習.md",
+    "sha": "9a13f54ccdbc55db05ca4b32dbe991b2f8ce6b77ad8b184a58aa6845d2ce4ce8",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-練習"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-老男孩.md",
+    "sha": "be0df95a1bb38e02e76b7b4f0ffd86660ff36bba10fe9b6fedeb2020f00affbd",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-老男孩"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-舊愛.md",
+    "sha": "655604a4e3abc8ace2f717daf3a6ae6e949afa50e3eaa249e20ccb240d4e6b6b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-舊愛"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-若我告訴你其實我愛的只是你.md",
+    "sha": "bac010b93e7b8016ecb831b09f650ac771029b35d6e704ab8ed32c138457790b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-若我告訴你其實我愛的只是你"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-茫茫到深更.md",
+    "sha": "3113abc00f9f259e64ea83c539216fbb24991aab05102db8467eddd4d5cd4516",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-茫茫到深更"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-葉子.md",
+    "sha": "16b8850a65c29dcff81635c943b79532532eee311ad16e48ecfed21802760d6f",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-葉子"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-藍色眼睛.md",
+    "sha": "0ddee82f61026ce3102766d09613d02b8fb8bc3b09c041041d0000b1f566bbd9",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-藍色眼睛"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-親愛的你啊.md",
+    "sha": "eaec30a30c16b27dec6ac3572359d994db70e2a437b1ae25e0c698f8b15c8cbc",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-親愛的你啊"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-說，你愛我.md",
+    "sha": "77bbe193705ab8e8b54e3f33d72da3c1c563848b940fcf78b30836fa07516d25",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-說，你愛我"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-逍遙嘆.md",
+    "sha": "52596a2a86be45f3d26990c88f26ddad69bc23979368f15cd0fd8499084f5979",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-逍遙嘆"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-這些日子以來.md",
+    "sha": "b8567889e7e90611283a8ac898587fbca711f5bfd038cd6bb16eadd81d9b33a6",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-這些日子以來"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-關於愛的定義.md",
+    "sha": "7840919e147001db3f79c777e6b0d5c9593f415e2b6d1f39c942f34576d2181a",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-關於愛的定義"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-雲中月圓.md",
+    "sha": "2285654e02134664c1346148fffa9c08ddc6be3a5b14411a47aebd853e963ed7",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-雲中月圓"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-靜靜的.md",
+    "sha": "9d2fb5d7c9172e8b8a7170be4d012c3ac26b7f9b46c2b1ec88b4396790766c9f",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-靜靜的"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-非常時期.md",
+    "sha": "dd8d516863e41cb12e6b9f74543beb928d0082f2a41489774ffc8f3ced386229",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-非常時期"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-鴨子.md",
+    "sha": "7b6f833afff371dd154085c8494b7828509abc4be6040cfaa39c125768cb392c",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-鴨子"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-시청-앞-지하철-역에서.md",
+    "sha": "2e1c7f3774a4fecf49f29c60fbac04b6e54105ffe2ca1b212aa81c0b09ebc35d",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-시청 앞 지하철 역에서"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-아로하.md",
+    "sha": "a81f26637c0468e70d6c020d00c6bbd401e53c2c385ea89ee81c92ba9b78939c",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-아로하"
+  },
+  {
+    "file": "source\\_posts\\歌曲推薦\\歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）.md",
+    "sha": "a30e119dfede8c04dd3d56b91458a92e84dcc7bd3ece098c617bdce276f0115b",
+    "tags": [
+      "音樂推薦"
+    ],
+    "title": "歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）"
+  },
+  {
+    "file": "source\\_posts\\部落格改版規劃.md",
+    "sha": "3e3aacef0ce3752ecec58f16820a31c7044caa3af09fd129dbe9a3370de84bfc",
+    "tags": [
+      "站務"
+    ],
+    "title": "部落格改版規劃"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\100天後會死的鱷魚(書籍閱讀紀錄).md",
+    "sha": "1f9ab8cebfb1f73ae643b2693edb48a702b65e40a5ce29505775549e714f6df9",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "100天後會死的鱷魚（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\about-time(觀影紀錄).md",
+    "sha": "7a4923b92221585dacfd975037b6654144c846bab309e89240c995173b68b742",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "about time（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\ChatGPT應用手冊(書籍閱讀紀錄).md",
+    "sha": "157d86f51617ff1fddc4007dcc9d6056283687b651a3ac24560e622263e67657",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "ChatGPT應用手冊（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\Five-Point-Someone(書籍閱讀紀錄).md",
+    "sha": "fd9d772395108fe42cf468ae1735e505fda43a9301a7a6fc6e7ef820abd179b9",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "Five Point Someone（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\The-Public(觀影紀錄).md",
+    "sha": "a87a72eb28e5a4582dbe1f88f300a1bcec5dc42f21f307d5aa5ec6cdbf766290",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "The Public（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\不誤解、不離題，誰都喜歡你的精準表達技術(書籍閱讀紀錄).md",
+    "sha": "0bff1f81324ffdecd1bda13392c19ed2ef1e138bc474db37ba2b948e188f40f0",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "不誤解、不離題，誰都喜歡你的精準表達技術（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\人氣條漫這樣畫(書籍閱讀紀錄).md",
+    "sha": "95973593f2a34acd08d54733113946144d5dc1d31d893f3aa628272d585fae3e",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "人氣條漫這樣畫（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\以早乙女佳奈子為例.md",
+    "sha": "24a158f95ee97c4944d3ff84f4c4411847a797cb3f03f93ae161f5ee6d99cd0e",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "以早乙女佳奈子為例（影片紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\來自地獄的法官.md",
+    "sha": "876079995e491c7e1eba3fec09d901cf6a037495fd962713f16d8cd185153331",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "來自地獄的法官（影片紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\修真聊天群(網路小說閱讀紀錄-短).md",
+    "sha": "2f742966fecf4dc398f6b167bc65d093d9ed3b93d72791f83910d95b6528bdfc",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "修真聊天群（網路小說閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\值得的等待.md",
+    "sha": "73a62f96fcb7d46e899bb5389ad74c4de21f09780e32e1d8ce7df991acc60f52",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "值得的等待（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\健康不平等(書籍閱讀紀錄).md",
+    "sha": "347c35b83170f67bfd2cd1bf73bb471cbe543b67e0b5d069986a31179a663443",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "健康不平等（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\偷書賊-建構統治者神話的文化洗劫與記憶消滅(書籍閱讀紀錄).md",
+    "sha": "208ae95297703813fe9ac35253635863440055d9b042b1eaa7ac6fa00bda0bee",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "偷書賊:建構統治者神話的文化洗劫與記憶消滅（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\全能遊戲設計師(網路小說閱讀紀錄).md",
+    "sha": "715abe1745c1fe3dd739a9214daa1572b903637d0f22d25e126e1943bc79d9ad",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "全能遊戲設計師（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\化學課(書籍閱讀紀錄).md",
+    "sha": "f34654167422ae6bc648d84a71259e4f725d65e35145abe050b3c41fffe4f2d8",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "化學課（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\印度，Holy-Cow我的媽啊(書籍閱讀紀錄-短).md",
+    "sha": "2833a2dd26564d38f23afd280996872e61afea893e5b63dddeb93e6b04d7ab08",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "印度，Holy Cow我的媽啊（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\去你的博士學位(書籍閱讀紀錄-短).md",
+    "sha": "d998e5936080a0373c8d6237e061de746840684773b717c0a0d4f27b214c1566",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "去你的博士學位（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\去唱卡啦OK吧(觀影紀錄).md",
+    "sha": "29a430157c1d69e31e312020ef10e41274e2eb7d1cef0ed0a2d9b2246e579eaf",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "去唱卡啦OK吧（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\反擊!-終結職場霸凌(書籍閱讀紀錄).md",
+    "sha": "22ed90a5da9e0d59d495c9ff464bf7a6449ae7db4da1d0a979e21cf6a5dfa8ed",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "反擊! 終結職場霸凌（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\可汗學院的教育奇蹟(書籍閱讀紀錄).md",
+    "sha": "34d7e57850fbb7cb9e6f4e4943ec16da49d6b6ccd25889c1d45dc74ac5d61891",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "可汗學院的教育奇蹟（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\呼吸.md",
+    "sha": "9076af791b7bcdff92fd55af314b636d1a1df41123e63f25658c0b401291bbb9",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "呼吸（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\哈佛-✕-Google行為科學家的脫單指南(書籍閱讀紀錄—短).md",
+    "sha": "76b0739a18611b5e9896f3d2fadaf7cbaeabea5353f044b22993d12e7f59b5f3",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "哈佛 ✕ Google行為科學家的脫單指南（書籍閱讀紀錄—短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\圖解犯罪心理學(書籍閱讀紀錄).md",
+    "sha": "fd4af4306021798abc7ced4292612cf716fc65a1850aceef703161cdabedca3c",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "圖解犯罪心理學（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\在世界的中心呼喊愛情(書籍閱讀紀錄).md",
+    "sha": "8b74f7d4dc430b878db9702bea6ed706401ec983936a7bf246135863e1682d3e",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "在世界的中心呼喊愛情（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\基地.md",
+    "sha": "8f831d09084d8430116614cf7835d86d735931e3f10ae37ba89ee80bbe5c2248",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "基地（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\堀與宮村(書籍閱讀紀錄).md",
+    "sha": "a5f0763fb2514ac4b783d63c01dafd4d8a4c7810a395bba5567e68ce03607058",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "堀與宮村（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\大醫凌然(書籍閱讀紀錄).md",
+    "sha": "6bcb34f02b4e8b7921846cfd341e5a0b3494f864aa2c61551d8c3b2bc6837c89",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "大醫凌然（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\大鼓翔平-超越夢想(觀影紀錄).md",
+    "sha": "68d2fc6fab9701ff53d96a37fa8531e021fe86a5127311c920bffdac23c7611c",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "大鼓翔平: 超越夢想（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\太宰治請留步(書籍閱讀紀錄).md",
+    "sha": "3fc67ca8de6455d3126ac047186fc96851dc3e606ed2fc7a31f212bafffe0a25",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "太宰治請留步（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\失智症世界的旅行指南(書籍閱讀紀錄).md",
+    "sha": "cff141ae0e9b013aa5e729bedd3553a6c877a9d9801e324a8d3390c839ee3b5b",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "失智症世界的旅行指南（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\失業白領的職場漂流.md",
+    "sha": "1d98a84d11f635c52cb946ae9f409db9cd87fd12683080c19c7d1da5cb7c72a9",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "失業白領的職場漂流（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\奧術神座(網路小說閱讀紀錄).md",
+    "sha": "4a92bd079fdff4a1d6827555723f1417cbb65c78296dd0caf09c20f7ec80bb9c",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "奧術神座（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\女給時代：1930年代臺灣的珈琲店文化.md",
+    "sha": "3b710c20af7ccfb30eb20609db6cc321a934015872e1748080000dc25661fee0",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "女給時代：1930年代臺灣的珈琲店文化（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\嫌疑犯X的獻身(書籍閱讀紀錄).md",
+    "sha": "5f01f0c519fa1a6d54f447b34f1c875bf9d10ab0a2f4d90dc5149699fdc81aee",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "嫌疑犯X的獻身（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\專案管理革命(書籍閱讀紀錄).md",
+    "sha": "a388e72ce115d63a20838a1572ab828b525c32f24bf46da8afd23b40e3d0f50b",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "專案管理革命（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\忍者寶寶(觀影紀錄).md",
+    "sha": "55197f1a87efcfd4b7d52c685e94490787c40a91a7d422923e19b45756dea309",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "忍者寶寶（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\怦然心動(觀影紀錄).md",
+    "sha": "3dc1bdbf026454eb70d000846998c016c256b4163abd0e1ecb68ac84157c1eb3",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "怦然心動（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\愛上設計-培養設計品味的第一本書(書籍閱讀紀錄).md",
+    "sha": "32424af2b299201889ecd8bc08fd09df0e322a22dda8345aed7b5025ef46f45f",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "愛上設計 - 培養設計品味的第一本書（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\戀夏500日(觀影紀錄).md",
+    "sha": "63e80285b8732b4018012d63f7cf5eae9716f53de2bc23654dd0d0d4b8d34423",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "戀夏500日（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我們的故事未完待續(觀影紀錄).md",
+    "sha": "e741b92da5476f748b4c027899a55f26cc43e5e40efeb6bceea3faf39200a988",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "我們的故事未完待續（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我們這一代(書籍閱讀紀錄-短).md",
+    "sha": "6a9320de6365c7cd2ef69d1fea0a636f85e7756240b7beb334af0acfb809fe44",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我們這一代（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我媽媽做小姐的時陣是文藝少女(書籍閱讀紀錄).md",
+    "sha": "df0e11217d5c1298e3c03dbbf5e161b7c7f5d5a77e8e34ff7d23fe79e337fcb8",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我媽媽做小姐的時陣是文藝少女（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我家不只賣咖啡：星巴克帝國(書籍閱讀紀錄-短).md",
+    "sha": "daea7e3286a21846912c5c0c8b0997e4295a714985889d6fa4e6be2247daff47",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我家不只賣咖啡：星巴克帝國（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我家老婆來自一千年前(網路小說閱讀紀錄).md",
+    "sha": "09c6db4e9faf2f51d34fb83fd7c3294e32a27db7562d7609d277c85f3289f3f7",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我家老婆來自一千年前（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我想吃掉你的胰臟(觀影紀錄).md",
+    "sha": "697995fcf1f68f2fdfbfbfecc4e3a41701901d648a7f7699ee2949702f0e66cb",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "我想吃掉你的胰臟（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我想為你推薦一本書(書籍閱讀紀錄).md",
+    "sha": "f72bff799b005d81b8f286d2106369d4f61d6d10bd5ab881c8b8ebf399b52461",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我想為你推薦一本書（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我要準時下班(書籍閱讀紀錄).md",
+    "sha": "401703263e82bdc31ba9640c38f716361b1ce4e8d99ea5ecc109f64602093441",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我要準時下班（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\我跟地球掰掰了：超有事滅絕動物圖鑑(書籍閱讀紀錄).md",
+    "sha": "7d2e2266fc1e77d054321c6f20496ced99b2e45b733c4b3c2f67c76329bcf49c",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "我跟地球掰掰了：超有事滅絕動物圖鑑（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\排球少年(書籍閱讀紀錄).md",
+    "sha": "95feb652d38371503a3f18893067ae82622a526dec675d6707a6f002257925a4",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "排球少年（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\數學奧林匹亞特訓班的一年(書籍閱讀紀錄).md",
+    "sha": "97b69dd4f74f36444ed886f3b544e35b16cc760e316cca967d37d5d1394ee6a3",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "數學奧林匹亞特訓班的一年（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\文學大數據(書籍閱讀紀錄).md",
+    "sha": "797f5660c7c45469008293b7e5595f5a68295f44e4ede9b8a5573287c050f681",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "文學大數據（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\文學少女系列(輕小說閱讀紀錄).md",
+    "sha": "878a2893a49ca75e0b6bc37aa70050ef01029b4b9255de33effb2940385732a2",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "文學少女系列（輕小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\文學少女系列2(輕小說閱讀紀錄).md",
+    "sha": "a82c2080caa78b969f58cf28fd24b7a27727e41dffca9c5d50a20ab1c0f6e100",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "文學少女系列2（輕小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\明天別再來敲門.md",
+    "sha": "1c270e94535504d287df11f3a62716a57e23d63483b2fc5526f861fb3bbe5881",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "明天別再來敲門（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\有氧減肥大迷思(書籍閱讀紀錄).md",
+    "sha": "f5c7006366e8af00a394f68535252f2e72c8af6b8a3f05a0d5fd7f5251af8c00",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "有氧減肥大迷思（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\朋友這種幻想(書籍閱讀紀錄—短.md",
+    "sha": "4e021d560aac16032fce2d23b6c840e7cbb628242f651e590a8b2eed280c2851",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "朋友這種幻想（書籍閱讀紀錄—短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\村裡來了個暴走女外科(書籍閱讀紀錄).md",
+    "sha": "29a195de398a664c0030ade1542b99ffca8043459c5c24ea572569903fe4763b",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "村裡來了個暴走女外科（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\梅艷芳(觀影紀錄).md",
+    "sha": "5fb4ccd907d8f648db9d63e780634d01e12c79d6ff67c26af0a77dcc27086dc8",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "梅艷芳（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\檢察官內傳(觀影紀錄).md",
+    "sha": "5b33a8ed9efe81694b0331d77ab5a67cc3ab25ae15399f1bb9432c241029da47",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "檢察官內傳（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\歌舞青春：再譜樂曲(觀影紀錄).md",
+    "sha": "8211552fcabacbda115cc56172c09290098056dbb3415f918c3ebee12ebb63b4",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "歌舞青春：再譜樂曲（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\武道宗師(網路小說閱讀紀錄—短).md",
+    "sha": "8b057128c9668e68681a2fd5107814079d1456335cd79908b520617e5172672d",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "武道宗師（網路小說閱讀紀錄—短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\沈君山說棋王故事五冊(書籍閱讀紀錄-短).md",
+    "sha": "ac89ac1b5089d4fae6839eddff1bfcc65dd9288834cdb3ff852ad27962980677",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "沈君山說棋王故事五冊（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\為什麼書賣這麼貴(書籍閱讀紀錄).md",
+    "sha": "8fa42d9878c2dcd7d6d53df2fc1c2f902487fa4d2e7a9902b9215c6fef0c26be",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "為什麼書賣這麼貴（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\無職轉生25集（書籍閱讀紀錄）.md",
+    "sha": "2750d8eab03591c12301b267f96265194fe16c39bee7f6fd80829a527af3527d",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "無職轉生25集（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\狂粉是怎麼煉成的(書籍閱讀紀錄-短).md",
+    "sha": "ba70d74984bed46fbb6434c12a2e3f517cb80cbd6d468911453027a469a6a523",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "狂粉是怎麼煉成的（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\生活系遊戲(網路小說閱讀紀錄).md",
+    "sha": "e5d2a8f9e9a2472c6256b78c3a4c7199edc6caf79293fec9cc4a99ad91ab9c74",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "生活系遊戲（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\畫出心之所嚮.md",
+    "sha": "d0548d49191d6f853b96b237ffe0e5efc8e64934da4f2536530c6ea6a3fae7be",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "畫出心之所嚮（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\百年爛漫：漫畫與臺灣美術的相遇(書籍閱讀紀錄).md",
+    "sha": "42a198bee639a533cba2c203552667927b8d4a98a7b6646b82d65c034f88d081",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "百年爛漫：漫畫與臺灣美術的相遇（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\相信閱讀：天下文化25年的故事(書籍閱讀紀錄).md",
+    "sha": "1f6569b69ffc3c85177f0511a7dc4aa67e1668a34d35ef32eb0a9dee46c04f8e",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "相信閱讀：天下文化25年的故事（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\筆記術大全(書籍閱讀紀錄).md",
+    "sha": "259712f23c08ca56836945a2f98d227064ffeb4e8d97b662027cdbdd8f091fb3",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "筆記術大全（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\簡易的資料整理法(書籍閱讀紀錄—短).md",
+    "sha": "00c97ac420c18ac2f0a4853a1bc4289e984b6301c7a49eaf989f60336d485277",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "簡易的資料整理法（書籍閱讀紀錄—短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\紅嬰仔(書籍閱讀紀錄).md",
+    "sha": "db3662ad3a1e82d4ad611a30409266c0958e60f36cc77e1f5a6ab00d640f17ae",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "紅嬰仔（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\老婆請安分(網路小說閱讀紀錄).md",
+    "sha": "c392d0bff2ec2257a8d0e2d0a4b9968b9fdf852d9f5df5dcbceb94ac86c4661e",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "老婆請安分（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\老派少女購物路線(書籍閱讀紀錄).md",
+    "sha": "d190510654a0ca7395f69c6e672f466356d409e5b108e70ff83db0e22a7aafaf",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "老派少女購物路線（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\脂肪的祕密生命(書籍閱讀紀錄).md",
+    "sha": "aeacbf845f0a4bca1f2eb1743b4805b5b7a88dbce9be448a3b71d4c0bb62324c",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "脂肪的祕密生命（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\臺灣史上最有梗的臺灣史(書籍閱讀紀錄).md",
+    "sha": "34e6e000e6bbc6c1f5af1a2add61a3745261604eddeacee063a076c9bc011aed",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "臺灣史上最有梗的臺灣史（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\若草物語-戀愛姐妹與無法戀愛的我.md",
+    "sha": "9f2e828744311768376577d43a5d1a022c5f29dc083b09731d8256d9c11149e0",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "若草物語-戀愛姐妹與無法戀愛的我（影片紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\萬界圓夢師(網路小說閱讀紀錄).md",
+    "sha": "0d157e9f6d5fae0ebcbcc39201a646c041718fc791b9959678b35fcc661d06ec",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "萬界圓夢師（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\蕉兵戰時記(書籍閱讀紀錄).md",
+    "sha": "8ba3adeb35eb3d1fc7bd133d4f1595ecca95806e4ac126190bfb2fcbba9c2474",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "蕉兵戰時記（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\藍色巨星(觀影紀錄).md",
+    "sha": "53f44c42718571fdac5b73f0c57f30555599eddb6488bd22e6350194d323453c",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "藍色巨星（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\藍色時期(書籍閱讀紀錄).md",
+    "sha": "39cffc10034976b8633a2c8ecadfb3c5a06ffe2d4acb0ece19431cfa48d68337",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "藍色時期（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\詭秘之主.md",
+    "sha": "418de4dd76f84233e0d259a22460673fb955df4228166fd63749b6be69bff245",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "詭秘之主（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\請不要在大家面前稱讚我.md",
+    "sha": "e9ddcf0a043101cc11bc70356f66d0218b5da7725803cd9489853aa0388ee527",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "請不要在大家面前稱讚我（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\請回答1988-雙門洞鐵人計畫.md",
+    "sha": "782adbb235aed64c77eabe4975a699fad825a205f3b218a77d347076f2a26492",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "請回答1988｜雙門洞三十題：把故事寫下去，也把自己的問題留下來"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\讀書會-75個心作戰（書籍閱讀紀錄）.md",
+    "sha": "046eb2fdba87ad939bc9d704bc271ee977e742403a51eae3b334b791e6d0c3ef",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "讀書會 75個心作戰（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\豐臣公主(書籍閱讀紀錄).md",
+    "sha": "935dc43f98b17920b26cb2330f56034f2eb6e95cc0507b350b621c8034b2f4e2",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "豐臣公主（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\超神機械師(網路小說閱讀紀錄).md",
+    "sha": "204eea6c0cba25a9b199e563555e18601a9bf8b179d987e4d17da2010c03ac3c",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "超神機械師（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\超級英雄是這樣煉成的(書籍閱讀紀錄).md",
+    "sha": "3833340d41406ee2eb914418045b6affe430e0924ffed4fd982e949eab0cb03f",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "超級英雄是這樣煉成的（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\越南：世界史的失語者(書籍閱讀紀錄).md",
+    "sha": "37990d0d7d22fbb3d94d1e62a477ece5455c282f98c395cfd8a344d2aa5547bc",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "越南：世界史的失語者（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\車諾比的悲鳴(書籍閱讀紀錄-短).md",
+    "sha": "dbc709684fa056bd5e40f39482bbdc7b14c4edad4090691ed24d16a832b8d255",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "車諾比的悲鳴（書籍閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\轉角的換書商店(書籍閱讀紀錄).md",
+    "sha": "468b80f67f3e112d2da7d7b28333bcfaf9631a51bf3acaddc5295e069e9ab299",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "轉角的換書商店（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\近戰法師(網路小說閱讀紀錄).md",
+    "sha": "e80855287a3d0d6367da22316bfffd733e845d47aedfc0cc66b845f671961c1b",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "近戰法師（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\這個男人來自地球(觀影紀錄).md",
+    "sha": "b17e03e2e7831a31ac13bdc4da309d914ca54c723b932ae7689436c3b863a225",
+    "tags": [
+      "觀影紀錄"
+    ],
+    "title": "這個男人來自地球（觀影紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\這是愛女也是厭女(書籍閱讀紀錄—短).md",
+    "sha": "5202d94d28e40566dd0cfd78fc4a5671c8a120e16daf962384839a7f0b3ce094",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "這是愛女也是厭女（書籍閱讀紀錄—短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\銀之匙（閱讀紀錄）.md",
+    "sha": "9e02427553364af80a87dd5f56da244613ed3db90cda4b4c0174f9fdbd65b876",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "銀之匙（閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\長夜餘火(網路小說閱讀紀錄—短).md",
+    "sha": "453065a0603996c865f4d3f2bfa40a7f3dad5575e22b452dee34172a3a1665e7",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "長夜餘火（網路小說閱讀紀錄—短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\開始喜歡自己的不完美(書籍閱讀紀錄).md",
+    "sha": "0aabe5e83173840382702f9854ea7a66209ba63427865e891085e8fd70277ca0",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "開始喜歡自己的不完美（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\阿宅的戀愛太難(書籍閱讀紀錄).md",
+    "sha": "ba9a8818503e9eab20643d8b142111f576e97c68e015445ba322518b5bf5fd54",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "阿宅的戀愛太難（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\雖然血淚，我還是喜歡翻譯(書籍閱讀紀錄).md",
+    "sha": "79a5d1732943eb9443923b94bd1386ac391032be817aa4a28571f06e7970ec14",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "雖然血淚，我還是喜歡翻譯（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\靈魂不歸法律管(書籍閱讀紀錄).md",
+    "sha": "9c80cafd44d8d377d03af3b8b9a1ae280a504bf37914a83d310ceef9ad5dd180",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "靈魂不歸法律管（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\非正常美食文.md",
+    "sha": "308ef529ed6fa3379f25da20a00ba81107b6bc87d4fd1cc77e7c88f5a246912b",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "非正常美食文（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\頂級氣運，悄悄修練千年(網路小說閱讀紀錄).md",
+    "sha": "76e6868ada5c38650499a43056b9f231ac4bd847911305bb606195cad0e9101c",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "頂級氣運，悄悄修練千年（網路小說閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\黎明之劍(網路小說閱讀紀錄-短).md",
+    "sha": "5f3d31eb251e7d6ab4f216fc4b6f272da7654981b5b55760049e843a6553d357",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "黎明之劍（網路小說閱讀紀錄-短）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\點燃最後一把火的送行者(書籍閱讀紀錄).md",
+    "sha": "bd344dc86f6483714af2965a1074221f0a9f52da962c4c733c32bf2b87102f15",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "點燃最後一把火的送行者（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\閱讀影評\\Ｚ世代員工解析大全（書籍閱讀紀錄）.md",
+    "sha": "5e9924ceece247f4d2d87c966878aff76f2ee9b7c098092fb350f6e81d3b14be",
+    "tags": [
+      "閱讀紀錄"
+    ],
+    "title": "Ｚ世代員工解析大全（書籍閱讀紀錄）"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\台中獨旅記.md",
+    "sha": "d85b5b8d955c35a87e5f4f2a1189dbac2d7092bf46dc7aafff2e09ad9da3f385",
+    "tags": [
+      "旅行"
+    ],
+    "title": "台中獨旅記"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\有些事情要分開.md",
+    "sha": "16297d77a85ddd5e38df9baa854f70a2fed9f35b6f6297d649fe25590175e2bc",
+    "tags": [
+      "生活感受"
+    ],
+    "title": "在喜歡與被喜歡之間"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\有工作的第N+4天.md",
+    "sha": "f75f9067babcfc93b9024edf4b5455d7d607b628048d647b18d03cba00b8e4fa",
+    "tags": [
+      "生活感受"
+    ],
+    "title": "有工作的第N+4天"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\有工作的第N+5天.md",
+    "sha": "1149048cab2d2a09d55ff833dc853e881ebebdfe8dcd97482bef72b2ee9f4314",
+    "tags": [
+      "生活感受"
+    ],
+    "title": "有工作的第N+5天"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\有工作的第N+6天.md",
+    "sha": "5d7d0a6bcc62af4fb381a51ccf850ac52df35c828ee50e02b795c7032cabc78a",
+    "tags": [
+      "生活感受"
+    ],
+    "title": "有工作的第N+6天"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\有工作的第N-2天.md",
+    "sha": "23b71acc4be43218f17a7774bef45feebc0b7c6a03897ced153cf62f80f886d5",
+    "tags": [
+      "生活感受"
+    ],
+    "title": "有工作的第N+2天"
+  },
+  {
+    "file": "source\\_posts\\隨筆\\有工作的第N-3天.md",
+    "sha": "46a5dc11011f8c616837ced18ad63472c807978df08d626cae1f43bd67e6ed53",
+    "tags": [
+      "生活感受"
+    ],
+    "title": "有工作的第N+3天"
+  }
+]

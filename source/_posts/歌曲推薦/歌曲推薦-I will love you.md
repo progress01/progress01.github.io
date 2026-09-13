@@ -19,7 +19,7 @@ cover: /images/song_I will love you.webp
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_I will love you.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_I will love you.webp" alt="zoo - I will love you - 同名專輯" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>

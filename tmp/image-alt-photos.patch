@@ -1,0 +1,354 @@
+*** Begin Patch
+*** Update File: source/photos/index.md
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_Just Give Me A Reason.webp">
++      <img alt="P!nk 和 Nate Ruess - Just Give Me A Reason - The truth about love" loading="lazy" decoding="async" src="/images/song_Just Give Me A Reason.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_잊어야 한다는 마음으로（忘記他這件事）.webp">
++      <img alt="金光石 - 잊어야 한다는 마음으로（忘記他這件事） - 3번째 노래모음" loading="lazy" decoding="async" src="/images/song_잊어야 한다는 마음으로（忘記他這件事）.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_miles are wide.webp">
++      <img alt="Ocie Elliott - miles are wide - what remains" loading="lazy" decoding="async" src="/images/song_miles are wide.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_練習.webp">
++      <img alt="劉德華 - 練習 - 同名單曲專輯" loading="lazy" decoding="async" src="/images/song_練習.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_感謝勞力.webp">
++      <img alt="血肉果汁機 - 感謝勞力 - GOLODEN 太子 BRO" loading="lazy" decoding="async" src="/images/song_感謝勞力.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_sailing back to you.webp">
++      <img alt="jeebanoff - sailing back to you - Dream to you,pt2" loading="lazy" decoding="async" src="/images/song_sailing back to you.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_the day you went away.webp">
++      <img alt="m2m - the day you went away - shades of purple" loading="lazy" decoding="async" src="/images/song_the day you went away.webp">
+@@
+-      <img loading="lazy" decoding="async" src="/images/song_I will love you.webp">
++      <img alt="zoo - I will love you - 同名專輯" loading="lazy" decoding="async" src="/images/song_I will love you.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_告白（고백합니다）.webp">
++              <img alt="ftisland - 告白（고백합니다） - Return" loading="lazy" decoding="async" src="/images/song_告白（고백합니다）.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_千千闋歌.webp">
++              <img alt="陳慧嫻 - 千千闋歌 - 永遠是你的朋友" loading="lazy" decoding="async" src="/images/song_千千闋歌.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_시청_앞_지하철_역에서.webp">
++              <img alt="ZOO - 시청 앞 지하철 역에서 - In concert(live)" loading="lazy" decoding="async" src="/images/song_시청_앞_지하철_역에서.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_非常時期.webp">
++              <img alt="DR. Mundo - 非常時期 - youtube個人頻道創作單曲（非專輯）" loading="lazy" decoding="async" src="/images/song_非常時期.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_全世界我最喜歡你（可是你都不知道）.webp">
++              <img alt="來吧焙焙 - 全世界我最喜歡你（可是你都不知道） - 無所畏懼與寬容" loading="lazy" decoding="async" src="/images/song_全世界我最喜歡你（可是你都不知道）.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_因為愛.webp">
++              <img alt="韋禮安 - 因為愛 - 首張同名全創作專輯" loading="lazy" decoding="async" src="/images/song_因為愛.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_就改天.webp">
++              <img alt="葛仲珊 - 就改天 - 皇后區的皇后" loading="lazy" decoding="async" src="/images/song_就改天.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_關於愛的定義.webp">
++              <img alt="方大同 - 關於愛的定義 - 回到未來" loading="lazy" decoding="async" src="/images/song_關於愛的定義.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_像我這樣的人.webp">
++              <img alt="毛不易 - 像我這樣的人 - 平凡的一天" loading="lazy" decoding="async" src="/images/song_像我這樣的人.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_其實都沒有.webp">
++              <img alt="楊宗緯 - 其實都沒有 - 初.愛" loading="lazy" decoding="async" src="/images/song_其實都沒有.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_答案.webp">
++              <img alt="楊坤 郭采潔 - 答案 - 今夜二十歲" loading="lazy" decoding="async" src="/images/song_答案.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_kiss_me.webp">
++              <img alt="Sixpence None The Richer - kiss me - Sixpence None The Richer（首張同名專輯）" loading="lazy" decoding="async" src="/images/song_kiss_me.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_right_here_waiting.webp">
++              <img alt="Richard Marx - Right Here Waiting - Greatest Hits （專輯合輯非首張）" loading="lazy" decoding="async" src="/images/song_right_here_waiting.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_my_heart_will_go_on.webp">
++              <img alt="Celine Dion - My Heart Will Go On - Lets talk about love" loading="lazy" decoding="async" src="/images/song_my_heart_will_go_on.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_how_long_will_i_love_you.webp">
++              <img alt="Ellie Goulding - How long will I love you - about time" loading="lazy" decoding="async" src="/images/song_how_long_will_i_love_you.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_way_back_into_love.webp">
++              <img alt="Hugh Grant 和 Haley Bennett - Way back into love - music and lyrics Music from the motion picture" loading="lazy" decoding="async" src="/images/song_way_back_into_love.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_逍遙嘆.webp">
++              <img alt="胡歌 - 逍遙嘆 - 仙劍奇俠傳電視原聲帶" loading="lazy" decoding="async" src="/images/song_逍遙嘆.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_星月神話.webp">
++              <img alt="金莎 - 星月神話 - 歌曲同名專輯 星月神話" loading="lazy" decoding="async" src="/images/song_星月神話.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_唯一.webp">
++              <img alt="王力宏 - 唯一 - 歌曲同名專輯 唯一" loading="lazy" decoding="async" src="/images/song_唯一.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_期待愛.webp">
++              <img alt="林俊傑 和 金莎 - 期待愛 - JJ陸" loading="lazy" decoding="async" src="/images/song_期待愛.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_tears.webp">
++              <img alt="X JAPAN - Tears - DAHLIA" loading="lazy" decoding="async" src="/images/song_tears.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_愛作夢的人.webp">
++              <img alt="蕭煌奇 - 愛作夢的人 - 歌曲同名專輯 愛作夢的人" loading="lazy" decoding="async" src="/images/song_愛作夢的人.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_親愛的你啊.webp">
++              <img alt="任素汐 - 親愛的你啊 - 同名單曲專輯" loading="lazy" decoding="async" src="/images/song_親愛的你啊.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_愛丫愛丫.webp">
++              <img alt="By2 - 愛丫愛丫 - 16未成年" loading="lazy" decoding="async" src="/images/song_愛丫愛丫.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_葉子.webp">
++              <img alt="阿桑 - 葉子 - 受了點傷" loading="lazy" decoding="async" src="/images/song_葉子.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_一千年以後.webp">
++              <img alt="林俊傑 - 一千年以後 - 編號89757" loading="lazy" decoding="async" src="/images/song_一千年以後.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_一直很安靜.webp">
++              <img alt="阿桑 - 一直很安靜 - 寂寞在唱歌" loading="lazy" decoding="async" src="/images/song_一直很安靜.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_不是我不明白.webp">
++              <img alt="梁靜茹與盧廣仲 - 不是我不明白 - 親親" loading="lazy" decoding="async" src="/images/song_不是我不明白.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_我們的歌.webp">
++              <img alt="王力宏 - 我們的歌 - 改變自己" loading="lazy" decoding="async" src="/images/song_我們的歌.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_你不在.webp">
++              <img alt="王力宏 - 你不在 - 不可思議" loading="lazy" decoding="async" src="/images/song_你不在.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_第一個清晨.webp">
++              <img alt="王力宏 - 第一個清晨 - 蓋世英雄" loading="lazy" decoding="async" src="/images/song_第一個清晨.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_鴨子.webp">
++              <img alt="蘇慧倫 - 鴨子 - 鴨子(同名專輯)" loading="lazy" decoding="async" src="/images/song_鴨子.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_理想.webp">
++              <img alt="趙雷 - 理想 - 吉姆餐廳" loading="lazy" decoding="async" src="/images/song_理想.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_動不動就說愛我.webp">
++              <img alt="芝麻龍眼 - 動不動就說愛我 - 芝麻&amp;龍眼精選輯2" loading="lazy" decoding="async" src="/images/song_動不動就說愛我.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_From_The_Start.webp">
++              <img alt="Laufey - From The Start - Bewitched" loading="lazy" decoding="async" src="/images/song_From_The_Start.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_慢火車.webp">
++              <img alt="萬芳 - 慢火車 - one芳新歌+精選" loading="lazy" decoding="async" src="/images/song_慢火車.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_留不住的故事.webp">
++              <img alt="黃鶯鶯 - 留不住的故事 - 賭徒" loading="lazy" decoding="async" src="/images/song_留不住的故事.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_我為你傷心.webp">
++              <img alt="蘇永康 - 我為你傷心 - 愛一個人好難" loading="lazy" decoding="async" src="/images/song_我為你傷心.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_一見鍾情.webp">
++              <img alt="藍心湄 - 一見鍾情 - 一見鍾情" loading="lazy" decoding="async" src="/images/song_一見鍾情.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_我一個人住.webp">
++              <img alt="蘇慧倫 - 我一個人住 - 六月的茉莉夢" loading="lazy" decoding="async" src="/images/song_我一個人住.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_其實我真的很在乎.webp">
++              <img alt="姜育恆 - 其實我真的很在乎 - 其實我真的很在乎" loading="lazy" decoding="async" src="/images/song_其實我真的很在乎.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_一世情緣.webp">
++              <img alt="姜育恆 - 一世情緣 - 一世情緣" loading="lazy" decoding="async" src="/images/song_一世情緣.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_放風吹.webp">
++              <img alt="許富凱 - 放風吹 - 同名單曲專輯" loading="lazy" decoding="async" src="/images/song_放風吹.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_再會啦心愛的無緣的人.webp">
++              <img alt="施文彬 - 再會啦心愛的無緣的人 - 同名專輯" loading="lazy" decoding="async" src="/images/song_再會啦心愛的無緣的人.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_雲中月圓.webp">
++              <img alt="王識賢 與 孫淑媚 - 雲中月圓 - 情難忘" loading="lazy" decoding="async" src="/images/song_雲中月圓.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_茫茫到深更.webp">
++              <img alt="羅時豐 - 茫茫到深更 - 同名專輯" loading="lazy" decoding="async" src="/images/song_茫茫到深更.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_忘了你忘了我.webp">
++              <img alt="王傑 - 忘了你忘了我 - 同名專輯(忘了你忘了我)" loading="lazy" decoding="async" src="/images/song_忘了你忘了我.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_戀戀風塵.webp">
++              <img alt="老狼 - 戀戀風塵 - 戀戀風塵" loading="lazy" decoding="async" src="/images/song_戀戀風塵.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_我們的故事.webp">
++              <img alt="天泫男孩 - 我們的故事 - smart?" loading="lazy" decoding="async" src="/images/song_我們的故事.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_淚海.webp">
++              <img alt="許茹芸 - 淚海 - 淚海" loading="lazy" decoding="async" src="/images/song_淚海.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_給電影人的情書.webp">
++              <img alt="蔡琴 - 給電影人的情書 - 不悔" loading="lazy" decoding="async" src="/images/song_給電影人的情書.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_無眠.webp">
++              <img alt="蘇打綠 - 無眠 - 夏/狂熱" loading="lazy" decoding="async" src="/images/song_無眠.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_無底洞.webp">
++              <img alt="蔡健雅 - 無底洞 - 陌生人" loading="lazy" decoding="async" src="/images/song_無底洞.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_舊愛.webp">
++              <img alt="李文世 - 옛사랑（舊愛） - Old And New" loading="lazy" decoding="async" src="/images/song_舊愛.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_你好嗎.webp">
++              <img alt="光良 - 你好嗎 - 第一次個人創作專輯" loading="lazy" decoding="async" src="/images/song_你好嗎.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_我在紐約打電話給你.webp">
++              <img alt="魏如萱 - 我在紐約打電話給你 - 同名單曲專輯" loading="lazy" decoding="async" src="/images/song_我在紐約打電話給你.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_悄悄告訴她.webp">
++              <img alt="南拳媽媽 - 悄悄告訴她 - 調色盤" loading="lazy" decoding="async" src="/images/song_悄悄告訴她.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_free_magic.webp">
++              <img alt="WAG - Free magic - WAG(同名專輯)" loading="lazy" decoding="async" src="/images/song_free_magic.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_愫.webp">
++              <img alt="鄧妙華和孫建平 - 愫 - 醉人的美酒" loading="lazy" decoding="async" src="/images/song_愫.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_I_love_you_無望.webp">
++              <img alt="五月天 - I Love You無望 - 第一張創作專輯" loading="lazy" decoding="async" src="/images/song_I_love_you_無望.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_you_are_not_alone.webp">
++              <img alt="Michael Jackson - You are not alone - HIStory: Past, Present and Future, Book I" loading="lazy" decoding="async" src="/images/song_you_are_not_alone.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_回到過去.webp">
++              <img alt="周杰倫 - 回到過去 - 八度空間" loading="lazy" decoding="async" src="/images/song_回到過去.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_一輩子的孤單.webp">
++              <img alt="劉若英 - 一輩子的孤單 - Love and the City" loading="lazy" decoding="async" src="/images/song_一輩子的孤單.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_when_you_say_nothing_at_all.webp">
++              <img alt="Ronan Keating - When you say nothing at all - Notting Hill" loading="lazy" decoding="async" src="/images/song_when_you_say_nothing_at_all.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_說你愛我.webp">
++              <img alt="陳淑華 - 說，你愛我 - 淑樺盛開Forever" loading="lazy" decoding="async" src="/images/song_說你愛我.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_如你所願.webp">
++              <img alt="萬芳 - 如你所願 - 不換" loading="lazy" decoding="async" src="/images/song_如你所願.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_free_loop.webp">
++              <img alt="Daniel Powter - Free Loop - Daniel Powter" loading="lazy" decoding="async" src="/images/song_free_loop.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_wonderful_tonight.webp">
++              <img alt="Eric Clapton - wonderful tonight - Slowhand" loading="lazy" decoding="async" src="/images/song_wonderful_tonight.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_Nothing‘s_Gonna_Stop_Us_Now.webp">
++              <img alt="Starship - Nothing‘s Gonna Stop Us Now - No Protection" loading="lazy" decoding="async" src="/images/song_Nothing‘s_Gonna_Stop_Us_Now.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_上上籤.webp">
++              <img alt="周華健 - 上上籤 - 現在" loading="lazy" decoding="async" src="/images/song_上上籤.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_給我一首歌的時間.webp">
++              <img alt="周杰倫 - 給我一首歌的時間 - 魔杰座" loading="lazy" decoding="async" src="/images/song_給我一首歌的時間.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_Secret_of_my_heart.webp">
++              <img alt="倉木麻衣 - Secret of my heart - Secret of my heart" loading="lazy" decoding="async" src="/images/song_Secret_of_my_heart.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_All-for-you.webp">
++              <img alt="cool - all for you - COOL 5" loading="lazy" decoding="async" src="/images/song_All-for-you.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_Candy.webp">
++              <img alt="H.O.T. - Candy - We Hate All Kinds of Violence... - The 1st Album" loading="lazy" decoding="async" src="/images/song_Candy.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_아로하.webp">
++              <img alt="COOL - 아로하 - First Whisper" loading="lazy" decoding="async" src="/images/song_아로하.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_Hyehwa_dong.webp">
++              <img alt="zoo - Hyehwa dong - Zoo 2nd Album" loading="lazy" decoding="async" src="/images/song_Hyehwa_dong.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_就值得愛了.webp">
++              <img alt="萬芳 - 就值得愛了 - 就值得了愛" loading="lazy" decoding="async" src="/images/song_就值得愛了.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_それぞれに.webp">
++              <img alt="中孝介 - それぞれに - THE BEST OF KOUSUKE ATARI" loading="lazy" decoding="async" src="/images/song_それぞれに.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_Tally.webp">
++              <img alt="BLACKPINK - Tally - BORN PINK" loading="lazy" decoding="async" src="/images/song_Tally.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_Don_t_You_Worry.webp">
++              <img alt="Deul Guk Hwa - Don't You Worry - Deulgukhwa" loading="lazy" decoding="async" src="/images/song_Don_t_You_Worry.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_藍色眼睛.webp">
++              <img alt="展翼 - 藍色眼睛 - Zayin" loading="lazy" decoding="async" src="/images/song_藍色眼睛.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_プラスティック・ラブ.webp">
++              <img alt="竹內瑪利亞 - プラスティック・ラブ(Plastic Love) - Expressions" loading="lazy" decoding="async" src="/images/song_プラスティック・ラブ.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_better_man.webp">
++              <img alt="Robbie Williams - Better Man - Sing When You're Winning" loading="lazy" decoding="async" src="/images/song_better_man.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_神話.webp">
++              <img alt="成龍 和 金喜善 - 神話(有些翻譯是無盡的愛) - 同名電影(神話)" loading="lazy" decoding="async" src="/images/song_神話.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_夜行性動物.webp">
++              <img alt="法蘭 - 夜行性動物 - 夜行性動物（徐珮芬詩集同名主題曲）" loading="lazy" decoding="async" src="/images/song_夜行性動物.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_噓.webp">
++              <img alt="蛋堡與徐佳瑩合作的 - 噓 - 踩.腳.踏.車" loading="lazy" decoding="async" src="/images/song_噓.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_2375.webp">
++              <img alt="棉花糖 - 2375 - 小飛行" loading="lazy" decoding="async" src="/images/song_2375.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_無窮.webp">
++              <img alt="吳汶芳 - 無窮 - 我來自..." loading="lazy" decoding="async" src="/images/song_無窮.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_小風波.webp">
++              <img alt="譚詠麟 - 小風波 - 忘不了您" loading="lazy" decoding="async" src="/images/song_小風波.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_因為寂寞.webp">
++              <img alt="張艾嘉 - 因為寂寞 - 愛的代價" loading="lazy" decoding="async" src="/images/song_因為寂寞.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_廣島之戀.webp">
++              <img alt="莫文蔚 和 張洪量 - 廣島之戀 - 做自己" loading="lazy" decoding="async" src="/images/song_廣島之戀.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_燃燒一瞬間.webp">
++              <img alt="張清芳 - 燃燒一瞬間 - 紅色張清芳" loading="lazy" decoding="async" src="/images/song_燃燒一瞬間.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_若我告訴你其實我愛的只是你.webp">
++              <img alt="張雨生 - 若我告訴你其實我愛的只是你 - 口是心非" loading="lazy" decoding="async" src="/images/song_若我告訴你其實我愛的只是你.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_這些日子以來.webp">
++              <img alt="范怡文 張清芳 - 這些日子以來 - 張清芳專輯" loading="lazy" decoding="async" src="/images/song_這些日子以來.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_抱著你.webp">
++              <img alt="張震嶽 - 抱著你 - 我是海雅谷慕" loading="lazy" decoding="async" src="/images/song_抱著你.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_戀曲1990.webp">
++              <img alt="羅大佑 - 戀曲1990 - 昨日情歌" loading="lazy" decoding="async" src="/images/song_戀曲1990.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/song_一切再重來.webp">
++              <img alt="張震嶽 - 一切再重來 - 等我有一天" loading="lazy" decoding="async" src="/images/song_一切再重來.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_非正常美食文.webp">
++              <img alt="《非正常美食文》封面" loading="lazy" decoding="async" src="/images/book_非正常美食文.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_基地.webp">
++              <img alt="《基地》封面" loading="lazy" decoding="async" src="/images/book_基地.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_畫出心之所嚮.webp">
++              <img alt="《畫出心之所嚮》封面" loading="lazy" decoding="async" src="/images/book_畫出心之所嚮.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_失業白領的職場漂流.webp">
++              <img alt="《失業白領的職場漂流》封面" loading="lazy" decoding="async" src="/images/book_失業白領的職場漂流.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_女給時代.webp">
++              <img alt="《女給時代：1930年代臺灣的珈琲店文化》封面" loading="lazy" decoding="async" src="/images/book_女給時代.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_呼吸.webp">
++              <img alt="《呼吸》封面" loading="lazy" decoding="async" src="/images/book_呼吸.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_請不要在大家面前稱讚我.webp">
++              <img alt="《請不要在大家面前稱讚我》封面" loading="lazy" decoding="async" src="/images/book_請不要在大家面前稱讚我.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_明天別再來敲門.webp">
++              <img alt="《明天別再來敲門》封面" loading="lazy" decoding="async" src="/images/book_明天別再來敲門.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/book_詭秘之主.webp">
++              <img alt="《詭秘之主》封面" loading="lazy" decoding="async" src="/images/book_詭秘之主.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/drama_以早乙女佳奈子為例.webp">
++              <img alt="《以早乙女佳奈子為例》劇集圖片" loading="lazy" decoding="async" src="/images/drama_以早乙女佳奈子為例.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/drama_來自地獄的法官.webp">
++              <img alt="《來自地獄的法官》劇集圖片" loading="lazy" decoding="async" src="/images/drama_來自地獄的法官.webp">
+@@
+-              <img loading="lazy" decoding="async" src="/images/drama_若草物語.webp">
++              <img alt="《若草物語-戀愛姐妹與無法戀愛的我》劇集圖片" loading="lazy" decoding="async" src="/images/drama_若草物語.webp">
+*** End Patch

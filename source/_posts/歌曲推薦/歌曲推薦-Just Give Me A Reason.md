@@ -19,7 +19,7 @@ cover: /images/song_Just Give Me A Reason.webp
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Just Give Me A Reason.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_Just Give Me A Reason.webp" alt="P!nk 和 Nate Ruess - Just Give Me A Reason - The truth about love" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>

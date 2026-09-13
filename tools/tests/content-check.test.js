@@ -63,17 +63,27 @@ test('日期、duplicate ID、unknown state 與壞 cover 編碼會產生可讀�
   assert.ok(duplicateErrors.some(error => error.includes('item id 重複')));
 });
 
-test('註冊 tag 是 canonical source；alias 去重，未知 tag 只警告且不生成新 tag', t => {
+test('註冊 tag 是 canonical source；alias 去重，未知 tag 產生錯誤且不生成新 tag', t => {
   const tags = '- name: 新主標籤\n  aliases: [舊名稱]\n  code: NEW\n  icon: fa fa-tag\n  url: /tags/新主標籤/\n  description: 測試';
-  const root = makeFixture({ tags, posts: ['title: Tags\ndate: 2026-02-28\ncategories: [音樂]\ntags: [新主標籤, 舊名稱, 未註冊]'] });
-  const result = checkContent({ root });
-  t.after(() => cleanupFixture(root));
-  assert.deepEqual(result.errors, []);
-  assert.ok(result.warnings.some(warning => warning.includes('未註冊')));
-  const aliases = loadAliases(root);
+  const knownRoot = makeFixture({ tags, posts: ['title: Tags\ndate: 2026-02-28\ncategories: [音樂]\ntags: [新主標籤, 舊名稱]'] });
+  const knownResult = checkContent({ root: knownRoot });
+  t.after(() => cleanupFixture(knownRoot));
+  assert.deepEqual(knownResult.errors, []);
+  assert.deepEqual(knownResult.warnings, []);
+  const aliases = loadAliases(knownRoot);
   assert.deepEqual(getCanonicalTags(['新主標籤', '舊名稱', '未註冊'], aliases), ['新主標籤']);
-  fs.writeFileSync(path.join(root, 'source', '_data', 'content-tags.yml'), tags.replace(/新主標籤/g, '更新主標籤'));
-  assert.deepEqual(getCanonicalTags(['更新主標籤'], loadAliases(root)), ['更新主標籤']);
+  fs.writeFileSync(path.join(knownRoot, 'source', '_data', 'content-tags.yml'), tags.replace(/新主標籤/g, '更新主標籤'));
+  assert.deepEqual(getCanonicalTags(['更新主標籤'], loadAliases(knownRoot)), ['更新主標籤']);
+  const mixedRoot = makeFixture({ tags, posts: ['title: Mixed\ndate: 2026-02-28\ncategories: [音樂]\ntags: [新主標籤, 未註冊]'] });
+  const mixedResult = checkContent({ root: mixedRoot });
+  t.after(() => cleanupFixture(mixedRoot));
+  assert.ok(mixedResult.errors.some(error => error.includes('未註冊標籤') && error.includes('post-0.md')));
+  assert.deepEqual(mixedResult.warnings, []);
+  const unknownRoot = makeFixture({ tags, posts: ['title: Unknown\ndate: 2026-02-28\ncategories: [音樂]\ntags: [未註冊]'] });
+  const unknownResult = checkContent({ root: unknownRoot });
+  t.after(() => cleanupFixture(unknownRoot));
+  assert.ok(unknownResult.errors.some(error => error.includes('未註冊標籤') && error.includes('post-0.md')));
+  assert.ok(unknownResult.errors.some(error => error.includes('缺少有效主標籤')));
   assert.deepEqual(getCanonicalTags(['新主標籤', '舊名稱'], buildTaxonomy([{ name: '新主標籤', aliases: ['舊名稱'] }]).aliases), ['新主標籤']);
   assert.deepEqual(getCanonicalTags(['toString'], new Map()), []);
   assert.ok(buildTaxonomy([{ name: 'A', aliases: ['same'] }, { name: 'B', aliases: ['same'] }]).errors.some(error => error.includes('同時指向')));

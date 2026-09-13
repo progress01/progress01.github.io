@@ -19,7 +19,7 @@ cover: /images/song_Don_t_You_Worry.webp
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_Don_t_You_Worry.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_Don_t_You_Worry.webp" alt="Deul Guk Hwa - Don't You Worry - Deulgukhwa" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>

@@ -1,5 +1,5 @@
 # 訪客可瀏覽的九個主標籤。
-# 文章 front matter 使用主標籤；建置時仍由 scripts/tags-normalizer.js 再次正規化。
+# 文章 front matter 使用主標籤；aliases 僅保留歷史相容名稱，建置時仍由 scripts/tags-normalizer.js 再次正規化。
 - name: 音樂推薦
   aliases: [歌曲推薦, 專輯插圖]
   code: AUDIO
@@ -19,7 +19,7 @@
   url: /tags/觀影紀錄/
   description: 電影、影集與影像作品的觀看筆記。
 - name: 學習筆記
-  aliases: [內容建模, 前後台, 動作分析, 問題情境, 排球, 規格審查, 設計思考, 資料庫, 網站流量, ACID, Agent Systems, Agentic Transaction, CMS, GEO]
+  aliases: [內容建模, 前後台, 動作分析, 問題情境, 排球, 規格審查, 設計思考, 資料庫, 網站流量, ACID, Agent Systems, Agentic Transaction, CMS, GEO, AI Agent, 工作流程, 驗證, AI, 提問方法, 圖書資訊學, 研究方法, 內容分析, 軟體測試, Web 自動化, Python, 思考方式, QA, 測試案例, 測試設計, 風險, Git, CI/CD, 簡報, 網站品質]
   code: STUDY
   icon: fa fa-flask
   url: /tags/學習筆記/

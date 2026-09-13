@@ -19,13 +19,13 @@ cover: /images/song_kiss_me.webp
   </div>
 
   <div style="width: 150px; flex-shrink: 0;">
-    <img src="/images/song_kiss_me.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <img src="/images/song_kiss_me.webp" alt="Sixpence None The Richer - kiss me - Sixpence None The Richer（首張同名專輯）" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
   </div>
 
 </div>
 <!-- more --> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    這首歌很夢幻，一開始浪漫的感覺竟然透過這種聲音與那種稍微拖慢的漸進出現，接下來整首歌鋪陳出了，Leigh Nash甜美的聲線幾乎形成了我對這首歌全部的印象(笑)，SO KISS ME.
+這首歌很夢幻，一開始浪漫的感覺竟然透過這種聲音與那種稍微拖慢的漸進出現，接下來整首歌鋪陳出了，Leigh Nash甜美的聲線幾乎形成了我對這首歌全部的印象(笑)，SO KISS ME.
 
 非常推薦啊啊啊

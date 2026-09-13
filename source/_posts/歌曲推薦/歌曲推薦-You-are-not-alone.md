@@ -20,7 +20,7 @@ cover: /images/song_you_are_not_alone.webp
 
 <div style="width: 150px; flex-shrink: 0;">
 
-<img src="/images/song_you_are_not_alone.webp" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+<img src="/images/song_you_are_not_alone.webp" alt="Michael Jackson - You are not alone - HIStory: Past, Present and Future, Book I" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
 
 </div>
 
@@ -28,5 +28,5 @@ cover: /images/song_you_are_not_alone.webp
 <!-- more --> 
 轉載自個人ig每日點播> chjuhsu05
     <br>
-    Michael的太多抹黑讓這首歌承擔了很多眼光？但我自己第一次聽到這首歌的時候就馬上去找原唱跟大聽特聽了,我想無論如何他都很耐聽而且溫暖（他歌裡面類似換氣他的短音很酷？
+Michael的太多抹黑讓這首歌承擔了很多眼光？但我自己第一次聽到這首歌的時候就馬上去找原唱跟大聽特聽了,我想無論如何他都很耐聽而且溫暖（他歌裡面類似換氣他的短音很酷？
  
