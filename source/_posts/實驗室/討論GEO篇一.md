@@ -7,11 +7,12 @@ tags: [學習筆記]
 description: "從法律概念「涵攝」出發，討論 GEO/AEO 如何描述網頁語意，以及結構化資料能做什麼、不能保證什麼。"
 ---
 
+我從搜尋 AI 功能與「涵攝」出發，整理網頁語意如何被理解，以及哪些事不能保證。
+
+ <!-- more -->
 ### 現況討論
 
 Google Search 現在有 AI Overviews 等 AI 功能，會在部分查詢顯示摘要與連結；這不等於每個網站都會被引用，也不代表可以靠一套 GEO 標記穩定影響結果。Google 說明 AI 功能沿用既有 SEO 基礎，不需要額外的特殊 Schema，也不保證網頁一定會被索引或呈現（[官方說明](https://developers.google.com/search/docs/appearance/ai-features)）。本篇先忽略流量改變，從政府資訊如何被理解的角度，討論我把 GEO／AEO 想成「涵攝」的原因與可實作的內容基礎。
-
- <!-- more -->
 
 ### 1.挑戰與痛點
 

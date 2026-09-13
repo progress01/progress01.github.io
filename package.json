@@ -5,6 +5,7 @@
   "scripts": {
     "build": "hexo generate",
     "check:content": "node tools/content-check.js",
+    "check:excerpt": "node tools/excerpt-check.js",
     "check:site": "node tools/site-check.js",
     "test:regression": "node --test tools/tests/*.test.js",
     "test:blogger": "python -B -m unittest discover -s tools/tests -p \"test_blogger*.py\"",

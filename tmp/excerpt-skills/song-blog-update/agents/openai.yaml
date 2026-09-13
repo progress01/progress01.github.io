@@ -1,0 +1,7 @@
+interface:
+  display_name: "歌曲部落格更新"
+  short_description: "Sync Hexo song posts, images, and photo wall"
+  default_prompt: "使用 $song-blog-update 幫我更新歌曲文章、圖片與圖牆。"
+
+policy:
+  allow_implicit_invocation: true

@@ -53,5 +53,49 @@ if (hexo-config('follow_me')) {
         z-index: 1;
       }
     }
+
+    // Keep the single RSS channel compact while preserving a 32px touch target.
+    &.followme-rss-only {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em .75em;
+      justify-content: center;
+      padding: .5em .75em;
+
+      > span {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .social-list {
+        align-items: center;
+        display: flex;
+        margin: 0;
+
+        .social-item-rss {
+          margin: 0;
+
+          .social-link {
+            align-items: center;
+            display: inline-flex;
+            gap: .35em;
+            min-height: 32px;
+            padding: .2em .55em;
+
+            .icon {
+              font-size: 1.25em;
+              line-height: 1;
+            }
+
+            .label {
+              display: inline;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -10,11 +10,12 @@ learning: true
 learning_status: 進行中
 ---
 
+我閱讀 LIS 長期內容分析，想弄清楚固定資料範圍與分類架構如何讓學科變化可檢查。
+
+<!-- more -->
 這是一篇針對〈LIS Research 1965–2025: a content analysis of topics and methods in journal articles〉的持續閱讀筆記。先不急著把它整理成一份「圖書資訊學六十年發展史」，而是想弄清楚：一篇研究是如何透過固定資料範圍、分類架構與跨年份比較，讓「一個學科正在改變」這句話變得可以被檢查。
 
 **原文**：[LIS Research 1965–2025: a content analysis of topics and methods in journal articles](https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of)
-
-<!-- more -->
 
 > **資料狀態：已讀文章頁面與摘要，建立初步問題；完整閱讀與數據核對待後續進行**
 >

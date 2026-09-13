@@ -328,7 +328,7 @@ comments: false
   .calendar-update-category { display: block; overflow: hidden; color: var(--calendar-orange); font: 10px "Courier New", monospace; letter-spacing: .5px; text-overflow: ellipsis; white-space: nowrap; }
   .calendar-update-title { display: block; overflow: hidden; margin-top: 5px; color: var(--calendar-brown); font-size: 15px; font-weight: normal; text-overflow: ellipsis; white-space: nowrap; }
   .calendar-update-arrow { color: var(--calendar-orange); font: 16px "Courier New", monospace; }
-  .calendar-empty { padding: 18px; color: #6b5547; background: rgba(255, 252, 243, .86); border: 1px solid var(--calendar-line); line-height: 1.8; }
+  .calendar-empty { padding: 18px; color: #6b5547; background: rgba(255, 252, 243, .86); border: 1px solid var(--calendar-line); font-family: Georgia, "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: 14px; line-height: 1.8; }
 
   @media (max-width: 767px) {
     .calendar-page { margin-right: -8px; margin-left: -8px; padding: 12px; }

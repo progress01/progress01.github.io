@@ -1,0 +1,163 @@
+[
+  {
+    "file": "source/_posts/實驗室/工作知識-上稿與表格排查紀錄.md",
+    "oldExcerpt": "這是一篇把工作事件去脈絡化後留下的上稿紀錄。人物、單位、網址、檔名與個案內容都不放進來，只保留今天在處理網頁內容、附件與表格時，值得之後重複使用的判斷方法。\n\n今天最深的感覺是：上稿看起來像是把內容放進後台，實際上卻同時在處理 HTML 結構、編輯器行為、前台樣式、表格資料與檔案權限。只要其中一層沒有確認，最後呈現就可能和預期差很多。",
+    "newExcerpt": "我在整理上稿時發現，前台差異往往同時牽涉 HTML、樣式、資料與檔案權限。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/工作知識-上稿與表格排查紀錄.md: visible=36/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/工作知識-專案報價與成本估算.md",
+    "oldExcerpt": "這是一篇把專案討論去脈絡化後留下的工作紀錄。人物、公司、機關、專案名稱與實際金額都不放進來，只保留在估算報價時可以反覆使用的思考方式。\n\n專案報價不是把工程師的開發時間乘上一個數字，也不是先猜一個客戶可能接受的價格。比較完整的想法是：先找出專案真正會消耗的成本，再確認工期是否真的做得到，最後才把公司預期的利潤放進報價。",
+    "newExcerpt": "我重新整理專案報價，先把真正成本與可行工期拆開，再談公司預期的利潤。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/工作知識-專案報價與成本估算.md: visible=34/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/工作知識-簡報不是功能清單.md",
+    "oldExcerpt": "這是一篇把工作簡報討論去脈絡化後留下的紀錄。人物、單位、專案名稱與實際資料都不放進來，只保留一個我很常忽略、但之後應該要記得的判斷：**簡報不只是把事情說清楚，還要讓聽的人能在腦中想像這件事情怎麼發生。**\n\n這次原本想說明網站檢核的執行方式、流程調整與工具輔助。整理過程中，我很容易把既有簡報、工具功能、改版內容、導入時間與需要協作的事項分開處理，結果每一塊看起來都有資料，放在一起卻不像一個完整的故事。",
+    "newExcerpt": "我重新整理簡報時發現，列出功能還不夠，聽眾還要看見事情如何被完成。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/工作知識-簡報不是功能清單.md: visible=33/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/工作知識-API需求排查紀錄.md",
+    "oldExcerpt": "這是一篇把工作事件去脈絡化後留下的知識紀錄。公司、人物、機構、網址、檔名、精確時間與特定資料內容都不放進來，只保留這次排查過程中可以移植到其他工作的思考方式。\n\n這次處理的是一個和 API、批次更新、排程與外部資料來源有關的需求。表面上看起來像是前台資料沒有更新，但真正需要釐清的問題其實是：\n\n> **資料從哪裡來？中間經過哪些處理？最後是在哪一層出現差異？**",
+    "newExcerpt": "我在排查 API 資料異常時，先回頭追資料來源、處理流程與最後出現差異的層次。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/工作知識-API需求排查紀錄.md: visible=37/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/在台灣設立實驗室十一年-思考方式筆記.md",
+    "oldExcerpt": "這是一篇針對〈在台灣設立實驗室十一年：校準責任、內耗與自己〉的閱讀與思考方式筆記。你特別喜歡這篇文章的思考方式，所以這裡先不把它整理成摘要，而是觀察它如何面對未完成、矛盾與責任，並留下幾個可以回到自己身上的問題。\n\n**原文**：[在台灣設立實驗室十一年：校準責任、內耗與自己](https://dogoodscience.biodiv.tw/2026/05/31/lab11years/)",
+    "newExcerpt": "我從一篇談實驗室工作的文章，整理自己如何面對未完成、責任與角色變化。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/在台灣設立實驗室十一年-思考方式筆記.md: visible=34/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/討論GEO篇一.md",
+    "oldExcerpt": "### 現況討論\n\nGoogle Search 現在有 AI Overviews 等 AI 功能，會在部分查詢顯示摘要與連結；這不等於每個網站都會被引用，也不代表可以靠一套 GEO 標記穩定影響結果。Google 說明 AI 功能沿用既有 SEO 基礎，不需要額外的特殊 Schema，也不保證網頁一定會被索引或呈現（[官方說明](https://developers.google.com/search/docs/appearance/ai-features)）。本篇先忽略流量改變，從政府資訊如何被理解的角度，討論我把 GEO／AEO 想成「涵攝」的原因與可實作的內容基礎。",
+    "newExcerpt": "我從搜尋 AI 功能與「涵攝」出發，整理網頁語意如何被理解，以及哪些事不能保證。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。 此文另有 frontmatter description 控制索引預覽，target check 為 WARN，需視覺確認。",
+    "checkStatus": "WARN (WARN source/_posts/實驗室/討論GEO篇一.md: visible=32/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/排球攻擊揮臂機制.md",
+    "oldExcerpt": "這篇是我整理自己排球攻擊動作的學習筆記。\n\n一開始，我把問題理解成「手肘是不是側向揮出去」、「擊球點是不是不夠高」。但在實際打混排、和朋友討論，以及重新檢視自己的連續動作影格後，我開始懷疑：\n\n> **手肘與擊球點可能只是動作末端的結果，真正需要往前追的是攻擊節奏、身體展開、軀幹帶動與手臂出手的先後順序。**\n\n目前最大的問題，因此逐漸從：\n\n> 我的手肘路徑是不是錯了？\n\n變成：\n\n> **為什麼我的手會在這個時間出去？身體有沒有先帶動，再讓手臂順勢甩出去？**\n\n最近另外注意到，拉捷運吊環、手臂維持高舉，以及排球揮臂後，上臂靠近肩膀的位置偶爾會出現緊繃與不舒服。目前先把它記錄成**可能涉及旋轉肌群負荷的症狀假說**，但不把動作觀察直接當成已確定的受傷原因或醫療診斷。",
+    "newExcerpt": "我整理排球攻擊揮臂時，開始把手肘與擊球點放回整體節奏、身體展開與出手順序。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/排球攻擊揮臂機制.md: visible=37/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/混排攻擊與防守站位.md",
+    "oldExcerpt": "這篇是我的混排排球學習筆記，主要整理防守範圍、補位與場上責任不清的問題。\n\n先從 6 號位，以及 2、4 號位在攻擊、攔網與回防後的覆蓋開始建立問題地圖，再用規則、影片與隊友討論逐步查證。",
+    "newExcerpt": "我整理混排排球的防守範圍、補位與場上責任，先用規則和影片建立問題地圖。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/混排攻擊與防守站位.md: visible=35/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/測試基本功-User-Story-Test-Case與Bug-Report.md",
+    "oldExcerpt": "這篇是「網站品質與軟體測試」系列的第一個實作入口。我要先學會把一句模糊的需求，整理成可以執行、可以記錄、可以回頭檢查的測試工作，而不是一開始就急著學自動化工具。\n\n**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)",
+    "newExcerpt": "我想先把模糊需求整理成可執行、可記錄、可回頭檢查的測試工作。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/測試基本功-User-Story-Test-Case與Bug-Report.md: visible=30/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/測試設計-等價類別邊界值與風險導向測試.md",
+    "oldExcerpt": "這篇是「網站品質與軟體測試」系列的第二階段。重點不是把測試案例越寫越多，而是學會說明：為什麼選這些條件、哪些案例可以代表一群輸入、哪些例外值得優先確認。\n\n**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)",
+    "newExcerpt": "我開始用等價類別、邊界值與風險，說明哪些測試條件值得優先確認。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/測試設計-等價類別邊界值與風險導向測試.md: visible=31/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/痠痛改善研究-從下背肩膀與小腿開始.md",
+    "oldExcerpt": "這篇是我的痠痛改善研究筆記，從家人的下背、小腿與肩膀不適觀察開始。\n\n我會把肌肉名稱先當成待驗證假說，不急著診斷，改用部位、誘發情境、介入方式與隔天反應，建立安全、可回顧的觀察紀錄。",
+    "newExcerpt": "我把家人的下背、小腿與肩膀不適整理成可回顧的觀察，而不是急著下診斷。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/痠痛改善研究-從下背肩膀與小腿開始.md: visible=34/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/發布品質-Git-CICD與Release-Checklist.md",
+    "oldExcerpt": "這篇是「網站品質與軟體測試」系列的第四階段。前面的測試如果只存在自己的電腦裡，還沒有真正接到團隊工作；這一階段要理解版本、環境、測試報告與發布判斷如何連成一個可交接的流程。\n\n**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)",
+    "newExcerpt": "我把網站測試接到版本、環境、報告與發布判斷，整理成可以交接的流程。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/發布品質-Git-CICD與Release-Checklist.md: visible=33/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/網站品質與軟體測試-從需求到上線驗證的學習路徑.md",
+    "oldExcerpt": "這是一個以「我想正式學會怎麼判斷網站能不能安心上線」為核心的學習系列。它不是把自己包裝成已經具備完整 QA 經驗，而是把目前的政府網站專案、網站檢核、問題追蹤與 Python 應用，逐步接到較完整的品質工程流程。\n\n**系列來源**：使用者提供的 HyRead QA 職缺與網站品質學習對話整理",
+    "newExcerpt": "我想正式學會判斷網站能否安心上線，逐步把檢核、追蹤與 Python 接到品質流程。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/網站品質與軟體測試-從需求到上線驗證的學習路徑.md: visible=39/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/簡報製作與Open-Slide學習筆記.md",
+    "oldExcerpt": "這篇學習筆記從 open-slide 2.0 視覺編輯器的分享截圖開始。最近我越來越被簡報困擾：常把時間花在排版，卻沒有先決定聽眾要記住什麼。\n\n因此我想參考大家的簡報方法，整理內容、故事線、視覺設計與上台排練，並為 2026-09-10 的報告建立一套可以實際執行的流程。",
+    "newExcerpt": "我整理 open-slide 的學習筆記，想先決定聽眾要記住什麼，再處理簡報排版。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/簡報製作與Open-Slide學習筆記.md: visible=39/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/Agentic-Transaction-ACID-Agent-學習筆記.md",
+    "oldExcerpt": "這是一篇針對〈Agentic Transaction: Towards ACID-Compliant Agent Systems〉的公開研究筆記，先把論文報告中的核心問題、形式化模型、系統機制與實務檢查清單整理起來。我真正想往下討論的，不只是代理系統如何提高可靠度，而是如何把這種「探索—執行—驗證—提交／重試」的結構，變成我推動各種工作流程時可以共同使用的底層方法。\n\n它目前仍是研究摘記，不是已完成的論文評讀；本文已核對論文 v1 的正式定義、門檻與實驗表格，也核對開放原始碼 README 的結構與執行條件。獨立重現、程式碼與論文結果的完全對應，以及工程泛化性仍未完成核驗。",
+    "newExcerpt": "我讀這篇 Agentic Transaction 論文時，想把探索、執行、驗證與重試整理成可共用的方法。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/Agentic-Transaction-ACID-Agent-學習筆記.md: visible=49/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/CMS前後台理解-欄位對照與規格審查.md",
+    "oldExcerpt": "這是一篇公開的持續學習筆記，先把我對 CMS 前後台、內容建模、動態套版與規格審查的理解整理在同一個地方。現在的版本比較像一份 PM 在專案討論前可以拿來對照的工作手冊，之後會再補上實際案例、欄位規格與查證過的參考資料。",
+    "newExcerpt": "我整理 CMS 前後台、內容建模與規格審查，先建立專案討論前可以對照的工作手冊。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/CMS前後台理解-欄位對照與規格審查.md: visible=38/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/Gemini-Notebook-Agent-文件產出工作流.md",
+    "oldExcerpt": "這是一篇針對〈Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學〉的持續閱讀筆記。先不急著把功能整理成教學，而是想弄清楚：當 AI 不只是回答問題，而是能搜尋、分析、寫程式並產出可下載文件時，我要怎麼判斷它真的幫我完成了工作。\n\n**原文**：[Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學](https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html)",
+    "newExcerpt": "我閱讀 Gemini Notebook Agent 的案例，想弄清楚 AI 產出文件時哪些工作仍需人工判斷。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/Gemini-Notebook-Agent-文件產出工作流.md: visible=48/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/life-check-tool.md",
+    "oldExcerpt": "### 先把「作品展示」拿掉\n\n這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。\n\n這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。\n\n目前的原型仍可另外開啟：\n\n[開啟 Life Check 原型 →](https://progress01.github.io/lifecheck/)",
+    "newExcerpt": "我把 Life Check 從作品展示改成問題與設計判斷，保留讓混亂暫時有位置的原型。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/life-check-tool.md: visible=40/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/LIS-Research-1965-2025-內容分析學習筆記.md",
+    "oldExcerpt": "這是一篇針對〈LIS Research 1965–2025: a content analysis of topics and methods in journal articles〉的持續閱讀筆記。先不急著把它整理成一份「圖書資訊學六十年發展史」，而是想弄清楚：一篇研究是如何透過固定資料範圍、分類架構與跨年份比較，讓「一個學科正在改變」這句話變得可以被檢查。\n\n**原文**：[LIS Research 1965–2025: a content analysis of topics and methods in journal articles](https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of)",
+    "newExcerpt": "我閱讀 LIS 長期內容分析，想弄清楚固定資料範圍與分類架構如何讓學科變化可檢查。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/LIS-Research-1965-2025-內容分析學習筆記.md: visible=39/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/實驗室/Web-自動化測試-Python-Pytest與Playwright.md",
+    "oldExcerpt": "這篇是「網站品質與軟體測試」系列的第三階段。目標不是證明我會寫幾支瀏覽器腳本，而是挑出穩定、重複價值高的案例，讓電腦協助執行回歸測試，並在失敗時留下足夠證據。\n\n**系列索引**：[從需求到上線驗證的學習路徑](/learning/website-quality-testing-roadmap/)",
+    "newExcerpt": "我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/實驗室/Web-自動化測試-Python-Pytest與Playwright.md: visible=49/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/歌曲推薦/歌曲推薦-Way-back-into-love.md",
+    "oldExcerpt": "<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 Hugh Grant 和 Haley Bennett 的 Way back into love\n      <br>\n      出自專輯 music and lyrics Music from the motion picture\n      <br>\n      <a href=\"https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae\" target=\"_blank\">收聽連結 -> 點此前往</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_way_back_into_love.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>",
+    "newExcerpt": "<div style=\"display: flex; gap: 20px; align-items: flex-start;\">\n  \n  <div style=\"flex: 1; text-align: left;\">\n    <p style=\"margin-top: 0;\">\n      推薦 Hugh Grant 和 Haley Bennett 的 Way back into love\n      <br>\n      出自專輯 music and lyrics Music from the motion picture\n      <br>\n      <a href=\"https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae\" target=\"_blank\">收聽</a>\n    </p>\n  </div>\n\n  <div style=\"width: 150px; flex-shrink: 0;\">\n    <img src=\"/images/song_way_back_into_love.webp\" style=\"border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);\">\n  </div>\n\n</div>",
+    "movedDetails": "固定歌曲資訊卡、單一封面與原 Spotify href 保留；連結顯示文字縮為「收聽」，正式歌曲、藝人與專輯名稱未改。",
+    "checkStatus": "WARN (WARN source/_posts/歌曲推薦/歌曲推薦-Way-back-into-love.md: visible=85/86, paragraphs=1, images=1, markers=1)"
+  },
+  {
+    "file": "source/_posts/隨筆/台中獨旅記.md",
+    "oldExcerpt": "## 旅遊紀錄：台中旅遊\n\n### 旅遊歷程\n\n學校暑假的時候有時候會多放週五，之前因為朋友決定結束北漂回台中遠距工作，就答應要去台中找他，趁著暑假有比較多假期的時候立即前往，但老實說獨旅的時候很少，有目的性的獨自旅行這應該是第一次，但既然決定就出發了吧。",
+    "newExcerpt": "這趟台中獨旅，讓我在迷路、亂逛與和朋友碰面之間重新感受規劃與自在。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/隨筆/台中獨旅記.md: visible=36/86, paragraphs=1, images=0, markers=1)"
+  },
+  {
+    "file": "source/_posts/隨筆/有些事情要分開.md",
+    "oldExcerpt": "最近一直在想一件事情：我好像很容易把一件事情的結果，直接上升成對一個人的判斷，尤其那個人是自己的時候。\n\n對方訊息沒有想像中熱絡，就變成「我是不是很難被喜歡」；一段關係沒有往前，就變成「是不是我本身沒有吸引力」；工作遇到卡住的地方，也很容易變成「我是不是能力不夠」。可是這些事情本來就不完全是同一題。",
+    "newExcerpt": "我練習把事情、關係與自我價值分開，避免一個結果太快變成對自己的判決。",
+    "movedDetails": "原 marker 前引言已逐字移到 marker 後，接續原正文；metadata、date、updated 與原有連結、圖片保留。",
+    "checkStatus": "PASS (PASS source/_posts/隨筆/有些事情要分開.md: visible=34/86, paragraphs=1, images=0, markers=1)"
+  }
+]

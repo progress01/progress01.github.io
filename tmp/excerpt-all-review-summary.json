@@ -1,0 +1,14 @@
+{
+  "changed": 93,
+  "preservationFailures": [],
+  "remainingFailures": [
+    {
+      "file": "source/_posts/welcome-board.md",
+      "errors": [
+        "source/_posts/welcome-board.md: missing Hexo <!-- more --> marker",
+        "source/_posts/welcome-board.md: visible excerpt is 707 Unicode characters; limit is 86"
+      ]
+    }
+  ],
+  "warnings": 112
+}

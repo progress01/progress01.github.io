@@ -14,7 +14,7 @@ cover: /images/song_way_back_into_love.webp
       <br>
       出自專輯 music and lyrics Music from the motion picture
       <br>
-      <a href="https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae" target="_blank">收聽連結 -> 點此前往</a>
+      <a href="https://open.spotify.com/track/0zYP35FfMItfaP6c9gcQZB?si=102e594d9d4b42ae" target="_blank">收聽</a>
     </p>
   </div>
 

@@ -210,6 +210,7 @@ comments: false
         year: selectedYear,
         colors: readingColors,
         maxValue: 4,
+        calendarTop: window.innerWidth < 768 ? 55 : 80,
         visualMap: {
           type: 'piecewise',
           itemWidth: 12,
@@ -358,14 +359,14 @@ comments: false
   .reading-calendar-update-title { display: block; overflow: hidden; margin-top: 5px; color: var(--reading-calendar-brown); font-size: 15px; font-weight: normal; line-height: 1.45; text-overflow: ellipsis; white-space: nowrap; }
   .reading-calendar-update-state { display: inline-block; margin-top: 6px; padding: 2px 5px; color: #fff4dc; background: var(--reading-calendar-orange); font: 9px "Courier New", monospace; letter-spacing: .5px; }
   .reading-calendar-update-arrow { color: var(--reading-calendar-orange); font: 16px "Courier New", monospace; }
-  .reading-calendar-empty { padding: 18px; color: #6b5547; background: rgba(255, 252, 243, .86); border: 1px solid var(--reading-calendar-line); line-height: 1.8; }
+  .reading-calendar-empty { padding: 18px; color: #6b5547; background: rgba(255, 252, 243, .86); border: 1px solid var(--reading-calendar-line); font-family: Georgia, "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: 14px; line-height: 1.8; }
 
   @media (max-width: 767px) {
     .reading-calendar-page { margin-right: -8px; margin-left: -8px; padding: 12px; }
     .reading-calendar-years { justify-content: flex-start; }
     .reading-calendar-chart-wrap,
     .reading-calendar-chart { min-width: 700px; }
-    .reading-calendar-grid-controls { top: 30px; right: 5px; left: 5px; grid-template-rows: repeat(7, 10px); height: 70px; }
+    .reading-calendar-grid-controls { top: 55px; right: 5px; left: 5px; grid-template-rows: repeat(7, 10px); height: 70px; }
     .reading-calendar-details-heading { flex-wrap: wrap; }
     .reading-calendar-details-heading small { width: 100%; margin-left: 0; }
     .reading-calendar-updates { grid-template-columns: 1fr; }

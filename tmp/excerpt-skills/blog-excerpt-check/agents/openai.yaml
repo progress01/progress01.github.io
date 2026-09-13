@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Excerpt Check"
+  short_description: "Check concise article excerpts before publishing"
+  default_prompt: "Use $blog-excerpt-check to check an article excerpt before publishing."

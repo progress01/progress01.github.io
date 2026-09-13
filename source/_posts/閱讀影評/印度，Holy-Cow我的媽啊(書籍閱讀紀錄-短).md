@@ -7,8 +7,7 @@ cover: /images/blogger-import/thumbs/blogger-cad4b14aac/01.webp
 blogger_import: true
 tags: [閱讀紀錄]
 ---
-
-《印度，Holy Cow 我的媽啊》以照片與文字帶讀者走過印度的觀光景點、生活風光與旅遊注意事項。它不是深度旅行研究，卻提供了一個輕鬆入口，讓對印度陌生的讀者先從景色與趣聞開始靠近這個地方。
+因為想找旅遊書，我讀了《印度，Holy Cow 我的媽啊》；照片與文字帶我看觀光景點和旅遊趣聞，卻不是深度旅行研究。
 
 <!-- more -->
 

@@ -136,6 +136,8 @@ function buttonDocument(buttons) {
   assert.match(source, /label: '4\+'/);
   assert.match(source, /itemWidth: 12/);
   assert.match(source, /itemHeight: 12/);
+  assert.match(source, /calendarTop: window\.innerWidth < 768 \? 55 : 80/);
+  assert.match(source, /reading-calendar-grid-controls \{ top: 55px;/);
 }
 
 {
@@ -176,6 +178,7 @@ function buttonDocument(buttons) {
   context.Calendar.init('calendar', {
     data: { '2026-09-04': 5 },
     year: '2026',
+    calendarTop: 55,
     maxValue: 4,
     colors: ['zero', 'one', 'two', 'three', 'four'],
     visualMap: {
@@ -191,6 +194,7 @@ function buttonDocument(buttons) {
     tooltipUnit: '個當日新增題目'
   });
   assert.strictEqual(option.visualMap.type, 'piecewise');
+  assert.strictEqual(option.calendar.top, 55);
   assert.deepStrictEqual(Array.from(option.visualMap.pieces).at(-1), { min: 4, label: '4+' });
   assert.strictEqual(option.tooltip.formatter({ data: ['2026-09-04', 5] }), '2026-09-04: 5 個當日新增題目');
 }

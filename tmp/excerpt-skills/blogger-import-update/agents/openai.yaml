@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blogger文章匯入"
+  short_description: "匯入Blogger文章、圖片與圖牆，完成路徑與版面檢查"
+  default_prompt: "使用 $blogger-import-update 協助我搬移 Blogger 文章，保留既有內容並檢查圖片與圖牆。"

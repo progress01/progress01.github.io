@@ -10,11 +10,12 @@ learning: true
 learning_status: 進行中
 ---
 
+我閱讀 Gemini Notebook Agent 的案例，想弄清楚 AI 產出文件時哪些工作仍需人工判斷。
+
+<!-- more -->
 這是一篇針對〈Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學〉的持續閱讀筆記。先不急著把功能整理成教學，而是想弄清楚：當 AI 不只是回答問題，而是能搜尋、分析、寫程式並產出可下載文件時，我要怎麼判斷它真的幫我完成了工作。
 
 **原文**：[Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學](https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html)
-
-<!-- more -->
 
 > **資料狀態：先建立問題，等待實際回答與後續實測**
 >

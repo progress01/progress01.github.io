@@ -1,4 +1,4 @@
-<div class="followme">
+<div class="followme{% if theme.follow_me.RSS and theme.follow_me | length == 1 %} followme-rss-only{% endif %}">
   <span>{{ __('follow_me.welcome') }}</span>
 
   <div class="social-list">
@@ -6,7 +6,7 @@
       {%- set link = value.split('||')[0] | trim %}
       {%- set icon = value.split('||')[1] | trim if value.split('||')[1] else '' %}
 
-      <div class="social-item">
+      <div class="social-item{% if link.endsWith('atom.xml') %} social-item-rss{% endif %}">
         {%- if link.endsWith('.png') or link.endsWith('.jpg') %}
           <span class="social-link">
             <span class="icon">
