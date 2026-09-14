@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,38 +663,38 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我把 Life Check 從作品展示改成問題與設計判斷，保留讓混亂暫時有位置的原型。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-93fada823f26993e" data-navigation-anchor="">我把 Life Check 從作品展示改成問題與設計判斷，保留讓混亂暫時有位置的原型。</p>
 <span id="more"></span>
-<h3 id="先把「作品展示」拿掉"><a href="#先把「作品展示」拿掉" class="headerlink" title="先把「作品展示」拿掉"></a>先把「作品展示」拿掉</h3><p>這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。</p>
-<p>這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。</p>
-<p>目前的原型仍可另外開啟：</p>
-<p><a href="https://progress01.github.io/lifecheck/">開啟 Life Check 原型 →</a></p>
-<h3 id="問題不是少一個待辦清單"><a href="#問題不是少一個待辦清單" class="headerlink" title="問題不是少一個待辦清單"></a>問題不是少一個待辦清單</h3><p>很多混亂並不是因為事情太多，而是不同性質的東西被放在同一個清單裡：今天必須完成的事情、一直掛在心上的念頭、還沒有想好怎麼處理的問題，以及只是想留下來的紀錄。</p>
-<p>如果每一項都用「完成／未完成」表示，清單最後很容易變成另一種壓力來源。沒有完成的項目看起來像失敗，暫時不想處理的情緒也被迫變成工作，原本想減少混亂，卻只是把混亂換了一種格式保存。</p>
-<p>所以「存檔點」和一般任務管理工具不太一樣。它不急著替所有事情排出順序，也不要求使用者立刻找到答案，而是先承認：此刻的狀態可以被放在某個地方，暫時不用繼續佔據注意力。</p>
-<h3 id="先分辨：行動、情緒與紀錄"><a href="#先分辨：行動、情緒與紀錄" class="headerlink" title="先分辨：行動、情緒與紀錄"></a>先分辨：行動、情緒與紀錄</h3><p>這個設計值得繼續討論的地方，是它其實同時面對三種不同需求。</p>
+<h3 id="先把「作品展示」拿掉" data-navigation-anchor=""><a href="#先把「作品展示」拿掉" class="headerlink" title="先把「作品展示」拿掉"></a>先把「作品展示」拿掉</h3><p id="nav-76ff0cd6cbe8d02c" data-navigation-anchor="">這篇原本比較像專案展示：嵌入完整工具，再補上技術與功能的說明。但這樣讀者必須先進入另一個介面操作，才知道這篇文章想討論什麼；文章也因此變成外部工具的容器，閱讀節奏和頁面效能都會受到影響。</p>
+<p id="nav-3a6b4de6dc95ff06" data-navigation-anchor="">這裡真正想留下的不是「做了一個什麼工具」，而是一個設計問題：當日常混亂到不能只靠待辦清單整理時，是否需要一個暫時存放狀態的位置？因此這篇改成記錄問題情境、設計判斷，以及目前仍然沒有解完的矛盾。</p>
+<p id="nav-7690875b7a882ab1" data-navigation-anchor="">目前的原型仍可另外開啟：</p>
+<p id="nav-fd3b8707a809d7b8" data-navigation-anchor=""><a href="https://progress01.github.io/lifecheck/">開啟 Life Check 原型 →</a></p>
+<h3 id="問題不是少一個待辦清單" data-navigation-anchor=""><a href="#問題不是少一個待辦清單" class="headerlink" title="問題不是少一個待辦清單"></a>問題不是少一個待辦清單</h3><p id="nav-52f46b2a3a1cea5d" data-navigation-anchor="">很多混亂並不是因為事情太多，而是不同性質的東西被放在同一個清單裡：今天必須完成的事情、一直掛在心上的念頭、還沒有想好怎麼處理的問題，以及只是想留下來的紀錄。</p>
+<p id="nav-784d98538e356ea7" data-navigation-anchor="">如果每一項都用「完成／未完成」表示，清單最後很容易變成另一種壓力來源。沒有完成的項目看起來像失敗，暫時不想處理的情緒也被迫變成工作，原本想減少混亂，卻只是把混亂換了一種格式保存。</p>
+<p id="nav-72c5cd8e211deb5b" data-navigation-anchor="">所以「存檔點」和一般任務管理工具不太一樣。它不急著替所有事情排出順序，也不要求使用者立刻找到答案，而是先承認：此刻的狀態可以被放在某個地方，暫時不用繼續佔據注意力。</p>
+<h3 id="先分辨：行動、情緒與紀錄" data-navigation-anchor=""><a href="#先分辨：行動、情緒與紀錄" class="headerlink" title="先分辨：行動、情緒與紀錄"></a>先分辨：行動、情緒與紀錄</h3><p id="nav-a1da8104a1a27ea5" data-navigation-anchor="">這個設計值得繼續討論的地方，是它其實同時面對三種不同需求。</p>
 <ol>
-<li><strong>行動</strong>：有下一步，而且完成後可以得到明確回饋。</li>
-<li><strong>情緒</strong>：不一定需要解決，但需要先被看見、被放下。</li>
-<li><strong>紀錄</strong>：事情已經過去，留下來是為了之後回頭理解自己。</li>
+<li id="nav-9217633c6d46f946" data-navigation-anchor=""><strong>行動</strong>：有下一步，而且完成後可以得到明確回饋。</li>
+<li id="nav-6f27dfd7d80d9619" data-navigation-anchor=""><strong>情緒</strong>：不一定需要解決，但需要先被看見、被放下。</li>
+<li id="nav-bd7eafbb7ccfe9ed" data-navigation-anchor=""><strong>紀錄</strong>：事情已經過去，留下來是為了之後回頭理解自己。</li>
 </ol>
-<p>三者如果全部使用同一套按鈕和同一種顏色，介面會很簡單，意思卻會變得模糊。勾掉一項任務代表完成；讓一個念頭消失，可能只代表今天不再處理；保存一段紀錄，則不應該被理解成問題已經解決。</p>
-<p>這也是「存檔點」比「效率工具」更適合的地方：重點不是累積更多完成項目，而是讓不同狀態不要互相冒充。</p>
-<h3 id="介面語言的矛盾"><a href="#介面語言的矛盾" class="headerlink" title="介面語言的矛盾"></a>介面語言的矛盾</h3><p>目前的原型使用了不少帶有遊戲感與避難所想像的詞彙，例如挑戰、結界、精神足跡。這些詞彙有一個好處：它們可以讓日常壓力與自己拉開一點距離，讓整理變得沒有那麼嚴肅。</p>
-<p>但另一個問題也同時出現了。<strong>Life Quest</strong> 比較像一套要持續闖關的生活系統；「存檔點」則比較像允許暫停、回頭查看的地方。前者要求前進，後者允許停留，兩種設計方向如果同時存在，使用者就必須先理解這個世界觀，才能理解自己現在要做什麼。</p>
-<p>如果核心目標是降低焦慮，介面不應該增加太多需要學習的隱喻。比起讓每一個功能都有特別的名稱，更重要的是讓人一眼看出：現在這個項目是要採取行動、暫時放下，還是留作日後回顧。</p>
-<h3 id="復古視覺應該服務於「保存」"><a href="#復古視覺應該服務於「保存」" class="headerlink" title="復古視覺應該服務於「保存」"></a>復古視覺應該服務於「保存」</h3><p>復古電腦視窗的方向仍然有意義，因為它和「存檔」的概念相近：畫面不是一個要求人變得更有效率的儀表板，而是一個可以把當下狀態保存下來的介面。</p>
-<p>不過，這種風格不需要靠大量裝飾或動畫來證明自己。視窗標題、狀態文字、有限的色彩和清楚的區塊關係就已經足夠。顏色也不應該只代表「表現很好」，例如變綠不必等於生活變得完美，而可以只是表示「這件事已經被看見，暫時有一個位置」。</p>
-<p>這樣的設計會比較接近 1988 的懷舊感：不是模仿某一個年代的介面，而是保留那種有限、安靜、可以慢慢整理資料的感覺。</p>
-<h3 id="目前還沒有解完的問題"><a href="#目前還沒有解完的問題" class="headerlink" title="目前還沒有解完的問題"></a>目前還沒有解完的問題</h3><p>這個原型暫時不需要被包裝成完成的產品。真正值得留下的問題反而是：</p>
+<p id="nav-5351ea20e78c7b03" data-navigation-anchor="">三者如果全部使用同一套按鈕和同一種顏色，介面會很簡單，意思卻會變得模糊。勾掉一項任務代表完成；讓一個念頭消失，可能只代表今天不再處理；保存一段紀錄，則不應該被理解成問題已經解決。</p>
+<p id="nav-063edc31a76a65f2" data-navigation-anchor="">這也是「存檔點」比「效率工具」更適合的地方：重點不是累積更多完成項目，而是讓不同狀態不要互相冒充。</p>
+<h3 id="介面語言的矛盾" data-navigation-anchor=""><a href="#介面語言的矛盾" class="headerlink" title="介面語言的矛盾"></a>介面語言的矛盾</h3><p id="nav-6fa28115f34a6146" data-navigation-anchor="">目前的原型使用了不少帶有遊戲感與避難所想像的詞彙，例如挑戰、結界、精神足跡。這些詞彙有一個好處：它們可以讓日常壓力與自己拉開一點距離，讓整理變得沒有那麼嚴肅。</p>
+<p id="nav-bab7737c191b66b7" data-navigation-anchor="">但另一個問題也同時出現了。<strong>Life Quest</strong> 比較像一套要持續闖關的生活系統；「存檔點」則比較像允許暫停、回頭查看的地方。前者要求前進，後者允許停留，兩種設計方向如果同時存在，使用者就必須先理解這個世界觀，才能理解自己現在要做什麼。</p>
+<p id="nav-b67299bf38bbcfad" data-navigation-anchor="">如果核心目標是降低焦慮，介面不應該增加太多需要學習的隱喻。比起讓每一個功能都有特別的名稱，更重要的是讓人一眼看出：現在這個項目是要採取行動、暫時放下，還是留作日後回顧。</p>
+<h3 id="復古視覺應該服務於「保存」" data-navigation-anchor=""><a href="#復古視覺應該服務於「保存」" class="headerlink" title="復古視覺應該服務於「保存」"></a>復古視覺應該服務於「保存」</h3><p id="nav-ab3ec16447340405" data-navigation-anchor="">復古電腦視窗的方向仍然有意義，因為它和「存檔」的概念相近：畫面不是一個要求人變得更有效率的儀表板，而是一個可以把當下狀態保存下來的介面。</p>
+<p id="nav-009cf0ad1a5d86d6" data-navigation-anchor="">不過，這種風格不需要靠大量裝飾或動畫來證明自己。視窗標題、狀態文字、有限的色彩和清楚的區塊關係就已經足夠。顏色也不應該只代表「表現很好」，例如變綠不必等於生活變得完美，而可以只是表示「這件事已經被看見，暫時有一個位置」。</p>
+<p id="nav-737098f2100b7159" data-navigation-anchor="">這樣的設計會比較接近 1988 的懷舊感：不是模仿某一個年代的介面，而是保留那種有限、安靜、可以慢慢整理資料的感覺。</p>
+<h3 id="目前還沒有解完的問題" data-navigation-anchor=""><a href="#目前還沒有解完的問題" class="headerlink" title="目前還沒有解完的問題"></a>目前還沒有解完的問題</h3><p id="nav-630c0bf484c2e8ab" data-navigation-anchor="">這個原型暫時不需要被包裝成完成的產品。真正值得留下的問題反而是：</p>
 <ul>
-<li>人是在什麼時候需要一個存檔點，而不是另一個待辦清單？</li>
-<li>勾選完成之後，壓力真的減少了，還是只是獲得短暫的控制感？</li>
-<li>哪些內容值得被保存，哪些只是當下需要暫時移開？</li>
-<li>介面要鼓勵前進，還是允許人停留在尚未想清楚的狀態？</li>
+<li id="nav-de299d00c503efdf" data-navigation-anchor="">人是在什麼時候需要一個存檔點，而不是另一個待辦清單？</li>
+<li id="nav-1464f64d1bd38ef6" data-navigation-anchor="">勾選完成之後，壓力真的減少了，還是只是獲得短暫的控制感？</li>
+<li id="nav-c4c11d0d80a32913" data-navigation-anchor="">哪些內容值得被保存，哪些只是當下需要暫時移開？</li>
+<li id="nav-732bc96826ed28ca" data-navigation-anchor="">介面要鼓勵前進，還是允許人停留在尚未想清楚的狀態？</li>
 </ul>
-<p>這些問題比列出使用了哪些技術更接近設計本身。作品未完成不一定是缺點，因為概念還沒有被過早固定，反而可以繼續觀察「整理生活」與「管理生活」之間的差異。</p>
-<p>這篇先把它留在這裡，作為一個關於問題情境的設計筆記，而不是一頁需要被展示完成度的作品集。</p>
+<p id="nav-284849579db4eca3" data-navigation-anchor="">這些問題比列出使用了哪些技術更接近設計本身。作品未完成不一定是缺點，因為概念還沒有被過早固定，反而可以繼續觀察「整理生活」與「管理生活」之間的差異。</p>
+<p id="nav-65815a8d54af029c" data-navigation-anchor="">這篇先把它留在這裡，作為一個關於問題情境的設計筆記，而不是一頁需要被展示完成度的作品集。</p>
 
     </div>
 

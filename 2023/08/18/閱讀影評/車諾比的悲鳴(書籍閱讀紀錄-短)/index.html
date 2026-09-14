@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,19 +666,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《車諾比的悲鳴》原本只因書名吸引我，卻讓我花兩個月讀完；居民、科學家與軍人的訪談交織出災難裡無法整理的人生。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-eef6c5f3ecb595c1" data-navigation-anchor="">《車諾比的悲鳴》原本只因書名吸引我，卻讓我花兩個月讀完；居民、科學家與軍人的訪談交織出災難裡無法整理的人生。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>完全是一本純粹被書名吸引的書，在網路小說中車諾比是一個用來解釋神秘現象的地方，而即使是隱約知道這地方發生過什麼事故的我也沒想到這是一本紀實文學，更沒想到我甚至花了兩個月才看完它，一次我只能看幾頁，就以開篇的第一篇悲鳴來說，我花了一週才決定要繼續看下去。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>以文字適當的紀錄了當下的狀況，無論是擔心丈夫的人，為孩子奔走，不願離開故土，又或是因為未妥善規劃的榮譽與政策加入撤離與後續安排的軍人，無論是居民還是科學家，無論是被迫離開或偷偷留下，從車諾比向前或向後沒人在這場災難下能妥善的安排自己。</p>
-<p>而這本書很真實的紀錄下這一切，並且是經過整理及妥善安排的撰寫，不會過於靠近受訪人而讓文字紊亂，反而因為靠近所以讓閱讀起來的情緒更加的無助。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>書籍裡面觸目驚心的場面很多，深刻的感情也很多，如果從不同的角度你在書中甚至可以窺見當年事故發生後那些我們想了解的部分，但我感受最深刻的地方卻是在事故之中對自己的不放棄。</p>
-<p>常常我們如果遇到災難或任何政府機關應該要負責的部分，國賠與後續權益的保障一定是我會首要關注的部分，但在車諾比的悲鳴裡面，我卻感受到另外一種悲傷，我們想要找那個要負起責任的人，要為這一切讓生活完全毀掉的站出來認錯並賠償。</p>
-<p>但默默地卻開始在真實的故事裡面感受到的是我們還能為自己做什麼？</p>
-<p>找人負責根本也無法做什麼，那我們對我們自己呢？</p>
-<p>當然這比較是受害較小的民眾，更嚴重一點的還在為核災對生命造成的危害奮鬥，但無論是誰，都是受苦的人。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>台灣之前在核能問題上紛紛擾擾很久，在看書之前我其實更傾向於核能發電，因為我不太清楚核災的份量，但看完書之後除了瀰漫的悲傷情緒外，我開始考慮的是核能發電雖然重要但我們能確認核災不發生嗎？</p>
-<p>當這一切災害降臨，沒有人能負責，甚至大家需要面對更嚴重的問題，如果缺少思考核能議題的面向的話，在確認心靈強健下是可以看看的，祝福書中的人物找到自己內心的答案，辛苦你們了，包含那些為政府善後的軍人及科學家，書中埋沉的情感與榮譽還有自省我都有看到。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-f5a11ee5f6b37d37" data-navigation-anchor="">完全是一本純粹被書名吸引的書，在網路小說中車諾比是一個用來解釋神秘現象的地方，而即使是隱約知道這地方發生過什麼事故的我也沒想到這是一本紀實文學，更沒想到我甚至花了兩個月才看完它，一次我只能看幾頁，就以開篇的第一篇悲鳴來說，我花了一週才決定要繼續看下去。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-95db958ccfec0e1d" data-navigation-anchor="">以文字適當的紀錄了當下的狀況，無論是擔心丈夫的人，為孩子奔走，不願離開故土，又或是因為未妥善規劃的榮譽與政策加入撤離與後續安排的軍人，無論是居民還是科學家，無論是被迫離開或偷偷留下，從車諾比向前或向後沒人在這場災難下能妥善的安排自己。</p>
+<p id="nav-ba61dc25b2eb536b" data-navigation-anchor="">而這本書很真實的紀錄下這一切，並且是經過整理及妥善安排的撰寫，不會過於靠近受訪人而讓文字紊亂，反而因為靠近所以讓閱讀起來的情緒更加的無助。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-f709e155da80eb43" data-navigation-anchor="">書籍裡面觸目驚心的場面很多，深刻的感情也很多，如果從不同的角度你在書中甚至可以窺見當年事故發生後那些我們想了解的部分，但我感受最深刻的地方卻是在事故之中對自己的不放棄。</p>
+<p id="nav-93a44d8f9bb9be65" data-navigation-anchor="">常常我們如果遇到災難或任何政府機關應該要負責的部分，國賠與後續權益的保障一定是我會首要關注的部分，但在車諾比的悲鳴裡面，我卻感受到另外一種悲傷，我們想要找那個要負起責任的人，要為這一切讓生活完全毀掉的站出來認錯並賠償。</p>
+<p id="nav-8ac0182ddde6c74c" data-navigation-anchor="">但默默地卻開始在真實的故事裡面感受到的是我們還能為自己做什麼？</p>
+<p id="nav-7b844564d792116b" data-navigation-anchor="">找人負責根本也無法做什麼，那我們對我們自己呢？</p>
+<p id="nav-d374c569f9f921ed" data-navigation-anchor="">當然這比較是受害較小的民眾，更嚴重一點的還在為核災對生命造成的危害奮鬥，但無論是誰，都是受苦的人。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-dc88eedf6ad3a724" data-navigation-anchor="">台灣之前在核能問題上紛紛擾擾很久，在看書之前我其實更傾向於核能發電，因為我不太清楚核災的份量，但看完書之後除了瀰漫的悲傷情緒外，我開始考慮的是核能發電雖然重要但我們能確認核災不發生嗎？</p>
+<p id="nav-f7f922a7b5aa71ce" data-navigation-anchor="">當這一切災害降臨，沒有人能負責，甚至大家需要面對更嚴重的問題，如果缺少思考核能議題的面向的話，在確認心靈強健下是可以看看的，祝福書中的人物找到自己內心的答案，辛苦你們了，包含那些為政府善後的軍人及科學家，書中埋沉的情感與榮譽還有自省我都有看到。</p>
 <img class="blogger-import-image" loading="lazy" decoding="async" width="228" height="310" src="/images/blogger-import/blogger-db18975966/01.webp" alt="圖片 1">
 圖片來源: 維基百科
 

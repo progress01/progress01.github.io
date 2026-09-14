@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,26 +666,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我在《詭秘之主》後讀《長夜餘火》，原本對廢土題材有些遲疑；它讓我在瘋狂與荒蕪裡看見文明和理想留下的餘火。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-d5244e2205cb8ef9" data-navigation-anchor="">我在《詭秘之主》後讀《長夜餘火》，原本對廢土題材有些遲疑；它讓我在瘋狂與荒蕪裡看見文明和理想留下的餘火。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>這本書是接著詭秘之主後烏賊的作品，本來期待著即使不是詭秘系列，那這個世界的塑造以及設定也大概率很出彩吧？</p>
-<p>殊不知這是一本廢土題材(這部分我看比較少但應該不能算是末世)，有特殊能力以及瘋狂的這部分，但卻讓我遲遲無法開始，廢土就代表生存、變異、探索以及找出真相？這類題材在烏賊筆下我想來大概是會很慘烈，因此即使書籍結束好一段時間了，但也一直到前兩周才真的看完。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>跳脫於過去他筆下人物的仔細塑造，這次其實在作品裡面很常是由行為或對話讓你形成對主角團的印象，在小說剛開始的時候習慣好一陣子，但類似的作法也在後續變成優點，你能更專注的集中在廢土上，像是鏡頭從主角身上拿開，更拿高一點。</p>
-<p>烏賊在章節總結裡面也有提到似乎他嘗試這個寫法在有意的減少讀者的代入感，這其實是一件滿反網路小說的事情，沒有主角內心想法來豐富這個人物，尤其當主角有類似精神病症狀的時候，變成到底怎麼來吸引大家繼續看是這次的特色之一了吧？</p>
-<p>我自己是在開始有一首歌出現的時候才看得非常地投入，沒有理想的人不傷心，好像突然就有點融入了，我想無論是視角的拉高或是拉近，小說裡面拉著你的除了有趣還有一個比較神秘的是你想像你的看書點？ 這可能兩個滿足一個就可以了，如果不是廢土題材我可能也不會發現我自己閱讀上的小習慣，至少整部是首尾完整的且展現出廢土特色的小說(雖然真實意義上這應該是我唯一看完的一本廢土題材，另外一本應該是我是傳奇[出版書])</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>如同前面提到的找到一個觀看小說的適合位置之後，這本小說的餘火感就算是出來了，文明後面的廢土文明，一方面在前面的輝煌中找尋生命的出路，一方面探索著出路之外的出路，廢土讓我重新考慮理想，知道人物為何追求及活著。</p>
-<p>尤其小說中還設定了一個不知道為何但會使人瘋狂(失去理智)的無心病，不在只是大時代下的小人物，廢土之下沒有給你一個繁華跟孤寂的對比，而是在瘋狂的荒蕪之中開始讓自己明白，小說裡面也透過主角團傳遞這個事情，廢土之中的成長赤裸但卻讓人印象深刻，相對來說捨去掉滿多在其他小說裡面感慨的這個情緒，能失去跟擁有的東西在一開始就不這麼富足了。</p>
-<p>文明的餘火、理想的餘火、生命價值的餘火、自我肯定的餘火、自己與他人的餘火，整本看完回頭看來也是餘火味十足的餘火，真的是不難想像為何類似的題材能讓人特別反思了。</p>
-<p>另外值得一提的是小說的能力設定延續了烏賊在想像上的有趣，弱點跟能力的應用都非常的吸引人，就是這次的能力引響更比之前強力一點，沒找到弱點之前能力就我想來有點過強，或很難反制，但無損這次設計的出彩。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>“我不要在失敗孤獨中死去</p>
-<p>我不要一直活在地下裡</p>
-<p>物質的騙局 匆匆的螞蟻</p>
-<p>沒有文化的人不傷心” (引自沒有理想的人不傷心)</p>
-<p>雖然整部小說後期，為了寫作的節奏考量，拿掉了一些我希望他敘述的遊記部分，解謎部分也因為為了減少閱讀上的焦躁感而降低不少解釋，相較之下一世之尊這部分就比較完整的寫出來(雖然當初為了解開謎題我偷偷跳過不少)，但我還是希望能更完整一點。</p>
-<p>整部小說給我一個在廢土上追尋真相及找尋未來的人的追求，你想守護什麼？</p>
-<p>“為了全人類”</p>
-<p> <img class="blogger-import-image" loading="lazy" decoding="async" width="305" height="403" src="/images/blogger-import/blogger-7d8d0e7153/01.webp" alt="圖片 1"> (圖片來源：起點中文網)</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-6864aaf063fc8660" data-navigation-anchor="">這本書是接著詭秘之主後烏賊的作品，本來期待著即使不是詭秘系列，那這個世界的塑造以及設定也大概率很出彩吧？</p>
+<p id="nav-f4646987d4bcf27a" data-navigation-anchor="">殊不知這是一本廢土題材(這部分我看比較少但應該不能算是末世)，有特殊能力以及瘋狂的這部分，但卻讓我遲遲無法開始，廢土就代表生存、變異、探索以及找出真相？這類題材在烏賊筆下我想來大概是會很慘烈，因此即使書籍結束好一段時間了，但也一直到前兩周才真的看完。</p>
+<h2 id="小說特色" data-navigation-anchor=""><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p id="nav-6d4ccda151f5d61e" data-navigation-anchor="">跳脫於過去他筆下人物的仔細塑造，這次其實在作品裡面很常是由行為或對話讓你形成對主角團的印象，在小說剛開始的時候習慣好一陣子，但類似的作法也在後續變成優點，你能更專注的集中在廢土上，像是鏡頭從主角身上拿開，更拿高一點。</p>
+<p id="nav-66bfd0aa0a1c4557" data-navigation-anchor="">烏賊在章節總結裡面也有提到似乎他嘗試這個寫法在有意的減少讀者的代入感，這其實是一件滿反網路小說的事情，沒有主角內心想法來豐富這個人物，尤其當主角有類似精神病症狀的時候，變成到底怎麼來吸引大家繼續看是這次的特色之一了吧？</p>
+<p id="nav-9e4001d473f16a28" data-navigation-anchor="">我自己是在開始有一首歌出現的時候才看得非常地投入，沒有理想的人不傷心，好像突然就有點融入了，我想無論是視角的拉高或是拉近，小說裡面拉著你的除了有趣還有一個比較神秘的是你想像你的看書點？ 這可能兩個滿足一個就可以了，如果不是廢土題材我可能也不會發現我自己閱讀上的小習慣，至少整部是首尾完整的且展現出廢土特色的小說(雖然真實意義上這應該是我唯一看完的一本廢土題材，另外一本應該是我是傳奇[出版書])</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-81f0fbe04eb9a5dd" data-navigation-anchor="">如同前面提到的找到一個觀看小說的適合位置之後，這本小說的餘火感就算是出來了，文明後面的廢土文明，一方面在前面的輝煌中找尋生命的出路，一方面探索著出路之外的出路，廢土讓我重新考慮理想，知道人物為何追求及活著。</p>
+<p id="nav-eda5576aa6ced530" data-navigation-anchor="">尤其小說中還設定了一個不知道為何但會使人瘋狂(失去理智)的無心病，不在只是大時代下的小人物，廢土之下沒有給你一個繁華跟孤寂的對比，而是在瘋狂的荒蕪之中開始讓自己明白，小說裡面也透過主角團傳遞這個事情，廢土之中的成長赤裸但卻讓人印象深刻，相對來說捨去掉滿多在其他小說裡面感慨的這個情緒，能失去跟擁有的東西在一開始就不這麼富足了。</p>
+<p id="nav-769c8146819dc830" data-navigation-anchor="">文明的餘火、理想的餘火、生命價值的餘火、自我肯定的餘火、自己與他人的餘火，整本看完回頭看來也是餘火味十足的餘火，真的是不難想像為何類似的題材能讓人特別反思了。</p>
+<p id="nav-6d09faaa5ed90a50" data-navigation-anchor="">另外值得一提的是小說的能力設定延續了烏賊在想像上的有趣，弱點跟能力的應用都非常的吸引人，就是這次的能力引響更比之前強力一點，沒找到弱點之前能力就我想來有點過強，或很難反制，但無損這次設計的出彩。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-88900cff52b99fa8" data-navigation-anchor="">“我不要在失敗孤獨中死去</p>
+<p id="nav-df8c6bb830739433" data-navigation-anchor="">我不要一直活在地下裡</p>
+<p id="nav-77b3df39d6c22754" data-navigation-anchor="">物質的騙局 匆匆的螞蟻</p>
+<p id="nav-b45e2063657d1839" data-navigation-anchor="">沒有文化的人不傷心” (引自沒有理想的人不傷心)</p>
+<p id="nav-f6f5d5c4d4d0c69c" data-navigation-anchor="">雖然整部小說後期，為了寫作的節奏考量，拿掉了一些我希望他敘述的遊記部分，解謎部分也因為為了減少閱讀上的焦躁感而降低不少解釋，相較之下一世之尊這部分就比較完整的寫出來(雖然當初為了解開謎題我偷偷跳過不少)，但我還是希望能更完整一點。</p>
+<p id="nav-23c3d12bc6adb659" data-navigation-anchor="">整部小說給我一個在廢土上追尋真相及找尋未來的人的追求，你想守護什麼？</p>
+<p id="nav-972fb727bc70fcf8" data-navigation-anchor="">“為了全人類”</p>
+<p id="nav-13e33fcd132bc943" data-navigation-anchor=""> <img class="blogger-import-image" loading="lazy" decoding="async" width="305" height="403" src="/images/blogger-import/blogger-7d8d0e7153/01.webp" alt="圖片 1"> (圖片來源：起點中文網)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2023/09/blog-post.html -->
 
     </div>

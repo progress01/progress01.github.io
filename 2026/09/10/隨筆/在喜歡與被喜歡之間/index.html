@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -662,46 +670,46 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>以前我很容易讓喜歡慢慢長大，直到訊息、反應與自己有沒有被喜歡，都變成這份喜歡的一部分。最近我開始想，也許可以先只是期待下一次見面，讓喜歡淡淡地待在那裡。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-3e0cd6d5871ff224" data-navigation-anchor="">以前我很容易讓喜歡慢慢長大，直到訊息、反應與自己有沒有被喜歡，都變成這份喜歡的一部分。最近我開始想，也許可以先只是期待下一次見面，讓喜歡淡淡地待在那裡。</p>
 <span id="more"></span>
-<p>最近一直在想一件事情：我好像很容易把一件事情的結果，直接上升成對一個人的判斷，尤其那個人是自己的時候。</p>
-<p>對方訊息沒有想像中熱絡，就變成「我是不是很難被喜歡」；一段關係沒有往前，就變成「是不是我本身沒有吸引力」。可是這些事情本來就不完全是同一題。</p>
-<h2 id="我很容易從事情跳到自己"><a href="#我很容易從事情跳到自己" class="headerlink" title="我很容易從事情跳到自己"></a>我很容易從事情跳到自己</h2><p>事情發生的速度很快，解釋卻會一路往更深的地方跑。</p>
-<p>一開始可能只是：</p>
+<p id="nav-7012234551d56325" data-navigation-anchor="">最近一直在想一件事情：我好像很容易把一件事情的結果，直接上升成對一個人的判斷，尤其那個人是自己的時候。</p>
+<p id="nav-25a3aa02db493a51" data-navigation-anchor="">對方訊息沒有想像中熱絡，就變成「我是不是很難被喜歡」；一段關係沒有往前，就變成「是不是我本身沒有吸引力」。可是這些事情本來就不完全是同一題。</p>
+<h2 id="我很容易從事情跳到自己" data-navigation-anchor=""><a href="#我很容易從事情跳到自己" class="headerlink" title="我很容易從事情跳到自己"></a>我很容易從事情跳到自己</h2><p id="nav-5b322553612491c2" data-navigation-anchor="">事情發生的速度很快，解釋卻會一路往更深的地方跑。</p>
+<p id="nav-1b1e05633c70f043" data-navigation-anchor="">一開始可能只是：</p>
 <blockquote>
-<p>今天的訊息比平常少。</p>
+<p id="nav-a8f37dca1fea1859" data-navigation-anchor="">今天的訊息比平常少。</p>
 </blockquote>
-<p>過一會兒就變成：</p>
+<p id="nav-bf87934d87298bdc" data-navigation-anchor="">過一會兒就變成：</p>
 <blockquote>
-<p>她是不是沒有那麼想和我聊天？</p>
+<p id="nav-57d2e251763e6815" data-navigation-anchor="">她是不是沒有那麼想和我聊天？</p>
 </blockquote>
-<p>再過一會兒，可能已經變成：</p>
+<p id="nav-061de608a7842c1c" data-navigation-anchor="">再過一會兒，可能已經變成：</p>
 <blockquote>
-<p>我是不是本來就很難讓人喜歡？</p>
+<p id="nav-e7d49fe85ad66261" data-navigation-anchor="">我是不是本來就很難讓人喜歡？</p>
 </blockquote>
-<p>最後甚至會變成：</p>
+<p id="nav-02ba523d87867fa7" data-navigation-anchor="">最後甚至會變成：</p>
 <blockquote>
-<p>我是不是一個不值得被喜歡的人？</p>
+<p id="nav-e30d1cfb12b980c8" data-navigation-anchor="">我是不是一個不值得被喜歡的人？</p>
 </blockquote>
-<p>這幾句話看起來有關係，實際上卻需要完全不同的證據。第一句是觀察，第二句是對關係的推測，第三句可能是在描述一種經驗，最後一句則已經變成對自我價值的判決。</p>
-<p>我常常還沒有把第一件事情弄清楚，就已經跳到最後一個結論。後來在討論這些事情的時候，我才開始注意到，這中間其實隔著好幾步：我看見了什麼、我怎麼理解這段關係，以及我最後怎麼理解自己。人腦很喜歡替複雜問題找一個簡單原因，而「都是我的問題」剛好是一個非常方便的答案。它讓事情看起來有解釋，卻不一定公平。</p>
-<h2 id="心動、回應與被喜歡不是同一件事情"><a href="#心動、回應與被喜歡不是同一件事情" class="headerlink" title="心動、回應與被喜歡不是同一件事情"></a>心動、回應與被喜歡不是同一件事情</h2><p>我以前也會把「我很容易喜歡別人」和「我很難讓別人喜歡我」放在一起比較，好像前者證明我投入很多，後者就證明我本身缺少某種東西。</p>
-<p>但心動只是我的感受。它代表我被一個人吸引、在意一個人，或期待下一次見面；對方是否有同樣的感覺，則是另一個人的感受與一段關係的結果。兩者可以有關，卻不能互相證明。</p>
-<p>後來我開始覺得，下面幾句話也不完全相同：</p>
+<p id="nav-bcccc730b64f0ecb" data-navigation-anchor="">這幾句話看起來有關係，實際上卻需要完全不同的證據。第一句是觀察，第二句是對關係的推測，第三句可能是在描述一種經驗，最後一句則已經變成對自我價值的判決。</p>
+<p id="nav-e6c6c9db43921c2c" data-navigation-anchor="">我常常還沒有把第一件事情弄清楚，就已經跳到最後一個結論。後來在討論這些事情的時候，我才開始注意到，這中間其實隔著好幾步：我看見了什麼、我怎麼理解這段關係，以及我最後怎麼理解自己。人腦很喜歡替複雜問題找一個簡單原因，而「都是我的問題」剛好是一個非常方便的答案。它讓事情看起來有解釋，卻不一定公平。</p>
+<h2 id="心動、回應與被喜歡不是同一件事情" data-navigation-anchor=""><a href="#心動、回應與被喜歡不是同一件事情" class="headerlink" title="心動、回應與被喜歡不是同一件事情"></a>心動、回應與被喜歡不是同一件事情</h2><p id="nav-864b7a0825f40a4c" data-navigation-anchor="">我以前也會把「我很容易喜歡別人」和「我很難讓別人喜歡我」放在一起比較，好像前者證明我投入很多，後者就證明我本身缺少某種東西。</p>
+<p id="nav-ca5ba444d9227046" data-navigation-anchor="">但心動只是我的感受。它代表我被一個人吸引、在意一個人，或期待下一次見面；對方是否有同樣的感覺，則是另一個人的感受與一段關係的結果。兩者可以有關，卻不能互相證明。</p>
+<p id="nav-bafb47caf60c8597" data-navigation-anchor="">後來我開始覺得，下面幾句話也不完全相同：</p>
 <blockquote>
-<p>我目前沒有感受到被喜歡。</p>
-<p>我很少有明確被喜歡的經驗。</p>
-<p>我是不是一個很難被喜歡的人？</p>
+<p id="nav-213fa586a35464e4" data-navigation-anchor="">我目前沒有感受到被喜歡。</p>
+<p id="nav-c4813f8a25624256" data-navigation-anchor="">我很少有明確被喜歡的經驗。</p>
+<p id="nav-74f6e58033f745d2" data-navigation-anchor="">我是不是一個很難被喜歡的人？</p>
 </blockquote>
-<p>前兩句比較接近我現在知道的事情，第三句則是我根據經驗形成的疑問。它們可以互相連在一起，卻不能直接畫上等號。我目前確實沒有很明確感受到對方往我這裡靠近的經驗，也很少有被喜歡的經驗。這會讓我覺得被喜歡好像很難，但「我沒有感受到」和「我是一個很難被喜歡的人」仍然是不同的事情。</p>
-<p>我覺得這個分開很重要。不是因為這樣就能讓失落消失，而是我不想再讓一段關係的結果，直接變成對自己的判決。</p>
-<h2 id="訊息熱絡可以是線索，但不能變成判決"><a href="#訊息熱絡可以是線索，但不能變成判決" class="headerlink" title="訊息熱絡可以是線索，但不能變成判決"></a>訊息熱絡可以是線索，但不能變成判決</h2><p>我很容易用訊息的速度、長度與主動程度，當成關係的溫度計。因為這些東西最容易被看見，也最容易被拿來比較。今天回得快一點，好像就有希望；晚一點，就開始想是不是哪裡變了。</p>
-<p>可是訊息熱絡頂多是一個線索，不足以單獨完成判斷。每個人的生活節奏、表達習慣與當下狀態都不同。如果得失心太重，我就不再只是和對方聊天，而是在監控每一次互動，想從一則訊息裡確認自己有沒有被選擇。當我一直從訊息尋找答案時，其實也在不斷替關係打分數。</p>
-<p>拿掉一點得失心之後，我好像比較能回到相處本身：期待見面，見面的時候好好相處，見面之後不要急著替整段關係評分。我仍然可以期待有其他事情發生，但不需要每一次訊息都先替那件事投票。</p>
-<h2 id="淡淡的喜歡，也可以先放在那裡"><a href="#淡淡的喜歡，也可以先放在那裡" class="headerlink" title="淡淡的喜歡，也可以先放在那裡"></a>淡淡的喜歡，也可以先放在那裡</h2><p>以前我喜歡一個人時，很容易讓喜歡慢慢長大。對方回得快一點、聊得久一點，或是主動找我，我就覺得這份喜歡好像有了新的證據；如果互動變少，又會開始想是不是哪裡出了問題。喜歡原本只是我的感受，後來卻慢慢背上了很多需要被確認的事情。</p>
-<p>這次我注意到，如果少一點得失心，好像可以只是淡淡地喜歡一個人。我還是會期待見面，會因為想到對方而有一點開心，也希望未來有其他事情發生；但不需要讓每一次訊息、每一個反應，都負責證明對方喜不喜歡我。</p>
-<p>我現在好像比較能把真正的見面與相處放在前面，而不是只靠訊息預測關係。喜歡是我現在的感受，期待是我對未來保留的一個位置，都不必立刻變成答案。</p>
-<h2 id="有些事情要分開"><a href="#有些事情要分開" class="headerlink" title="有些事情要分開"></a>有些事情要分開</h2><p>我在討論這些事情之後，開始覺得有些層次還是需要分開來看。我知道這樣整理有點太工整，甚至有點像在替自己的感情做個案分析，但當時確實需要先把它們分開，才不會又全部混成「是不是我不夠好」。</p>
+<p id="nav-00a4f015251b1a78" data-navigation-anchor="">前兩句比較接近我現在知道的事情，第三句則是我根據經驗形成的疑問。它們可以互相連在一起，卻不能直接畫上等號。我目前確實沒有很明確感受到對方往我這裡靠近的經驗，也很少有被喜歡的經驗。這會讓我覺得被喜歡好像很難，但「我沒有感受到」和「我是一個很難被喜歡的人」仍然是不同的事情。</p>
+<p id="nav-875a7de32d3a3796" data-navigation-anchor="">我覺得這個分開很重要。不是因為這樣就能讓失落消失，而是我不想再讓一段關係的結果，直接變成對自己的判決。</p>
+<h2 id="訊息熱絡可以是線索，但不能變成判決" data-navigation-anchor=""><a href="#訊息熱絡可以是線索，但不能變成判決" class="headerlink" title="訊息熱絡可以是線索，但不能變成判決"></a>訊息熱絡可以是線索，但不能變成判決</h2><p id="nav-6df4ff959f278038" data-navigation-anchor="">我很容易用訊息的速度、長度與主動程度，當成關係的溫度計。因為這些東西最容易被看見，也最容易被拿來比較。今天回得快一點，好像就有希望；晚一點，就開始想是不是哪裡變了。</p>
+<p id="nav-e8663d1f8d5f383b" data-navigation-anchor="">可是訊息熱絡頂多是一個線索，不足以單獨完成判斷。每個人的生活節奏、表達習慣與當下狀態都不同。如果得失心太重，我就不再只是和對方聊天，而是在監控每一次互動，想從一則訊息裡確認自己有沒有被選擇。當我一直從訊息尋找答案時，其實也在不斷替關係打分數。</p>
+<p id="nav-a079740fafa0b7de" data-navigation-anchor="">拿掉一點得失心之後，我好像比較能回到相處本身：期待見面，見面的時候好好相處，見面之後不要急著替整段關係評分。我仍然可以期待有其他事情發生，但不需要每一次訊息都先替那件事投票。</p>
+<h2 id="淡淡的喜歡，也可以先放在那裡" data-navigation-anchor=""><a href="#淡淡的喜歡，也可以先放在那裡" class="headerlink" title="淡淡的喜歡，也可以先放在那裡"></a>淡淡的喜歡，也可以先放在那裡</h2><p id="nav-74be6e78441ed1ef" data-navigation-anchor="">以前我喜歡一個人時，很容易讓喜歡慢慢長大。對方回得快一點、聊得久一點，或是主動找我，我就覺得這份喜歡好像有了新的證據；如果互動變少，又會開始想是不是哪裡出了問題。喜歡原本只是我的感受，後來卻慢慢背上了很多需要被確認的事情。</p>
+<p id="nav-7a96b4fd827b0b21" data-navigation-anchor="">這次我注意到，如果少一點得失心，好像可以只是淡淡地喜歡一個人。我還是會期待見面，會因為想到對方而有一點開心，也希望未來有其他事情發生；但不需要讓每一次訊息、每一個反應，都負責證明對方喜不喜歡我。</p>
+<p id="nav-a49cd3d6a758827a" data-navigation-anchor="">我現在好像比較能把真正的見面與相處放在前面，而不是只靠訊息預測關係。喜歡是我現在的感受，期待是我對未來保留的一個位置，都不必立刻變成答案。</p>
+<h2 id="有些事情要分開" data-navigation-anchor=""><a href="#有些事情要分開" class="headerlink" title="有些事情要分開"></a>有些事情要分開</h2><p id="nav-143fd1d1fbdfb924" data-navigation-anchor="">我在討論這些事情之後，開始覺得有些層次還是需要分開來看。我知道這樣整理有點太工整，甚至有點像在替自己的感情做個案分析，但當時確實需要先把它們分開，才不會又全部混成「是不是我不夠好」。</p>
 <table>
 <thead>
 <tr>
@@ -731,20 +739,20 @@
 <td>沒被選擇就是我不值得。</td>
 </tr>
 </tbody></table>
-<p>這張表看起來有點像我已經很知道自己在做什麼，但其實比較接近一個提醒：先是事情本身，實際發生了什麼？例如今天的訊息比較少，或是見面時沒有出現我期待的反應。接著才是關係：這可能反映了什麼互動狀態？它可以讓我感到失落，也可以讓我重新想想自己和對方現在的位置，但還不足以直接替整段關係下結論。</p>
-<p>再來是行動。我確實可能太少表達、太習慣停在朋友的位置，也可能很少創造讓對方認識自己的機會。這些是可以觀察的行為，也可能是我之後想調整的地方，但不需要立刻被包裝成性格缺陷。</p>
-<p>最後才是自我價值。這件事能不能判定我是什麼人？我現在還是會因為沒有被選擇而懷疑自己，但後來想想，「我這次沒有把喜歡表達清楚」和「我就是一個沒有吸引力的人」之間，差的不只是語氣，而是還留下了不同的理解方式。</p>
-<h2 id="分開，不是替自己找藉口"><a href="#分開，不是替自己找藉口" class="headerlink" title="分開，不是替自己找藉口"></a>分開，不是替自己找藉口</h2><p>我也不想把「不要上升到人的不足」理解成什麼都不用檢討。如果同一種互動問題一直重複發生，當然還是需要看自己的部分：是不是太被動、是不是不敢讓人知道自己的在意、是不是只會等待對方先給明確訊號。</p>
-<p>只是檢討應該停在行為與選擇，不必一路追到人格判決。</p>
-<p>我可以承認自己不太會推進關係，也可以承認自己很容易把喜歡放大，卻不必因此認定自己不值得被喜歡。前者會告訴我下一步能練什麼，後者只會讓我更害怕靠近任何人。</p>
-<p>有時候我還是會把事情往自己身上收，但現在比較能在中間停一下。對方沒有靠近，可能是對方的選擇、關係的狀態或時機的問題；我能做的，是看看自己有沒有想表達、想靠近或想調整的地方，而不是急著把所有原因都歸結成自己的不足。</p>
-<h2 id="先不要急著替事情下最後結論"><a href="#先不要急著替事情下最後結論" class="headerlink" title="先不要急著替事情下最後結論"></a>先不要急著替事情下最後結論</h2><p>我現在想練習的，大概只是多停一下。不是要求自己不要在意，也不是要假裝被喜歡不重要，而是在感覺出現的時候，先不要急著替事情下最後結論。</p>
-<p>先說清楚發生了什麼，再想它可能代表什麼；分辨哪些是我能調整的行為，哪些是對方的選擇。關係沒有往期待的方向發展，和我是不是一個值得被喜歡的人，並不是同一個答案。只是我現在還不能很有把握地把這兩件事情分得很好。</p>
-<p>我可能還是會在意，也還是會因為沒有被選擇而難過。我現在確實沒有明確感受到被喜歡，也仍然會覺得被喜歡好像很難。只是下次再出現這些感覺時，我希望不要那麼快把它們全部收束成一句：</p>
+<p id="nav-521f64f4957e4626" data-navigation-anchor="">這張表看起來有點像我已經很知道自己在做什麼，但其實比較接近一個提醒：先是事情本身，實際發生了什麼？例如今天的訊息比較少，或是見面時沒有出現我期待的反應。接著才是關係：這可能反映了什麼互動狀態？它可以讓我感到失落，也可以讓我重新想想自己和對方現在的位置，但還不足以直接替整段關係下結論。</p>
+<p id="nav-0e7fda514cf2176c" data-navigation-anchor="">再來是行動。我確實可能太少表達、太習慣停在朋友的位置，也可能很少創造讓對方認識自己的機會。這些是可以觀察的行為，也可能是我之後想調整的地方，但不需要立刻被包裝成性格缺陷。</p>
+<p id="nav-4f85aeb7be84804d" data-navigation-anchor="">最後才是自我價值。這件事能不能判定我是什麼人？我現在還是會因為沒有被選擇而懷疑自己，但後來想想，「我這次沒有把喜歡表達清楚」和「我就是一個沒有吸引力的人」之間，差的不只是語氣，而是還留下了不同的理解方式。</p>
+<h2 id="分開，不是替自己找藉口" data-navigation-anchor=""><a href="#分開，不是替自己找藉口" class="headerlink" title="分開，不是替自己找藉口"></a>分開，不是替自己找藉口</h2><p id="nav-90a52b5c57982367" data-navigation-anchor="">我也不想把「不要上升到人的不足」理解成什麼都不用檢討。如果同一種互動問題一直重複發生，當然還是需要看自己的部分：是不是太被動、是不是不敢讓人知道自己的在意、是不是只會等待對方先給明確訊號。</p>
+<p id="nav-3fddbc2f7d51cf48" data-navigation-anchor="">只是檢討應該停在行為與選擇，不必一路追到人格判決。</p>
+<p id="nav-daeed53e047d1603" data-navigation-anchor="">我可以承認自己不太會推進關係，也可以承認自己很容易把喜歡放大，卻不必因此認定自己不值得被喜歡。前者會告訴我下一步能練什麼，後者只會讓我更害怕靠近任何人。</p>
+<p id="nav-d6051e88da743413" data-navigation-anchor="">有時候我還是會把事情往自己身上收，但現在比較能在中間停一下。對方沒有靠近，可能是對方的選擇、關係的狀態或時機的問題；我能做的，是看看自己有沒有想表達、想靠近或想調整的地方，而不是急著把所有原因都歸結成自己的不足。</p>
+<h2 id="先不要急著替事情下最後結論" data-navigation-anchor=""><a href="#先不要急著替事情下最後結論" class="headerlink" title="先不要急著替事情下最後結論"></a>先不要急著替事情下最後結論</h2><p id="nav-d9985b3ea108889a" data-navigation-anchor="">我現在想練習的，大概只是多停一下。不是要求自己不要在意，也不是要假裝被喜歡不重要，而是在感覺出現的時候，先不要急著替事情下最後結論。</p>
+<p id="nav-638fd1a5d14d6da1" data-navigation-anchor="">先說清楚發生了什麼，再想它可能代表什麼；分辨哪些是我能調整的行為，哪些是對方的選擇。關係沒有往期待的方向發展，和我是不是一個值得被喜歡的人，並不是同一個答案。只是我現在還不能很有把握地把這兩件事情分得很好。</p>
+<p id="nav-b131192c8a65787e" data-navigation-anchor="">我可能還是會在意，也還是會因為沒有被選擇而難過。我現在確實沒有明確感受到被喜歡，也仍然會覺得被喜歡好像很難。只是下次再出現這些感覺時，我希望不要那麼快把它們全部收束成一句：</p>
 <blockquote>
-<p><strong>果然是我不夠好。</strong></p>
+<p id="nav-47c505cb7e68d5f9" data-navigation-anchor=""><strong>果然是我不夠好。</strong></p>
 </blockquote>
-<p>我還是會期待被喜歡，也還是希望有其他事情發生。但現在，好像可以先只是期待下一次見面，讓喜歡淡淡地待在那裡。</p>
+<p id="nav-3669cf943c8b9444" data-navigation-anchor="">我還是會期待被喜歡，也還是希望有其他事情發生。但現在，好像可以先只是期待下一次見面，讓喜歡淡淡地待在那裡。</p>
 
     </div>
 
@@ -789,13 +797,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" rel="prev" title="歌曲推薦-靜靜的">
-                  <i class="fa fa-angle-left"></i> 歌曲推薦-靜靜的
+                <a href="/2026/09/10/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%80%BC%E5%BE%97%E7%9A%84%E7%AD%89%E5%BE%85/" rel="prev" title="值得的等待（觀影紀錄）">
+                  <i class="fa fa-angle-left"></i> 值得的等待（觀影紀錄）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/" rel="next" title="歌曲推薦-好心分手">
-                  歌曲推薦-好心分手 <i class="fa fa-angle-right"></i>
+                <a href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" rel="next" title="歌曲推薦-靜靜的">
+                  歌曲推薦-靜靜的 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

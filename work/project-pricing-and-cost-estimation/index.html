@@ -95,6 +95,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -149,7 +150,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -173,6 +174,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -208,19 +216,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -320,15 +328,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -336,19 +336,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -408,11 +416,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -568,7 +576,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -664,173 +672,173 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我重新整理專案報價，先把真正成本與可行工期拆開，再談公司預期的利潤。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-6d0ede680b5cd97d" data-navigation-anchor="">我重新整理專案報價，先把真正成本與可行工期拆開，再談公司預期的利潤。</p>
 <span id="more"></span>
-<p>這是一篇把專案討論去脈絡化後留下的工作紀錄。人物、公司、機關、專案名稱與實際金額都不放進來，只保留在估算報價時可以反覆使用的思考方式。</p>
-<p>專案報價不是把工程師的開發時間乘上一個數字，也不是先猜一個客戶可能接受的價格。比較完整的想法是：先找出專案真正會消耗的成本，再確認工期是否真的做得到，最後才把公司預期的利潤放進報價。</p>
-<h1 id="一、先把報價拆成成本與利潤"><a href="#一、先把報價拆成成本與利潤" class="headerlink" title="一、先把報價拆成成本與利潤"></a>一、先把報價拆成成本與利潤</h1><p>最基本的結構可以寫成：</p>
+<p id="nav-6edfd285008b7d6d" data-navigation-anchor="">這是一篇把專案討論去脈絡化後留下的工作紀錄。人物、公司、機關、專案名稱與實際金額都不放進來，只保留在估算報價時可以反覆使用的思考方式。</p>
+<p id="nav-c321ac54b61d7841" data-navigation-anchor="">專案報價不是把工程師的開發時間乘上一個數字，也不是先猜一個客戶可能接受的價格。比較完整的想法是：先找出專案真正會消耗的成本，再確認工期是否真的做得到，最後才把公司預期的利潤放進報價。</p>
+<h1 id="一、先把報價拆成成本與利潤"><a href="#一、先把報價拆成成本與利潤" class="headerlink" title="一、先把報價拆成成本與利潤"></a>一、先把報價拆成成本與利潤</h1><p id="nav-5a07d34aa953079c" data-navigation-anchor="">最基本的結構可以寫成：</p>
 <blockquote>
-<p><strong>專案報價＝專案總成本＋公司預期利潤</strong></p>
+<p id="nav-08c2a4a900a516ec" data-navigation-anchor=""><strong>專案報價＝專案總成本＋公司預期利潤</strong></p>
 </blockquote>
-<p>這句話的重點不是公式本身，而是「總成本」不能只算工程師寫程式的時間。只要專案會占用公司的人力、交通、工具、檢測或後續支援，就應該列進成本底線。</p>
-<p>專案總成本至少可以分成：</p>
+<p id="nav-e146d2a1e4c888dd" data-navigation-anchor="">這句話的重點不是公式本身，而是「總成本」不能只算工程師寫程式的時間。只要專案會占用公司的人力、交通、工具、檢測或後續支援，就應該列進成本底線。</p>
+<p id="nav-7ee216fd7fcefb9a" data-navigation-anchor="">專案總成本至少可以分成：</p>
 <ul>
-<li>開發人力成本。</li>
-<li>PM、維運或其他角色的投入成本。</li>
-<li>測試、驗證與第三方檢測費用。</li>
-<li>會議、出差、駐點與交通成本。</li>
-<li>行政處理、工具、帳號與設備耗損。</li>
-<li>測試修正、驗收溝通與上線支援。</li>
-<li>不可預期變更所需要的緩衝成本。</li>
+<li id="nav-a7a3e5fc9931d854" data-navigation-anchor="">開發人力成本。</li>
+<li id="nav-171bfdf3ef3aea37" data-navigation-anchor="">PM、維運或其他角色的投入成本。</li>
+<li id="nav-d314552830b61831" data-navigation-anchor="">測試、驗證與第三方檢測費用。</li>
+<li id="nav-0fc30e2beda2a4f8" data-navigation-anchor="">會議、出差、駐點與交通成本。</li>
+<li id="nav-e34a4e705375255d" data-navigation-anchor="">行政處理、工具、帳號與設備耗損。</li>
+<li id="nav-eef91575c11c9a0c" data-navigation-anchor="">測試修正、驗收溝通與上線支援。</li>
+<li id="nav-32785690218d12e7" data-navigation-anchor="">不可預期變更所需要的緩衝成本。</li>
 </ul>
-<p>如果成本底線沒有算完整，後面設定的利潤只是在錯誤的基礎上加上去，報價看似有賺，實際執行時卻可能被額外工時吃掉。</p>
-<h1 id="二、毛利率和加成率不是同一件事"><a href="#二、毛利率和加成率不是同一件事" class="headerlink" title="二、毛利率和加成率不是同一件事"></a>二、毛利率和加成率不是同一件事</h1><p>估算時很容易把「成本加上利潤」和「設定毛利率」混在一起。兩者的算法不同，最好在報價前先說清楚採用哪一種。</p>
-<p>如果是直接加上一筆預期利潤：</p>
+<p id="nav-d0717e868ffb5e57" data-navigation-anchor="">如果成本底線沒有算完整，後面設定的利潤只是在錯誤的基礎上加上去，報價看似有賺，實際執行時卻可能被額外工時吃掉。</p>
+<h1 id="二、毛利率和加成率不是同一件事"><a href="#二、毛利率和加成率不是同一件事" class="headerlink" title="二、毛利率和加成率不是同一件事"></a>二、毛利率和加成率不是同一件事</h1><p id="nav-fc9eabfbd99b26c7" data-navigation-anchor="">估算時很容易把「成本加上利潤」和「設定毛利率」混在一起。兩者的算法不同，最好在報價前先說清楚採用哪一種。</p>
+<p id="nav-3ada1c550d5657f8" data-navigation-anchor="">如果是直接加上一筆預期利潤：</p>
 <blockquote>
-<p><strong>報價＝總成本＋目標利潤金額</strong></p>
+<p id="nav-72db88a514cea34d" data-navigation-anchor=""><strong>報價＝總成本＋目標利潤金額</strong></p>
 </blockquote>
-<p>如果是希望報價達到某個目標毛利率：</p>
+<p id="nav-2db3a1a772b07cf4" data-navigation-anchor="">如果是希望報價達到某個目標毛利率：</p>
 <blockquote>
-<p><strong>報價＝總成本 ÷（1－目標毛利率）</strong></p>
+<p id="nav-f2fa6f50bec8a0ca" data-navigation-anchor=""><strong>報價＝總成本 ÷（1－目標毛利率）</strong></p>
 </blockquote>
-<p>例如總成本是 100，目標毛利率是 20%，報價應是 125，而不是 120。120 是在成本上加 20% 的加成，實際毛利率只有約 16.7%。</p>
-<p>因此，文件或會議中如果只寫「利潤抓 20%」，還不夠精確，應該補充是：</p>
+<p id="nav-a2c15b437e5009db" data-navigation-anchor="">例如總成本是 100，目標毛利率是 20%，報價應是 125，而不是 120。120 是在成本上加 20% 的加成，實際毛利率只有約 16.7%。</p>
+<p id="nav-a3c1755b16b971ed" data-navigation-anchor="">因此，文件或會議中如果只寫「利潤抓 20%」，還不夠精確，應該補充是：</p>
 <ul>
-<li>成本加成率。</li>
-<li>報價毛利率。</li>
-<li>或固定的目標利潤金額。</li>
+<li id="nav-1317ca1893327fe3" data-navigation-anchor="">成本加成率。</li>
+<li id="nav-9149c1027d7393c5" data-navigation-anchor="">報價毛利率。</li>
+<li id="nav-86b45a888ef8b308" data-navigation-anchor="">或固定的目標利潤金額。</li>
 </ul>
-<p>這個定義如果沒有先確認，後面很容易出現大家都以為自己算對，但最後報價不同的情況。</p>
-<h1 id="三、工期不能只看功能清單"><a href="#三、工期不能只看功能清單" class="headerlink" title="三、工期不能只看功能清單"></a>三、工期不能只看功能清單</h1><p>估算功能時，不能只寫「做一個功能需要幾個月」，而要拆成可以被檢查的工項。例如：</p>
+<p id="nav-8adebf4e0259b9bd" data-navigation-anchor="">這個定義如果沒有先確認，後面很容易出現大家都以為自己算對，但最後報價不同的情況。</p>
+<h1 id="三、工期不能只看功能清單"><a href="#三、工期不能只看功能清單" class="headerlink" title="三、工期不能只看功能清單"></a>三、工期不能只看功能清單</h1><p id="nav-b388b36143b966ba" data-navigation-anchor="">估算功能時，不能只寫「做一個功能需要幾個月」，而要拆成可以被檢查的工項。例如：</p>
 <ul>
-<li>需求理解與規格確認。</li>
-<li>資料結構、介面或既有系統調查。</li>
-<li>核心功能開發。</li>
-<li>前後台串接與權限處理。</li>
-<li>測試資料準備。</li>
-<li>整合測試與錯誤修正。</li>
-<li>使用者驗收與修改。</li>
-<li>部署、交接與文件整理。</li>
-<li>上線後的觀察與支援。</li>
+<li id="nav-3973fe7dd96e5078" data-navigation-anchor="">需求理解與規格確認。</li>
+<li id="nav-ea935ab06c58729f" data-navigation-anchor="">資料結構、介面或既有系統調查。</li>
+<li id="nav-e781963dcd5637c8" data-navigation-anchor="">核心功能開發。</li>
+<li id="nav-11328bb287779f62" data-navigation-anchor="">前後台串接與權限處理。</li>
+<li id="nav-9933f3d92aea52da" data-navigation-anchor="">測試資料準備。</li>
+<li id="nav-5082270ca6f83386" data-navigation-anchor="">整合測試與錯誤修正。</li>
+<li id="nav-3c211af58faf7bfc" data-navigation-anchor="">使用者驗收與修改。</li>
+<li id="nav-01b91529047a5815" data-navigation-anchor="">部署、交接與文件整理。</li>
+<li id="nav-2a3f69eb5351b4d9" data-navigation-anchor="">上線後的觀察與支援。</li>
 </ul>
-<p>功能本身可能只需要一段時間，但需求確認、等待資料、第三方協調、驗收反覆修改與上線支援，往往會把整體時程拉長。這些都不是「額外發生的小事」，而是專案工期的一部分。</p>
-<h2 id="工程師投入有實際上限"><a href="#工程師投入有實際上限" class="headerlink" title="工程師投入有實際上限"></a>工程師投入有實際上限</h2><p>本次估算中，一個重要的警示是：單一工程師不可能長時間、全年全職只投入同一個專案。即使帳面上把功能加總後可以排出九個月以上，實務上也不代表真的能照那個方式執行。</p>
-<p>可以先把單一工程師約六個月的專案投入視為一條警示線：</p>
+<p id="nav-50c81bffccbca8f4" data-navigation-anchor="">功能本身可能只需要一段時間，但需求確認、等待資料、第三方協調、驗收反覆修改與上線支援，往往會把整體時程拉長。這些都不是「額外發生的小事」，而是專案工期的一部分。</p>
+<h2 id="工程師投入有實際上限" data-navigation-anchor=""><a href="#工程師投入有實際上限" class="headerlink" title="工程師投入有實際上限"></a>工程師投入有實際上限</h2><p id="nav-db25d906f5e53b88" data-navigation-anchor="">本次估算中，一個重要的警示是：單一工程師不可能長時間、全年全職只投入同一個專案。即使帳面上把功能加總後可以排出九個月以上，實務上也不代表真的能照那個方式執行。</p>
+<p id="nav-363bbe68de44e71f" data-navigation-anchor="">可以先把單一工程師約六個月的專案投入視為一條警示線：</p>
 <ul>
-<li>估到六個月，代表已經相當吃緊，需要檢查是否漏算其他工作。</li>
-<li>超過六個月，應該重新檢查功能範圍、投入比例與其他專案的排程。</li>
-<li>超過九個月，通常不應直接當成單一工程師可以持續完成的方案，而要考慮拆階段、縮小 MVP 或增加人力。</li>
+<li id="nav-2cb90a9a861ad027" data-navigation-anchor="">估到六個月，代表已經相當吃緊，需要檢查是否漏算其他工作。</li>
+<li id="nav-57dc997822cb32b0" data-navigation-anchor="">超過六個月，應該重新檢查功能範圍、投入比例與其他專案的排程。</li>
+<li id="nav-48d5fc92802ee6de" data-navigation-anchor="">超過九個月，通常不應直接當成單一工程師可以持續完成的方案，而要考慮拆階段、縮小 MVP 或增加人力。</li>
 </ul>
-<p>這不是所有專案都適用的產業定律，而是一個提醒估算者不要只看紙面總工時的警示線。真正要確認的是：工程師每個月能投入多少比例，以及這個比例能不能持續。</p>
-<h1 id="四、用人月拆解，而不是只報一個總月份"><a href="#四、用人月拆解，而不是只報一個總月份" class="headerlink" title="四、用人月拆解，而不是只報一個總月份"></a>四、用人月拆解，而不是只報一個總月份</h1><p>比較穩妥的估算方式，是先把功能拆成工項，再估算每個角色的投入比例：</p>
+<p id="nav-99df8b88b22aa962" data-navigation-anchor="">這不是所有專案都適用的產業定律，而是一個提醒估算者不要只看紙面總工時的警示線。真正要確認的是：工程師每個月能投入多少比例，以及這個比例能不能持續。</p>
+<h1 id="四、用人月拆解，而不是只報一個總月份"><a href="#四、用人月拆解，而不是只報一個總月份" class="headerlink" title="四、用人月拆解，而不是只報一個總月份"></a>四、用人月拆解，而不是只報一個總月份</h1><p id="nav-1d42f9124dd40cb9" data-navigation-anchor="">比較穩妥的估算方式，是先把功能拆成工項，再估算每個角色的投入比例：</p>
 <blockquote>
-<p><strong>工項 → 預估人天或人月 → 每月投入比例 → 人力成本 → 緩衝 → 專案總工期</strong></p>
+<p id="nav-2f6e43796a121899" data-navigation-anchor=""><strong>工項 → 預估人天或人月 → 每月投入比例 → 人力成本 → 緩衝 → 專案總工期</strong></p>
 </blockquote>
-<p>例如同一個月裡，工程師可能只投入專案的一部分時間，其他時間還要處理維運、既有案件、臨時問題或內部工作。因此「六個月的工作量」不一定等於「六個月後可以交付」。</p>
-<p>估算時要分開看三個數字：</p>
+<p id="nav-659548cc8e49d4c0" data-navigation-anchor="">例如同一個月裡，工程師可能只投入專案的一部分時間，其他時間還要處理維運、既有案件、臨時問題或內部工作。因此「六個月的工作量」不一定等於「六個月後可以交付」。</p>
+<p id="nav-37184ffb23fdc1c5" data-navigation-anchor="">估算時要分開看三個數字：</p>
 <ul>
-<li><strong>工作量</strong>：實際需要多少人天或人月。</li>
-<li><strong>投入比例</strong>：每個角色每月可以分配多少時間。</li>
-<li><strong>日曆工期</strong>：從開始到交付實際經過多久。</li>
+<li id="nav-658fd08f6727eebe" data-navigation-anchor=""><strong>工作量</strong>：實際需要多少人天或人月。</li>
+<li id="nav-b12959ec8db36f68" data-navigation-anchor=""><strong>投入比例</strong>：每個角色每月可以分配多少時間。</li>
+<li id="nav-c3f3fd0b041bfd8f" data-navigation-anchor=""><strong>日曆工期</strong>：從開始到交付實際經過多久。</li>
 </ul>
-<p>工作量相同時，只要投入比例不同，日曆工期就會不同。這也是為什麼只用一個總月份報價，通常不足以說明專案是否可行。</p>
-<h1 id="五、角色互補不是免費的支援"><a href="#五、角色互補不是免費的支援" class="headerlink" title="五、角色互補不是免費的支援"></a>五、角色互補不是免費的支援</h1><p>當工程師的功能開發時間已接近上限，PM、維運或其他角色可能需要承接部分非工程任務，例如：</p>
+<p id="nav-6e323396ad035b34" data-navigation-anchor="">工作量相同時，只要投入比例不同，日曆工期就會不同。這也是為什麼只用一個總月份報價，通常不足以說明專案是否可行。</p>
+<h1 id="五、角色互補不是免費的支援"><a href="#五、角色互補不是免費的支援" class="headerlink" title="五、角色互補不是免費的支援"></a>五、角色互補不是免費的支援</h1><p id="nav-2291d56d682c835d" data-navigation-anchor="">當工程師的功能開發時間已接近上限，PM、維運或其他角色可能需要承接部分非工程任務，例如：</p>
 <ul>
-<li>前期需求整理與規格確認。</li>
-<li>測試資料準備與結果彙整。</li>
-<li>第三方檢測或驗證的聯繫。</li>
-<li>會議安排、問題追蹤與回覆整理。</li>
-<li>文件、附件與交付材料的準備。</li>
-<li>驗收意見的分類與回報。</li>
+<li id="nav-af75c16ca1133e83" data-navigation-anchor="">前期需求整理與規格確認。</li>
+<li id="nav-34392ec9c51f704b" data-navigation-anchor="">測試資料準備與結果彙整。</li>
+<li id="nav-35fc7b41716e4e90" data-navigation-anchor="">第三方檢測或驗證的聯繫。</li>
+<li id="nav-a6d19e0f29a2e2b9" data-navigation-anchor="">會議安排、問題追蹤與回覆整理。</li>
+<li id="nav-0271c8b57d7745d5" data-navigation-anchor="">文件、附件與交付材料的準備。</li>
+<li id="nav-e278e38f4975b48d" data-navigation-anchor="">驗收意見的分類與回報。</li>
 </ul>
-<p>這種角色互補確實可以降低工程師的外部負擔，但它不會讓工作憑空消失。PM 或維運承接的時間也要被估算、被排進工期，必要時也要列入成本。</p>
-<p>更需要注意的是，跨角色的協調整合常常比預期更花時間。資訊交接、等待確認、重新說明與來回修改，都可能成為看不見的工時。</p>
-<p>所以角色互補的正確理解是：</p>
+<p id="nav-5d50ae121a58b556" data-navigation-anchor="">這種角色互補確實可以降低工程師的外部負擔，但它不會讓工作憑空消失。PM 或維運承接的時間也要被估算、被排進工期，必要時也要列入成本。</p>
+<p id="nav-874ffcdf44bfe976" data-navigation-anchor="">更需要注意的是，跨角色的協調整合常常比預期更花時間。資訊交接、等待確認、重新說明與來回修改，都可能成為看不見的工時。</p>
+<p id="nav-5939a7dfc16e958a" data-navigation-anchor="">所以角色互補的正確理解是：</p>
 <blockquote>
-<p><strong>把任務分配給更適合的角色，而不是把成本消失。</strong></p>
+<p id="nav-332fd99f9f914aa4" data-navigation-anchor=""><strong>把任務分配給更適合的角色，而不是把成本消失。</strong></p>
 </blockquote>
-<h1 id="六、隱形成本要逐項盤點"><a href="#六、隱形成本要逐項盤點" class="headerlink" title="六、隱形成本要逐項盤點"></a>六、隱形成本要逐項盤點</h1><h2 id="交通與出勤"><a href="#交通與出勤" class="headerlink" title="交通與出勤"></a>交通與出勤</h2><p>如果專案需要出差、駐點或往返開會，可以先估算：</p>
+<h1 id="六、隱形成本要逐項盤點"><a href="#六、隱形成本要逐項盤點" class="headerlink" title="六、隱形成本要逐項盤點"></a>六、隱形成本要逐項盤點</h1><h2 id="交通與出勤" data-navigation-anchor=""><a href="#交通與出勤" class="headerlink" title="交通與出勤"></a>交通與出勤</h2><p id="nav-d973a732bca17bb0" data-navigation-anchor="">如果專案需要出差、駐點或往返開會，可以先估算：</p>
 <blockquote>
-<p><strong>預計出勤次數 × 每次來回交通費</strong></p>
+<p id="nav-572b52d1ce5f83d8" data-navigation-anchor=""><strong>預計出勤次數 × 每次來回交通費</strong></p>
 </blockquote>
-<p>交通費不一定只包含車資，也可能包括停車、過路、住宿、餐費與出勤所占用的時間。即使單次金額不大，累積多次後也可能影響專案毛利。</p>
-<h2 id="第三方檢測與驗證"><a href="#第三方檢測與驗證" class="headerlink" title="第三方檢測與驗證"></a>第三方檢測與驗證</h2><p>只要有外部檢測、認證或驗證，最好直接向檢測單位確認：</p>
+<p id="nav-ef3616ecfffd0fbb" data-navigation-anchor="">交通費不一定只包含車資，也可能包括停車、過路、住宿、餐費與出勤所占用的時間。即使單次金額不大，累積多次後也可能影響專案毛利。</p>
+<h2 id="第三方檢測與驗證" data-navigation-anchor=""><a href="#第三方檢測與驗證" class="headerlink" title="第三方檢測與驗證"></a>第三方檢測與驗證</h2><p id="nav-bdef0aabe86321d4" data-navigation-anchor="">只要有外部檢測、認證或驗證，最好直接向檢測單位確認：</p>
 <ul>
-<li>初次檢測費用。</li>
-<li>補件或複測費用。</li>
-<li>所需文件與準備時間。</li>
-<li>排程等待時間。</li>
-<li>不符合時的修正與再次送驗成本。</li>
+<li id="nav-f6a9e5a92b10502e" data-navigation-anchor="">初次檢測費用。</li>
+<li id="nav-1a5717d68f231d74" data-navigation-anchor="">補件或複測費用。</li>
+<li id="nav-5f62105154f0a609" data-navigation-anchor="">所需文件與準備時間。</li>
+<li id="nav-ca895bb230f46f24" data-navigation-anchor="">排程等待時間。</li>
+<li id="nav-aadcdd46fd92b101" data-navigation-anchor="">不符合時的修正與再次送驗成本。</li>
 </ul>
-<p>第三方費用不應只用過往印象估算，因為規格、檢測範圍與案件條件不同時，費用和時程都可能改變。</p>
-<h2 id="行政、工具與支援"><a href="#行政、工具與支援" class="headerlink" title="行政、工具與支援"></a>行政、工具與支援</h2><p>容易被忽略的項目還包括：</p>
+<p id="nav-7cd1f2601a95e1b7" data-navigation-anchor="">第三方費用不應只用過往印象估算，因為規格、檢測範圍與案件條件不同時，費用和時程都可能改變。</p>
+<h2 id="行政、工具與支援" data-navigation-anchor=""><a href="#行政、工具與支援" class="headerlink" title="行政、工具與支援"></a>行政、工具與支援</h2><p id="nav-6d02479fca014751" data-navigation-anchor="">容易被忽略的項目還包括：</p>
 <ul>
-<li>內部會議與主管審查。</li>
-<li>文件整理、簽核與交付格式調整。</li>
-<li>軟體、雲端服務或測試環境。</li>
-<li>設備、帳號與工具耗損。</li>
-<li>上線後的短期觀察與問題回覆。</li>
-<li>人員請假、臨時支援與其他案件打斷。</li>
+<li id="nav-adfd2c871b49e5c2" data-navigation-anchor="">內部會議與主管審查。</li>
+<li id="nav-f7d67314ad95e37d" data-navigation-anchor="">文件整理、簽核與交付格式調整。</li>
+<li id="nav-1c188f8906721698" data-navigation-anchor="">軟體、雲端服務或測試環境。</li>
+<li id="nav-2f95342eac2aa1af" data-navigation-anchor="">設備、帳號與工具耗損。</li>
+<li id="nav-64fb189223fb3f62" data-navigation-anchor="">上線後的短期觀察與問題回覆。</li>
+<li id="nav-07661aeccc50b56c" data-navigation-anchor="">人員請假、臨時支援與其他案件打斷。</li>
 </ul>
-<p>單項看起來都不大，但如果完全不列入估算，就會全部變成未計價的成本。</p>
-<h1 id="七、緩衝時間不是多報，而是把不確定性說清楚"><a href="#七、緩衝時間不是多報，而是把不確定性說清楚" class="headerlink" title="七、緩衝時間不是多報，而是把不確定性說清楚"></a>七、緩衝時間不是多報，而是把不確定性說清楚</h1><p>成本估算最容易走向兩個極端：一種是完全不留緩衝，另一種是沒有說明依據地任意加價。比較好的做法，是把緩衝對應到具體風險：</p>
+<p id="nav-4c930e469b916065" data-navigation-anchor="">單項看起來都不大，但如果完全不列入估算，就會全部變成未計價的成本。</p>
+<h1 id="七、緩衝時間不是多報，而是把不確定性說清楚"><a href="#七、緩衝時間不是多報，而是把不確定性說清楚" class="headerlink" title="七、緩衝時間不是多報，而是把不確定性說清楚"></a>七、緩衝時間不是多報，而是把不確定性說清楚</h1><p id="nav-742c37c92eca879a" data-navigation-anchor="">成本估算最容易走向兩個極端：一種是完全不留緩衝，另一種是沒有說明依據地任意加價。比較好的做法，是把緩衝對應到具體風險：</p>
 <ul>
-<li>需求可能變更。</li>
-<li>既有系統文件不完整。</li>
-<li>第三方回覆或檢測需要等待。</li>
-<li>測試環境與正式環境有差異。</li>
-<li>驗收標準尚未完全確認。</li>
-<li>資料格式或外部介面可能變動。</li>
-<li>人員同時承接其他案件。</li>
+<li id="nav-caf6d536c8cd01d9" data-navigation-anchor="">需求可能變更。</li>
+<li id="nav-f1df2fce0129bf0e" data-navigation-anchor="">既有系統文件不完整。</li>
+<li id="nav-c55eb584d509d590" data-navigation-anchor="">第三方回覆或檢測需要等待。</li>
+<li id="nav-00069b7feff27d93" data-navigation-anchor="">測試環境與正式環境有差異。</li>
+<li id="nav-a5f14f9cb417ad43" data-navigation-anchor="">驗收標準尚未完全確認。</li>
+<li id="nav-278af0fe1bdcb524" data-navigation-anchor="">資料格式或外部介面可能變動。</li>
+<li id="nav-f201ed7227621feb" data-navigation-anchor="">人員同時承接其他案件。</li>
 </ul>
-<p>緩衝可以分成時間緩衝與金額緩衝，也可以針對高風險工項個別保留。重點是讓團隊知道緩衝在保護什麼，而不是把所有未知都藏在一個看不懂的百分比裡。</p>
-<h1 id="八、可以重複使用的估算流程"><a href="#八、可以重複使用的估算流程" class="headerlink" title="八、可以重複使用的估算流程"></a>八、可以重複使用的估算流程</h1><h2 id="1-先做由下而上的成本盤點"><a href="#1-先做由下而上的成本盤點" class="headerlink" title="1. 先做由下而上的成本盤點"></a>1. 先做由下而上的成本盤點</h2><p>先列出所有工作與支出，再加總成專案成本底線：</p>
-<h3 id="人力成本"><a href="#人力成本" class="headerlink" title="人力成本"></a>人力成本</h3><p>功能工項清單<br>→ 預估人天／人月<br>→ 工程師投入比例<br>→ PM／維運／測試投入<br>→ 需求、驗收與支援工時<br>→ 安全緩衝</p>
-<h3 id="外部成本"><a href="#外部成本" class="headerlink" title="外部成本"></a>外部成本</h3><p>第三方檢測、驗證、授權、服務或設備<br>→ 直接詢價<br>→ 確認報價有效期限<br>→ 確認複測與變更費用</p>
-<h3 id="行政與交通"><a href="#行政與交通" class="headerlink" title="行政與交通"></a>行政與交通</h3><p>出勤、會議、文件、工具與環境<br>→ 估算發生次數<br>→ 乘上單次成本<br>→ 補上等待與協調時間</p>
-<h2 id="2-再做由上而下的利潤檢查"><a href="#2-再做由上而下的利潤檢查" class="headerlink" title="2. 再做由上而下的利潤檢查"></a>2. 再做由上而下的利潤檢查</h2><p>成本加總後，再確認這個報價是否達到公司希望的毛利或利潤：</p>
+<p id="nav-eaf7e49102adccf6" data-navigation-anchor="">緩衝可以分成時間緩衝與金額緩衝，也可以針對高風險工項個別保留。重點是讓團隊知道緩衝在保護什麼，而不是把所有未知都藏在一個看不懂的百分比裡。</p>
+<h1 id="八、可以重複使用的估算流程"><a href="#八、可以重複使用的估算流程" class="headerlink" title="八、可以重複使用的估算流程"></a>八、可以重複使用的估算流程</h1><h2 id="1-先做由下而上的成本盤點" data-navigation-anchor=""><a href="#1-先做由下而上的成本盤點" class="headerlink" title="1. 先做由下而上的成本盤點"></a>1. 先做由下而上的成本盤點</h2><p id="nav-ee561defc594411f" data-navigation-anchor="">先列出所有工作與支出，再加總成專案成本底線：</p>
+<h3 id="人力成本" data-navigation-anchor=""><a href="#人力成本" class="headerlink" title="人力成本"></a>人力成本</h3><p id="nav-1f4077199535fe1f" data-navigation-anchor="">功能工項清單<br>→ 預估人天／人月<br>→ 工程師投入比例<br>→ PM／維運／測試投入<br>→ 需求、驗收與支援工時<br>→ 安全緩衝</p>
+<h3 id="外部成本" data-navigation-anchor=""><a href="#外部成本" class="headerlink" title="外部成本"></a>外部成本</h3><p id="nav-b5929a7b6139309b" data-navigation-anchor="">第三方檢測、驗證、授權、服務或設備<br>→ 直接詢價<br>→ 確認報價有效期限<br>→ 確認複測與變更費用</p>
+<h3 id="行政與交通" data-navigation-anchor=""><a href="#行政與交通" class="headerlink" title="行政與交通"></a>行政與交通</h3><p id="nav-203ef5aa5dceb1fd" data-navigation-anchor="">出勤、會議、文件、工具與環境<br>→ 估算發生次數<br>→ 乘上單次成本<br>→ 補上等待與協調時間</p>
+<h2 id="2-再做由上而下的利潤檢查" data-navigation-anchor=""><a href="#2-再做由上而下的利潤檢查" class="headerlink" title="2. 再做由上而下的利潤檢查"></a>2. 再做由上而下的利潤檢查</h2><p id="nav-e170a4796231c2df" data-navigation-anchor="">成本加總後，再確認這個報價是否達到公司希望的毛利或利潤：</p>
 <ul>
-<li>目標是固定利潤金額，就用成本加上目標金額。</li>
-<li>目標是毛利率，就用成本除以一減毛利率。</li>
-<li>若採用加成率，應明確標示為成本乘上一加成率。</li>
+<li id="nav-f6e02935083c35fa" data-navigation-anchor="">目標是固定利潤金額，就用成本加上目標金額。</li>
+<li id="nav-519132780dc36cd9" data-navigation-anchor="">目標是毛利率，就用成本除以一減毛利率。</li>
+<li id="nav-44fc198326a5858f" data-navigation-anchor="">若採用加成率，應明確標示為成本乘上一加成率。</li>
 </ul>
-<p>由下而上是為了避免漏算，從上而下是為了確認報價符合公司的經營目標。兩種方法要互相檢查，不能只做其中一種。</p>
-<h2 id="3-最後檢查排程是否能落地"><a href="#3-最後檢查排程是否能落地" class="headerlink" title="3. 最後檢查排程是否能落地"></a>3. 最後檢查排程是否能落地</h2><p>報價成立不代表排程成立。要再確認：</p>
+<p id="nav-f2347f8a0751c5d4" data-navigation-anchor="">由下而上是為了避免漏算，從上而下是為了確認報價符合公司的經營目標。兩種方法要互相檢查，不能只做其中一種。</p>
+<h2 id="3-最後檢查排程是否能落地" data-navigation-anchor=""><a href="#3-最後檢查排程是否能落地" class="headerlink" title="3. 最後檢查排程是否能落地"></a>3. 最後檢查排程是否能落地</h2><p id="nav-13a1f8444e2195ea" data-navigation-anchor="">報價成立不代表排程成立。要再確認：</p>
 <ul>
-<li>單一工程師的投入是否超過可持續上限？</li>
-<li>PM、維運與測試是否有明確的人力？</li>
-<li>需求、資料與第三方回覆的等待時間是否列入？</li>
-<li>測試、驗收、修改、部署與交接是否有位置？</li>
-<li>如果延遲，合約或交付承諾會怎麼處理？</li>
+<li id="nav-91560e2e66560a52" data-navigation-anchor="">單一工程師的投入是否超過可持續上限？</li>
+<li id="nav-e4ab6aad0572c384" data-navigation-anchor="">PM、維運與測試是否有明確的人力？</li>
+<li id="nav-f8ef30ef713ce334" data-navigation-anchor="">需求、資料與第三方回覆的等待時間是否列入？</li>
+<li id="nav-9ed7eca056c0bca2" data-navigation-anchor="">測試、驗收、修改、部署與交接是否有位置？</li>
+<li id="nav-34b186559e247c3e" data-navigation-anchor="">如果延遲，合約或交付承諾會怎麼處理？</li>
 </ul>
-<p>如果排不下去，就要在報價前處理，而不是等簽約後才發現只能靠加班補洞。</p>
+<p id="nav-da2647d2c8db7ad6" data-navigation-anchor="">如果排不下去，就要在報價前處理，而不是等簽約後才發現只能靠加班補洞。</p>
 <h1 id="九、估算前可以先問的問題"><a href="#九、估算前可以先問的問題" class="headerlink" title="九、估算前可以先問的問題"></a>九、估算前可以先問的問題</h1><ul>
-<li>這次報價的目標是毛利率、加成率，還是固定利潤？</li>
-<li>功能是否已拆到可以估算人天或人月？</li>
-<li>需求確認、測試、驗收、部署與交接是否都有工項？</li>
-<li>工程師每月實際能投入多少比例？</li>
-<li>PM、維運、測試與行政支援由誰承接？</li>
-<li>是否有外部檢測、授權、設備或其他第三方費用？</li>
-<li>出勤、交通、會議與等待時間是否列入？</li>
-<li>哪些內容是已確認需求，哪些只是目前假設？</li>
-<li>需求變更和額外工作要如何處理？</li>
-<li>如果估算超過六個月或九個月，是否要拆階段或調整範圍？</li>
-<li>報價有效期限與外部成本變動如何處理？</li>
-<li>交付後是否包含保固、維護或一定期間的問題回覆？</li>
+<li id="nav-ab18a3a360adcda8" data-navigation-anchor="">這次報價的目標是毛利率、加成率，還是固定利潤？</li>
+<li id="nav-f9b3b0bb67f57123" data-navigation-anchor="">功能是否已拆到可以估算人天或人月？</li>
+<li id="nav-762b72e6826970e6" data-navigation-anchor="">需求確認、測試、驗收、部署與交接是否都有工項？</li>
+<li id="nav-9e9bd7efaaf1bc48" data-navigation-anchor="">工程師每月實際能投入多少比例？</li>
+<li id="nav-919c65b61c757b20" data-navigation-anchor="">PM、維運、測試與行政支援由誰承接？</li>
+<li id="nav-7d302621d7b1b50a" data-navigation-anchor="">是否有外部檢測、授權、設備或其他第三方費用？</li>
+<li id="nav-506c211943b84ec3" data-navigation-anchor="">出勤、交通、會議與等待時間是否列入？</li>
+<li id="nav-63a133f17bae1989" data-navigation-anchor="">哪些內容是已確認需求，哪些只是目前假設？</li>
+<li id="nav-7157c778024cff7e" data-navigation-anchor="">需求變更和額外工作要如何處理？</li>
+<li id="nav-230a953dc8ed4161" data-navigation-anchor="">如果估算超過六個月或九個月，是否要拆階段或調整範圍？</li>
+<li id="nav-26bb3c304cc2f240" data-navigation-anchor="">報價有效期限與外部成本變動如何處理？</li>
+<li id="nav-ddd13a045a81e436" data-navigation-anchor="">交付後是否包含保固、維護或一定期間的問題回覆？</li>
 </ul>
-<h1 id="十、這次最值得保留的提醒"><a href="#十、這次最值得保留的提醒" class="headerlink" title="十、這次最值得保留的提醒"></a>十、這次最值得保留的提醒</h1><p>成本估算要同時做到兩件事：<strong>想得夠細，又要能實際落地執行。</strong></p>
-<p>不能只用 Happy Path 估算，也不能把所有可能發生的事情都堆成一個沒有解釋的高價。比較可靠的方式是把假設、已知成本、角色投入與不確定性分開寫，讓之後的人知道這個數字是怎麼來的。</p>
-<p>這次我想記住的不是「六個月」或「九個月」本身，而是看到這些數字時要停下來問：</p>
+<h1 id="十、這次最值得保留的提醒"><a href="#十、這次最值得保留的提醒" class="headerlink" title="十、這次最值得保留的提醒"></a>十、這次最值得保留的提醒</h1><p id="nav-556cac4e6aae0254" data-navigation-anchor="">成本估算要同時做到兩件事：<strong>想得夠細，又要能實際落地執行。</strong></p>
+<p id="nav-822e92a7d7f8d78c" data-navigation-anchor="">不能只用 Happy Path 估算，也不能把所有可能發生的事情都堆成一個沒有解釋的高價。比較可靠的方式是把假設、已知成本、角色投入與不確定性分開寫，讓之後的人知道這個數字是怎麼來的。</p>
+<p id="nav-b83240c074accb27" data-navigation-anchor="">這次我想記住的不是「六個月」或「九個月」本身，而是看到這些數字時要停下來問：</p>
 <blockquote>
-<p><strong>這是實際可持續的投入，還是把所有工作都假設成同一個人可以一直做？</strong></p>
+<p id="nav-003d0173f0acb29c" data-navigation-anchor=""><strong>這是實際可持續的投入，還是把所有工作都假設成同一個人可以一直做？</strong></p>
 </blockquote>
-<p>如果答案是後者，就要回頭調整功能範圍、投入角色、專案階段或交付承諾。</p>
+<p id="nav-67c3a0a977d64796" data-navigation-anchor="">如果答案是後者，就要回頭調整功能範圍、投入角色、專案階段或交付承諾。</p>
 <h1 id="一句話整理"><a href="#一句話整理" class="headerlink" title="一句話整理"></a>一句話整理</h1><blockquote>
-<p><strong>先把所有會消耗人力與現金的事情算進成本，再用可持續的投入檢查工期，最後才談公司要留下多少利潤。</strong></p>
+<p id="nav-0f1f501a92c90157" data-navigation-anchor=""><strong>先把所有會消耗人力與現金的事情算進成本，再用可持續的投入檢查工期，最後才談公司要留下多少利潤。</strong></p>
 </blockquote>
 <h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
-<li><strong>2026-09-02</strong>：整理專案預算、報價、工期拆解、人力上限、角色互補與隱形成本的實務覆盤。</li>
-<li><strong>2026-09-03</strong>：補充毛利率與加成率的區分、測試驗收成本、風險緩衝與可複用的估算檢查流程。</li>
+<li id="nav-38c28e300a8558c2" data-navigation-anchor=""><strong>2026-09-02</strong>：整理專案預算、報價、工期拆解、人力上限、角色互補與隱形成本的實務覆盤。</li>
+<li id="nav-999ae3a0488a9b9c" data-navigation-anchor=""><strong>2026-09-03</strong>：補充毛利率與加成率的區分、測試驗收成本、風險緩衝與可複用的估算檢查流程。</li>
 </ul>
 
     </div>

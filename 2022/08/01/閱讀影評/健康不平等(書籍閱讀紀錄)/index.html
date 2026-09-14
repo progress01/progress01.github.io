@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,23 +666,23 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>疫情後我讀《健康不平等》，才發現公共衛生談的健康和日常想像不同；它用故事與專家觀點，讓我看到健康背後的社會環境。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-a978fa43d8702179" data-navigation-anchor="">疫情後我讀《健康不平等》，才發現公共衛生談的健康和日常想像不同；它用故事與專家觀點，讓我看到健康背後的社會環境。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>公共衛生突然變成疫情之後的熱門話題，恰逢這本小說當日特價99，也就買來見識看看健康不平等是如何影響我們的健康了。</p>
-<p>但隨著疫情的降溫與再次升溫，心情都只忙著疲倦了，這本書也擱置直到今天才正式看完，心情上來說是詫異，公共衛生下的健康真的跟民眾的健康長的不太相同，可能需要更放開自己的心，才能體會描述中的健康生活。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>因為我們的心中已經充滿一些陳見，要試著從公共衛生的觀點來看待事情時，作者以一段小故事來帶出他想要描述的情形，盡管小故事也許有很多破綻並且也不是這麼優秀，但透過這段鋪墊你能更明白後續他的描述想討論什麼。</p>
-<p>與其說這是一個綜整性的健康不平等介紹，不如說是科普性質比較多的專家漫談，結構並不如想像中嚴謹，但我們可以從這些專家更寬廣的角度來看待健康，涉及政治的部分也沒有細究，單純的集中在討論政策與健康的影響，算是一個充滿個人角度但能夠理解或尊重的觀點，至於是否全盤接受則有賴心中對於特定看法的開放度，我算是比較有迷失的那群人。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>整本書我覺得可以凝結成一個作者提到的重要的觀點：「健康即他人」，群體健康效益更甚於個人健康，若將眼光聚焦在個人健康的相關公平醫療制度，這是公平，而非正義，作者提出了一個較為極端的觀點「沒有社會正義，就沒有全民健康」，甚至全民健康也屬於公共財的範疇，當將公平與正義都納入考慮，健康才能被全面的注意。</p>
-<p>書中也提到不少政治影響健康政策的部分，例如投入相關的健康政策，如環境改善、氧水加入特定素材降低蛀牙機率等等的做法，如雷根在位時期開始削減健康投入，導致相應國人健康的惡化，現階段政治將聚焦在健康投入上，關注疾病或關注醫療照護體系，這是屬於個人的，健康並非只是得病、治療與領藥，這些不能完全排除人民的健康問題。</p>
-<p>健康並不只生病，還可能可以預防或解決更多問題(如危險因素：環境污染等)，作者較為極端的觀點之一即「健康為良好的生活環境」，這是一個複雜的健康拼圖，而大家不只在觀點上需要接受，政策上也得為之轉向，才能有機會開始扭轉健康不平等的現況。</p>
-<p>以上總結自書中較為零散的觀點，較讓人難以接受的部分除了公共財、公平與正義外，書中大多只提到幫助而非投入，如果只以這樣較健康來讓大家改變觀點真的是沒有說服力，即使他說的是真相，像是這次疫情中，重要的是打疫苗的人數得多，而不是我有打疫苗，重要的是大家都戴口罩，而不是為了保護自己的人才戴口罩。</p>
-<p>我還是會在意如果非個人努力的健康，書中提到加強社會補助與相關危險因素的補助若全歸於健康，那所謂良好的生活品質該如何跟個人努力結合？該如何推廣這個健康的政策與觀點，需要幫助的人如果只是作為我們都健康所以你們也健康的存在，那也非常奇怪！</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>也許結合書中對邊沁幸福計算的想法，去計算健康並且以政策的方式慢慢改進並推廣應該是一件非常值得推動的事情，但依造在類似幕僚機構服務的經驗，往往類似計畫推動並不這麼順利，政府似乎會認為精準醫療的高科技更是未來的方向，希望之後能看到翻譯書的組織的推廣活動，我也會開始留意類似的消息，也希望他們有更強力的理由支撐這些論點。</p>
-<p>總結來說公共衛生角度的健康確實挺不一樣的，可能就像是法律人眼中的法律有時候不被理解吧？我書念一半大概算中間，各有體會，卻又表達不清。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-9b0edaa5206067a1" data-navigation-anchor="">公共衛生突然變成疫情之後的熱門話題，恰逢這本小說當日特價99，也就買來見識看看健康不平等是如何影響我們的健康了。</p>
+<p id="nav-bed738b242ce63a7" data-navigation-anchor="">但隨著疫情的降溫與再次升溫，心情都只忙著疲倦了，這本書也擱置直到今天才正式看完，心情上來說是詫異，公共衛生下的健康真的跟民眾的健康長的不太相同，可能需要更放開自己的心，才能體會描述中的健康生活。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-d338a7624dbb9c8d" data-navigation-anchor="">因為我們的心中已經充滿一些陳見，要試著從公共衛生的觀點來看待事情時，作者以一段小故事來帶出他想要描述的情形，盡管小故事也許有很多破綻並且也不是這麼優秀，但透過這段鋪墊你能更明白後續他的描述想討論什麼。</p>
+<p id="nav-0cb28c0e15dd714e" data-navigation-anchor="">與其說這是一個綜整性的健康不平等介紹，不如說是科普性質比較多的專家漫談，結構並不如想像中嚴謹，但我們可以從這些專家更寬廣的角度來看待健康，涉及政治的部分也沒有細究，單純的集中在討論政策與健康的影響，算是一個充滿個人角度但能夠理解或尊重的觀點，至於是否全盤接受則有賴心中對於特定看法的開放度，我算是比較有迷失的那群人。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-296e4e5ba69cdc12" data-navigation-anchor="">整本書我覺得可以凝結成一個作者提到的重要的觀點：「健康即他人」，群體健康效益更甚於個人健康，若將眼光聚焦在個人健康的相關公平醫療制度，這是公平，而非正義，作者提出了一個較為極端的觀點「沒有社會正義，就沒有全民健康」，甚至全民健康也屬於公共財的範疇，當將公平與正義都納入考慮，健康才能被全面的注意。</p>
+<p id="nav-bfa4ffaefd0ae192" data-navigation-anchor="">書中也提到不少政治影響健康政策的部分，例如投入相關的健康政策，如環境改善、氧水加入特定素材降低蛀牙機率等等的做法，如雷根在位時期開始削減健康投入，導致相應國人健康的惡化，現階段政治將聚焦在健康投入上，關注疾病或關注醫療照護體系，這是屬於個人的，健康並非只是得病、治療與領藥，這些不能完全排除人民的健康問題。</p>
+<p id="nav-39ec80f9126956bf" data-navigation-anchor="">健康並不只生病，還可能可以預防或解決更多問題(如危險因素：環境污染等)，作者較為極端的觀點之一即「健康為良好的生活環境」，這是一個複雜的健康拼圖，而大家不只在觀點上需要接受，政策上也得為之轉向，才能有機會開始扭轉健康不平等的現況。</p>
+<p id="nav-015fb62456c23d76" data-navigation-anchor="">以上總結自書中較為零散的觀點，較讓人難以接受的部分除了公共財、公平與正義外，書中大多只提到幫助而非投入，如果只以這樣較健康來讓大家改變觀點真的是沒有說服力，即使他說的是真相，像是這次疫情中，重要的是打疫苗的人數得多，而不是我有打疫苗，重要的是大家都戴口罩，而不是為了保護自己的人才戴口罩。</p>
+<p id="nav-21e9e49a4ecd9028" data-navigation-anchor="">我還是會在意如果非個人努力的健康，書中提到加強社會補助與相關危險因素的補助若全歸於健康，那所謂良好的生活品質該如何跟個人努力結合？該如何推廣這個健康的政策與觀點，需要幫助的人如果只是作為我們都健康所以你們也健康的存在，那也非常奇怪！</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-1982f2638d8dc162" data-navigation-anchor="">也許結合書中對邊沁幸福計算的想法，去計算健康並且以政策的方式慢慢改進並推廣應該是一件非常值得推動的事情，但依造在類似幕僚機構服務的經驗，往往類似計畫推動並不這麼順利，政府似乎會認為精準醫療的高科技更是未來的方向，希望之後能看到翻譯書的組織的推廣活動，我也會開始留意類似的消息，也希望他們有更強力的理由支撐這些論點。</p>
+<p id="nav-e6b3bb287ac87d02" data-navigation-anchor="">總結來說公共衛生角度的健康確實挺不一樣的，可能就像是法律人眼中的法律有時候不被理解吧？我書念一半大概算中間，各有體會，卻又表達不清。</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="3024" height="4032" src="/images/blogger-import/blogger-25ae8a9e52/01.webp" alt="圖片 1">
 
-<p>(圖片來源：KOBO)</p>
+<p id="nav-11cf1098b3c1ad2a" data-navigation-anchor="">(圖片來源：KOBO)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/08/blog-post.html -->
 
     </div>

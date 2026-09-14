@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,25 +666,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>讀完正文後，我把《文學少女》番外也列入清單；不同角色與時間線補上未說完的故事，讓我重新看見心葉等人的成長。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-89f1e3e17ed8298a" data-navigation-anchor="">讀完正文後，我把《文學少女》番外也列入清單；不同角色與時間線補上未說完的故事，讓我重新看見心葉等人的成長。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>文學少女正文八冊後，番外篇自然也是我的閱讀清單，因為小說的撰寫模式導致它留下了很多角度跟故事沒有完全的敘述，作者跟出版社願意合作一起再出八本番外篇真的對我來說是一件幸福的事情。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>番外篇主要可以分為兩部分敘事角度，一部分時間軸是正文八冊的時間線，一部分是正文八冊後的故事，氛圍較正文稍微輕鬆一點。主角則是我們在本文中熟悉的人物，心葉、遠子、七瀨等等，也新增了一個新的文學見習生來告訴我們正文結束後的一年時間，心葉的成長。</p>
-<p>延續正文八卷的特色，每一個小番外篇中會有一個主軸故事，故事人物搭配這一個主軸故事來互動，也有一些輕鬆許多的場景，像是番外篇中會有那種穿越百年互相引為知己的作者與讀者，這似乎是我們比較習慣的模式，拜倫與泰戈爾的詩替我述說了心中的感情。</p>
-<p>引為知己這件事情，也不禁讓我突然聯想到在正文中那種與主軸故事有交互的共鳴感，其實是在文中描述出我的心情讓人激動這個層次，再繼續深入挖掘角色的內涵的過程，很像是因為這些痛苦難以向外人描述，而透過向書裡尋求，讓我感覺每一個偏執就像是一個怪物，點出本來只在主角故事線外的人物情感，就像是向您形容我是故事裡的誰誰誰，而我們永遠無法去同理到敘事線外書中人物的痛苦，如果連他們都無法理解的話，更遑論去碰觸到現實中我這糾結的情感。</p>
-<p>所幸每個人總是或多或少的釋出求救的訊號，文學少年與少女透過想像，總是能在事情的失控邊緣拉住還能挽救的那個人，書中向我們坦白了人心變成的怪物、人心的自私黑暗以及背負罪惡感的痛苦，還好透過想像跟同理他們最後總是沒有放任認識的人沉淪，這也是故事中溫柔的地方，就好像是黑暗之中仍有那一個小小火苗絕對不會熄滅，只要不自殺，我們的故事就還沒有結束！</p>
-<p>在番外篇中溫柔的故事居多，讓人能在沉重跟輕鬆裡面去調適，透過一種官方同人的感覺，去回憶本文中人們的想法跟中間發生的小故事非常有趣，畢竟為了去營造本文中故事的氛圍以及主軸故事的對應感，勢必要犧牲一些空間不去寫這些番外篇中的有趣小事，接續著閱讀下來文學少女系列真的給我很大的感動。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>有時候我會覺得文學少女體現的小說世界觀很特別，包含作者提到的小說，會讓時間仿佛凝結了下來，每個人物都被束縛在過去之中，時間的淡忘性，跟時間的流逝感在小說中幾乎消失，似乎一切將會過去，或我的生命將會繼續這些概念被現階段太豐富的情緒而全部隱藏了起來。</p>
-<p>包含了喜歡、憤怒、恨等等的情緒，書中人物的愛也是特別深刻，以前我跟同學討論的可能是火影忍者裡面的愛，像是鼬的愛、三代火影的愛、長門的愛等等，從這些去討論愛的荒唐，但核心仍然是行為，我們從來沒站在故事人物的角度去想像他們的愛跟情感，所以他們的想法跟角度到底看到甚麼？</p>
-<p>當然也是創作者角度從來不一定是這們深刻的讓這些事情去面面俱到，例如以漫畫創作的快節奏有些人物情感甚至是為劇情而服務，也許這些是讀者跟作者的誤解，作者真的是這樣想的嗎？也有些是翻譯的誤解？但這些也許都不重要，透過人物共鳴與想像，除了增加故事的厚度，更能深刻的去了解他們的情感(也許這在奇幻小說故事類型中不一定適用)，像推薦我這系列小說的朋友，他常常說《進擊的巨人》這部作品充滿各種哲學，也有各種浪漫，就算是悲劇居多也不容錯過，我就覺得他有深刻享受到這些人物的情感，即使巨人是想像作品也一樣！</p>
-<p>故事中有一段落屬於文學見習生，他一開始像是我的閱讀一樣，只看見了他想看見的部分，如同我們大概能知道誰是壞人，這個結局如果他能跨出一步將會完全不一樣，他真是辜負了這些情感，這些語句都是我向別人闡述心得中會提到的。但後續隨著故事的進展，或許為了解救自譬為故事中人物的被束縛者，他需要進一步去想像跟讓故事不隨著書頁結束而結束，但這反而讓我體驗到了想像的樂趣，這部分的樂趣在本文中雖然也有重複出現，但因為各種悲傷而導致元素被削弱到我有感受但不一定深刻的程度。</p>
-<p>最印象深刻的想像補足有兩個段落，分別是《科學怪人》以及《銀河鐵道之夜》，科學怪人裡面他想像了在書頁結束後，探險家的冒險以及追尋的理由，鐵道之夜則再次描述了離別，但這次不是為何要告別，而是想像書中的人物為何在書頁中的最後一次旅行選擇彼此，而又為了忍受甚麼而必須要告別。</p>
-<p>以前我會討厭為了讓你不受傷而必須先讓我自己完全孤獨的作法，番外篇中也有類似的段落，但透過想像，我似乎是有點感受到這段深刻的情感，但感受歸感受，同理起來還是稍微困難，但本來「人的悲歡並不相通，我只覺得他們吵鬧」，我們可以透過想像補足，但價值觀認同這件事情本來就因人而異，有時候就屬於尊重了，這也是我覺得這系列故事溫柔的原因。</p>
-<p>最後想誇獎番外篇的寫作形式，一件事情不同時間跟敘事者的看法讓我更理解這些人物情感的點滴，我也非常喜歡他們，我喜歡文學少女見習生日坂，他最後情感的昇華與總是坦然的告白讓我極度欣賞。我仍然喜歡文學少女遠子的溫柔以及韌性，就連七瀨這個本來彆扭的讓人理解的女生，透過這些故事也可以看出他的情感，主角心葉雖然依舊是一個難懂的存在，但恭喜他開始正視這些挑戰並且不再逃避。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>情感的部分延續之前正文的感想，這些高中生真的不簡單，日本的高中生真是一群最不簡單的人了，但謝謝大家讓我了解故事的其他欣賞方式，一種故事，數種滋味真的是一個非常特別的體悟！</p>
-<p>綜上所述這系列真的是一個讓人難以忘懷的故事，改天再找機會重看一次！</p>
-<p> <img class="blogger-import-image" loading="lazy" decoding="async" width="690" height="452" src="/images/blogger-import/blogger-7e00c3e4aa/01.webp" alt="圖片 1"> (圖片來源：博客來網路書店)</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-e3347c4def35fae8" data-navigation-anchor="">文學少女正文八冊後，番外篇自然也是我的閱讀清單，因為小說的撰寫模式導致它留下了很多角度跟故事沒有完全的敘述，作者跟出版社願意合作一起再出八本番外篇真的對我來說是一件幸福的事情。</p>
+<h2 id="小說特色" data-navigation-anchor=""><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p id="nav-de215d73b93b42cc" data-navigation-anchor="">番外篇主要可以分為兩部分敘事角度，一部分時間軸是正文八冊的時間線，一部分是正文八冊後的故事，氛圍較正文稍微輕鬆一點。主角則是我們在本文中熟悉的人物，心葉、遠子、七瀨等等，也新增了一個新的文學見習生來告訴我們正文結束後的一年時間，心葉的成長。</p>
+<p id="nav-3087898eb870d943" data-navigation-anchor="">延續正文八卷的特色，每一個小番外篇中會有一個主軸故事，故事人物搭配這一個主軸故事來互動，也有一些輕鬆許多的場景，像是番外篇中會有那種穿越百年互相引為知己的作者與讀者，這似乎是我們比較習慣的模式，拜倫與泰戈爾的詩替我述說了心中的感情。</p>
+<p id="nav-4704db6cbd6464f6" data-navigation-anchor="">引為知己這件事情，也不禁讓我突然聯想到在正文中那種與主軸故事有交互的共鳴感，其實是在文中描述出我的心情讓人激動這個層次，再繼續深入挖掘角色的內涵的過程，很像是因為這些痛苦難以向外人描述，而透過向書裡尋求，讓我感覺每一個偏執就像是一個怪物，點出本來只在主角故事線外的人物情感，就像是向您形容我是故事裡的誰誰誰，而我們永遠無法去同理到敘事線外書中人物的痛苦，如果連他們都無法理解的話，更遑論去碰觸到現實中我這糾結的情感。</p>
+<p id="nav-cd564a6d3b0adacb" data-navigation-anchor="">所幸每個人總是或多或少的釋出求救的訊號，文學少年與少女透過想像，總是能在事情的失控邊緣拉住還能挽救的那個人，書中向我們坦白了人心變成的怪物、人心的自私黑暗以及背負罪惡感的痛苦，還好透過想像跟同理他們最後總是沒有放任認識的人沉淪，這也是故事中溫柔的地方，就好像是黑暗之中仍有那一個小小火苗絕對不會熄滅，只要不自殺，我們的故事就還沒有結束！</p>
+<p id="nav-28c66d701903b4c2" data-navigation-anchor="">在番外篇中溫柔的故事居多，讓人能在沉重跟輕鬆裡面去調適，透過一種官方同人的感覺，去回憶本文中人們的想法跟中間發生的小故事非常有趣，畢竟為了去營造本文中故事的氛圍以及主軸故事的對應感，勢必要犧牲一些空間不去寫這些番外篇中的有趣小事，接續著閱讀下來文學少女系列真的給我很大的感動。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-20958c655ca42bb2" data-navigation-anchor="">有時候我會覺得文學少女體現的小說世界觀很特別，包含作者提到的小說，會讓時間仿佛凝結了下來，每個人物都被束縛在過去之中，時間的淡忘性，跟時間的流逝感在小說中幾乎消失，似乎一切將會過去，或我的生命將會繼續這些概念被現階段太豐富的情緒而全部隱藏了起來。</p>
+<p id="nav-5944897374515652" data-navigation-anchor="">包含了喜歡、憤怒、恨等等的情緒，書中人物的愛也是特別深刻，以前我跟同學討論的可能是火影忍者裡面的愛，像是鼬的愛、三代火影的愛、長門的愛等等，從這些去討論愛的荒唐，但核心仍然是行為，我們從來沒站在故事人物的角度去想像他們的愛跟情感，所以他們的想法跟角度到底看到甚麼？</p>
+<p id="nav-323b5950ba0de53f" data-navigation-anchor="">當然也是創作者角度從來不一定是這們深刻的讓這些事情去面面俱到，例如以漫畫創作的快節奏有些人物情感甚至是為劇情而服務，也許這些是讀者跟作者的誤解，作者真的是這樣想的嗎？也有些是翻譯的誤解？但這些也許都不重要，透過人物共鳴與想像，除了增加故事的厚度，更能深刻的去了解他們的情感(也許這在奇幻小說故事類型中不一定適用)，像推薦我這系列小說的朋友，他常常說《進擊的巨人》這部作品充滿各種哲學，也有各種浪漫，就算是悲劇居多也不容錯過，我就覺得他有深刻享受到這些人物的情感，即使巨人是想像作品也一樣！</p>
+<p id="nav-736d6f281abaf0f7" data-navigation-anchor="">故事中有一段落屬於文學見習生，他一開始像是我的閱讀一樣，只看見了他想看見的部分，如同我們大概能知道誰是壞人，這個結局如果他能跨出一步將會完全不一樣，他真是辜負了這些情感，這些語句都是我向別人闡述心得中會提到的。但後續隨著故事的進展，或許為了解救自譬為故事中人物的被束縛者，他需要進一步去想像跟讓故事不隨著書頁結束而結束，但這反而讓我體驗到了想像的樂趣，這部分的樂趣在本文中雖然也有重複出現，但因為各種悲傷而導致元素被削弱到我有感受但不一定深刻的程度。</p>
+<p id="nav-972681e0717a9997" data-navigation-anchor="">最印象深刻的想像補足有兩個段落，分別是《科學怪人》以及《銀河鐵道之夜》，科學怪人裡面他想像了在書頁結束後，探險家的冒險以及追尋的理由，鐵道之夜則再次描述了離別，但這次不是為何要告別，而是想像書中的人物為何在書頁中的最後一次旅行選擇彼此，而又為了忍受甚麼而必須要告別。</p>
+<p id="nav-dfc62d78eff44c32" data-navigation-anchor="">以前我會討厭為了讓你不受傷而必須先讓我自己完全孤獨的作法，番外篇中也有類似的段落，但透過想像，我似乎是有點感受到這段深刻的情感，但感受歸感受，同理起來還是稍微困難，但本來「人的悲歡並不相通，我只覺得他們吵鬧」，我們可以透過想像補足，但價值觀認同這件事情本來就因人而異，有時候就屬於尊重了，這也是我覺得這系列故事溫柔的原因。</p>
+<p id="nav-97101aa5256565b4" data-navigation-anchor="">最後想誇獎番外篇的寫作形式，一件事情不同時間跟敘事者的看法讓我更理解這些人物情感的點滴，我也非常喜歡他們，我喜歡文學少女見習生日坂，他最後情感的昇華與總是坦然的告白讓我極度欣賞。我仍然喜歡文學少女遠子的溫柔以及韌性，就連七瀨這個本來彆扭的讓人理解的女生，透過這些故事也可以看出他的情感，主角心葉雖然依舊是一個難懂的存在，但恭喜他開始正視這些挑戰並且不再逃避。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-671017d875276aed" data-navigation-anchor="">情感的部分延續之前正文的感想，這些高中生真的不簡單，日本的高中生真是一群最不簡單的人了，但謝謝大家讓我了解故事的其他欣賞方式，一種故事，數種滋味真的是一個非常特別的體悟！</p>
+<p id="nav-5ea91b1a2d8fd386" data-navigation-anchor="">綜上所述這系列真的是一個讓人難以忘懷的故事，改天再找機會重看一次！</p>
+<p id="nav-ed74f193175207c3" data-navigation-anchor=""> <img class="blogger-import-image" loading="lazy" decoding="async" width="690" height="452" src="/images/blogger-import/blogger-7e00c3e4aa/01.webp" alt="圖片 1"> (圖片來源：博客來網路書店)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/2.html -->
 
     </div>

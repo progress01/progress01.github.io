@@ -97,6 +97,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -151,7 +152,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -175,6 +176,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -210,19 +218,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -322,15 +330,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -338,19 +338,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -410,11 +418,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -570,7 +578,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -659,26 +667,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《專案管理革命》試著把專案經理的經驗、規畫圖與工具整理成讀者可以想像的工作輪廓。它讓我看見專案裡來自客戶、長官與合作團隊的壓力，也提醒我理論與真正進入現場之間仍有一段距離。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-bcd31e9df25ab902" data-navigation-anchor="">《專案管理革命》試著把專案經理的經驗、規畫圖與工具整理成讀者可以想像的工作輪廓。它讓我看見專案裡來自客戶、長官與合作團隊的壓力，也提醒我理論與真正進入現場之間仍有一段距離。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>我們科系有不少同學正從事專案管理相關的工作，無論是工作前景或學科背景要求，都是我轉職可以考量的方向之一，那究竟專案管理在書裡面會去怎麼描述呢？若一切都是依賴實戰，倚靠經驗判斷，對於新鮮人的難度可想而知。</p>
-<p>從一些經驗分享可以了解到專案管理工作主要以抗壓性為重點，除了自己團隊之外的每個團隊都在給壓力，客戶的壓力、長官的壓力、以及內外合作對象的壓力，也有一些形容是溝通，有接觸過產線的專案管理則說那是一切的亂源。</p>
-<p>如果是以專案管理為題的書它會怎樣去描述？在圖書館找了一本還在架上的專案管理，同時還看到上一位讀者寫了一張閱讀愉快的小便條紙，也不知道他從書中領悟了什麼。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>很少看類似有關於類似技能闡述的書，尤其是以專案經理這種以經驗培養實戰經驗為重的。相較於教科書，會很難明白作者想要表達的重點，直到他提到他總結的專案規畫圖以及相關工具及方法那章。</p>
-<p>作者花費了不少頁數去描述他自身的專案經驗以及他認為的專案型態，他舉例中讓人印象深刻的是企業整併的專案，也有相關收購的，這以上面提到以產品誕生為主的經驗仍然稍有不同，透過他的規畫圖我們大概可以想像一個專案的輪廓及注意項目，但實際進行仍有賴實際接觸吧。</p>
-<p>作者試圖以一種親近的手法舉例與寫作，但不適應閱讀類似文字的我卻總感覺時常在自我吹噓，舉例的例子也主要是以成功以及失敗劃分，並沒有以更專案的角度去解釋清楚，是我自己在閱讀上覺得稍微有障礙的地方，障礙並非難讀而是沒有收穫。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>專案管理是一個需要接觸才能前進的能力，但如同作者舉例，我們老早就處於專案的世界裡了，像我目前擔任的學科館員及相關特定業務就是其中一個例子。</p>
-<p>書中提到一些專案管理的概念我認為將從團隊與專案支持都牽涉其中，以下列點說明</p>
-<p>1.4W1H：常見的定位手段，但專案規劃勢必得先有基礎概念，否則成功或失敗將無關緊要，那又何必專案？</p>
-<p>2.專案與例行性工作的時間分配將影響後續的專案治理，圖書館執行專案的困難點來自於雜亂且例行的日常業務。</p>
-<p>3.組織的專案文化問題：忽視專案成本、及缺乏專案狀態相關資料、未經過適當的初步分析及明確理由、專案數量無故增加、缺乏整體策略與執行效果資訊。</p>
-<p>4.透過專案規畫圖可以先整理一些常見的問題，以逐一排除(見頁尾)。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>專案管理革命老實說念起來是有點失望，算是只有預期中一半的收穫而已，可能還是我自身進行專案的經驗太少，或是這個專案都不夠正式，或許多找幾本類似的書籍看能有更多的概念，但專案規畫圖以及回應專案的成立必要性這些倒是以前沒有接觸過的概念，希望之後的閱讀能了解更多。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-846cfc0ea0afe8ab" data-navigation-anchor="">我們科系有不少同學正從事專案管理相關的工作，無論是工作前景或學科背景要求，都是我轉職可以考量的方向之一，那究竟專案管理在書裡面會去怎麼描述呢？若一切都是依賴實戰，倚靠經驗判斷，對於新鮮人的難度可想而知。</p>
+<p id="nav-452fc2f0b13f30da" data-navigation-anchor="">從一些經驗分享可以了解到專案管理工作主要以抗壓性為重點，除了自己團隊之外的每個團隊都在給壓力，客戶的壓力、長官的壓力、以及內外合作對象的壓力，也有一些形容是溝通，有接觸過產線的專案管理則說那是一切的亂源。</p>
+<p id="nav-b4957fc20dd70f80" data-navigation-anchor="">如果是以專案管理為題的書它會怎樣去描述？在圖書館找了一本還在架上的專案管理，同時還看到上一位讀者寫了一張閱讀愉快的小便條紙，也不知道他從書中領悟了什麼。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-82b92b8084314bf6" data-navigation-anchor="">很少看類似有關於類似技能闡述的書，尤其是以專案經理這種以經驗培養實戰經驗為重的。相較於教科書，會很難明白作者想要表達的重點，直到他提到他總結的專案規畫圖以及相關工具及方法那章。</p>
+<p id="nav-b9856678f8802ce8" data-navigation-anchor="">作者花費了不少頁數去描述他自身的專案經驗以及他認為的專案型態，他舉例中讓人印象深刻的是企業整併的專案，也有相關收購的，這以上面提到以產品誕生為主的經驗仍然稍有不同，透過他的規畫圖我們大概可以想像一個專案的輪廓及注意項目，但實際進行仍有賴實際接觸吧。</p>
+<p id="nav-8251abc52fbc011b" data-navigation-anchor="">作者試圖以一種親近的手法舉例與寫作，但不適應閱讀類似文字的我卻總感覺時常在自我吹噓，舉例的例子也主要是以成功以及失敗劃分，並沒有以更專案的角度去解釋清楚，是我自己在閱讀上覺得稍微有障礙的地方，障礙並非難讀而是沒有收穫。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-73f0c7b3207fc8d2" data-navigation-anchor="">專案管理是一個需要接觸才能前進的能力，但如同作者舉例，我們老早就處於專案的世界裡了，像我目前擔任的學科館員及相關特定業務就是其中一個例子。</p>
+<p id="nav-aba0e8e433bb9e69" data-navigation-anchor="">書中提到一些專案管理的概念我認為將從團隊與專案支持都牽涉其中，以下列點說明</p>
+<p id="nav-dc104ee379e3ec14" data-navigation-anchor="">1.4W1H：常見的定位手段，但專案規劃勢必得先有基礎概念，否則成功或失敗將無關緊要，那又何必專案？</p>
+<p id="nav-653dbfdfaa916437" data-navigation-anchor="">2.專案與例行性工作的時間分配將影響後續的專案治理，圖書館執行專案的困難點來自於雜亂且例行的日常業務。</p>
+<p id="nav-808341d754324179" data-navigation-anchor="">3.組織的專案文化問題：忽視專案成本、及缺乏專案狀態相關資料、未經過適當的初步分析及明確理由、專案數量無故增加、缺乏整體策略與執行效果資訊。</p>
+<p id="nav-743e429c1c52164c" data-navigation-anchor="">4.透過專案規畫圖可以先整理一些常見的問題，以逐一排除(見頁尾)。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-96b865a4047ff7d9" data-navigation-anchor="">專案管理革命老實說念起來是有點失望，算是只有預期中一半的收穫而已，可能還是我自身進行專案的經驗太少，或是這個專案都不夠正式，或許多找幾本類似的書籍看能有更多的概念，但專案規畫圖以及回應專案的成立必要性這些倒是以前沒有接觸過的概念，希望之後的閱讀能了解更多。</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="756" height="426" src="/images/blogger-import/blogger-ba8435d7f1/01.webp" alt="圖片 1">
 
-<p>(圖片來源: 博客來網路書店)</p>
-<p>附註：專案管理圖</p>
+<p id="nav-ce2a3b52d7614530" data-navigation-anchor="">(圖片來源: 博客來網路書店)</p>
+<p id="nav-9a017b2e51544d37" data-navigation-anchor="">附註：專案管理圖</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="1583" height="1322" src="/images/blogger-import/blogger-ba8435d7f1/02.webp" alt="圖片 2">
 
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/blog-post_2.html -->

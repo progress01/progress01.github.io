@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,22 +666,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我喜歡主角膽小求穩的反差，但大道之爭讓人物與世界顯得單薄，最後因此棄書。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-a2c11f1d46a29511" data-navigation-anchor="">我喜歡主角膽小求穩的反差，但大道之爭讓人物與世界顯得單薄，最後因此棄書。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>有時候雖然累積不少想看的書，卻往往有點提不起勁，例如科幻小說&lt;呼吸&gt;已經躺了一陣子了，我也才看完一半，但對於類似有點傻的書籍，卻強烈引起我的好奇心，反而能馬上開始看。</p>
-<p>不過我還是決定在閱讀到七成進度的時候棄書，也說不上毒發生亡，更像是厭倦了小說內容？這本小說的開始與結束都屬於規劃外的臨時動議，但還是想寫寫這本書。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>打從&lt;我的師兄太穩健&gt;這本修真小說橫空出世之後，穩這個人物設定突然變得挺熱門的，這其實算是一個很強的設定，有點例如說是明星的愛吃？是討厭不起來並且在特定場合下會有很多有趣的衍生，例如「準備了億點點」，「九成八」之類等等的橋段都讓人忍不住會心一笑。</p>
-<p>這本小說的創作也使用穩這個人物設計，不過這個穩又更穩了一點，膽小、天賦並結合沒有去特別解釋的強大系統，讓主角在修練的過程形成一個閉環，不用特別出世歷練，且主角求長生這個目標非常的準確，因此在前期形成一個挺有趣的反差，眾人遇險歷練(這部分大概可以參考各玄幻經典創作的經歷)，主角在道場裡面看看戰報，並結合經驗更穩的修長生及保護自己長生的實力。</p>
-<p>然而以上設定在實力高漲該走出去謀劃、落子等修仙與天道的傳統之爭時，卻由於上述的特色導致人物顯得非常薄弱與臉譜化，透過互文及戰報我們無法建立主角外的人物形象，頂多是一個個經典玄幻文的模板，但這一個混合起來的形象在大道之爭時卻讓閱讀非常衝突。</p>
-<p>對一路穩到接近無敵的主角也認識極少，求道之心堅定、天賦頂級、系統支援完善，特定法寶的使用印象，剩下竟然什麼也無法連結，對於世界及族群的設定也並不完善，導致前面這本書有趣並且特色的地方，卻也是最後我棄書的地方。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>修真小說系列的小說以我的閱讀經驗會想分成幾個類型，與天道終有一戰的大道之爭，為求長生的堅持及謀劃，或是其他另闢蹊徑，或專注於情感設定上的，各方面都有非常知名的作品，如有時候懷疑是言情修真的&lt;誅仙&gt;、&lt;仙劍&gt;，&lt;長生不死&gt;、&lt;凡人修仙傳&gt;算是時代不同下的長生追求類型，而大背景的設定則例如辰東系列，天道戰印象深刻的是近年結合傳統神話(例如封神榜、洪荒、山海經)的算路對決，另闢蹊徑的則是&lt;修真聊天群&gt;等系列，現代的另類修真與創作方向讓人耳目一新。</p>
-<p>因為修真小說已經形成一些類似於靈根、修練、靈石、大乘之類等級的認知，有時候人物設計、追求以及經歷反而是讓人樂此不疲的重點，這本小說透過戰報、心性等其實模擬出了一個有趣的反差，即使有時候不理解主角，但畢竟是修仙嗎，殊不見都有&lt;蠱真人&gt;一書了(這本沒有宣揚正向社會風氣的書如今也被起點封印了了)，然而作者仍想與大道爭一爭，爭跟穩的設定可以符合但需要劇情及豐滿的人物去平衡，但前面為了凸顯設定而沒有去著墨這邊反而使的這本書閱讀起來失去應有的趣味性，即使推出了各式新的人物(道靈、天族等等)，反而會更形成閱讀障礙，或許需要更完善的世界介紹方式？</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>頂級氣運，悄悄修練千年在開書初期真的會讓人會心一笑，不過角色及設定真的不該完全為人物設計服務，否則在劇情向後發展時，反而對讀者形成非常多的閱讀障礙，而且無法融入書中的劇情，此時更將暴露出角色臉譜化的缺點。</p>
-<p>不過要如何超級穩的修仙並且走向大道之爭呢？可能留給下一個作家給我們答案了，畢竟即使是追求九成八的&lt;我的師兄實在太穩健&gt;，為了拯救在乎的同伴也往往是出生入死的謀劃呢。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-e7e7493c4bb68201" data-navigation-anchor="">有時候雖然累積不少想看的書，卻往往有點提不起勁，例如科幻小說&lt;呼吸&gt;已經躺了一陣子了，我也才看完一半，但對於類似有點傻的書籍，卻強烈引起我的好奇心，反而能馬上開始看。</p>
+<p id="nav-4b0983ad1cb7ce55" data-navigation-anchor="">不過我還是決定在閱讀到七成進度的時候棄書，也說不上毒發生亡，更像是厭倦了小說內容？這本小說的開始與結束都屬於規劃外的臨時動議，但還是想寫寫這本書。</p>
+<h2 id="小說特色" data-navigation-anchor=""><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p id="nav-2c9c3078d3acbde5" data-navigation-anchor="">打從&lt;我的師兄太穩健&gt;這本修真小說橫空出世之後，穩這個人物設定突然變得挺熱門的，這其實算是一個很強的設定，有點例如說是明星的愛吃？是討厭不起來並且在特定場合下會有很多有趣的衍生，例如「準備了億點點」，「九成八」之類等等的橋段都讓人忍不住會心一笑。</p>
+<p id="nav-fab64f92ada4b7fa" data-navigation-anchor="">這本小說的創作也使用穩這個人物設計，不過這個穩又更穩了一點，膽小、天賦並結合沒有去特別解釋的強大系統，讓主角在修練的過程形成一個閉環，不用特別出世歷練，且主角求長生這個目標非常的準確，因此在前期形成一個挺有趣的反差，眾人遇險歷練(這部分大概可以參考各玄幻經典創作的經歷)，主角在道場裡面看看戰報，並結合經驗更穩的修長生及保護自己長生的實力。</p>
+<p id="nav-8da2faedf235d4de" data-navigation-anchor="">然而以上設定在實力高漲該走出去謀劃、落子等修仙與天道的傳統之爭時，卻由於上述的特色導致人物顯得非常薄弱與臉譜化，透過互文及戰報我們無法建立主角外的人物形象，頂多是一個個經典玄幻文的模板，但這一個混合起來的形象在大道之爭時卻讓閱讀非常衝突。</p>
+<p id="nav-52ec16f2ec25abd3" data-navigation-anchor="">對一路穩到接近無敵的主角也認識極少，求道之心堅定、天賦頂級、系統支援完善，特定法寶的使用印象，剩下竟然什麼也無法連結，對於世界及族群的設定也並不完善，導致前面這本書有趣並且特色的地方，卻也是最後我棄書的地方。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-dda10c2dccfcb8ee" data-navigation-anchor="">修真小說系列的小說以我的閱讀經驗會想分成幾個類型，與天道終有一戰的大道之爭，為求長生的堅持及謀劃，或是其他另闢蹊徑，或專注於情感設定上的，各方面都有非常知名的作品，如有時候懷疑是言情修真的&lt;誅仙&gt;、&lt;仙劍&gt;，&lt;長生不死&gt;、&lt;凡人修仙傳&gt;算是時代不同下的長生追求類型，而大背景的設定則例如辰東系列，天道戰印象深刻的是近年結合傳統神話(例如封神榜、洪荒、山海經)的算路對決，另闢蹊徑的則是&lt;修真聊天群&gt;等系列，現代的另類修真與創作方向讓人耳目一新。</p>
+<p id="nav-c86c26653022f500" data-navigation-anchor="">因為修真小說已經形成一些類似於靈根、修練、靈石、大乘之類等級的認知，有時候人物設計、追求以及經歷反而是讓人樂此不疲的重點，這本小說透過戰報、心性等其實模擬出了一個有趣的反差，即使有時候不理解主角，但畢竟是修仙嗎，殊不見都有&lt;蠱真人&gt;一書了(這本沒有宣揚正向社會風氣的書如今也被起點封印了了)，然而作者仍想與大道爭一爭，爭跟穩的設定可以符合但需要劇情及豐滿的人物去平衡，但前面為了凸顯設定而沒有去著墨這邊反而使的這本書閱讀起來失去應有的趣味性，即使推出了各式新的人物(道靈、天族等等)，反而會更形成閱讀障礙，或許需要更完善的世界介紹方式？</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-1678491a8dc063b4" data-navigation-anchor="">頂級氣運，悄悄修練千年在開書初期真的會讓人會心一笑，不過角色及設定真的不該完全為人物設計服務，否則在劇情向後發展時，反而對讀者形成非常多的閱讀障礙，而且無法融入書中的劇情，此時更將暴露出角色臉譜化的缺點。</p>
+<p id="nav-498b24121ce17351" data-navigation-anchor="">不過要如何超級穩的修仙並且走向大道之爭呢？可能留給下一個作家給我們答案了，畢竟即使是追求九成八的&lt;我的師兄實在太穩健&gt;，為了拯救在乎的同伴也往往是出生入死的謀劃呢。</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="180" height="240" src="/images/blogger-import/blogger-62e3e80c54/01.webp" alt="圖片 1">
 
-<p>(圖片來源：起點中文網)</p>
+<p id="nav-ab643d53585ce21a" data-navigation-anchor="">(圖片來源：起點中文網)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/07/blog-post_31.html -->
 
     </div>

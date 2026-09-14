@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -662,97 +670,97 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我把家人的下背、小腿與肩膀不適整理成可回顧的觀察，而不是急著下診斷。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-d5357b1f8dcf54ac" data-navigation-anchor="">我把家人的下背、小腿與肩膀不適整理成可回顧的觀察，而不是急著下診斷。</p>
 <span id="more"></span>
-<p>這篇是我的痠痛改善研究筆記，從家人的下背、小腿與肩膀不適觀察開始。</p>
-<p>我會把肌肉名稱先當成待驗證假說，不急著診斷，改用部位、誘發情境、介入方式與隔天反應，建立安全、可回顧的觀察紀錄。</p>
-<h1 id="先建立安全前提"><a href="#先建立安全前提" class="headerlink" title="先建立安全前提"></a>先建立安全前提</h1><p>這不是診斷，也不是在教人取代醫師或物理治療師。按摩、熱敷、伸展與筋膜槍最多先當成低強度的自我觀察工具；如果症狀持續、變嚴重、影響活動或出現神經與全身症狀，研究就應該暫停，改交給合格專業人員評估。</p>
-<p>另外，原始對話中有些說法很有解釋力，例如「代償被打破」、「筋膜沾黏」或「某個肌肉就是主要元兇」。這些可以幫助我產生問題，但不能只靠摸到硬塊或按壓有感，就把它們當成已證實的原因。</p>
-<h1 id="研究問題"><a href="#研究問題" class="headerlink" title="研究問題"></a>研究問題</h1><p>目前我想回答的不是「哪一個點最值得用力按」，而是：</p>
+<p id="nav-83a1b65191f8a7a1" data-navigation-anchor="">這篇是我的痠痛改善研究筆記，從家人的下背、小腿與肩膀不適觀察開始。</p>
+<p id="nav-8ef7f48e20e2eefc" data-navigation-anchor="">我會把肌肉名稱先當成待驗證假說，不急著診斷，改用部位、誘發情境、介入方式與隔天反應，建立安全、可回顧的觀察紀錄。</p>
+<h1 id="先建立安全前提"><a href="#先建立安全前提" class="headerlink" title="先建立安全前提"></a>先建立安全前提</h1><p id="nav-cf271f1fd64b1f83" data-navigation-anchor="">這不是診斷，也不是在教人取代醫師或物理治療師。按摩、熱敷、伸展與筋膜槍最多先當成低強度的自我觀察工具；如果症狀持續、變嚴重、影響活動或出現神經與全身症狀，研究就應該暫停，改交給合格專業人員評估。</p>
+<p id="nav-47360934361b7bd0" data-navigation-anchor="">另外，原始對話中有些說法很有解釋力，例如「代償被打破」、「筋膜沾黏」或「某個肌肉就是主要元兇」。這些可以幫助我產生問題，但不能只靠摸到硬塊或按壓有感，就把它們當成已證實的原因。</p>
+<h1 id="研究問題"><a href="#研究問題" class="headerlink" title="研究問題"></a>研究問題</h1><p id="nav-dc4ce5acf97a110b" data-navigation-anchor="">目前我想回答的不是「哪一個點最值得用力按」，而是：</p>
 <ol>
-<li>痠痛是否和特定姿勢、活動量、負重或重複動作有關？</li>
-<li>痛點是局部痠、壓痛，還是會往其他地方放射？有沒有麻、刺、無力或活動受限？</li>
-<li>溫和活動、短時間熱敷、輕柔接觸或改變姿勢，哪一種最能讓功能改善？</li>
-<li>改善是只維持幾分鐘，還是能延續到隔天？</li>
-<li>家人能否接受這個方法？如果需要對方忍痛，這個方法就不適合作為日常方案。</li>
+<li id="nav-867229094855f9d0" data-navigation-anchor="">痠痛是否和特定姿勢、活動量、負重或重複動作有關？</li>
+<li id="nav-190896e853ce1b09" data-navigation-anchor="">痛點是局部痠、壓痛，還是會往其他地方放射？有沒有麻、刺、無力或活動受限？</li>
+<li id="nav-6d61be531b08db50" data-navigation-anchor="">溫和活動、短時間熱敷、輕柔接觸或改變姿勢，哪一種最能讓功能改善？</li>
+<li id="nav-0ba15871d5839c15" data-navigation-anchor="">改善是只維持幾分鐘，還是能延續到隔天？</li>
+<li id="nav-d7cd5b77bd268cf9" data-navigation-anchor="">家人能否接受這個方法？如果需要對方忍痛，這個方法就不適合作為日常方案。</li>
 </ol>
-<h1 id="觀察一：右側下背的痠與硬"><a href="#觀察一：右側下背的痠與硬" class="headerlink" title="觀察一：右側下背的痠與硬"></a>觀察一：右側下背的痠與硬</h1><h2 id="原始觀察"><a href="#原始觀察" class="headerlink" title="原始觀察"></a>原始觀察</h2><ul>
-<li>右側下背摸起來比左側明顯硬，並有痠感。</li>
-<li>在一次肌肉放鬆後，背部不適變得更明顯；目前不能確定是原本問題被注意到，還是外力處理後真的變化。</li>
-<li>坐姿可能不對稱，但這只是觀察者的推測，家人本人不一定同意，也還沒有用照片、活動紀錄或專業評估確認。</li>
-<li>臀部按壓沒有明顯感覺，大腿按壓會癢，因此不能把「按不到」解釋成「那裡一定沒有問題」。</li>
+<h1 id="觀察一：右側下背的痠與硬"><a href="#觀察一：右側下背的痠與硬" class="headerlink" title="觀察一：右側下背的痠與硬"></a>觀察一：右側下背的痠與硬</h1><h2 id="原始觀察" data-navigation-anchor=""><a href="#原始觀察" class="headerlink" title="原始觀察"></a>原始觀察</h2><ul>
+<li id="nav-abac65c385e64013" data-navigation-anchor="">右側下背摸起來比左側明顯硬，並有痠感。</li>
+<li id="nav-eb191211f65292af" data-navigation-anchor="">在一次肌肉放鬆後，背部不適變得更明顯；目前不能確定是原本問題被注意到，還是外力處理後真的變化。</li>
+<li id="nav-4b48707629e44e8e" data-navigation-anchor="">坐姿可能不對稱，但這只是觀察者的推測，家人本人不一定同意，也還沒有用照片、活動紀錄或專業評估確認。</li>
+<li id="nav-a8bb41b0fd79ac3b" data-navigation-anchor="">臀部按壓沒有明顯感覺，大腿按壓會癢，因此不能把「按不到」解釋成「那裡一定沒有問題」。</li>
 </ul>
-<h2 id="目前的假說"><a href="#目前的假說" class="headerlink" title="目前的假說"></a>目前的假說</h2><p>腰方肌位於下方肋骨與骨盆之間，因此可以作為理解側腰位置的解剖參考；但右下背痠痛不能直接等同於腰方肌問題。也可能和久坐、活動改變、關節、神經或其他因素有關。</p>
-<p>現階段比較合理的做法，是先觀察對稱性、坐姿與活動後的變化，而不是立刻在最硬的點上增加壓力。</p>
-<h2 id="可觀察的低強度介入"><a href="#可觀察的低強度介入" class="headerlink" title="可觀察的低強度介入"></a>可觀察的低強度介入</h2><ol>
-<li>先改變姿勢，讓身體找到比較舒服、能自然呼吸的位置。</li>
-<li>如果使用熱敷，讓熱源隔著布料，溫度以舒服為準，不把熱敷當成「組織已經被修復」的證據。</li>
-<li>只在柔軟的肌肉區域做大面積、輕柔接觸，避開脊椎、肋骨與骨盆的骨性突起。</li>
-<li>以小幅度、可控制的活動取代被動硬拉；任何動作若使症狀明顯上升，就停止並記錄。</li>
+<h2 id="目前的假說" data-navigation-anchor=""><a href="#目前的假說" class="headerlink" title="目前的假說"></a>目前的假說</h2><p id="nav-ba57526fcc2eed3f" data-navigation-anchor="">腰方肌位於下方肋骨與骨盆之間，因此可以作為理解側腰位置的解剖參考；但右下背痠痛不能直接等同於腰方肌問題。也可能和久坐、活動改變、關節、神經或其他因素有關。</p>
+<p id="nav-b2959669094279d0" data-navigation-anchor="">現階段比較合理的做法，是先觀察對稱性、坐姿與活動後的變化，而不是立刻在最硬的點上增加壓力。</p>
+<h2 id="可觀察的低強度介入" data-navigation-anchor=""><a href="#可觀察的低強度介入" class="headerlink" title="可觀察的低強度介入"></a>可觀察的低強度介入</h2><ol>
+<li id="nav-f6f803904e4207bb" data-navigation-anchor="">先改變姿勢，讓身體找到比較舒服、能自然呼吸的位置。</li>
+<li id="nav-ee4aa6b06fcc8d4c" data-navigation-anchor="">如果使用熱敷，讓熱源隔著布料，溫度以舒服為準，不把熱敷當成「組織已經被修復」的證據。</li>
+<li id="nav-7f4a325987a51c19" data-navigation-anchor="">只在柔軟的肌肉區域做大面積、輕柔接觸，避開脊椎、肋骨與骨盆的骨性突起。</li>
+<li id="nav-4bbb39a3548c6dd1" data-navigation-anchor="">以小幅度、可控制的活動取代被動硬拉；任何動作若使症狀明顯上升，就停止並記錄。</li>
 </ol>
-<p>背痛一般可能在幾週內改善，維持日常活動與溫和移動通常比長時間臥床更合理；但這不是說每一種背痛都適合自行處理。NHS 也提醒，若症狀持續、影響日常、快速惡化或伴隨特定警訊，應尋求醫療協助。<a target="_blank" rel="noopener" href="https://www.nhs.uk/conditions/back-pain/">NHS：Back pain</a></p>
-<h1 id="觀察二：小腿前側的固定痠點"><a href="#觀察二：小腿前側的固定痠點" class="headerlink" title="觀察二：小腿前側的固定痠點"></a>觀察二：小腿前側的固定痠點</h1><p>小腿前側有相對固定的痠痛點，原始對話把它暫時對應到脛前肌。這個對應可以拿來查解剖圖，但不能只因為位置相近，就確定是脛前肌過度使用。</p>
-<p>我需要先確認幾件事：</p>
+<p id="nav-589006322fd1ed7c" data-navigation-anchor="">背痛一般可能在幾週內改善，維持日常活動與溫和移動通常比長時間臥床更合理；但這不是說每一種背痛都適合自行處理。NHS 也提醒，若症狀持續、影響日常、快速惡化或伴隨特定警訊，應尋求醫療協助。<a target="_blank" rel="noopener" href="https://www.nhs.uk/conditions/back-pain/">NHS：Back pain</a></p>
+<h1 id="觀察二：小腿前側的固定痠點"><a href="#觀察二：小腿前側的固定痠點" class="headerlink" title="觀察二：小腿前側的固定痠點"></a>觀察二：小腿前側的固定痠點</h1><p id="nav-7358b9fce022a47e" data-navigation-anchor="">小腿前側有相對固定的痠痛點，原始對話把它暫時對應到脛前肌。這個對應可以拿來查解剖圖，但不能只因為位置相近，就確定是脛前肌過度使用。</p>
+<p id="nav-4b9a91ba5759e03f" data-navigation-anchor="">我需要先確認幾件事：</p>
 <ul>
-<li>痠點是在肌肉、肌腱、骨頭邊緣，還是皮膚或神經比較敏感的區域？</li>
-<li>最近是否增加走路、爬坡、爬樓梯、開車踩踏板或其他重複動作？</li>
-<li>症狀是否只在活動時出現，休息後會不會消失？</li>
-<li>是否有腫脹、發熱、發紅、皮膚顏色改變、麻木或無力？</li>
+<li id="nav-f7879a88d09b3266" data-navigation-anchor="">痠點是在肌肉、肌腱、骨頭邊緣，還是皮膚或神經比較敏感的區域？</li>
+<li id="nav-22202403797cb6b7" data-navigation-anchor="">最近是否增加走路、爬坡、爬樓梯、開車踩踏板或其他重複動作？</li>
+<li id="nav-cbabf699bed37cdc" data-navigation-anchor="">症狀是否只在活動時出現，休息後會不會消失？</li>
+<li id="nav-761a35e1d998827a" data-navigation-anchor="">是否有腫脹、發熱、發紅、皮膚顏色改變、麻木或無力？</li>
 </ul>
-<p>如果只是做低強度觀察，原則是找肌肉、不直接壓脛骨；力道停在輕微痠脹，不追求「越痛越有效」。但如果出現單側不明原因的腫脹、明顯疼痛、紅或熱，不能只當成肌肉結；若同時有呼吸困難、胸痛、咳血或頭暈，更需要立即求助。可參考 <a target="_blank" rel="noopener" href="https://www.nhs.uk/conditions/oedema/">NHS：腿部腫脹</a>。</p>
-<h1 id="觀察三：肩膀前側、後側與肩胛骨周圍"><a href="#觀察三：肩膀前側、後側與肩胛骨周圍" class="headerlink" title="觀察三：肩膀前側、後側與肩胛骨周圍"></a>觀察三：肩膀前側、後側與肩胛骨周圍</h1><h2 id="原始觀察-1"><a href="#原始觀察-1" class="headerlink" title="原始觀察"></a>原始觀察</h2><p>肩膀的描述比下背更分散：</p>
+<p id="nav-809d306c4c67b38f" data-navigation-anchor="">如果只是做低強度觀察，原則是找肌肉、不直接壓脛骨；力道停在輕微痠脹，不追求「越痛越有效」。但如果出現單側不明原因的腫脹、明顯疼痛、紅或熱，不能只當成肌肉結；若同時有呼吸困難、胸痛、咳血或頭暈，更需要立即求助。可參考 <a target="_blank" rel="noopener" href="https://www.nhs.uk/conditions/oedema/">NHS：腿部腫脹</a>。</p>
+<h1 id="觀察三：肩膀前側、後側與肩胛骨周圍"><a href="#觀察三：肩膀前側、後側與肩胛骨周圍" class="headerlink" title="觀察三：肩膀前側、後側與肩胛骨周圍"></a>觀察三：肩膀前側、後側與肩胛骨周圍</h1><h2 id="原始觀察-1" data-navigation-anchor=""><a href="#原始觀察-1" class="headerlink" title="原始觀察"></a>原始觀察</h2><p id="nav-2a9eb1f5fe410672" data-navigation-anchor="">肩膀的描述比下背更分散：</p>
 <ul>
-<li>從鎖骨延伸到三角肌前側會緊。</li>
-<li>有時痠感往三角肌後側與整個右上肩膀延伸。</li>
-<li>「像背書包」一樣，從脖子往下、偏右側的一條區域會痠。</li>
-<li>肩膀最高點附近的骨頭感覺痠，提肩胛肌位置按壓後有比較明顯的放鬆感，但摸起來很硬。</li>
-<li>曾經討論過胸小肌、棘下肌、小圓肌、菱形肌、上斜方肌與提肩胛肌；這些名稱目前都只是可能的觀察路徑。</li>
+<li id="nav-a8ccf5e4195ba80b" data-navigation-anchor="">從鎖骨延伸到三角肌前側會緊。</li>
+<li id="nav-7858ade55a8c3d1a" data-navigation-anchor="">有時痠感往三角肌後側與整個右上肩膀延伸。</li>
+<li id="nav-bffc4f961d430134" data-navigation-anchor="">「像背書包」一樣，從脖子往下、偏右側的一條區域會痠。</li>
+<li id="nav-5487abbd3f5b33d6" data-navigation-anchor="">肩膀最高點附近的骨頭感覺痠，提肩胛肌位置按壓後有比較明顯的放鬆感，但摸起來很硬。</li>
+<li id="nav-9919dcf086aaaf32" data-navigation-anchor="">曾經討論過胸小肌、棘下肌、小圓肌、菱形肌、上斜方肌與提肩胛肌；這些名稱目前都只是可能的觀察路徑。</li>
 </ul>
-<h2 id="不先把痛點當成答案"><a href="#不先把痛點當成答案" class="headerlink" title="不先把痛點當成答案"></a>不先把痛點當成答案</h2><p>肩膀痛可能來自肩膀本身，也可能和頸部或上背轉移的感覺有關。肩膀最高點的痠，也不能只靠「摸到骨頭」就判斷是骨頭或某條肌腱發炎。比較有用的問題是：</p>
+<h2 id="不先把痛點當成答案" data-navigation-anchor=""><a href="#不先把痛點當成答案" class="headerlink" title="不先把痛點當成答案"></a>不先把痛點當成答案</h2><p id="nav-239b05b79594800f" data-navigation-anchor="">肩膀痛可能來自肩膀本身，也可能和頸部或上背轉移的感覺有關。肩膀最高點的痠，也不能只靠「摸到骨頭」就判斷是骨頭或某條肌腱發炎。比較有用的問題是：</p>
 <ul>
-<li>抬手、放手、轉頭或背負物品時，哪個動作最容易誘發？</li>
-<li>活動範圍是真的變小，還是只是某個角度比較不舒服？</li>
-<li>有沒有持續麻木、手臂無力、手指感覺改變或夜間痛？</li>
-<li>休息、輕微活動或改變手臂支撐後，症狀如何變化？</li>
+<li id="nav-b5d0d2be5732ab0c" data-navigation-anchor="">抬手、放手、轉頭或背負物品時，哪個動作最容易誘發？</li>
+<li id="nav-f84808487c258ffc" data-navigation-anchor="">活動範圍是真的變小，還是只是某個角度比較不舒服？</li>
+<li id="nav-70db6cf2a8bdfe2c" data-navigation-anchor="">有沒有持續麻木、手臂無力、手指感覺改變或夜間痛？</li>
+<li id="nav-cf028a5a139dfd04" data-navigation-anchor="">休息、輕微活動或改變手臂支撐後，症狀如何變化？</li>
 </ul>
-<p>NHS 建議肩膀疼痛時保持溫和活動，不要完全停止使用；但若兩週沒有開始改善、越來越難活動，或出現突然劇痛、無法抬手、變形、明顯腫脹、持續麻木或發燒等情況，應尋求醫療協助。<a target="_blank" rel="noopener" href="https://www.nhs.uk/symptoms/shoulder-pain/">NHS：Shoulder pain</a></p>
-<h1 id="放鬆方式的研究原則"><a href="#放鬆方式的研究原則" class="headerlink" title="放鬆方式的研究原則"></a>放鬆方式的研究原則</h1><p>目前不把「深」當成效果指標，而是用下面的順序做小實驗：</p>
+<p id="nav-2c89153fe33a2819" data-navigation-anchor="">NHS 建議肩膀疼痛時保持溫和活動，不要完全停止使用；但若兩週沒有開始改善、越來越難活動，或出現突然劇痛、無法抬手、變形、明顯腫脹、持續麻木或發燒等情況，應尋求醫療協助。<a target="_blank" rel="noopener" href="https://www.nhs.uk/symptoms/shoulder-pain/">NHS：Shoulder pain</a></p>
+<h1 id="放鬆方式的研究原則"><a href="#放鬆方式的研究原則" class="headerlink" title="放鬆方式的研究原則"></a>放鬆方式的研究原則</h1><p id="nav-690e6824de5fb7b1" data-navigation-anchor="">目前不把「深」當成效果指標，而是用下面的順序做小實驗：</p>
 <ol>
-<li>先做幾分鐘舒服的姿勢調整或溫和活動。</li>
-<li>若要接觸，優先使用掌面或掌根的大面積、低強度接觸。</li>
-<li>每次只改一個變因，例如只測試熱敷，或只測試輕柔活動，不要同時熱敷、深壓、拉伸與筋膜槍，否則無法知道哪一個造成變化。</li>
-<li>立刻記錄疼痛分數、活動範圍與主觀感受，並在隔天再看一次。</li>
-<li>如果出現刺痛、麻、放射痛、頭暈、噁心、明顯無力、皮膚變色或症狀持續加重，立即停止。</li>
+<li id="nav-19cbb6c5aeabe2cf" data-navigation-anchor="">先做幾分鐘舒服的姿勢調整或溫和活動。</li>
+<li id="nav-3c7b4a1989fabd49" data-navigation-anchor="">若要接觸，優先使用掌面或掌根的大面積、低強度接觸。</li>
+<li id="nav-46ee78b5fd8c162f" data-navigation-anchor="">每次只改一個變因，例如只測試熱敷，或只測試輕柔活動，不要同時熱敷、深壓、拉伸與筋膜槍，否則無法知道哪一個造成變化。</li>
+<li id="nav-6c114a69d3b7b960" data-navigation-anchor="">立刻記錄疼痛分數、活動範圍與主觀感受，並在隔天再看一次。</li>
+<li id="nav-f2520ceb89059361" data-navigation-anchor="">如果出現刺痛、麻、放射痛、頭暈、噁心、明顯無力、皮膚變色或症狀持續加重，立即停止。</li>
 </ol>
-<h2 id="筋膜槍的暫定界線"><a href="#筋膜槍的暫定界線" class="headerlink" title="筋膜槍的暫定界線"></a>筋膜槍的暫定界線</h2><p>筋膜槍只能先當作肌肉上的短時間低強度工具：使用最低檔、不額外往下壓、沿著肌肉慢慢移動，單一肌群不要持續太久；不能打在骨頭、脊椎、肩峰、頸部前側或側面、腋下深處，也不應用來掩蓋不明原因的疼痛。Cleveland Clinic 的建議也是先從低強度開始，只對肌肉使用，避開骨頭，單一肌群限制在幾分鐘內；如果有既有疾病或正在從受傷中恢復，先詢問醫療團隊。<a target="_blank" rel="noopener" href="https://health.clevelandclinic.org/are-massage-guns-for-percussive-therapy-worth-it">Try a Massage Gun for Relieving Aches and Pains</a></p>
-<p>因此，我不會採用原始對話中「用手肘深壓頸肩硬點」或「把筋膜槍往脖子方向斜打」作為固定方案。對長輩或位置靠近神經、血管、骨頭的區域，寧可把力道降到很輕，也不要用痛感證明自己按到深層。</p>
-<h1 id="每次研究紀錄格式"><a href="#每次研究紀錄格式" class="headerlink" title="每次研究紀錄格式"></a>每次研究紀錄格式</h1><p>之後每次只記錄一個部位、一種介入方式：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">日期：</span><br><span class="line">部位／左右側：</span><br><span class="line">當下症狀（0–10）：</span><br><span class="line">今天之前做了什麼：</span><br><span class="line">觸發動作或姿勢：</span><br><span class="line">這次只測試什麼：</span><br><span class="line">操作後 10–30 分鐘：</span><br><span class="line">隔天起床：</span><br><span class="line">活動範圍或功能有沒有變：</span><br><span class="line">有沒有麻、刺、無力、腫、紅、熱或放射痛：</span><br><span class="line">下一次要保留、減少或停止什麼：</span><br></pre></td></tr></table></figure>
+<h2 id="筋膜槍的暫定界線" data-navigation-anchor=""><a href="#筋膜槍的暫定界線" class="headerlink" title="筋膜槍的暫定界線"></a>筋膜槍的暫定界線</h2><p id="nav-e440ae1f26a42068" data-navigation-anchor="">筋膜槍只能先當作肌肉上的短時間低強度工具：使用最低檔、不額外往下壓、沿著肌肉慢慢移動，單一肌群不要持續太久；不能打在骨頭、脊椎、肩峰、頸部前側或側面、腋下深處，也不應用來掩蓋不明原因的疼痛。Cleveland Clinic 的建議也是先從低強度開始，只對肌肉使用，避開骨頭，單一肌群限制在幾分鐘內；如果有既有疾病或正在從受傷中恢復，先詢問醫療團隊。<a target="_blank" rel="noopener" href="https://health.clevelandclinic.org/are-massage-guns-for-percussive-therapy-worth-it">Try a Massage Gun for Relieving Aches and Pains</a></p>
+<p id="nav-790ad84d35b4d4b5" data-navigation-anchor="">因此，我不會採用原始對話中「用手肘深壓頸肩硬點」或「把筋膜槍往脖子方向斜打」作為固定方案。對長輩或位置靠近神經、血管、骨頭的區域，寧可把力道降到很輕，也不要用痛感證明自己按到深層。</p>
+<h1 id="每次研究紀錄格式"><a href="#每次研究紀錄格式" class="headerlink" title="每次研究紀錄格式"></a>每次研究紀錄格式</h1><p id="nav-5d112db2a0028074" data-navigation-anchor="">之後每次只記錄一個部位、一種介入方式：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre id="nav-bf3cc2795d20ff94" data-navigation-anchor=""><span class="line">日期：</span><br><span class="line">部位／左右側：</span><br><span class="line">當下症狀（0–10）：</span><br><span class="line">今天之前做了什麼：</span><br><span class="line">觸發動作或姿勢：</span><br><span class="line">這次只測試什麼：</span><br><span class="line">操作後 10–30 分鐘：</span><br><span class="line">隔天起床：</span><br><span class="line">活動範圍或功能有沒有變：</span><br><span class="line">有沒有麻、刺、無力、腫、紅、熱或放射痛：</span><br><span class="line">下一次要保留、減少或停止什麼：</span><br></pre></td></tr></tbody></table></figure>
 
-<p>我會特別記錄「隔天」而不是只記錄當下。當下的舒服可能只是短暫感覺改變；如果隔天更痛、活動更差或出現新的神經症狀，那就代表這次介入不適合繼續加強。</p>
-<h1 id="目前結論"><a href="#目前結論" class="headerlink" title="目前結論"></a>目前結論</h1><p>目前還不能說：</p>
+<p id="nav-adff09e1087230f8" data-navigation-anchor="">我會特別記錄「隔天」而不是只記錄當下。當下的舒服可能只是短暫感覺改變；如果隔天更痛、活動更差或出現新的神經症狀，那就代表這次介入不適合繼續加強。</p>
+<h1 id="目前結論"><a href="#目前結論" class="headerlink" title="目前結論"></a>目前結論</h1><p id="nav-7855fd35e0711c3b" data-navigation-anchor="">目前還不能說：</p>
 <ul>
-<li>右側下背就是腰方肌問題。</li>
-<li>小腿前側固定痠點就是脛前肌激痛點。</li>
-<li>肩膀後側痠痛就是提肩胛肌或旋轉肌群造成。</li>
-<li>按得越深、越痛，恢復就越快。</li>
+<li id="nav-6bb99c473a57881d" data-navigation-anchor="">右側下背就是腰方肌問題。</li>
+<li id="nav-333e882e4558c20e" data-navigation-anchor="">小腿前側固定痠點就是脛前肌激痛點。</li>
+<li id="nav-a0ff039c731f1bbb" data-navigation-anchor="">肩膀後側痠痛就是提肩胛肌或旋轉肌群造成。</li>
+<li id="nav-60341ee3ab02591e" data-navigation-anchor="">按得越深、越痛，恢復就越快。</li>
 </ul>
-<p>目前比較確定的是：</p>
+<p id="nav-131af83d943b37ea" data-navigation-anchor="">目前比較確定的是：</p>
 <blockquote>
-<p><strong>要把痠痛改善做成可以累積的研究，重點不是找到一個神奇按壓點，而是建立安全、可重複、能觀察隔天結果的紀錄。</strong></p>
+<p id="nav-f551554cbb7b0da4" data-navigation-anchor=""><strong>要把痠痛改善做成可以累積的研究，重點不是找到一個神奇按壓點，而是建立安全、可重複、能觀察隔天結果的紀錄。</strong></p>
 </blockquote>
-<p>下一步先不擴大工具清單，而是選一個最常出現的部位，連續記錄一到兩週：觸發情境、低強度介入、當下變化、隔天變化，以及什麼時候需要停止自行嘗試。</p>
-<h1 id="需要停止研究並尋求協助的情況"><a href="#需要停止研究並尋求協助的情況" class="headerlink" title="需要停止研究並尋求協助的情況"></a>需要停止研究並尋求協助的情況</h1><p>以下不是要自己判斷病名，而是用來決定「不要繼續按摩或測試」：</p>
+<p id="nav-7a74853a367b3212" data-navigation-anchor="">下一步先不擴大工具清單，而是選一個最常出現的部位，連續記錄一到兩週：觸發情境、低強度介入、當下變化、隔天變化，以及什麼時候需要停止自行嘗試。</p>
+<h1 id="需要停止研究並尋求協助的情況"><a href="#需要停止研究並尋求協助的情況" class="headerlink" title="需要停止研究並尋求協助的情況"></a>需要停止研究並尋求協助的情況</h1><p id="nav-b0e626691249eced" data-navigation-anchor="">以下不是要自己判斷病名，而是用來決定「不要繼續按摩或測試」：</p>
 <ul>
-<li>下背痛合併雙腿麻、無力，會陰／肛門周圍失去感覺，或出現排尿排便改變。</li>
-<li>下背痛在重大跌倒或事故後出現，或伴隨發燒、全身不適、快速惡化、夜間持續痛。</li>
-<li>肩膀突然劇痛、無法抬手、變形、明顯腫脹發熱，或麻木無力持續不退。</li>
-<li>小腿單側不明原因腫脹、發紅、發熱或劇烈疼痛；合併胸痛、呼吸困難、咳血或昏厥感時，立即尋求緊急協助。</li>
+<li id="nav-00fcfc527f922497" data-navigation-anchor="">下背痛合併雙腿麻、無力，會陰／肛門周圍失去感覺，或出現排尿排便改變。</li>
+<li id="nav-4e10ec02134ecd66" data-navigation-anchor="">下背痛在重大跌倒或事故後出現，或伴隨發燒、全身不適、快速惡化、夜間持續痛。</li>
+<li id="nav-a34cfd59f3d7080a" data-navigation-anchor="">肩膀突然劇痛、無法抬手、變形、明顯腫脹發熱，或麻木無力持續不退。</li>
+<li id="nav-c0b7d4408b135d50" data-navigation-anchor="">小腿單側不明原因腫脹、發紅、發熱或劇烈疼痛；合併胸痛、呼吸困難、咳血或昏厥感時，立即尋求緊急協助。</li>
 </ul>
-<p>這些情況不適合靠「再換一個肌肉位置」處理。研究的第一個成果，不是按到哪裡會鬆，而是能在不適合自行處理時及時停下來。</p>
+<p id="nav-e08cf6a0fe45ccf3" data-navigation-anchor="">這些情況不適合靠「再換一個肌肉位置」處理。研究的第一個成果，不是按到哪裡會鬆，而是能在不適合自行處理時及時停下來。</p>
 <h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
-<li><strong>2026-09-06</strong>：建立研究文章，整合「下背痠痛討論」與「研究肩膀放鬆」兩份對話素材；將肌肉名稱改列為待驗證假說，加入小腿前側觀察、筋膜槍安全界線、紀錄格式與警訊。</li>
-<li><strong>2026-09-08</strong>：縮短 <code>&lt;!-- more --&gt;</code> 前的導言摘要，統一首頁與閱讀台的短摘要版型，保留正文中的安全前提、研究問題與警訊。</li>
+<li id="nav-e5a3a39d2b5966bd" data-navigation-anchor=""><strong>2026-09-06</strong>：建立研究文章，整合「下背痠痛討論」與「研究肩膀放鬆」兩份對話素材；將肌肉名稱改列為待驗證假說，加入小腿前側觀察、筋膜槍安全界線、紀錄格式與警訊。</li>
+<li id="nav-0674f563caeca473" data-navigation-anchor=""><strong>2026-09-08</strong>：縮短 <code>&lt;!-- more --&gt;</code> 前的導言摘要，統一首頁與閱讀台的短摘要版型，保留正文中的安全前提、研究問題與警訊。</li>
 </ul>
 
     </div>

@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,67 +663,67 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-571444f83e0aac5f" data-navigation-anchor="">我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。</p>
 <span id="more"></span>
-<p>這篇是「網站品質與軟體測試」系列的第三階段。目標不是證明我會寫幾支瀏覽器腳本，而是挑出穩定、重複價值高的案例，讓電腦協助執行回歸測試，並在失敗時留下足夠證據。</p>
-<p><strong>系列索引</strong>：<a href="/learning/website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
+<p id="nav-114cf040757fea34" data-navigation-anchor="">這篇是「網站品質與軟體測試」系列的第三階段。目標不是證明我會寫幾支瀏覽器腳本，而是挑出穩定、重複價值高的案例，讓電腦協助執行回歸測試，並在失敗時留下足夠證據。</p>
+<p id="nav-b83d42b37be86f90" data-navigation-anchor=""><strong>系列索引</strong>：<a href="/learning/website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
 <blockquote>
-<p><strong>資料狀態：建立工具學習順序，尚未完成可重複執行的測試專案</strong></p>
+<p id="nav-ad4215a1d5b69b7a" data-navigation-anchor=""><strong>資料狀態：建立工具學習順序，尚未完成可重複執行的測試專案</strong></p>
 </blockquote>
-<h2 id="本單元一定要會"><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
-<li>能用 Python、Pytest 與 Playwright 從命令列執行瀏覽器測試。</li>
-<li>能使用穩定的 Locator 完成基本操作，並用 Assertion 驗證需求結果。</li>
-<li>能把至少 5 個手動案例轉成可執行測試，並說明哪些案例值得自動化。</li>
-<li>能在一次測試失敗時留下截圖或 Trace，知道如何查看失敗證據。</li>
+<h2 id="本單元一定要會" data-navigation-anchor=""><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
+<li id="nav-7ba00805a1e1dc2e" data-navigation-anchor="">能用 Python、Pytest 與 Playwright 從命令列執行瀏覽器測試。</li>
+<li id="nav-2a7f63d84ab3b0cb" data-navigation-anchor="">能使用穩定的 Locator 完成基本操作，並用 Assertion 驗證需求結果。</li>
+<li id="nav-1dfdb2ad35f452a6" data-navigation-anchor="">能把至少 5 個手動案例轉成可執行測試，並說明哪些案例值得自動化。</li>
+<li id="nav-7023690a2aaea9ab" data-navigation-anchor="">能在一次測試失敗時留下截圖或 Trace，知道如何查看失敗證據。</li>
 </ul>
-<h3 id="本單元先不學"><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p>JavaScript／TypeScript、API 測試、跨瀏覽器矩陣、Docker 與複雜框架抽象先不加入；先讓一條小而穩定的 Web 測試流程跑通。</p>
-<h3 id="過關條件"><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p>在不含工作機密的練習專案中，從乾淨環境執行至少 5 個測試，並在 README 寫清楚安裝方式、執行指令、測試範圍與已知限制。只貼程式碼、不知道怎麼重跑，不算過關。</p>
-<h2 id="為什麼先用-Python-Pytest-Playwright"><a href="#為什麼先用-Python-Pytest-Playwright" class="headerlink" title="為什麼先用 Python + Pytest + Playwright"></a>為什麼先用 Python + Pytest + Playwright</h2><p>我已經有 Python 基礎，也希望先把手動測試與 Web 自動化接起來，因此第一輪不再同時增加 JavaScript、Appium、Maestro 等新工具。先用一組範圍清楚的技術完成最小可行專案，比收集很多工具名稱更能看出自己是否真的理解測試。</p>
-<h2 id="學習順序"><a href="#學習順序" class="headerlink" title="學習順序"></a>學習順序</h2><h3 id="1-先讓瀏覽器完成最小流程"><a href="#1-先讓瀏覽器完成最小流程" class="headerlink" title="1. 先讓瀏覽器完成最小流程"></a>1. 先讓瀏覽器完成最小流程</h3><p>先做到：開啟瀏覽器、進入測試頁面、找到元素、執行一個操作、關閉瀏覽器。這一步的目的是確認環境、瀏覽器與測試資料可以運作，不急著設計複雜框架。</p>
-<h3 id="2-學會定位、操作與驗證"><a href="#2-學會定位、操作與驗證" class="headerlink" title="2. 學會定位、操作與驗證"></a>2. 學會定位、操作與驗證</h3><p>目前先整理這組基本能力：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">page.goto()</span><br><span class="line">get_by_role() / get_by_text() / locator()</span><br><span class="line">click() / fill()</span><br><span class="line">expect(...)</span><br></pre></td></tr></table></figure>
+<h3 id="本單元先不學" data-navigation-anchor=""><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p id="nav-5b01fb1cf681beb1" data-navigation-anchor="">JavaScript／TypeScript、API 測試、跨瀏覽器矩陣、Docker 與複雜框架抽象先不加入；先讓一條小而穩定的 Web 測試流程跑通。</p>
+<h3 id="過關條件" data-navigation-anchor=""><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p id="nav-5f7835cd2fda3e98" data-navigation-anchor="">在不含工作機密的練習專案中，從乾淨環境執行至少 5 個測試，並在 README 寫清楚安裝方式、執行指令、測試範圍與已知限制。只貼程式碼、不知道怎麼重跑，不算過關。</p>
+<h2 id="為什麼先用-Python-Pytest-Playwright" data-navigation-anchor=""><a href="#為什麼先用-Python-Pytest-Playwright" class="headerlink" title="為什麼先用 Python + Pytest + Playwright"></a>為什麼先用 Python + Pytest + Playwright</h2><p id="nav-bd43a331b9878afd" data-navigation-anchor="">我已經有 Python 基礎，也希望先把手動測試與 Web 自動化接起來，因此第一輪不再同時增加 JavaScript、Appium、Maestro 等新工具。先用一組範圍清楚的技術完成最小可行專案，比收集很多工具名稱更能看出自己是否真的理解測試。</p>
+<h2 id="學習順序" data-navigation-anchor=""><a href="#學習順序" class="headerlink" title="學習順序"></a>學習順序</h2><h3 id="1-先讓瀏覽器完成最小流程" data-navigation-anchor=""><a href="#1-先讓瀏覽器完成最小流程" class="headerlink" title="1. 先讓瀏覽器完成最小流程"></a>1. 先讓瀏覽器完成最小流程</h3><p id="nav-5e5edd649fd999e3" data-navigation-anchor="">先做到：開啟瀏覽器、進入測試頁面、找到元素、執行一個操作、關閉瀏覽器。這一步的目的是確認環境、瀏覽器與測試資料可以運作，不急著設計複雜框架。</p>
+<h3 id="2-學會定位、操作與驗證" data-navigation-anchor=""><a href="#2-學會定位、操作與驗證" class="headerlink" title="2. 學會定位、操作與驗證"></a>2. 學會定位、操作與驗證</h3><p id="nav-6e75b1981d7b0ddf" data-navigation-anchor="">目前先整理這組基本能力：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre id="nav-f31f3ee89a15a7ea" data-navigation-anchor=""><span class="line">page.goto()</span><br><span class="line">get_by_role() / get_by_text() / locator()</span><br><span class="line">click() / fill()</span><br><span class="line">expect(...)</span><br></pre></td></tr></tbody></table></figure>
 
-<p>真正要理解的是：定位方式是否穩定、操作後要觀察什麼、Assertion 是否真的對應需求，而不是把 API 名稱背起來。</p>
-<h3 id="3-接回-Pytest"><a href="#3-接回-Pytest" class="headerlink" title="3. 接回 Pytest"></a>3. 接回 Pytest</h3><p>把不同情境拆成容易理解的測試函式，例如登入成功、錯誤密碼、搜尋與基本導覽。每個測試都應該有清楚的目的、前置資料與可判斷的結果。</p>
-<h3 id="4-再學維護性"><a href="#4-再學維護性" class="headerlink" title="4. 再學維護性"></a>4. 再學維護性</h3><p>當測試能跑後，再加入：</p>
+<p id="nav-d8c032b5007cfe54" data-navigation-anchor="">真正要理解的是：定位方式是否穩定、操作後要觀察什麼、Assertion 是否真的對應需求，而不是把 API 名稱背起來。</p>
+<h3 id="3-接回-Pytest" data-navigation-anchor=""><a href="#3-接回-Pytest" class="headerlink" title="3. 接回 Pytest"></a>3. 接回 Pytest</h3><p id="nav-c11c1b7d2b1cce85" data-navigation-anchor="">把不同情境拆成容易理解的測試函式，例如登入成功、錯誤密碼、搜尋與基本導覽。每個測試都應該有清楚的目的、前置資料與可判斷的結果。</p>
+<h3 id="4-再學維護性" data-navigation-anchor=""><a href="#4-再學維護性" class="headerlink" title="4. 再學維護性"></a>4. 再學維護性</h3><p id="nav-aafb02110791eb69" data-navigation-anchor="">當測試能跑後，再加入：</p>
 <ul>
-<li><strong>Fixture</strong>：集中處理測試前準備、測試執行與清理。</li>
-<li><strong>Parameterization</strong>：用多組資料重複執行同一測試，不複製整份程式。</li>
-<li><strong>Screenshot／Trace</strong>：失敗時保留畫面、步驟與紀錄，方便回溯。</li>
-<li><strong>Page Object Model</strong>：把頁面定位與操作整理在適當的物件中，降低測試案例互相綁死。</li>
+<li id="nav-9fa14029a2db4c0c" data-navigation-anchor=""><strong>Fixture</strong>：集中處理測試前準備、測試執行與清理。</li>
+<li id="nav-35cec5cca61143c1" data-navigation-anchor=""><strong>Parameterization</strong>：用多組資料重複執行同一測試，不複製整份程式。</li>
+<li id="nav-80139277d38eac29" data-navigation-anchor=""><strong>Screenshot／Trace</strong>：失敗時保留畫面、步驟與紀錄，方便回溯。</li>
+<li id="nav-878672996d1831fc" data-navigation-anchor=""><strong>Page Object Model</strong>：把頁面定位與操作整理在適當的物件中，降低測試案例互相綁死。</li>
 </ul>
-<h2 id="從手動案例挑自動化對象"><a href="#從手動案例挑自動化對象" class="headerlink" title="從手動案例挑自動化對象"></a>從手動案例挑自動化對象</h2><p>不是每個 Test Case 都值得自動化。第一輪優先選：</p>
+<h2 id="從手動案例挑自動化對象" data-navigation-anchor=""><a href="#從手動案例挑自動化對象" class="headerlink" title="從手動案例挑自動化對象"></a>從手動案例挑自動化對象</h2><p id="nav-c261365e328e7f4b" data-navigation-anchor="">不是每個 Test Case 都值得自動化。第一輪優先選：</p>
 <ul>
-<li>需求穩定、近期會反覆執行的流程。</li>
-<li>操作步驟固定、預期結果明確的案例。</li>
-<li>失敗會影響主要使用路徑的案例。</li>
-<li>人工重複執行成本高，但自動化後容易維護的案例。</li>
+<li id="nav-03845d086cc914dd" data-navigation-anchor="">需求穩定、近期會反覆執行的流程。</li>
+<li id="nav-aa784cf72eda502d" data-navigation-anchor="">操作步驟固定、預期結果明確的案例。</li>
+<li id="nav-9cdd27bed03595e0" data-navigation-anchor="">失敗會影響主要使用路徑的案例。</li>
+<li id="nav-fe30f86dd7f2b3c7" data-navigation-anchor="">人工重複執行成本高，但自動化後容易維護的案例。</li>
 </ul>
-<p>先把第一階段的登入成功、錯誤密碼與搜尋案例各挑一個，完成 3 個最小測試；再補到至少 5 個，並記錄哪些案例刻意保留手動執行，以及原因。</p>
-<h2 id="建議的練習專案結構"><a href="#建議的練習專案結構" class="headerlink" title="建議的練習專案結構"></a>建議的練習專案結構</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">qa-demo/</span><br><span class="line">├─ README.md</span><br><span class="line">├─ requirements.txt</span><br><span class="line">├─ pages/</span><br><span class="line">│  ├─ login_page.py</span><br><span class="line">│  └─ search_page.py</span><br><span class="line">├─ tests/</span><br><span class="line">│  ├─ test_login.py</span><br><span class="line">│  └─ test_search.py</span><br><span class="line">└─ testcases/</span><br><span class="line">   └─ test-cases.md</span><br></pre></td></tr></table></figure>
+<p id="nav-f90eb9f63ebcf525" data-navigation-anchor="">先把第一階段的登入成功、錯誤密碼與搜尋案例各挑一個，完成 3 個最小測試；再補到至少 5 個，並記錄哪些案例刻意保留手動執行，以及原因。</p>
+<h2 id="建議的練習專案結構" data-navigation-anchor=""><a href="#建議的練習專案結構" class="headerlink" title="建議的練習專案結構"></a>建議的練習專案結構</h2><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre id="nav-7d24ca506f2e11f1" data-navigation-anchor=""><span class="line">qa-demo/</span><br><span class="line">├─ README.md</span><br><span class="line">├─ requirements.txt</span><br><span class="line">├─ pages/</span><br><span class="line">│  ├─ login_page.py</span><br><span class="line">│  └─ search_page.py</span><br><span class="line">├─ tests/</span><br><span class="line">│  ├─ test_login.py</span><br><span class="line">│  └─ test_search.py</span><br><span class="line">└─ testcases/</span><br><span class="line">   └─ test-cases.md</span><br></pre></td></tr></tbody></table></figure>
 
-<p>這只是起始結構，不代表每個專案都必須使用 Page Object Model。當測試數量很少或頁面仍頻繁變動時，過早抽象也可能增加理解成本。</p>
-<h2 id="自動化測試不能替代的事情"><a href="#自動化測試不能替代的事情" class="headerlink" title="自動化測試不能替代的事情"></a>自動化測試不能替代的事情</h2><ul>
-<li>需求是否合理，仍需要產品與使用者脈絡。</li>
-<li>視覺、內容、無障礙與可理解性，不能只靠幾個 DOM assertion 判斷。</li>
-<li>測試通過只表示特定條件下的檢查通過，不代表整個產品沒有問題。</li>
-<li>不穩定的定位器、共享狀態與不乾淨的測試資料，會讓失敗結果失去可信度。</li>
+<p id="nav-316ce8e6f865b090" data-navigation-anchor="">這只是起始結構，不代表每個專案都必須使用 Page Object Model。當測試數量很少或頁面仍頻繁變動時，過早抽象也可能增加理解成本。</p>
+<h2 id="自動化測試不能替代的事情" data-navigation-anchor=""><a href="#自動化測試不能替代的事情" class="headerlink" title="自動化測試不能替代的事情"></a>自動化測試不能替代的事情</h2><ul>
+<li id="nav-094278f525e59d68" data-navigation-anchor="">需求是否合理，仍需要產品與使用者脈絡。</li>
+<li id="nav-20373ab7faa48319" data-navigation-anchor="">視覺、內容、無障礙與可理解性，不能只靠幾個 DOM assertion 判斷。</li>
+<li id="nav-fae232535eb2a78b" data-navigation-anchor="">測試通過只表示特定條件下的檢查通過，不代表整個產品沒有問題。</li>
+<li id="nav-d2e74747bfb944c3" data-navigation-anchor="">不穩定的定位器、共享狀態與不乾淨的測試資料，會讓失敗結果失去可信度。</li>
 </ul>
-<h2 id="這篇的實作作業"><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><ol>
-<li>建立一個不含工作機密的練習專案。</li>
-<li>先讓瀏覽器成功開啟並執行一個簡單操作。</li>
-<li>寫出 5 個可以執行的自動化測試，至少涵蓋成功與失敗情境。</li>
-<li>加入一組參數化測試與一個失敗證據輸出。</li>
-<li>將至少一個頁面的操作整理成 Page Object，並在 README 說明測試範圍與限制。</li>
+<h2 id="這篇的實作作業" data-navigation-anchor=""><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><ol>
+<li id="nav-777ce4ea7938ecd0" data-navigation-anchor="">建立一個不含工作機密的練習專案。</li>
+<li id="nav-f2a86a46c3e001b4" data-navigation-anchor="">先讓瀏覽器成功開啟並執行一個簡單操作。</li>
+<li id="nav-76a6adc529296a15" data-navigation-anchor="">寫出 5 個可以執行的自動化測試，至少涵蓋成功與失敗情境。</li>
+<li id="nav-fc90957a4a991e38" data-navigation-anchor="">加入一組參數化測試與一個失敗證據輸出。</li>
+<li id="nav-41e90352b67f5d4e" data-navigation-anchor="">將至少一個頁面的操作整理成 Page Object，並在 README 說明測試範圍與限制。</li>
 </ol>
-<h2 id="還沒回答的問題"><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
-<li>什麼情況下 locator 算穩定？</li>
-<li>測試資料要如何建立、重置與隔離？</li>
-<li>測試失敗時，如何區分產品缺陷、測試腳本問題與環境問題？</li>
-<li>哪些工作上的規則檢核適合當作 API 或資料層測試，而不是瀏覽器測試？</li>
+<h2 id="還沒回答的問題" data-navigation-anchor=""><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
+<li id="nav-1aa8319211053c89" data-navigation-anchor="">什麼情況下 locator 算穩定？</li>
+<li id="nav-ec8e94439dbc01ad" data-navigation-anchor="">測試資料要如何建立、重置與隔離？</li>
+<li id="nav-fbf2858b516f9076" data-navigation-anchor="">測試失敗時，如何區分產品缺陷、測試腳本問題與環境問題？</li>
+<li id="nav-0b95bbf162fe6a34" data-navigation-anchor="">哪些工作上的規則檢核適合當作 API 或資料層測試，而不是瀏覽器測試？</li>
 </ul>
-<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
-<li><strong>2026-09-04</strong>：建立系列第三階段筆記，整理 Python、Pytest、Playwright 與可維護 Web 測試專案的學習順序。</li>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-b1d57d42c5c9666c" data-navigation-anchor=""><strong>2026-09-04</strong>：建立系列第三階段筆記，整理 Python、Pytest、Playwright 與可維護 Web 測試專案的學習順序。</li>
 </ul>
 
     </div>
@@ -761,8 +769,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/learning/test-design-boundary-risk-based-testing/" rel="prev" title="測試設計｜等價類別、邊界值與風險導向測試｜學習筆記">
-                  <i class="fa fa-angle-left"></i> 測試設計｜等價類別、邊界值與風險導向測試｜學習筆記
+                <a href="/learning/software-testing-basics-test-case-bug-report/" rel="prev" title="測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記">
+                  <i class="fa fa-angle-left"></i> 測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記
                 </a>
             </div>
             <div class="post-nav-item">

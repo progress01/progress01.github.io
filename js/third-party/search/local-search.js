@@ -1,4 +1,4 @@
-/* global CONFIG, NexT, pjax, LocalSearch */
+/* global CONFIG, NexT, pjax, LocalSearch, NavigationSearch */
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!CONFIG.path) {
@@ -19,11 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeButton = document.querySelector('.popup-btn-close');
   const emptyMessageTemplate = CONFIG.i18n.empty || '找不到與「${query}」相關的文章或紀錄';
   const recentMarkup = container.innerHTML;
+  const filterElements = [...popup.querySelectorAll('[data-navigation-filter]')];
+  const filters = { source: 'all', category: 'all', month: 'all' };
+  let records = [];
   let selectedCategory = 'all';
   let searchState = 'idle';
   let searchTrigger;
   let focusTimer;
-  const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
   const escapeHtml = text => text.replace(/[&<>"']/g, character => ({
     '&': '&amp;',
     '<': '&lt;',
@@ -74,47 +77,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const stripSearchTags = value => {
-    const holder = document.createElement('template');
-    holder.innerHTML = value;
-    return holder.content.textContent || '';
-  };
+  const parseSearchData = responseText => NavigationSearch.parse(responseText);
 
-  const parseSearchData = responseText => {
-    const isJson = String(CONFIG.path).toLowerCase().endsWith('json');
-    let data;
-    if (isJson) {
-      data = JSON.parse(responseText);
-    } else {
-      const xml = new DOMParser().parseFromString(responseText, 'text/xml');
-      if (xml.querySelector('parsererror') || !xml.documentElement || xml.documentElement.nodeName.toLowerCase() !== 'search') {
-        throw new Error('search index XML is invalid');
-      }
-      data = [...xml.querySelectorAll('entry')].map(entry => ({
-        title  : entry.querySelector('title')?.textContent || '',
-        content: entry.querySelector('content')?.textContent || '',
-        url    : entry.querySelector('url')?.textContent || ''
-      }));
-    }
-    if (!Array.isArray(data)) throw new Error('search index must be an array');
-    return data.filter(item => item && item.title).map(item => ({
-      title  : String(item.title).trim(),
-      content: stripSearchTags(String(item.content || '').trim()),
-      url    : decodeURIComponent(String(item.url || '')).replace(/\/{2,}/g, '/')
-    })).filter(item => item.title);
+  const populateFilters = () => {
+    const choices = {
+      category: [...new Set(records.flatMap(record => record.categories))].sort(),
+      month: [...new Set(records.flatMap(record => record.events.map(event => event.date.slice(0, 7))))].sort().reverse()
+    };
+    filterElements.forEach(select => {
+      const key = select.dataset.navigationFilter;
+      if (choices[key]) select.innerHTML = select.options[0].outerHTML + choices[key].map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('');
+      select.disabled = false;
+      select.value = filters[key];
+    });
   };
 
   const fetchSearchData = () => {
     if (searchState === 'loading' || searchState === 'loaded') return;
     searchState = 'loading';
     renderLoadingState();
-    fetch(CONFIG.path)
+    fetch('/navigation-index.json')
       .then(response => {
         if (!response.ok) throw new Error(`search index request failed (${response.status})`);
         return response.text();
       })
       .then(responseText => {
-        localSearch.datas = parseSearchData(responseText);
+        records = parseSearchData(responseText);
+        populateFilters();
         localSearch.isfetched = true;
         searchState = 'loaded';
         window.dispatchEvent(new Event('search:loaded'));
@@ -130,33 +119,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const inputEventFunction = () => {
     if (searchState !== 'loaded') return;
-    const searchText = input.value.trim().toLowerCase();
-    const keywords = searchText.split(/[-\s]+/);
-    let resultItems = [];
-    if (searchText.length > 0) {
-      // Perform local searching
-      resultItems = localSearch.getResultItems(keywords);
-    }
-    if (searchText.length === 0) {
+    const searchText = input.value.trim();
+    const resultItems = NavigationSearch.search(records, searchText, filters);
+    if (!searchText && Object.values(filters).every(value => value === 'all')) {
       renderRecent(selectedCategory);
     } else if (resultItems.length === 0) {
-      const message = emptyMessageTemplate.replace('${query}', escapeHtml(searchText));
+      const message = searchText ? emptyMessageTemplate.replace('${query}', escapeHtml(searchText)) : '沒有符合目前篩選條件的紀錄';
       container.innerHTML = renderEmptyState('far fa-frown', message);
     } else {
-      resultItems.sort((left, right) => {
-        if (left.includedCount !== right.includedCount) {
-          return right.includedCount - left.includedCount;
-        } else if (left.hitCount !== right.hitCount) {
-          return right.hitCount - left.hitCount;
-        }
-        return right.id - left.id;
-      });
-      const stats = CONFIG.i18n.hits.replace('${hits}', resultItems.length);
+      const stats = `找到 ${resultItems.length} 筆紀錄`;
 
       container.innerHTML = `<div class="search-stats">${stats}</div>
         <hr>
-        <ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
-      if (typeof pjax === 'object') pjax.refresh(container);
+        <ul class="search-result-list">${resultItems.map(result => NavigationSearch.render(result, searchText)).join('')}</ul>`;
+      if (typeof pjax === 'object' && pjax) pjax.refresh(container);
     }
   };
 
@@ -166,6 +142,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   input.addEventListener('input', inputEventFunction);
+  filterElements.forEach(select => select.addEventListener('change', () => {
+    filters[select.dataset.navigationFilter] = select.value;
+    inputEventFunction();
+  }));
+  popup.querySelector('[data-navigation-reset]')?.addEventListener('click', () => {
+    input.value = '';
+    selectedCategory = 'all';
+    filterElements.forEach(select => { select.value = 'all'; filters[select.dataset.navigationFilter] = 'all'; });
+    inputEventFunction();
+    input.focus();
+  });
   window.addEventListener('search:loaded', inputEventFunction);
   container.addEventListener('click', event => {
     const retry = event.target.closest('[data-search-retry]');

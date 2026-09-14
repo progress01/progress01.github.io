@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -656,88 +664,88 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我整理 CMS 前後台、內容建模與規格審查，先建立專案討論前可以對照的工作手冊。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-89fa8c53739919fc" data-navigation-anchor="">我整理 CMS 前後台、內容建模與規格審查，先建立專案討論前可以對照的工作手冊。</p>
 <span id="more"></span>
-<p>這是一篇公開的持續學習筆記，先把我對 CMS 前後台、內容建模、動態套版與規格審查的理解整理在同一個地方。現在的版本比較像一份 PM 在專案討論前可以拿來對照的工作手冊，之後會再補上實際案例、欄位規格與查證過的參考資料。</p>
+<p id="nav-8ccd17156c919dfe" data-navigation-anchor="">這是一篇公開的持續學習筆記，先把我對 CMS 前後台、內容建模、動態套版與規格審查的理解整理在同一個地方。現在的版本比較像一份 PM 在專案討論前可以拿來對照的工作手冊，之後會再補上實際案例、欄位規格與查證過的參考資料。</p>
 <blockquote>
-<p><strong>資料狀態：研究整理、持續修正</strong></p>
-<p>以下內容是目前的理解與工作假設。書籍、文章與業界方法的說法，還需要回到原始資料核對；實際專案仍應依需求、技術環境與團隊約定確認，不能只靠這份筆記直接決定規格。</p>
+<p id="nav-6e8c99120b5e184b" data-navigation-anchor=""><strong>資料狀態：研究整理、持續修正</strong></p>
+<p id="nav-f1a103ee7ccc448c" data-navigation-anchor="">以下內容是目前的理解與工作假設。書籍、文章與業界方法的說法，還需要回到原始資料核對；實際專案仍應依需求、技術環境與團隊約定確認，不能只靠這份筆記直接決定規格。</p>
 </blockquote>
-<h2 id="CMS-系統架構與建置全貌指南"><a href="#CMS-系統架構與建置全貌指南" class="headerlink" title="CMS 系統架構與建置全貌指南"></a>CMS 系統架構與建置全貌指南</h2><h3 id="從「功能執行」升級為「全站架構思維」"><a href="#從「功能執行」升級為「全站架構思維」" class="headerlink" title="從「功能執行」升級為「全站架構思維」"></a>從「功能執行」升級為「全站架構思維」</h3><p>專案經理在 CMS 專案會議中感到跟不上討論或失焦，常常不是因為不理解某個按鈕，而是過早陷入局部視覺或單一功能，沒有同時看見內容如何建立、儲存、分類、發布、被套版，以及最後如何呈現在不同頁面。</p>
-<p>我目前把這個問題整理成兩條主線：</p>
+<h2 id="CMS-系統架構與建置全貌指南" data-navigation-anchor=""><a href="#CMS-系統架構與建置全貌指南" class="headerlink" title="CMS 系統架構與建置全貌指南"></a>CMS 系統架構與建置全貌指南</h2><h3 id="從「功能執行」升級為「全站架構思維」" data-navigation-anchor=""><a href="#從「功能執行」升級為「全站架構思維」" class="headerlink" title="從「功能執行」升級為「全站架構思維」"></a>從「功能執行」升級為「全站架構思維」</h3><p id="nav-d61a9e62a9bf77d6" data-navigation-anchor="">專案經理在 CMS 專案會議中感到跟不上討論或失焦，常常不是因為不理解某個按鈕，而是過早陷入局部視覺或單一功能，沒有同時看見內容如何建立、儲存、分類、發布、被套版，以及最後如何呈現在不同頁面。</p>
+<p id="nav-0a2daff4972f06db" data-navigation-anchor="">我目前把這個問題整理成兩條主線：</p>
 <ul>
-<li><strong>系統連貫性</strong>：同一份內容是否能被不同頁面、模組與渠道正確使用？</li>
-<li><strong>資料生命週期</strong>：內容從建立、審核、發布、修改到下架，過程中的狀態與責任是否清楚？</li>
+<li id="nav-5b0fdaaa46bbc2a5" data-navigation-anchor=""><strong>系統連貫性</strong>：同一份內容是否能被不同頁面、模組與渠道正確使用？</li>
+<li id="nav-e4971348db02c6c8" data-navigation-anchor=""><strong>資料生命週期</strong>：內容從建立、審核、發布、修改到下架，過程中的狀態與責任是否清楚？</li>
 </ul>
-<p>這篇筆記希望先建立一個由上而下的觀察框架，再慢慢把它轉成實際可用的欄位對照與規格審查表。</p>
-<h2 id="一、核心概念的操作型定義"><a href="#一、核心概念的操作型定義" class="headerlink" title="一、核心概念的操作型定義"></a>一、核心概念的操作型定義</h2><h3 id="1-資料與內容建模"><a href="#1-資料與內容建模" class="headerlink" title="1. 資料與內容建模"></a>1. 資料與內容建模</h3><p>內容建模是把業務需求抽象成獨立於視覺呈現之外的結構，包括實體、欄位、關聯與驗證規則。換句話說，先決定「這是什麼內容」以及「這份內容需要保存什麼資料」，再討論它要在哪個頁面呈現。</p>
-<p>目前先用以下四個部分理解：</p>
+<p id="nav-47d1369dd1fd8868" data-navigation-anchor="">這篇筆記希望先建立一個由上而下的觀察框架，再慢慢把它轉成實際可用的欄位對照與規格審查表。</p>
+<h2 id="一、核心概念的操作型定義" data-navigation-anchor=""><a href="#一、核心概念的操作型定義" class="headerlink" title="一、核心概念的操作型定義"></a>一、核心概念的操作型定義</h2><h3 id="1-資料與內容建模" data-navigation-anchor=""><a href="#1-資料與內容建模" class="headerlink" title="1. 資料與內容建模"></a>1. 資料與內容建模</h3><p id="nav-98f6c50158bbf380" data-navigation-anchor="">內容建模是把業務需求抽象成獨立於視覺呈現之外的結構，包括實體、欄位、關聯與驗證規則。換句話說，先決定「這是什麼內容」以及「這份內容需要保存什麼資料」，再討論它要在哪個頁面呈現。</p>
+<p id="nav-7539638835f253d4" data-navigation-anchor="">目前先用以下四個部分理解：</p>
 <ul>
-<li><strong>實體／內容類型</strong>：例如公告、文章、活動、人物或下載資源。</li>
-<li><strong>屬性／欄位</strong>：例如標題、摘要、封面、日期、作者與狀態。</li>
-<li><strong>關聯</strong>：例如文章與分類、活動與報名表、公告與附件之間的關係。</li>
-<li><strong>驗證規則</strong>：例如必填、字數上限、格式、權限與空值處理。</li>
+<li id="nav-d92fb76dfb02e6ea" data-navigation-anchor=""><strong>實體／內容類型</strong>：例如公告、文章、活動、人物或下載資源。</li>
+<li id="nav-f5f875bb02e745f4" data-navigation-anchor=""><strong>屬性／欄位</strong>：例如標題、摘要、封面、日期、作者與狀態。</li>
+<li id="nav-91d91b59df592778" data-navigation-anchor=""><strong>關聯</strong>：例如文章與分類、活動與報名表、公告與附件之間的關係。</li>
+<li id="nav-89f697e0523bffe5" data-navigation-anchor=""><strong>驗證規則</strong>：例如必填、字數上限、格式、權限與空值處理。</li>
 </ul>
-<p>這裡先記下兩個參考方向，之後需要再核對內容與引用範圍：</p>
+<p id="nav-1140e70fc82c8e44" data-navigation-anchor="">這裡先記下兩個參考方向，之後需要再核對內容與引用範圍：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a>：把內容管理系統放回內容模型與管理流程中理解。</li>
-<li><a target="_blank" rel="noopener" href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a>：從 Content-First 的方向思考內容如何被不同介面重複使用。</li>
+<li id="nav-221ecb4b082f6a34" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a>：把內容管理系統放回內容模型與管理流程中理解。</li>
+<li id="nav-e035e4f5ca3b1ab6" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a>：從 Content-First 的方向思考內容如何被不同介面重複使用。</li>
 </ul>
-<h3 id="2-資訊架構與分類法"><a href="#2-資訊架構與分類法" class="headerlink" title="2. 資訊架構與分類法"></a>2. 資訊架構與分類法</h3><p>資訊架構不只是把選單排得好看，而是讓使用者能找到內容，也讓系統知道內容之間如何組織。暫時先拆成四個部分：</p>
+<h3 id="2-資訊架構與分類法" data-navigation-anchor=""><a href="#2-資訊架構與分類法" class="headerlink" title="2. 資訊架構與分類法"></a>2. 資訊架構與分類法</h3><p id="nav-04c1d34a54adefd5" data-navigation-anchor="">資訊架構不只是把選單排得好看，而是讓使用者能找到內容，也讓系統知道內容之間如何組織。暫時先拆成四個部分：</p>
 <ul>
-<li><strong>組織系統</strong>：內容依什麼規則分組。</li>
-<li><strong>標籤系統</strong>：用哪些詞描述內容。</li>
-<li><strong>導覽系統</strong>：使用者如何從入口走到內容。</li>
-<li><strong>檢索系統</strong>：搜尋、篩選與排序如何運作。</li>
+<li id="nav-579ed07ef1ffc0ac" data-navigation-anchor=""><strong>組織系統</strong>：內容依什麼規則分組。</li>
+<li id="nav-da4954e29ca3d7d6" data-navigation-anchor=""><strong>標籤系統</strong>：用哪些詞描述內容。</li>
+<li id="nav-ba7b1706f2edff33" data-navigation-anchor=""><strong>導覽系統</strong>：使用者如何從入口走到內容。</li>
+<li id="nav-80821f92cbeecd36" data-navigation-anchor=""><strong>檢索系統</strong>：搜尋、篩選與排序如何運作。</li>
 </ul>
-<p>分類、標籤、URL 與搜尋結果其實會互相影響，因此不能只在切版階段才決定。參考方向是 <a target="_blank" rel="noopener" href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture for the World Wide Web</a>，之後要再把書中的架構概念對照到實際 CMS。</p>
-<h3 id="3-前端切版與介面元件化"><a href="#3-前端切版與介面元件化" class="headerlink" title="3. 前端切版與介面元件化"></a>3. 前端切版與介面元件化</h3><p>前端切版是把視覺設計轉成語意化 HTML、響應式斷點與可重用的 UI 元件。重點不只是「畫面看起來一樣」，還包括：</p>
+<p id="nav-0c2f6ef920f62c04" data-navigation-anchor="">分類、標籤、URL 與搜尋結果其實會互相影響，因此不能只在切版階段才決定。參考方向是 <a target="_blank" rel="noopener" href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture for the World Wide Web</a>，之後要再把書中的架構概念對照到實際 CMS。</p>
+<h3 id="3-前端切版與介面元件化" data-navigation-anchor=""><a href="#3-前端切版與介面元件化" class="headerlink" title="3. 前端切版與介面元件化"></a>3. 前端切版與介面元件化</h3><p id="nav-a9c26922bf53979a" data-navigation-anchor="">前端切版是把視覺設計轉成語意化 HTML、響應式斷點與可重用的 UI 元件。重點不只是「畫面看起來一樣」，還包括：</p>
 <ul>
-<li>元件是否有清楚的資料輸入與輸出？</li>
-<li>不同內容長度是否會破壞版面？</li>
-<li>圖片、表格、按鈕與表單在不同螢幕上是否仍然可用？</li>
-<li>元件是否具備基本的無障礙語意？</li>
+<li id="nav-49b6fe7e316895e9" data-navigation-anchor="">元件是否有清楚的資料輸入與輸出？</li>
+<li id="nav-205e57ab0a1b3b5e" data-navigation-anchor="">不同內容長度是否會破壞版面？</li>
+<li id="nav-ce44f673e4841c60" data-navigation-anchor="">圖片、表格、按鈕與表單在不同螢幕上是否仍然可用？</li>
+<li id="nav-f9582ee3f08f37ba" data-navigation-anchor="">元件是否具備基本的無障礙語意？</li>
 </ul>
-<p>這部分先以 <a target="_blank" rel="noopener" href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> 作為理解介面層級的參考，但仍要小心：分類方法本身不是目的，真正重要的是元件能否穩定地被重複使用。</p>
-<h3 id="4-動態套版與樣板引擎"><a href="#4-動態套版與樣板引擎" class="headerlink" title="4. 動態套版與樣板引擎"></a>4. 動態套版與樣板引擎</h3><p>動態套版可以先理解成：樣板提供呈現結構，內容模型提供資料，樣板引擎再依照條件、迴圈、資料管道與快取規則輸出頁面。</p>
-<p>因此前後台對照時，不應該只問「這個欄位在後台放哪裡」，還要問：</p>
+<p id="nav-101e30703c7f6752" data-navigation-anchor="">這部分先以 <a target="_blank" rel="noopener" href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> 作為理解介面層級的參考，但仍要小心：分類方法本身不是目的，真正重要的是元件能否穩定地被重複使用。</p>
+<h3 id="4-動態套版與樣板引擎" data-navigation-anchor=""><a href="#4-動態套版與樣板引擎" class="headerlink" title="4. 動態套版與樣板引擎"></a>4. 動態套版與樣板引擎</h3><p id="nav-93ee755bcd8d5b03" data-navigation-anchor="">動態套版可以先理解成：樣板提供呈現結構，內容模型提供資料，樣板引擎再依照條件、迴圈、資料管道與快取規則輸出頁面。</p>
+<p id="nav-b5031330ad900045" data-navigation-anchor="">因此前後台對照時，不應該只問「這個欄位在後台放哪裡」，還要問：</p>
 <ul>
-<li>這個欄位會被哪個模板使用？</li>
-<li>空值時前台要隱藏、顯示預設文字，還是改用其他欄位？</li>
-<li>內容是純文字、Markdown、富文本，還是結構化區塊？</li>
-<li>這個欄位在列表頁與詳細頁是否有不同的呈現規則？</li>
+<li id="nav-151ee0e22713e618" data-navigation-anchor="">這個欄位會被哪個模板使用？</li>
+<li id="nav-c4533f9cc9197649" data-navigation-anchor="">空值時前台要隱藏、顯示預設文字，還是改用其他欄位？</li>
+<li id="nav-06e550ae96203777" data-navigation-anchor="">內容是純文字、Markdown、富文本，還是結構化區塊？</li>
+<li id="nav-7dfd18f78546c2e7" data-navigation-anchor="">這個欄位在列表頁與詳細頁是否有不同的呈現規則？</li>
 </ul>
-<h2 id="二、建站者視角：全站工程發問矩陣"><a href="#二、建站者視角：全站工程發問矩陣" class="headerlink" title="二、建站者視角：全站工程發問矩陣"></a>二、建站者視角：全站工程發問矩陣</h2><h3 id="維度-1：資料邊界與屬性約束"><a href="#維度-1：資料邊界與屬性約束" class="headerlink" title="維度 1：資料邊界與屬性約束"></a>維度 1：資料邊界與屬性約束</h3><ol>
-<li>內容是純文字、結構化欄位，還是可能產生雜訊 HTML 的富文本？</li>
-<li>標題、摘要與內文的字數上下限是多少？</li>
-<li>欄位為空時，前台的 fallback 邏輯是什麼？</li>
-<li>圖片與影音的長寬比、格式、容量與替代文字如何限制？</li>
-<li>是否有自動轉檔、縮圖、壓縮與檔案版本管理？</li>
+<h2 id="二、建站者視角：全站工程發問矩陣" data-navigation-anchor=""><a href="#二、建站者視角：全站工程發問矩陣" class="headerlink" title="二、建站者視角：全站工程發問矩陣"></a>二、建站者視角：全站工程發問矩陣</h2><h3 id="維度-1：資料邊界與屬性約束" data-navigation-anchor=""><a href="#維度-1：資料邊界與屬性約束" class="headerlink" title="維度 1：資料邊界與屬性約束"></a>維度 1：資料邊界與屬性約束</h3><ol>
+<li id="nav-2b48edeca8958c80" data-navigation-anchor="">內容是純文字、結構化欄位，還是可能產生雜訊 HTML 的富文本？</li>
+<li id="nav-b1f62f4b3323ac57" data-navigation-anchor="">標題、摘要與內文的字數上下限是多少？</li>
+<li id="nav-3dd563ef530bf15b" data-navigation-anchor="">欄位為空時，前台的 fallback 邏輯是什麼？</li>
+<li id="nav-f3277c65f0cbfafe" data-navigation-anchor="">圖片與影音的長寬比、格式、容量與替代文字如何限制？</li>
+<li id="nav-077e39cf3de962db" data-navigation-anchor="">是否有自動轉檔、縮圖、壓縮與檔案版本管理？</li>
 </ol>
-<h3 id="維度-2：分類法與實體關聯"><a href="#維度-2：分類法與實體關聯" class="headerlink" title="維度 2：分類法與實體關聯"></a>維度 2：分類法與實體關聯</h3><ol>
-<li>分類與標籤是一對多還是多對多？</li>
-<li>是否需要支援巢狀層級？層級上限與管理責任是什麼？</li>
-<li>相關文章是透過標籤自動查詢，還是由小編手動綁定？</li>
-<li>關聯內容被下架、刪除或改名時，前台如何處理？</li>
+<h3 id="維度-2：分類法與實體關聯" data-navigation-anchor=""><a href="#維度-2：分類法與實體關聯" class="headerlink" title="維度 2：分類法與實體關聯"></a>維度 2：分類法與實體關聯</h3><ol>
+<li id="nav-03a774e9b243a425" data-navigation-anchor="">分類與標籤是一對多還是多對多？</li>
+<li id="nav-1c0080303ea8759f" data-navigation-anchor="">是否需要支援巢狀層級？層級上限與管理責任是什麼？</li>
+<li id="nav-5748c24a2ec047f2" data-navigation-anchor="">相關文章是透過標籤自動查詢，還是由小編手動綁定？</li>
+<li id="nav-c0c2ddc29684532c" data-navigation-anchor="">關聯內容被下架、刪除或改名時，前台如何處理？</li>
 </ol>
-<h3 id="維度-3：版型映射與元件重用"><a href="#維度-3：版型映射與元件重用" class="headerlink" title="維度 3：版型映射與元件重用"></a>維度 3：版型映射與元件重用</h3><ol>
-<li>全站頁面能否收斂成少數幾種內容類型與模板？</li>
-<li>不同頁面的卡片是共用帶參數的元件，還是各自維護結構？</li>
-<li>同一份資料需要在哪些頁面、搜尋結果或推薦模組出現？</li>
-<li>元件的變體是由資料欄位控制，還是由編輯者選擇？</li>
+<h3 id="維度-3：版型映射與元件重用" data-navigation-anchor=""><a href="#維度-3：版型映射與元件重用" class="headerlink" title="維度 3：版型映射與元件重用"></a>維度 3：版型映射與元件重用</h3><ol>
+<li id="nav-6921805830983834" data-navigation-anchor="">全站頁面能否收斂成少數幾種內容類型與模板？</li>
+<li id="nav-929b46c6f9572b45" data-navigation-anchor="">不同頁面的卡片是共用帶參數的元件，還是各自維護結構？</li>
+<li id="nav-99db19d6660e6782" data-navigation-anchor="">同一份資料需要在哪些頁面、搜尋結果或推薦模組出現？</li>
+<li id="nav-a4b04f9d20b2a1f0" data-navigation-anchor="">元件的變體是由資料欄位控制，還是由編輯者選擇？</li>
 </ol>
-<h3 id="維度-4：狀態容錯與例外處理"><a href="#維度-4：狀態容錯與例外處理" class="headerlink" title="維度 4：狀態容錯與例外處理"></a>維度 4：狀態容錯與例外處理</h3><ol>
-<li>搜尋或篩選結果為零時，要顯示什麼 Empty State？</li>
-<li>文章是否有草稿、預約發布、已下架、權限限制與版本回溯？</li>
-<li>富文本是否有 HTML 白名單與淨化機制？</li>
-<li>外部連結失效、圖片不存在或欄位缺漏時，前台要如何降級？</li>
+<h3 id="維度-4：狀態容錯與例外處理" data-navigation-anchor=""><a href="#維度-4：狀態容錯與例外處理" class="headerlink" title="維度 4：狀態容錯與例外處理"></a>維度 4：狀態容錯與例外處理</h3><ol>
+<li id="nav-952e9a89a5d6e372" data-navigation-anchor="">搜尋或篩選結果為零時，要顯示什麼 Empty State？</li>
+<li id="nav-41cc3fc16d165484" data-navigation-anchor="">文章是否有草稿、預約發布、已下架、權限限制與版本回溯？</li>
+<li id="nav-9e0fcebbdaa54556" data-navigation-anchor="">富文本是否有 HTML 白名單與淨化機制？</li>
+<li id="nav-b306e0f840b431c0" data-navigation-anchor="">外部連結失效、圖片不存在或欄位缺漏時，前台要如何降級？</li>
 </ol>
-<h2 id="三、AI-時代的漸進式結構化釐清法"><a href="#三、AI-時代的漸進式結構化釐清法" class="headerlink" title="三、AI 時代的漸進式結構化釐清法"></a>三、AI 時代的漸進式結構化釐清法</h2><p>我目前把 PM 使用 AI 協助釐清規格的流程拆成四步。AI 可以幫忙找出遺漏與衝突，但最後仍要由人確認業務語意與交付責任。</p>
-<h3 id="步驟-1：全域實體提取"><a href="#步驟-1：全域實體提取" class="headerlink" title="步驟 1：全域實體提取"></a>步驟 1：全域實體提取</h3><p>先把網站類型、頁面清單、既有需求與內容來源交給 AI，請它從系統架構角度提取核心內容類型，並整理實體之間的一對多、多對多關係。</p>
-<p>重點不是讓 AI 立刻產出資料庫，而是先避免每一頁都被當成完全獨立的功能。</p>
-<h3 id="步驟-2：階層與分類法對齊"><a href="#步驟-2：階層與分類法對齊" class="headerlink" title="步驟 2：階層與分類法對齊"></a>步驟 2：階層與分類法對齊</h3><p>針對已確認的內容類型，逐一確認哪些適合用分類，哪些只需要標籤，以及是否存在跨實體的動態引用。這一步也要檢查是否因為追求彈性而產生過度複雜的架構。</p>
-<h3 id="步驟-3：微觀欄位與邊界探勘"><a href="#步驟-3：微觀欄位與邊界探勘" class="headerlink" title="步驟 3：微觀欄位與邊界探勘"></a>步驟 3：微觀欄位與邊界探勘</h3><p>針對某一個內容類型，請 AI 扮演技術主管，提出需要向客戶確認的型態、Fallback、字數、富文本與例外處理問題。這可以作為會議提問清單，但不能直接當成客戶已同意的規格。</p>
-<h3 id="步驟-4：規格落地與交付閉環"><a href="#步驟-4：規格落地與交付閉環" class="headerlink" title="步驟 4：規格落地與交付閉環"></a>步驟 4：規格落地與交付閉環</h3><p>最後把討論結果整理成單一真實來源的規格表：</p>
+<h2 id="三、AI-時代的漸進式結構化釐清法" data-navigation-anchor=""><a href="#三、AI-時代的漸進式結構化釐清法" class="headerlink" title="三、AI 時代的漸進式結構化釐清法"></a>三、AI 時代的漸進式結構化釐清法</h2><p id="nav-30d181a75c0f7ee4" data-navigation-anchor="">我目前把 PM 使用 AI 協助釐清規格的流程拆成四步。AI 可以幫忙找出遺漏與衝突，但最後仍要由人確認業務語意與交付責任。</p>
+<h3 id="步驟-1：全域實體提取" data-navigation-anchor=""><a href="#步驟-1：全域實體提取" class="headerlink" title="步驟 1：全域實體提取"></a>步驟 1：全域實體提取</h3><p id="nav-c459d418b0edf90a" data-navigation-anchor="">先把網站類型、頁面清單、既有需求與內容來源交給 AI，請它從系統架構角度提取核心內容類型，並整理實體之間的一對多、多對多關係。</p>
+<p id="nav-7d9c26c76f5d05a1" data-navigation-anchor="">重點不是讓 AI 立刻產出資料庫，而是先避免每一頁都被當成完全獨立的功能。</p>
+<h3 id="步驟-2：階層與分類法對齊" data-navigation-anchor=""><a href="#步驟-2：階層與分類法對齊" class="headerlink" title="步驟 2：階層與分類法對齊"></a>步驟 2：階層與分類法對齊</h3><p id="nav-4a678d5de1e03078" data-navigation-anchor="">針對已確認的內容類型，逐一確認哪些適合用分類，哪些只需要標籤，以及是否存在跨實體的動態引用。這一步也要檢查是否因為追求彈性而產生過度複雜的架構。</p>
+<h3 id="步驟-3：微觀欄位與邊界探勘" data-navigation-anchor=""><a href="#步驟-3：微觀欄位與邊界探勘" class="headerlink" title="步驟 3：微觀欄位與邊界探勘"></a>步驟 3：微觀欄位與邊界探勘</h3><p id="nav-9c1b682f760e346c" data-navigation-anchor="">針對某一個內容類型，請 AI 扮演技術主管，提出需要向客戶確認的型態、Fallback、字數、富文本與例外處理問題。這可以作為會議提問清單，但不能直接當成客戶已同意的規格。</p>
+<h3 id="步驟-4：規格落地與交付閉環" data-navigation-anchor=""><a href="#步驟-4：規格落地與交付閉環" class="headerlink" title="步驟 4：規格落地與交付閉環"></a>步驟 4：規格落地與交付閉環</h3><p id="nav-37489819470591c2" data-navigation-anchor="">最後把討論結果整理成單一真實來源的規格表：</p>
 <table>
 <thead>
 <tr>
@@ -758,8 +766,8 @@
 <td>待補</td>
 </tr>
 </tbody></table>
-<p>這張表之後應該要能同時交給 PM、設計、前端、後端與內容編輯者使用，讓每個人看到的是同一套欄位定義。</p>
-<h2 id="四、客戶語言與系統架構語言"><a href="#四、客戶語言與系統架構語言" class="headerlink" title="四、客戶語言與系統架構語言"></a>四、客戶語言與系統架構語言</h2><table>
+<p id="nav-26468a54389250c6" data-navigation-anchor="">這張表之後應該要能同時交給 PM、設計、前端、後端與內容編輯者使用，讓每個人看到的是同一套欄位定義。</p>
+<h2 id="四、客戶語言與系統架構語言" data-navigation-anchor=""><a href="#四、客戶語言與系統架構語言" class="headerlink" title="四、客戶語言與系統架構語言"></a>四、客戶語言與系統架構語言</h2><table>
 <thead>
 <tr>
 <th>客戶需求</th>
@@ -788,29 +796,29 @@
 <td>區塊有幾種？資料是動態查詢還是靜態填入？版本如何維護？</td>
 </tr>
 </tbody></table>
-<p>這個轉換的價值，不是把客戶的話翻成艱深術語，而是把一句看似單純的需求拆出它會影響哪些資料、模板、權限與維護成本。</p>
-<h2 id="五、核心參考資料"><a href="#五、核心參考資料" class="headerlink" title="五、核心參考資料"></a>五、核心參考資料</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a> — Deane Barker。</li>
-<li><a target="_blank" rel="noopener" href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a> — Mike Atherton、Carrie Hane。</li>
-<li><a target="_blank" rel="noopener" href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture: For the Web and Beyond</a> — Louis Rosenfeld、Peter Morville、Jorge Arango。</li>
-<li><a target="_blank" rel="noopener" href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> — Brad Frost。</li>
+<p id="nav-eb012bd5108bd53f" data-navigation-anchor="">這個轉換的價值，不是把客戶的話翻成艱深術語，而是把一句看似單純的需求拆出它會影響哪些資料、模板、權限與維護成本。</p>
+<h2 id="五、核心參考資料" data-navigation-anchor=""><a href="#五、核心參考資料" class="headerlink" title="五、核心參考資料"></a>五、核心參考資料</h2><ol>
+<li id="nav-bb561c3ad6053f55" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/web-content-management/9781491908112/">Web Content Management: Systems, Features, and Best Practices</a> — Deane Barker。</li>
+<li id="nav-6b5cbc8beda06f5a" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.peachpit.com/store/designing-connected-content-plan-and-model-digital-9780134764054">Designing Connected Content</a> — Mike Atherton、Carrie Hane。</li>
+<li id="nav-87e1e989f2b809d7" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://books.google.com/books/about/Information_Architecture_for_the_World_W.html?id=hLdcLklZOFAC">Information Architecture: For the Web and Beyond</a> — Louis Rosenfeld、Peter Morville、Jorge Arango。</li>
+<li id="nav-30183c8a454da52b" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a> — Brad Frost。</li>
 </ol>
-<h2 id="後續查證與實作清單"><a href="#後續查證與實作清單" class="headerlink" title="後續查證與實作清單"></a>後續查證與實作清單</h2><ul>
-<li>找一個實際 CMS 專案，把前台頁面反推成內容類型與欄位。</li>
-<li>選一個內容類型，完成前台、後台、資料庫與 API 的欄位對照表。</li>
-<li>補上欄位空值、字數限制、圖片規格與發布狀態的例外處理。</li>
-<li>核對參考書籍中對 Content Modeling、IA 與 Component 的原始定義。</li>
-<li>把這篇筆記中的「應該」逐項改成已有來源或專案決策支持的說法。</li>
+<h2 id="後續查證與實作清單" data-navigation-anchor=""><a href="#後續查證與實作清單" class="headerlink" title="後續查證與實作清單"></a>後續查證與實作清單</h2><ul>
+<li id="nav-a89beb73398fe402" data-navigation-anchor="">找一個實際 CMS 專案，把前台頁面反推成內容類型與欄位。</li>
+<li id="nav-3ffd697eb08978f4" data-navigation-anchor="">選一個內容類型，完成前台、後台、資料庫與 API 的欄位對照表。</li>
+<li id="nav-be0991bc8ef3dd28" data-navigation-anchor="">補上欄位空值、字數限制、圖片規格與發布狀態的例外處理。</li>
+<li id="nav-cd34b3e7bbd11e4a" data-navigation-anchor="">核對參考書籍中對 Content Modeling、IA 與 Component 的原始定義。</li>
+<li id="nav-29fccd2d4a1cf3cb" data-navigation-anchor="">把這篇筆記中的「應該」逐項改成已有來源或專案決策支持的說法。</li>
 </ul>
-<h2 id="預先收集：把欄位變成可交付的規格"><a href="#預先收集：把欄位變成可交付的規格" class="headerlink" title="預先收集：把欄位變成可交付的規格"></a>預先收集：把欄位變成可交付的規格</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.contentful.com/help/content-models/">Content models｜Contentful Help</a>：把內容模型理解成內容類型、欄位與彼此參照的總體結構，也提供視覺化建模與 API 建模的入口。</li>
-<li><a target="_blank" rel="noopener" href="https://www.sanity.io/docs/studio/schemas-and-forms">Schemas and forms｜Sanity Docs</a>：清楚區分 schema、document type 與 field type，適合對照「後台欄位」和「內容實體」不是同一層概念。</li>
-<li><a target="_blank" rel="noopener" href="https://www.sanity.io/docs/apis-and-sdks/sanity-typegen">Sanity TypeGen</a>：示範如何從 schema 與查詢產生型別，讓前後端在欄位名稱、資料型態與必要欄位上有可檢查的契約。</li>
-<li><a target="_blank" rel="noopener" href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a>：補上 API 的 request、response 與 schema 描述，適合拿來把前台顯示欄位和後端實際回傳欄位對起來。</li>
+<h2 id="預先收集：把欄位變成可交付的規格" data-navigation-anchor=""><a href="#預先收集：把欄位變成可交付的規格" class="headerlink" title="預先收集：把欄位變成可交付的規格"></a>預先收集：把欄位變成可交付的規格</h2><ol>
+<li id="nav-63440fdbd55b9b0a" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.contentful.com/help/content-models/">Content models｜Contentful Help</a>：把內容模型理解成內容類型、欄位與彼此參照的總體結構，也提供視覺化建模與 API 建模的入口。</li>
+<li id="nav-6e946431bd2b7aa3" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.sanity.io/docs/studio/schemas-and-forms">Schemas and forms｜Sanity Docs</a>：清楚區分 schema、document type 與 field type，適合對照「後台欄位」和「內容實體」不是同一層概念。</li>
+<li id="nav-baebaad4bf7ca074" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.sanity.io/docs/apis-and-sdks/sanity-typegen">Sanity TypeGen</a>：示範如何從 schema 與查詢產生型別，讓前後端在欄位名稱、資料型態與必要欄位上有可檢查的契約。</li>
+<li id="nav-762b84d677d9d6b1" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a>：補上 API 的 request、response 與 schema 描述，適合拿來把前台顯示欄位和後端實際回傳欄位對起來。</li>
 </ol>
-<h2 id="我的參考意見"><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p>這幾份資料共同支持一個很實用的判斷：CMS 欄位不是切版細節，而是內容模型、API 契約、編輯流程與前台呈現的交界。PM 可以先做一張單一真實來源的欄位表，至少包含「顯示名稱、API key、資料型態、必填／選填、驗證規則、空值處理、前台使用位置、負責人與範例值」。如果這些資訊沒有文件或決策紀錄，前端、後端與 PM 都只能靠猜，工時自然不可能估得準。</p>
-<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
-<li><strong>2026-08-29 22:09</strong>：建立 CMS 前後台理解的公開學習筆記，加入內容建模、資訊架構、元件化、動態套版與規格審查矩陣。</li>
+<h2 id="我的參考意見" data-navigation-anchor=""><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p id="nav-363a1f14b1711ea4" data-navigation-anchor="">這幾份資料共同支持一個很實用的判斷：CMS 欄位不是切版細節，而是內容模型、API 契約、編輯流程與前台呈現的交界。PM 可以先做一張單一真實來源的欄位表，至少包含「顯示名稱、API key、資料型態、必填／選填、驗證規則、空值處理、前台使用位置、負責人與範例值」。如果這些資訊沒有文件或決策紀錄，前端、後端與 PM 都只能靠猜，工時自然不可能估得準。</p>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-e2bd766fc1e9a131" data-navigation-anchor=""><strong>2026-08-29 22:09</strong>：建立 CMS 前後台理解的公開學習筆記，加入內容建模、資訊架構、元件化、動態套版與規格審查矩陣。</li>
 </ul>
 
     </div>
@@ -856,13 +864,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/learning/volleyball-attack-arm-swing/" rel="prev" title="排球攻擊揮臂機制｜學習筆記">
-                  <i class="fa fa-angle-left"></i> 排球攻擊揮臂機制｜學習筆記
+                <a href="/learning/agentic-transaction-acid-agent/" rel="prev" title="Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記">
+                  <i class="fa fa-angle-left"></i> Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/learning/agentic-transaction-acid-agent/" rel="next" title="Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記">
-                  Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記 <i class="fa fa-angle-right"></i>
+                <a href="/2026/08/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9F%E8%AC%9D%E5%8B%9E%E5%8A%9B/" rel="next" title="歌曲推薦-感謝勞力">
+                  歌曲推薦-感謝勞力 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -656,74 +664,74 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我想正式學會判斷網站能否安心上線，逐步把檢核、追蹤與 Python 接到品質流程。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-8f3b485c9c280a25" data-navigation-anchor="">我想正式學會判斷網站能否安心上線，逐步把檢核、追蹤與 Python 接到品質流程。</p>
 <span id="more"></span>
-<p>這是一個以「我想正式學會怎麼判斷網站能不能安心上線」為核心的學習系列。它不是把自己包裝成已經具備完整 QA 經驗，而是把目前的政府網站專案、網站檢核、問題追蹤與 Python 應用，逐步接到較完整的品質工程流程。</p>
-<p><strong>系列來源</strong>：使用者提供的 HyRead QA 職缺與網站品質學習對話整理</p>
+<p id="nav-80a524f4b7efb8b6" data-navigation-anchor="">這是一個以「我想正式學會怎麼判斷網站能不能安心上線」為核心的學習系列。它不是把自己包裝成已經具備完整 QA 經驗，而是把目前的政府網站專案、網站檢核、問題追蹤與 Python 應用，逐步接到較完整的品質工程流程。</p>
+<p id="nav-6a3b513e9eaff62b" data-navigation-anchor=""><strong>系列來源</strong>：使用者提供的 HyRead QA 職缺與網站品質學習對話整理</p>
 <blockquote>
-<p><strong>資料狀態：建立 42 天挑戰，尚未完成各階段實作</strong></p>
-<p>這份筆記是自己的課程設計與問題地圖，不是正式證照教材。後續遇到標準、工具或流程的細節，仍要回到官方文件、實際專案與可重現的測試結果核對。</p>
+<p id="nav-3fe65557442514cb" data-navigation-anchor=""><strong>資料狀態：建立 42 天挑戰，尚未完成各階段實作</strong></p>
+<p id="nav-c26855225201e2ac" data-navigation-anchor="">這份筆記是自己的課程設計與問題地圖，不是正式證照教材。後續遇到標準、工具或流程的細節，仍要回到官方文件、實際專案與可重現的測試結果核對。</p>
 </blockquote>
-<h2 id="我真正想學的是什麼"><a href="#我真正想學的是什麼" class="headerlink" title="我真正想學的是什麼"></a>我真正想學的是什麼</h2><p>目前最重要的問題不是「我要不要立刻轉職 QA」，而是：</p>
+<h2 id="我真正想學的是什麼" data-navigation-anchor=""><a href="#我真正想學的是什麼" class="headerlink" title="我真正想學的是什麼"></a>我真正想學的是什麼</h2><p id="nav-623c853fd6a1906a" data-navigation-anchor="">目前最重要的問題不是「我要不要立刻轉職 QA」，而是：</p>
 <blockquote>
-<p><strong>一個網站從做完到可以上線，中間要用什麼方法取得足夠的品質證據？</strong></p>
+<p id="nav-4ecddab0894bb686" data-navigation-anchor=""><strong>一個網站從做完到可以上線，中間要用什麼方法取得足夠的品質證據？</strong></p>
 </blockquote>
-<p>我過去比較常從三個位置看事情：</p>
+<p id="nav-35136046f20bddd2" data-navigation-anchor="">我過去比較常從三個位置看事情：</p>
 <ul>
-<li><strong>使用者／圖資</strong>：使用者想完成什麼，資訊怎麼被找到與使用。</li>
-<li><strong>PM／維運</strong>：需求怎麼整理、問題怎麼追蹤、不同角色怎麼協作。</li>
-<li><strong>品質／工程</strong>：怎麼證明功能符合預期，以及一次修改沒有讓其他地方壞掉。</li>
+<li id="nav-e780cd0402acf516" data-navigation-anchor=""><strong>使用者／圖資</strong>：使用者想完成什麼，資訊怎麼被找到與使用。</li>
+<li id="nav-607ecd017efd758f" data-navigation-anchor=""><strong>PM／維運</strong>：需求怎麼整理、問題怎麼追蹤、不同角色怎麼協作。</li>
+<li id="nav-731f041365905fc7" data-navigation-anchor=""><strong>品質／工程</strong>：怎麼證明功能符合預期，以及一次修改沒有讓其他地方壞掉。</li>
 </ul>
-<p>這個系列要補的是第三個角度，但不把前兩個丟掉。品質判斷應該能回到使用者情境，也要能被團隊討論、執行與留下證據。</p>
-<h2 id="一條完整的網站品質流程"><a href="#一條完整的網站品質流程" class="headerlink" title="一條完整的網站品質流程"></a>一條完整的網站品質流程</h2><p>先把「我操作看看」改寫成一條可以檢查的流程：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">需求與使用者情境</span><br><span class="line">        ↓</span><br><span class="line">驗收條件與風險</span><br><span class="line">        ↓</span><br><span class="line">測試情境與 Test Case</span><br><span class="line">        ↓</span><br><span class="line">執行測試與紀錄證據</span><br><span class="line">        ↓</span><br><span class="line">缺陷回報與修正追蹤</span><br><span class="line">        ↓</span><br><span class="line">Retest 修正驗證</span><br><span class="line">        ↓</span><br><span class="line">Regression Test 回歸測試</span><br><span class="line">        ↓</span><br><span class="line">Release 判斷與上線後觀察</span><br></pre></td></tr></table></figure>
+<p id="nav-37b8e3d36ccceeba" data-navigation-anchor="">這個系列要補的是第三個角度，但不把前兩個丟掉。品質判斷應該能回到使用者情境，也要能被團隊討論、執行與留下證據。</p>
+<h2 id="一條完整的網站品質流程" data-navigation-anchor=""><a href="#一條完整的網站品質流程" class="headerlink" title="一條完整的網站品質流程"></a>一條完整的網站品質流程</h2><p id="nav-4801f5d30c8d9a67" data-navigation-anchor="">先把「我操作看看」改寫成一條可以檢查的流程：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre id="nav-68edc8b8d0708834" data-navigation-anchor=""><span class="line">需求與使用者情境</span><br><span class="line">        ↓</span><br><span class="line">驗收條件與風險</span><br><span class="line">        ↓</span><br><span class="line">測試情境與 Test Case</span><br><span class="line">        ↓</span><br><span class="line">執行測試與紀錄證據</span><br><span class="line">        ↓</span><br><span class="line">缺陷回報與修正追蹤</span><br><span class="line">        ↓</span><br><span class="line">Retest 修正驗證</span><br><span class="line">        ↓</span><br><span class="line">Regression Test 回歸測試</span><br><span class="line">        ↓</span><br><span class="line">Release 判斷與上線後觀察</span><br></pre></td></tr></tbody></table></figure>
 
-<p>這條線上的每個名詞，都要能用一個實際例子說明，而不是只記住英文名稱。</p>
-<h2 id="系列地圖"><a href="#系列地圖" class="headerlink" title="系列地圖"></a>系列地圖</h2><h3 id="第一階段：測試基本功"><a href="#第一階段：測試基本功" class="headerlink" title="第一階段：測試基本功"></a>第一階段：測試基本功</h3><p>對應筆記：<a href="../software-testing-basics-test-case-bug-report/">測試基本功：User Story、Test Case 與 Bug Report</a></p>
-<p>學習重點：</p>
+<p id="nav-98195fd8b3fea2fb" data-navigation-anchor="">這條線上的每個名詞，都要能用一個實際例子說明，而不是只記住英文名稱。</p>
+<h2 id="系列地圖" data-navigation-anchor=""><a href="#系列地圖" class="headerlink" title="系列地圖"></a>系列地圖</h2><h3 id="第一階段：測試基本功" data-navigation-anchor=""><a href="#第一階段：測試基本功" class="headerlink" title="第一階段：測試基本功"></a>第一階段：測試基本功</h3><p id="nav-873220df5cf46bf9" data-navigation-anchor="">對應筆記：<a href="../software-testing-basics-test-case-bug-report/">測試基本功：User Story、Test Case 與 Bug Report</a></p>
+<p id="nav-dc9351ea946e3118" data-navigation-anchor="">學習重點：</p>
 <ul>
-<li>User Story 與 Acceptance Criteria。</li>
-<li>Test Scenario、Test Case 與 Test Plan 的差異。</li>
-<li>Bug Report 應包含的重現條件、預期結果與實際結果。</li>
-<li>Retest、Regression Test 與 Exploratory Testing。</li>
+<li id="nav-60c392e918b3dd1d" data-navigation-anchor="">User Story 與 Acceptance Criteria。</li>
+<li id="nav-ba7cdbea03167710" data-navigation-anchor="">Test Scenario、Test Case 與 Test Plan 的差異。</li>
+<li id="nav-9cd78256b00faf21" data-navigation-anchor="">Bug Report 應包含的重現條件、預期結果與實際結果。</li>
+<li id="nav-d59ededd27c38460" data-navigation-anchor="">Retest、Regression Test 與 Exploratory Testing。</li>
 </ul>
-<p>預計產出：一份功能 Test Plan、10–20 個 Test Cases、2 個去識別化 Bug Reports，以及修正驗證紀錄。</p>
-<h3 id="第二階段：測試設計"><a href="#第二階段：測試設計" class="headerlink" title="第二階段：測試設計"></a>第二階段：測試設計</h3><p>對應筆記：<a href="../test-design-boundary-risk-based-testing/">測試設計：等價類別、邊界值與風險導向測試</a></p>
-<p>學習重點：</p>
+<p id="nav-846c82d48cf388eb" data-navigation-anchor="">預計產出：一份功能 Test Plan、10–20 個 Test Cases、2 個去識別化 Bug Reports，以及修正驗證紀錄。</p>
+<h3 id="第二階段：測試設計" data-navigation-anchor=""><a href="#第二階段：測試設計" class="headerlink" title="第二階段：測試設計"></a>第二階段：測試設計</h3><p id="nav-3f74e351bcfe0b3c" data-navigation-anchor="">對應筆記：<a href="../test-design-boundary-risk-based-testing/">測試設計：等價類別、邊界值與風險導向測試</a></p>
+<p id="nav-dc9351ea946e3118-2" data-navigation-anchor="">學習重點：</p>
 <ul>
-<li>等價類別與邊界值分析。</li>
-<li>決策表與狀態轉換。</li>
-<li>探索式測試與例外情境。</li>
-<li>依影響程度、發生可能性與使用頻率排序測試風險。</li>
+<li id="nav-69d1a0b0d5bb23f1" data-navigation-anchor="">等價類別與邊界值分析。</li>
+<li id="nav-2d5ae50ca50fbe51" data-navigation-anchor="">決策表與狀態轉換。</li>
+<li id="nav-6d8d32cdb699ba39" data-navigation-anchor="">探索式測試與例外情境。</li>
+<li id="nav-72b2e201ec130014" data-navigation-anchor="">依影響程度、發生可能性與使用頻率排序測試風險。</li>
 </ul>
-<p>預計產出：以電子閱讀服務為情境，針對登入、搜尋、閱讀器、書籤與閱讀進度等功能，建立約 30 個有理由的測試案例。</p>
-<h3 id="第三階段：Web-自動化測試"><a href="#第三階段：Web-自動化測試" class="headerlink" title="第三階段：Web 自動化測試"></a>第三階段：Web 自動化測試</h3><p>對應筆記：<a href="../web-automation-python-pytest-playwright/">Web 自動化測試：Python、Pytest 與 Playwright</a></p>
-<p>學習重點：</p>
+<p id="nav-0ec6b29330eece64" data-navigation-anchor="">預計產出：以電子閱讀服務為情境，針對登入、搜尋、閱讀器、書籤與閱讀進度等功能，建立約 30 個有理由的測試案例。</p>
+<h3 id="第三階段：Web-自動化測試" data-navigation-anchor=""><a href="#第三階段：Web-自動化測試" class="headerlink" title="第三階段：Web 自動化測試"></a>第三階段：Web 自動化測試</h3><p id="nav-545a94da25b60f5c" data-navigation-anchor="">對應筆記：<a href="../web-automation-python-pytest-playwright/">Web 自動化測試：Python、Pytest 與 Playwright</a></p>
+<p id="nav-dc9351ea946e3118-3" data-navigation-anchor="">學習重點：</p>
 <ul>
-<li>用 Python、Pytest 與 Playwright 執行瀏覽器測試。</li>
-<li>Locator、操作、Assertion 與測試資料。</li>
-<li>Fixture、參數化、失敗截圖與 Trace。</li>
-<li>Page Object Model 與可維護的測試專案結構。</li>
+<li id="nav-f16edcb20e8727e8" data-navigation-anchor="">用 Python、Pytest 與 Playwright 執行瀏覽器測試。</li>
+<li id="nav-3ef34bfcf4ac6531" data-navigation-anchor="">Locator、操作、Assertion 與測試資料。</li>
+<li id="nav-e0b761a9f47c5821" data-navigation-anchor="">Fixture、參數化、失敗截圖與 Trace。</li>
+<li id="nav-3feeb026035a59a9" data-navigation-anchor="">Page Object Model 與可維護的測試專案結構。</li>
 </ul>
-<p>預計產出：至少 5 個能實際執行的 Web 自動化測試，並把其中一部分對應回第一、二階段的手動案例。</p>
-<h3 id="第四階段：發布品質"><a href="#第四階段：發布品質" class="headerlink" title="第四階段：發布品質"></a>第四階段：發布品質</h3><p>對應筆記：<a href="../release-quality-git-ci-cd-checklist/">發布品質：Git、CI&#x2F;CD 與 Release Checklist</a></p>
-<p>學習重點：</p>
+<p id="nav-add85ab4c9d96112" data-navigation-anchor="">預計產出：至少 5 個能實際執行的 Web 自動化測試，並把其中一部分對應回第一、二階段的手動案例。</p>
+<h3 id="第四階段：發布品質" data-navigation-anchor=""><a href="#第四階段：發布品質" class="headerlink" title="第四階段：發布品質"></a>第四階段：發布品質</h3><p id="nav-b41b52c0b6972570" data-navigation-anchor="">對應筆記：<a href="../release-quality-git-ci-cd-checklist/">發布品質：Git、CI/CD 與 Release Checklist</a></p>
+<p id="nav-dc9351ea946e3118-4" data-navigation-anchor="">學習重點：</p>
 <ul>
-<li>Git 的基本分支、提交與差異檢查。</li>
-<li>測試環境、環境變數與基本 Linux 操作。</li>
-<li>CI&#x2F;CD 如何在 push 或合併後自動執行測試。</li>
-<li>Test Report、Release Checklist 與上線後觀察。</li>
+<li id="nav-8c5d512221056844" data-navigation-anchor="">Git 的基本分支、提交與差異檢查。</li>
+<li id="nav-a12949db942f10d9" data-navigation-anchor="">測試環境、環境變數與基本 Linux 操作。</li>
+<li id="nav-0ec84f812ca721f8" data-navigation-anchor="">CI/CD 如何在 push 或合併後自動執行測試。</li>
+<li id="nav-89fb9a5a7cea130d" data-navigation-anchor="">Test Report、Release Checklist 與上線後觀察。</li>
 </ul>
-<p>預計產出：一個能在版本更新後自動執行測試的練習專案，以及一份自己的網站上線檢查表。</p>
-<h3 id="核心之後：App-測試"><a href="#核心之後：App-測試" class="headerlink" title="核心之後：App 測試"></a>核心之後：App 測試</h3><p>Appium、Maestro 與 Jenkins 先不列入第一輪核心。等 Web 測試、測試設計與 CI 流程能跑過一次，再選一個 Android sample app 做最小實作：啟動、定位元件、點擊、驗證結果。這樣可以分辨「真的想學行動測試」和「只是被職缺上的工具清單追著跑」。</p>
-<h2 id="42-天鐵人挑戰"><a href="#42-天鐵人挑戰" class="headerlink" title="42 天鐵人挑戰"></a>42 天鐵人挑戰</h2><h3 id="42-天後的「會」是什麼"><a href="#42-天後的「會」是什麼" class="headerlink" title="42 天後的「會」是什麼"></a>42 天後的「會」是什麼</h3><p>這不是 42 天學會所有 QA，也不是 42 天保證轉職。這一輪的完成定義是：</p>
+<p id="nav-ef4b6df829ae6c1d" data-navigation-anchor="">預計產出：一個能在版本更新後自動執行測試的練習專案，以及一份自己的網站上線檢查表。</p>
+<h3 id="核心之後：App-測試" data-navigation-anchor=""><a href="#核心之後：App-測試" class="headerlink" title="核心之後：App 測試"></a>核心之後：App 測試</h3><p id="nav-1ee69d363c2fae65" data-navigation-anchor="">Appium、Maestro 與 Jenkins 先不列入第一輪核心。等 Web 測試、測試設計與 CI 流程能跑過一次，再選一個 Android sample app 做最小實作：啟動、定位元件、點擊、驗證結果。這樣可以分辨「真的想學行動測試」和「只是被職缺上的工具清單追著跑」。</p>
+<h2 id="42-天鐵人挑戰" data-navigation-anchor=""><a href="#42-天鐵人挑戰" class="headerlink" title="42 天鐵人挑戰"></a>42 天鐵人挑戰</h2><h3 id="42-天後的「會」是什麼" data-navigation-anchor=""><a href="#42-天後的「會」是什麼" class="headerlink" title="42 天後的「會」是什麼"></a>42 天後的「會」是什麼</h3><p id="nav-6d49a483a728a57f" data-navigation-anchor="">這不是 42 天學會所有 QA，也不是 42 天保證轉職。這一輪的完成定義是：</p>
 <ol>
-<li>能用自己的話解釋核心概念，而不是只背英文名稱。</li>
-<li>能在一個不含工作機密的練習功能上實際執行。</li>
-<li>能留下別人看得懂、可以重做或檢查的產物。</li>
-<li>能說出方法的限制，知道什麼情況不能只靠這個方法下結論。</li>
+<li id="nav-8a0735bc9d002924" data-navigation-anchor="">能用自己的話解釋核心概念，而不是只背英文名稱。</li>
+<li id="nav-528b02eba16ab566" data-navigation-anchor="">能在一個不含工作機密的練習功能上實際執行。</li>
+<li id="nav-4fc06a62520a99b8" data-navigation-anchor="">能留下別人看得懂、可以重做或檢查的產物。</li>
+<li id="nav-1a2ddd105d0458f9" data-navigation-anchor="">能說出方法的限制，知道什麼情況不能只靠這個方法下結論。</li>
 </ol>
-<h3 id="六個單元的必會範圍"><a href="#六個單元的必會範圍" class="headerlink" title="六個單元的必會範圍"></a>六個單元的必會範圍</h3><table>
+<h3 id="六個單元的必會範圍" data-navigation-anchor=""><a href="#六個單元的必會範圍" class="headerlink" title="六個單元的必會範圍"></a>六個單元的必會範圍</h3><table>
 <thead>
 <tr>
 <th>單元</th>
@@ -776,7 +784,7 @@
 <td>Appium、Maestro、Jenkins</td>
 </tr>
 </tbody></table>
-<h3 id="每日任務表"><a href="#每日任務表" class="headerlink" title="每日任務表"></a>每日任務表</h3><p>每天只做一個小任務。完成條件不是「看完教材」，而是完成最後一欄的產物；如果當天只有閱讀，最多算預習，不算過關。</p>
+<h3 id="每日任務表" data-navigation-anchor=""><a href="#每日任務表" class="headerlink" title="每日任務表"></a>每日任務表</h3><p id="nav-fbcfb9fdc7bf1dd6" data-navigation-anchor="">每天只做一個小任務。完成條件不是「看完教材」，而是完成最後一欄的產物；如果當天只有閱讀，最多算預習，不算過關。</p>
 <table>
 <thead>
 <tr>
@@ -996,15 +1004,15 @@
 <td>交付 README、測試案例、Bug、5 個自動化測試、CI 與 checklist</td>
 </tr>
 </tbody></table>
-<h3 id="固定規則：用來防止發散"><a href="#固定規則：用來防止發散" class="headerlink" title="固定規則：用來防止發散"></a>固定規則：用來防止發散</h3><ol>
-<li><strong>一個練習產品</strong>：全程只用同一個電子閱讀服務情境；自動化若需換公開 Demo，只換測試對象，不新增產品功能。</li>
-<li><strong>一個主要工具鏈</strong>：Python、Pytest、Playwright、Git 與一種 CI 平台。看到其他工具先放停車場。</li>
-<li><strong>一日一產物</strong>：每天最多一個主要產物；不要同時改筆記、履歷、作品集與工具環境。</li>
-<li><strong>卡住先縮小</strong>：同一問題超過 30 分鐘，先記錄錯誤、嘗試與下一步，改做當日較小的部分。</li>
-<li><strong>不補課式爆量</strong>：漏一天就順延，不用隔天讀兩倍；挑戰目標是建立可持續節奏。</li>
-<li><strong>完成才擴張</strong>：單元檢查日沒過，就只補該單元，不提前研究下一個工具。</li>
+<h3 id="固定規則：用來防止發散" data-navigation-anchor=""><a href="#固定規則：用來防止發散" class="headerlink" title="固定規則：用來防止發散"></a>固定規則：用來防止發散</h3><ol>
+<li id="nav-b3d3f107eff161cf" data-navigation-anchor=""><strong>一個練習產品</strong>：全程只用同一個電子閱讀服務情境；自動化若需換公開 Demo，只換測試對象，不新增產品功能。</li>
+<li id="nav-3b3df56696bdca45" data-navigation-anchor=""><strong>一個主要工具鏈</strong>：Python、Pytest、Playwright、Git 與一種 CI 平台。看到其他工具先放停車場。</li>
+<li id="nav-687b7af69d91be6d" data-navigation-anchor=""><strong>一日一產物</strong>：每天最多一個主要產物；不要同時改筆記、履歷、作品集與工具環境。</li>
+<li id="nav-dc2e2c5644b3def0" data-navigation-anchor=""><strong>卡住先縮小</strong>：同一問題超過 30 分鐘，先記錄錯誤、嘗試與下一步，改做當日較小的部分。</li>
+<li id="nav-434ca35c97297df2" data-navigation-anchor=""><strong>不補課式爆量</strong>：漏一天就順延，不用隔天讀兩倍；挑戰目標是建立可持續節奏。</li>
+<li id="nav-4c82537fbca0b2df" data-navigation-anchor=""><strong>完成才擴張</strong>：單元檢查日沒過，就只補該單元，不提前研究下一個工具。</li>
 </ol>
-<h3 id="遇到新知時的分流規則"><a href="#遇到新知時的分流規則" class="headerlink" title="遇到新知時的分流規則"></a>遇到新知時的分流規則</h3><p>學習前不知道的事情，不代表都要立刻加入課表。每次遇到新名詞、新工具或新的疑問，先用下面四類分流：</p>
+<h3 id="遇到新知時的分流規則" data-navigation-anchor=""><a href="#遇到新知時的分流規則" class="headerlink" title="遇到新知時的分流規則"></a>遇到新知時的分流規則</h3><p id="nav-e4e9b84ab4ef033b" data-navigation-anchor="">學習前不知道的事情，不代表都要立刻加入課表。每次遇到新名詞、新工具或新的疑問，先用下面四類分流：</p>
 <table>
 <thead>
 <tr>
@@ -1034,16 +1042,16 @@
 <td>只記一句，不搜尋、不開新專案</td>
 </tr>
 </tbody></table>
-<p>最重要的規則是：<strong>新知若真的必要，只能替換任務，不能無限加課。</strong> 例如今天原本要寫 10 個案例，卻發現必須先懂一個測試概念，就把其中一個延伸案例換成 30 分鐘的前置理解，並記錄為什麼換，不把第 11 個任務加進來。</p>
-<h3 id="進度不要只看「第幾天」"><a href="#進度不要只看「第幾天」" class="headerlink" title="進度不要只看「第幾天」"></a>進度不要只看「第幾天」</h3><p>42 天是時間框架，不是能力百分比。每個必會項目都用四層證據記錄：</p>
+<p id="nav-33e1a0f513471d26" data-navigation-anchor="">最重要的規則是：<strong>新知若真的必要，只能替換任務，不能無限加課。</strong> 例如今天原本要寫 10 個案例，卻發現必須先懂一個測試概念，就把其中一個延伸案例換成 30 分鐘的前置理解，並記錄為什麼換，不把第 11 個任務加進來。</p>
+<h3 id="進度不要只看「第幾天」" data-navigation-anchor=""><a href="#進度不要只看「第幾天」" class="headerlink" title="進度不要只看「第幾天」"></a>進度不要只看「第幾天」</h3><p id="nav-03df3e4e8b41cf5e" data-navigation-anchor="">42 天是時間框架，不是能力百分比。每個必會項目都用四層證據記錄：</p>
 <ol>
-<li><strong>接觸過</strong>：看過資料或聽過說明。</li>
-<li><strong>說得出</strong>：能用自己的例子解釋用途與限制。</li>
-<li><strong>做得到</strong>：不照著逐步複製，能完成一次練習。</li>
-<li><strong>留得下</strong>：產物可重做、可檢查，也能說明為什麼這樣做。</li>
+<li id="nav-e1ddcb23d4aa79ee" data-navigation-anchor=""><strong>接觸過</strong>：看過資料或聽過說明。</li>
+<li id="nav-a121d25e88a9ee24" data-navigation-anchor=""><strong>說得出</strong>：能用自己的例子解釋用途與限制。</li>
+<li id="nav-d5655ebf739f1549" data-navigation-anchor=""><strong>做得到</strong>：不照著逐步複製，能完成一次練習。</li>
+<li id="nav-fe1121420bd37271" data-navigation-anchor=""><strong>留得下</strong>：產物可重做、可檢查，也能說明為什麼這樣做。</li>
 </ol>
-<p>只有到第 3 層，才算「會操作」；到第 4 層，才算這一輪的單元過關。若只是讀完文章，進度可以記成「接觸過」，不要提前標成完成。</p>
-<p>每週檢查日只更新一張小表，不重寫整份課表：</p>
+<p id="nav-2b8716827cf1a2bf" data-navigation-anchor="">只有到第 3 層，才算「會操作」；到第 4 層，才算這一輪的單元過關。若只是讀完文章，進度可以記成「接觸過」，不要提前標成完成。</p>
+<p id="nav-b28849ed0d302d56" data-navigation-anchor="">每週檢查日只更新一張小表，不重寫整份課表：</p>
 <table>
 <thead>
 <tr>
@@ -1062,56 +1070,56 @@
 <td>是／否，附原因</td>
 </tr>
 </tbody></table>
-<h3 id="路徑變更要留下紀錄"><a href="#路徑變更要留下紀錄" class="headerlink" title="路徑變更要留下紀錄"></a>路徑變更要留下紀錄</h3><p>每次真的修改課表，只記五件事：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">日期：</span><br><span class="line">我發現：</span><br><span class="line">它屬於 A／B／C／D：</span><br><span class="line">我替換或保留了什麼：</span><br><span class="line">下次檢查這個決定的條件：</span><br></pre></td></tr></table></figure>
+<h3 id="路徑變更要留下紀錄" data-navigation-anchor=""><a href="#路徑變更要留下紀錄" class="headerlink" title="路徑變更要留下紀錄"></a>路徑變更要留下紀錄</h3><p id="nav-c6ddc1228d6ebc2f" data-navigation-anchor="">每次真的修改課表，只記五件事：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre id="nav-0727ea55ea6c5906" data-navigation-anchor=""><span class="line">日期：</span><br><span class="line">我發現：</span><br><span class="line">它屬於 A／B／C／D：</span><br><span class="line">我替換或保留了什麼：</span><br><span class="line">下次檢查這個決定的條件：</span><br></pre></td></tr></tbody></table></figure>
 
-<p>這讓「學了才知道」變成可管理的發現紀錄。只有在單元檢查日，或遇到 A 類必要前置時改動主線；其他新知留在停車場，不要每天重新排課。</p>
-<h3 id="學習停車場"><a href="#學習停車場" class="headerlink" title="學習停車場"></a>學習停車場</h3><p>先記下但不在 42 天內展開：Appium、Maestro、Jenkins、API 測試、效能測試、資安測試、Docker、JavaScript／TypeScript、ISTQB 證照、測試管理平台，以及把工作內部文件整理成公開作品。Day 42 再依興趣與實際職缺決定下一輪，不在中途插隊。</p>
-<h2 id="每日固定節奏與紀錄格式"><a href="#每日固定節奏與紀錄格式" class="headerlink" title="每日固定節奏與紀錄格式"></a>每日固定節奏與紀錄格式</h2><p>每次約 30–45 分鐘；週末或檢查日可用 60–90 分鐘，但仍以一個產物為上限。建議固定分成：5 分鐘回想、20 分鐘學習、15 分鐘實作、5 分鐘紀錄。</p>
-<p>每天只留下四行：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Day __：今天的必會概念是</span><br><span class="line">我完成的產物是</span><br><span class="line">我還不會／卡住的是</span><br><span class="line">被放進停車場的題目是</span><br></pre></td></tr></table></figure>
+<p id="nav-9c84555ff6ee8b58" data-navigation-anchor="">這讓「學了才知道」變成可管理的發現紀錄。只有在單元檢查日，或遇到 A 類必要前置時改動主線；其他新知留在停車場，不要每天重新排課。</p>
+<h3 id="學習停車場" data-navigation-anchor=""><a href="#學習停車場" class="headerlink" title="學習停車場"></a>學習停車場</h3><p id="nav-52201c9bbaa45677" data-navigation-anchor="">先記下但不在 42 天內展開：Appium、Maestro、Jenkins、API 測試、效能測試、資安測試、Docker、JavaScript／TypeScript、ISTQB 證照、測試管理平台，以及把工作內部文件整理成公開作品。Day 42 再依興趣與實際職缺決定下一輪，不在中途插隊。</p>
+<h2 id="每日固定節奏與紀錄格式" data-navigation-anchor=""><a href="#每日固定節奏與紀錄格式" class="headerlink" title="每日固定節奏與紀錄格式"></a>每日固定節奏與紀錄格式</h2><p id="nav-63cfd43230cef063" data-navigation-anchor="">每次約 30–45 分鐘；週末或檢查日可用 60–90 分鐘，但仍以一個產物為上限。建議固定分成：5 分鐘回想、20 分鐘學習、15 分鐘實作、5 分鐘紀錄。</p>
+<p id="nav-483605be1d9b17b4" data-navigation-anchor="">每天只留下四行：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre id="nav-eb410fb50ccc4edc" data-navigation-anchor=""><span class="line">Day __：今天的必會概念是</span><br><span class="line">我完成的產物是</span><br><span class="line">我還不會／卡住的是</span><br><span class="line">被放進停車場的題目是</span><br></pre></td></tr></tbody></table></figure>
 
-<p>每篇後續筆記也先回答三個問題：</p>
+<p id="nav-5fd86c7054f63beb" data-navigation-anchor="">每篇後續筆記也先回答三個問題：</p>
 <ol>
-<li>這個方法要解決什麼問題？</li>
-<li>我留下了什麼可以重現或檢查的證據？</li>
-<li>這個方法在哪些情況下不能直接下結論？</li>
+<li id="nav-090b26b06aec4ef4" data-navigation-anchor="">這個方法要解決什麼問題？</li>
+<li id="nav-8734bb60603a7a2b" data-navigation-anchor="">我留下了什麼可以重現或檢查的證據？</li>
+<li id="nav-7d10e08c24129bed" data-navigation-anchor="">這個方法在哪些情況下不能直接下結論？</li>
 </ol>
-<p>進度狀態可使用：<strong>未開始、接觸中、實作中、待驗證、已過關、暫停</strong>。這些是學習紀錄用的細部狀態；閱讀台的 <code>state: learning</code> 仍代表這個主題保留在永久 archive，不需要因為某個單元完成就刪除或搬移。</p>
-<h2 id="英文伴走軌：碎碎念先行，喜歡再成文"><a href="#英文伴走軌：碎碎念先行，喜歡再成文" class="headerlink" title="英文伴走軌：碎碎念先行，喜歡再成文"></a>英文伴走軌：碎碎念先行，喜歡再成文</h2><p>英文不另外開一套高壓課程，而是搭在現在的 QA 主線旁邊。這樣可以讓英文和真正正在學的內容連在一起，也不需要每天在 QA、英文、休息之間重新分配力氣。</p>
-<h3 id="碎碎念適合放什麼"><a href="#碎碎念適合放什麼" class="headerlink" title="碎碎念適合放什麼"></a>碎碎念適合放什麼</h3><ul>
-<li>今天遇到的一個英文詞或短句，例如 <code>expected result</code>、<code>reproduce</code>、<code>blocked</code>。</li>
-<li>讀文件時只看懂的一小段，或一個還不確定的用法。</li>
-<li>用很簡單的英文寫一行測試結果或工作感受。</li>
-<li>今天有學習，但很累，只留下「我今天碰到什麼」的紀錄。</li>
+<p id="nav-b04d327d0390c60a" data-navigation-anchor="">進度狀態可使用：<strong>未開始、接觸中、實作中、待驗證、已過關、暫停</strong>。這些是學習紀錄用的細部狀態；閱讀台的 <code>state: learning</code> 仍代表這個主題保留在永久 archive，不需要因為某個單元完成就刪除或搬移。</p>
+<h2 id="英文伴走軌：碎碎念先行，喜歡再成文" data-navigation-anchor=""><a href="#英文伴走軌：碎碎念先行，喜歡再成文" class="headerlink" title="英文伴走軌：碎碎念先行，喜歡再成文"></a>英文伴走軌：碎碎念先行，喜歡再成文</h2><p id="nav-3d0ffb872a0de03c" data-navigation-anchor="">英文不另外開一套高壓課程，而是搭在現在的 QA 主線旁邊。這樣可以讓英文和真正正在學的內容連在一起，也不需要每天在 QA、英文、休息之間重新分配力氣。</p>
+<h3 id="碎碎念適合放什麼" data-navigation-anchor=""><a href="#碎碎念適合放什麼" class="headerlink" title="碎碎念適合放什麼"></a>碎碎念適合放什麼</h3><ul>
+<li id="nav-9416986f8b1c32f2" data-navigation-anchor="">今天遇到的一個英文詞或短句，例如 <code>expected result</code>、<code>reproduce</code>、<code>blocked</code>。</li>
+<li id="nav-ef1a2f7fb4b2e711" data-navigation-anchor="">讀文件時只看懂的一小段，或一個還不確定的用法。</li>
+<li id="nav-5d75e6eafb43b329" data-navigation-anchor="">用很簡單的英文寫一行測試結果或工作感受。</li>
+<li id="nav-2f2e3579a8012747" data-navigation-anchor="">今天有學習，但很累，只留下「我今天碰到什麼」的紀錄。</li>
 </ul>
-<p>碎碎念不需要完整、不需要像文章，也不要求一次解決文法。它的任務只是保存接觸痕跡，讓之後有材料可以回看。</p>
-<h3 id="什麼時候升級成文章"><a href="#什麼時候升級成文章" class="headerlink" title="什麼時候升級成文章"></a>什麼時候升級成文章</h3><p>符合下列任一情況，再考慮寫成文章：</p>
+<p id="nav-188aa6770d0067b5" data-navigation-anchor="">碎碎念不需要完整、不需要像文章，也不要求一次解決文法。它的任務只是保存接觸痕跡，讓之後有材料可以回看。</p>
+<h3 id="什麼時候升級成文章" data-navigation-anchor=""><a href="#什麼時候升級成文章" class="headerlink" title="什麼時候升級成文章"></a>什麼時候升級成文章</h3><p id="nav-2db27ffb759796f5" data-navigation-anchor="">符合下列任一情況，再考慮寫成文章：</p>
 <ol>
-<li>同一個英文主題在碎碎念出現至少三次。</li>
-<li>我真的喜歡這個主題，之後會想再次閱讀或整理。</li>
-<li>已經能用自己的話說明意思，並找到至少一個實際例子。</li>
-<li>這個內容對 QA 主線、工作或生活有長期參考價值。</li>
+<li id="nav-17cec4db792e793b" data-navigation-anchor="">同一個英文主題在碎碎念出現至少三次。</li>
+<li id="nav-cb654148dca4d4a2" data-navigation-anchor="">我真的喜歡這個主題，之後會想再次閱讀或整理。</li>
+<li id="nav-1c196df99e29fd6c" data-navigation-anchor="">已經能用自己的話說明意思，並找到至少一個實際例子。</li>
+<li id="nav-e7eb8b8a7c4e2cc0" data-navigation-anchor="">這個內容對 QA 主線、工作或生活有長期參考價值。</li>
 </ol>
-<p>沒有達到條件時，留在碎碎念就已經完成，不需要為了「看起來完整」硬寫文章。</p>
-<h3 id="英文伴走軌的能量版本"><a href="#英文伴走軌的能量版本" class="headerlink" title="英文伴走軌的能量版本"></a>英文伴走軌的能量版本</h3><ul>
-<li><strong>很累</strong>：只看一個詞，或把今天遇到的英文貼進碎碎念；3 分鐘也算完成。</li>
-<li><strong>普通</strong>：讀一小段目前單元相關的文件，記下 1–3 個詞。</li>
-<li><strong>有精神</strong>：用英文寫 3–5 句測試結果、Bug 摘要或 README 內容。</li>
-<li><strong>需要休息</strong>：不做英文，也不補課；休息本身是維持這條路徑的一部分。</li>
+<p id="nav-6c64fd749a5dc826" data-navigation-anchor="">沒有達到條件時，留在碎碎念就已經完成，不需要為了「看起來完整」硬寫文章。</p>
+<h3 id="英文伴走軌的能量版本" data-navigation-anchor=""><a href="#英文伴走軌的能量版本" class="headerlink" title="英文伴走軌的能量版本"></a>英文伴走軌的能量版本</h3><ul>
+<li id="nav-db03082f666d2c0a" data-navigation-anchor=""><strong>很累</strong>：只看一個詞，或把今天遇到的英文貼進碎碎念；3 分鐘也算完成。</li>
+<li id="nav-b598d7b32268b04e" data-navigation-anchor=""><strong>普通</strong>：讀一小段目前單元相關的文件，記下 1–3 個詞。</li>
+<li id="nav-cd7dac9cef7a0818" data-navigation-anchor=""><strong>有精神</strong>：用英文寫 3–5 句測試結果、Bug 摘要或 README 內容。</li>
+<li id="nav-ee70274330fa0c61" data-navigation-anchor=""><strong>需要休息</strong>：不做英文，也不補課；休息本身是維持這條路徑的一部分。</li>
 </ul>
-<p>英文的進度先用「看得懂 → 說得出大意 → 能在情境中使用 → 能自己留下簡單紀錄」觀察，不用用背了幾個單字計算。碎碎念是日常紀錄，學習文章才是經過挑選、整理與沉澱的長期 archive。</p>
-<h2 id="目前的自我定位"><a href="#目前的自我定位" class="headerlink" title="目前的自我定位"></a>目前的自我定位</h2><p>我可以把過去的經驗說成：</p>
+<p id="nav-1add663955b6ea8e" data-navigation-anchor="">英文的進度先用「看得懂 → 說得出大意 → 能在情境中使用 → 能自己留下簡單紀錄」觀察，不用用背了幾個單字計算。碎碎念是日常紀錄，學習文章才是經過挑選、整理與沉澱的長期 archive。</p>
+<h2 id="目前的自我定位" data-navigation-anchor=""><a href="#目前的自我定位" class="headerlink" title="目前的自我定位"></a>目前的自我定位</h2><p id="nav-b5d90f60c6ac442e" data-navigation-anchor="">我可以把過去的經驗說成：</p>
 <blockquote>
-<p>目前從事政府網站專案相關工作，接觸網站檢核、問題追蹤、資料整理及部分自動化工具應用；現在開始系統性學習軟體測試與品質管理方法。</p>
+<p id="nav-178c2803e4ba1fd3" data-navigation-anchor="">目前從事政府網站專案相關工作，接觸網站檢核、問題追蹤、資料整理及部分自動化工具應用；現在開始系統性學習軟體測試與品質管理方法。</p>
 </blockquote>
-<p>這比直接宣稱自己已經熟悉完整 QA 流程準確。這個草稿夾的作用，是把「接觸過」逐步轉成「能解釋、能實作、能留下證據」。</p>
-<h2 id="42-天完成後再做的事"><a href="#42-天完成後再做的事" class="headerlink" title="42 天完成後再做的事"></a>42 天完成後再做的事</h2><ul>
-<li>依作品與實作感受，決定要深入 Web QA、測試自動化、App 測試或回到 PM 的品質協作。</li>
-<li>回頭檢查停車場，只選一個延伸主題進入下一輪。</li>
-<li>將工作經驗去識別化後，評估是否能整理成網站品質檢核作品；不直接公開客戶資料、網址、帳號或內部畫面。</li>
+<p id="nav-23201d205217c6de" data-navigation-anchor="">這比直接宣稱自己已經熟悉完整 QA 流程準確。這個草稿夾的作用，是把「接觸過」逐步轉成「能解釋、能實作、能留下證據」。</p>
+<h2 id="42-天完成後再做的事" data-navigation-anchor=""><a href="#42-天完成後再做的事" class="headerlink" title="42 天完成後再做的事"></a>42 天完成後再做的事</h2><ul>
+<li id="nav-d9281967cadd08a3" data-navigation-anchor="">依作品與實作感受，決定要深入 Web QA、測試自動化、App 測試或回到 PM 的品質協作。</li>
+<li id="nav-b450cf88b346550a" data-navigation-anchor="">回頭檢查停車場，只選一個延伸主題進入下一輪。</li>
+<li id="nav-5e03b497dac642e1" data-navigation-anchor="">將工作經驗去識別化後，評估是否能整理成網站品質檢核作品；不直接公開客戶資料、網址、帳號或內部畫面。</li>
 </ul>
-<h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
+<h2 id="閱讀紀錄" data-navigation-anchor=""><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
 <thead>
 <tr>
 <th>日期</th>
@@ -1139,8 +1147,8 @@
 <td>第一個想升級成文章的英文主題會是什麼？</td>
 </tr>
 </tbody></table>
-<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
-<li><strong>2026-09-04</strong>：建立網站品質與軟體測試系列，改為 42 天、6 單元的鐵人挑戰，加入必會範圍、每日產物、過關條件、學習停車場、新知分流規則與英文伴走軌。</li>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-3da997b9db78773c" data-navigation-anchor=""><strong>2026-09-04</strong>：建立網站品質與軟體測試系列，改為 42 天、6 單元的鐵人挑戰，加入必會範圍、每日產物、過關條件、學習停車場、新知分流規則與英文伴走軌。</li>
 </ul>
 
     </div>
@@ -1186,13 +1194,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2026/09/04/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-I%20will%20love%20you/" rel="prev" title="歌曲推薦-I will love you">
-                  <i class="fa fa-angle-left"></i> 歌曲推薦-I will love you
+                <a href="/learning/test-design-boundary-risk-based-testing/" rel="prev" title="測試設計｜等價類別、邊界值與風險導向測試｜學習筆記">
+                  <i class="fa fa-angle-left"></i> 測試設計｜等價類別、邊界值與風險導向測試｜學習筆記
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/learning/release-quality-git-ci-cd-checklist/" rel="next" title="發布品質｜Git、CI&#x2F;CD 與 Release Checklist｜學習筆記">
-                  發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記 <i class="fa fa-angle-right"></i>
+                <a href="/learning/software-testing-basics-test-case-bug-report/" rel="next" title="測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記">
+                  測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

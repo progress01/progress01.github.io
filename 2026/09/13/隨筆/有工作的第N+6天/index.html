@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,44 +663,44 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我最近開始理解，自己不是單純想把工作做好，而是事情一到手，就很難不負責到底。這種態度曾是力量，現在卻也讓我重新學習：一件事情究竟該做到什麼程度，才算真的做好？</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-1bf855b02cecc2ba" data-navigation-anchor="">我最近開始理解，自己不是單純想把工作做好，而是事情一到手，就很難不負責到底。這種態度曾是力量，現在卻也讓我重新學習：一件事情究竟該做到什麼程度，才算真的做好？</p>
 <span id="more"></span>
 
-<h2 id="我以前不是在管理任務，而是在承接事情"><a href="#我以前不是在管理任務，而是在承接事情" class="headerlink" title="我以前不是在管理任務，而是在承接事情"></a>我以前不是在管理任務，而是在承接事情</h2><p>最近聽到以前一位前輩分享他後來在圖書館工作的經驗，我突然回頭想：自己過去到底是用什麼態度面對工作？好像一直都很少計算成本、時間或投入是否划算。我通常只是先設定一個方向，然後盡可能把目前能做到最好的版本完成。</p>
-<p>事情一旦交到我手上，就不再只是「完成一項任務」。我會開始理解它的背景、補足缺少的部分、處理可能出現的例外，最後把它整理成一個自己願意負責的成果。原本只需要處理一小段的事情，常常因此變得很長、很複雜，也變得不容易交接。</p>
-<p>我以前不太覺得這是一種特別的工作方式，只覺得事情本來就應該這樣做。直到現在遇到需要控制範圍、衡量成本、和別人分配責任的工作，我才發現，自己過去比較像是在「養」一件事情，而不是管理一項任務。</p>
-<h2 id="如果我已經看見，就很難假裝不知道"><a href="#如果我已經看見，就很難假裝不知道" class="headerlink" title="如果我已經看見，就很難假裝不知道"></a>如果我已經看見，就很難假裝不知道</h2><p>我投入很多心力，未必是因為期待獲得相應的回報。我比較像是覺得，既然已經知道它可以被改善，既然它現在在我手上，那我就很難假裝自己沒有看見。</p>
-<p>所以我會想把流程補起來，把問題講清楚，把做過的東西維護好。這裡面有一種很強的職業倫理：我不只是想交付一個看起來完成的結果，而是希望它真的站得住腳。</p>
-<p>可是這樣的工作態度也有昂貴的副作用。我很容易把成果的品質，和自己對成果的責任綁在一起。事情做得越深，我就越覺得自己有義務繼續維護；別人要改動時，我也很難只把它看成一個普通的交付物，因為我知道它為什麼會長成現在這個樣子。</p>
-<p>這可能不是單純的完美主義，而是一種主人翁式的工藝觀。它讓我願意把事情做好，卻也讓事情很難真正離開我。</p>
-<h2 id="月報不能最後一天才寫"><a href="#月報不能最後一天才寫" class="headerlink" title="月報不能最後一天才寫"></a>月報不能最後一天才寫</h2><p>這讓我想起很久以前，其他單位的前輩曾經提醒過我：「月報不能最後一天再寫。」當時我問的是，時間已經不夠了，亮點又很難找、很難長出來，難道每個月都一定要呈現成果嗎？</p>
-<p>現在回頭看，那句話可能不是在提醒我不要拖稿，而是在提醒我：月報不是月底才開始生產的文件，而是整個月工作過程中的紀錄與篩選。</p>
-<p>專案不會因為月份結束，就突然長出一個適合放進月報的漂亮成果。可是每個月應該都能說明某種變化：完成了什麼、推進了什麼、發現了什麼，以及下一步因此怎麼改變。</p>
-<p>成果不只包括功能上線或工作完成，也可以是問題被釐清、風險被提前發現、範圍被收斂、流程變得可重複，或是讓其他人更容易接手。若我平常沒有留下這些變化，月底當然只剩下一種模糊的感覺：這個月很忙，但到底做了什麼，我說不出來。</p>
-<p>因此真正需要被記錄的，不一定是「我完成了多厲害的事情」，而是「這個月專案的位置改變了多少」。月報比較像是月底做編輯，而不是月底才開始作文。</p>
-<h2 id="我能想像的事情，才容易開始"><a href="#我能想像的事情，才容易開始" class="headerlink" title="我能想像的事情，才容易開始"></a>我能想像的事情，才容易開始</h2><p>我也逐漸看見，自己為什麼會在某些工作上卡住。我很擅長努力在腦中已經成形的部分：只要我能想像完成後的樣子，就知道什麼叫做更完整、哪裡還可以修正，也能一路把它磨到自己認為成立。</p>
-<p>反過來，當終點還看不清楚、可行性很難判斷，或是事情必須透過別人的回應才會逐漸成形，我就會非常不舒服。那種不舒服不完全是因為事情太難，而是因為我不知道哪個版本算夠，也不知道自己現在做的選擇是不是會造成後續的問題。</p>
-<p>我習慣的順序是：先形成完整理解，再想像合理成果，接著開始做，最後持續修到能夠負責。但許多專案的實際順序卻是：先掌握一部分資訊，做出一個版本，找人確認，再從回饋裡改變方向。</p>
-<p>這對我來說很反直覺。因為只要開始做，我就容易把自己理解成正在為最終成果負責；可是有些時候，我現在真正需要負責的，只有下一個可以驗證的步驟。</p>
-<h2 id="不能想像，不等於不能開始"><a href="#不能想像，不等於不能開始" class="headerlink" title="不能想像，不等於不能開始"></a>不能想像，不等於不能開始</h2><p>我以前很容易把「現在還想像不到」理解成「現在還不能做」。但有些工作恰好相反：不是先想清楚才有辦法開始，而是開始做之後，才會得到足夠的資訊去想清楚。</p>
-<p>不知道自動化方法是否可行，可以先做一個小型 prototype；不知道其他單位是否願意配合，可以先拿一頁需求去確認；不知道簡報架構是否有效，也可以先做三頁讓別人看。這些都不是草率的最終版本，而是為了取得新資訊而設計的中間產出。</p>
-<p>所以我現在想練習的，不是叫自己什麼都先做再說，而是把問題換一個問法。當我卡在一件很難推動、也很難想像的事情上時，先不要問：「我要怎麼把它做好？」而是問：</p>
+<h2 id="我以前不是在管理任務，而是在承接事情" data-navigation-anchor=""><a href="#我以前不是在管理任務，而是在承接事情" class="headerlink" title="我以前不是在管理任務，而是在承接事情"></a>我以前不是在管理任務，而是在承接事情</h2><p id="nav-3d15816bfbe3b087" data-navigation-anchor="">最近聽到以前一位前輩分享他後來在圖書館工作的經驗，我突然回頭想：自己過去到底是用什麼態度面對工作？好像一直都很少計算成本、時間或投入是否划算。我通常只是先設定一個方向，然後盡可能把目前能做到最好的版本完成。</p>
+<p id="nav-8f34df7174740a15" data-navigation-anchor="">事情一旦交到我手上，就不再只是「完成一項任務」。我會開始理解它的背景、補足缺少的部分、處理可能出現的例外，最後把它整理成一個自己願意負責的成果。原本只需要處理一小段的事情，常常因此變得很長、很複雜，也變得不容易交接。</p>
+<p id="nav-c6a46835b7050414" data-navigation-anchor="">我以前不太覺得這是一種特別的工作方式，只覺得事情本來就應該這樣做。直到現在遇到需要控制範圍、衡量成本、和別人分配責任的工作，我才發現，自己過去比較像是在「養」一件事情，而不是管理一項任務。</p>
+<h2 id="如果我已經看見，就很難假裝不知道" data-navigation-anchor=""><a href="#如果我已經看見，就很難假裝不知道" class="headerlink" title="如果我已經看見，就很難假裝不知道"></a>如果我已經看見，就很難假裝不知道</h2><p id="nav-6e93e743edbb90b0" data-navigation-anchor="">我投入很多心力，未必是因為期待獲得相應的回報。我比較像是覺得，既然已經知道它可以被改善，既然它現在在我手上，那我就很難假裝自己沒有看見。</p>
+<p id="nav-77c0143f86f1efee" data-navigation-anchor="">所以我會想把流程補起來，把問題講清楚，把做過的東西維護好。這裡面有一種很強的職業倫理：我不只是想交付一個看起來完成的結果，而是希望它真的站得住腳。</p>
+<p id="nav-ac0362aeb265e565" data-navigation-anchor="">可是這樣的工作態度也有昂貴的副作用。我很容易把成果的品質，和自己對成果的責任綁在一起。事情做得越深，我就越覺得自己有義務繼續維護；別人要改動時，我也很難只把它看成一個普通的交付物，因為我知道它為什麼會長成現在這個樣子。</p>
+<p id="nav-c6279db30462059a" data-navigation-anchor="">這可能不是單純的完美主義，而是一種主人翁式的工藝觀。它讓我願意把事情做好，卻也讓事情很難真正離開我。</p>
+<h2 id="月報不能最後一天才寫" data-navigation-anchor=""><a href="#月報不能最後一天才寫" class="headerlink" title="月報不能最後一天才寫"></a>月報不能最後一天才寫</h2><p id="nav-3001e03be094db61" data-navigation-anchor="">這讓我想起很久以前，其他單位的前輩曾經提醒過我：「月報不能最後一天再寫。」當時我問的是，時間已經不夠了，亮點又很難找、很難長出來，難道每個月都一定要呈現成果嗎？</p>
+<p id="nav-31ca6bf16354d21c" data-navigation-anchor="">現在回頭看，那句話可能不是在提醒我不要拖稿，而是在提醒我：月報不是月底才開始生產的文件，而是整個月工作過程中的紀錄與篩選。</p>
+<p id="nav-a35d0bfb67b982eb" data-navigation-anchor="">專案不會因為月份結束，就突然長出一個適合放進月報的漂亮成果。可是每個月應該都能說明某種變化：完成了什麼、推進了什麼、發現了什麼，以及下一步因此怎麼改變。</p>
+<p id="nav-9ab373870c0f7f0b" data-navigation-anchor="">成果不只包括功能上線或工作完成，也可以是問題被釐清、風險被提前發現、範圍被收斂、流程變得可重複，或是讓其他人更容易接手。若我平常沒有留下這些變化，月底當然只剩下一種模糊的感覺：這個月很忙，但到底做了什麼，我說不出來。</p>
+<p id="nav-8f783916de823d28" data-navigation-anchor="">因此真正需要被記錄的，不一定是「我完成了多厲害的事情」，而是「這個月專案的位置改變了多少」。月報比較像是月底做編輯，而不是月底才開始作文。</p>
+<h2 id="我能想像的事情，才容易開始" data-navigation-anchor=""><a href="#我能想像的事情，才容易開始" class="headerlink" title="我能想像的事情，才容易開始"></a>我能想像的事情，才容易開始</h2><p id="nav-adbdabb1f8ff73e0" data-navigation-anchor="">我也逐漸看見，自己為什麼會在某些工作上卡住。我很擅長努力在腦中已經成形的部分：只要我能想像完成後的樣子，就知道什麼叫做更完整、哪裡還可以修正，也能一路把它磨到自己認為成立。</p>
+<p id="nav-dfb25cbfb6b850f9" data-navigation-anchor="">反過來，當終點還看不清楚、可行性很難判斷，或是事情必須透過別人的回應才會逐漸成形，我就會非常不舒服。那種不舒服不完全是因為事情太難，而是因為我不知道哪個版本算夠，也不知道自己現在做的選擇是不是會造成後續的問題。</p>
+<p id="nav-665a9fd4b67f6063" data-navigation-anchor="">我習慣的順序是：先形成完整理解，再想像合理成果，接著開始做，最後持續修到能夠負責。但許多專案的實際順序卻是：先掌握一部分資訊，做出一個版本，找人確認，再從回饋裡改變方向。</p>
+<p id="nav-c1584f95a722a162" data-navigation-anchor="">這對我來說很反直覺。因為只要開始做，我就容易把自己理解成正在為最終成果負責；可是有些時候，我現在真正需要負責的，只有下一個可以驗證的步驟。</p>
+<h2 id="不能想像，不等於不能開始" data-navigation-anchor=""><a href="#不能想像，不等於不能開始" class="headerlink" title="不能想像，不等於不能開始"></a>不能想像，不等於不能開始</h2><p id="nav-760f16b4daa6094b" data-navigation-anchor="">我以前很容易把「現在還想像不到」理解成「現在還不能做」。但有些工作恰好相反：不是先想清楚才有辦法開始，而是開始做之後，才會得到足夠的資訊去想清楚。</p>
+<p id="nav-e647cdf20b57c20c" data-navigation-anchor="">不知道自動化方法是否可行，可以先做一個小型 prototype；不知道其他單位是否願意配合，可以先拿一頁需求去確認；不知道簡報架構是否有效，也可以先做三頁讓別人看。這些都不是草率的最終版本，而是為了取得新資訊而設計的中間產出。</p>
+<p id="nav-6e53e3030cd8e8d5" data-navigation-anchor="">所以我現在想練習的，不是叫自己什麼都先做再說，而是把問題換一個問法。當我卡在一件很難推動、也很難想像的事情上時，先不要問：「我要怎麼把它做好？」而是問：</p>
 <blockquote>
-<p>我現在缺的是哪一種資訊？最小可以做什麼，讓我多知道一點？</p>
+<p id="nav-1b8acb7469cdda4f" data-navigation-anchor="">我現在缺的是哪一種資訊？最小可以做什麼，讓我多知道一點？</p>
 </blockquote>
-<p>如果一個版本能降低下一步的不確定性，它就已經完成了自己的任務。它的完成標準不是漂亮，也不是一次到位，而是有沒有讓我更接近下一個判斷。</p>
-<h2 id="從盡力做好，到決定做到哪裡"><a href="#從盡力做好，到決定做到哪裡" class="headerlink" title="從盡力做好，到決定做到哪裡"></a>從盡力做好，到決定做到哪裡</h2><p>我過去很會對一件事情負責，卻比較少決定一件事情應該被負責到哪裡。這兩者看起來很接近，實際上卻是不同的能力。</p>
-<p>「把事情做到最好」有一個相對乾淨的答案：只要還能改善，就繼續投入。但在多人協作的工作裡，真正需要問的是：這一版值得做到幾分？哪些問題現在必須處理，哪些可以留下來？哪些決定不應該只有我決定？什麼時候應該把半成品拿出來，而不是繼續自己把它養大？</p>
-<p>這些問題不是要我變得隨便，也不是要我降低原本對品質的要求。它們是在提醒我，品質本身也有條件，工作也有範圍。若我只看成果是否完整，卻沒有看時間、人力、成本、權責與使用結果，最後可能只是做出一個很完整、但不一定最有價值的東西。</p>
-<p>我需要慢慢把自己的工作觀從「我怎麼把這件事情做到最好」推進到「我們應該把這件事情做到哪裡，而且怎麼讓它不依賴我也能繼續」。這個「我們」很重要，因為它代表成果不再只是我的作品，而是團隊可以共同理解、使用與接手的工作。</p>
-<h2 id="先留下每週四行"><a href="#先留下每週四行" class="headerlink" title="先留下每週四行"></a>先留下每週四行</h2><p>也許我可以先用很小的方式練習這種轉換。每週留下四行紀錄：本週完成了什麼、本週推進了什麼、本週發現了什麼問題，以及有沒有可量化或可比較的證據。</p>
-<p>這樣月底不必硬把普通的工作包裝成勝利，也不用等到最後一天才從疲累裡挖掘亮點。有些月份可以寫完成了什麼，有些月份只能寫清楚問題、收斂範圍或確認下一步，這些都是真實的工作變化。</p>
-<p>而且，當我開始留下這些紀錄，也是在練習把注意力從「我做了多少」移到「事情往前了多少」。我不再只把自己放在執行者的位置上，而是開始觀察投入和結果之間的關係。</p>
-<h2 id="工作態度的下一個階段"><a href="#工作態度的下一個階段" class="headerlink" title="工作態度的下一個階段"></a>工作態度的下一個階段</h2><p>現在回頭看，過去那些看似分散的困擾，也許都來自同一個轉換：我很會把事情做成，卻還在學習判斷什麼值得被做成、做到什麼程度，以及應該由誰一起完成。</p>
-<p>我以前是在學習如何對一件事情負責；現在開始要學的，是如何決定一件事情應該負責到哪裡。</p>
-<p>後者其實更難。因為盡力做好至少有一個明確方向，做到哪裡就該停，卻需要我承認自己不可能掌握所有資訊，也不可能一個人承擔所有責任。我必須接受，有些成果要透過討論才會成形，有些答案要在行動之後才會出現，有些問題即使看見了，也不一定是現在該由我處理。</p>
-<p>有工作的第N+6天，我還是會想把交到手上的事情做好，也還是會因為不完整而感到不安。但我希望自己開始記得：工作不只是把事情養到最完整，也包括在有限條件裡安排順序、留下證據、讓別人能夠參與，並且知道什麼時候先交出一個足以往前走的版本。</p>
-<p>我不必先看見整條路，才有資格走第一段。現在的我只需要先確認，下一步要驗證什麼，以及這一步是否真的讓事情靠近了想去的地方。</p>
+<p id="nav-04999b36ef34fd55" data-navigation-anchor="">如果一個版本能降低下一步的不確定性，它就已經完成了自己的任務。它的完成標準不是漂亮，也不是一次到位，而是有沒有讓我更接近下一個判斷。</p>
+<h2 id="從盡力做好，到決定做到哪裡" data-navigation-anchor=""><a href="#從盡力做好，到決定做到哪裡" class="headerlink" title="從盡力做好，到決定做到哪裡"></a>從盡力做好，到決定做到哪裡</h2><p id="nav-526d60e95d688f4f" data-navigation-anchor="">我過去很會對一件事情負責，卻比較少決定一件事情應該被負責到哪裡。這兩者看起來很接近，實際上卻是不同的能力。</p>
+<p id="nav-31206c3b43a2338d" data-navigation-anchor="">「把事情做到最好」有一個相對乾淨的答案：只要還能改善，就繼續投入。但在多人協作的工作裡，真正需要問的是：這一版值得做到幾分？哪些問題現在必須處理，哪些可以留下來？哪些決定不應該只有我決定？什麼時候應該把半成品拿出來，而不是繼續自己把它養大？</p>
+<p id="nav-3165fae63551deb1" data-navigation-anchor="">這些問題不是要我變得隨便，也不是要我降低原本對品質的要求。它們是在提醒我，品質本身也有條件，工作也有範圍。若我只看成果是否完整，卻沒有看時間、人力、成本、權責與使用結果，最後可能只是做出一個很完整、但不一定最有價值的東西。</p>
+<p id="nav-8fd4140479f5ba2b" data-navigation-anchor="">我需要慢慢把自己的工作觀從「我怎麼把這件事情做到最好」推進到「我們應該把這件事情做到哪裡，而且怎麼讓它不依賴我也能繼續」。這個「我們」很重要，因為它代表成果不再只是我的作品，而是團隊可以共同理解、使用與接手的工作。</p>
+<h2 id="先留下每週四行" data-navigation-anchor=""><a href="#先留下每週四行" class="headerlink" title="先留下每週四行"></a>先留下每週四行</h2><p id="nav-2696bfdaf1962321" data-navigation-anchor="">也許我可以先用很小的方式練習這種轉換。每週留下四行紀錄：本週完成了什麼、本週推進了什麼、本週發現了什麼問題，以及有沒有可量化或可比較的證據。</p>
+<p id="nav-b07116e3fa404fd3" data-navigation-anchor="">這樣月底不必硬把普通的工作包裝成勝利，也不用等到最後一天才從疲累裡挖掘亮點。有些月份可以寫完成了什麼，有些月份只能寫清楚問題、收斂範圍或確認下一步，這些都是真實的工作變化。</p>
+<p id="nav-206d2c0cf287957c" data-navigation-anchor="">而且，當我開始留下這些紀錄，也是在練習把注意力從「我做了多少」移到「事情往前了多少」。我不再只把自己放在執行者的位置上，而是開始觀察投入和結果之間的關係。</p>
+<h2 id="工作態度的下一個階段" data-navigation-anchor=""><a href="#工作態度的下一個階段" class="headerlink" title="工作態度的下一個階段"></a>工作態度的下一個階段</h2><p id="nav-9d887d556faa526a" data-navigation-anchor="">現在回頭看，過去那些看似分散的困擾，也許都來自同一個轉換：我很會把事情做成，卻還在學習判斷什麼值得被做成、做到什麼程度，以及應該由誰一起完成。</p>
+<p id="nav-c2bdbfe919c7a6c0" data-navigation-anchor="">我以前是在學習如何對一件事情負責；現在開始要學的，是如何決定一件事情應該負責到哪裡。</p>
+<p id="nav-f641dd08b6e988cd" data-navigation-anchor="">後者其實更難。因為盡力做好至少有一個明確方向，做到哪裡就該停，卻需要我承認自己不可能掌握所有資訊，也不可能一個人承擔所有責任。我必須接受，有些成果要透過討論才會成形，有些答案要在行動之後才會出現，有些問題即使看見了，也不一定是現在該由我處理。</p>
+<p id="nav-1262a93f14197d13" data-navigation-anchor="">有工作的第N+6天，我還是會想把交到手上的事情做好，也還是會因為不完整而感到不安。但我希望自己開始記得：工作不只是把事情養到最完整，也包括在有限條件裡安排順序、留下證據、讓別人能夠參與，並且知道什麼時候先交出一個足以往前走的版本。</p>
+<p id="nav-0ae0de079d1919b8" data-navigation-anchor="">我不必先看見整條路，才有資格走第一段。現在的我只需要先確認，下一步要驗證什麼，以及這一步是否真的讓事情靠近了想去的地方。</p>
 
     </div>
 

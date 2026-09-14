@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,23 +666,23 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《以早乙女佳奈子為例》不像急著推動劇情的電影；我記住的是人物、光線與顏色，像看完一幅仍會回想的畫。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-05689fdf2c7b1058" data-navigation-anchor="">《以早乙女佳奈子為例》不像急著推動劇情的電影；我記住的是人物、光線與顏色，像看完一幅仍會回想的畫。</p>
 <span id="more"></span>
 
-<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>這是我比較少遇到的一種電影。整個電影的故事不是不存在，只是它好像沒有一直要求觀眾注意接下來會發生什麼。比起故事本身，反而電影的呈現更容易記得人物站在哪裡、窗外的光、衣服和街景的顏色，以及整部電影始終維持著的某種輕盈感。有一點像看完一幅畫。你未必能立刻說出畫裡每一個細節代表什麼，可是它的色彩與感覺會先留下來。</p>
-<p>看完之後過了一天，我發現很多情節已經開始變得零碎，但那種零碎並沒有讓電影完全消失。它反而像是留下一些抓不住的片段，偶爾從記憶裡浮出來，提醒我曾經看過這樣一個人的生活，以及她在一些關係裡做出的選擇。</p>
-<h2 id="劇情特色"><a href="#劇情特色" class="headerlink" title="劇情特色"></a>劇情特色</h2><p>《以早乙女佳奈子為例》的故事其實不算複雜。大學入學時，早乙女加入演劇社團，認識了想成為劇作家的長津田。兩人的關係從一支舞開始，很快地交往，也就這樣一起度過了學生時代。一開始的他們其實很甜蜜。</p>
-<p>電影沒有花很多時間解釋兩個人為什麼喜歡上彼此，而是用一連串很快的生活片段帶過。一起吃東西、聊天、跳舞，很多小事情甚至還沒有來得及停留，畫面就已經往下一個時間點走。在這些被快速帶過的片段裡，可以很自然地感覺到兩個人已經建立起來的親密與信任。只是兩個人往前走的速度並不一樣。尤其在對戒那個窗外的隱喻，精緻心痛又讓人不住回想，也幾乎是整段故事的暗線。</p>
-<p>電影沒有呈現踏入社會後節奏上與想法上的落差，而是加入更多的人物讓兩人的關係開始出現其他可能。各自向不同的人和不同的生活靠近，卻又始終沒有完全從彼此的人生裡消失。要不要繼續一段關係、要不要往前走、要不要接受另一個人，又或者當曾經離開的人重新出現在眼前時，自己現在究竟想要的是什麼？電影並沒有把這些選擇拍成很戲劇化的轉折。</p>
-<p>沒有哪一次分開像世界末日，也沒有哪一次重逢像命中注定。很多重要的變化，就跟電影前面那些生活片段一樣，很快地發生，然後人物繼續生活。這也讓整部電影有一種很特別的輕盈感(即使故事整整經過了十年的時間軸)。明明戀愛、分手、工作、錯過與重逢，卻很少有一件事情被刻意放大。故事一直往前走，人物也一直做著選擇，好像人生本來就不會在每個轉折點替我們配上一段隆重的音樂。</p>
-<p>一直做出選擇的早乙女(或我們一直期待她做出選擇)那些沒有答案的瞬間，是這個故事最有意思的地方之一也說不定，以早乙女為例？</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我一直覺得這是一部很難抓住重量的電影。它並不是沒有故事。戀愛、分手、工作、重新相遇，甚至是人生方向的改變，該發生的事情其實都發生了。但電影很少刻意把某一件事拉出來，告訴觀眾「這就是最重要的時刻」。很多事情只是發生，然後過去。整部電影始終有一種很輕的感覺。它很少讓情緒停留太久。即使人物正在經歷一些照理說應該很沉重的事情，電影也不太會把它們拍成巨大的轉折，而是很快地讓人物繼續往前生活。所以回頭想這部電影時，我最先留下來的反而不一定是劇情，而是它的顏色。一些光線、衣服、街道、房間，以及人物站在畫面裡的樣子。我很少用這種方式記住一部電影。通常看完電影以後，我會先想到某一段劇情、某一個角色，或是某一句話；但這部片留下來的東西比較接近看完一幅畫之後的感覺。我知道這些東西很特別，可是要立刻指出到底是哪一個部分，又有點困難。人物也是如此。</p>
-<p>除了佔據主要角度的女主角之外，其他角色也都有一些讓我印象很好的瞬間。很多人在剛出場的時候，即使只有很短的篇幅，也會有一點屬於自己的特色(或說是個性鮮明)。這邊的鮮明我覺得特別在這是一種跟別人相處的方式。可是那些人又很快離開了。鏡頭始終主要跟著女主角，所以其他人的生活大多只在與她交會的地方被看見。原本很鮮明的人，離開她的視線之後，也就慢慢退到故事之外。</p>
-<p>我有一點覺得可惜的地方，但又隱隱覺得這或許正是電影能維持這種輕盈感的原因。如果每一個人物都被好好交代，如果每一段關係都得到完整的解釋，如果每一次離開都要得到一個結論，這部電影大概就不會是現在這個樣子了。它吸引我的地方，反而是很多東西都只停留了一下。出現、被介紹，然後離開。這也讓我慢慢覺得好像什麼東西都很拿抓住，不只到底芳心要交給誰的猶豫，又或是整體劇情重心的分散。很多事情沒有真正被留下。人物抓不住，關係抓不住，甚至連一段情緒都還沒有完全沉下來，電影就已經往下一個地方走了。大概只有電影一開始的對戒與那個窗外的暗諭吧！隔著玻璃，可以看到外面的東西，可是真正伸出手時，又什麼也碰不到。我不知道這是不是電影刻意安排的象徵，但它很接近我看完整部電影以後的感覺。電影大部分時間都容許這些關係停留在一種沒有完全整理好的狀態。它沒有留下一個很強烈的故事，也沒有給我一個非得記住的答案。最後留下來的，是一些顏色、一些被介紹過的場景，以及一種伸手想抓，卻沒有真正抓住什麼的感覺。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>我現在已經未必能完整說出每一段劇情，但是我還記得一些光、一些顏色，以及幾個人站在畫面裡的樣子。。它沒有給我一個很重的東西帶走，也沒有哪一句話讓我覺得自己突然理解了人生或愛情，可是它留下了一些很淡的東西。淡到好像伸手就會消失，卻又沒有真的消失。或許有些電影最後留下來的，本來就不是答案，而是一種顏色。</p>
-<p>這次這個顏色在調色盤上點了半天卻不知道怎樣選，或許這就是早乙女那些猶豫的感覺吧，燃燒過與希望對方安好的喜歡 VS 渴望被保護以及期待被欣賞的欣喜 卻又再次 VS 自己(對自己究竟想怎麼生活這個概念確實也存在)，真正困難的從來不是在兩個人之間選出一個答案，而是這幾種顏色混在一起之後，連她自己都很難立刻說清楚，最後想留下的是哪一種。電影最後還是替她選下了一格。</p>
-<p>最後卻還是不禁覺得，也許我最喜歡的，反而就是還沒有選下去以前，那一小段說不清楚的顏色，也許電影維持不選說不定情感會更昇華？</p>
-<p><img src="/images/drama_%E4%BB%A5%E6%97%A9%E4%B9%99%E5%A5%B3%E4%BD%B3%E5%A5%88%E5%AD%90%E7%82%BA%E4%BE%8B.webp" alt="《以早乙女佳奈子為例》劇集圖片"><br><em>(圖片來源：民視新聞)</em></p>
+<h2 id="觀影歷程" data-navigation-anchor=""><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p id="nav-cfcbc067fa274633" data-navigation-anchor="">這是我比較少遇到的一種電影。整個電影的故事不是不存在，只是它好像沒有一直要求觀眾注意接下來會發生什麼。比起故事本身，反而電影的呈現更容易記得人物站在哪裡、窗外的光、衣服和街景的顏色，以及整部電影始終維持著的某種輕盈感。有一點像看完一幅畫。你未必能立刻說出畫裡每一個細節代表什麼，可是它的色彩與感覺會先留下來。</p>
+<p id="nav-ef8dd5af9660df0f" data-navigation-anchor="">看完之後過了一天，我發現很多情節已經開始變得零碎，但那種零碎並沒有讓電影完全消失。它反而像是留下一些抓不住的片段，偶爾從記憶裡浮出來，提醒我曾經看過這樣一個人的生活，以及她在一些關係裡做出的選擇。</p>
+<h2 id="劇情特色" data-navigation-anchor=""><a href="#劇情特色" class="headerlink" title="劇情特色"></a>劇情特色</h2><p id="nav-ab742d39af8a03a4" data-navigation-anchor="">《以早乙女佳奈子為例》的故事其實不算複雜。大學入學時，早乙女加入演劇社團，認識了想成為劇作家的長津田。兩人的關係從一支舞開始，很快地交往，也就這樣一起度過了學生時代。一開始的他們其實很甜蜜。</p>
+<p id="nav-eb774048e1c9c9e5" data-navigation-anchor="">電影沒有花很多時間解釋兩個人為什麼喜歡上彼此，而是用一連串很快的生活片段帶過。一起吃東西、聊天、跳舞，很多小事情甚至還沒有來得及停留，畫面就已經往下一個時間點走。在這些被快速帶過的片段裡，可以很自然地感覺到兩個人已經建立起來的親密與信任。只是兩個人往前走的速度並不一樣。尤其在對戒那個窗外的隱喻，精緻心痛又讓人不住回想，也幾乎是整段故事的暗線。</p>
+<p id="nav-06a6818acca08579" data-navigation-anchor="">電影沒有呈現踏入社會後節奏上與想法上的落差，而是加入更多的人物讓兩人的關係開始出現其他可能。各自向不同的人和不同的生活靠近，卻又始終沒有完全從彼此的人生裡消失。要不要繼續一段關係、要不要往前走、要不要接受另一個人，又或者當曾經離開的人重新出現在眼前時，自己現在究竟想要的是什麼？電影並沒有把這些選擇拍成很戲劇化的轉折。</p>
+<p id="nav-179e48746b0d0f9a" data-navigation-anchor="">沒有哪一次分開像世界末日，也沒有哪一次重逢像命中注定。很多重要的變化，就跟電影前面那些生活片段一樣，很快地發生，然後人物繼續生活。這也讓整部電影有一種很特別的輕盈感(即使故事整整經過了十年的時間軸)。明明戀愛、分手、工作、錯過與重逢，卻很少有一件事情被刻意放大。故事一直往前走，人物也一直做著選擇，好像人生本來就不會在每個轉折點替我們配上一段隆重的音樂。</p>
+<p id="nav-bca3fac94b600e55" data-navigation-anchor="">一直做出選擇的早乙女(或我們一直期待她做出選擇)那些沒有答案的瞬間，是這個故事最有意思的地方之一也說不定，以早乙女為例？</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-86fa0bff2c3b8ec3" data-navigation-anchor="">我一直覺得這是一部很難抓住重量的電影。它並不是沒有故事。戀愛、分手、工作、重新相遇，甚至是人生方向的改變，該發生的事情其實都發生了。但電影很少刻意把某一件事拉出來，告訴觀眾「這就是最重要的時刻」。很多事情只是發生，然後過去。整部電影始終有一種很輕的感覺。它很少讓情緒停留太久。即使人物正在經歷一些照理說應該很沉重的事情，電影也不太會把它們拍成巨大的轉折，而是很快地讓人物繼續往前生活。所以回頭想這部電影時，我最先留下來的反而不一定是劇情，而是它的顏色。一些光線、衣服、街道、房間，以及人物站在畫面裡的樣子。我很少用這種方式記住一部電影。通常看完電影以後，我會先想到某一段劇情、某一個角色，或是某一句話；但這部片留下來的東西比較接近看完一幅畫之後的感覺。我知道這些東西很特別，可是要立刻指出到底是哪一個部分，又有點困難。人物也是如此。</p>
+<p id="nav-9d335010f439a44f" data-navigation-anchor="">除了佔據主要角度的女主角之外，其他角色也都有一些讓我印象很好的瞬間。很多人在剛出場的時候，即使只有很短的篇幅，也會有一點屬於自己的特色(或說是個性鮮明)。這邊的鮮明我覺得特別在這是一種跟別人相處的方式。可是那些人又很快離開了。鏡頭始終主要跟著女主角，所以其他人的生活大多只在與她交會的地方被看見。原本很鮮明的人，離開她的視線之後，也就慢慢退到故事之外。</p>
+<p id="nav-4441e1ab0c6742c6" data-navigation-anchor="">我有一點覺得可惜的地方，但又隱隱覺得這或許正是電影能維持這種輕盈感的原因。如果每一個人物都被好好交代，如果每一段關係都得到完整的解釋，如果每一次離開都要得到一個結論，這部電影大概就不會是現在這個樣子了。它吸引我的地方，反而是很多東西都只停留了一下。出現、被介紹，然後離開。這也讓我慢慢覺得好像什麼東西都很拿抓住，不只到底芳心要交給誰的猶豫，又或是整體劇情重心的分散。很多事情沒有真正被留下。人物抓不住，關係抓不住，甚至連一段情緒都還沒有完全沉下來，電影就已經往下一個地方走了。大概只有電影一開始的對戒與那個窗外的暗諭吧！隔著玻璃，可以看到外面的東西，可是真正伸出手時，又什麼也碰不到。我不知道這是不是電影刻意安排的象徵，但它很接近我看完整部電影以後的感覺。電影大部分時間都容許這些關係停留在一種沒有完全整理好的狀態。它沒有留下一個很強烈的故事，也沒有給我一個非得記住的答案。最後留下來的，是一些顏色、一些被介紹過的場景，以及一種伸手想抓，卻沒有真正抓住什麼的感覺。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-0e06068bdcadef0e" data-navigation-anchor="">我現在已經未必能完整說出每一段劇情，但是我還記得一些光、一些顏色，以及幾個人站在畫面裡的樣子。。它沒有給我一個很重的東西帶走，也沒有哪一句話讓我覺得自己突然理解了人生或愛情，可是它留下了一些很淡的東西。淡到好像伸手就會消失，卻又沒有真的消失。或許有些電影最後留下來的，本來就不是答案，而是一種顏色。</p>
+<p id="nav-091c42e6e897c8a6" data-navigation-anchor="">這次這個顏色在調色盤上點了半天卻不知道怎樣選，或許這就是早乙女那些猶豫的感覺吧，燃燒過與希望對方安好的喜歡 VS 渴望被保護以及期待被欣賞的欣喜 卻又再次 VS 自己(對自己究竟想怎麼生活這個概念確實也存在)，真正困難的從來不是在兩個人之間選出一個答案，而是這幾種顏色混在一起之後，連她自己都很難立刻說清楚，最後想留下的是哪一種。電影最後還是替她選下了一格。</p>
+<p id="nav-becb085cb3c0235c" data-navigation-anchor="">最後卻還是不禁覺得，也許我最喜歡的，反而就是還沒有選下去以前，那一小段說不清楚的顏色，也許電影維持不選說不定情感會更昇華？</p>
+<p id="nav-d7075a3f834b81cc" data-navigation-anchor=""><img src="/images/drama_%E4%BB%A5%E6%97%A9%E4%B9%99%E5%A5%B3%E4%BD%B3%E5%A5%88%E5%AD%90%E7%82%BA%E4%BE%8B.webp" alt="《以早乙女佳奈子為例》劇集圖片"><br><em>(圖片來源：民視新聞)</em></p>
 
     </div>
 

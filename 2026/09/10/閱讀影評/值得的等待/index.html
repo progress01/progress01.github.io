@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,26 +663,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《值得的等待》最吸引我的是開頭旁白，但多線故事沒有讓我感受到等待的重量；明亮溫暖的畫面，反而留下我期待落空的失落。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-f368c99531ae7b33" data-navigation-anchor="">《值得的等待》最吸引我的是開頭旁白，但多線故事沒有讓我感受到等待的重量；明亮溫暖的畫面，反而留下我期待落空的失落。</p>
 <span id="more"></span>
 
-<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>看完電影後，我第一個想到的不是哪一對最後在一起，而是開頭的旁白為什麼會讓我有期待。</p>
-<p>它一開始好像準備帶我去看一個關於時間、相遇與人生停頓的故事。等待不只是還沒有遇到對的人，也可能是人在還沒有準備好的時候，必須先和自己的生活相處。這個開頭很漂亮，也讓我以為後面會看到角色如何在等待之中慢慢改變。</p>
-<p>但電影進入多線故事之後，我的感覺慢慢變成：它一直在介紹不同的人、不同的感情狀態與不同的文化背景，卻沒有讓我真正待在任何一條線裡太久。角色好像才剛遇到問題，故事就急著把他們帶往下一個轉折。</p>
-<p>所以我看完之後有一種很難形容的失落：我知道電影想講的是溫柔、相遇與希望，但我沒有真的感受到「等待」走過角色生命的重量。</p>
-<h2 id="劇情特色"><a href="#劇情特色" class="headerlink" title="劇情特色"></a>劇情特色</h2><p>電影以紐約與吉隆坡等不同城市為背景，安排多組亞裔角色交錯出現，讓愛情不只和兩個人的選擇有關，也牽涉到家庭期待、年齡焦慮、文化差異、遠距離與人生進度。</p>
-<p>這種多線敘事的優點，是可以把「等待」放在不同年齡與不同人生階段裡觀看：有人在等一段感情重新開始，有人在等自己放下過去，也有人在面對家庭和社會對幸福的想像。</p>
-<p>電影的色彩和場景都很明亮，人物也被放在一個相對乾淨、溫暖的世界裡。可是這種明亮感有時反而讓我更難靠近角色，因為生活裡真正的等待通常不會這麼整齊，它應該包含無聊、尷尬、反覆、暫時沒有答案，以及不知道自己是不是還要繼續的時刻。</p>
-<p>開頭旁白提出的是一個有哲理重量的命題，正片則比較像幾段都會愛情故事的集合。兩者並不是完全不能放在一起，但電影沒有給中間的等待足夠篇幅，讓旁白的深度和後面的情節之間出現了落差。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我覺得最可惜的地方，是電影開頭的旁白其實已經告訴觀眾一個很好的方向：人生真正發生的地方，也許不是抵達終點的那一刻，而是中間那些還沒有被整理好的日子。</p>
-<p>可是後面的故事比較常把等待處理成「還沒有遇到」、「時機還沒有到」或「最後會再相遇」。這樣的安排當然可以成立，但等待就比較像一個通往結局的倒數，而不是角色必須走過的生活。</p>
-<p>我期待看到的應該是：角色在沒有愛情答案的時候，怎麼繼續工作、面對家人、處理孤獨，甚至承認自己並沒有想像中那麼成熟。等到他們最後重新遇見彼此時，觀眾才會知道這段時間不是空白，而是讓他們變成另一個人的過程。</p>
-<p>所以我不覺得問題是電影保留了歡喜結局。歡喜結局本身沒有錯，問題是這份快樂好像沒有付出足夠的等待成本。角色的困難還沒有沉澱到觀眾心裡，故事就已經急著把他們送到一個溫暖的位置。</p>
-<p>如果仍然維持這樣的結局，我會希望電影多拍一些「中段」：一個人獨自生活的片段、關係暫停之後仍然要繼續的日常、角色先學會安頓自己後才重新靠近對方。那樣最後的相遇就不只是命運安排，而會像是兩個經歷過時間的人，終於有能力在同一個地方見面。</p>
-<p>我也很難形容自己對畫面的感覺。它不是不好看，畫面甚至很明亮、很精緻；但這些好看的東西沒有轉化成足夠的情緒。像是電影先準備好一個很漂亮的容器，卻沒有把我期待的那種沉澱、孤單與等待真正放進去。</p>
-<p>也許因此，我才會一直覺得「好像期待更多」。我期待的不是更大的戲劇衝突，而是更完整的心境變化；不是每一組角色都要有很悲慘的故事，而是希望至少有一條線能讓我真正看見，等待如何改變一個人的選擇。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>《值得的等待》有一個很吸引人的開頭，也有明亮溫暖的都會愛情外觀，但開頭提出的「等待」沒有被後面的故事充分接住。多線敘事讓電影碰到很多題目，卻也讓每一條線都少了一點停留與累積。</p>
-<p>對我來說，這是一部看得出來想談人生中段，最後卻比較快走向結局的電影。它不是沒有溫柔，而是那份溫柔來得太容易，沒有讓我相信角色真的走過了值得等待的時間。</p>
+<h2 id="觀影歷程" data-navigation-anchor=""><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p id="nav-0309c64908792d75" data-navigation-anchor="">看完電影後，我第一個想到的不是哪一對最後在一起，而是開頭的旁白為什麼會讓我有期待。</p>
+<p id="nav-4135b7b12d80b7d9" data-navigation-anchor="">它一開始好像準備帶我去看一個關於時間、相遇與人生停頓的故事。等待不只是還沒有遇到對的人，也可能是人在還沒有準備好的時候，必須先和自己的生活相處。這個開頭很漂亮，也讓我以為後面會看到角色如何在等待之中慢慢改變。</p>
+<p id="nav-dbcfed40d40bca51" data-navigation-anchor="">但電影進入多線故事之後，我的感覺慢慢變成：它一直在介紹不同的人、不同的感情狀態與不同的文化背景，卻沒有讓我真正待在任何一條線裡太久。角色好像才剛遇到問題，故事就急著把他們帶往下一個轉折。</p>
+<p id="nav-d40b332027015d0c" data-navigation-anchor="">所以我看完之後有一種很難形容的失落：我知道電影想講的是溫柔、相遇與希望，但我沒有真的感受到「等待」走過角色生命的重量。</p>
+<h2 id="劇情特色" data-navigation-anchor=""><a href="#劇情特色" class="headerlink" title="劇情特色"></a>劇情特色</h2><p id="nav-2a99d5d59c7b230a" data-navigation-anchor="">電影以紐約與吉隆坡等不同城市為背景，安排多組亞裔角色交錯出現，讓愛情不只和兩個人的選擇有關，也牽涉到家庭期待、年齡焦慮、文化差異、遠距離與人生進度。</p>
+<p id="nav-10bf3fd3e6c61435" data-navigation-anchor="">這種多線敘事的優點，是可以把「等待」放在不同年齡與不同人生階段裡觀看：有人在等一段感情重新開始，有人在等自己放下過去，也有人在面對家庭和社會對幸福的想像。</p>
+<p id="nav-491488ee54740d70" data-navigation-anchor="">電影的色彩和場景都很明亮，人物也被放在一個相對乾淨、溫暖的世界裡。可是這種明亮感有時反而讓我更難靠近角色，因為生活裡真正的等待通常不會這麼整齊，它應該包含無聊、尷尬、反覆、暫時沒有答案，以及不知道自己是不是還要繼續的時刻。</p>
+<p id="nav-ccce562eefb69ba2" data-navigation-anchor="">開頭旁白提出的是一個有哲理重量的命題，正片則比較像幾段都會愛情故事的集合。兩者並不是完全不能放在一起，但電影沒有給中間的等待足夠篇幅，讓旁白的深度和後面的情節之間出現了落差。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-98f4a7f8695555a1" data-navigation-anchor="">我覺得最可惜的地方，是電影開頭的旁白其實已經告訴觀眾一個很好的方向：人生真正發生的地方，也許不是抵達終點的那一刻，而是中間那些還沒有被整理好的日子。</p>
+<p id="nav-9ec5f3411cd0bc11" data-navigation-anchor="">可是後面的故事比較常把等待處理成「還沒有遇到」、「時機還沒有到」或「最後會再相遇」。這樣的安排當然可以成立，但等待就比較像一個通往結局的倒數，而不是角色必須走過的生活。</p>
+<p id="nav-106e14cebebceeac" data-navigation-anchor="">我期待看到的應該是：角色在沒有愛情答案的時候，怎麼繼續工作、面對家人、處理孤獨，甚至承認自己並沒有想像中那麼成熟。等到他們最後重新遇見彼此時，觀眾才會知道這段時間不是空白，而是讓他們變成另一個人的過程。</p>
+<p id="nav-73b52da7d5ace469" data-navigation-anchor="">所以我不覺得問題是電影保留了歡喜結局。歡喜結局本身沒有錯，問題是這份快樂好像沒有付出足夠的等待成本。角色的困難還沒有沉澱到觀眾心裡，故事就已經急著把他們送到一個溫暖的位置。</p>
+<p id="nav-005c41c78edaffac" data-navigation-anchor="">如果仍然維持這樣的結局，我會希望電影多拍一些「中段」：一個人獨自生活的片段、關係暫停之後仍然要繼續的日常、角色先學會安頓自己後才重新靠近對方。那樣最後的相遇就不只是命運安排，而會像是兩個經歷過時間的人，終於有能力在同一個地方見面。</p>
+<p id="nav-d7315f5b498fb51d" data-navigation-anchor="">我也很難形容自己對畫面的感覺。它不是不好看，畫面甚至很明亮、很精緻；但這些好看的東西沒有轉化成足夠的情緒。像是電影先準備好一個很漂亮的容器，卻沒有把我期待的那種沉澱、孤單與等待真正放進去。</p>
+<p id="nav-5e2defc205e1ec58" data-navigation-anchor="">也許因此，我才會一直覺得「好像期待更多」。我期待的不是更大的戲劇衝突，而是更完整的心境變化；不是每一組角色都要有很悲慘的故事，而是希望至少有一條線能讓我真正看見，等待如何改變一個人的選擇。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-b3315169bf9af08e" data-navigation-anchor="">《值得的等待》有一個很吸引人的開頭，也有明亮溫暖的都會愛情外觀，但開頭提出的「等待」沒有被後面的故事充分接住。多線敘事讓電影碰到很多題目，卻也讓每一條線都少了一點停留與累積。</p>
+<p id="nav-c04284991c11f65c" data-navigation-anchor="">對我來說，這是一部看得出來想談人生中段，最後卻比較快走向結局的電影。它不是沒有溫柔，而是那份溫柔來得太容易，沒有讓我相信角色真的走過了值得等待的時間。</p>
 <!-- 待補：電影封面圖片、圖片來源與相關資料。 -->
 
     </div>
@@ -725,8 +733,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" rel="next" title="歌曲推薦-靜靜的">
-                  歌曲推薦-靜靜的 <i class="fa fa-angle-right"></i>
+                <a href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" rel="next" title="在喜歡與被喜歡之間">
+                  在喜歡與被喜歡之間 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

@@ -95,6 +95,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -149,7 +150,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -173,6 +174,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -208,19 +216,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -320,15 +328,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -336,19 +336,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -408,11 +416,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -568,7 +576,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -657,31 +665,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我在排查 API 資料異常時，先回頭追資料來源、處理流程與最後出現差異的層次。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-5c1f7311522f52c1" data-navigation-anchor="">我在排查 API 資料異常時，先回頭追資料來源、處理流程與最後出現差異的層次。</p>
 <span id="more"></span>
-<p>這是一篇把工作事件去脈絡化後留下的知識紀錄。公司、人物、機構、網址、檔名、精確時間與特定資料內容都不放進來，只保留這次排查過程中可以移植到其他工作的思考方式。</p>
-<p>這次處理的是一個和 API、批次更新、排程與外部資料來源有關的需求。表面上看起來像是前台資料沒有更新，但真正需要釐清的問題其實是：</p>
+<p id="nav-eb39a357325aa2bf" data-navigation-anchor="">這是一篇把工作事件去脈絡化後留下的知識紀錄。公司、人物、機構、網址、檔名、精確時間與特定資料內容都不放進來，只保留這次排查過程中可以移植到其他工作的思考方式。</p>
+<p id="nav-de1241d767e24490" data-navigation-anchor="">這次處理的是一個和 API、批次更新、排程與外部資料來源有關的需求。表面上看起來像是前台資料沒有更新，但真正需要釐清的問題其實是：</p>
 <blockquote>
-<p><strong>資料從哪裡來？中間經過哪些處理？最後是在哪一層出現差異？</strong></p>
+<p id="nav-fd25c4d3981231c6" data-navigation-anchor=""><strong>資料從哪裡來？中間經過哪些處理？最後是在哪一層出現差異？</strong></p>
 </blockquote>
-<h1 id="一開始容易走錯的方向"><a href="#一開始容易走錯的方向" class="headerlink" title="一開始容易走錯的方向"></a>一開始容易走錯的方向</h1><p>看到前台畫面、附件內容或使用者回報異常時，很容易一路追著前台找：</p>
+<h1 id="一開始容易走錯的方向"><a href="#一開始容易走錯的方向" class="headerlink" title="一開始容易走錯的方向"></a>一開始容易走錯的方向</h1><p id="nav-9af0c9fffceb9c16" data-navigation-anchor="">看到前台畫面、附件內容或使用者回報異常時，很容易一路追著前台找：</p>
 <ul>
-<li>這個畫面是不是沒有更新？</li>
-<li>這個連結是不是指錯地方？</li>
-<li>是不是需要新增一支排程？</li>
-<li>API 是不是沒有把最新資料帶回來？</li>
+<li id="nav-6b6d3378292ead40" data-navigation-anchor="">這個畫面是不是沒有更新？</li>
+<li id="nav-c2a52c7c5b433f2e" data-navigation-anchor="">這個連結是不是指錯地方？</li>
+<li id="nav-ecfc7927dcc12e67" data-navigation-anchor="">是不是需要新增一支排程？</li>
+<li id="nav-261a09a3fec54ecf" data-navigation-anchor="">API 是不是沒有把最新資料帶回來？</li>
 </ul>
-<p>這些問題都可以問，但如果一直停留在前台，就很難知道資料實際上是怎麼形成的。</p>
-<p>這次比較重要的修正是：</p>
+<p id="nav-958021eb145ea44c" data-navigation-anchor="">這些問題都可以問，但如果一直停留在前台，就很難知道資料實際上是怎麼形成的。</p>
+<p id="nav-382ddd5f489acd44" data-navigation-anchor="">這次比較重要的修正是：</p>
 <blockquote>
-<p><strong>遇到 API 需求時，不能只看前台結果；要先建立從資料來源到前台的完整路徑。</strong></p>
+<p id="nav-bc84ada84f95c3d5" data-navigation-anchor=""><strong>遇到 API 需求時，不能只看前台結果；要先建立從資料來源到前台的完整路徑。</strong></p>
 </blockquote>
-<p>前台只是最後看得到的結果，不一定是問題發生的位置。</p>
-<h1 id="先畫出資料流，再開始判斷"><a href="#先畫出資料流，再開始判斷" class="headerlink" title="先畫出資料流，再開始判斷"></a>先畫出資料流，再開始判斷</h1><p>這類需求可以先用下面的順序拆開：</p>
+<p id="nav-d3e8c20a40a92c09" data-navigation-anchor="">前台只是最後看得到的結果，不一定是問題發生的位置。</p>
+<h1 id="先畫出資料流，再開始判斷"><a href="#先畫出資料流，再開始判斷" class="headerlink" title="先畫出資料流，再開始判斷"></a>先畫出資料流，再開始判斷</h1><p id="nav-a700d216f13a0127" data-navigation-anchor="">這類需求可以先用下面的順序拆開：</p>
 <blockquote>
-<p>外部資料來源<br>→ 後台資料或附件<br>→ 排程／批次更新<br>→ API<br>→ 前台查詢與下載</p>
+<p id="nav-11fb578e3b58a613" data-navigation-anchor="">外部資料來源<br>→ 後台資料或附件<br>→ 排程／批次更新<br>→ API<br>→ 前台查詢與下載</p>
 </blockquote>
-<p>每一層都要問一個不同的問題：</p>
+<p id="nav-274750dc9de4b7a9" data-navigation-anchor="">每一層都要問一個不同的問題：</p>
 <table>
 <thead>
 <tr>
@@ -716,95 +724,95 @@
 <td>頁面、下載檔、畫面擷取</td>
 </tr>
 </tbody></table>
-<p>這樣做的好處是，不會因為某一個人的口頭描述，直接假設問題一定在前台、API 或排程其中一層。</p>
-<h1 id="這次最容易混淆的三件事"><a href="#這次最容易混淆的三件事" class="headerlink" title="這次最容易混淆的三件事"></a>這次最容易混淆的三件事</h1><h2 id="1-API-有問題，和來源資料有問題，不是同一件事"><a href="#1-API-有問題，和來源資料有問題，不是同一件事" class="headerlink" title="1. API 有問題，和來源資料有問題，不是同一件事"></a>1. API 有問題，和來源資料有問題，不是同一件事</h2><p>如果 API 正確地把上游提供的資料帶回來，但上游檔案本身是舊的、內容重複的、網址已經更換，前台看起來仍然會是錯的。</p>
-<p>因此排查時不能只問：</p>
+<p id="nav-28ab5b2a57b9b2bb" data-navigation-anchor="">這樣做的好處是，不會因為某一個人的口頭描述，直接假設問題一定在前台、API 或排程其中一層。</p>
+<h1 id="這次最容易混淆的三件事"><a href="#這次最容易混淆的三件事" class="headerlink" title="這次最容易混淆的三件事"></a>這次最容易混淆的三件事</h1><h2 id="1-API-有問題，和來源資料有問題，不是同一件事" data-navigation-anchor=""><a href="#1-API-有問題，和來源資料有問題，不是同一件事" class="headerlink" title="1. API 有問題，和來源資料有問題，不是同一件事"></a>1. API 有問題，和來源資料有問題，不是同一件事</h2><p id="nav-4cbc3823f01ff797" data-navigation-anchor="">如果 API 正確地把上游提供的資料帶回來，但上游檔案本身是舊的、內容重複的、網址已經更換，前台看起來仍然會是錯的。</p>
+<p id="nav-632b575e2d0365fb" data-navigation-anchor="">因此排查時不能只問：</p>
 <blockquote>
-<p>API 有沒有更新？</p>
+<p id="nav-4d09f07efb679695" data-navigation-anchor="">API 有沒有更新？</p>
 </blockquote>
-<p>還要問：</p>
+<p id="nav-5f428ffd6fea9514" data-navigation-anchor="">還要問：</p>
 <blockquote>
-<p><strong>API 更新的資料，來源本身是不是正確而且最新？</strong></p>
+<p id="nav-1d37454b1a5ffa20" data-navigation-anchor=""><strong>API 更新的資料，來源本身是不是正確而且最新？</strong></p>
 </blockquote>
-<p>只有把來源、API 回傳與前台結果放在一起比較，才有機會判斷責任邊界。</p>
-<h2 id="2-確定有排程，和知道排程怎麼運作，是兩件事"><a href="#2-確定有排程，和知道排程怎麼運作，是兩件事" class="headerlink" title="2. 確定有排程，和知道排程怎麼運作，是兩件事"></a>2. 確定有排程，和知道排程怎麼運作，是兩件事</h2><p>口頭上說「以前有排程」時，至少還有幾個問題沒有回答：</p>
+<p id="nav-a45bd6f0eb35cb47" data-navigation-anchor="">只有把來源、API 回傳與前台結果放在一起比較，才有機會判斷責任邊界。</p>
+<h2 id="2-確定有排程，和知道排程怎麼運作，是兩件事" data-navigation-anchor=""><a href="#2-確定有排程，和知道排程怎麼運作，是兩件事" class="headerlink" title="2. 確定有排程，和知道排程怎麼運作，是兩件事"></a>2. 確定有排程，和知道排程怎麼運作，是兩件事</h2><p id="nav-4328a112516af38d" data-navigation-anchor="">口頭上說「以前有排程」時，至少還有幾個問題沒有回答：</p>
 <ul>
-<li>排程現在是否仍然存在？</li>
-<li>它實際多久執行一次？</li>
-<li>每次執行會更新全部資料，還是只有部分資料？</li>
-<li>排程抓的是固定網址、檔案清單，還是某個 API？</li>
-<li>執行成功代表資料內容真的改變了嗎？</li>
+<li id="nav-45999d1c2d2120c0" data-navigation-anchor="">排程現在是否仍然存在？</li>
+<li id="nav-8034fdf58763fb08" data-navigation-anchor="">它實際多久執行一次？</li>
+<li id="nav-d35e3d36d7e24274" data-navigation-anchor="">每次執行會更新全部資料，還是只有部分資料？</li>
+<li id="nav-d4c87792de5ec4ea" data-navigation-anchor="">排程抓的是固定網址、檔案清單，還是某個 API？</li>
+<li id="nav-40e360783e9f6234" data-navigation-anchor="">執行成功代表資料內容真的改變了嗎？</li>
 </ul>
-<p>所以「有排程」不能直接等於「資料一定會更新」。排程設定、執行紀錄與實際檔案內容要分開確認。</p>
-<h2 id="3-系統標示的時間，不一定是資料真正的更新時間"><a href="#3-系統標示的時間，不一定是資料真正的更新時間" class="headerlink" title="3. 系統標示的時間，不一定是資料真正的更新時間"></a>3. 系統標示的時間，不一定是資料真正的更新時間</h2><p>畫面上可能有建立時間、抓取時間、處理時間或顯示時間，但這些不一定代表外部資料最後修改的時間。</p>
-<p>如果檔案本身沒有可靠的更新日期，就不能只靠畫面上的時間判定資料是否真的更新。這時要改用版本差異、內容比對、來源頁面或實際下載結果交叉確認。</p>
-<h1 id="真正有用的排查方法"><a href="#真正有用的排查方法" class="headerlink" title="真正有用的排查方法"></a>真正有用的排查方法</h1><h2 id="先找到一筆已知異常的資料"><a href="#先找到一筆已知異常的資料" class="headerlink" title="先找到一筆已知異常的資料"></a>先找到一筆已知異常的資料</h2><p>隨機點資料有時候只能證明「某一筆看起來正常」。更有效的方式是先找到已經被回報、而且可以明確描述差異的資料，再從這一筆往回追：</p>
+<p id="nav-e141a603097c8bb1" data-navigation-anchor="">所以「有排程」不能直接等於「資料一定會更新」。排程設定、執行紀錄與實際檔案內容要分開確認。</p>
+<h2 id="3-系統標示的時間，不一定是資料真正的更新時間" data-navigation-anchor=""><a href="#3-系統標示的時間，不一定是資料真正的更新時間" class="headerlink" title="3. 系統標示的時間，不一定是資料真正的更新時間"></a>3. 系統標示的時間，不一定是資料真正的更新時間</h2><p id="nav-722cbd2bf15c21db" data-navigation-anchor="">畫面上可能有建立時間、抓取時間、處理時間或顯示時間，但這些不一定代表外部資料最後修改的時間。</p>
+<p id="nav-9463304cfc2c3d32" data-navigation-anchor="">如果檔案本身沒有可靠的更新日期，就不能只靠畫面上的時間判定資料是否真的更新。這時要改用版本差異、內容比對、來源頁面或實際下載結果交叉確認。</p>
+<h1 id="真正有用的排查方法"><a href="#真正有用的排查方法" class="headerlink" title="真正有用的排查方法"></a>真正有用的排查方法</h1><h2 id="先找到一筆已知異常的資料" data-navigation-anchor=""><a href="#先找到一筆已知異常的資料" class="headerlink" title="先找到一筆已知異常的資料"></a>先找到一筆已知異常的資料</h2><p id="nav-47797aed30447758" data-navigation-anchor="">隨機點資料有時候只能證明「某一筆看起來正常」。更有效的方式是先找到已經被回報、而且可以明確描述差異的資料，再從這一筆往回追：</p>
 <ul>
-<li>前台顯示了什麼？</li>
-<li>後台對應到哪一筆？</li>
-<li>API 回傳了哪一份？</li>
-<li>外部來源目前提供什麼？</li>
-<li>哪一層和其他版本不一致？</li>
+<li id="nav-7ed838a1f953fec9" data-navigation-anchor="">前台顯示了什麼？</li>
+<li id="nav-a511b4fa67d7e28a" data-navigation-anchor="">後台對應到哪一筆？</li>
+<li id="nav-244bc003abeab65f" data-navigation-anchor="">API 回傳了哪一份？</li>
+<li id="nav-ac18da63e76eb19c" data-navigation-anchor="">外部來源目前提供什麼？</li>
+<li id="nav-b1be9155d15e0be0" data-navigation-anchor="">哪一層和其他版本不一致？</li>
 </ul>
-<p>已知異常資料就像一個定位點，可以讓排查從「猜測」變成「比對」。</p>
-<h2 id="在任何更新前先留下原始狀態"><a href="#在任何更新前先留下原始狀態" class="headerlink" title="在任何更新前先留下原始狀態"></a>在任何更新前先留下原始狀態</h2><p>這次也讓我更確定，處理資料更新時，最容易失去的是「更新前的證據」。如果接到需求時資料已經被更新，就很難回頭證明原本到底是什麼狀態。</p>
-<p>之後至少可以保留：</p>
+<p id="nav-d67f8f165f510420" data-navigation-anchor="">已知異常資料就像一個定位點，可以讓排查從「猜測」變成「比對」。</p>
+<h2 id="在任何更新前先留下原始狀態" data-navigation-anchor=""><a href="#在任何更新前先留下原始狀態" class="headerlink" title="在任何更新前先留下原始狀態"></a>在任何更新前先留下原始狀態</h2><p id="nav-639bc006cb907412" data-navigation-anchor="">這次也讓我更確定，處理資料更新時，最容易失去的是「更新前的證據」。如果接到需求時資料已經被更新，就很難回頭證明原本到底是什麼狀態。</p>
+<p id="nav-9ed02dadbed898c4" data-navigation-anchor="">之後至少可以保留：</p>
 <ul>
-<li>異常頁面的畫面擷取。</li>
-<li>來源頁面與檔案位置。</li>
-<li>API 回應或下載檔案。</li>
-<li>觀察到的時間與版本資訊。</li>
-<li>哪些資料已經更新、哪些還沒有更新。</li>
+<li id="nav-bf0eca72476697a4" data-navigation-anchor="">異常頁面的畫面擷取。</li>
+<li id="nav-9c22c01ade8800b4" data-navigation-anchor="">來源頁面與檔案位置。</li>
+<li id="nav-e7caec1ea7fc0e19" data-navigation-anchor="">API 回應或下載檔案。</li>
+<li id="nav-52c7356a38dd8694" data-navigation-anchor="">觀察到的時間與版本資訊。</li>
+<li id="nav-abcf99219461b1ea" data-navigation-anchor="">哪些資料已經更新、哪些還沒有更新。</li>
 </ul>
-<p>這些紀錄不是為了把事情寫得很複雜，而是避免之後只能依靠記憶或口頭轉述。</p>
-<h2 id="如果問題可能不只一筆，先考慮完整更新"><a href="#如果問題可能不只一筆，先考慮完整更新" class="headerlink" title="如果問題可能不只一筆，先考慮完整更新"></a>如果問題可能不只一筆，先考慮完整更新</h2><p>當回報顯示不只一個資料項目有問題時，只修正單一筆可能會留下更多沒有被看到的錯誤。</p>
-<p>這時要先確認：</p>
+<p id="nav-8a305a19877394f1" data-navigation-anchor="">這些紀錄不是為了把事情寫得很複雜，而是避免之後只能依靠記憶或口頭轉述。</p>
+<h2 id="如果問題可能不只一筆，先考慮完整更新" data-navigation-anchor=""><a href="#如果問題可能不只一筆，先考慮完整更新" class="headerlink" title="如果問題可能不只一筆，先考慮完整更新"></a>如果問題可能不只一筆，先考慮完整更新</h2><p id="nav-e22494143fd2cac5" data-navigation-anchor="">當回報顯示不只一個資料項目有問題時，只修正單一筆可能會留下更多沒有被看到的錯誤。</p>
+<p id="nav-35a447380c2b5b1c" data-navigation-anchor="">這時要先確認：</p>
 <ul>
-<li>上游是否已經整批更新？</li>
-<li>API 是否能執行完整重抓？</li>
-<li>更新會不會影響其他資料？</li>
-<li>更新後要用哪些已知異常資料驗證？</li>
+<li id="nav-7a82168cd529e5f8" data-navigation-anchor="">上游是否已經整批更新？</li>
+<li id="nav-2b16b136cd6f58e2" data-navigation-anchor="">API 是否能執行完整重抓？</li>
+<li id="nav-53ae374cfa7a1c76" data-navigation-anchor="">更新會不會影響其他資料？</li>
+<li id="nav-df045258bf9ef741" data-navigation-anchor="">更新後要用哪些已知異常資料驗證？</li>
 </ul>
-<p>重點不是每次都要整批更新，而是要先判斷問題的範圍，再決定單筆修正或全面刷新。</p>
-<h1 id="為什麼原始碼與資料流文件很重要"><a href="#為什麼原始碼與資料流文件很重要" class="headerlink" title="為什麼原始碼與資料流文件很重要"></a>為什麼原始碼與資料流文件很重要</h1><p>如果只知道前台畫面，不知道後台位置、排程設定與資料來源，遇到異常時就只能一直問人，或從結果反推系統。</p>
-<p>反過來，如果一開始就取得排程原始碼、API 欄位說明與資料來源位置，就能比較快回答：</p>
+<p id="nav-a3212c912e1b5f50" data-navigation-anchor="">重點不是每次都要整批更新，而是要先判斷問題的範圍，再決定單筆修正或全面刷新。</p>
+<h1 id="為什麼原始碼與資料流文件很重要"><a href="#為什麼原始碼與資料流文件很重要" class="headerlink" title="為什麼原始碼與資料流文件很重要"></a>為什麼原始碼與資料流文件很重要</h1><p id="nav-31cacb2f6502bb2d" data-navigation-anchor="">如果只知道前台畫面，不知道後台位置、排程設定與資料來源，遇到異常時就只能一直問人，或從結果反推系統。</p>
+<p id="nav-a0efed64c3d40d58" data-navigation-anchor="">反過來，如果一開始就取得排程原始碼、API 欄位說明與資料來源位置，就能比較快回答：</p>
 <ul>
-<li>哪些事情系統本來就會做？</li>
-<li>哪些事情其實不需要重新開發？</li>
-<li>哪些設定只是承辦或使用者記憶中的版本？</li>
-<li>哪些問題來自上游資料，而不是我們的程式？</li>
+<li id="nav-72f0eec839f3082a" data-navigation-anchor="">哪些事情系統本來就會做？</li>
+<li id="nav-91e3b48693c7d7b6" data-navigation-anchor="">哪些事情其實不需要重新開發？</li>
+<li id="nav-ec2c09a2afdbb067" data-navigation-anchor="">哪些設定只是承辦或使用者記憶中的版本？</li>
+<li id="nav-71a4275eb6db5e90" data-navigation-anchor="">哪些問題來自上游資料，而不是我們的程式？</li>
 </ul>
-<p>原始碼不只是開發資產，也是排查問題時的系統地圖。越晚取得，越容易在資訊不完整的情況下做出錯誤判斷。</p>
-<h1 id="可以留下來的工作原則"><a href="#可以留下來的工作原則" class="headerlink" title="可以留下來的工作原則"></a>可以留下來的工作原則</h1><p>這次我想保留的不是某個特定系統的解法，而是下面幾個原則：</p>
+<p id="nav-d1630d09046f8fec" data-navigation-anchor="">原始碼不只是開發資產，也是排查問題時的系統地圖。越晚取得，越容易在資訊不完整的情況下做出錯誤判斷。</p>
+<h1 id="可以留下來的工作原則"><a href="#可以留下來的工作原則" class="headerlink" title="可以留下來的工作原則"></a>可以留下來的工作原則</h1><p id="nav-3b9fdae1c7f3a2a0" data-navigation-anchor="">這次我想保留的不是某個特定系統的解法，而是下面幾個原則：</p>
 <ol>
-<li><strong>先確認資料流，再決定要改哪裡。</strong> 不要看到前台異常就直接修改前台或新增 API。</li>
-<li><strong>把口頭資訊當成線索，不當成現況。</strong> 排程週期、資料是否更新、誰負責來源，都要用設定或紀錄確認。</li>
-<li><strong>先找已知異常，再做前後比對。</strong> 一筆明確的錯誤資料，比大量模糊的正常資料更有定位價值。</li>
-<li><strong>在更新前留下證據。</strong> 否則更新完成後，可能只剩下「現在看起來正常」可以證明。</li>
-<li><strong>分開判斷來源、後台、API 與前台。</strong> 某一層修好了，不代表整條資料鏈都正確。</li>
-<li><strong>先取得程式碼、欄位與排程資料。</strong> 有資料流圖，就不必只靠印象或猜測排查。</li>
+<li id="nav-e21d4d5627a2e611" data-navigation-anchor=""><strong>先確認資料流，再決定要改哪裡。</strong> 不要看到前台異常就直接修改前台或新增 API。</li>
+<li id="nav-e51310240adf2f59" data-navigation-anchor=""><strong>把口頭資訊當成線索，不當成現況。</strong> 排程週期、資料是否更新、誰負責來源，都要用設定或紀錄確認。</li>
+<li id="nav-cb6048fc028a69e5" data-navigation-anchor=""><strong>先找已知異常，再做前後比對。</strong> 一筆明確的錯誤資料，比大量模糊的正常資料更有定位價值。</li>
+<li id="nav-2e4e9d7833c4314d" data-navigation-anchor=""><strong>在更新前留下證據。</strong> 否則更新完成後，可能只剩下「現在看起來正常」可以證明。</li>
+<li id="nav-6708671d5e5f27a3" data-navigation-anchor=""><strong>分開判斷來源、後台、API 與前台。</strong> 某一層修好了，不代表整條資料鏈都正確。</li>
+<li id="nav-f88fc2cec1374b29" data-navigation-anchor=""><strong>先取得程式碼、欄位與排程資料。</strong> 有資料流圖，就不必只靠印象或猜測排查。</li>
 </ol>
 <h1 id="下次遇到類似需求，我會先問什麼"><a href="#下次遇到類似需求，我會先問什麼" class="headerlink" title="下次遇到類似需求，我會先問什麼"></a>下次遇到類似需求，我會先問什麼</h1><ul>
-<li>這次需求是要新增機制，還是既有機制沒有正常運作？</li>
-<li>前台看到的資料，對應到後台哪個欄位或檔案？</li>
-<li>API 是直接回傳後台內容，還是會重新抓取外部來源？</li>
-<li>外部來源最後一次更新的證據在哪裡？</li>
-<li>排程的設定、執行頻率與實際更新範圍是什麼？</li>
-<li>目前的異常是一筆、部分資料，還是整批資料？</li>
-<li>在任何更新前，有沒有留下可以比較的原始狀態？</li>
+<li id="nav-73b3c9d1e18a1093" data-navigation-anchor="">這次需求是要新增機制，還是既有機制沒有正常運作？</li>
+<li id="nav-e86d703c1af560c7" data-navigation-anchor="">前台看到的資料，對應到後台哪個欄位或檔案？</li>
+<li id="nav-dfa8e567820e933e" data-navigation-anchor="">API 是直接回傳後台內容，還是會重新抓取外部來源？</li>
+<li id="nav-bd5b4e6d10f896c1" data-navigation-anchor="">外部來源最後一次更新的證據在哪裡？</li>
+<li id="nav-2ecbfa7b8b70c37b" data-navigation-anchor="">排程的設定、執行頻率與實際更新範圍是什麼？</li>
+<li id="nav-af840083afbec6c9" data-navigation-anchor="">目前的異常是一筆、部分資料，還是整批資料？</li>
+<li id="nav-83067d002767572f" data-navigation-anchor="">在任何更新前，有沒有留下可以比較的原始狀態？</li>
 </ul>
-<p>這些問題的順序，比一開始就問「要不要改 API」更重要。</p>
-<h1 id="目前的結論"><a href="#目前的結論" class="headerlink" title="目前的結論"></a>目前的結論</h1><p>這次讓我最清楚的一件事是：</p>
+<p id="nav-207d26457697ebff" data-navigation-anchor="">這些問題的順序，比一開始就問「要不要改 API」更重要。</p>
+<h1 id="目前的結論"><a href="#目前的結論" class="headerlink" title="目前的結論"></a>目前的結論</h1><p id="nav-715c0934ec59b648" data-navigation-anchor="">這次讓我最清楚的一件事是：</p>
 <blockquote>
-<p><strong>處理 API 需求時，真正要追的不是某個畫面，而是資料如何一路走到那個畫面。</strong></p>
+<p id="nav-5cbf53c60d8c2600" data-navigation-anchor=""><strong>處理 API 需求時，真正要追的不是某個畫面，而是資料如何一路走到那個畫面。</strong></p>
 </blockquote>
-<p>前台是現象，後台是系統中的位置，排程是時間與流程，外部來源是資料的起點，API 則是中間的傳遞方式。只有把這幾層放在一起，才不會被單一畫面、模糊記憶或錯誤歸因帶著走。</p>
-<p>最後可以把這次的方法濃縮成一句話：</p>
+<p id="nav-584184ccc6c34b14" data-navigation-anchor="">前台是現象，後台是系統中的位置，排程是時間與流程，外部來源是資料的起點，API 則是中間的傳遞方式。只有把這幾層放在一起，才不會被單一畫面、模糊記憶或錯誤歸因帶著走。</p>
+<p id="nav-57b6447ddaa439e7" data-navigation-anchor="">最後可以把這次的方法濃縮成一句話：</p>
 <blockquote>
-<p><strong>先畫資料流，先留原始狀態，再從已知異常往回追。</strong></p>
+<p id="nav-085531887b7e337f" data-navigation-anchor=""><strong>先畫資料流，先留原始狀態，再從已知異常往回追。</strong></p>
 </blockquote>
 <h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
-<li><strong>2026-09-03</strong>：建立去脈絡化的工作知識紀錄，整理 API、後台、排程、上游資料來源與前台結果之間的排查順序。</li>
+<li id="nav-bfcaa346114e0e7e" data-navigation-anchor=""><strong>2026-09-03</strong>：建立去脈絡化的工作知識紀錄，整理 API、後台、排程、上游資料來源與前台結果之間的排查順序。</li>
 </ul>
 
     </div>

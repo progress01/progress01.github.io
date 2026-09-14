@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,39 +666,39 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我因串流跟播看完《若草物語》；同理角色時，我也重新碰到被拒絕的遺憾，提醒自己練習尊重角色的選擇。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-8f607744a9081b14" data-navigation-anchor="">我因串流跟播看完《若草物語》；同理角色時，我也重新碰到被拒絕的遺憾，提醒自己練習尊重角色的選擇。</p>
  <span id="more"></span> 
-<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>興沖沖的跟同學一起訂了Friday影音(遠傳)的會員，卻發現整個瀏覽不能讓我選完結與否來看，對於他的用戶反而新增了關於影音的類型跟年分，也有稍微複雜的跟播與免費看的方式，意外跟播到了這部若草物語，畫面跟簡介真的滿吸引我的，就跟播了快一個月直到追完，好笑的是明明我能提早一天看，卻因為第一次跟播是周二，就固定以為周二才更新！</p>
-<h2 id="劇情特色"><a href="#劇情特色" class="headerlink" title="劇情特色"></a>劇情特色</h2><p>若草物語是小婦人在日本的翻譯(前提)，也就是這部是經典小說的現代改編版本，日本在1964年也拍過一個版本，統整一下經典的元素是，四姊妹+貧窮+青梅竹馬，剩下的就是想像他們這樣的性格在那個年代的日本所反映出來的故事了(這部很容易被聚焦在當代追尋屬於自己的幸福)，1964年的劇情介紹跟2024年非常不同！</p>
-<p>當代的幸福很常被直接跟戀愛結婚直接連結，即使整個價值觀大翻轉，很大程度這樣的預設仍然存在，甚至我出現一個錯誤的連結是快樂結局與壞結局來自於男女主角的感情進程，這部透過想獲得幸福是否一定需要戀愛來討論這些，雖然我覺得並沒有很成功，但整個過程是有趣的，否則我也不會追著麼久了！(想偷偷吐槽裡面認同困難的三女故事，卻也是本部中前期非常大的伏筆)。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>類似經典的元素劇情改編通常我不一定會去反追原作，畢竟依稀記得小時候應該是有看過的，但甚麼都忘記的我竟然落入了一個討論是性別間的純友誼(可能受PTT討論版影響&gt;只有一篇)。</p>
-<p>附註：工作、愛情、婚姻、夢想… 面對人生中這些躲不掉的難題，其實劇情之中都有討論，但因為最後到底意難平，相對於婚姻愛情，其實四姊妹的工作部分偏向順遂與劇情推動，就於感想之中不去討論了。</p>
-<p>看原作前的我<br>「畢竟不能強迫喜歡的人一定要回應你的感情」，要去看自己是否接受這個相處模式，即使我覺得劇情之中，女方的決定有點是想追隨價值觀而被強化推動的嫌疑，於是我就帶著偵探的眼睛開始考察到底「青梅竹馬會被拒絕」，並考察到去重看原作。</p>
-<p>真的只是為了反對結婚&#x3D;幸福的當代偶像劇模式嗎？<br>1.什麼是能一直待在一起且無可取代朋友的喜歡？<br>2.所謂能結婚的喜歡是類似承認彼此擁有的踏實感？</p>
-<p>主要分別站在雙方立場去討論他們承認的喜歡的方式，但無解，我也很容易站在男方的立場去責問明明這麼重要且好幾次向對方坦承，但卻不能用這樣的方式靠近，只是因為這是女方想反對的幸福公式嗎？</p>
-<p>結果看原作後的我(偷偷感謝chgpt擔任我的劇情討論對象)</p>
+<h2 id="觀影歷程" data-navigation-anchor=""><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p id="nav-5bc2d29912288816" data-navigation-anchor="">興沖沖的跟同學一起訂了Friday影音(遠傳)的會員，卻發現整個瀏覽不能讓我選完結與否來看，對於他的用戶反而新增了關於影音的類型跟年分，也有稍微複雜的跟播與免費看的方式，意外跟播到了這部若草物語，畫面跟簡介真的滿吸引我的，就跟播了快一個月直到追完，好笑的是明明我能提早一天看，卻因為第一次跟播是周二，就固定以為周二才更新！</p>
+<h2 id="劇情特色" data-navigation-anchor=""><a href="#劇情特色" class="headerlink" title="劇情特色"></a>劇情特色</h2><p id="nav-8a4239be8033595b" data-navigation-anchor="">若草物語是小婦人在日本的翻譯(前提)，也就是這部是經典小說的現代改編版本，日本在1964年也拍過一個版本，統整一下經典的元素是，四姊妹+貧窮+青梅竹馬，剩下的就是想像他們這樣的性格在那個年代的日本所反映出來的故事了(這部很容易被聚焦在當代追尋屬於自己的幸福)，1964年的劇情介紹跟2024年非常不同！</p>
+<p id="nav-4df8c79de89ad250" data-navigation-anchor="">當代的幸福很常被直接跟戀愛結婚直接連結，即使整個價值觀大翻轉，很大程度這樣的預設仍然存在，甚至我出現一個錯誤的連結是快樂結局與壞結局來自於男女主角的感情進程，這部透過想獲得幸福是否一定需要戀愛來討論這些，雖然我覺得並沒有很成功，但整個過程是有趣的，否則我也不會追著麼久了！(想偷偷吐槽裡面認同困難的三女故事，卻也是本部中前期非常大的伏筆)。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-4cf347e74f02ed14" data-navigation-anchor="">類似經典的元素劇情改編通常我不一定會去反追原作，畢竟依稀記得小時候應該是有看過的，但甚麼都忘記的我竟然落入了一個討論是性別間的純友誼(可能受PTT討論版影響&gt;只有一篇)。</p>
+<p id="nav-2cfbd2acd686698a" data-navigation-anchor="">附註：工作、愛情、婚姻、夢想… 面對人生中這些躲不掉的難題，其實劇情之中都有討論，但因為最後到底意難平，相對於婚姻愛情，其實四姊妹的工作部分偏向順遂與劇情推動，就於感想之中不去討論了。</p>
+<p id="nav-2dca1c1f7e610363" data-navigation-anchor="">看原作前的我<br>「畢竟不能強迫喜歡的人一定要回應你的感情」，要去看自己是否接受這個相處模式，即使我覺得劇情之中，女方的決定有點是想追隨價值觀而被強化推動的嫌疑，於是我就帶著偵探的眼睛開始考察到底「青梅竹馬會被拒絕」，並考察到去重看原作。</p>
+<p id="nav-d10713f73aa38abb" data-navigation-anchor="">真的只是為了反對結婚=幸福的當代偶像劇模式嗎？<br>1.什麼是能一直待在一起且無可取代朋友的喜歡？<br>2.所謂能結婚的喜歡是類似承認彼此擁有的踏實感？</p>
+<p id="nav-fcf0aa85cfb2b685" data-navigation-anchor="">主要分別站在雙方立場去討論他們承認的喜歡的方式，但無解，我也很容易站在男方的立場去責問明明這麼重要且好幾次向對方坦承，但卻不能用這樣的方式靠近，只是因為這是女方想反對的幸福公式嗎？</p>
+<p id="nav-dde6989da4dbb4c2" data-navigation-anchor="">結果看原作後的我(偷偷感謝chgpt擔任我的劇情討論對象)</p>
 <blockquote>
-<p>更想要一個我能填滿內心遺憾的答案</p>
+<p id="nav-0fa3cda28018135d" data-navigation-anchor="">更想要一個我能填滿內心遺憾的答案</p>
 </blockquote>
-<p>WHY Laurie and Joe can not be couple (little woman)</p>
+<p id="nav-04d90574b3a8cb14" data-navigation-anchor="">WHY Laurie and Joe can not be couple (little woman)</p>
 <ol>
-<li>深厚的友誼基礎(我猜我對這個很不服氣)→其實老早就把結果理想化了</li>
-<li>優勢互補、共同興趣，以及Laurie真的非常愛Joe→但親密不等於愛情(我的錯)</li>
+<li id="nav-ed1663e25e4ca740" data-navigation-anchor="">深厚的友誼基礎(我猜我對這個很不服氣)→其實老早就把結果理想化了</li>
+<li id="nav-751093bd9c4e52a8" data-navigation-anchor="">優勢互補、共同興趣，以及Laurie真的非常愛Joe→但親密不等於愛情(我的錯)</li>
 </ol>
-<p>我本來預測之下這個故事在2024年絕對沒問題的，但改編的劇情還是給了我一拳，明明獨立性與創造力還有女性的追求在這個時代已經不會受到限制了！</p>
-<p>但Joe的拒絕除了尊重之外(小說裡面Joe確實釐清了對Laurie的感覺，並且當時不流行現在的試試看的作法)，Joe在當時也看重自己的獨立性以及聲明自己並不受限於傳統浪漫生活(求婚時的大家都會很高興我們在一起)，小說裡面姊妹對彼此的愛與家庭的支持敘述完整，相對之下反而能同理…，真正的滿足應該也來自於目標、成長上面。</p>
-<p>雖然小說後面的一段讓我覺得特別可惜，但作者確實保持了角色的自主想法…<br>I want to compare “I care more to be loved. I want to be loved” with “That is not the same as loving”<br>真正的愛需要雙向連結－給予和接受，對孤獨的恐懼和對愛的渴望是她不想給Laurie的回應。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>我發現有完整鋪陳的小說，讓這個拒絕很難接受但可以忍受，默默地發現自己在快節奏的電視劇及小說裡面那種讀者快感侵蝕的部分，也可能是沒有整個拍出心路歷程的轉變而導致，電視劇裡面雖然女方的立場無法對抗男方的煎熬與深情，但說到底「畢竟不能強迫喜歡的人一定要回應你的感情」，願意怎麼樣回應真的是女方的事情，愛的辯證的兩種情況一目了然，而當年陳又青的回應又那麼牽動心神。</p>
-<p>但我還是決定要選擇性地去接受主角旅程(假如他刻劃深刻的話)<br>畢竟每當我同理角色，就有點讓我再一次面對之前被拒絕的難過跟遺憾，快節奏跟套路雖然會讓我忍不住去預設發展，但老實說我真實期待的不是這樣的世界，跟隨角色跟決定是我之後會努力的部分，畢竟豐富的角色才有豐富的故事，不然一切都是世界觀的建構而已。</p>
-<p>chatgpt給出幾個探討心路歷程的方法</p>
+<p id="nav-7d705cfdda508264" data-navigation-anchor="">我本來預測之下這個故事在2024年絕對沒問題的，但改編的劇情還是給了我一拳，明明獨立性與創造力還有女性的追求在這個時代已經不會受到限制了！</p>
+<p id="nav-80b21cfc28165457" data-navigation-anchor="">但Joe的拒絕除了尊重之外(小說裡面Joe確實釐清了對Laurie的感覺，並且當時不流行現在的試試看的作法)，Joe在當時也看重自己的獨立性以及聲明自己並不受限於傳統浪漫生活(求婚時的大家都會很高興我們在一起)，小說裡面姊妹對彼此的愛與家庭的支持敘述完整，相對之下反而能同理…，真正的滿足應該也來自於目標、成長上面。</p>
+<p id="nav-966dda8fdecc02d2" data-navigation-anchor="">雖然小說後面的一段讓我覺得特別可惜，但作者確實保持了角色的自主想法…<br>I want to compare “I care more to be loved. I want to be loved” with “That is not the same as loving”<br>真正的愛需要雙向連結－給予和接受，對孤獨的恐懼和對愛的渴望是她不想給Laurie的回應。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-ad0904d38f428ae9" data-navigation-anchor="">我發現有完整鋪陳的小說，讓這個拒絕很難接受但可以忍受，默默地發現自己在快節奏的電視劇及小說裡面那種讀者快感侵蝕的部分，也可能是沒有整個拍出心路歷程的轉變而導致，電視劇裡面雖然女方的立場無法對抗男方的煎熬與深情，但說到底「畢竟不能強迫喜歡的人一定要回應你的感情」，願意怎麼樣回應真的是女方的事情，愛的辯證的兩種情況一目了然，而當年陳又青的回應又那麼牽動心神。</p>
+<p id="nav-f639a37fe74e3137" data-navigation-anchor="">但我還是決定要選擇性地去接受主角旅程(假如他刻劃深刻的話)<br>畢竟每當我同理角色，就有點讓我再一次面對之前被拒絕的難過跟遺憾，快節奏跟套路雖然會讓我忍不住去預設發展，但老實說我真實期待的不是這樣的世界，跟隨角色跟決定是我之後會努力的部分，畢竟豐富的角色才有豐富的故事，不然一切都是世界觀的建構而已。</p>
+<p id="nav-dbd470af2fa1fcd3" data-navigation-anchor="">chatgpt給出幾個探討心路歷程的方法</p>
 <ol>
-<li>問為什麼角色要做出這樣的抉擇(像我這次對這段關係以及兩人的成長發問)</li>
-<li>允許自己對這樣的成長感到沮喪</li>
-<li>考慮角色的學習與改變</li>
-<li>反思自己的感受，被挑戰的以及過去經歷的(那種我為何是我的感覺)</li>
+<li id="nav-e6807c88c84b58c5" data-navigation-anchor="">問為什麼角色要做出這樣的抉擇(像我這次對這段關係以及兩人的成長發問)</li>
+<li id="nav-3f2a676904241a28" data-navigation-anchor="">允許自己對這樣的成長感到沮喪</li>
+<li id="nav-ab13825e65a3aa89" data-navigation-anchor="">考慮角色的學習與改變</li>
+<li id="nav-27874558a8a3d5a3" data-navigation-anchor="">反思自己的感受，被挑戰的以及過去經歷的(那種我為何是我的感覺)</li>
 </ol>
-<p>最後要是if Joe hadn’t gotten married就好了<br>也希望劇情裡面等待能有個什麼轉機，那種她一樣會戀愛但對象不是自己的感覺好心碎…</p>
-<p><img src="/images/drama_%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E.webp" alt="《若草物語-戀愛姐妹與無法戀愛的我》劇集圖片"><br><em>(圖片來源：KKTV)</em></p>
+<p id="nav-8b1366bcbe94d4f5" data-navigation-anchor="">最後要是if Joe hadn’t gotten married就好了<br>也希望劇情裡面等待能有個什麼轉機，那種她一樣會戀愛但對象不是自己的感覺好心碎…</p>
+<p id="nav-43c9319b0512556c" data-navigation-anchor=""><img src="/images/drama_%E8%8B%A5%E8%8D%89%E7%89%A9%E8%AA%9E.webp" alt="《若草物語-戀愛姐妹與無法戀愛的我》劇集圖片"><br><em>(圖片來源：KKTV)</em></p>
 
     </div>
 

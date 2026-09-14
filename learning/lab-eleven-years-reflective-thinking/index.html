@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,39 +663,39 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我從一篇談實驗室工作的文章，整理自己如何面對未完成、責任與角色變化。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-5411ff83871eef21" data-navigation-anchor="">我從一篇談實驗室工作的文章，整理自己如何面對未完成、責任與角色變化。</p>
 <span id="more"></span>
-<p>這是一篇針對〈在台灣設立實驗室十一年：校準責任、內耗與自己〉的閱讀與思考方式筆記。你特別喜歡這篇文章的思考方式，所以這裡先不把它整理成摘要，而是觀察它如何面對未完成、矛盾與責任，並留下幾個可以回到自己身上的問題。</p>
-<p><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://dogoodscience.biodiv.tw/2026/05/31/lab11years/">在台灣設立實驗室十一年：校準責任、內耗與自己</a></p>
+<p id="nav-381adbc98b074b25" data-navigation-anchor="">這是一篇針對〈在台灣設立實驗室十一年：校準責任、內耗與自己〉的閱讀與思考方式筆記。你特別喜歡這篇文章的思考方式，所以這裡先不把它整理成摘要，而是觀察它如何面對未完成、矛盾與責任，並留下幾個可以回到自己身上的問題。</p>
+<p id="nav-95279bba14f72338" data-navigation-anchor=""><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://dogoodscience.biodiv.tw/2026/05/31/lab11years/">在台灣設立實驗室十一年：校準責任、內耗與自己</a></p>
 <blockquote>
-<p><strong>資料狀態：思考方式觀察，尚未套用到自己的完整案例</strong></p>
-<p>這篇筆記不把作者的生命經驗直接套到自己身上。先學習它的寫法與思考順序：從具體生活狀況開始，承認內在衝突，回頭辨認角色變化，再重新決定哪些責任需要承擔、哪些不必全部扛在自己身上。</p>
+<p id="nav-ff730439a04b8c5e" data-navigation-anchor=""><strong>資料狀態：思考方式觀察，尚未套用到自己的完整案例</strong></p>
+<p id="nav-88e0f53a776db0d0" data-navigation-anchor="">這篇筆記不把作者的生命經驗直接套到自己身上。先學習它的寫法與思考順序：從具體生活狀況開始，承認內在衝突，回頭辨認角色變化，再重新決定哪些責任需要承擔、哪些不必全部扛在自己身上。</p>
 </blockquote>
-<h2 id="我目前觀察到的思考方式"><a href="#我目前觀察到的思考方式" class="headerlink" title="我目前觀察到的思考方式"></a>我目前觀察到的思考方式</h2><h3 id="1-從具體狀況開始，而不是先講大道理"><a href="#1-從具體狀況開始，而不是先講大道理" class="headerlink" title="1. 從具體狀況開始，而不是先講大道理"></a>1. 從具體狀況開始，而不是先講大道理</h3><p>文章先寫身體、家庭、工作與時間被切碎的狀況，再慢慢走到「我到底要什麼」。問題不是突然憑空出現，而是從生活裡累積出來。這使得後面的反思有經驗作為支點，不只是漂亮的自我分析。</p>
-<h3 id="2-同時保留成果與疲累"><a href="#2-同時保留成果與疲累" class="headerlink" title="2. 同時保留成果與疲累"></a>2. 同時保留成果與疲累</h3><p>文章沒有因為有獎項、演講或外界肯定，就否認那一年其實很辛苦；也沒有因為疲累，就假裝過去的成果不重要。好的回顧似乎不是選邊站，而是讓互相矛盾的事實同時存在。</p>
-<h3 id="3-把角色變化寫成需要重新設計的問題"><a href="#3-把角色變化寫成需要重新設計的問題" class="headerlink" title="3. 把角色變化寫成需要重新設計的問題"></a>3. 把角色變化寫成需要重新設計的問題</h3><p>從 hands-on 研究者走向 PI、mentor 或管理者，不被簡化成「應該放手」或「應該繼續親自做」。文章把問題改寫成：哪些地方仍要親自投入，哪些地方要放手，哪些地方要成為教練，讓角色可以重新設計。</p>
-<h3 id="4-把責任和虧欠分開"><a href="#4-把責任和虧欠分開" class="headerlink" title="4. 把責任和虧欠分開"></a>4. 把責任和虧欠分開</h3><p>文章很重要的一個轉折，是重新分辨「我對共同工作有責任」與「別人的選擇變成我欠他們一個結果」並不是同一件事。這種分辨讓照顧、標準與界線可以同時存在，也減少把每次不順利都解讀成自己的人格失敗。</p>
-<h3 id="5-允許文章停在還沒有答案的地方"><a href="#5-允許文章停在還沒有答案的地方" class="headerlink" title="5. 允許文章停在還沒有答案的地方"></a>5. 允許文章停在還沒有答案的地方</h3><p>最後不是用一句結論把所有問題收掉，而是承認仍然有惑，並把問題寫清楚當成下一段路的開始。這可能正是我想學的地方：完成一篇文章，不一定等於完成一個答案。</p>
-<h2 id="先請我回答的問題"><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p>這組問題是為了確認你真正喜歡的是哪一種思考方式，也方便之後把筆記改得更貼近你：</p>
+<h2 id="我目前觀察到的思考方式" data-navigation-anchor=""><a href="#我目前觀察到的思考方式" class="headerlink" title="我目前觀察到的思考方式"></a>我目前觀察到的思考方式</h2><h3 id="1-從具體狀況開始，而不是先講大道理" data-navigation-anchor=""><a href="#1-從具體狀況開始，而不是先講大道理" class="headerlink" title="1. 從具體狀況開始，而不是先講大道理"></a>1. 從具體狀況開始，而不是先講大道理</h3><p id="nav-2fc96cd80b75526b" data-navigation-anchor="">文章先寫身體、家庭、工作與時間被切碎的狀況，再慢慢走到「我到底要什麼」。問題不是突然憑空出現，而是從生活裡累積出來。這使得後面的反思有經驗作為支點，不只是漂亮的自我分析。</p>
+<h3 id="2-同時保留成果與疲累" data-navigation-anchor=""><a href="#2-同時保留成果與疲累" class="headerlink" title="2. 同時保留成果與疲累"></a>2. 同時保留成果與疲累</h3><p id="nav-f2a8711cdc36e0e4" data-navigation-anchor="">文章沒有因為有獎項、演講或外界肯定，就否認那一年其實很辛苦；也沒有因為疲累，就假裝過去的成果不重要。好的回顧似乎不是選邊站，而是讓互相矛盾的事實同時存在。</p>
+<h3 id="3-把角色變化寫成需要重新設計的問題" data-navigation-anchor=""><a href="#3-把角色變化寫成需要重新設計的問題" class="headerlink" title="3. 把角色變化寫成需要重新設計的問題"></a>3. 把角色變化寫成需要重新設計的問題</h3><p id="nav-6a4dc193e1764d7e" data-navigation-anchor="">從 hands-on 研究者走向 PI、mentor 或管理者，不被簡化成「應該放手」或「應該繼續親自做」。文章把問題改寫成：哪些地方仍要親自投入，哪些地方要放手，哪些地方要成為教練，讓角色可以重新設計。</p>
+<h3 id="4-把責任和虧欠分開" data-navigation-anchor=""><a href="#4-把責任和虧欠分開" class="headerlink" title="4. 把責任和虧欠分開"></a>4. 把責任和虧欠分開</h3><p id="nav-e58239bc6377b2a5" data-navigation-anchor="">文章很重要的一個轉折，是重新分辨「我對共同工作有責任」與「別人的選擇變成我欠他們一個結果」並不是同一件事。這種分辨讓照顧、標準與界線可以同時存在，也減少把每次不順利都解讀成自己的人格失敗。</p>
+<h3 id="5-允許文章停在還沒有答案的地方" data-navigation-anchor=""><a href="#5-允許文章停在還沒有答案的地方" class="headerlink" title="5. 允許文章停在還沒有答案的地方"></a>5. 允許文章停在還沒有答案的地方</h3><p id="nav-e062e1a7d76f8f1f" data-navigation-anchor="">最後不是用一句結論把所有問題收掉，而是承認仍然有惑，並把問題寫清楚當成下一段路的開始。這可能正是我想學的地方：完成一篇文章，不一定等於完成一個答案。</p>
+<h2 id="先請我回答的問題" data-navigation-anchor=""><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p id="nav-41bd2982514be520" data-navigation-anchor="">這組問題是為了確認你真正喜歡的是哪一種思考方式，也方便之後把筆記改得更貼近你：</p>
 <ol>
-<li><strong>你最喜歡這篇文章的哪一個部分？</strong> 是誠實、不急著正能量收尾、能同時放進成果與疲累，還是把抽象問題拉回具體生活？</li>
-<li><strong>你希望學的是寫作方法，還是這篇文章裡的自我校準方法？</strong> 如果兩者都有，哪一個要放在這篇筆記的主軸？</li>
-<li><strong>你目前最想重新校準的是哪個角色？</strong> 例如工作者、專案管理者、學習者、家人、創作者，或同時被幾個角色拉扯的人。</li>
-<li><strong>你最近有沒有一件事，表面上算是完成或得到肯定，但內心知道其實付出了很大代價？</strong> 這可以成為後續回顧的起點。</li>
-<li><strong>哪些責任確實是你的，哪些責任只是你習慣性地先扛起來？</strong> 你希望用什麼標準來區分「負責」和「內耗」？</li>
-<li><strong>如果把自己的角色重新拆成 hands-on、放手、coach 三種，你現在各自需要保留或增加什麼？</strong> 不一定要套用原文的名詞，也可以換成你的語言。</li>
-<li><strong>在 AI 介入工作之後，你最想保留哪一種不能被流暢文字取代的能力？</strong> 例如判斷、追問、驗證、感受脈絡，或對結果負責。</li>
-<li><strong>你希望未來的自己讀這篇筆記時，得到的是一個答案、一套問題，還是一個可以繼續寫下去的入口？</strong></li>
+<li id="nav-5385b8667b95cf98" data-navigation-anchor=""><strong>你最喜歡這篇文章的哪一個部分？</strong> 是誠實、不急著正能量收尾、能同時放進成果與疲累，還是把抽象問題拉回具體生活？</li>
+<li id="nav-3cd141c3e525465d" data-navigation-anchor=""><strong>你希望學的是寫作方法，還是這篇文章裡的自我校準方法？</strong> 如果兩者都有，哪一個要放在這篇筆記的主軸？</li>
+<li id="nav-d2fa13f4ea22ee5e" data-navigation-anchor=""><strong>你目前最想重新校準的是哪個角色？</strong> 例如工作者、專案管理者、學習者、家人、創作者，或同時被幾個角色拉扯的人。</li>
+<li id="nav-3a5156fee9607429" data-navigation-anchor=""><strong>你最近有沒有一件事，表面上算是完成或得到肯定，但內心知道其實付出了很大代價？</strong> 這可以成為後續回顧的起點。</li>
+<li id="nav-080226225558a1b8" data-navigation-anchor=""><strong>哪些責任確實是你的，哪些責任只是你習慣性地先扛起來？</strong> 你希望用什麼標準來區分「負責」和「內耗」？</li>
+<li id="nav-67b82f49f41457f7" data-navigation-anchor=""><strong>如果把自己的角色重新拆成 hands-on、放手、coach 三種，你現在各自需要保留或增加什麼？</strong> 不一定要套用原文的名詞，也可以換成你的語言。</li>
+<li id="nav-155da8bf64b03a2a" data-navigation-anchor=""><strong>在 AI 介入工作之後，你最想保留哪一種不能被流暢文字取代的能力？</strong> 例如判斷、追問、驗證、感受脈絡，或對結果負責。</li>
+<li id="nav-36a1e5d106116e02" data-navigation-anchor=""><strong>你希望未來的自己讀這篇筆記時，得到的是一個答案、一套問題，還是一個可以繼續寫下去的入口？</strong></li>
 </ol>
-<h2 id="暫時保留的閱讀框架"><a href="#暫時保留的閱讀框架" class="headerlink" title="暫時保留的閱讀框架"></a>暫時保留的閱讀框架</h2><p>之後每次回來讀這篇文章，可以先沿著這五層記錄，不急著寫成完整心得：</p>
+<h2 id="暫時保留的閱讀框架" data-navigation-anchor=""><a href="#暫時保留的閱讀框架" class="headerlink" title="暫時保留的閱讀框架"></a>暫時保留的閱讀框架</h2><p id="nav-6f6d4df9afa25b04" data-navigation-anchor="">之後每次回來讀這篇文章，可以先沿著這五層記錄，不急著寫成完整心得：</p>
 <ol>
-<li><strong>發生了什麼</strong>：具體事件、時間、身體或工作狀態。</li>
-<li><strong>我感受到什麼</strong>：焦慮、疲累、驕傲、愧疚、鬆動或期待。</li>
-<li><strong>我原本怎麼解釋</strong>：當時把問題歸因給誰、歸因給什麼。</li>
-<li><strong>現在想重新辨認什麼</strong>：角色、界線、責任、代價與真正想保留的部分。</li>
-<li><strong>下一個可以觀察的小問題</strong>：不求立刻解決，只先讓它能被看見。</li>
+<li id="nav-855fdc906758ba0e" data-navigation-anchor=""><strong>發生了什麼</strong>：具體事件、時間、身體或工作狀態。</li>
+<li id="nav-7501baf2a2b00f00" data-navigation-anchor=""><strong>我感受到什麼</strong>：焦慮、疲累、驕傲、愧疚、鬆動或期待。</li>
+<li id="nav-7627abde124930e7" data-navigation-anchor=""><strong>我原本怎麼解釋</strong>：當時把問題歸因給誰、歸因給什麼。</li>
+<li id="nav-4c3e298bfdde29f3" data-navigation-anchor=""><strong>現在想重新辨認什麼</strong>：角色、界線、責任、代價與真正想保留的部分。</li>
+<li id="nav-1269a3442fafd0cd" data-navigation-anchor=""><strong>下一個可以觀察的小問題</strong>：不求立刻解決，只先讓它能被看見。</li>
 </ol>
-<h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
+<h2 id="閱讀紀錄" data-navigation-anchor=""><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
 <thead>
 <tr>
 <th>日期</th>
@@ -703,14 +711,14 @@
 <td>以上 8 題，等待用你的經驗調整</td>
 </tr>
 </tbody></table>
-<h2 id="預先收集：把想法轉成可以繼續的反思"><a href="#預先收集：把想法轉成可以繼續的反思" class="headerlink" title="預先收集：把想法轉成可以繼續的反思"></a>預先收集：把想法轉成可以繼續的反思</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://dogoodscience.biodiv.tw/2026/05/31/lab11years/">在台灣設立實驗室十一年：校準責任、內耗與自己</a>：原文仍然是主要閱讀材料，特別留意它如何同時容納成果、疲累、幸運、責任與尚未解決的疑惑。</li>
-<li><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s11948-011-9317-8">What happens in the Lab: Applying Midstream Modulation to Enhance Critical Reflection in the Laboratory</a>：把反思拉到研究系統與工作文化本身，不只檢討個人做得好不好，適合對照你筆記裡「角色、責任與環境」的分辨。</li>
-<li><a target="_blank" rel="noopener" href="https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon">Burn-out an occupational phenomenon｜WHO</a>：用來確認「工作耗損」的正式界線；它把 burnout 放在長期工作壓力脈絡中，但不應把一篇自我反思文章直接當成診斷工具。</li>
+<h2 id="預先收集：把想法轉成可以繼續的反思" data-navigation-anchor=""><a href="#預先收集：把想法轉成可以繼續的反思" class="headerlink" title="預先收集：把想法轉成可以繼續的反思"></a>預先收集：把想法轉成可以繼續的反思</h2><ol>
+<li id="nav-2c97477f2a587de7" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://dogoodscience.biodiv.tw/2026/05/31/lab11years/">在台灣設立實驗室十一年：校準責任、內耗與自己</a>：原文仍然是主要閱讀材料，特別留意它如何同時容納成果、疲累、幸運、責任與尚未解決的疑惑。</li>
+<li id="nav-03ca2d8fe3ec429a" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s11948-011-9317-8">What happens in the Lab: Applying Midstream Modulation to Enhance Critical Reflection in the Laboratory</a>：把反思拉到研究系統與工作文化本身，不只檢討個人做得好不好，適合對照你筆記裡「角色、責任與環境」的分辨。</li>
+<li id="nav-913b66bd9929d02f" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon">Burn-out an occupational phenomenon｜WHO</a>：用來確認「工作耗損」的正式界線；它把 burnout 放在長期工作壓力脈絡中，但不應把一篇自我反思文章直接當成診斷工具。</li>
 </ol>
-<h2 id="我的參考意見"><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p>這組資料讓我更確定，這篇不需要急著整理成「我應該變得更強」的結論。比較有價值的讀法是把一次經驗拆成：發生了什麼、我感覺到什麼、我當時如何解釋、哪些責任真的屬於我、下一次要設什麼界線。這是從原文與反思研究延伸出的閱讀框架，不是對作者或自己的心理診斷；它的作用是讓成果與疲累可以同時存在，也讓「把問題寫清楚」本身成為一種前進。</p>
-<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
-<li><strong>2026-08-31</strong>：建立公開持續學習筆記，先保存文章的思考方式觀察與待回答問題，後續依回答改寫成更貼近自己的反思框架。</li>
+<h2 id="我的參考意見" data-navigation-anchor=""><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p id="nav-274e2cf2975940d5" data-navigation-anchor="">這組資料讓我更確定，這篇不需要急著整理成「我應該變得更強」的結論。比較有價值的讀法是把一次經驗拆成：發生了什麼、我感覺到什麼、我當時如何解釋、哪些責任真的屬於我、下一次要設什麼界線。這是從原文與反思研究延伸出的閱讀框架，不是對作者或自己的心理診斷；它的作用是讓成果與疲累可以同時存在，也讓「把問題寫清楚」本身成為一種前進。</p>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-c257a03a55628447" data-navigation-anchor=""><strong>2026-08-31</strong>：建立公開持續學習筆記，先保存文章的思考方式觀察與待回答問題，後續依回答改寫成更貼近自己的反思框架。</li>
 </ul>
 
     </div>
@@ -761,8 +769,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/learning/gemini-notebook-agent-office-workflow/" rel="next" title="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記">
-                  Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記 <i class="fa fa-angle-right"></i>
+                <a href="/learning/lis-research-1965-2025-content-analysis/" rel="next" title="LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記">
+                  LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

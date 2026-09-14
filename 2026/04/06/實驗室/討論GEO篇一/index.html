@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -663,82 +671,82 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我從搜尋 AI 功能與「涵攝」出發，整理網頁語意如何被理解，以及哪些事不能保證。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-4d7e8c5023e7ec61" data-navigation-anchor="">我從搜尋 AI 功能與「涵攝」出發，整理網頁語意如何被理解，以及哪些事不能保證。</p>
  <span id="more"></span>
-<h3 id="現況討論"><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p>Google Search 現在有 AI Overviews 等 AI 功能，會在部分查詢顯示摘要與連結；這不等於每個網站都會被引用，也不代表可以靠一套 GEO 標記穩定影響結果。Google 說明 AI 功能沿用既有 SEO 基礎，不需要額外的特殊 Schema，也不保證網頁一定會被索引或呈現（<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/ai-features">官方說明</a>）。本篇先忽略流量改變，從政府資訊如何被理解的角度，討論我把 GEO／AEO 想成「涵攝」的原因與可實作的內容基礎。</p>
-<h3 id="1-挑戰與痛點"><a href="#1-挑戰與痛點" class="headerlink" title="1.挑戰與痛點"></a>1.挑戰與痛點</h3><p>如果民眾先在搜尋摘要得到答案，政府網站經營者就會在意資訊是否被正確呈現與引用。不過，排序、選取與生成仍由搜尋系統決定，外部觀察不能把它簡化成一套保證引用的操作；這仍是一個黑盒子。</p>
-<p><strong>思考方向轉向</strong></p>
+<h3 id="現況討論" data-navigation-anchor=""><a href="#現況討論" class="headerlink" title="現況討論"></a>現況討論</h3><p id="nav-88badf1a881ac64d" data-navigation-anchor="">Google Search 現在有 AI Overviews 等 AI 功能，會在部分查詢顯示摘要與連結；這不等於每個網站都會被引用，也不代表可以靠一套 GEO 標記穩定影響結果。Google 說明 AI 功能沿用既有 SEO 基礎，不需要額外的特殊 Schema，也不保證網頁一定會被索引或呈現（<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/ai-features">官方說明</a>）。本篇先忽略流量改變，從政府資訊如何被理解的角度，討論我把 GEO／AEO 想成「涵攝」的原因與可實作的內容基礎。</p>
+<h3 id="1-挑戰與痛點" data-navigation-anchor=""><a href="#1-挑戰與痛點" class="headerlink" title="1.挑戰與痛點"></a>1.挑戰與痛點</h3><p id="nav-d9c53136d3feac8c" data-navigation-anchor="">如果民眾先在搜尋摘要得到答案，政府網站經營者就會在意資訊是否被正確呈現與引用。不過，排序、選取與生成仍由搜尋系統決定，外部觀察不能把它簡化成一套保證引用的操作；這仍是一個黑盒子。</p>
+<p id="nav-f851df5f06bda96c" data-navigation-anchor=""><strong>思考方向轉向</strong></p>
 <ol>
-<li>若民眾只看到摘要而未點入原頁，適用條件可能被截斷。</li>
-<li>若摘要失真，或缺少更新時間、資格限制等條件，政府資訊不一定能被準確傳達。</li>
-<li>這種情況可能影響民眾理解與網站績效觀察，但不能直接推定一定造成政績或流量問題。</li>
+<li id="nav-2db7c092084fbe16" data-navigation-anchor="">若民眾只看到摘要而未點入原頁，適用條件可能被截斷。</li>
+<li id="nav-dc44a90fc6b33965" data-navigation-anchor="">若摘要失真，或缺少更新時間、資格限制等條件，政府資訊不一定能被準確傳達。</li>
+<li id="nav-ab8a6376cd6b32fb" data-navigation-anchor="">這種情況可能影響民眾理解與網站績效觀察，但不能直接推定一定造成政績或流量問題。</li>
 </ol>
-<p><strong>在不點到網頁就取得摘要時</strong></p>
+<p id="nav-de12dd4d0479b489" data-navigation-anchor=""><strong>在不點到網頁就取得摘要時</strong></p>
 <ol>
-<li>SEO 仍是讓頁面可抓取、可索引、可找到的基礎，不能簡化成只有關鍵字或排序。</li>
-<li>除了傳統搜尋結果，也要留意內容是否能被清楚理解、正確摘錄；這增加了內容表達的要求，卻不保證會出現在 AI 摘要。</li>
+<li id="nav-cf802110ad53b358" data-navigation-anchor="">SEO 仍是讓頁面可抓取、可索引、可找到的基礎，不能簡化成只有關鍵字或排序。</li>
+<li id="nav-bddfdf9252146d61" data-navigation-anchor="">除了傳統搜尋結果，也要留意內容是否能被清楚理解、正確摘錄；這增加了內容表達的要求，卻不保證會出現在 AI 摘要。</li>
 </ol>
-<p><strong>政府網頁的挑戰</strong></p>
+<p id="nav-4dc83931d83a4673" data-navigation-anchor=""><strong>政府網頁的挑戰</strong></p>
 <ol>
-<li>時事性資訊可能同時在社群平台公布，需要考慮不同渠道的更新一致性。</li>
-<li>重要的補助與政策資訊可能分散在多層頁面，需要考慮摘要是否帶出適用條件與申請入口。</li>
-<li>牽涉民眾與廠商的業務可能轉入特定系統，需要考慮公開頁面與系統說明的銜接。</li>
+<li id="nav-ebbf1fe0b934c160" data-navigation-anchor="">時事性資訊可能同時在社群平台公布，需要考慮不同渠道的更新一致性。</li>
+<li id="nav-bcbce8cd32282e99" data-navigation-anchor="">重要的補助與政策資訊可能分散在多層頁面，需要考慮摘要是否帶出適用條件與申請入口。</li>
+<li id="nav-87a1fa3a019e6718" data-navigation-anchor="">牽涉民眾與廠商的業務可能轉入特定系統，需要考慮公開頁面與系統說明的銜接。</li>
 </ol>
-<p>也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
+<p id="nav-0ad43a2795d6f438" data-navigation-anchor="">也就是網頁乘載資訊這件事情即使資訊鑑別力與重要性這件事情存疑，<br>但假設不跟著改變作法，則”數位解釋權”這件事情的溝通成本將大幅提升。</p>
 <blockquote>
-<p><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
+<p id="nav-7d1cb70f9b8faf84" data-navigation-anchor=""><strong>舉例來說</strong><br>汽機車牌照與燃料稅有相當多便民的整合資訊，<br>但假設整合資訊的持有者或分享者未適時更新資訊，屆時增加的行政成本與民眾成本將大幅增加雙方的不便性</p>
 </blockquote>
-<h3 id="2-GEO的定義"><a href="#2-GEO的定義" class="headerlink" title="2.GEO的定義"></a>2.GEO的定義</h3><p>生成式引擎優化（GEO）或答案引擎優化（AEO），可以當成一組描述內容如何被發現、理解和使用的工作方法；它們不是 Google Search 的特殊資格，也不是一個能保證 AI 引用的 Schema。Google 的說法是，AI 功能仍使用既有 SEO 基礎，沒有額外的技術要求或特殊 Schema。</p>
-<p>但對我來說，GEO 的概念，更像是數位世界裡對「網頁意義」的<strong>涵攝 (Subsumption)</strong>。</p>
-<p><strong>涵攝說明</strong><br>這是一個法律概念。在法律適用時，通常會透過大小前提形成結論：將「生活事實」通過路徑歸入「法律規範要件」，最後產生「特定法律效果」。</p>
+<h3 id="2-GEO的定義" data-navigation-anchor=""><a href="#2-GEO的定義" class="headerlink" title="2.GEO的定義"></a>2.GEO的定義</h3><p id="nav-fd14993b3a43e063" data-navigation-anchor="">生成式引擎優化（GEO）或答案引擎優化（AEO），可以當成一組描述內容如何被發現、理解和使用的工作方法；它們不是 Google Search 的特殊資格，也不是一個能保證 AI 引用的 Schema。Google 的說法是，AI 功能仍使用既有 SEO 基礎，沒有額外的技術要求或特殊 Schema。</p>
+<p id="nav-0752b76e020880e6" data-navigation-anchor="">但對我來說，GEO 的概念，更像是數位世界裡對「網頁意義」的<strong>涵攝 (Subsumption)</strong>。</p>
+<p id="nav-3acfaa105fd2d951" data-navigation-anchor=""><strong>涵攝說明</strong><br>這是一個法律概念。在法律適用時，通常會透過大小前提形成結論：將「生活事實」通過路徑歸入「法律規範要件」，最後產生「特定法律效果」。</p>
 <ul>
-<li><strong>法規範(大前提)</strong> <code>&lt;-&gt;</code> <strong>具體生活事實(小前提)</strong> <code>&lt;-&gt;</code> <strong>特定法律效果(結論)</strong>：<br>這個概念特別在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實(任意變數)合於規範要件 (<code>f(x)</code>)，則會產出對應的法律效果 (<code>y</code>)。這裡的 <code>y = f(x)</code> 只是整理資料時的比喻，不是搜尋排名或生成效果的公式。</li>
-<li>事實不是放入函數中的給定的(<code>x</code>)值，而是想像法律規範在現實有一個具體的規範範圍，當具體事實在現實中與函數交集，則開始討論涵攝（歸入）：將事實套入法律，確認是否符合要件。</li>
+<li id="nav-2cb2c4b55410667a" data-navigation-anchor=""><strong>法規範(大前提)</strong> <code>&lt;-&gt;</code> <strong>具體生活事實(小前提)</strong> <code>&lt;-&gt;</code> <strong>特定法律效果(結論)</strong>：<br>這個概念特別在「規範與事實之間來回拉近」。這有點類似函數 <code>y = f(x)</code>：若事實(任意變數)合於規範要件 (<code>f(x)</code>)，則會產出對應的法律效果 (<code>y</code>)。這裡的 <code>y = f(x)</code> 只是整理資料時的比喻，不是搜尋排名或生成效果的公式。</li>
+<li id="nav-e9991c36a3f9b95d" data-navigation-anchor="">事實不是放入函數中的給定的(<code>x</code>)值，而是想像法律規範在現實有一個具體的規範範圍，當具體事實在現實中與函數交集，則開始討論涵攝（歸入）：將事實套入法律，確認是否符合要件。</li>
 </ul>
-<p><strong>SEO 與 GEO 的區別實益</strong><br>回到 GEO 的操作型定義，要讓系統較容易理解網頁，操作上我認為可以把它看成一種數位效果 (<code>y</code>)。因此，透過整理數位內容中的事實，並讓它能對應到清楚的詞彙與關係，這個涵攝動作往更深度討論會碰到本體論（Ontology）與知識圖譜；若實際一點，這可以作為 SEO 與 GEO 的討論分野：</p>
+<p id="nav-a67210eadb380467" data-navigation-anchor=""><strong>SEO 與 GEO 的區別實益</strong><br>回到 GEO 的操作型定義，要讓系統較容易理解網頁，操作上我認為可以把它看成一種數位效果 (<code>y</code>)。因此，透過整理數位內容中的事實，並讓它能對應到清楚的詞彙與關係，這個涵攝動作往更深度討論會碰到本體論（Ontology）與知識圖譜；若實際一點，這可以作為 SEO 與 GEO 的討論分野：</p>
 <ul>
-<li><strong>SEO（面對搜尋）</strong>：重點是讓內容可抓取、可索引、可找到而且對讀者有用；關鍵字只是內容表達的一部分，不能把搜尋排序等同於關鍵字相似度計算。</li>
-<li><strong>GEO（面對 AI 功能）</strong>：可以偏向清楚描述實體（Entities）、屬性與關係，讓系統有較好的語意線索；Schema.org 是可重用的詞彙與資料模型（<a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">資料模型</a>），不是把文字轉成權威事實的規則。</li>
+<li id="nav-c3161badcb5db70e" data-navigation-anchor=""><strong>SEO（面對搜尋）</strong>：重點是讓內容可抓取、可索引、可找到而且對讀者有用；關鍵字只是內容表達的一部分，不能把搜尋排序等同於關鍵字相似度計算。</li>
+<li id="nav-689a0856053589d0" data-navigation-anchor=""><strong>GEO（面對 AI 功能）</strong>：可以偏向清楚描述實體（Entities）、屬性與關係，讓系統有較好的語意線索；Schema.org 是可重用的詞彙與資料模型（<a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">資料模型</a>），不是把文字轉成權威事實的規則。</li>
 </ul>
 <blockquote>
-<p>Schema.org 是協作性的結構化資料詞彙。它提供類型、屬性與關係的資料模型，讓不同系統可以用共同詞彙描述內容；它本身不替內容背書，也不保證搜尋或生成結果。</p>
+<p id="nav-3cf19d1344f753a2" data-navigation-anchor="">Schema.org 是協作性的結構化資料詞彙。它提供類型、屬性與關係的資料模型，讓不同系統可以用共同詞彙描述內容；它本身不替內容背書，也不保證搜尋或生成結果。</p>
 </blockquote>
-<h3 id="3-實踐-GEO-的涵攝路徑"><a href="#3-實踐-GEO-的涵攝路徑" class="headerlink" title="3.實踐 GEO 的涵攝路徑"></a>3.實踐 GEO 的涵攝路徑</h3><p>在這個思考方向下，我們該如何實踐 GEO？</p>
+<h3 id="3-實踐-GEO-的涵攝路徑" data-navigation-anchor=""><a href="#3-實踐-GEO-的涵攝路徑" class="headerlink" title="3.實踐 GEO 的涵攝路徑"></a>3.實踐 GEO 的涵攝路徑</h3><p id="nav-8f2f80d14a4d8e25" data-navigation-anchor="">在這個思考方向下，我們該如何實踐 GEO？</p>
 <ol>
-<li><strong>將 Schema.org 視為共同詞彙</strong>：例如在內容確實描述政府機關時，才考慮使用 <code>GovernmentOrganization</code>；類型不是權威性的證明。Schema.org 的類型、屬性、domain 與 range 關係可參考其<a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">資料模型</a>。</li>
-<li><strong>將網頁內容視為「具體事實」</strong>：檢視頁面上可核對的標題、發布單位、日期、業務標籤與正文，避免只在標記中聲稱頁面沒有呈現的資訊。</li>
-<li><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於詞彙與事實之間，用 <code>@id</code>、屬性與關係表達同一個實體；這是可機器讀取的描述，不是把純文字自動升格成權威實體。</li>
-<li><strong>把數位效果當成可改善的條件</strong>：清楚的內容與結構化資料可能降低理解歧義、改善檢索線索，但 AI 是否索引、引用或如何生成答案仍由系統決定。</li>
+<li id="nav-7e5db92877a4b1ed" data-navigation-anchor=""><strong>將 Schema.org 視為共同詞彙</strong>：例如在內容確實描述政府機關時，才考慮使用 <code>GovernmentOrganization</code>；類型不是權威性的證明。Schema.org 的類型、屬性、domain 與 range 關係可參考其<a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">資料模型</a>。</li>
+<li id="nav-097e6cb3ebc7b5ab" data-navigation-anchor=""><strong>將網頁內容視為「具體事實」</strong>：檢視頁面上可核對的標題、發布單位、日期、業務標籤與正文，避免只在標記中聲稱頁面沒有呈現的資訊。</li>
+<li id="nav-33126ba0fa3e18b5" data-navigation-anchor=""><strong>透過 JSON-LD 標記進行「涵攝」</strong>：目光往返於詞彙與事實之間，用 <code>@id</code>、屬性與關係表達同一個實體；這是可機器讀取的描述，不是把純文字自動升格成權威實體。</li>
+<li id="nav-1bbeba0ddf5a9072" data-navigation-anchor=""><strong>把數位效果當成可改善的條件</strong>：清楚的內容與結構化資料可能降低理解歧義、改善檢索線索，但 AI 是否索引、引用或如何生成答案仍由系統決定。</li>
 </ol>
-<p><strong>數位世界的函數對應：y &#x3D; f(x)</strong><br>總結這個實踐過程，我們必須明確定義這套涵攝動作：</p>
+<p id="nav-341d0164ecdd285d" data-navigation-anchor=""><strong>數位世界的函數對應：y = f(x)</strong><br>總結這個實踐過程，我們必須明確定義這套涵攝動作：</p>
 <ul>
 <li><strong>詞彙與欄位 <code>f()</code></strong>：用來描述實體、屬性與關係的共同資料模型（如發布者、管轄領域等 Schema 詞彙）。<blockquote>
-<p>援引詞彙與類型 (@context &amp; @type)：首先，在 JSON-LD 的開頭宣告使用的詞彙（<code>@context: https://schema.org</code>），再依頁面實際內容選擇類型；這不是法律法源，也不是權威性的認證。</p>
+<p id="nav-332b6639927ed288" data-navigation-anchor="">援引詞彙與類型 (@context &amp; @type)：首先，在 JSON-LD 的開頭宣告使用的詞彙（<code>@context: https://schema.org</code>），再依頁面實際內容選擇類型；這不是法律法源，也不是權威性的認證。</p>
 </blockquote>
 </li>
 <li><strong>具體事實 <code>x</code></strong>：網站上的客觀文字與資料。<blockquote>
-<p>釐清具體事實（網頁內容）：盤點並檢視網站畫面上既有的客觀事實，例如網頁標題、發布單位，以及承辦人勾選的「環境衛生」等業務標籤。</p>
+<p id="nav-9122b83181043a80" data-navigation-anchor="">釐清具體事實（網頁內容）：盤點並檢視網站畫面上既有的客觀事實，例如網頁標題、發布單位，以及承辦人勾選的「環境衛生」等業務標籤。</p>
 </blockquote>
 </li>
 <li><strong>涵攝動作</strong>：透過 JSON-LD 進行對應，將事實 <code>x</code> 歸入規範 <code>f()</code>。<blockquote>
-<p>賦予身分並完成涵攝 (@id &amp; 關聯屬性)：目光往返於詞彙與事實之間，用 <code>@id</code> 表達同一個 URI／資源的識別關係，再用屬性描述頁面真正提供的資訊。W3C 的 <a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/#node-identifiers">JSON-LD Node Identifiers</a> 說明 <code>@id</code> 如何讓節點可被外部參照；它不是保證全球唯一或被系統採信的身分證字號。</p>
+<p id="nav-f467e436d7ee2c8d" data-navigation-anchor="">賦予身分並完成涵攝 (@id &amp; 關聯屬性)：目光往返於詞彙與事實之間，用 <code>@id</code> 表達同一個 URI／資源的識別關係，再用屬性描述頁面真正提供的資訊。W3C 的 <a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/#node-identifiers">JSON-LD Node Identifiers</a> 說明 <code>@id</code> 如何讓節點可被外部參照；它不是保證全球唯一或被系統採信的身分證字號。</p>
 </blockquote>
 </li>
 <li><strong>可檢查的資料品質 <code>y</code></strong>：具體事實被清楚描述後，可能讓檢索與內容理解有較好的線索，但不會產生 AI 的確定性理解。<blockquote>
-<p>整理可檢查的資料品質：這裡的 <code>y = f(x)</code> 仍只是整理資料的比喻，不是搜尋或生成效果公式。當資料與頁面一致、來源可核對且關係表達清楚時，內容較容易被人與機器查找和理解；是否被引用、如何摘要，仍不能由 JSON-LD 單方面決定。</p>
+<p id="nav-af6d0747dc41b9eb" data-navigation-anchor="">整理可檢查的資料品質：這裡的 <code>y = f(x)</code> 仍只是整理資料的比喻，不是搜尋或生成效果公式。當資料與頁面一致、來源可核對且關係表達清楚時，內容較容易被人與機器查找和理解；是否被引用、如何摘要，仍不能由 JSON-LD 單方面決定。</p>
 </blockquote>
 </li>
 </ul>
-<p>如此設定的操作性定義，再加上實作與機關溝通成本，可以把政府資訊的內容、來源與更新責任整理成較容易核對的基礎設施。它有助於降低數位解釋的溝通成本，但不能把政府資訊自動變成 AI 推論時不可動搖的法理前提。</p>
+<p id="nav-5407448c3fc26dea" data-navigation-anchor="">如此設定的操作性定義，再加上實作與機關溝通成本，可以把政府資訊的內容、來源與更新責任整理成較容易核對的基礎設施。它有助於降低數位解釋的溝通成本，但不能把政府資訊自動變成 AI 推論時不可動搖的法理前提。</p>
 <blockquote>
-<p> 接續討論 Schema.org 詞彙與資料模型的了解方式。</p>
+<p id="nav-9b81142398ff20b5" data-navigation-anchor=""> 接續討論 Schema.org 詞彙與資料模型的了解方式。</p>
 </blockquote>
-<h3 id="官方資料與修訂記錄"><a href="#官方資料與修訂記錄" class="headerlink" title="官方資料與修訂記錄"></a>官方資料與修訂記錄</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/ai-features">Google：AI features and your website</a>：AI Overviews 與 AI Mode 沿用既有 SEO 基礎，沒有額外的特殊 Schema；Google 也不保證索引、呈現或引用。</li>
-<li><a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">Schema.org：Data model</a>：說明類型、屬性、domain、range 與資料模型的彈性及限制。</li>
-<li><a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/">W3C：JSON-LD 1.1</a>：JSON-LD 1.1 的標準語法與資料交換規格；<a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/#node-identifiers">Node Identifiers</a> 說明節點識別。</li>
+<h3 id="官方資料與修訂記錄" data-navigation-anchor=""><a href="#官方資料與修訂記錄" class="headerlink" title="官方資料與修訂記錄"></a>官方資料與修訂記錄</h3><ul>
+<li id="nav-590e29f978088c6d" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/appearance/ai-features">Google：AI features and your website</a>：AI Overviews 與 AI Mode 沿用既有 SEO 基礎，沒有額外的特殊 Schema；Google 也不保證索引、呈現或引用。</li>
+<li id="nav-e75e7f7993188477" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://schema.org/docs/datamodel.html">Schema.org：Data model</a>：說明類型、屬性、domain、range 與資料模型的彈性及限制。</li>
+<li id="nav-9bdd5fd0642f94f2" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/">W3C：JSON-LD 1.1</a>：JSON-LD 1.1 的標準語法與資料交換規格；<a target="_blank" rel="noopener" href="https://www.w3.org/TR/json-ld11/#node-identifiers">Node Identifiers</a> 說明節點識別。</li>
 </ul>
-<p>2026-09-11（Asia&#x2F;Taipei）修訂：保留「涵攝」作為個人理解框架，將 SEO、GEO／AEO、Schema.org 與 JSON-LD 的作用邊界改為可核對的描述，移除 AI 確定理解、權威引用與邏輯推論的保證性表述，並補上官方來源。</p>
+<p id="nav-3a7b97d706abc707" data-navigation-anchor="">2026-09-11（Asia/Taipei）修訂：保留「涵攝」作為個人理解框架，將 SEO、GEO／AEO、Schema.org 與 JSON-LD 的作用邊界改為可核對的描述，移除 AI 確定理解、權威引用與邏輯推論的保證性表述，並補上官方來源。</p>
 
     </div>
 

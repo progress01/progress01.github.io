@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,52 +663,52 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>最近我一直在想，自己對「應該怎麼做」的在意，究竟是一種原則，還是一種道德潔癖。我以前以為，這代表我太容易用自己的標準判斷別人，所以真正想解決的問題，應該是不要以自我為中心？</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-e234133e98b9fb91" data-navigation-anchor="">最近我一直在想，自己對「應該怎麼做」的在意，究竟是一種原則，還是一種道德潔癖。我以前以為，這代表我太容易用自己的標準判斷別人，所以真正想解決的問題，應該是不要以自我為中心？</p>
 <span id="more"></span>
 
-<h2 id="我原本以為要先解決以自我為中心"><a href="#我原本以為要先解決以自我為中心" class="headerlink" title="我原本以為要先解決以自我為中心"></a>我原本以為要先解決以自我為中心</h2><p>我曾經以為，自己比較認同康德式的道德觀。如果一個原則不能普遍適用，那它就不應該只因為對我有利，就被當成合理。但實際生活裡，我好像常常不是從普遍原則出發，而是從「如果是我，我會怎麼做」開始判斷。</p>
-<p>我不希望別人插隊，所以我認為別人也不應該插隊。我希望服務人員把事情做好，所以當餐廳出錯時，我會覺得對方至少應該承擔責任。</p>
-<p>我希望溝通時對方能理解事情的完整脈絡，所以當對方只抓到一小部分時，我就會覺得煩躁，甚至開始急著證明自己說的是對的。這也許比較接近孔子所說的推己及人：我用自己的感受作為起點，再把這套標準推到別人身上。問題是，我一方面覺得這樣太以自我為中心，另一方面又不知道如果不以自己為起點，我還能用什麼方式判斷事情。</p>
-<h2 id="潔癖可能不只是對錯問題"><a href="#潔癖可能不只是對錯問題" class="headerlink" title="潔癖可能不只是對錯問題"></a>潔癖可能不只是對錯問題</h2><p>後來我開始發現，我在意的可能不只是「事情到底對不對」。我也很在意自己是不是站在正確的一邊。</p>
-<p>我不希望自己成為一個自私、冷漠或不負責任的人，也不希望別人把我看成一個很糟糕的人。當自己的行為或想法和這個形象不一致時，我就會開始不安。</p>
-<p>這裡面好像同時存在著驕傲與自卑。</p>
-<p>驕傲的部分是，我會覺得自己至少看見了某些問題，知道事情不應該被這樣處理。自卑的部分則是，我明明知道事情應該更複雜，卻還是很容易用自己的標準去簡化別人。於是我會覺得，自己好像背叛了原本想維持的精確與公平。我不是單純因為別人做錯事而生氣。有時候，我也在害怕自己是不是正在變成一個只相信自己的人。</p>
-<h2 id="情緒不是站在旁邊觀察的東西"><a href="#情緒不是站在旁邊觀察的東西" class="headerlink" title="情緒不是站在旁邊觀察的東西"></a>情緒不是站在旁邊觀察的東西</h2><p>我曾經在諮詢過程中被形容成會把情緒隔離開來觀察。</p>
-<p>這個描述有一部分是對的，因為我確實很習慣分析自己的情緒，試著找出它是怎麼發生的。可是後來我越來越覺得，情緒並不是可以被放在旁邊觀察的物件。</p>
-<p>它其實一直在推動事情。煩躁會讓我想立刻做出判斷，驕傲會讓我想證明自己的標準沒有錯，自卑則會讓我急著修正自己，避免自己被看成一個糟糕的人。所以即使我表面上正在分析事情，情緒也可能早就決定了我想往哪裡走。這也是為什麼我很難只靠「先冷靜一點」來處理。</p>
-<p>我不是站在情緒外面看它，而是正在情緒推動的方向裡思考。等我意識到自己已經被推著走時，通常已經開始批判、解釋，甚至做出回應了。</p>
-<h2 id="工作裡需要的是底線，不是完整答案"><a href="#工作裡需要的是底線，不是完整答案" class="headerlink" title="工作裡需要的是底線，不是完整答案"></a>工作裡需要的是底線，不是完整答案</h2><p>這個想法也慢慢連到我的工作。我常常希望自己先看見全貌，才有辦法開始做事。可是實際上，工作不會等我把所有關聯都想清楚，別人也不可能一次接收我腦中所有的背景。</p>
-<p>如果我要求自己一定要掌握完整真相才開始，事情就會一直停在原地。如果我為了推動事情，又隨意把複雜度刪掉，我則會覺得自己做得不夠精確。現在我比較能理解，也許真正需要建立的不是一個完美答案，而是一個最低限度的底線。先確認：這件事不能錯在哪裡？現在至少需要留下什麼紀錄？下一步要由誰做什麼？哪些地方可以之後再調整？</p>
-<p>這樣的做法仍然是一種簡化，但不是隨意的簡化。我知道自己暫時省略了什麼，也知道哪些東西必須保留。這可能就是我目前能找到，讓複雜事情繼續往前走的方法。</p>
-<h2 id="當工作沒有提供足夠的輸入"><a href="#當工作沒有提供足夠的輸入" class="headerlink" title="當工作沒有提供足夠的輸入"></a>當工作沒有提供足夠的輸入</h2><p>最近工作上有幾次很明顯，事情還沒有被說清楚，就先要求我知道該做什麼、列出進度，甚至開始準備後面的工作。可是會前沒有完整文件，資訊也沒有先對齊，到了會議上才把草案拿出來討論。那種感覺很像是，所有人都預設我應該已經知道答案，但我手上其實只有一些零散的資料。</p>
-<p>我會覺得荒謬，也會覺得煩躁。</p>
-<p>因為如果一件事情連基本的輸入都沒有，卻要求執行的人先交出完整的輸出，那問題就不只是能力好不好，而是工作本身的條件沒有被建立起來。我當然也需要練習把需求翻譯成流程、邏輯與功能，不能永遠等別人把所有事情整理好才開始。但這和「沒有文件、沒有共識，卻要求我自己通靈」仍然是兩件事情。</p>
-<h2 id="我很容易把系統的問題變成自己的問題"><a href="#我很容易把系統的問題變成自己的問題" class="headerlink" title="我很容易把系統的問題變成自己的問題"></a>我很容易把系統的問題變成自己的問題</h2><p>麻煩的是，我通常不會只停在生氣。</p>
-<p>情緒過去一點之後，我很快就會開始檢查自己：是不是因為我沒有經驗，所以不知道哪些事情可以預先準備？是不是別人其實早就知道，只是只有我還沒有跟上？是不是我應該更主動一點，自己先把所有可能的事情都想過？這些問題不是完全沒有意義。</p>
-<p>我確實還在熟悉工作，也確實有很多事情可以提前學習。最近我甚至開始想，也許可以先從閱讀服務計畫書開始，讓自己至少知道這類工作大概會出現哪些內容。但當我把所有不確定都解釋成「我能力不夠」，事情就會開始變得不公平。別人沒有提供文件，是一個工作條件的問題；我還不熟悉服務計畫書，則是我的學習問題。兩者可以同時成立，卻不應該被混成同一個答案。</p>
-<p>整理履歷時，我也有類似的感覺。</p>
-<p>我很難把自己的職涯整理成一條清楚的路徑，也不容易說明自己的能力是怎麼一路成長的。可是如果我想累積標案經驗，就還是得先繼續待著，看看有沒有機會參與準備。這不是一個很完整的職涯答案，甚至也不能保證之後一定會變好。</p>
-<p>但至少它是一個目前可以確認的方向，而不是繼續用「我是不是不夠好」來解釋所有的不安。</p>
-<h2 id="先做能被確認的那一小步"><a href="#先做能被確認的那一小步" class="headerlink" title="先做能被確認的那一小步"></a>先做能被確認的那一小步</h2><p>所以我現在比較想練習的，不是讓自己在一開始就看懂整個工作，而是先確認下一步能不能被說清楚。</p>
-<p>如果文件不足，就先記下目前缺少的資料；如果需求還是抽象，就先把自己聽到的內容整理成幾個假設，再確認哪些是對的；如果我還沒有經驗，就先找一份可以閱讀的計畫書，知道自己接下來要補哪一塊。</p>
-<p>這些動作看起來都很小，沒有辦法立刻解決整個工作的混亂。但它們至少能讓我分辨，現在卡住的是外部資訊不足、自己的能力不足，還是情緒正在把事情放大。當這三件事情被分開之後，我才比較有機會知道自己真正需要做什麼。</p>
-<p>底線不是推卸責任，也不是替自己找一個不用進步的理由。它比較像是一個起點：在還看不見全貌的時候，先確定哪些資訊必須補上，哪些事情可以先往前走，哪些判斷則留到有更多資料之後再做。</p>
-<h2 id="我真正需要的也許不是刪掉自我"><a href="#我真正需要的也許不是刪掉自我" class="headerlink" title="我真正需要的也許不是刪掉自我"></a>我真正需要的也許不是刪掉自我</h2><p>我原本以為，解決以自我為中心，就是盡量不要拿自己當標準。可是後來我發現，這可能是一個太抽象，也太難執行的要求。人不可能完全沒有自己的位置。工作時，我必須知道自己的責任與底線；和別人溝通時，我也必須知道哪些事情我能接受，哪些事情會影響工作的推動。</p>
-<p>如果我一直要求自己不能以自己為中心，最後可能只會變成另一種自我批判。我現在比較想嘗試的方式，是承認自己一定會從自己的位置出發，但不要讓這個位置直接變成最後結論。</p>
-<p>先分開幾件事情：我實際看見了什麼？哪一部分是我自己的底線？哪一部分只是我對別人的推測？這件事情現在需要的是判斷、溝通，還是先暫停？</p>
-<p>這樣的分開，並不是要我放棄原本的標準。</p>
-<p>而是讓我知道，標準是用來讓事情繼續運作的，不是用來證明自己比別人正確。</p>
-<h2 id="那之後呢？"><a href="#那之後呢？" class="headerlink" title="那之後呢？"></a>那之後呢？</h2><p>我現在還不能確定，這樣算不算真正改善了道德潔癖。</p>
-<p>有時候我仍然會因為別人的行為感到不舒服，也仍然會覺得自己的標準比較合理。情緒出現的速度，也不會因為我理解了這個機制就突然變慢。但我好像不再需要把「以自己為中心」當成一個必須被徹底消除的缺陷。</p>
-<p>我可以先承認，自己就是從這個位置開始理解世界。接著再決定，這個感受要不要變成判斷，這個判斷要不要變成行動，以及行動是否真的能讓事情往前。</p>
-<p>也許我需要練習的不是變成一個完全沒有偏見的人。而是在偏見出現的時候，知道自己的底線在哪裡，也知道哪些地方還需要留下調整的空間。</p>
-<p>有工作的第N+4天，我還是常常覺得自己沒有辦法處理好所有事情。</p>
-<p>但我現在比較想檢討的，可能不是自己有沒有太多標準，也不是要不要把自我拿掉。</p>
-<p>我真正需要注意的是，當事情不符合我的期待時，我是不是太快把它判斷成錯誤；當別人沒有照我認為合理的方式做時，我是不是又把那個錯誤延伸成對人的判斷；而當自己也做不到時，我是不是再把同一套標準轉回來責備自己。</p>
-<p>潔癖也許不是我太在意正確，而是我太害怕自己和錯誤站在一起。只要事情變得模糊、妥協或不夠乾淨，我就會急著找出一個可以站穩的位置。</p>
-<p>可是工作不會一直給我清楚的答案，人也不會總是按照合理的方式行動。我可能要學的不是放棄標準，而是在還沒有辦法判斷之前，先不要急著把事情和人的價值一起判定。</p>
-<p>有時候我可以只是先知道：</p>
-<p><strong>這件事情讓我不舒服，但我還不需要立刻替它下最後結論。</strong></p>
+<h2 id="我原本以為要先解決以自我為中心" data-navigation-anchor=""><a href="#我原本以為要先解決以自我為中心" class="headerlink" title="我原本以為要先解決以自我為中心"></a>我原本以為要先解決以自我為中心</h2><p id="nav-49ba3b447f9fac83" data-navigation-anchor="">我曾經以為，自己比較認同康德式的道德觀。如果一個原則不能普遍適用，那它就不應該只因為對我有利，就被當成合理。但實際生活裡，我好像常常不是從普遍原則出發，而是從「如果是我，我會怎麼做」開始判斷。</p>
+<p id="nav-1ff015729b157b78" data-navigation-anchor="">我不希望別人插隊，所以我認為別人也不應該插隊。我希望服務人員把事情做好，所以當餐廳出錯時，我會覺得對方至少應該承擔責任。</p>
+<p id="nav-b218f36387be79d2" data-navigation-anchor="">我希望溝通時對方能理解事情的完整脈絡，所以當對方只抓到一小部分時，我就會覺得煩躁，甚至開始急著證明自己說的是對的。這也許比較接近孔子所說的推己及人：我用自己的感受作為起點，再把這套標準推到別人身上。問題是，我一方面覺得這樣太以自我為中心，另一方面又不知道如果不以自己為起點，我還能用什麼方式判斷事情。</p>
+<h2 id="潔癖可能不只是對錯問題" data-navigation-anchor=""><a href="#潔癖可能不只是對錯問題" class="headerlink" title="潔癖可能不只是對錯問題"></a>潔癖可能不只是對錯問題</h2><p id="nav-18d1a027337dff90" data-navigation-anchor="">後來我開始發現，我在意的可能不只是「事情到底對不對」。我也很在意自己是不是站在正確的一邊。</p>
+<p id="nav-e4aff1195c4f1180" data-navigation-anchor="">我不希望自己成為一個自私、冷漠或不負責任的人，也不希望別人把我看成一個很糟糕的人。當自己的行為或想法和這個形象不一致時，我就會開始不安。</p>
+<p id="nav-2b13248e695e55c9" data-navigation-anchor="">這裡面好像同時存在著驕傲與自卑。</p>
+<p id="nav-3800d510d1648d61" data-navigation-anchor="">驕傲的部分是，我會覺得自己至少看見了某些問題，知道事情不應該被這樣處理。自卑的部分則是，我明明知道事情應該更複雜，卻還是很容易用自己的標準去簡化別人。於是我會覺得，自己好像背叛了原本想維持的精確與公平。我不是單純因為別人做錯事而生氣。有時候，我也在害怕自己是不是正在變成一個只相信自己的人。</p>
+<h2 id="情緒不是站在旁邊觀察的東西" data-navigation-anchor=""><a href="#情緒不是站在旁邊觀察的東西" class="headerlink" title="情緒不是站在旁邊觀察的東西"></a>情緒不是站在旁邊觀察的東西</h2><p id="nav-a028b2aca4f9816c" data-navigation-anchor="">我曾經在諮詢過程中被形容成會把情緒隔離開來觀察。</p>
+<p id="nav-d5080daba9c634cb" data-navigation-anchor="">這個描述有一部分是對的，因為我確實很習慣分析自己的情緒，試著找出它是怎麼發生的。可是後來我越來越覺得，情緒並不是可以被放在旁邊觀察的物件。</p>
+<p id="nav-dd03bde4109dd987" data-navigation-anchor="">它其實一直在推動事情。煩躁會讓我想立刻做出判斷，驕傲會讓我想證明自己的標準沒有錯，自卑則會讓我急著修正自己，避免自己被看成一個糟糕的人。所以即使我表面上正在分析事情，情緒也可能早就決定了我想往哪裡走。這也是為什麼我很難只靠「先冷靜一點」來處理。</p>
+<p id="nav-5fbf1d6d04858af3" data-navigation-anchor="">我不是站在情緒外面看它，而是正在情緒推動的方向裡思考。等我意識到自己已經被推著走時，通常已經開始批判、解釋，甚至做出回應了。</p>
+<h2 id="工作裡需要的是底線，不是完整答案" data-navigation-anchor=""><a href="#工作裡需要的是底線，不是完整答案" class="headerlink" title="工作裡需要的是底線，不是完整答案"></a>工作裡需要的是底線，不是完整答案</h2><p id="nav-bb260bdae64627a2" data-navigation-anchor="">這個想法也慢慢連到我的工作。我常常希望自己先看見全貌，才有辦法開始做事。可是實際上，工作不會等我把所有關聯都想清楚，別人也不可能一次接收我腦中所有的背景。</p>
+<p id="nav-51af2ecdabaa1ca5" data-navigation-anchor="">如果我要求自己一定要掌握完整真相才開始，事情就會一直停在原地。如果我為了推動事情，又隨意把複雜度刪掉，我則會覺得自己做得不夠精確。現在我比較能理解，也許真正需要建立的不是一個完美答案，而是一個最低限度的底線。先確認：這件事不能錯在哪裡？現在至少需要留下什麼紀錄？下一步要由誰做什麼？哪些地方可以之後再調整？</p>
+<p id="nav-a7365b1f91a870f8" data-navigation-anchor="">這樣的做法仍然是一種簡化，但不是隨意的簡化。我知道自己暫時省略了什麼，也知道哪些東西必須保留。這可能就是我目前能找到，讓複雜事情繼續往前走的方法。</p>
+<h2 id="當工作沒有提供足夠的輸入" data-navigation-anchor=""><a href="#當工作沒有提供足夠的輸入" class="headerlink" title="當工作沒有提供足夠的輸入"></a>當工作沒有提供足夠的輸入</h2><p id="nav-5f6b60e9e0bf338f" data-navigation-anchor="">最近工作上有幾次很明顯，事情還沒有被說清楚，就先要求我知道該做什麼、列出進度，甚至開始準備後面的工作。可是會前沒有完整文件，資訊也沒有先對齊，到了會議上才把草案拿出來討論。那種感覺很像是，所有人都預設我應該已經知道答案，但我手上其實只有一些零散的資料。</p>
+<p id="nav-58cdd56cfe51c09c" data-navigation-anchor="">我會覺得荒謬，也會覺得煩躁。</p>
+<p id="nav-059f3f903edabd71" data-navigation-anchor="">因為如果一件事情連基本的輸入都沒有，卻要求執行的人先交出完整的輸出，那問題就不只是能力好不好，而是工作本身的條件沒有被建立起來。我當然也需要練習把需求翻譯成流程、邏輯與功能，不能永遠等別人把所有事情整理好才開始。但這和「沒有文件、沒有共識，卻要求我自己通靈」仍然是兩件事情。</p>
+<h2 id="我很容易把系統的問題變成自己的問題" data-navigation-anchor=""><a href="#我很容易把系統的問題變成自己的問題" class="headerlink" title="我很容易把系統的問題變成自己的問題"></a>我很容易把系統的問題變成自己的問題</h2><p id="nav-3d96d196eaade166" data-navigation-anchor="">麻煩的是，我通常不會只停在生氣。</p>
+<p id="nav-7b247141ff4e92d9" data-navigation-anchor="">情緒過去一點之後，我很快就會開始檢查自己：是不是因為我沒有經驗，所以不知道哪些事情可以預先準備？是不是別人其實早就知道，只是只有我還沒有跟上？是不是我應該更主動一點，自己先把所有可能的事情都想過？這些問題不是完全沒有意義。</p>
+<p id="nav-7756a6e04f4f7bc2" data-navigation-anchor="">我確實還在熟悉工作，也確實有很多事情可以提前學習。最近我甚至開始想，也許可以先從閱讀服務計畫書開始，讓自己至少知道這類工作大概會出現哪些內容。但當我把所有不確定都解釋成「我能力不夠」，事情就會開始變得不公平。別人沒有提供文件，是一個工作條件的問題；我還不熟悉服務計畫書，則是我的學習問題。兩者可以同時成立，卻不應該被混成同一個答案。</p>
+<p id="nav-d0b7888e7a15c287" data-navigation-anchor="">整理履歷時，我也有類似的感覺。</p>
+<p id="nav-7b3be0329c18ee56" data-navigation-anchor="">我很難把自己的職涯整理成一條清楚的路徑，也不容易說明自己的能力是怎麼一路成長的。可是如果我想累積標案經驗，就還是得先繼續待著，看看有沒有機會參與準備。這不是一個很完整的職涯答案，甚至也不能保證之後一定會變好。</p>
+<p id="nav-b3d82179f05c6eae" data-navigation-anchor="">但至少它是一個目前可以確認的方向，而不是繼續用「我是不是不夠好」來解釋所有的不安。</p>
+<h2 id="先做能被確認的那一小步" data-navigation-anchor=""><a href="#先做能被確認的那一小步" class="headerlink" title="先做能被確認的那一小步"></a>先做能被確認的那一小步</h2><p id="nav-344a301a4217c65c" data-navigation-anchor="">所以我現在比較想練習的，不是讓自己在一開始就看懂整個工作，而是先確認下一步能不能被說清楚。</p>
+<p id="nav-2df63bb3fed5a9b1" data-navigation-anchor="">如果文件不足，就先記下目前缺少的資料；如果需求還是抽象，就先把自己聽到的內容整理成幾個假設，再確認哪些是對的；如果我還沒有經驗，就先找一份可以閱讀的計畫書，知道自己接下來要補哪一塊。</p>
+<p id="nav-4858a21a117bfd23" data-navigation-anchor="">這些動作看起來都很小，沒有辦法立刻解決整個工作的混亂。但它們至少能讓我分辨，現在卡住的是外部資訊不足、自己的能力不足，還是情緒正在把事情放大。當這三件事情被分開之後，我才比較有機會知道自己真正需要做什麼。</p>
+<p id="nav-485192750d85a3c0" data-navigation-anchor="">底線不是推卸責任，也不是替自己找一個不用進步的理由。它比較像是一個起點：在還看不見全貌的時候，先確定哪些資訊必須補上，哪些事情可以先往前走，哪些判斷則留到有更多資料之後再做。</p>
+<h2 id="我真正需要的也許不是刪掉自我" data-navigation-anchor=""><a href="#我真正需要的也許不是刪掉自我" class="headerlink" title="我真正需要的也許不是刪掉自我"></a>我真正需要的也許不是刪掉自我</h2><p id="nav-e9a64a2045684761" data-navigation-anchor="">我原本以為，解決以自我為中心，就是盡量不要拿自己當標準。可是後來我發現，這可能是一個太抽象，也太難執行的要求。人不可能完全沒有自己的位置。工作時，我必須知道自己的責任與底線；和別人溝通時，我也必須知道哪些事情我能接受，哪些事情會影響工作的推動。</p>
+<p id="nav-ac0c38795fa5bbd3" data-navigation-anchor="">如果我一直要求自己不能以自己為中心，最後可能只會變成另一種自我批判。我現在比較想嘗試的方式，是承認自己一定會從自己的位置出發，但不要讓這個位置直接變成最後結論。</p>
+<p id="nav-8081b0c50a5d578a" data-navigation-anchor="">先分開幾件事情：我實際看見了什麼？哪一部分是我自己的底線？哪一部分只是我對別人的推測？這件事情現在需要的是判斷、溝通，還是先暫停？</p>
+<p id="nav-3a49cd1d29daf16e" data-navigation-anchor="">這樣的分開，並不是要我放棄原本的標準。</p>
+<p id="nav-8195bc95664f39e9" data-navigation-anchor="">而是讓我知道，標準是用來讓事情繼續運作的，不是用來證明自己比別人正確。</p>
+<h2 id="那之後呢？" data-navigation-anchor=""><a href="#那之後呢？" class="headerlink" title="那之後呢？"></a>那之後呢？</h2><p id="nav-6b8673818e7cf05c" data-navigation-anchor="">我現在還不能確定，這樣算不算真正改善了道德潔癖。</p>
+<p id="nav-73ae055dea7ba562" data-navigation-anchor="">有時候我仍然會因為別人的行為感到不舒服，也仍然會覺得自己的標準比較合理。情緒出現的速度，也不會因為我理解了這個機制就突然變慢。但我好像不再需要把「以自己為中心」當成一個必須被徹底消除的缺陷。</p>
+<p id="nav-cda7353428ec0e74" data-navigation-anchor="">我可以先承認，自己就是從這個位置開始理解世界。接著再決定，這個感受要不要變成判斷，這個判斷要不要變成行動，以及行動是否真的能讓事情往前。</p>
+<p id="nav-d21b36e3cabd662f" data-navigation-anchor="">也許我需要練習的不是變成一個完全沒有偏見的人。而是在偏見出現的時候，知道自己的底線在哪裡，也知道哪些地方還需要留下調整的空間。</p>
+<p id="nav-0fa542a9c22d479f" data-navigation-anchor="">有工作的第N+4天，我還是常常覺得自己沒有辦法處理好所有事情。</p>
+<p id="nav-10cffc22ccb47932" data-navigation-anchor="">但我現在比較想檢討的，可能不是自己有沒有太多標準，也不是要不要把自我拿掉。</p>
+<p id="nav-63ea5dbd5ac95b53" data-navigation-anchor="">我真正需要注意的是，當事情不符合我的期待時，我是不是太快把它判斷成錯誤；當別人沒有照我認為合理的方式做時，我是不是又把那個錯誤延伸成對人的判斷；而當自己也做不到時，我是不是再把同一套標準轉回來責備自己。</p>
+<p id="nav-dc7f3b90d2c8e9fa" data-navigation-anchor="">潔癖也許不是我太在意正確，而是我太害怕自己和錯誤站在一起。只要事情變得模糊、妥協或不夠乾淨，我就會急著找出一個可以站穩的位置。</p>
+<p id="nav-66ea1e23af149e67" data-navigation-anchor="">可是工作不會一直給我清楚的答案，人也不會總是按照合理的方式行動。我可能要學的不是放棄標準，而是在還沒有辦法判斷之前，先不要急著把事情和人的價值一起判定。</p>
+<p id="nav-f5d7a7873e6e2d60" data-navigation-anchor="">有時候我可以只是先知道：</p>
+<p id="nav-d4cd23b7aacfdb34" data-navigation-anchor=""><strong>這件事情讓我不舒服，但我還不需要立刻替它下最後結論。</strong></p>
 
     </div>
 

@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,27 +666,27 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>第一次和只聊過幾句的朋友看電影，就看了《去唱卡啦 OK 吧》；黑道卡拉 OK 比賽與少年變聲的故事，讓這段相遇留下細膩的徬徨。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-c22a7e4fcc9d518b" data-navigation-anchor="">第一次和只聊過幾句的朋友看電影，就看了《去唱卡啦 OK 吧》；黑道卡拉 OK 比賽與少年變聲的故事，讓這段相遇留下細膩的徬徨。</p>
 <span id="more"></span>
 
-<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>第一次跟只交談過幾句的朋友看電影，對方隨手挑了這部電影，想記錄也不知道是為了電影還是為了記得這個小小的初紀錄，至少第一次碰面沒有是恐怖片應該值得慶幸(苦笑)。</p>
-<p>見面之前我吃著麥當勞想說等等要體面一點，先墊點食物，卻沒料到中山站沒有內用區跟自己時間預估錯誤，見面時手上仍拿著雪碧，直到走路之時才勘勘喝完。</p>
-<p>不熟悉中山的我也完全沒有看任何附近能去的地方是一大失誤，買完電影票之後讓沒有準備的能去的地方的我有點太隨意了，本來以為電影能穿插的話題不少，但…因為完全沒有準備，幸好對方剛好有想買的東西，陪著逛了一下。但我以往好像對不熟悉的人會傾向順著話題走的聊天方式，或缺少可回應內容的對話，完全不準備是真的完全不行，最近看&lt;長假&gt;，他們那次約會有覺得女生真的鼓起不少勇氣，見面跟交談這件事情果然是要多有準備的事情！</p>
-<h2 id="電影特色"><a href="#電影特色" class="headerlink" title="電影特色"></a>電影特色</h2><p>電影是由黑道的卡啦OK比賽貫穿整部劇，劇中的小朋友正面臨變聲期，以往擔任的男高音角色因為聲音的影響導致自己在合唱團生涯的大挫折，尤其又是團長。黑道中層以一個強硬不溫柔但是看似可靠的方式，強迫小朋友教他唱歌，至少不要唱最後一名就能避免掉被強迫有奇怪刺青的懲罰，電影真的圍繞著這個我覺得有點荒唐的比賽去推進劇情。</p>
-<p>特色應該算是那種若有似無我知道他們間很多情緒但我沒有形容詞可以描述的那種感覺，但因為我想知道後續，我想即使不是電影院我應該也會願意看完吧…。電影中可能還隱藏著對變遷事務的不確定感，逃避什麼都解決不了的隱隱無助感，青少年那種不知道怎樣發洩情緒的徬徨，當然最讓我無法捉模的還是BL感就是了。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>劇情平淡但事後回想卻仍覺得不少地方是稍微有張力的，例如</p>
-<p>1.如何回應變遷這件事情？唱歌是不變，但聲音跟相處的變化</p>
-<p>2.煩惱被輕視，影片中很多的不對等溝通，讓人很難換位思考，但相對也變相增加很多的懸念</p>
-<p>3.友情跟我一直覺得有點BL的相處確實會讓我很想釐清他們的關係，有人說沒有明說的感情羈絆有時候比直接了當的感情更加吸引人</p>
-<p>平淡但有想敘述的東西，我只能看出情感上糾結之處。</p>
+<h2 id="觀影歷程" data-navigation-anchor=""><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p id="nav-750829c651d9f493" data-navigation-anchor="">第一次跟只交談過幾句的朋友看電影，對方隨手挑了這部電影，想記錄也不知道是為了電影還是為了記得這個小小的初紀錄，至少第一次碰面沒有是恐怖片應該值得慶幸(苦笑)。</p>
+<p id="nav-e146e8921f20116a" data-navigation-anchor="">見面之前我吃著麥當勞想說等等要體面一點，先墊點食物，卻沒料到中山站沒有內用區跟自己時間預估錯誤，見面時手上仍拿著雪碧，直到走路之時才勘勘喝完。</p>
+<p id="nav-27311bdece9ad1d5" data-navigation-anchor="">不熟悉中山的我也完全沒有看任何附近能去的地方是一大失誤，買完電影票之後讓沒有準備的能去的地方的我有點太隨意了，本來以為電影能穿插的話題不少，但…因為完全沒有準備，幸好對方剛好有想買的東西，陪著逛了一下。但我以往好像對不熟悉的人會傾向順著話題走的聊天方式，或缺少可回應內容的對話，完全不準備是真的完全不行，最近看&lt;長假&gt;，他們那次約會有覺得女生真的鼓起不少勇氣，見面跟交談這件事情果然是要多有準備的事情！</p>
+<h2 id="電影特色" data-navigation-anchor=""><a href="#電影特色" class="headerlink" title="電影特色"></a>電影特色</h2><p id="nav-d7c5d164546cd44e" data-navigation-anchor="">電影是由黑道的卡啦OK比賽貫穿整部劇，劇中的小朋友正面臨變聲期，以往擔任的男高音角色因為聲音的影響導致自己在合唱團生涯的大挫折，尤其又是團長。黑道中層以一個強硬不溫柔但是看似可靠的方式，強迫小朋友教他唱歌，至少不要唱最後一名就能避免掉被強迫有奇怪刺青的懲罰，電影真的圍繞著這個我覺得有點荒唐的比賽去推進劇情。</p>
+<p id="nav-4bd5b6bfcf367e5c" data-navigation-anchor="">特色應該算是那種若有似無我知道他們間很多情緒但我沒有形容詞可以描述的那種感覺，但因為我想知道後續，我想即使不是電影院我應該也會願意看完吧…。電影中可能還隱藏著對變遷事務的不確定感，逃避什麼都解決不了的隱隱無助感，青少年那種不知道怎樣發洩情緒的徬徨，當然最讓我無法捉模的還是BL感就是了。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-d4d157b2c29e600a" data-navigation-anchor="">劇情平淡但事後回想卻仍覺得不少地方是稍微有張力的，例如</p>
+<p id="nav-45046b2ffc008ca0" data-navigation-anchor="">1.如何回應變遷這件事情？唱歌是不變，但聲音跟相處的變化</p>
+<p id="nav-47c5008aa61de532" data-navigation-anchor="">2.煩惱被輕視，影片中很多的不對等溝通，讓人很難換位思考，但相對也變相增加很多的懸念</p>
+<p id="nav-58bb7957e0f01831" data-navigation-anchor="">3.友情跟我一直覺得有點BL的相處確實會讓我很想釐清他們的關係，有人說沒有明說的感情羈絆有時候比直接了當的感情更加吸引人</p>
+<p id="nav-f55c9888f0b0fccb" data-navigation-anchor="">平淡但有想敘述的東西，我只能看出情感上糾結之處。</p>
 <blockquote>
-<p>網友海藍在海藍的沙龍裡面有討論一段這部電影的糾結：需要「確認」的情感關係，往往與「愛情」相關。與友誼或親情最大的不同在於，愛情必須符合當時一定程度的社會文化腳本（例如愛上同性／黑道的可能，情人節送本命巧克力）、確認自己的欲望（想跟對方建立什麼程度的關係）、還有確認對方願意跟自己建立什麼關係。只要有一個沒有過關，就算情愫存在，也會在定義上變成不存在或關係無法成立。</p>
+<p id="nav-c35f681066a4098d" data-navigation-anchor="">網友海藍在海藍的沙龍裡面有討論一段這部電影的糾結：需要「確認」的情感關係，往往與「愛情」相關。與友誼或親情最大的不同在於，愛情必須符合當時一定程度的社會文化腳本（例如愛上同性／黑道的可能，情人節送本命巧克力）、確認自己的欲望（想跟對方建立什麼程度的關係）、還有確認對方願意跟自己建立什麼關係。只要有一個沒有過關，就算情愫存在，也會在定義上變成不存在或關係無法成立。</p>
 </blockquote>
-<p>延伸出來的所有反思只讓我感覺，文藝片真的好難，想看透劇中人物的心思與無法直接敘述的感情好難，原來以親吻表示愛情的西方大片是一個降低觀眾思考負擔的有效方式，親下去代表喜歡！</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>結果，電影也應該要好好挑，文藝片或類似的影片充滿各種風險，可能連爵士樂的音樂動畫電影都比這個有討論度！無法挑起話題的淡淡電影在吃飯中落幕。</p>
-<p>雖然有點想再約對方出來，卻好像沒有給出足夠的期待，而導致平日的對話也難以在下一次碰面的約定裡面去醞釀，有一次甚至被說出不用特別找話題，頓時讓我失去了所有的勇氣…，讓我因為怕講錯話而終止去講那些不確定有不有趣的事情，我也怕斷了就沒有辦法再挑起話題了吧，但當然不說話也沒有後續，同時意外再次意識到我不是一個很會聊天的人，與其說聊天可能是愛講話而已，整個認識回想起來也像是一個劇情平淡，充滿自我探索的情感糾結的故事？</p>
-<p>這部電影卻無法對應我的心情就是了，我仍然無法回應關於以上的任何問題，大概只能確定出去電影要挑好，話題要準備一下，跟要會抓距離感，不要讓自己失去勇氣？</p>
-<p><img class="blogger-import-image" loading="lazy" decoding="async" width="315" height="159" src="/images/blogger-import/blogger-a0fc2ecc42/01.webp" alt="圖片 1"> (圖片來源:巴哈姆特GNN新聞)</p>
+<p id="nav-be394fff4cef30f4" data-navigation-anchor="">延伸出來的所有反思只讓我感覺，文藝片真的好難，想看透劇中人物的心思與無法直接敘述的感情好難，原來以親吻表示愛情的西方大片是一個降低觀眾思考負擔的有效方式，親下去代表喜歡！</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-27c08ae7ade120cc" data-navigation-anchor="">結果，電影也應該要好好挑，文藝片或類似的影片充滿各種風險，可能連爵士樂的音樂動畫電影都比這個有討論度！無法挑起話題的淡淡電影在吃飯中落幕。</p>
+<p id="nav-63aede41bc2d3d7d" data-navigation-anchor="">雖然有點想再約對方出來，卻好像沒有給出足夠的期待，而導致平日的對話也難以在下一次碰面的約定裡面去醞釀，有一次甚至被說出不用特別找話題，頓時讓我失去了所有的勇氣…，讓我因為怕講錯話而終止去講那些不確定有不有趣的事情，我也怕斷了就沒有辦法再挑起話題了吧，但當然不說話也沒有後續，同時意外再次意識到我不是一個很會聊天的人，與其說聊天可能是愛講話而已，整個認識回想起來也像是一個劇情平淡，充滿自我探索的情感糾結的故事？</p>
+<p id="nav-cbf611343f16c68c" data-navigation-anchor="">這部電影卻無法對應我的心情就是了，我仍然無法回應關於以上的任何問題，大概只能確定出去電影要挑好，話題要準備一下，跟要會抓距離感，不要讓自己失去勇氣？</p>
+<p id="nav-db4354cd54d59445" data-navigation-anchor=""><img class="blogger-import-image" loading="lazy" decoding="async" width="315" height="159" src="/images/blogger-import/blogger-a0fc2ecc42/01.webp" alt="圖片 1"> (圖片來源:巴哈姆特GNN新聞)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2024/12/ok.html -->
 
     </div>

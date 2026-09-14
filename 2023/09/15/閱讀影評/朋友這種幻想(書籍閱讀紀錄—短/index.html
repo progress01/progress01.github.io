@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,29 +666,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《朋友這種幻想》從人與人之間的距離、熱忱與職場摩擦出發，討論我們如何理解朋友與同事。它沒有提供一套可以套用的社交公式，卻讓我在工作關係裡重新辨認自己的想像、反應與界線。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-01a37514ad34d5ce" data-navigation-anchor="">《朋友這種幻想》從人與人之間的距離、熱忱與職場摩擦出發，討論我們如何理解朋友與同事。它沒有提供一套可以套用的社交公式，卻讓我在工作關係裡重新辨認自己的想像、反應與界線。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>有段時間在上班的時間非常低落，或困惑於應該把自己跟同事擺在什麼樣的地圖裡面？在書架之間看到這本黃色皮的書就是決定非他不可了！</p>
-<p>這本書確實也解答了不少當時的困惑，因為上個在科技大樓的時候，有時候像研究室多於職場，帶著相同態度的我在這邊真的陸續碰到不少問題，像是問題的協作回應，或是系統問題的回報與後續答覆之類的，即使案件發生的次數不多，卻因為閒言閒語以及自己的快速反應(希望問題趕快被解決？)而導致出現了奇怪的摩擦。</p>
-<p>所幸這些問題目前看起來以解決大半部份了，但我想解決的不是問題，解決的可能是我自己內心的想像也說不定？</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>我覺得日本人應該是對距離感把握最深刻的民族之一，而這本書是日本人寫的。除了距離感之外這本書的作者是教育系所的大學教授，他也特別提到熱忱所帶來的傷害這點倒是讓我非常的認可。</p>
-<p>若以特色來說，誠懇並且敘述清楚，即使面對民族性不同跟文化差異下，你依然能夠在敘述之中反思自己的狀況並且解決一些內心的掙扎，實際上幫忙我不少應該是一本優秀並好好傳遞思想的書籍。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>感想很多，列點說或許會比較清楚？</p>
-<p>1.除了自己都是他人，當你沒有明確意識到他人，就容易搞不清楚甚麼才是真正的自己</p>
-<p>2.既然有異質性，他人一定能了解自己？連最親近的人都不懂我？這些假說則不攻自破。</p>
-<p>3.了解共存性，如何跟對方保持距離或共處</p>
-<p>4.了解熱忱帶來的過度介入</p>
-<p>5.人際關係上的距離因人而異，而這差異跟會有很多內心的落差</p>
-<p>距離感以及期待的幻想感造成的落差常常讓自己無所適從，有時候因為熱忱的投入也會造成關係的惡劣，比較讓我受震撼的是第四點。</p>
-<p>我下意識總以為有熱忱的投入是好事情，但沒想到將熱忱放在別人身上會有過度介入的危機，如果要設定，熱忱一定要將影響這些目標設定為在自己身上會適合一點，以不要讓別人開始討厭這個地方為主會更好(這邊是教師的情境)。</p>
-<p>因為在教師一兩年的時光裡，過客的角色會比一定要出現在學生的回憶中會更為妥當一點</p>
-<p>因為我們很難控制過度介入或後續帶來的糟糕轉變，所以在熱忱上我覺得以自己力所能及且不要過度介入別人較好，總結起來應該真的該問一句，可以問一句是”你要介入多少？”</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>他人皆有異質性是這本書，我覺得最精準的總結！</p>
-<p>工作上則是需要適當的敵意與距離，並不是大家都是好朋友這個基礎假設下的同質共同性。</p>
-<p>在感覺到人際關係上的距離因人而異，而這差異跟會有很多內心的落差，唯一讓人安心的關係是對彼此距離的感覺一致，但這太難了…</p>
-<p>而實際上會百分之百接納你的只有自己，好像得做的是試著先走出不喜歡自己的那幾步！</p>
-<p>慢慢來不要急，我相信我能找到跟世界還有自己相處的方式的。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-ba9542e60e299cbc" data-navigation-anchor="">有段時間在上班的時間非常低落，或困惑於應該把自己跟同事擺在什麼樣的地圖裡面？在書架之間看到這本黃色皮的書就是決定非他不可了！</p>
+<p id="nav-c464fe069dac7c76" data-navigation-anchor="">這本書確實也解答了不少當時的困惑，因為上個在科技大樓的時候，有時候像研究室多於職場，帶著相同態度的我在這邊真的陸續碰到不少問題，像是問題的協作回應，或是系統問題的回報與後續答覆之類的，即使案件發生的次數不多，卻因為閒言閒語以及自己的快速反應(希望問題趕快被解決？)而導致出現了奇怪的摩擦。</p>
+<p id="nav-ddc38658b24d1752" data-navigation-anchor="">所幸這些問題目前看起來以解決大半部份了，但我想解決的不是問題，解決的可能是我自己內心的想像也說不定？</p>
+<h2 id="小說特色" data-navigation-anchor=""><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p id="nav-1955dc490726b7bc" data-navigation-anchor="">我覺得日本人應該是對距離感把握最深刻的民族之一，而這本書是日本人寫的。除了距離感之外這本書的作者是教育系所的大學教授，他也特別提到熱忱所帶來的傷害這點倒是讓我非常的認可。</p>
+<p id="nav-033e65e2c0028654" data-navigation-anchor="">若以特色來說，誠懇並且敘述清楚，即使面對民族性不同跟文化差異下，你依然能夠在敘述之中反思自己的狀況並且解決一些內心的掙扎，實際上幫忙我不少應該是一本優秀並好好傳遞思想的書籍。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-df23373fd5a1fad0" data-navigation-anchor="">感想很多，列點說或許會比較清楚？</p>
+<p id="nav-6d70b3b949dccbe0" data-navigation-anchor="">1.除了自己都是他人，當你沒有明確意識到他人，就容易搞不清楚甚麼才是真正的自己</p>
+<p id="nav-29a538f0ae82c417" data-navigation-anchor="">2.既然有異質性，他人一定能了解自己？連最親近的人都不懂我？這些假說則不攻自破。</p>
+<p id="nav-4608ef39eca9978d" data-navigation-anchor="">3.了解共存性，如何跟對方保持距離或共處</p>
+<p id="nav-688e296f40cc0580" data-navigation-anchor="">4.了解熱忱帶來的過度介入</p>
+<p id="nav-a01788376b24f8b9" data-navigation-anchor="">5.人際關係上的距離因人而異，而這差異跟會有很多內心的落差</p>
+<p id="nav-10dff20db131fdee" data-navigation-anchor="">距離感以及期待的幻想感造成的落差常常讓自己無所適從，有時候因為熱忱的投入也會造成關係的惡劣，比較讓我受震撼的是第四點。</p>
+<p id="nav-47013545151024e4" data-navigation-anchor="">我下意識總以為有熱忱的投入是好事情，但沒想到將熱忱放在別人身上會有過度介入的危機，如果要設定，熱忱一定要將影響這些目標設定為在自己身上會適合一點，以不要讓別人開始討厭這個地方為主會更好(這邊是教師的情境)。</p>
+<p id="nav-7b3d0ac6f0c0e89a" data-navigation-anchor="">因為在教師一兩年的時光裡，過客的角色會比一定要出現在學生的回憶中會更為妥當一點</p>
+<p id="nav-4f911f510425fd6a" data-navigation-anchor="">因為我們很難控制過度介入或後續帶來的糟糕轉變，所以在熱忱上我覺得以自己力所能及且不要過度介入別人較好，總結起來應該真的該問一句，可以問一句是”你要介入多少？”</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-dfbdc73dfded8294" data-navigation-anchor="">他人皆有異質性是這本書，我覺得最精準的總結！</p>
+<p id="nav-10fae33f20965cb4" data-navigation-anchor="">工作上則是需要適當的敵意與距離，並不是大家都是好朋友這個基礎假設下的同質共同性。</p>
+<p id="nav-069a86d2103687e8" data-navigation-anchor="">在感覺到人際關係上的距離因人而異，而這差異跟會有很多內心的落差，唯一讓人安心的關係是對彼此距離的感覺一致，但這太難了…</p>
+<p id="nav-e999a131a611c11f" data-navigation-anchor="">而實際上會百分之百接納你的只有自己，好像得做的是試著先走出不喜歡自己的那幾步！</p>
+<p id="nav-1dcad35e20826457" data-navigation-anchor="">慢慢來不要急，我相信我能找到跟世界還有自己相處的方式的。</p>
 <img class="blogger-import-image" loading="lazy" decoding="async" width="231" height="347" src="/images/blogger-import/blogger-3d870504cb/01.webp" alt="圖片 1">
 (圖片來源：博客來網路書店
 

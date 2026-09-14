@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,22 +666,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我被預告的圖書館題材吸引，卻發現電影真正談的是無家者、抗議與公共空間的選擇。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-9fda6e470ade06c7" data-navigation-anchor="">我被預告的圖書館題材吸引，卻發現電影真正談的是無家者、抗議與公共空間的選擇。</p>
 <span id="more"></span>
 
-<h2 id="觀影歷程"><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p>這部片名在台灣翻譯為&lt;公共圖書館員&gt;，強烈引起我的關注，預告片中也以圖書館職能方面來拋磚引玉，於是我再次因為翻譯以及預告陷入陷阱。</p>
-<p>預告片中以圖書館的參考服務為切入點，並談及資訊自由及其他言不及義的圖書館服務，但實際上這些應該都不是他想要講的，更多的衝突、更多的抉擇，然而這一切都是真實故事的衍生創作，一個心碎的旅館：公共圖書館。</p>
-<h2 id="電影特色"><a href="#電影特色" class="headerlink" title="電影特色"></a>電影特色</h2><p>這部電影對我來說非常難定義，客觀上藉由圖書館闡述街友議題(近年來傾向正名為無家者)，但主觀上來說有點難接受類似的包裝，製造聲浪，千言萬語正如同電影開頭所使用圖書館常見的諮詢橋段，你想找什麼呢？</p>
-<p>『我想找一個奇蹟』</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>你想在圖書館裡找什麼呢？這部電影靈感來自於公共圖書館的真實故事，圖書館在劇中更多扮演一個讓人去思考的空間，也許因為劇中想表達的太多，才會讓人有點迷惑。</p>
-<p>我們知道無家者跟抗議聲浪將是劇中的重點，但同時也包含空間與人權的討論，立場與社會救援等等，圖書館除了擔任一個中立的空間（象徵自由，不如此嚴重？任何人可造訪？等等），圖書館員也擔任一個中介角色，他們不是一群機構的警衛，更多是一群會願意為公眾發聲，平常進行著讀者利益的權衡，目的是讓圖書館能更好的服務讀者，相較於官員，更像是一群理想主義者。</p>
-<p>也許就像前段所述，他們想在圖書館裡製造聲浪，找到奇蹟，讓大家去關心這個議題，然而身為利害關係人的公民不服從仍然是讓人質疑？但如果連自己都不為自己爭取還有誰要為他們發聲？不過劇中確實有美化無家者的形象，而且不禁想問一句無家者如果是以自由為名的追求，那這一切聲浪想求得什麼？</p>
-<p>將議題放在圖書館跟館員上確實讓人能開始好好思考，然而偏見，矛盾以及價值觀問題還是一在影響我的態度，我看見了聲浪，但你們想要的奇蹟是什麼？</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>從開心圖書館界有了電影（上一次跟圖書館最深的印象應該是明天過後），到後期有點困惑於整個電影的表達，這部電影應該是中國翻譯得很好多，捍衛？不過說實在話很難想像他們那邊能上映這種片，廣電能允許聲浪？</p>
-<p>這部片算是滿有餘味的，想來想去想了很久，比起議題，我還是更喜歡那個追求知識近用與幫助讀者的圖書館，但公共圖書館總是避免不掉這些的，如同社會總是要去處理這些棘手的問題一樣。所以說聲浪之後呢？我會慢慢克服偏見去了解，並等待一個奇蹟～</p>
+<h2 id="觀影歷程" data-navigation-anchor=""><a href="#觀影歷程" class="headerlink" title="觀影歷程"></a>觀影歷程</h2><p id="nav-982a7f67b9848831" data-navigation-anchor="">這部片名在台灣翻譯為&lt;公共圖書館員&gt;，強烈引起我的關注，預告片中也以圖書館職能方面來拋磚引玉，於是我再次因為翻譯以及預告陷入陷阱。</p>
+<p id="nav-3d019d34ec46d033" data-navigation-anchor="">預告片中以圖書館的參考服務為切入點，並談及資訊自由及其他言不及義的圖書館服務，但實際上這些應該都不是他想要講的，更多的衝突、更多的抉擇，然而這一切都是真實故事的衍生創作，一個心碎的旅館：公共圖書館。</p>
+<h2 id="電影特色" data-navigation-anchor=""><a href="#電影特色" class="headerlink" title="電影特色"></a>電影特色</h2><p id="nav-f2d0d851274bbc17" data-navigation-anchor="">這部電影對我來說非常難定義，客觀上藉由圖書館闡述街友議題(近年來傾向正名為無家者)，但主觀上來說有點難接受類似的包裝，製造聲浪，千言萬語正如同電影開頭所使用圖書館常見的諮詢橋段，你想找什麼呢？</p>
+<p id="nav-3ff9cbc313daf14b" data-navigation-anchor="">『我想找一個奇蹟』</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-b5534923589888f9" data-navigation-anchor="">你想在圖書館裡找什麼呢？這部電影靈感來自於公共圖書館的真實故事，圖書館在劇中更多扮演一個讓人去思考的空間，也許因為劇中想表達的太多，才會讓人有點迷惑。</p>
+<p id="nav-2f4299f08be58cac" data-navigation-anchor="">我們知道無家者跟抗議聲浪將是劇中的重點，但同時也包含空間與人權的討論，立場與社會救援等等，圖書館除了擔任一個中立的空間（象徵自由，不如此嚴重？任何人可造訪？等等），圖書館員也擔任一個中介角色，他們不是一群機構的警衛，更多是一群會願意為公眾發聲，平常進行著讀者利益的權衡，目的是讓圖書館能更好的服務讀者，相較於官員，更像是一群理想主義者。</p>
+<p id="nav-3902e45e65dc8d15" data-navigation-anchor="">也許就像前段所述，他們想在圖書館裡製造聲浪，找到奇蹟，讓大家去關心這個議題，然而身為利害關係人的公民不服從仍然是讓人質疑？但如果連自己都不為自己爭取還有誰要為他們發聲？不過劇中確實有美化無家者的形象，而且不禁想問一句無家者如果是以自由為名的追求，那這一切聲浪想求得什麼？</p>
+<p id="nav-e894cbb56eb84bfd" data-navigation-anchor="">將議題放在圖書館跟館員上確實讓人能開始好好思考，然而偏見，矛盾以及價值觀問題還是一在影響我的態度，我看見了聲浪，但你們想要的奇蹟是什麼？</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-91204344f6b5d039" data-navigation-anchor="">從開心圖書館界有了電影（上一次跟圖書館最深的印象應該是明天過後），到後期有點困惑於整個電影的表達，這部電影應該是中國翻譯得很好多，捍衛？不過說實在話很難想像他們那邊能上映這種片，廣電能允許聲浪？</p>
+<p id="nav-0e756cd64ca99467" data-navigation-anchor="">這部片算是滿有餘味的，想來想去想了很久，比起議題，我還是更喜歡那個追求知識近用與幫助讀者的圖書館，但公共圖書館總是避免不掉這些的，如同社會總是要去處理這些棘手的問題一樣。所以說聲浪之後呢？我會慢慢克服偏見去了解，並等待一個奇蹟～</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="1080" height="1542" src="/images/blogger-import/blogger-3aa914933d/01.webp" alt="圖片 1">
 
-<p>(圖片來源：奇摩電影戲劇介紹)</p>
+<p id="nav-333e6a2fdde59b84" data-navigation-anchor="">(圖片來源：奇摩電影戲劇介紹)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2022/08/the-public.html -->
 
     </div>

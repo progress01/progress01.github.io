@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,59 +663,59 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我閱讀 LIS 長期內容分析，想弄清楚固定資料範圍與分類架構如何讓學科變化可檢查。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-8cf68b6a957f9a9f" data-navigation-anchor="">我閱讀 LIS 長期內容分析，想弄清楚固定資料範圍與分類架構如何讓學科變化可檢查。</p>
 <span id="more"></span>
-<p>這是一篇針對〈LIS Research 1965–2025: a content analysis of topics and methods in journal articles〉的持續閱讀筆記。先不急著把它整理成一份「圖書資訊學六十年發展史」，而是想弄清楚：一篇研究是如何透過固定資料範圍、分類架構與跨年份比較，讓「一個學科正在改變」這句話變得可以被檢查。</p>
-<p><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of">LIS Research 1965–2025: a content analysis of topics and methods in journal articles</a></p>
+<p id="nav-b4ab4e2e700c75a4" data-navigation-anchor="">這是一篇針對〈LIS Research 1965–2025: a content analysis of topics and methods in journal articles〉的持續閱讀筆記。先不急著把它整理成一份「圖書資訊學六十年發展史」，而是想弄清楚：一篇研究是如何透過固定資料範圍、分類架構與跨年份比較，讓「一個學科正在改變」這句話變得可以被檢查。</p>
+<p id="nav-30cd00c32f67049e" data-navigation-anchor=""><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of">LIS Research 1965–2025: a content analysis of topics and methods in journal articles</a></p>
 <blockquote>
-<p><strong>資料狀態：已讀文章頁面與摘要，建立初步問題；完整閱讀與數據核對待後續進行</strong></p>
-<p>文章由 Kalervo Järvelin 與 Pertti Vakkari 撰寫，刊於 <em>Journal of Documentation</em>，2026 年第 82 卷第 7 期，頁 472–498。這篇筆記先根據文章頁面可取得的研究目的、摘要、研究設計與部分結果建立閱讀入口；表格細節、分類規則與長期趨勢仍要回到全文逐項核對。</p>
+<p id="nav-764adff0f87742dd" data-navigation-anchor=""><strong>資料狀態：已讀文章頁面與摘要，建立初步問題；完整閱讀與數據核對待後續進行</strong></p>
+<p id="nav-831215c2e67d7c0d" data-navigation-anchor="">文章由 Kalervo Järvelin 與 Pertti Vakkari 撰寫，刊於 <em>Journal of Documentation</em>，2026 年第 82 卷第 7 期，頁 472–498。這篇筆記先根據文章頁面可取得的研究目的、摘要、研究設計與部分結果建立閱讀入口；表格細節、分類規則與長期趨勢仍要回到全文逐項核對。</p>
 </blockquote>
-<h2 id="為什麼想讀"><a href="#為什麼想讀" class="headerlink" title="為什麼想讀"></a>為什麼想讀</h2><p>我想讀的不是單純的學科趨勢，而是作者怎麼處理「研究對象本身一直在變」這個問題。</p>
-<p>如果一個領域從圖書館服務、資訊儲存與檢索，逐漸延伸到科學與專業傳播、資訊尋求、資料科學或人工智慧，那麼我們要怎麼判斷它仍然是同一個領域？如果分類表也跟著時代修改，又要怎麼避免把不同年代硬塞進今天的概念？</p>
-<p>這篇文章吸引我的地方，是它把這些問題放進研究設計裡處理：研究者使用約 30 本國際 LIS 期刊，分析 1965–2025 的研究文章，並維持期刊集合與主要分類架構的穩定，再比較不同年份的主題與研究方法。這使「學科如何變化」不只是印象，而是可以回頭查看資料來源、分類方式與比較基準的分析主張。</p>
-<h2 id="先請我回答的問題"><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p>這組問題先留下來，之後可以依你的回答把筆記改成更貼近你的閱讀目的：</p>
+<h2 id="為什麼想讀" data-navigation-anchor=""><a href="#為什麼想讀" class="headerlink" title="為什麼想讀"></a>為什麼想讀</h2><p id="nav-eb85bdc353158757" data-navigation-anchor="">我想讀的不是單純的學科趨勢，而是作者怎麼處理「研究對象本身一直在變」這個問題。</p>
+<p id="nav-5ad062a7ae50132a" data-navigation-anchor="">如果一個領域從圖書館服務、資訊儲存與檢索，逐漸延伸到科學與專業傳播、資訊尋求、資料科學或人工智慧，那麼我們要怎麼判斷它仍然是同一個領域？如果分類表也跟著時代修改，又要怎麼避免把不同年代硬塞進今天的概念？</p>
+<p id="nav-0b58507b63bfff09" data-navigation-anchor="">這篇文章吸引我的地方，是它把這些問題放進研究設計裡處理：研究者使用約 30 本國際 LIS 期刊，分析 1965–2025 的研究文章，並維持期刊集合與主要分類架構的穩定，再比較不同年份的主題與研究方法。這使「學科如何變化」不只是印象，而是可以回頭查看資料來源、分類方式與比較基準的分析主張。</p>
+<h2 id="先請我回答的問題" data-navigation-anchor=""><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p id="nav-7e550b2b0466ba45" data-navigation-anchor="">這組問題先留下來，之後可以依你的回答把筆記改成更貼近你的閱讀目的：</p>
 <ol>
-<li><strong>你想從這篇文章讀懂什麼？</strong> 是圖書資訊學的發展、內容分析這個研究方法，還是如何觀察一個領域的研究焦點變化？</li>
-<li><strong>你對「LIS」的直覺範圍到哪裡？</strong> 圖書館服務、資訊檢索、資訊行為、學術傳播、資料科學與 AI，哪些你會認為屬於同一個領域？</li>
-<li><strong>作者把文章分類時，你最想追查哪一個決定？</strong> 例如期刊怎麼選、文章怎麼判斷是 LIS、每篇文章為什麼只放進每個面向的一個主要類別。</li>
-<li><strong>長期比較中，「分類架構保持穩定」和「分類架構跟著時代更新」哪一個更重要？</strong> 你會怎麼在可比性與時代敏感度之間取捨？</li>
-<li><strong>如果某本 LIS 期刊有很多來自電腦科學或管理學的文章，你會把它看成學科跨域成功，還是 LIS 邊界正在變薄？</strong></li>
-<li><strong>看到某個主題比例上升時，你會先想到什麼可能原因？</strong> 真實研究興趣改變、期刊選擇改變、出版量改變、分類規則改變，或資料庫與關鍵字的變化？</li>
-<li><strong>你比較相信人工內容分類、引用／書目計量，還是 topic modeling？</strong> 什麼情況下你會希望幾種方法互相驗證？</li>
-<li><strong>如果把這套方法用在自己的閱讀 archive，你想觀察什麼？</strong> 例如自己長期最常讀的主題、方法、來源類型，或「原本想讀但一直沒有完成」的內容。</li>
+<li id="nav-c544125e94830399" data-navigation-anchor=""><strong>你想從這篇文章讀懂什麼？</strong> 是圖書資訊學的發展、內容分析這個研究方法，還是如何觀察一個領域的研究焦點變化？</li>
+<li id="nav-0456fccfec558b0c" data-navigation-anchor=""><strong>你對「LIS」的直覺範圍到哪裡？</strong> 圖書館服務、資訊檢索、資訊行為、學術傳播、資料科學與 AI，哪些你會認為屬於同一個領域？</li>
+<li id="nav-662d17ea9db20680" data-navigation-anchor=""><strong>作者把文章分類時，你最想追查哪一個決定？</strong> 例如期刊怎麼選、文章怎麼判斷是 LIS、每篇文章為什麼只放進每個面向的一個主要類別。</li>
+<li id="nav-a9de906445a116bb" data-navigation-anchor=""><strong>長期比較中，「分類架構保持穩定」和「分類架構跟著時代更新」哪一個更重要？</strong> 你會怎麼在可比性與時代敏感度之間取捨？</li>
+<li id="nav-53ad9be1fd347c4a" data-navigation-anchor=""><strong>如果某本 LIS 期刊有很多來自電腦科學或管理學的文章，你會把它看成學科跨域成功，還是 LIS 邊界正在變薄？</strong></li>
+<li id="nav-536d475daf286f6f" data-navigation-anchor=""><strong>看到某個主題比例上升時，你會先想到什麼可能原因？</strong> 真實研究興趣改變、期刊選擇改變、出版量改變、分類規則改變，或資料庫與關鍵字的變化？</li>
+<li id="nav-c3a0a0ee76f7a6e2" data-navigation-anchor=""><strong>你比較相信人工內容分類、引用／書目計量，還是 topic modeling？</strong> 什麼情況下你會希望幾種方法互相驗證？</li>
+<li id="nav-6a3afccdba8ae7b9" data-navigation-anchor=""><strong>如果把這套方法用在自己的閱讀 archive，你想觀察什麼？</strong> 例如自己長期最常讀的主題、方法、來源類型，或「原本想讀但一直沒有完成」的內容。</li>
 </ol>
-<h2 id="目前已確認的研究輪廓"><a href="#目前已確認的研究輪廓" class="headerlink" title="目前已確認的研究輪廓"></a>目前已確認的研究輪廓</h2><h3 id="研究問題"><a href="#研究問題" class="headerlink" title="研究問題"></a>研究問題</h3><p>文章有兩個主要問題：</p>
+<h2 id="目前已確認的研究輪廓" data-navigation-anchor=""><a href="#目前已確認的研究輪廓" class="headerlink" title="目前已確認的研究輪廓"></a>目前已確認的研究輪廓</h2><h3 id="研究問題" data-navigation-anchor=""><a href="#研究問題" class="headerlink" title="研究問題"></a>研究問題</h3><p id="nav-723a1cd87cc86315" data-navigation-anchor="">文章有兩個主要問題：</p>
 <ol>
-<li>2025 年 LIS 研究的主題與方法狀態是什麼？</li>
-<li>LIS 研究從 1965 到 2025 如何演變？</li>
+<li id="nav-2455b7aebc30984a" data-navigation-anchor="">2025 年 LIS 研究的主題與方法狀態是什麼？</li>
+<li id="nav-3e26d77bafa7527c" data-navigation-anchor="">LIS 研究從 1965 到 2025 如何演變？</li>
 </ol>
-<p>2025 年的橫斷面分析，進一步觀察主題、研究策略、資料蒐集方法、分析類型與研究貢獻類型；長期分析則比較 1965、1975、1985、2005、2015 與 2025 等年份的研究焦點與方法選擇。</p>
-<h3 id="資料與範圍"><a href="#資料與範圍" class="headerlink" title="資料與範圍"></a>資料與範圍</h3><ul>
-<li>研究材料是英文學術期刊文章。</li>
-<li>期刊來源是選定的國際 LIS 期刊，約 30 本；2025 年資料表列出 29 本期刊、共 1,839 篇文章。</li>
-<li>2025 年先排除 729 篇被判定為其他學科、65 篇非學術文章，主要分析資料為 1,145 篇；若只看 LIS 研究文章的主題與方法，表格中的樣本數為 1,045。</li>
-<li>研究者希望用相對穩定的期刊集合與分類架構，增加跨年代比較的可比性。</li>
+<p id="nav-cdd29b8e4179605b" data-navigation-anchor="">2025 年的橫斷面分析，進一步觀察主題、研究策略、資料蒐集方法、分析類型與研究貢獻類型；長期分析則比較 1965、1975、1985、2005、2015 與 2025 等年份的研究焦點與方法選擇。</p>
+<h3 id="資料與範圍" data-navigation-anchor=""><a href="#資料與範圍" class="headerlink" title="資料與範圍"></a>資料與範圍</h3><ul>
+<li id="nav-6e9b5744b31b704f" data-navigation-anchor="">研究材料是英文學術期刊文章。</li>
+<li id="nav-1a3a52f246026c76" data-navigation-anchor="">期刊來源是選定的國際 LIS 期刊，約 30 本；2025 年資料表列出 29 本期刊、共 1,839 篇文章。</li>
+<li id="nav-55136fb265973a15" data-navigation-anchor="">2025 年先排除 729 篇被判定為其他學科、65 篇非學術文章，主要分析資料為 1,145 篇；若只看 LIS 研究文章的主題與方法，表格中的樣本數為 1,045。</li>
+<li id="nav-aa4326a9a00a72ba" data-navigation-anchor="">研究者希望用相對穩定的期刊集合與分類架構，增加跨年代比較的可比性。</li>
 </ul>
-<p>這裡有一個我想特別留意的數字關係：研究資料不等於最後納入的 LIS 文章。從 1,839 篇到 1,145 篇，再到不同分析表格中的 1,045 篇，之後閱讀全文時要確認每個分母分別代表什麼，不能看到百分比就直接拿來比較。</p>
-<h3 id="分類方式"><a href="#分類方式" class="headerlink" title="分類方式"></a>分類方式</h3><p>文章採用多面向的 faceted classification。主題分類有十個主要類別，其中包含：LIS 脈絡、LIS 教育、方法論、LIS 分析、圖書與資訊服務、資訊儲存與檢索、資訊尋求、科學與專業傳播、其他 LIS 面向，以及其他學科。</p>
-<p>方法面向則分成四個主要部分：</p>
+<p id="nav-6dcf0a50c34123ac" data-navigation-anchor="">這裡有一個我想特別留意的數字關係：研究資料不等於最後納入的 LIS 文章。從 1,839 篇到 1,145 篇，再到不同分析表格中的 1,045 篇，之後閱讀全文時要確認每個分母分別代表什麼，不能看到百分比就直接拿來比較。</p>
+<h3 id="分類方式" data-navigation-anchor=""><a href="#分類方式" class="headerlink" title="分類方式"></a>分類方式</h3><p id="nav-16562fbe8ce3ad4e" data-navigation-anchor="">文章採用多面向的 faceted classification。主題分類有十個主要類別，其中包含：LIS 脈絡、LIS 教育、方法論、LIS 分析、圖書與資訊服務、資訊儲存與檢索、資訊尋求、科學與專業傳播、其他 LIS 面向，以及其他學科。</p>
+<p id="nav-a5f776e0506c2f1f" data-navigation-anchor="">方法面向則分成四個主要部分：</p>
 <ul>
-<li>研究策略</li>
-<li>資料蒐集方法</li>
-<li>分析類型（質性、量化、混合或非實證）</li>
-<li>調查／研究貢獻的類型</li>
+<li id="nav-72d33173fd4d2629" data-navigation-anchor="">研究策略</li>
+<li id="nav-c7eb4eb307ad2088" data-navigation-anchor="">資料蒐集方法</li>
+<li id="nav-f677b5ab8615a29b" data-navigation-anchor="">分析類型（質性、量化、混合或非實證）</li>
+<li id="nav-fdc775bf52b99ee9" data-navigation-anchor="">調查／研究貢獻的類型</li>
 </ul>
-<p>每篇文章原則上依每個面向各選一個主要類別，主要根據摘要判斷，必要時再略讀全文。研究者也明確表示，他們分類的是文章聲稱採取的研究方式與貢獻類型，不進一步判斷文章的主張是否真的成立。</p>
-<h2 id="暫時理解：這篇文章真正分析的是「學科如何被定義」"><a href="#暫時理解：這篇文章真正分析的是「學科如何被定義」" class="headerlink" title="暫時理解：這篇文章真正分析的是「學科如何被定義」"></a>暫時理解：這篇文章真正分析的是「學科如何被定義」</h2><h3 id="1-先定義範圍，才談趨勢"><a href="#1-先定義範圍，才談趨勢" class="headerlink" title="1. 先定義範圍，才談趨勢"></a>1. 先定義範圍，才談趨勢</h3><p>作者不是先把所有看起來與圖書、資訊、資料有關的文章都算進來，而是用分類系統作為 LIS 的操作性定義：能被歸入 LIS 主題類別的文章，才被當作 LIS 研究；「其他學科」則排除在主要 LIS 分析之外。</p>
-<p>這個選擇不代表分類就是 LIS 的唯一真實邊界，而是讓跨年份比較有一個固定的操作規則。它也提醒我，任何「某領域變得更重視某主題」的結論，都要一起問：這個領域是怎麼被定義出來的？</p>
-<h3 id="2-穩定的分類讓比較變得可能，也會遮住新東西"><a href="#2-穩定的分類讓比較變得可能，也會遮住新東西" class="headerlink" title="2. 穩定的分類讓比較變得可能，也會遮住新東西"></a>2. 穩定的分類讓比較變得可能，也會遮住新東西</h3><p>長期研究需要某種穩定性，否則 1965 年和 2025 年的分類不在同一套語言裡，比例就很難比較。但如果分類太穩定，新的研究對象可能只能被勉強塞進舊類別，甚至被歸為「其他學科」。</p>
-<p>因此，分類架構不是中性的背景工具，而是研究結果的一部分。它一方面產生可比性，另一方面也決定了哪些變化容易被看見、哪些變化可能被判定為偏離原本的學科。</p>
-<h3 id="3-「跨域」和「失去邊界」可能是同一個現象的兩種讀法"><a href="#3-「跨域」和「失去邊界」可能是同一個現象的兩種讀法" class="headerlink" title="3. 「跨域」和「失去邊界」可能是同一個現象的兩種讀法"></a>3. 「跨域」和「失去邊界」可能是同一個現象的兩種讀法</h3><p>文章摘要指出，2025 年約 41% 的核心期刊文章被判定為不屬於 LIS 主題。作者把這看成出版範圍擴張、研究典範變化，也提出 LIS 可能走向碎片化的警訊。</p>
-<p>但這個結果也可以有另一種讀法：LIS 的研究對象正在和電腦科學、管理學、社會科學等領域互相滲透。接下來要讀全文，看看作者如何在「學科被其他領域取代」與「學科建立新的整合議題」之間提出兩種可能未來，而不是只把跨域當成好或壞。</p>
-<h3 id="4-研究方法變多，不等於研究品質自動變好"><a href="#4-研究方法變多，不等於研究品質自動變好" class="headerlink" title="4. 研究方法變多，不等於研究品質自動變好"></a>4. 研究方法變多，不等於研究品質自動變好</h3><p>摘要提到，調查、科學計量、實驗、個案研究與質性研究的使用都變得更普遍，代表 LIS 在分析研究對象時變得更多樣。</p>
-<p>這裡要先保留一個區分：方法多樣化說明研究工具箱變大，不直接等於研究變得更嚴謹、更有解釋力或更接近真實。作者也沒有在分類時判斷文章主張是否被充分支持，所以後續要把「研究採用什麼方法」和「方法用得好不好」分開閱讀。</p>
-<h2 id="先記下的趨勢線索"><a href="#先記下的趨勢線索" class="headerlink" title="先記下的趨勢線索"></a>先記下的趨勢線索</h2><p>以下不是我已完成的全文摘要，而是文章摘要與研究設計中值得回頭核對的線索：</p>
+<p id="nav-97e85d46dced3918" data-navigation-anchor="">每篇文章原則上依每個面向各選一個主要類別，主要根據摘要判斷，必要時再略讀全文。研究者也明確表示，他們分類的是文章聲稱採取的研究方式與貢獻類型，不進一步判斷文章的主張是否真的成立。</p>
+<h2 id="暫時理解：這篇文章真正分析的是「學科如何被定義」" data-navigation-anchor=""><a href="#暫時理解：這篇文章真正分析的是「學科如何被定義」" class="headerlink" title="暫時理解：這篇文章真正分析的是「學科如何被定義」"></a>暫時理解：這篇文章真正分析的是「學科如何被定義」</h2><h3 id="1-先定義範圍，才談趨勢" data-navigation-anchor=""><a href="#1-先定義範圍，才談趨勢" class="headerlink" title="1. 先定義範圍，才談趨勢"></a>1. 先定義範圍，才談趨勢</h3><p id="nav-0a0b4d32e840db12" data-navigation-anchor="">作者不是先把所有看起來與圖書、資訊、資料有關的文章都算進來，而是用分類系統作為 LIS 的操作性定義：能被歸入 LIS 主題類別的文章，才被當作 LIS 研究；「其他學科」則排除在主要 LIS 分析之外。</p>
+<p id="nav-aa6968eb7698af69" data-navigation-anchor="">這個選擇不代表分類就是 LIS 的唯一真實邊界，而是讓跨年份比較有一個固定的操作規則。它也提醒我，任何「某領域變得更重視某主題」的結論，都要一起問：這個領域是怎麼被定義出來的？</p>
+<h3 id="2-穩定的分類讓比較變得可能，也會遮住新東西" data-navigation-anchor=""><a href="#2-穩定的分類讓比較變得可能，也會遮住新東西" class="headerlink" title="2. 穩定的分類讓比較變得可能，也會遮住新東西"></a>2. 穩定的分類讓比較變得可能，也會遮住新東西</h3><p id="nav-997385145ea7a544" data-navigation-anchor="">長期研究需要某種穩定性，否則 1965 年和 2025 年的分類不在同一套語言裡，比例就很難比較。但如果分類太穩定，新的研究對象可能只能被勉強塞進舊類別，甚至被歸為「其他學科」。</p>
+<p id="nav-9ae4262b63aabe40" data-navigation-anchor="">因此，分類架構不是中性的背景工具，而是研究結果的一部分。它一方面產生可比性，另一方面也決定了哪些變化容易被看見、哪些變化可能被判定為偏離原本的學科。</p>
+<h3 id="3-「跨域」和「失去邊界」可能是同一個現象的兩種讀法" data-navigation-anchor=""><a href="#3-「跨域」和「失去邊界」可能是同一個現象的兩種讀法" class="headerlink" title="3. 「跨域」和「失去邊界」可能是同一個現象的兩種讀法"></a>3. 「跨域」和「失去邊界」可能是同一個現象的兩種讀法</h3><p id="nav-c51362b70f474663" data-navigation-anchor="">文章摘要指出，2025 年約 41% 的核心期刊文章被判定為不屬於 LIS 主題。作者把這看成出版範圍擴張、研究典範變化，也提出 LIS 可能走向碎片化的警訊。</p>
+<p id="nav-34d79843bef5bacb" data-navigation-anchor="">但這個結果也可以有另一種讀法：LIS 的研究對象正在和電腦科學、管理學、社會科學等領域互相滲透。接下來要讀全文，看看作者如何在「學科被其他領域取代」與「學科建立新的整合議題」之間提出兩種可能未來，而不是只把跨域當成好或壞。</p>
+<h3 id="4-研究方法變多，不等於研究品質自動變好" data-navigation-anchor=""><a href="#4-研究方法變多，不等於研究品質自動變好" class="headerlink" title="4. 研究方法變多，不等於研究品質自動變好"></a>4. 研究方法變多，不等於研究品質自動變好</h3><p id="nav-42371c2460b2526d" data-navigation-anchor="">摘要提到，調查、科學計量、實驗、個案研究與質性研究的使用都變得更普遍，代表 LIS 在分析研究對象時變得更多樣。</p>
+<p id="nav-fe999915d12821f1" data-navigation-anchor="">這裡要先保留一個區分：方法多樣化說明研究工具箱變大，不直接等於研究變得更嚴謹、更有解釋力或更接近真實。作者也沒有在分類時判斷文章主張是否被充分支持，所以後續要把「研究採用什麼方法」和「方法用得好不好」分開閱讀。</p>
+<h2 id="先記下的趨勢線索" data-navigation-anchor=""><a href="#先記下的趨勢線索" class="headerlink" title="先記下的趨勢線索"></a>先記下的趨勢線索</h2><p id="nav-57b74cf6daaee5d4" data-navigation-anchor="">以下不是我已完成的全文摘要，而是文章摘要與研究設計中值得回頭核對的線索：</p>
 <table>
 <thead>
 <tr>
@@ -742,40 +750,40 @@
 <td>這能否代表研究活動下降？期刊集合外的研究是否增加？</td>
 </tr>
 </tbody></table>
-<h2 id="我想用來讀全文的五層框架"><a href="#我想用來讀全文的五層框架" class="headerlink" title="我想用來讀全文的五層框架"></a>我想用來讀全文的五層框架</h2><p>回來讀每一段時，先不急著記所有數字，可以依這五層留下摘要：</p>
+<h2 id="我想用來讀全文的五層框架" data-navigation-anchor=""><a href="#我想用來讀全文的五層框架" class="headerlink" title="我想用來讀全文的五層框架"></a>我想用來讀全文的五層框架</h2><p id="nav-fecb7faeb8647d4f" data-navigation-anchor="">回來讀每一段時，先不急著記所有數字，可以依這五層留下摘要：</p>
 <ol>
-<li><strong>資料層</strong>：研究者收了哪些文章？哪些被排除？</li>
-<li><strong>定義層</strong>：什麼條件讓一篇文章算 LIS？什麼情況會被歸到其他學科？</li>
-<li><strong>分類層</strong>：主題、方法與貢獻如何被編碼？分類者之間怎麼校準？</li>
-<li><strong>比較層</strong>：不同年份是否真的使用相同的分母、期刊集合與分類語言？</li>
-<li><strong>解釋層</strong>：數字變化被解讀成研究興趣變化、出版結構變化，還是學科邊界變化？</li>
+<li id="nav-42c6424f4df0af01" data-navigation-anchor=""><strong>資料層</strong>：研究者收了哪些文章？哪些被排除？</li>
+<li id="nav-52045fcf0926eef0" data-navigation-anchor=""><strong>定義層</strong>：什麼條件讓一篇文章算 LIS？什麼情況會被歸到其他學科？</li>
+<li id="nav-5e0a833fea39cc87" data-navigation-anchor=""><strong>分類層</strong>：主題、方法與貢獻如何被編碼？分類者之間怎麼校準？</li>
+<li id="nav-606cf4d1123e2d6b" data-navigation-anchor=""><strong>比較層</strong>：不同年份是否真的使用相同的分母、期刊集合與分類語言？</li>
+<li id="nav-2ae7c489d6bd98ca" data-navigation-anchor=""><strong>解釋層</strong>：數字變化被解讀成研究興趣變化、出版結構變化，還是學科邊界變化？</li>
 </ol>
-<h2 id="可能與我現在的學習系統連結"><a href="#可能與我現在的學習系統連結" class="headerlink" title="可能與我現在的學習系統連結"></a>可能與我現在的學習系統連結</h2><p>這篇文章也可以反過來幫我思考自己的閱讀 archive。現在的草稿夾不是只有「我讀了哪些文章」，還可以慢慢觀察：</p>
+<h2 id="可能與我現在的學習系統連結" data-navigation-anchor=""><a href="#可能與我現在的學習系統連結" class="headerlink" title="可能與我現在的學習系統連結"></a>可能與我現在的學習系統連結</h2><p id="nav-c70ced9fdee545b3" data-navigation-anchor="">這篇文章也可以反過來幫我思考自己的閱讀 archive。現在的草稿夾不是只有「我讀了哪些文章」，還可以慢慢觀察：</p>
 <ul>
-<li>我長期最常回到哪些主題？</li>
-<li>我偏好讀工具實測、研究論文、經驗回顧，還是方法論文章？</li>
-<li>同一個主題在不同時間出現時，我的問題有沒有改變？</li>
-<li>我把文章歸類時，是按照來源、主題、用途，還是按照自己當下的問題？</li>
-<li>有哪些文章被我標成學習中，但其實已經不再回到它？這種狀態要怎麼和真正持續累積的主題區分？</li>
+<li id="nav-4808d788bd7b7e5b" data-navigation-anchor="">我長期最常回到哪些主題？</li>
+<li id="nav-175374ba75219062" data-navigation-anchor="">我偏好讀工具實測、研究論文、經驗回顧，還是方法論文章？</li>
+<li id="nav-66b3bdc8297450ec" data-navigation-anchor="">同一個主題在不同時間出現時，我的問題有沒有改變？</li>
+<li id="nav-5e012bd18975ca8c" data-navigation-anchor="">我把文章歸類時，是按照來源、主題、用途，還是按照自己當下的問題？</li>
+<li id="nav-d9dc3145baa8ab1f" data-navigation-anchor="">有哪些文章被我標成學習中，但其實已經不再回到它？這種狀態要怎麼和真正持續累積的主題區分？</li>
 </ul>
-<p>我不一定要立刻仿照論文做統計，但可以先學它的精神：先把資料範圍、分類規則與比較單位說清楚，再談自己的閱讀趨勢。尤其「當天新增」和「累積未完成」是兩種不同的計數概念，也應該在 archive 裡分開保存。</p>
-<h2 id="待查證與待補充"><a href="#待查證與待補充" class="headerlink" title="待查證與待補充"></a>待查證與待補充</h2><ul>
-<li>完整的 2025 年文章分類表，以及 1965、1975、1985、2005、2015、2025 各年份的分母差異。</li>
-<li>2025 年資料從 1,839 篇、1,145 篇到 1,045 篇的實際篩選流程與表格對應。</li>
-<li>約 30 本期刊的完整名單，以及期刊集合在不同年份如何維持可比性。</li>
-<li>六個分類面向的完整定義、子類別與 2025 年修改之處。</li>
-<li>兩位研究者如何進行 100 篇文章的獨立重分類，以及 Fleiss’ Kappa 的數值與解讀。</li>
-<li>「其他學科」比例上升在多大程度上反映期刊出版政策或作者來源的變化。</li>
-<li>研究者提出的 LIS 未來兩種可能：走向被鄰近學科吸收，或整合成研究資訊互動的跨學科議程。</li>
-<li>這套人工內容分析與 topic modeling、書目計量分析各自能看見什麼、看不見什麼。</li>
+<p id="nav-3f701eb58aeeac8a" data-navigation-anchor="">我不一定要立刻仿照論文做統計，但可以先學它的精神：先把資料範圍、分類規則與比較單位說清楚，再談自己的閱讀趨勢。尤其「當天新增」和「累積未完成」是兩種不同的計數概念，也應該在 archive 裡分開保存。</p>
+<h2 id="待查證與待補充" data-navigation-anchor=""><a href="#待查證與待補充" class="headerlink" title="待查證與待補充"></a>待查證與待補充</h2><ul>
+<li id="nav-dc438160afb58452" data-navigation-anchor="">完整的 2025 年文章分類表，以及 1965、1975、1985、2005、2015、2025 各年份的分母差異。</li>
+<li id="nav-81dd64e2b41513b5" data-navigation-anchor="">2025 年資料從 1,839 篇、1,145 篇到 1,045 篇的實際篩選流程與表格對應。</li>
+<li id="nav-0847ebaec342f89a" data-navigation-anchor="">約 30 本期刊的完整名單，以及期刊集合在不同年份如何維持可比性。</li>
+<li id="nav-a58d76b92da138c8" data-navigation-anchor="">六個分類面向的完整定義、子類別與 2025 年修改之處。</li>
+<li id="nav-1735ce16d090fabb" data-navigation-anchor="">兩位研究者如何進行 100 篇文章的獨立重分類，以及 Fleiss’ Kappa 的數值與解讀。</li>
+<li id="nav-ca0adeadc59a1b7a" data-navigation-anchor="">「其他學科」比例上升在多大程度上反映期刊出版政策或作者來源的變化。</li>
+<li id="nav-8dc221dab4fcdc5b" data-navigation-anchor="">研究者提出的 LIS 未來兩種可能：走向被鄰近學科吸收，或整合成研究資訊互動的跨學科議程。</li>
+<li id="nav-63bb65cb0178d500" data-navigation-anchor="">這套人工內容分析與 topic modeling、書目計量分析各自能看見什麼、看不見什麼。</li>
 </ul>
-<h2 id="預先收集：先讀原文，再核對方法"><a href="#預先收集：先讀原文，再核對方法" class="headerlink" title="預先收集：先讀原文，再核對方法"></a>預先收集：先讀原文，再核對方法</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/org/science/article/pii/S0022041826000676">LIS Research 1965–2025｜ScienceDirect</a>：用來對照研究目的、資料範圍、分類架構、2025 年樣本數與長期比較結果。</li>
-<li><a target="_blank" rel="noopener" href="https://doi.org/10.1108/JD-05-2026-0274">LIS Research 1965–2025｜DOI 10.1108&#x2F;JD-05-2026-0274</a>：保留正式 DOI，方便之後引用與確認版本；目前應優先核對全文表格，而不是只記摘要裡的趨勢句。</li>
-<li><a target="_blank" rel="noopener" href="https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of">Journal of Documentation｜文章頁面</a>：回到期刊頁面確認卷期、頁碼、作者與附錄分類表。</li>
+<h2 id="預先收集：先讀原文，再核對方法" data-navigation-anchor=""><a href="#預先收集：先讀原文，再核對方法" class="headerlink" title="預先收集：先讀原文，再核對方法"></a>預先收集：先讀原文，再核對方法</h2><ol>
+<li id="nav-a07a8e6148dba030" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/org/science/article/pii/S0022041826000676">LIS Research 1965–2025｜ScienceDirect</a>：用來對照研究目的、資料範圍、分類架構、2025 年樣本數與長期比較結果。</li>
+<li id="nav-85572a68d56bc678" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://doi.org/10.1108/JD-05-2026-0274">LIS Research 1965–2025｜DOI 10.1108/JD-05-2026-0274</a>：保留正式 DOI，方便之後引用與確認版本；目前應優先核對全文表格，而不是只記摘要裡的趨勢句。</li>
+<li id="nav-3905ec62517ce704" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.emerald.com/jd/article/82/7/472/1391992/LIS-Research-1965-2025-a-content-analysis-of">Journal of Documentation｜文章頁面</a>：回到期刊頁面確認卷期、頁碼、作者與附錄分類表。</li>
 </ol>
-<h2 id="我的參考意見"><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p>我覺得這篇最值得學的不是某一個 LIS 主題比例，而是它先把「什麼算 LIS」變成可操作的分類規則，再談 1965–2025 的變化。閱讀時要特別守住三個檢查點：1,839 篇原始文章、1,145 篇初步納入與 1,045 篇進入特定分析表格，分母不能混用；「41% 被判定為其他學科」是研究設計下的分類結果，不等於學科已經客觀消失；方法變多也不自動等於品質變好。這套思路可以借給自己的閱讀 archive：先說清楚收哪些資料、怎麼分類、日期代表什麼，再觀察自己的閱讀趨勢。</p>
-<h2 id="閱讀紀錄"><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
+<h2 id="我的參考意見" data-navigation-anchor=""><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p id="nav-d7614968fb4e308f" data-navigation-anchor="">我覺得這篇最值得學的不是某一個 LIS 主題比例，而是它先把「什麼算 LIS」變成可操作的分類規則，再談 1965–2025 的變化。閱讀時要特別守住三個檢查點：1,839 篇原始文章、1,145 篇初步納入與 1,045 篇進入特定分析表格，分母不能混用；「41% 被判定為其他學科」是研究設計下的分類結果，不等於學科已經客觀消失；方法變多也不自動等於品質變好。這套思路可以借給自己的閱讀 archive：先說清楚收哪些資料、怎麼分類、日期代表什麼，再觀察自己的閱讀趨勢。</p>
+<h2 id="閱讀紀錄" data-navigation-anchor=""><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
 <thead>
 <tr>
 <th>日期</th>
@@ -791,8 +799,8 @@
 <td>以上 8 題，以及資料篩選、分類可靠度與趨勢表格的全文核對</td>
 </tr>
 </tbody></table>
-<h2 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
-<li><strong>2026-08-31</strong>：建立公開持續學習筆記，保存文章來源、研究輪廓、初步趨勢線索與後續閱讀問題。</li>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-298e4dd110f5580f" data-navigation-anchor=""><strong>2026-08-31</strong>：建立公開持續學習筆記，保存文章來源、研究輪廓、初步趨勢線索與後續閱讀問題。</li>
 </ul>
 
     </div>
@@ -838,13 +846,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/learning/gemini-notebook-agent-office-workflow/" rel="prev" title="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記">
-                  <i class="fa fa-angle-left"></i> Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記
+                <a href="/learning/lab-eleven-years-reflective-thinking/" rel="prev" title="在台灣設立實驗室十一年｜校準責任、內耗與自己｜思考方式筆記">
+                  <i class="fa fa-angle-left"></i> 在台灣設立實驗室十一年｜校準責任、內耗與自己｜思考方式筆記
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/" rel="next" title="歌曲推薦-sailing back to you">
-                  歌曲推薦-sailing back to you <i class="fa fa-angle-right"></i>
+                <a href="/learning/gemini-notebook-agent-office-workflow/" rel="next" title="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記">
+                  Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

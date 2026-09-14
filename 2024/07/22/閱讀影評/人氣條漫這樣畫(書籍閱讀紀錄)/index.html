@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,19 +666,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《人氣條漫這樣畫》不只是在教人如何畫出受歡迎的漫畫，也整理了成為職業創作者需要面對的能力、準備與連載現實。它讓我從創作技巧之外，看見韓國長條漫畫產業與作品誕生的另一面。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-6eb93c7c4a60fb4e" data-navigation-anchor="">《人氣條漫這樣畫》不只是在教人如何畫出受歡迎的漫畫，也整理了成為職業創作者需要面對的能力、準備與連載現實。它讓我從創作技巧之外，看見韓國長條漫畫產業與作品誕生的另一面。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>如同網路小說在中國大陸的地位，韓國長條漫畫似乎也是文化輸出的重點，偶然書架中看到介紹產業的書籍一定不能錯過，雖然類型上看起來偏向於如何做出人氣漫畫，但其中希望有涉及產業的觀點。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>書籍以”該如何以漫畫家為職業”為目標，列出了需要具備的能力跟準備出道及連載的書。</p>
-<p>扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，反而繪畫的部分就比較少了，畢竟成為職業創作者的基本功假設不過關應該也無法有之後的故事了，畢竟強如一拳超人的原作者，要不是有人幫他轉畫成後來熟知的模樣，我一定會直接放棄這部漫畫…。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我本來預期討論產業的部分會更多，因為畢竟類似的書籍會給出一些產業的特定術語或狀況，但大概只佔了本書的1&#x2F;5的份量而已，有趣的是這本書滿溫暖的，有很多連載的職業作者的鼓勵與心得，讓想以職業創作者為道路的人有勇氣繼續努力。</p>
-<p>但我其實是屬於讀者的角色，有時候被揭露太多創作公式或是情節走向老實說會有點不太開心，因為我的情緒原來全是這樣被拉扯的嗎？我有時候寧願是更早期我在小說裡面看到作者說，我的腦袋裡面的角色告訴我他迫不急待地要出現，因此我只能轉寫他的故事(印象中像是我在雨中等你的&gt;恩佐)！</p>
-<p>扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，這部分算是我覺得滿有趣的地方，類似的書籍就如同先讓英雄去救貓之類的一樣，可能是某方面創作者的自我修養吧，如果轉換角色我一定能在書裏面收穫更多！</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>因為這本書我也期待網路小說家那本作品的，不知道能不能做一個橫向的差別比較，在這本書中其實可以發現，除了成功地引起追獨之外，事件、情節以及人物的吸引力等等，條漫不只是閱讀方向的差別，節奏以及與編輯的互動，光是以網路為連載地，所造成的影響就跟日本週刊完全不同了，可能要閱讀更多類似的書籍或文獻才能一探究竟了，但他們是有區別實益的。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-4c8eac794f5f57dc" data-navigation-anchor="">如同網路小說在中國大陸的地位，韓國長條漫畫似乎也是文化輸出的重點，偶然書架中看到介紹產業的書籍一定不能錯過，雖然類型上看起來偏向於如何做出人氣漫畫，但其中希望有涉及產業的觀點。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-b35a0056d16fa52d" data-navigation-anchor="">書籍以”該如何以漫畫家為職業”為目標，列出了需要具備的能力跟準備出道及連載的書。</p>
+<p id="nav-5896e39be9299d77" data-navigation-anchor="">扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，反而繪畫的部分就比較少了，畢竟成為職業創作者的基本功假設不過關應該也無法有之後的故事了，畢竟強如一拳超人的原作者，要不是有人幫他轉畫成後來熟知的模樣，我一定會直接放棄這部漫畫…。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-7c602ada4ec8efff" data-navigation-anchor="">我本來預期討論產業的部分會更多，因為畢竟類似的書籍會給出一些產業的特定術語或狀況，但大概只佔了本書的1/5的份量而已，有趣的是這本書滿溫暖的，有很多連載的職業作者的鼓勵與心得，讓想以職業創作者為道路的人有勇氣繼續努力。</p>
+<p id="nav-aee5465b355fc1f8" data-navigation-anchor="">但我其實是屬於讀者的角色，有時候被揭露太多創作公式或是情節走向老實說會有點不太開心，因為我的情緒原來全是這樣被拉扯的嗎？我有時候寧願是更早期我在小說裡面看到作者說，我的腦袋裡面的角色告訴我他迫不急待地要出現，因此我只能轉寫他的故事(印象中像是我在雨中等你的&gt;恩佐)！</p>
+<p id="nav-b94edea214af198d" data-navigation-anchor="">扎實地說明了創作該注意的地方以及要開始去區分事件以及情節，這部分算是我覺得滿有趣的地方，類似的書籍就如同先讓英雄去救貓之類的一樣，可能是某方面創作者的自我修養吧，如果轉換角色我一定能在書裏面收穫更多！</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-5cadca7d78131347" data-navigation-anchor="">因為這本書我也期待網路小說家那本作品的，不知道能不能做一個橫向的差別比較，在這本書中其實可以發現，除了成功地引起追獨之外，事件、情節以及人物的吸引力等等，條漫不只是閱讀方向的差別，節奏以及與編輯的互動，光是以網路為連載地，所造成的影響就跟日本週刊完全不同了，可能要閱讀更多類似的書籍或文獻才能一探究竟了，但他們是有區別實益的。</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="301" height="374" src="/images/blogger-import/blogger-b21f29d102/01.webp" alt="圖片 1">
 
-<p>(圖片來源: 喵喵書評)</p>
+<p id="nav-42750c8c1cd26aac" data-navigation-anchor="">(圖片來源: 喵喵書評)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2024/07/blog-post_22.html -->
 
     </div>

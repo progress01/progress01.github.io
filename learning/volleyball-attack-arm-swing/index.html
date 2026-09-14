@@ -95,6 +95,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -149,7 +150,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -173,6 +174,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -208,19 +216,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -320,15 +328,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -336,19 +336,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -408,11 +416,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -568,7 +576,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -664,724 +672,724 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我整理排球攻擊揮臂時，開始把手肘與擊球點放回整體節奏、身體展開與出手順序。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-ae7186820c2d5971" data-navigation-anchor="">我整理排球攻擊揮臂時，開始把手肘與擊球點放回整體節奏、身體展開與出手順序。</p>
 <span id="more"></span>
-<p>這篇是我整理自己排球攻擊動作的學習筆記。</p>
-<p>一開始，我把問題理解成「手肘是不是側向揮出去」、「擊球點是不是不夠高」。但在實際打混排、和朋友討論，以及重新檢視自己的連續動作影格後，我開始懷疑：</p>
+<p id="nav-ee279176ece08d4c" data-navigation-anchor="">這篇是我整理自己排球攻擊動作的學習筆記。</p>
+<p id="nav-39595d39f6c466a9" data-navigation-anchor="">一開始，我把問題理解成「手肘是不是側向揮出去」、「擊球點是不是不夠高」。但在實際打混排、和朋友討論，以及重新檢視自己的連續動作影格後，我開始懷疑：</p>
 <blockquote>
-<p><strong>手肘與擊球點可能只是動作末端的結果，真正需要往前追的是攻擊節奏、身體展開、軀幹帶動與手臂出手的先後順序。</strong></p>
+<p id="nav-31caaaeefaa5024a" data-navigation-anchor=""><strong>手肘與擊球點可能只是動作末端的結果，真正需要往前追的是攻擊節奏、身體展開、軀幹帶動與手臂出手的先後順序。</strong></p>
 </blockquote>
-<p>目前最大的問題，因此逐漸從：</p>
+<p id="nav-efae13b90ecd55eb" data-navigation-anchor="">目前最大的問題，因此逐漸從：</p>
 <blockquote>
-<p>我的手肘路徑是不是錯了？</p>
+<p id="nav-d9a6d8ab164bd629" data-navigation-anchor="">我的手肘路徑是不是錯了？</p>
 </blockquote>
-<p>變成：</p>
+<p id="nav-3fce8c53bdfa605c" data-navigation-anchor="">變成：</p>
 <blockquote>
-<p><strong>為什麼我的手會在這個時間出去？身體有沒有先帶動，再讓手臂順勢甩出去？</strong></p>
+<p id="nav-fd39b7e28baca6b8" data-navigation-anchor=""><strong>為什麼我的手會在這個時間出去？身體有沒有先帶動，再讓手臂順勢甩出去？</strong></p>
 </blockquote>
-<p>最近另外注意到，拉捷運吊環、手臂維持高舉，以及排球揮臂後，上臂靠近肩膀的位置偶爾會出現緊繃與不舒服。目前先把它記錄成<strong>可能涉及旋轉肌群負荷的症狀假說</strong>，但不把動作觀察直接當成已確定的受傷原因或醫療診斷。</p>
-<h1 id="問題的起點與觀念轉變"><a href="#問題的起點與觀念轉變" class="headerlink" title="問題的起點與觀念轉變"></a>問題的起點與觀念轉變</h1><p>最近打混排時，我最先注意到的問題是：</p>
+<p id="nav-803ca6b6e24cec01" data-navigation-anchor="">最近另外注意到，拉捷運吊環、手臂維持高舉，以及排球揮臂後，上臂靠近肩膀的位置偶爾會出現緊繃與不舒服。目前先把它記錄成<strong>可能涉及旋轉肌群負荷的症狀假說</strong>，但不把動作觀察直接當成已確定的受傷原因或醫療診斷。</p>
+<h1 id="問題的起點與觀念轉變"><a href="#問題的起點與觀念轉變" class="headerlink" title="問題的起點與觀念轉變"></a>問題的起點與觀念轉變</h1><p id="nav-ba9e25a2b8810e49" data-navigation-anchor="">最近打混排時，我最先注意到的問題是：</p>
 <blockquote>
-<p>助跑或起跳節奏不穩<br>→ 擔心來不及碰到球<br>→ 空中提早把手伸出去<br>→ 手肘似乎直接往前或側面揮<br>→ 擊球位置也沒有到原先預期的高點。</p>
+<p id="nav-149158b4d9e0cb43" data-navigation-anchor="">助跑或起跳節奏不穩<br>→ 擔心來不及碰到球<br>→ 空中提早把手伸出去<br>→ 手肘似乎直接往前或側面揮<br>→ 擊球位置也沒有到原先預期的高點。</p>
 </blockquote>
 <p><img src="/images/volleyball-arm-swing-hackmd.png" alt="排球攻擊揮臂實際方式與預期方式的手繪示意"></p>
-<p>圖中的橘色與灰色，是我原先認為自己比較常出現的狀態；紅色與黑色則是當時想像的修正方向。</p>
-<p>最初，我把兩者差異理解成：</p>
+<p id="nav-e347c93cdf9e2ae6" data-navigation-anchor="">圖中的橘色與灰色，是我原先認為自己比較常出現的狀態；紅色與黑色則是當時想像的修正方向。</p>
+<p id="nav-838e47353e925aae" data-navigation-anchor="">最初，我把兩者差異理解成：</p>
 <ul>
-<li>手肘沒有充分向上。</li>
-<li>手臂沒有從頭頂附近通過。</li>
-<li>太早把手伸出去。</li>
-<li>擊球點太靠前。</li>
-<li>沒有在較高的位置把手臂充分伸展。</li>
-<li>擊球後可能靠肩膀和手臂把動作硬停住。</li>
+<li id="nav-327b56c35a9f3a7a" data-navigation-anchor="">手肘沒有充分向上。</li>
+<li id="nav-acdea49aeaec24d0" data-navigation-anchor="">手臂沒有從頭頂附近通過。</li>
+<li id="nav-1b8009d9e0ffce88" data-navigation-anchor="">太早把手伸出去。</li>
+<li id="nav-a03ee36c8d91ed19" data-navigation-anchor="">擊球點太靠前。</li>
+<li id="nav-61a9f6e9c667fae9" data-navigation-anchor="">沒有在較高的位置把手臂充分伸展。</li>
+<li id="nav-ff375c5aa772979a" data-navigation-anchor="">擊球後可能靠肩膀和手臂把動作硬停住。</li>
 </ul>
-<p>但和朋友討論後，我開始發現這個解釋可能太快。</p>
-<p>圖中很明顯的一個差異，其實只是<strong>球點不同</strong>：</p>
+<p id="nav-d28bbb14a54106b2" data-navigation-anchor="">但和朋友討論後，我開始發現這個解釋可能太快。</p>
+<p id="nav-cdb7e49113bfdcc8" data-navigation-anchor="">圖中很明顯的一個差異，其實只是<strong>球點不同</strong>：</p>
 <ul>
-<li>橘色球點比較靠身體前方。</li>
-<li>另一個球點比較接近頭頂上方。</li>
+<li id="nav-b200a295fc453eb9" data-navigation-anchor="">橘色球點比較靠身體前方。</li>
+<li id="nav-b966e6688ce52396" data-navigation-anchor="">另一個球點比較接近頭頂上方。</li>
 </ul>
-<p>因此不能直接推出：</p>
+<p id="nav-478ae766650daba7" data-navigation-anchor="">因此不能直接推出：</p>
 <blockquote>
-<p>靠前的擊球點就是錯的。</p>
+<p id="nav-63eee651ea8e452a" data-navigation-anchor="">靠前的擊球點就是錯的。</p>
 </blockquote>
-<p>也不能直接推出：</p>
+<p id="nav-0cb2346c5e571cf7" data-navigation-anchor="">也不能直接推出：</p>
 <blockquote>
-<p>靠前的擊球點一定比較傷肩膀。</p>
+<p id="nav-a87149335c0947ef" data-navigation-anchor="">靠前的擊球點一定比較傷肩膀。</p>
 </blockquote>
-<p>這張圖目前比較適合作為：</p>
+<p id="nav-855dc129b0890622" data-navigation-anchor="">這張圖目前比較適合作為：</p>
 <blockquote>
-<p><strong>我可能有哪些不同的擊球狀態？</strong></p>
+<p id="nav-ecf33eb87c494173" data-navigation-anchor=""><strong>我可能有哪些不同的擊球狀態？</strong></p>
 </blockquote>
-<p>的紀錄，而不是「錯誤姿勢 vs. 正確姿勢」示意圖。</p>
-<h2 id="問題開始往前追：可能不是手肘先出錯"><a href="#問題開始往前追：可能不是手肘先出錯" class="headerlink" title="問題開始往前追：可能不是手肘先出錯"></a>問題開始往前追：可能不是手肘先出錯</h2><p>目前最大的觀念改變，是把問題從「手肘怎麼走」往動作鏈前面追。</p>
-<p>我現在比較想驗證的是：</p>
+<p id="nav-fa391d0878682e2d" data-navigation-anchor="">的紀錄，而不是「錯誤姿勢 vs. 正確姿勢」示意圖。</p>
+<h2 id="問題開始往前追：可能不是手肘先出錯" data-navigation-anchor=""><a href="#問題開始往前追：可能不是手肘先出錯" class="headerlink" title="問題開始往前追：可能不是手肘先出錯"></a>問題開始往前追：可能不是手肘先出錯</h2><p id="nav-1bf101492ae845f5" data-navigation-anchor="">目前最大的觀念改變，是把問題從「手肘怎麼走」往動作鏈前面追。</p>
+<p id="nav-45a70530b307d0b3" data-navigation-anchor="">我現在比較想驗證的是：</p>
 <blockquote>
-<p><strong>我是不是因為攻擊節奏偏急，導致身體還沒有充分完成展開與帶動，擊球手就已經開始往前？</strong></p>
+<p id="nav-abb4ffb610994b7b" data-navigation-anchor=""><strong>我是不是因為攻擊節奏偏急，導致身體還沒有充分完成展開與帶動，擊球手就已經開始往前？</strong></p>
 </blockquote>
-<p>目前暫時整理出的可能問題鏈是：</p>
+<p id="nav-4c36d80f9d3cbaa4" data-navigation-anchor="">目前暫時整理出的可能問題鏈是：</p>
 <blockquote>
-<p>助跑／起跳節奏不穩<br>↓<br>覺得來不及處理球<br>↓<br>提早進入出手<br>↓<br>非擊球手提早收回<br>↓<br>上半身展開時間縮短<br>↓<br>擊球手肘提早往前<br>↓<br>擊球側肩膀上提、脖子縮起來<br>↓<br>上肢提早成為主要出力者<br>↓<br>揮臂比較像「用手把動作完成」，而不是「身體把手甩出去」</p>
+<p id="nav-83d13416a23f597c" data-navigation-anchor="">助跑／起跳節奏不穩<br>↓<br>覺得來不及處理球<br>↓<br>提早進入出手<br>↓<br>非擊球手提早收回<br>↓<br>上半身展開時間縮短<br>↓<br>擊球手肘提早往前<br>↓<br>擊球側肩膀上提、脖子縮起來<br>↓<br>上肢提早成為主要出力者<br>↓<br>揮臂比較像「用手把動作完成」，而不是「身體把手甩出去」</p>
 </blockquote>
-<p>這仍然只是目前的<strong>問題模型</strong>。</p>
-<p>它比「我的手肘一定錯了」更值得優先驗證，但不能因為幾張影格和自己的體感，就直接當成已經證實的生物力學結論。</p>
+<p id="nav-65315727b0257fec" data-navigation-anchor="">這仍然只是目前的<strong>問題模型</strong>。</p>
+<p id="nav-a73c7a83ff36317c" data-navigation-anchor="">它比「我的手肘一定錯了」更值得優先驗證，但不能因為幾張影格和自己的體感，就直接當成已經證實的生物力學結論。</p>
 <hr>
-<h1 id="連續影格觀察"><a href="#連續影格觀察" class="headerlink" title="連續影格觀察"></a>連續影格觀察</h1><p>這次把一段模擬攻擊動作拆成較完整的連續影格後，比只看一兩張照片多了一些可以觀察的線索。</p>
-<p>這組影像沒有實際的球，因此目前主要分析的是：</p>
+<h1 id="連續影格觀察"><a href="#連續影格觀察" class="headerlink" title="連續影格觀察"></a>連續影格觀察</h1><p id="nav-ce2a2d650d202356" data-navigation-anchor="">這次把一段模擬攻擊動作拆成較完整的連續影格後，比只看一兩張照片多了一些可以觀察的線索。</p>
+<p id="nav-0fe3d2f0fac96791" data-navigation-anchor="">這組影像沒有實際的球，因此目前主要分析的是：</p>
 <blockquote>
-<p><strong>我的習慣動作模式。</strong></p>
+<p id="nav-e19e245d9d20a6d9" data-navigation-anchor=""><strong>我的習慣動作模式。</strong></p>
 </blockquote>
-<p>真正有球時，找球、起跳位置、時間壓力與擊球距離仍然可能改變動作。</p>
-<p>目前先把觀察分成：</p>
+<p id="nav-9b99af931340a188" data-navigation-anchor="">真正有球時，找球、起跳位置、時間壓力與擊球距離仍然可能改變動作。</p>
+<p id="nav-6b69b1fe94a7376d" data-navigation-anchor="">目前先把觀察分成：</p>
 <ol>
-<li>影像比較明確看得到的。</li>
-<li>和朋友討論後新增的重要線索。</li>
-<li>目前合理但仍待驗證的假說。</li>
+<li id="nav-1f352a87c2c5bb7f" data-navigation-anchor="">影像比較明確看得到的。</li>
+<li id="nav-c1aa8d2b265a0920" data-navigation-anchor="">和朋友討論後新增的重要線索。</li>
+<li id="nav-ed46bbf990409536" data-navigation-anchor="">目前合理但仍待驗證的假說。</li>
 </ol>
-<h2 id="影像中比較明確的線索"><a href="#影像中比較明確的線索" class="headerlink" title="影像中比較明確的線索"></a>影像中比較明確的線索</h2><h3 id="1-手肘不是完全沒有抬起來"><a href="#1-手肘不是完全沒有抬起來" class="headerlink" title="1. 手肘不是完全沒有抬起來"></a>1. 手肘不是完全沒有抬起來</h3><p>這是對原先假設很重要的一次修正。</p>
-<p>在拉弓階段，可以看到：</p>
+<h2 id="影像中比較明確的線索" data-navigation-anchor=""><a href="#影像中比較明確的線索" class="headerlink" title="影像中比較明確的線索"></a>影像中比較明確的線索</h2><h3 id="1-手肘不是完全沒有抬起來" data-navigation-anchor=""><a href="#1-手肘不是完全沒有抬起來" class="headerlink" title="1. 手肘不是完全沒有抬起來"></a>1. 手肘不是完全沒有抬起來</h3><p id="nav-8b2e0d7079093d56" data-navigation-anchor="">這是對原先假設很重要的一次修正。</p>
+<p id="nav-43140013570ab564" data-navigation-anchor="">在拉弓階段，可以看到：</p>
 <ul>
-<li>擊球側手肘有抬起。</li>
-<li>前臂位於頭部後方附近。</li>
-<li>手臂沒有一開始就完全伸直。</li>
-<li>有進入蓄力／拉弓的位置。</li>
+<li id="nav-a8e58e8cae0db525" data-navigation-anchor="">擊球側手肘有抬起。</li>
+<li id="nav-c974bb4e1d8c4a94" data-navigation-anchor="">前臂位於頭部後方附近。</li>
+<li id="nav-ce0360fe4362f9fa" data-navigation-anchor="">手臂沒有一開始就完全伸直。</li>
+<li id="nav-f58d38e040c982fa" data-navigation-anchor="">有進入蓄力／拉弓的位置。</li>
 </ul>
-<p>因此，目前比較不能直接寫成：</p>
+<p id="nav-be19c899465c9e4c" data-navigation-anchor="">因此，目前比較不能直接寫成：</p>
 <blockquote>
-<p>我的問題就是手肘太低，直接橫掃出去。</p>
+<p id="nav-9258c8230547eead" data-navigation-anchor="">我的問題就是手肘太低，直接橫掃出去。</p>
 </blockquote>
-<p>至少從靜態位置來看，<strong>手肘高度本身不像最上游的問題</strong>。</p>
-<p>現在真正值得看的變成：</p>
+<p id="nav-d6ecafbb42afc50a" data-navigation-anchor="">至少從靜態位置來看，<strong>手肘高度本身不像最上游的問題</strong>。</p>
+<p id="nav-26b6c304b6dafd4f" data-navigation-anchor="">現在真正值得看的變成：</p>
 <blockquote>
-<p><strong>手肘什麼時候開始向前？</strong></p>
+<p id="nav-dd1e6e8c722dff75" data-navigation-anchor=""><strong>手肘什麼時候開始向前？</strong></p>
 </blockquote>
-<h3 id="2-非擊球手收得偏早"><a href="#2-非擊球手收得偏早" class="headerlink" title="2. 非擊球手收得偏早"></a>2. 非擊球手收得偏早</h3><p>目前連續影格裡另一個很值得注意的地方，是：</p>
+<h3 id="2-非擊球手收得偏早" data-navigation-anchor=""><a href="#2-非擊球手收得偏早" class="headerlink" title="2. 非擊球手收得偏早"></a>2. 非擊球手收得偏早</h3><p id="nav-dff4fdb189993fcf" data-navigation-anchor="">目前連續影格裡另一個很值得注意的地方，是：</p>
 <blockquote>
-<p><strong>非擊球手在進入出手階段時，很快就收到胸前。</strong></p>
+<p id="nav-b519878498fb4add" data-navigation-anchor=""><strong>非擊球手在進入出手階段時，很快就收到胸前。</strong></p>
 </blockquote>
-<p>這可能牽涉：</p>
+<p id="nav-7db33bcb0e225c7b" data-navigation-anchor="">這可能牽涉：</p>
 <ul>
-<li>找球。</li>
-<li>維持胸口展開。</li>
-<li>空中平衡。</li>
-<li>之後身體旋轉的節奏。</li>
+<li id="nav-088cb88eb6088816" data-navigation-anchor="">找球。</li>
+<li id="nav-e72743225a87abe3" data-navigation-anchor="">維持胸口展開。</li>
+<li id="nav-aca9d3c34c619938" data-navigation-anchor="">空中平衡。</li>
+<li id="nav-8cb2dd13c4c71fdd" data-navigation-anchor="">之後身體旋轉的節奏。</li>
 </ul>
-<p>因此新增一個問題：</p>
+<p id="nav-4c69975acd29f0bd" data-navigation-anchor="">因此新增一個問題：</p>
 <blockquote>
-<p><strong>我的非擊球手是不是太早結束工作？</strong></p>
+<p id="nav-99d5a4c0563c68f8" data-navigation-anchor=""><strong>我的非擊球手是不是太早結束工作？</strong></p>
 </blockquote>
-<p>這不是要強迫自己一直把左手伸直。</p>
-<p>真正想觀察的是：</p>
+<p id="nav-a7e36f188a6af3c5" data-navigation-anchor="">這不是要強迫自己一直把左手伸直。</p>
+<p id="nav-befe959136647c76" data-navigation-anchor="">真正想觀察的是：</p>
 <blockquote>
-<p>左手能不能先完成找球與展開，再配合身體進入出手？</p>
+<p id="nav-24ae24317fced72f" data-navigation-anchor="">左手能不能先完成找球與展開，再配合身體進入出手？</p>
 </blockquote>
-<h3 id="3-軀幹側彎很明顯，但目前降為次要問題"><a href="#3-軀幹側彎很明顯，但目前降為次要問題" class="headerlink" title="3. 軀幹側彎很明顯，但目前降為次要問題"></a>3. 軀幹側彎很明顯，但目前降為次要問題</h3><p>目前影像中，我的軀幹側彎確實相當明顯。</p>
-<p>一開始我懷疑：</p>
+<h3 id="3-軀幹側彎很明顯，但目前降為次要問題" data-navigation-anchor=""><a href="#3-軀幹側彎很明顯，但目前降為次要問題" class="headerlink" title="3. 軀幹側彎很明顯，但目前降為次要問題"></a>3. 軀幹側彎很明顯，但目前降為次要問題</h3><p id="nav-6a77a27db2860d8e" data-navigation-anchor="">目前影像中，我的軀幹側彎確實相當明顯。</p>
+<p id="nav-13d15ccc9330af28" data-navigation-anchor="">一開始我懷疑：</p>
 <blockquote>
-<p>我是不是用側彎，去補足原本應由旋轉、伸展或起跳位置創造的擊球空間？</p>
+<p id="nav-1f2e4710d7da60ac" data-navigation-anchor="">我是不是用側彎，去補足原本應由旋轉、伸展或起跳位置創造的擊球空間？</p>
 </blockquote>
-<p>但和朋友重新討論後，目前會把這個問題的順位降低。</p>
-<p>排球攻擊本來就可能包含軀幹側彎，因此：</p>
+<p id="nav-bac98a55fd867e54" data-navigation-anchor="">但和朋友重新討論後，目前會把這個問題的順位降低。</p>
+<p id="nav-f94f0c7f38ae6b9d" data-navigation-anchor="">排球攻擊本來就可能包含軀幹側彎，因此：</p>
 <blockquote>
-<p><strong>歪向一邊本身不一定是最大的問題。</strong></p>
+<p id="nav-bdcd850ccb96878c" data-navigation-anchor=""><strong>歪向一邊本身不一定是最大的問題。</strong></p>
 </blockquote>
-<p>更值得看的反而是：</p>
+<p id="nav-695a6d9a4c644e35" data-navigation-anchor="">更值得看的反而是：</p>
 <blockquote>
-<p>側彎發生時，我還有沒有保持身體展開與帶動？</p>
+<p id="nav-a91aab0117062c0e" data-navigation-anchor="">側彎發生時，我還有沒有保持身體展開與帶動？</p>
 </blockquote>
-<p>還是：</p>
+<p id="nav-a65b0f5afa4613f4" data-navigation-anchor="">還是：</p>
 <blockquote>
-<p>身體已經縮起來，再由肩膀和手臂主動完成攻擊？</p>
+<p id="nav-fc1ec7861ea3183a" data-navigation-anchor="">身體已經縮起來，再由肩膀和手臂主動完成攻擊？</p>
 </blockquote>
-<p>因此之後不再單獨判斷：</p>
+<p id="nav-15ba7329faf7b92c" data-navigation-anchor="">因此之後不再單獨判斷：</p>
 <blockquote>
-<p>身體到底歪了幾度？</p>
+<p id="nav-417bcbd3502a252f" data-navigation-anchor="">身體到底歪了幾度？</p>
 </blockquote>
-<p>而是連同：</p>
+<p id="nav-94efb51634d9edd5" data-navigation-anchor="">而是連同：</p>
 <ul>
-<li>胸口是否仍然打開。</li>
-<li>肩膀是否上提。</li>
-<li>頭頸是否縮起。</li>
-<li>手肘什麼時候往前。</li>
-<li>身體與手臂誰先開始出手。</li>
+<li id="nav-adad252b837569f7" data-navigation-anchor="">胸口是否仍然打開。</li>
+<li id="nav-eb5da3cfb813c967" data-navigation-anchor="">肩膀是否上提。</li>
+<li id="nav-84bf557f0094538d" data-navigation-anchor="">頭頸是否縮起。</li>
+<li id="nav-bc2c1ad09d81f6cf" data-navigation-anchor="">手肘什麼時候往前。</li>
+<li id="nav-549034a49225cb60" data-navigation-anchor="">身體與手臂誰先開始出手。</li>
 </ul>
-<p>一起觀察。</p>
-<p>目前側彎比較像是一個<strong>伴隨現象</strong>，而不是已經確認的核心問題。</p>
-<h3 id="4-整體動作偏急"><a href="#4-整體動作偏急" class="headerlink" title="4. 整體動作偏急"></a>4. 整體動作偏急</h3><p>從助跑、起跳準備、拉弓到出手，整體有一個相當明顯的特徵：</p>
+<p id="nav-73e73e75f1fb973b" data-navigation-anchor="">一起觀察。</p>
+<p id="nav-00b617727b42e4a3" data-navigation-anchor="">目前側彎比較像是一個<strong>伴隨現象</strong>，而不是已經確認的核心問題。</p>
+<h3 id="4-整體動作偏急" data-navigation-anchor=""><a href="#4-整體動作偏急" class="headerlink" title="4. 整體動作偏急"></a>4. 整體動作偏急</h3><p id="nav-0fdef8f81c43c11f" data-navigation-anchor="">從助跑、起跳準備、拉弓到出手，整體有一個相當明顯的特徵：</p>
 <blockquote>
-<p><strong>很多動作很快就接到下一個動作。</strong></p>
+<p id="nav-c2599f853d94f33f" data-navigation-anchor=""><strong>很多動作很快就接到下一個動作。</strong></p>
 </blockquote>
-<p>例如：</p>
+<p id="nav-cfc44ef8ece5af8b" data-navigation-anchor="">例如：</p>
 <ul>
-<li>準備起跳後很快進入上肢動作。</li>
-<li>左手很快收回。</li>
-<li>拉弓位置雖然存在，但很快就結束。</li>
-<li>接著上半身迅速進入揮臂與收縮。</li>
+<li id="nav-b7aefcdb509da636" data-navigation-anchor="">準備起跳後很快進入上肢動作。</li>
+<li id="nav-dbbadac315cf8127" data-navigation-anchor="">左手很快收回。</li>
+<li id="nav-9b854e1422e904ac" data-navigation-anchor="">拉弓位置雖然存在，但很快就結束。</li>
+<li id="nav-6ac94c554716f5b5" data-navigation-anchor="">接著上半身迅速進入揮臂與收縮。</li>
 </ul>
-<p>這和自己打球時一直有的體感：</p>
+<p id="nav-2ceef4cd5f9b2b21" data-navigation-anchor="">這和自己打球時一直有的體感：</p>
 <blockquote>
-<p>「怕來不及。」</p>
+<p id="nav-77e27514423ad2e4" data-navigation-anchor="">「怕來不及。」</p>
 </blockquote>
-<p>是相符的。</p>
-<p>因此，「節奏偏急」目前不再只有主觀感覺，也開始能在影像裡找到相對應的線索。</p>
-<h2 id="討論後新增的線索"><a href="#討論後新增的線索" class="headerlink" title="討論後新增的線索"></a>討論後新增的線索</h2><p>重新討論影片後，有一個我之前完全沒有注意到的特徵：</p>
+<p id="nav-43a2eabcc9b8afe1" data-navigation-anchor="">是相符的。</p>
+<p id="nav-f9bb0da40b6ca41c" data-navigation-anchor="">因此，「節奏偏急」目前不再只有主觀感覺，也開始能在影像裡找到相對應的線索。</p>
+<h2 id="討論後新增的線索" data-navigation-anchor=""><a href="#討論後新增的線索" class="headerlink" title="討論後新增的線索"></a>討論後新增的線索</h2><p id="nav-443093e64a02bcf1" data-navigation-anchor="">重新討論影片後，有一個我之前完全沒有注意到的特徵：</p>
 <blockquote>
-<p><strong>進入揮臂時，擊球側手肘似乎很快就跑到肩膀前面。</strong></p>
+<p id="nav-efff3b0db94e977a" data-navigation-anchor=""><strong>進入揮臂時，擊球側手肘似乎很快就跑到肩膀前面。</strong></p>
 </blockquote>
-<p>朋友認為，相較於身體歪向一邊，更值得注意的是：</p>
+<p id="nav-ec00aa3227104ac8" data-navigation-anchor="">朋友認為，相較於身體歪向一邊，更值得注意的是：</p>
 <blockquote>
-<p><strong>我揮臂時會把肩膀和脖子縮起來，整個人從展開狀態縮成一團，再用手臂完成出力。</strong></p>
+<p id="nav-a2f51c484f00fbb7" data-navigation-anchor=""><strong>我揮臂時會把肩膀和脖子縮起來，整個人從展開狀態縮成一團，再用手臂完成出力。</strong></p>
 </blockquote>
-<p>這個觀察讓「用肩膀打球」變得比原本具體很多。</p>
+<p id="nav-1972d94f4a94751b" data-navigation-anchor="">這個觀察讓「用肩膀打球」變得比原本具體很多。</p>
 <hr>
-<h1 id="重新理解「用肩膀打」"><a href="#重新理解「用肩膀打」" class="headerlink" title="重新理解「用肩膀打」"></a>重新理解「用肩膀打」</h1><p>以前聽到：</p>
+<h1 id="重新理解「用肩膀打」"><a href="#重新理解「用肩膀打」" class="headerlink" title="重新理解「用肩膀打」"></a>重新理解「用肩膀打」</h1><p id="nav-b8c69ca849214520" data-navigation-anchor="">以前聽到：</p>
 <blockquote>
-<p>你在用肩膀打球。</p>
+<p id="nav-12f33be9a464b58a" data-navigation-anchor="">你在用肩膀打球。</p>
 </blockquote>
-<p>對我來說其實很抽象。</p>
-<p>因為排球攻擊本來就一定會使用肩膀，不可能要求：</p>
+<p id="nav-fa7c6122b05b968f" data-navigation-anchor="">對我來說其實很抽象。</p>
+<p id="nav-86e12f359f361370" data-navigation-anchor="">因為排球攻擊本來就一定會使用肩膀，不可能要求：</p>
 <blockquote>
-<p>肩膀完全不要出力。</p>
+<p id="nav-db186ddf6def6153" data-navigation-anchor="">肩膀完全不要出力。</p>
 </blockquote>
-<p>所以真正的問題應該不是：</p>
+<p id="nav-2b45eef09eb90f8b" data-navigation-anchor="">所以真正的問題應該不是：</p>
 <blockquote>
-<p>肩膀有沒有出力？</p>
+<p id="nav-d57f6bae78d96ba5" data-navigation-anchor="">肩膀有沒有出力？</p>
 </blockquote>
-<p>而是：</p>
+<p id="nav-fcb5d6165cb9635f" data-navigation-anchor="">而是：</p>
 <blockquote>
-<p><strong>肩膀和手臂是不是太早成為主要出力者？</strong></p>
+<p id="nav-de547a3b6603a219" data-navigation-anchor=""><strong>肩膀和手臂是不是太早成為主要出力者？</strong></p>
 </blockquote>
-<p>目前從影片與討論，暫時可以把「上肢提早主導」拆成幾個可觀察特徵。</p>
-<h3 id="1-手肘很早跑到肩膀前方"><a href="#1-手肘很早跑到肩膀前方" class="headerlink" title="1. 手肘很早跑到肩膀前方"></a>1. 手肘很早跑到肩膀前方</h3><p>拉弓本身存在，但開始揮臂後，手肘很快就跑向前方。</p>
-<p>真正需要確認的是：</p>
+<p id="nav-92093e657c10207b" data-navigation-anchor="">目前從影片與討論，暫時可以把「上肢提早主導」拆成幾個可觀察特徵。</p>
+<h3 id="1-手肘很早跑到肩膀前方" data-navigation-anchor=""><a href="#1-手肘很早跑到肩膀前方" class="headerlink" title="1. 手肘很早跑到肩膀前方"></a>1. 手肘很早跑到肩膀前方</h3><p id="nav-e7edd54ae2273656" data-navigation-anchor="">拉弓本身存在，但開始揮臂後，手肘很快就跑向前方。</p>
+<p id="nav-c710d3e11eaacda7" data-navigation-anchor="">真正需要確認的是：</p>
 <blockquote>
-<p><strong>手肘超過肩膀時，胸口到底已經開始轉了沒有？</strong></p>
+<p id="nav-f70e66436a49c1b1" data-navigation-anchor=""><strong>手肘超過肩膀時，胸口到底已經開始轉了沒有？</strong></p>
 </blockquote>
-<p>如果胸口還沒有充分開始帶動，手肘就已經先搶到前方，那比較可能代表：</p>
+<p id="nav-a3d0c6427e57ef79" data-navigation-anchor="">如果胸口還沒有充分開始帶動，手肘就已經先搶到前方，那比較可能代表：</p>
 <blockquote>
-<p>上肢提早接管了動作。</p>
+<p id="nav-03f252d301fbbea0" data-navigation-anchor="">上肢提早接管了動作。</p>
 </blockquote>
-<h3 id="2-擊球側肩膀上提"><a href="#2-擊球側肩膀上提" class="headerlink" title="2. 擊球側肩膀上提"></a>2. 擊球側肩膀上提</h3><p>在出手時，肩膀似乎有往耳朵方向縮起來的現象。</p>
-<p>這讓整個動作不像：</p>
+<h3 id="2-擊球側肩膀上提" data-navigation-anchor=""><a href="#2-擊球側肩膀上提" class="headerlink" title="2. 擊球側肩膀上提"></a>2. 擊球側肩膀上提</h3><p id="nav-a6f0e6f968da7d56" data-navigation-anchor="">在出手時，肩膀似乎有往耳朵方向縮起來的現象。</p>
+<p id="nav-af3aad1d7c3cb60f" data-navigation-anchor="">這讓整個動作不像：</p>
 <blockquote>
-<p>身體打開 → 肩膀被帶出去 → 手臂最後加速，</p>
+<p id="nav-b7ec273a8831582d" data-navigation-anchor="">身體打開 → 肩膀被帶出去 → 手臂最後加速，</p>
 </blockquote>
-<p>反而比較像：</p>
+<p id="nav-a29ee5bd3ad926af" data-navigation-anchor="">反而比較像：</p>
 <blockquote>
-<p>肩膀先縮起來 → 上臂往前 → 手臂完成揮擊。</p>
+<p id="nav-409301867eb500d5" data-navigation-anchor="">肩膀先縮起來 → 上臂往前 → 手臂完成揮擊。</p>
 </blockquote>
-<p>目前這只是影片觀察，不直接把它等同於某種傷害。</p>
-<h3 id="3-脖子也跟著縮起來"><a href="#3-脖子也跟著縮起來" class="headerlink" title="3. 脖子也跟著縮起來"></a>3. 脖子也跟著縮起來</h3><p>朋友形容我揮臂時：</p>
+<p id="nav-bc3a8ca00d0fcf0b" data-navigation-anchor="">目前這只是影片觀察，不直接把它等同於某種傷害。</p>
+<h3 id="3-脖子也跟著縮起來" data-navigation-anchor=""><a href="#3-脖子也跟著縮起來" class="headerlink" title="3. 脖子也跟著縮起來"></a>3. 脖子也跟著縮起來</h3><p id="nav-f1c0c8b40e6217ab" data-navigation-anchor="">朋友形容我揮臂時：</p>
 <blockquote>
-<p>「縮著脖子打。」</p>
+<p id="nav-d8934edce69a9e97" data-navigation-anchor="">「縮著脖子打。」</p>
 </blockquote>
-<p>重新看影像後，這個描述其實滿有用。</p>
-<p>它代表需要注意的可能不只是肩關節本身，而是：</p>
+<p id="nav-78373b411d8a2a6c" data-navigation-anchor="">重新看影像後，這個描述其實滿有用。</p>
+<p id="nav-50b4fdab07160a5e" data-navigation-anchor="">它代表需要注意的可能不只是肩關節本身，而是：</p>
 <blockquote>
-<p><strong>整個上半身在出手時是不是從展開狀態突然縮起來？</strong></p>
+<p id="nav-4cbc0c927f77a16c" data-navigation-anchor=""><strong>整個上半身在出手時是不是從展開狀態突然縮起來？</strong></p>
 </blockquote>
-<p>如果是這樣，那「問題」可能不是某一個關節角度，而是整體出手策略。</p>
-<h3 id="4-身體從展開變成縮起來"><a href="#4-身體從展開變成縮起來" class="headerlink" title="4. 身體從展開變成縮起來"></a>4. 身體從展開變成縮起來</h3><p>這可能是目前最能統整問題的一句話：</p>
+<p id="nav-5e88c04e72f748dc" data-navigation-anchor="">如果是這樣，那「問題」可能不是某一個關節角度，而是整體出手策略。</p>
+<h3 id="4-身體從展開變成縮起來" data-navigation-anchor=""><a href="#4-身體從展開變成縮起來" class="headerlink" title="4. 身體從展開變成縮起來"></a>4. 身體從展開變成縮起來</h3><p id="nav-36887cfce903247c" data-navigation-anchor="">這可能是目前最能統整問題的一句話：</p>
 <blockquote>
-<p><strong>我有做出拉弓，但拉弓之後沒有保持展開得夠久。</strong></p>
+<p id="nav-10e09ab251868522" data-navigation-anchor=""><strong>我有做出拉弓，但拉弓之後沒有保持展開得夠久。</strong></p>
 </blockquote>
-<p>接著很快就：</p>
+<p id="nav-ac2cef15e808aabb" data-navigation-anchor="">接著很快就：</p>
 <blockquote>
-<p>左手收回<br>→ 手肘往前<br>→ 肩膀上提<br>→ 脖子縮起<br>→ 上肢主動把攻擊完成。</p>
+<p id="nav-2d97a411375a10aa" data-navigation-anchor="">左手收回<br>→ 手肘往前<br>→ 肩膀上提<br>→ 脖子縮起<br>→ 上肢主動把攻擊完成。</p>
 </blockquote>
-<p>所以現在對我的動作來說，比：</p>
+<p id="nav-4bfe28d109cd468a" data-navigation-anchor="">所以現在對我的動作來說，比：</p>
 <blockquote>
-<p>「拉弓姿勢有沒有做出來？」</p>
+<p id="nav-860168e75167a5e5" data-navigation-anchor="">「拉弓姿勢有沒有做出來？」</p>
 </blockquote>
-<p>更重要的是：</p>
+<p id="nav-f41a36831cf2ae65" data-navigation-anchor="">更重要的是：</p>
 <blockquote>
-<p><strong>拉弓之後發生了什麼？</strong></p>
+<p id="nav-d443e12b675fd897" data-navigation-anchor=""><strong>拉弓之後發生了什麼？</strong></p>
 </blockquote>
-<h2 id="目前最值得驗證的假說"><a href="#目前最值得驗證的假說" class="headerlink" title="目前最值得驗證的假說"></a>目前最值得驗證的假說</h2><h3 id="身體可能沒有充分帶動手臂"><a href="#身體可能沒有充分帶動手臂" class="headerlink" title="身體可能沒有充分帶動手臂"></a>身體可能沒有充分帶動手臂</h3><p>朋友曾用幾個體感類比描述：</p>
+<h2 id="目前最值得驗證的假說" data-navigation-anchor=""><a href="#目前最值得驗證的假說" class="headerlink" title="目前最值得驗證的假說"></a>目前最值得驗證的假說</h2><h3 id="身體可能沒有充分帶動手臂" data-navigation-anchor=""><a href="#身體可能沒有充分帶動手臂" class="headerlink" title="身體可能沒有充分帶動手臂"></a>身體可能沒有充分帶動手臂</h3><p id="nav-bd99b8cd9b5b1981" data-navigation-anchor="">朋友曾用幾個體感類比描述：</p>
 <ul>
-<li>桌球抽球時的身體旋轉。</li>
-<li>投球時身體與手臂的先後。</li>
-<li>像投石機一樣，身體產生主要的帶動，手臂最後被加速出去。</li>
+<li id="nav-ae0fbb293c715f3b" data-navigation-anchor="">桌球抽球時的身體旋轉。</li>
+<li id="nav-c8fed0b7d3c2a64b" data-navigation-anchor="">投球時身體與手臂的先後。</li>
+<li id="nav-ecd2c8db7747e7b1" data-navigation-anchor="">像投石機一樣，身體產生主要的帶動，手臂最後被加速出去。</li>
 </ul>
-<p>這些運動的實際動作機制並不完全一樣，因此不適合直接照搬。</p>
-<p>目前真正值得留下的概念只有：</p>
+<p id="nav-38f26aad3e9d5698" data-navigation-anchor="">這些運動的實際動作機制並不完全一樣，因此不適合直接照搬。</p>
+<p id="nav-0966ac3c074627e6" data-navigation-anchor="">目前真正值得留下的概念只有：</p>
 <blockquote>
-<p><strong>力量不應該全部從肩膀單獨開始。</strong></p>
+<p id="nav-f9d75f51a7c3820d" data-navigation-anchor=""><strong>力量不應該全部從肩膀單獨開始。</strong></p>
 </blockquote>
-<p>我目前想像的動作順序比較接近：</p>
+<p id="nav-68d307b0cbcaa0b5" data-navigation-anchor="">我目前想像的動作順序比較接近：</p>
 <blockquote>
-<p>身體保持展開<br>→ 軀幹開始帶動<br>→ 擊球側肩膀跟進<br>→ 上臂向前<br>→ 前臂暫時落後<br>→ 前臂與手掌最後加速。</p>
+<p id="nav-9a0c6e345e33407d" data-navigation-anchor="">身體保持展開<br>→ 軀幹開始帶動<br>→ 擊球側肩膀跟進<br>→ 上臂向前<br>→ 前臂暫時落後<br>→ 前臂與手掌最後加速。</p>
 </blockquote>
-<p>而目前自己的模式，可能比較接近：</p>
+<p id="nav-c93c9b432660d24e" data-navigation-anchor="">而目前自己的模式，可能比較接近：</p>
 <blockquote>
-<p>身體開始動<br>→ 很快縮起來<br>→ 手肘先往前<br>→ 肩膀主動跟進<br>→ 手臂把剩下的動作完成。</p>
+<p id="nav-8ba342b2b59b1530" data-navigation-anchor="">身體開始動<br>→ 很快縮起來<br>→ 手肘先往前<br>→ 肩膀主動跟進<br>→ 手臂把剩下的動作完成。</p>
 </blockquote>
-<p>現在真正需要用實戰影片驗證的就是這兩種時序的差異。</p>
-<h3 id="Arm-Lag：從「位置」改成「時間差」"><a href="#Arm-Lag：從「位置」改成「時間差」" class="headerlink" title="Arm Lag：從「位置」改成「時間差」"></a>Arm Lag：從「位置」改成「時間差」</h3><p>我原本很在意：</p>
+<p id="nav-a59c98dfdb970773" data-navigation-anchor="">現在真正需要用實戰影片驗證的就是這兩種時序的差異。</p>
+<h3 id="Arm-Lag：從「位置」改成「時間差」" data-navigation-anchor=""><a href="#Arm-Lag：從「位置」改成「時間差」" class="headerlink" title="Arm Lag：從「位置」改成「時間差」"></a>Arm Lag：從「位置」改成「時間差」</h3><p id="nav-5ea01b74acd62dc5" data-navigation-anchor="">我原本很在意：</p>
 <ul>
-<li>Elbow Lead</li>
-<li>Up, Around, Down</li>
-<li>手肘有沒有經過頭頂</li>
+<li id="nav-b6c2be4d7f223ebc" data-navigation-anchor="">Elbow Lead</li>
+<li id="nav-3359e15d5f5468a9" data-navigation-anchor="">Up, Around, Down</li>
+<li id="nav-181f4abe5e1bb092" data-navigation-anchor="">手肘有沒有經過頭頂</li>
 </ul>
-<p>現在還是會保留這些詞，但理解方式已經改變。</p>
-<p>目前我更關心：</p>
+<p id="nav-713e0efe7fd24cc3" data-navigation-anchor="">現在還是會保留這些詞，但理解方式已經改變。</p>
+<p id="nav-2b1dd75b0b38ffb1" data-navigation-anchor="">目前我更關心：</p>
 <blockquote>
-<p><strong>上臂、前臂與手掌，是不是在不同時間開始加速？</strong></p>
+<p id="nav-53beec05b24c1995" data-navigation-anchor=""><strong>上臂、前臂與手掌，是不是在不同時間開始加速？</strong></p>
 </blockquote>
-<p>也就是我目前理解的 <strong>Arm Lag</strong>。</p>
-<p>想看到的順序接近：</p>
+<p id="nav-17438213c70489c9" data-navigation-anchor="">也就是我目前理解的 <strong>Arm Lag</strong>。</p>
+<p id="nav-7cb76c4dc942057e" data-navigation-anchor="">想看到的順序接近：</p>
 <blockquote>
-<p>軀幹<br>→ 上臂<br>→ 前臂<br>→ 手掌。</p>
+<p id="nav-9172f444598473a7" data-navigation-anchor="">軀幹<br>→ 上臂<br>→ 前臂<br>→ 手掌。</p>
 </blockquote>
-<p>而不是：</p>
+<p id="nav-28dd40b7a8f55de1" data-navigation-anchor="">而不是：</p>
 <blockquote>
-<p>整條手臂一起往前。</p>
+<p id="nav-178b317f6fc8505a" data-navigation-anchor="">整條手臂一起往前。</p>
 </blockquote>
-<p>如果整條手臂幾乎同步向前，就比較容易出現：</p>
+<p id="nav-daf92f50ffa27b84" data-navigation-anchor="">如果整條手臂幾乎同步向前，就比較容易出現：</p>
 <blockquote>
-<p>肩膀直接把整條手臂搬出去。</p>
+<p id="nav-e45a691fca41257c" data-navigation-anchor="">肩膀直接把整條手臂搬出去。</p>
 </blockquote>
-<p>所以現在真正要研究的不是：</p>
+<p id="nav-19124840f66b9555" data-navigation-anchor="">所以現在真正要研究的不是：</p>
 <blockquote>
-<p>我的手肘在哪裡？</p>
+<p id="nav-390b6e240ed1f14d" data-navigation-anchor="">我的手肘在哪裡？</p>
 </blockquote>
-<p>而是：</p>
+<p id="nav-fcb5d6165cb9635f-2" data-navigation-anchor="">而是：</p>
 <blockquote>
-<p><strong>我的手肘什麼時候開始往前？</strong></p>
+<p id="nav-e40a05babeb2a744" data-navigation-anchor=""><strong>我的手肘什麼時候開始往前？</strong></p>
 </blockquote>
 <hr>
-<h1 id="末端技術先降級"><a href="#末端技術先降級" class="headerlink" title="末端技術先降級"></a>末端技術先降級</h1><p>因此，目前不再把：</p>
+<h1 id="末端技術先降級"><a href="#末端技術先降級" class="headerlink" title="末端技術先降級"></a>末端技術先降級</h1><p id="nav-b9fa2c81e1f6a7f7" data-navigation-anchor="">因此，目前不再把：</p>
 <blockquote>
-<p>Elbow Lead &#x2F; Up, Around, Down</p>
+<p id="nav-b1e651c8b17d3bfc" data-navigation-anchor="">Elbow Lead / Up, Around, Down</p>
 </blockquote>
-<p>當成第一順位問題。</p>
-<p>它們比較適合拿來做第二階段觀察：</p>
+<p id="nav-14701f1ec49e752a" data-navigation-anchor="">當成第一順位問題。</p>
+<p id="nav-d2dad8bca649d6a5" data-navigation-anchor="">它們比較適合拿來做第二階段觀察：</p>
 <ol>
-<li>手肘是否有抬起？</li>
-<li>手肘什麼時候開始往前？</li>
-<li>手肘跑到肩膀前方時，身體是否已經開始帶動？</li>
-<li>上臂向前時，前臂是否仍然落後？</li>
-<li>前臂與手掌是否比較晚才追上？</li>
-<li>接觸球時手臂是否能自然伸展？</li>
-<li>擊球後是否能自然完成隨揮？</li>
+<li id="nav-7bdd74698868ff2a" data-navigation-anchor="">手肘是否有抬起？</li>
+<li id="nav-1f703c727c8591ff" data-navigation-anchor="">手肘什麼時候開始往前？</li>
+<li id="nav-2eec0399536104f0" data-navigation-anchor="">手肘跑到肩膀前方時，身體是否已經開始帶動？</li>
+<li id="nav-ab354ec3018d4670" data-navigation-anchor="">上臂向前時，前臂是否仍然落後？</li>
+<li id="nav-39f260fc9243bff2" data-navigation-anchor="">前臂與手掌是否比較晚才追上？</li>
+<li id="nav-c55a0569ca918705" data-navigation-anchor="">接觸球時手臂是否能自然伸展？</li>
+<li id="nav-15d4df6dfdb37412" data-navigation-anchor="">擊球後是否能自然完成隨揮？</li>
 </ol>
-<p>比起：</p>
+<p id="nav-94ac08731e608836" data-navigation-anchor="">比起：</p>
 <blockquote>
-<p>「手肘有沒有經過某個標準位置？」</p>
+<p id="nav-28c50be8e8dbed7b" data-navigation-anchor="">「手肘有沒有經過某個標準位置？」</p>
 </blockquote>
-<p>目前：</p>
+<p id="nav-c6a9c4cf2f48bc68" data-navigation-anchor="">目前：</p>
 <blockquote>
-<p><strong>身體與手肘的先後順序</strong></p>
+<p id="nav-478e8310de073c0a" data-navigation-anchor=""><strong>身體與手肘的先後順序</strong></p>
 </blockquote>
-<p>對我更有意義。</p>
-<h2 id="擊球點也先降級"><a href="#擊球點也先降級" class="headerlink" title="擊球點也先降級"></a>擊球點也先降級</h2><p>我原本把目標設定成：</p>
+<p id="nav-fd7a173fa25b9a90" data-navigation-anchor="">對我更有意義。</p>
+<h2 id="擊球點也先降級" data-navigation-anchor=""><a href="#擊球點也先降級" class="headerlink" title="擊球點也先降級"></a>擊球點也先降級</h2><p id="nav-435c76f713a10c5d" data-navigation-anchor="">我原本把目標設定成：</p>
 <blockquote>
-<p>在手臂充分伸展的高點，接觸球體後方偏上的位置。</p>
+<p id="nav-17ea7478032833ff" data-navigation-anchor="">在手臂充分伸展的高點，接觸球體後方偏上的位置。</p>
 </blockquote>
-<p>現在仍然會把高點與充分伸展當成技術參考，但不再預設：</p>
+<p id="nav-a2387031e1d8e1d3" data-navigation-anchor="">現在仍然會把高點與充分伸展當成技術參考，但不再預設：</p>
 <blockquote>
-<p>越接近頭頂正上方 &#x3D; 越正確。</p>
+<p id="nav-0e53f3830cb10361" data-navigation-anchor="">越接近頭頂正上方 = 越正確。</p>
 </blockquote>
-<p>比較靠身體前方的擊球點，本身可能只是不同球況、球路與攻擊選擇。</p>
-<p>因此真正需要看的不是單一幾何位置，而是：</p>
+<p id="nav-10932af5a4f005c0" data-navigation-anchor="">比較靠身體前方的擊球點，本身可能只是不同球況、球路與攻擊選擇。</p>
+<p id="nav-18185d08d15f20b9" data-navigation-anchor="">因此真正需要看的不是單一幾何位置，而是：</p>
 <ul>
-<li>接觸球時手臂能否充分伸展。</li>
-<li>球是否在自己可以控制的位置。</li>
-<li>能不能打出需要的方向。</li>
-<li>揮臂是否順暢。</li>
-<li>是否因為怕來不及而提前伸手等球。</li>
-<li>不同擊球位置下肩膀的感覺有沒有差異。</li>
+<li id="nav-31139aafc24c47e2" data-navigation-anchor="">接觸球時手臂能否充分伸展。</li>
+<li id="nav-76754d1ed41f7394" data-navigation-anchor="">球是否在自己可以控制的位置。</li>
+<li id="nav-370e601aa32d70ab" data-navigation-anchor="">能不能打出需要的方向。</li>
+<li id="nav-8bf3a654c5b2ffa8" data-navigation-anchor="">揮臂是否順暢。</li>
+<li id="nav-171273eab2d7a050" data-navigation-anchor="">是否因為怕來不及而提前伸手等球。</li>
+<li id="nav-1377111070aa89d7" data-navigation-anchor="">不同擊球位置下肩膀的感覺有沒有差異。</li>
 </ul>
-<p>所以目前的問題變成：</p>
+<p id="nav-ed7ad4eb942494bd" data-navigation-anchor="">所以目前的問題變成：</p>
 <blockquote>
-<p><strong>當前面的攻擊節奏與出手時序改善後，我自然形成的有效擊球點會在哪裡？</strong></p>
+<p id="nav-c467d9c1911c87dc" data-navigation-anchor=""><strong>當前面的攻擊節奏與出手時序改善後，我自然形成的有效擊球點會在哪裡？</strong></p>
 </blockquote>
-<p>而不是：</p>
+<p id="nav-28dd40b7a8f55de1-2" data-navigation-anchor="">而不是：</p>
 <blockquote>
-<p>我要怎麼硬把球點搬到頭頂？</p>
+<p id="nav-17feb3c9baf98d4c" data-navigation-anchor="">我要怎麼硬把球點搬到頭頂？</p>
 </blockquote>
 <hr>
-<h1 id="實戰中的上游節奏"><a href="#實戰中的上游節奏" class="headerlink" title="實戰中的上游節奏"></a>實戰中的上游節奏</h1><p>目前這組連續影格最大的限制是：</p>
+<h1 id="實戰中的上游節奏"><a href="#實戰中的上游節奏" class="headerlink" title="實戰中的上游節奏"></a>實戰中的上游節奏</h1><p id="nav-b5aca30c19b784da" data-navigation-anchor="">目前這組連續影格最大的限制是：</p>
 <blockquote>
-<p><strong>沒有看到實際球的位置。</strong></p>
+<p id="nav-1aab75ec3e23fd46" data-navigation-anchor=""><strong>沒有看到實際球的位置。</strong></p>
 </blockquote>
-<p>因此還不能證明我最早提出的一個假說：</p>
+<p id="nav-7705a71b110388fe" data-navigation-anchor="">因此還不能證明我最早提出的一個假說：</p>
 <blockquote>
-<p>我是不是因為球和起跳的位置不理想，才一直覺得來不及？</p>
+<p id="nav-a5486fe683d9bf57" data-navigation-anchor="">我是不是因為球和起跳的位置不理想，才一直覺得來不及？</p>
 </blockquote>
-<p>實戰影片還需要看：</p>
+<p id="nav-70f56d3f9a9c3e53" data-navigation-anchor="">實戰影片還需要看：</p>
 <ul>
-<li>球落在哪？</li>
-<li>我在哪裡起跳？</li>
-<li>我是在球下方、球後方還是球前方？</li>
-<li>球是不是已經跑到身體前面，才開始出手？</li>
-<li>我是不是因為助跑位置不好，只能在空中靠上半身補救？</li>
+<li id="nav-d11e2e01f8530cdb" data-navigation-anchor="">球落在哪？</li>
+<li id="nav-16ef11710e93475f" data-navigation-anchor="">我在哪裡起跳？</li>
+<li id="nav-87d87ecb42366f16" data-navigation-anchor="">我是在球下方、球後方還是球前方？</li>
+<li id="nav-5630e10914d1fd47" data-navigation-anchor="">球是不是已經跑到身體前面，才開始出手？</li>
+<li id="nav-d38de4ef3ae9a816" data-navigation-anchor="">我是不是因為助跑位置不好，只能在空中靠上半身補救？</li>
 </ul>
-<p>因此：</p>
+<p id="nav-39a4da0f27a3ce9a" data-navigation-anchor="">因此：</p>
 <blockquote>
-<p><strong>球與起跳節奏</strong></p>
+<p id="nav-db645a942d260421" data-navigation-anchor=""><strong>球與起跳節奏</strong></p>
 </blockquote>
-<p>仍然是整條問題鏈最上游、也最需要有球影片驗證的一環。</p>
-<h2 id="女排／混排網高下，我真正想改善的是什麼"><a href="#女排／混排網高下，我真正想改善的是什麼" class="headerlink" title="女排／混排網高下，我真正想改善的是什麼"></a>女排／混排網高下，我真正想改善的是什麼</h2><p>現在已經不太想把問題簡化成：</p>
+<p id="nav-a1d358fa41cee7b3" data-navigation-anchor="">仍然是整條問題鏈最上游、也最需要有球影片驗證的一環。</p>
+<h2 id="女排／混排網高下，我真正想改善的是什麼" data-navigation-anchor=""><a href="#女排／混排網高下，我真正想改善的是什麼" class="headerlink" title="女排／混排網高下，我真正想改善的是什麼"></a>女排／混排網高下，我真正想改善的是什麼</h2><p id="nav-ef2a8a2a9c7eca67" data-navigation-anchor="">現在已經不太想把問題簡化成：</p>
 <blockquote>
-<p>我能不能碰到球？</p>
+<p id="nav-4562750f6ac0e70d" data-navigation-anchor="">我能不能碰到球？</p>
 </blockquote>
-<p>真正希望改善的是：</p>
+<p id="nav-b860e4fbc5ec796f" data-navigation-anchor="">真正希望改善的是：</p>
 <ul>
-<li>有足夠時間完成攻擊動作。</li>
-<li>起跳後不要急著伸手等球。</li>
-<li>非擊球手可以先幫助找球與展開。</li>
-<li>出手時不要太早把自己縮起來。</li>
-<li>軀幹可以先帶動上肢。</li>
-<li>手肘不要在身體還沒開始帶動時就搶到前面。</li>
-<li>前臂與手掌可以自然形成較晚的加速。</li>
-<li>接觸球時手臂可以充分伸展。</li>
-<li>擊球後可以順暢完成動作。</li>
+<li id="nav-bdf620c92e8714d6" data-navigation-anchor="">有足夠時間完成攻擊動作。</li>
+<li id="nav-3108e885f150cc02" data-navigation-anchor="">起跳後不要急著伸手等球。</li>
+<li id="nav-86efacd28712b5c9" data-navigation-anchor="">非擊球手可以先幫助找球與展開。</li>
+<li id="nav-a7f28a099f2ce2a1" data-navigation-anchor="">出手時不要太早把自己縮起來。</li>
+<li id="nav-d30e09923cb1c8a3" data-navigation-anchor="">軀幹可以先帶動上肢。</li>
+<li id="nav-2a12a8ea7d6d0d39" data-navigation-anchor="">手肘不要在身體還沒開始帶動時就搶到前面。</li>
+<li id="nav-4170e1bf7998ba6f" data-navigation-anchor="">前臂與手掌可以自然形成較晚的加速。</li>
+<li id="nav-5f1b34a99cfe3aad" data-navigation-anchor="">接觸球時手臂可以充分伸展。</li>
+<li id="nav-2b970152daff3628" data-navigation-anchor="">擊球後可以順暢完成動作。</li>
 </ul>
-<p>在第一輪影像分析時，優先順序暫時排成：</p>
+<p id="nav-3ff7dd515eae0c18" data-navigation-anchor="">在第一輪影像分析時，優先順序暫時排成：</p>
 <blockquote>
-<p><strong>球與起跳節奏<br>→ 非擊球手與身體展開<br>→ 不要太早縮起來<br>→ 軀幹開始帶動<br>→ 手肘出手時序<br>→ 手臂順勢甩出<br>→ 手肘與前臂順序<br>→ 手臂伸展與擊球點<br>→ 隨揮與減速</strong></p>
+<p id="nav-0c6362f87f812a4d" data-navigation-anchor=""><strong>球與起跳節奏<br>→ 非擊球手與身體展開<br>→ 不要太早縮起來<br>→ 軀幹開始帶動<br>→ 手肘出手時序<br>→ 手臂順勢甩出<br>→ 手肘與前臂順序<br>→ 手臂伸展與擊球點<br>→ 隨揮與減速</strong></p>
 </blockquote>
 <hr>
-<h1 id="肩膀負荷與隨揮"><a href="#肩膀負荷與隨揮" class="headerlink" title="肩膀負荷與隨揮"></a>肩膀負荷與隨揮</h1><p>最近另外注意到：</p>
+<h1 id="肩膀負荷與隨揮"><a href="#肩膀負荷與隨揮" class="headerlink" title="肩膀負荷與隨揮"></a>肩膀負荷與隨揮</h1><p id="nav-e194e863d13c427b" data-navigation-anchor="">最近另外注意到：</p>
 <blockquote>
-<p>拉捷運吊環、手臂長時間維持高舉，以及排球揮臂後，上臂靠近肩膀的位置偶爾會緊繃、不舒服。</p>
+<p id="nav-9afa749ac2d499bb" data-navigation-anchor="">拉捷運吊環、手臂長時間維持高舉，以及排球揮臂後，上臂靠近肩膀的位置偶爾會緊繃、不舒服。</p>
 </blockquote>
-<p>依照目前的感覺，我會先把不適放進「可能涉及旋轉肌群負荷」的觀察欄位，但這仍然只是症狀定位的假說，不等於已經確認是哪一條肌肉或肌腱受傷，也不知道它和排球動作之間是否存在直接因果。</p>
-<p>需要分成兩條線。</p>
-<h3 id="動作問題"><a href="#動作問題" class="headerlink" title="動作問題"></a>動作問題</h3><p>目前影像與討論讓我開始懷疑：</p>
+<p id="nav-a179e79797811cbe" data-navigation-anchor="">依照目前的感覺，我會先把不適放進「可能涉及旋轉肌群負荷」的觀察欄位，但這仍然只是症狀定位的假說，不等於已經確認是哪一條肌肉或肌腱受傷，也不知道它和排球動作之間是否存在直接因果。</p>
+<p id="nav-1f2fe8b4c1739eac" data-navigation-anchor="">需要分成兩條線。</p>
+<h3 id="動作問題" data-navigation-anchor=""><a href="#動作問題" class="headerlink" title="動作問題"></a>動作問題</h3><p id="nav-68dbf56bb3823663" data-navigation-anchor="">目前影像與討論讓我開始懷疑：</p>
 <ul>
-<li>非擊球手收得偏早。</li>
-<li>身體展開時間偏短。</li>
-<li>手肘提早跑到肩膀前方。</li>
-<li>肩膀在揮臂時可能上提。</li>
-<li>頭頸跟著縮起來。</li>
-<li>上肢可能提早成為主要出力者。</li>
+<li id="nav-1263c3d7cb44cb25" data-navigation-anchor="">非擊球手收得偏早。</li>
+<li id="nav-eb0c959a6b0a02b6" data-navigation-anchor="">身體展開時間偏短。</li>
+<li id="nav-7e056158a0c1d408" data-navigation-anchor="">手肘提早跑到肩膀前方。</li>
+<li id="nav-be2478c09b8cc044" data-navigation-anchor="">肩膀在揮臂時可能上提。</li>
+<li id="nav-d1b191d49c1c8b4b" data-navigation-anchor="">頭頸跟著縮起來。</li>
+<li id="nav-d57ffee77874f3ab" data-navigation-anchor="">上肢可能提早成為主要出力者。</li>
 </ul>
-<p>所以：</p>
+<p id="nav-00d9964128d371fc" data-navigation-anchor="">所以：</p>
 <blockquote>
-<p><strong>肩膀是否承擔了過多原本可以由整體動作分擔的工作？</strong></p>
+<p id="nav-02766199b8a7857e" data-navigation-anchor=""><strong>肩膀是否承擔了過多原本可以由整體動作分擔的工作？</strong></p>
 </blockquote>
-<p>值得繼續研究。</p>
-<p>但不能直接寫成：</p>
+<p id="nav-0d48df75a62e33c4" data-navigation-anchor="">值得繼續研究。</p>
+<p id="nav-cb3ef67935943820" data-navigation-anchor="">但不能直接寫成：</p>
 <blockquote>
-<p>因為我的排球動作錯，所以拉吊環才不舒服。</p>
+<p id="nav-82a027c9c5f368bc" data-navigation-anchor="">因為我的排球動作錯，所以拉吊環才不舒服。</p>
 </blockquote>
-<h3 id="身體狀況"><a href="#身體狀況" class="headerlink" title="身體狀況"></a>身體狀況</h3><p>另外獨立記錄：</p>
+<h3 id="身體狀況" data-navigation-anchor=""><a href="#身體狀況" class="headerlink" title="身體狀況"></a>身體狀況</h3><p id="nav-1e33d8adec8e685f" data-navigation-anchor="">另外獨立記錄：</p>
 <blockquote>
-<p>我的肩膀／上臂到底在什麼情境會不舒服？</p>
+<p id="nav-e7e97898f3145f4a" data-navigation-anchor="">我的肩膀／上臂到底在什麼情境會不舒服？</p>
 </blockquote>
-<p>之後可以觀察：</p>
+<p id="nav-33ce1a7a1c21de66" data-navigation-anchor="">之後可以觀察：</p>
 <ul>
-<li>打球當下是否出現。</li>
-<li>打完幾小時後。</li>
-<li>隔天。</li>
-<li>拉吊環多久開始有感覺。</li>
-<li>前側、外側、後側還是肩頸。</li>
-<li>是緊、痠、痛、刺還是無力。</li>
-<li>抬手是否出現。</li>
-<li>是否逐漸加重。</li>
-<li>是否影響睡眠或日常活動。</li>
+<li id="nav-4bc60574580a57d5" data-navigation-anchor="">打球當下是否出現。</li>
+<li id="nav-b6598550d65a6fb0" data-navigation-anchor="">打完幾小時後。</li>
+<li id="nav-79fdd0b0e542d768" data-navigation-anchor="">隔天。</li>
+<li id="nav-c3667a455e59ebc7" data-navigation-anchor="">拉吊環多久開始有感覺。</li>
+<li id="nav-e3f56a01bc84a42d" data-navigation-anchor="">前側、外側、後側還是肩頸。</li>
+<li id="nav-21bd627c117ff35d" data-navigation-anchor="">是緊、痠、痛、刺還是無力。</li>
+<li id="nav-bc53e502414c1e13" data-navigation-anchor="">抬手是否出現。</li>
+<li id="nav-576f3519ae2ec2f9" data-navigation-anchor="">是否逐漸加重。</li>
+<li id="nav-d89cef529fa9ee62" data-navigation-anchor="">是否影響睡眠或日常活動。</li>
 </ul>
-<p>如果不適持續、加重，或開始出現明顯疼痛、無力、夜間痛或影響日常抬手，這就不只是技術研究問題，應由醫師、物理治療師或其他合格專業人員評估。</p>
-<p>這次新的實戰觀察可以讓肩膀假說更具體，但仍不能用來反推診斷：如果球距離、起跳與揮臂時序改變後，不適也跟著改變，只能說明動作負荷可能值得繼續追蹤，不能直接證明旋轉肌群就是唯一原因。</p>
-<h2 id="擊球後：隨揮不是手最後停在哪"><a href="#擊球後：隨揮不是手最後停在哪" class="headerlink" title="擊球後：隨揮不是手最後停在哪"></a>擊球後：隨揮不是手最後停在哪</h2><p>我原本也很在意：</p>
+<p id="nav-e220cad72becbc24" data-navigation-anchor="">如果不適持續、加重，或開始出現明顯疼痛、無力、夜間痛或影響日常抬手，這就不只是技術研究問題，應由醫師、物理治療師或其他合格專業人員評估。</p>
+<p id="nav-610614b359d9206d" data-navigation-anchor="">這次新的實戰觀察可以讓肩膀假說更具體，但仍不能用來反推診斷：如果球距離、起跳與揮臂時序改變後，不適也跟著改變，只能說明動作負荷可能值得繼續追蹤，不能直接證明旋轉肌群就是唯一原因。</p>
+<h2 id="擊球後：隨揮不是手最後停在哪" data-navigation-anchor=""><a href="#擊球後：隨揮不是手最後停在哪" class="headerlink" title="擊球後：隨揮不是手最後停在哪"></a>擊球後：隨揮不是手最後停在哪</h2><p id="nav-424bf4b9438f478c" data-navigation-anchor="">我原本也很在意：</p>
 <blockquote>
-<p>擊球後是不是用肩膀與手臂硬煞車？</p>
+<p id="nav-9c859dda685dad67" data-navigation-anchor="">擊球後是不是用肩膀與手臂硬煞車？</p>
 </blockquote>
-<p>目前這個問題還沒有足夠影像可以定論。</p>
-<p>但對 <strong>Follow-through</strong> 的理解已經稍微改變。</p>
-<p>現在不是問：</p>
+<p id="nav-0b7f72a34c31d35b" data-navigation-anchor="">目前這個問題還沒有足夠影像可以定論。</p>
+<p id="nav-b069702d222f330c" data-navigation-anchor="">但對 <strong>Follow-through</strong> 的理解已經稍微改變。</p>
+<p id="nav-4897770044f3a0cd" data-navigation-anchor="">現在不是問：</p>
 <blockquote>
-<p>手最後應該停在哪裡？</p>
+<p id="nav-bc0fd1f48caf751d" data-navigation-anchor="">手最後應該停在哪裡？</p>
 </blockquote>
-<p>而是：</p>
+<p id="nav-fcb5d6165cb9635f-3" data-navigation-anchor="">而是：</p>
 <ul>
-<li>接觸球後手臂能不能自然繼續走？</li>
-<li>是否自然跨過身體？</li>
-<li>軀幹是否能繼續完成動作？</li>
-<li>還是整條手臂突然在肩膀附近停住？</li>
-<li>身體是否能共同吸收剩餘動量？</li>
+<li id="nav-27d49968bd19e8dd" data-navigation-anchor="">接觸球後手臂能不能自然繼續走？</li>
+<li id="nav-753c186bea75f5c8" data-navigation-anchor="">是否自然跨過身體？</li>
+<li id="nav-5e16c026cb020233" data-navigation-anchor="">軀幹是否能繼續完成動作？</li>
+<li id="nav-8bca5cc668da9bff" data-navigation-anchor="">還是整條手臂突然在肩膀附近停住？</li>
+<li id="nav-0c92cfad3e7fc6a3" data-navigation-anchor="">身體是否能共同吸收剩餘動量？</li>
 </ul>
-<p>所以：</p>
+<p id="nav-00d9964128d371fc-2" data-navigation-anchor="">所以：</p>
 <blockquote>
-<p><strong>Follow-through 是整個動作的減速階段，不只是手最後擺在哪裡。</strong></p>
+<p id="nav-e0d18229b2bf996a" data-navigation-anchor=""><strong>Follow-through 是整個動作的減速階段，不只是手最後擺在哪裡。</strong></p>
 </blockquote>
 <hr>
-<h1 id="實際練習與下一步觀察"><a href="#實際練習與下一步觀察" class="headerlink" title="實際練習與下一步觀察"></a>實際練習與下一步觀察</h1><p>現在可以把原本混在一起的「扣球怪怪的」拆成四層。</p>
-<h2 id="1-實戰節奏"><a href="#1-實戰節奏" class="headerlink" title="1. 實戰節奏"></a>1. 實戰節奏</h2><h3 id="1-1-球與起跳"><a href="#1-1-球與起跳" class="headerlink" title="1.1 球與起跳"></a>1.1 球與起跳</h3><p>我是不是因為：</p>
+<h1 id="實際練習與下一步觀察"><a href="#實際練習與下一步觀察" class="headerlink" title="實際練習與下一步觀察"></a>實際練習與下一步觀察</h1><p id="nav-43a423c28bf33c1f" data-navigation-anchor="">現在可以把原本混在一起的「扣球怪怪的」拆成四層。</p>
+<h2 id="1-實戰節奏" data-navigation-anchor=""><a href="#1-實戰節奏" class="headerlink" title="1. 實戰節奏"></a>1. 實戰節奏</h2><h3 id="1-1-球與起跳" data-navigation-anchor=""><a href="#1-1-球與起跳" class="headerlink" title="1.1 球與起跳"></a>1.1 球與起跳</h3><p id="nav-257b373a36b59a68" data-navigation-anchor="">我是不是因為：</p>
 <ul>
-<li>助跑位置。</li>
-<li>起跳時間。</li>
-<li>和球的前後距離。</li>
+<li id="nav-faba2be223ea19de" data-navigation-anchor="">助跑位置。</li>
+<li id="nav-c07a3974b39a9943" data-navigation-anchor="">起跳時間。</li>
+<li id="nav-5fa0ee8a04d8c941" data-navigation-anchor="">和球的前後距離。</li>
 </ul>
-<p>不夠穩定，而經常產生：</p>
+<p id="nav-738c0cf67a72d45b" data-navigation-anchor="">不夠穩定，而經常產生：</p>
 <blockquote>
-<p>「來不及了，要趕快出手。」</p>
+<p id="nav-7cbd4bab496016d2" data-navigation-anchor="">「來不及了，要趕快出手。」</p>
 </blockquote>
-<p>如果這一層有問題，後面的手臂可能一直都只是在救球。</p>
-<p>但新的觀察讓我不能再把所有問題先歸到起跳高度：昨天有些<strong>單腳起跳、和球距離較遠</strong>的情況，反而能把揮臂完整走完。這表示球與身體的距離、身體是否被球點卡住，可能比單純跳多高更直接影響揮臂有沒有空間完成。這裡先當成動作假說，還要用影片比較不同起跳方式與球距離，不能直接推論「越遠越好」。</p>
-<h2 id="2-身體能不能保持展開"><a href="#2-身體能不能保持展開" class="headerlink" title="2. 身體能不能保持展開"></a>2. 身體能不能保持展開</h2><h3 id="2-1-非擊球手是不是收得太早？"><a href="#2-1-非擊球手是不是收得太早？" class="headerlink" title="2.1 非擊球手是不是收得太早？"></a>2.1 非擊球手是不是收得太早？</h3><p>目前影像相對明顯。</p>
-<p>需要觀察：</p>
+<p id="nav-24d64ea58938bafb" data-navigation-anchor="">如果這一層有問題，後面的手臂可能一直都只是在救球。</p>
+<p id="nav-efb601260b2596bc" data-navigation-anchor="">但新的觀察讓我不能再把所有問題先歸到起跳高度：昨天有些<strong>單腳起跳、和球距離較遠</strong>的情況，反而能把揮臂完整走完。這表示球與身體的距離、身體是否被球點卡住，可能比單純跳多高更直接影響揮臂有沒有空間完成。這裡先當成動作假說，還要用影片比較不同起跳方式與球距離，不能直接推論「越遠越好」。</p>
+<h2 id="2-身體能不能保持展開" data-navigation-anchor=""><a href="#2-身體能不能保持展開" class="headerlink" title="2. 身體能不能保持展開"></a>2. 身體能不能保持展開</h2><h3 id="2-1-非擊球手是不是收得太早？" data-navigation-anchor=""><a href="#2-1-非擊球手是不是收得太早？" class="headerlink" title="2.1 非擊球手是不是收得太早？"></a>2.1 非擊球手是不是收得太早？</h3><p id="nav-72f80632ec91054d" data-navigation-anchor="">目前影像相對明顯。</p>
+<p id="nav-46edec58b7ff4c9e" data-navigation-anchor="">需要觀察：</p>
 <blockquote>
-<p>左手能不能先完成找球與展開，再配合身體進入出手？</p>
+<p id="nav-24ae24317fced72f-2" data-navigation-anchor="">左手能不能先完成找球與展開，再配合身體進入出手？</p>
 </blockquote>
 <hr>
-<h3 id="2-2-我是不是太早把自己縮起來？"><a href="#2-2-我是不是太早把自己縮起來？" class="headerlink" title="2.2 我是不是太早把自己縮起來？"></a>2.2 我是不是太早把自己縮起來？</h3><p>目前新的重要觀察是：</p>
+<h3 id="2-2-我是不是太早把自己縮起來？" data-navigation-anchor=""><a href="#2-2-我是不是太早把自己縮起來？" class="headerlink" title="2.2 我是不是太早把自己縮起來？"></a>2.2 我是不是太早把自己縮起來？</h3><p id="nav-f640838f08708dcc" data-navigation-anchor="">目前新的重要觀察是：</p>
 <ul>
-<li>擊球側肩膀上提。</li>
-<li>脖子跟著縮起來。</li>
-<li>上半身展開狀態快速消失。</li>
+<li id="nav-1d4c01193bad0821" data-navigation-anchor="">擊球側肩膀上提。</li>
+<li id="nav-f62f87ecd5bb892f" data-navigation-anchor="">脖子跟著縮起來。</li>
+<li id="nav-82920500cea5fd69" data-navigation-anchor="">上半身展開狀態快速消失。</li>
 </ul>
-<p>所以比：</p>
+<p id="nav-e4e35d6f6cd3c9ae" data-navigation-anchor="">所以比：</p>
 <blockquote>
-<p>身體有沒有歪？</p>
+<p id="nav-ba044dcded8f1502" data-navigation-anchor="">身體有沒有歪？</p>
 </blockquote>
-<p>更值得研究的是：</p>
+<p id="nav-a9c666c6ae31f9a8" data-navigation-anchor="">更值得研究的是：</p>
 <blockquote>
-<p><strong>我能不能保持展開得久一點？</strong></p>
+<p id="nav-e08af758704fd952" data-navigation-anchor=""><strong>我能不能保持展開得久一點？</strong></p>
 </blockquote>
-<h2 id="3-身體和手臂誰先動"><a href="#3-身體和手臂誰先動" class="headerlink" title="3. 身體和手臂誰先動"></a>3. 身體和手臂誰先動</h2><h3 id="3-1-手肘是不是太早跑到肩膀前面？"><a href="#3-1-手肘是不是太早跑到肩膀前面？" class="headerlink" title="3.1 手肘是不是太早跑到肩膀前面？"></a>3.1 手肘是不是太早跑到肩膀前面？</h3><p>這是目前新增的重要影片指標。</p>
-<p>真正要確認的是：</p>
+<h2 id="3-身體和手臂誰先動" data-navigation-anchor=""><a href="#3-身體和手臂誰先動" class="headerlink" title="3. 身體和手臂誰先動"></a>3. 身體和手臂誰先動</h2><h3 id="3-1-手肘是不是太早跑到肩膀前面？" data-navigation-anchor=""><a href="#3-1-手肘是不是太早跑到肩膀前面？" class="headerlink" title="3.1 手肘是不是太早跑到肩膀前面？"></a>3.1 手肘是不是太早跑到肩膀前面？</h3><p id="nav-8e6ce6924366da74" data-navigation-anchor="">這是目前新增的重要影片指標。</p>
+<p id="nav-0fc79ac4cf94659a" data-navigation-anchor="">真正要確認的是：</p>
 <blockquote>
-<p><strong>手肘開始超過肩膀時，胸口是否已經開始有效帶動？</strong></p>
+<p id="nav-748ed61ebf81b69e" data-navigation-anchor=""><strong>手肘開始超過肩膀時，胸口是否已經開始有效帶動？</strong></p>
 </blockquote>
-<p>如果身體還沒有開始帶動，手肘就已經搶到前面，可能代表上肢太早接管動作。</p>
-<h3 id="3-2-肩膀是不是太早成為主要出力者？"><a href="#3-2-肩膀是不是太早成為主要出力者？" class="headerlink" title="3.2 肩膀是不是太早成為主要出力者？"></a>3.2 肩膀是不是太早成為主要出力者？</h3><p>現在對「肩膀主導」的理解，不是：</p>
+<p id="nav-7d91003533291654" data-navigation-anchor="">如果身體還沒有開始帶動，手肘就已經搶到前面，可能代表上肢太早接管動作。</p>
+<h3 id="3-2-肩膀是不是太早成為主要出力者？" data-navigation-anchor=""><a href="#3-2-肩膀是不是太早成為主要出力者？" class="headerlink" title="3.2 肩膀是不是太早成為主要出力者？"></a>3.2 肩膀是不是太早成為主要出力者？</h3><p id="nav-86a6f4764f9655d2" data-navigation-anchor="">現在對「肩膀主導」的理解，不是：</p>
 <blockquote>
-<p>肩膀出了很多力。</p>
+<p id="nav-66813661ad3b9c4f" data-navigation-anchor="">肩膀出了很多力。</p>
 </blockquote>
-<p>而是：</p>
+<p id="nav-fcb5d6165cb9635f-4" data-navigation-anchor="">而是：</p>
 <blockquote>
-<p><strong>肩膀和手臂在動作鏈中太早開始主動工作。</strong></p>
+<p id="nav-b19ff7a06b8edfc8" data-navigation-anchor=""><strong>肩膀和手臂在動作鏈中太早開始主動工作。</strong></p>
 </blockquote>
-<h3 id="3-3-手臂有沒有形成延遲？"><a href="#3-3-手臂有沒有形成延遲？" class="headerlink" title="3.3 手臂有沒有形成延遲？"></a>3.3 手臂有沒有形成延遲？</h3><p>繼續觀察：</p>
+<h3 id="3-3-手臂有沒有形成延遲？" data-navigation-anchor=""><a href="#3-3-手臂有沒有形成延遲？" class="headerlink" title="3.3 手臂有沒有形成延遲？"></a>3.3 手臂有沒有形成延遲？</h3><p id="nav-621c3f2e72328820" data-navigation-anchor="">繼續觀察：</p>
 <blockquote>
-<p>軀幹 → 上臂 → 前臂 → 手掌</p>
+<p id="nav-2d5fb8495480c097" data-navigation-anchor="">軀幹 → 上臂 → 前臂 → 手掌</p>
 </blockquote>
-<p>是否存在先後加速。</p>
-<p>而不是整條手一起出去。</p>
+<p id="nav-0dc4b89e2801c060" data-navigation-anchor="">是否存在先後加速。</p>
+<p id="nav-0473bc26b0939bfe" data-navigation-anchor="">而不是整條手一起出去。</p>
 <hr>
-<h2 id="4-末端技術"><a href="#4-末端技術" class="headerlink" title="4. 末端技術"></a>4. 末端技術</h2><h3 id="4-1-手肘路徑"><a href="#4-1-手肘路徑" class="headerlink" title="4.1 手肘路徑"></a>4.1 手肘路徑</h3><p>不再追求固定位置，主要拿來判斷動作時序。</p>
-<h3 id="4-2-手臂伸展"><a href="#4-2-手臂伸展" class="headerlink" title="4.2 手臂伸展"></a>4.2 手臂伸展</h3><p>觀察擊球時能否自然充分伸展。</p>
-<h3 id="4-3-擊球點"><a href="#4-3-擊球點" class="headerlink" title="4.3 擊球點"></a>4.3 擊球點</h3><p>目前昨天打得比較好的球點，出現在<strong>臉頰旁邊</strong>。這先當成一個可辨認的相對位置，不把它立刻設定成所有球都適用的標準擊球點。</p>
-<p>相對地，昨天的高球案例顯示：起跳高度其實夠，但我的揮臂路徑仍然和之前一樣，到了揮臂中段才把手臂拉高，結果只有指尖越過球，還差約半個手掌。這把兩個問題分開了：不是只有「跳得夠不夠高」，也包括「擊球臂有沒有在正確的時間進入高位預備」。</p>
-<p>因此接下來要比較的不是單一理想球點，而是：在什麼球距離下，我能在起跳早段完成拉臂，並讓球穩定出現在臉頰旁邊到更高位置的可攻擊區間。</p>
-<h3 id="4-4-隨揮與減速"><a href="#4-4-隨揮與減速" class="headerlink" title="4.4 隨揮與減速"></a>4.4 隨揮與減速</h3><p>確認擊球後是不是能由手臂與身體共同完成動作。</p>
-<h2 id="練習時只留三個提示"><a href="#練習時只留三個提示" class="headerlink" title="練習時只留三個提示"></a>練習時只留三個提示</h2><p>雖然上面列了一大堆問題，但真正打球時如果同時想：</p>
+<h2 id="4-末端技術" data-navigation-anchor=""><a href="#4-末端技術" class="headerlink" title="4. 末端技術"></a>4. 末端技術</h2><h3 id="4-1-手肘路徑" data-navigation-anchor=""><a href="#4-1-手肘路徑" class="headerlink" title="4.1 手肘路徑"></a>4.1 手肘路徑</h3><p id="nav-ec4f6d46620e7ad7" data-navigation-anchor="">不再追求固定位置，主要拿來判斷動作時序。</p>
+<h3 id="4-2-手臂伸展" data-navigation-anchor=""><a href="#4-2-手臂伸展" class="headerlink" title="4.2 手臂伸展"></a>4.2 手臂伸展</h3><p id="nav-db1b598ad0728886" data-navigation-anchor="">觀察擊球時能否自然充分伸展。</p>
+<h3 id="4-3-擊球點" data-navigation-anchor=""><a href="#4-3-擊球點" class="headerlink" title="4.3 擊球點"></a>4.3 擊球點</h3><p id="nav-de87642b2b4e7329" data-navigation-anchor="">目前昨天打得比較好的球點，出現在<strong>臉頰旁邊</strong>。這先當成一個可辨認的相對位置，不把它立刻設定成所有球都適用的標準擊球點。</p>
+<p id="nav-e77640bb62743dd9" data-navigation-anchor="">相對地，昨天的高球案例顯示：起跳高度其實夠，但我的揮臂路徑仍然和之前一樣，到了揮臂中段才把手臂拉高，結果只有指尖越過球，還差約半個手掌。這把兩個問題分開了：不是只有「跳得夠不夠高」，也包括「擊球臂有沒有在正確的時間進入高位預備」。</p>
+<p id="nav-a600fe066e747613" data-navigation-anchor="">因此接下來要比較的不是單一理想球點，而是：在什麼球距離下，我能在起跳早段完成拉臂，並讓球穩定出現在臉頰旁邊到更高位置的可攻擊區間。</p>
+<h3 id="4-4-隨揮與減速" data-navigation-anchor=""><a href="#4-4-隨揮與減速" class="headerlink" title="4.4 隨揮與減速"></a>4.4 隨揮與減速</h3><p id="nav-c1a66ba66187d5f1" data-navigation-anchor="">確認擊球後是不是能由手臂與身體共同完成動作。</p>
+<h2 id="練習時只留三個提示" data-navigation-anchor=""><a href="#練習時只留三個提示" class="headerlink" title="練習時只留三個提示"></a>練習時只留三個提示</h2><p id="nav-505c2a9e65d13c47" data-navigation-anchor="">雖然上面列了一大堆問題，但真正打球時如果同時想：</p>
 <blockquote>
-<p>左手、右手、髖、胸口、肩膀、脖子、手肘、前臂、打點、隨揮……</p>
+<p id="nav-668329fe2ce92fb0" data-navigation-anchor="">左手、右手、髖、胸口、肩膀、脖子、手肘、前臂、打點、隨揮……</p>
 </blockquote>
-<p>球大概還沒落下，大腦已經先當機。</p>
-<p>新的實戰資料出現後，目前只留一個主要概念：</p>
+<p id="nav-cc1dddb5613e9c71" data-navigation-anchor="">球大概還沒落下，大腦已經先當機。</p>
+<p id="nav-0ef5a22e565c9c46" data-navigation-anchor="">新的實戰資料出現後，目前只留一個主要概念：</p>
 <blockquote>
-<p><strong>先把自己放到能完成揮臂的距離，並在起跳早段把手臂拉高。</strong></p>
+<p id="nav-911fe196bc6a14b4" data-navigation-anchor=""><strong>先把自己放到能完成揮臂的距離，並在起跳早段把手臂拉高。</strong></p>
 </blockquote>
-<p>如果要轉成三個簡單提示：</p>
+<p id="nav-11b83628572f9ac1" data-navigation-anchor="">如果要轉成三個簡單提示：</p>
 <blockquote>
-<p><strong>先把球放在能完成揮臂的距離。</strong><br><br><strong>起跳早段就拉高，不要半路才補。</strong><br><br><strong>身體帶手，把揮臂完整走完。</strong></p>
+<p id="nav-2f2242e4e6183fe6" data-navigation-anchor=""><strong>先把球放在能完成揮臂的距離。</strong><br><br><strong>起跳早段就拉高，不要半路才補。</strong><br><br><strong>身體帶手，把揮臂完整走完。</strong></p>
 </blockquote>
-<p>我目前想追求的體感不是：</p>
+<p id="nav-aac1dafc8cc84bf7" data-navigation-anchor="">我目前想追求的體感不是：</p>
 <blockquote>
-<p>我要更用力。</p>
+<p id="nav-234e688d921ed8b7" data-navigation-anchor="">我要更用力。</p>
 </blockquote>
-<p>而是：</p>
+<p id="nav-fcb5d6165cb9635f-5" data-navigation-anchor="">而是：</p>
 <blockquote>
-<p><strong>我要讓整個動作有時間發生。</strong></p>
+<p id="nav-d7c74588aafb48e7" data-navigation-anchor=""><strong>我要讓整個動作有時間發生。</strong></p>
 </blockquote>
 <hr>
-<h2 id="下一次最值得驗證的事情"><a href="#下一次最值得驗證的事情" class="headerlink" title="下一次最值得驗證的事情"></a>下一次最值得驗證的事情</h2><p>現在其實不需要繼續蒐集很多漂亮的靜態姿勢。</p>
-<p>下一個真正有價值的素材是：</p>
+<h2 id="下一次最值得驗證的事情" data-navigation-anchor=""><a href="#下一次最值得驗證的事情" class="headerlink" title="下一次最值得驗證的事情"></a>下一次最值得驗證的事情</h2><p id="nav-ba5cf01cde96c965" data-navigation-anchor="">現在其實不需要繼續蒐集很多漂亮的靜態姿勢。</p>
+<p id="nav-9025de37e2cfd157" data-navigation-anchor="">下一個真正有價值的素材是：</p>
 <blockquote>
-<p><strong>實際有球的一次攻擊。</strong></p>
+<p id="nav-fc31f05f0f5f71a9" data-navigation-anchor=""><strong>實際有球的一次攻擊。</strong></p>
 </blockquote>
-<p>最好從斜側面拍到：</p>
+<p id="nav-2a029a6949fab2dc" data-navigation-anchor="">最好從斜側面拍到：</p>
 <blockquote>
-<p>助跑<br>→ 起跳<br>→ 拉弓<br>→ 擊球<br>→ 隨揮<br>→ 落地</p>
+<p id="nav-57f34e3526190955" data-navigation-anchor="">助跑<br>→ 起跳<br>→ 拉弓<br>→ 擊球<br>→ 隨揮<br>→ 落地</p>
 </blockquote>
-<p>特別觀察：</p>
+<p id="nav-6e4838a6df7478cc" data-navigation-anchor="">特別觀察：</p>
 <ol>
-<li>球與身體的前後距離。</li>
-<li>起跳位置。</li>
-<li>非擊球手什麼時候收。</li>
-<li>身體何時從展開進入旋轉。</li>
-<li>肩膀何時開始上提／向前。</li>
-<li>手肘什麼時候跑到肩膀前方。</li>
-<li>上臂、前臂與手掌的先後。</li>
-<li>實際擊球點。</li>
-<li>擊球後怎麼減速。</li>
+<li id="nav-33c14f737345a56c" data-navigation-anchor="">球與身體的前後距離。</li>
+<li id="nav-eae8f2651833d755" data-navigation-anchor="">起跳位置。</li>
+<li id="nav-70eace8a752c6394" data-navigation-anchor="">非擊球手什麼時候收。</li>
+<li id="nav-4ebede8f674542bc" data-navigation-anchor="">身體何時從展開進入旋轉。</li>
+<li id="nav-18a06378a304cdb4" data-navigation-anchor="">肩膀何時開始上提／向前。</li>
+<li id="nav-aad78899905a2a4c" data-navigation-anchor="">手肘什麼時候跑到肩膀前方。</li>
+<li id="nav-e51017132e04b35e" data-navigation-anchor="">上臂、前臂與手掌的先後。</li>
+<li id="nav-faf027e2f4b21e46" data-navigation-anchor="">實際擊球點。</li>
+<li id="nav-fc52e6002fd0c7e2" data-navigation-anchor="">擊球後怎麼減速。</li>
 </ol>
-<p>而其中現在最想看的其實只有兩個畫面問題：</p>
+<p id="nav-1680bdc0e80aad6e" data-navigation-anchor="">而其中現在最想看的其實只有兩個畫面問題：</p>
 <blockquote>
-<p><strong>手肘跑到肩膀前面時，胸口到底開始帶動了沒有？</strong></p>
+<p id="nav-359a4c854b45b801" data-navigation-anchor=""><strong>手肘跑到肩膀前面時，胸口到底開始帶動了沒有？</strong></p>
 </blockquote>
-<p>以及：</p>
+<p id="nav-d6970a644ae7b96a" data-navigation-anchor="">以及：</p>
 <blockquote>
-<p><strong>出手時，我還是展開的，還是已經把自己縮起來了？</strong></p>
+<p id="nav-e6c137ce4d769f64" data-navigation-anchor=""><strong>出手時，我還是展開的，還是已經把自己縮起來了？</strong></p>
 </blockquote>
 <hr>
-<h1 id="實戰紀錄：起跳高度與旋轉還沒有建立"><a href="#實戰紀錄：起跳高度與旋轉還沒有建立" class="headerlink" title="實戰紀錄：起跳高度與旋轉還沒有建立"></a>實戰紀錄：起跳高度與旋轉還沒有建立</h1><p>今天實際打球後，新的感覺不是手肘路徑，而是更上游的問題：我跳上去的高度可能還不夠。</p>
-<p>如果起跳本身沒有把身體送到足夠的位置，空中就很容易先擔心來不及碰到球，後面的動作也很難有時間完成。這讓我開始懷疑，之前一直想修正的揮臂與擊球點，可能都受到起跳高度不足的影響。</p>
-<p>另一個很明顯的感覺是，我好像還沒有辦法在空中完成自己想像中的旋轉。這裡先不直接下結論說身體完全沒有旋轉，而是目前的實戰體感還沒有出現：</p>
+<h1 id="實戰紀錄：起跳高度與旋轉還沒有建立"><a href="#實戰紀錄：起跳高度與旋轉還沒有建立" class="headerlink" title="實戰紀錄：起跳高度與旋轉還沒有建立"></a>實戰紀錄：起跳高度與旋轉還沒有建立</h1><p id="nav-765cb70c01c150c0" data-navigation-anchor="">今天實際打球後，新的感覺不是手肘路徑，而是更上游的問題：我跳上去的高度可能還不夠。</p>
+<p id="nav-1e064ebf0237ae65" data-navigation-anchor="">如果起跳本身沒有把身體送到足夠的位置，空中就很容易先擔心來不及碰到球，後面的動作也很難有時間完成。這讓我開始懷疑，之前一直想修正的揮臂與擊球點，可能都受到起跳高度不足的影響。</p>
+<p id="nav-d9d451e89f70cd72" data-navigation-anchor="">另一個很明顯的感覺是，我好像還沒有辦法在空中完成自己想像中的旋轉。這裡先不直接下結論說身體完全沒有旋轉，而是目前的實戰體感還沒有出現：</p>
 <blockquote>
-<p><strong>身體先開始帶動，手臂再跟著出去。</strong></p>
+<p id="nav-bb6ec211b94282da" data-navigation-anchor=""><strong>身體先開始帶動，手臂再跟著出去。</strong></p>
 </blockquote>
-<p>比較像是起跳後急著處理球，手先出去，但身體的旋轉與展開還沒有真正形成。這也可能解釋了為什麼我會覺得揮臂沒有連貫，最後又回到用肩膀和手臂把動作完成。</p>
-<p>實戰還有一個新的問題：<strong>左手來不及把球的方向瞄準好。</strong></p>
-<p>起跳後如果我把注意力放在「要趕快碰到球」或「要把右手揮出去」，左手找球與定位的工作就沒有完整完成。這不一定只是左手收得太早，也可能是我在空中同時想處理太多事情，注意力被其中一個目標佔滿，反而感受不到身體其他部分正在發生什麼。</p>
-<p>也就是說，我在空中專心的時候，並沒有辦法同時感受到：</p>
+<p id="nav-0c77a0b265d13308" data-navigation-anchor="">比較像是起跳後急著處理球，手先出去，但身體的旋轉與展開還沒有真正形成。這也可能解釋了為什麼我會覺得揮臂沒有連貫，最後又回到用肩膀和手臂把動作完成。</p>
+<p id="nav-ae5081aab8cbc65c" data-navigation-anchor="">實戰還有一個新的問題：<strong>左手來不及把球的方向瞄準好。</strong></p>
+<p id="nav-9c92bd82fb8e7b9e" data-navigation-anchor="">起跳後如果我把注意力放在「要趕快碰到球」或「要把右手揮出去」，左手找球與定位的工作就沒有完整完成。這不一定只是左手收得太早，也可能是我在空中同時想處理太多事情，注意力被其中一個目標佔滿，反而感受不到身體其他部分正在發生什麼。</p>
+<p id="nav-201c49c42a794b41" data-navigation-anchor="">也就是說，我在空中專心的時候，並沒有辦法同時感受到：</p>
 <ul>
-<li>球的位置與自己起跳的高度。</li>
-<li>左手有沒有完成瞄準。</li>
-<li>胸口或軀幹有沒有開始旋轉。</li>
-<li>右手是不是已經太早出去。</li>
+<li id="nav-27d428b2be24c10a" data-navigation-anchor="">球的位置與自己起跳的高度。</li>
+<li id="nav-5e726cb1f7f3d479" data-navigation-anchor="">左手有沒有完成瞄準。</li>
+<li id="nav-6712745ca055204d" data-navigation-anchor="">胸口或軀幹有沒有開始旋轉。</li>
+<li id="nav-f2e8655a4f5e2aeb" data-navigation-anchor="">右手是不是已經太早出去。</li>
 </ul>
-<p>這讓我暫時不應該在一次攻擊裡同時修正所有細節。下一次可以先把左手找球與瞄準當成主要提示，其他部分先記錄，不要在空中強迫自己全部控制。</p>
-<p>在第一次實戰紀錄當下，我先把優先順序排成：</p>
+<p id="nav-34f8daeb098f34d6" data-navigation-anchor="">這讓我暫時不應該在一次攻擊裡同時修正所有細節。下一次可以先把左手找球與瞄準當成主要提示，其他部分先記錄，不要在空中強迫自己全部控制。</p>
+<p id="nav-5daadd064da76dc5" data-navigation-anchor="">在第一次實戰紀錄當下，我先把優先順序排成：</p>
 <ol>
-<li>起跳高度與起跳完成度。</li>
-<li>球和起跳位置的前後距離。</li>
-<li>左手是否及時完成找球與瞄準。</li>
-<li>起跳後是否有足夠時間保持展開。</li>
-<li>空中旋轉是否真的開始形成。</li>
-<li>身體開始帶動後，才觀察揮臂與擊球點。</li>
+<li id="nav-5a7dd1a99b34adab" data-navigation-anchor="">起跳高度與起跳完成度。</li>
+<li id="nav-0b673fa57aea804c" data-navigation-anchor="">球和起跳位置的前後距離。</li>
+<li id="nav-3feec9f894a20ec6" data-navigation-anchor="">左手是否及時完成找球與瞄準。</li>
+<li id="nav-5b14dcd65c1e1d0b" data-navigation-anchor="">起跳後是否有足夠時間保持展開。</li>
+<li id="nav-b239ed04d3d13259" data-navigation-anchor="">空中旋轉是否真的開始形成。</li>
+<li id="nav-82b8749037a87f3f" data-navigation-anchor="">身體開始帶動後，才觀察揮臂與擊球點。</li>
 </ol>
-<p>這是第一次實戰後的暫時排序；後來單腳起跳與高球的觀察顯示，球距離與早段拉臂時機需要再往前移，更新後的順序放在後面的第二次實戰紀錄。</p>
-<p>這次先不急著要求自己做出完整旋轉，也不先把問題歸因到某一個手肘位置。下一次實戰比較值得記錄的是：</p>
+<p id="nav-d2b206e3571568c2" data-navigation-anchor="">這是第一次實戰後的暫時排序；後來單腳起跳與高球的觀察顯示，球距離與早段拉臂時機需要再往前移，更新後的順序放在後面的第二次實戰紀錄。</p>
+<p id="nav-30ed01644ac572a2" data-navigation-anchor="">這次先不急著要求自己做出完整旋轉，也不先把問題歸因到某一個手肘位置。下一次實戰比較值得記錄的是：</p>
 <ul>
-<li>最後兩步是否有踩實，起跳前有沒有急著追球。</li>
-<li>起跳後球在身體前方、上方，還是已經需要往前追。</li>
-<li>左手是在起跳前、起跳中，還是已經來不及時才開始找球。</li>
-<li>身體是沒有開始旋轉，還是被時間壓縮到來不及旋轉。</li>
-<li>手臂出去時，胸口與肩膀有沒有先開始動。</li>
-<li>跳得比較高的球和跳得比較低的球，揮臂感覺是否不同。</li>
-<li>當我專心處理球或右手時，最先失去感覺的是左手、軀幹還是起跳高度。</li>
+<li id="nav-dd1622fa4fd63231" data-navigation-anchor="">最後兩步是否有踩實，起跳前有沒有急著追球。</li>
+<li id="nav-d42b513f7a670868" data-navigation-anchor="">起跳後球在身體前方、上方，還是已經需要往前追。</li>
+<li id="nav-5b55db033f27655c" data-navigation-anchor="">左手是在起跳前、起跳中，還是已經來不及時才開始找球。</li>
+<li id="nav-d81fa3efc55aebc4" data-navigation-anchor="">身體是沒有開始旋轉，還是被時間壓縮到來不及旋轉。</li>
+<li id="nav-041547e354825e50" data-navigation-anchor="">手臂出去時，胸口與肩膀有沒有先開始動。</li>
+<li id="nav-3eb18ac9cbe97947" data-navigation-anchor="">跳得比較高的球和跳得比較低的球，揮臂感覺是否不同。</li>
+<li id="nav-e356f3e7005076cb" data-navigation-anchor="">當我專心處理球或右手時，最先失去感覺的是左手、軀幹還是起跳高度。</li>
 </ul>
-<p>目前這一段先當作第一次有球實戰的紀錄。起跳高度與旋轉是否真的是核心問題，還要靠後續影片和更多實戰比較。</p>
-<h1 id="第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機"><a href="#第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機" class="headerlink" title="第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機"></a>第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機</h1><p>昨天的實戰補充，讓前一段「起跳高度可能不足」的模型需要往前再拆細一層。</p>
-<h2 id="1-單腳起跳時，距離較遠反而能把揮臂做完"><a href="#1-單腳起跳時，距離較遠反而能把揮臂做完" class="headerlink" title="1. 單腳起跳時，距離較遠反而能把揮臂做完"></a>1. 單腳起跳時，距離較遠反而能把揮臂做完</h2><p>學長觀察到，我在<strong>單腳起跳、和球距離較遠</strong>的情況下，反而比較能完成整個揮臂。這是一個很重要的反例：揮臂沒有做完，不一定只是因為跳得不夠高，也可能是我進入球下方或球的攻擊區間時，和球的相對距離不適合，導致身體與手臂沒有足夠的展開空間。</p>
-<p>較遠的距離可能暫時提供了兩個幫助：</p>
+<p id="nav-7ba1593030165ae8" data-navigation-anchor="">目前這一段先當作第一次有球實戰的紀錄。起跳高度與旋轉是否真的是核心問題，還要靠後續影片和更多實戰比較。</p>
+<h1 id="第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機"><a href="#第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機" class="headerlink" title="第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機"></a>第二次實戰紀錄：單腳起跳、球距離與高球拉臂時機</h1><p id="nav-39ece516e1e8e86b" data-navigation-anchor="">昨天的實戰補充，讓前一段「起跳高度可能不足」的模型需要往前再拆細一層。</p>
+<h2 id="1-單腳起跳時，距離較遠反而能把揮臂做完" data-navigation-anchor=""><a href="#1-單腳起跳時，距離較遠反而能把揮臂做完" class="headerlink" title="1. 單腳起跳時，距離較遠反而能把揮臂做完"></a>1. 單腳起跳時，距離較遠反而能把揮臂做完</h2><p id="nav-4c6257883de5f72a" data-navigation-anchor="">學長觀察到，我在<strong>單腳起跳、和球距離較遠</strong>的情況下，反而比較能完成整個揮臂。這是一個很重要的反例：揮臂沒有做完，不一定只是因為跳得不夠高，也可能是我進入球下方或球的攻擊區間時，和球的相對距離不適合，導致身體與手臂沒有足夠的展開空間。</p>
+<p id="nav-ea431ea5947a230c" data-navigation-anchor="">較遠的距離可能暫時提供了兩個幫助：</p>
 <ul>
-<li>身體不會過早擠到球的正下方或太靠近球點。</li>
-<li>起跳後，手臂有比較完整的時間與空間進入拉高、加速和隨揮。</li>
+<li id="nav-098a5ea89107c9dc" data-navigation-anchor="">身體不會過早擠到球的正下方或太靠近球點。</li>
+<li id="nav-ddefc40e12d4d269" data-navigation-anchor="">起跳後，手臂有比較完整的時間與空間進入拉高、加速和隨揮。</li>
 </ul>
-<p>這不代表球越遠越好，而是我需要找到一個「既能碰到球，又不會把揮臂壓縮掉」的距離。也因此，<strong>抓球距離差</strong>目前應該被視為上游問題：我還不能穩定把自己放到能完成揮臂的位置。</p>
-<h2 id="2-臉頰旁邊是目前較好的相對球點"><a href="#2-臉頰旁邊是目前較好的相對球點" class="headerlink" title="2. 臉頰旁邊是目前較好的相對球點"></a>2. 臉頰旁邊是目前較好的相對球點</h2><p>昨天打得比較好的球，球點出現在臉頰旁邊。這提供了一個比「球要在頭頂正上方」更貼近實戰的暫時參考：先觀察球是否進入自己能看見、能找準，而且手臂能順利拉高的區域。</p>
-<p>但這個位置還不能直接當成固定標準。真正要記錄的是：球在臉頰旁邊時，我的身體距離、起跳方向、左手找球與右手拉臂是否同時比較順；如果只是偶然打好，還不足以證明球點本身就是答案。</p>
-<h2 id="3-高球案例：跳得夠高，但手臂拉高得太晚"><a href="#3-高球案例：跳得夠高，但手臂拉高得太晚" class="headerlink" title="3. 高球案例：跳得夠高，但手臂拉高得太晚"></a>3. 高球案例：跳得夠高，但手臂拉高得太晚</h2><p>另一個高球案例很能區分問題：我的起跳高度夠，卻仍然沿用之前的揮臂路徑，到了揮臂中段才開始把手臂拉高。結果手臂沒有在擊球前完成高位準備，最後只有指尖越過球，還差約半個手掌。</p>
-<p>所以這一次不能再把失誤簡化成「跳不夠高」或「擊球點不夠高」。比較精確的描述是：</p>
+<p id="nav-0b4432bcd0fe96c6" data-navigation-anchor="">這不代表球越遠越好，而是我需要找到一個「既能碰到球，又不會把揮臂壓縮掉」的距離。也因此，<strong>抓球距離差</strong>目前應該被視為上游問題：我還不能穩定把自己放到能完成揮臂的位置。</p>
+<h2 id="2-臉頰旁邊是目前較好的相對球點" data-navigation-anchor=""><a href="#2-臉頰旁邊是目前較好的相對球點" class="headerlink" title="2. 臉頰旁邊是目前較好的相對球點"></a>2. 臉頰旁邊是目前較好的相對球點</h2><p id="nav-38b75cc685bc92ab" data-navigation-anchor="">昨天打得比較好的球，球點出現在臉頰旁邊。這提供了一個比「球要在頭頂正上方」更貼近實戰的暫時參考：先觀察球是否進入自己能看見、能找準，而且手臂能順利拉高的區域。</p>
+<p id="nav-206b8ab9de13cd2c" data-navigation-anchor="">但這個位置還不能直接當成固定標準。真正要記錄的是：球在臉頰旁邊時，我的身體距離、起跳方向、左手找球與右手拉臂是否同時比較順；如果只是偶然打好，還不足以證明球點本身就是答案。</p>
+<h2 id="3-高球案例：跳得夠高，但手臂拉高得太晚" data-navigation-anchor=""><a href="#3-高球案例：跳得夠高，但手臂拉高得太晚" class="headerlink" title="3. 高球案例：跳得夠高，但手臂拉高得太晚"></a>3. 高球案例：跳得夠高，但手臂拉高得太晚</h2><p id="nav-44982eee1f7f74ec" data-navigation-anchor="">另一個高球案例很能區分問題：我的起跳高度夠，卻仍然沿用之前的揮臂路徑，到了揮臂中段才開始把手臂拉高。結果手臂沒有在擊球前完成高位準備，最後只有指尖越過球，還差約半個手掌。</p>
+<p id="nav-ca8ed0f13953142c" data-navigation-anchor="">所以這一次不能再把失誤簡化成「跳不夠高」或「擊球點不夠高」。比較精確的描述是：</p>
 <blockquote>
-<p><strong>下肢已經把身體送到足夠高度，但擊球臂的準備時機晚了一段，導致可用的高度沒有轉換成完整的手掌擊球範圍。</strong></p>
+<p id="nav-7b551cf91396d9db" data-navigation-anchor=""><strong>下肢已經把身體送到足夠高度，但擊球臂的準備時機晚了一段，導致可用的高度沒有轉換成完整的手掌擊球範圍。</strong></p>
 </blockquote>
-<p>這也修正了原本對揮臂路徑的理解。問題不一定是手臂經過哪一條固定路線，而是我是否在正確的時間開始拉高；如果等到揮臂中段才補，手臂即使最後有往上，也只剩下用指尖追球的機會。</p>
-<h2 id="4-目前更新後的優先順序"><a href="#4-目前更新後的優先順序" class="headerlink" title="4. 目前更新後的優先順序"></a>4. 目前更新後的優先順序</h2><p>綜合前後兩次實戰，目前的觀察順序改成：</p>
+<p id="nav-aa108314e349d92c" data-navigation-anchor="">這也修正了原本對揮臂路徑的理解。問題不一定是手臂經過哪一條固定路線，而是我是否在正確的時間開始拉高；如果等到揮臂中段才補，手臂即使最後有往上，也只剩下用指尖追球的機會。</p>
+<h2 id="4-目前更新後的優先順序" data-navigation-anchor=""><a href="#4-目前更新後的優先順序" class="headerlink" title="4. 目前更新後的優先順序"></a>4. 目前更新後的優先順序</h2><p id="nav-d821609ba4ea10d2" data-navigation-anchor="">綜合前後兩次實戰，目前的觀察順序改成：</p>
 <ol>
-<li>球與起跳位置的前後距離，是否落在能完成揮臂的範圍。</li>
-<li>起跳是否提供足夠高度與空中時間，而不是只追求跳得更高。</li>
-<li>起跳前或起跳早段，擊球臂是否已經開始拉高。</li>
-<li>左手是否完成找球與瞄準，讓臉頰旁邊的相對球點能被辨認。</li>
-<li>身體是否保持展開，並由身體帶手完成揮臂與隨揮。</li>
-<li>最後才比較手肘路徑、實際擊球點與手掌是否完整越過球。</li>
+<li id="nav-645d4166d6458d5b" data-navigation-anchor="">球與起跳位置的前後距離，是否落在能完成揮臂的範圍。</li>
+<li id="nav-650782850476dd76" data-navigation-anchor="">起跳是否提供足夠高度與空中時間，而不是只追求跳得更高。</li>
+<li id="nav-6fe9694868465279" data-navigation-anchor="">起跳前或起跳早段，擊球臂是否已經開始拉高。</li>
+<li id="nav-40ff4bc90bffead9" data-navigation-anchor="">左手是否完成找球與瞄準，讓臉頰旁邊的相對球點能被辨認。</li>
+<li id="nav-eb6330b2569108bb" data-navigation-anchor="">身體是否保持展開，並由身體帶手完成揮臂與隨揮。</li>
+<li id="nav-ee55e40e43aef379" data-navigation-anchor="">最後才比較手肘路徑、實際擊球點與手掌是否完整越過球。</li>
 </ol>
-<p>現在最值得拍攝與比較的，不是單純看我跳了多高，而是同時標記：球距離、起跳方式、手臂開始拉高的時間，以及最後是手掌還是只有指尖到達球的高度。</p>
-<h1 id="後續討論：重新理解「旋轉不夠」"><a href="#後續討論：重新理解「旋轉不夠」" class="headerlink" title="後續討論：重新理解「旋轉不夠」"></a>後續討論：重新理解「旋轉不夠」</h1><p>後續討論讓我發現，「旋轉不夠」這句話可能把好幾個不同問題壓成同一個感覺。它不一定代表身體真的少轉了幾度，也可能是旋轉開始得太晚、沒有被手臂接住，或是身體先把自己送到了不容易出手的位置。</p>
-<p>因此，排球攻擊中的旋轉至少可以拆成五層：</p>
+<p id="nav-35927b1842ab6d4e" data-navigation-anchor="">現在最值得拍攝與比較的，不是單純看我跳了多高，而是同時標記：球距離、起跳方式、手臂開始拉高的時間，以及最後是手掌還是只有指尖到達球的高度。</p>
+<h1 id="後續討論：重新理解「旋轉不夠」"><a href="#後續討論：重新理解「旋轉不夠」" class="headerlink" title="後續討論：重新理解「旋轉不夠」"></a>後續討論：重新理解「旋轉不夠」</h1><p id="nav-8078981269160c5e" data-navigation-anchor="">後續討論讓我發現，「旋轉不夠」這句話可能把好幾個不同問題壓成同一個感覺。它不一定代表身體真的少轉了幾度，也可能是旋轉開始得太晚、沒有被手臂接住，或是身體先把自己送到了不容易出手的位置。</p>
+<p id="nav-9006ac00ba6c0783" data-navigation-anchor="">因此，排球攻擊中的旋轉至少可以拆成五層：</p>
 <ol>
-<li><strong>起始方向</strong>：助跑與最後兩步有沒有先把身體帶到可以側身、再轉向球的方向。</li>
-<li><strong>可用空間</strong>：起跳點與球的前後距離，是否讓軀幹和手臂有時間展開。</li>
-<li><strong>旋轉時序</strong>：軀幹是否先開始帶動，還是手臂先出去，身體只能在後面補救。</li>
-<li><strong>動量傳遞</strong>：旋轉產生的速度，有沒有順利交給上臂、前臂與手掌，而不是在肩膀處中斷。</li>
-<li><strong>減速與支撐</strong>：擊球後是否能用整個身體吸收動量，還是只能靠縮肚子、縮脖子與肩膀把自己拉回來。</li>
+<li id="nav-a64ecffbfe4685ce" data-navigation-anchor=""><strong>起始方向</strong>：助跑與最後兩步有沒有先把身體帶到可以側身、再轉向球的方向。</li>
+<li id="nav-b22dc823806be0b0" data-navigation-anchor=""><strong>可用空間</strong>：起跳點與球的前後距離，是否讓軀幹和手臂有時間展開。</li>
+<li id="nav-5aa0102ba9865d54" data-navigation-anchor=""><strong>旋轉時序</strong>：軀幹是否先開始帶動，還是手臂先出去，身體只能在後面補救。</li>
+<li id="nav-3f05474046e30c63" data-navigation-anchor=""><strong>動量傳遞</strong>：旋轉產生的速度，有沒有順利交給上臂、前臂與手掌，而不是在肩膀處中斷。</li>
+<li id="nav-d23cf8e5a66697dc" data-navigation-anchor=""><strong>減速與支撐</strong>：擊球後是否能用整個身體吸收動量，還是只能靠縮肚子、縮脖子與肩膀把自己拉回來。</li>
 </ol>
-<p>這個拆法把問題從「我要不要轉更多」改成：</p>
+<p id="nav-de4fa55ce7a94737" data-navigation-anchor="">這個拆法把問題從「我要不要轉更多」改成：</p>
 <blockquote>
-<p><strong>我缺的是旋轉的量，還是旋轉的入口、時機、傳遞與收尾？</strong></p>
+<p id="nav-90850b1d3e2c8c37" data-navigation-anchor=""><strong>我缺的是旋轉的量，還是旋轉的入口、時機、傳遞與收尾？</strong></p>
 </blockquote>
-<h2 id="用桌球理解「旋轉很多，但動作仍然不順」"><a href="#用桌球理解「旋轉很多，但動作仍然不順」" class="headerlink" title="用桌球理解「旋轉很多，但動作仍然不順」"></a>用桌球理解「旋轉很多，但動作仍然不順」</h2><p>桌球正手拉球可以提供一個比較容易感受到的例子。假設引拍放得太後面，身體先轉到接近極限，持拍手卻還落在身體後方；等到真正接近擊球時，髖部和軀幹的主要動量已經用掉，最後只能靠前臂、手腕把拍子補出去。這時候球可能有很多旋轉，但向前的穿透感變弱，還原也變慢。</p>
-<p>這不一定是「旋轉不夠」，反而可能是：</p>
+<h2 id="用桌球理解「旋轉很多，但動作仍然不順」" data-navigation-anchor=""><a href="#用桌球理解「旋轉很多，但動作仍然不順」" class="headerlink" title="用桌球理解「旋轉很多，但動作仍然不順」"></a>用桌球理解「旋轉很多，但動作仍然不順」</h2><p id="nav-17dff55881400976" data-navigation-anchor="">桌球正手拉球可以提供一個比較容易感受到的例子。假設引拍放得太後面，身體先轉到接近極限，持拍手卻還落在身體後方；等到真正接近擊球時，髖部和軀幹的主要動量已經用掉，最後只能靠前臂、手腕把拍子補出去。這時候球可能有很多旋轉，但向前的穿透感變弱，還原也變慢。</p>
+<p id="nav-135c2ea644ff2036" data-navigation-anchor="">這不一定是「旋轉不夠」，反而可能是：</p>
 <blockquote>
-<p><strong>旋轉已經發生了，但手臂進場太晚，沒有在旋轉仍然可用的時候接上。</strong></p>
+<p id="nav-efaa4b9ab5202461" data-navigation-anchor=""><strong>旋轉已經發生了，但手臂進場太晚，沒有在旋轉仍然可用的時候接上。</strong></p>
 </blockquote>
-<p>排球的對應問題不是要把桌球動作照搬到空中，而是可以借用這個判斷方式。若擊球臂拉得太後、球又在身體不容易控制的前後位置，可能會出現：身體先轉完或開始下墜，手臂才要加速，最後只能用肩膀把手送到球的位置。外觀看起來像「旋轉不夠」，實際上也可能是<strong>手落後身體太多，動力鏈在最後一段脫節</strong>。</p>
-<p>所以目前我不該只追求更大的髖部或胸椎旋轉，而要觀察：</p>
+<p id="nav-26925a78288da368" data-navigation-anchor="">排球的對應問題不是要把桌球動作照搬到空中，而是可以借用這個判斷方式。若擊球臂拉得太後、球又在身體不容易控制的前後位置，可能會出現：身體先轉完或開始下墜，手臂才要加速，最後只能用肩膀把手送到球的位置。外觀看起來像「旋轉不夠」，實際上也可能是<strong>手落後身體太多，動力鏈在最後一段脫節</strong>。</p>
+<p id="nav-6f3b8cd57ecdc8ea" data-navigation-anchor="">所以目前我不該只追求更大的髖部或胸椎旋轉，而要觀察：</p>
 <ul>
-<li>身體開始轉動時，擊球臂是否已經在合理的準備範圍，而不是遠遠落在背後。</li>
-<li>軀幹開始帶動後，上臂、前臂與手掌是否依序追上。</li>
-<li>擊球時球是否仍在能夠控制的前上方，而不是身體已經被球點逼到只能伸手救球。</li>
-<li>擊球後是否能順勢減速，而不是肩膀、脖子突然鎖住。</li>
+<li id="nav-7ab6b934a769d0b2" data-navigation-anchor="">身體開始轉動時，擊球臂是否已經在合理的準備範圍，而不是遠遠落在背後。</li>
+<li id="nav-30e0b39f54ffd14e" data-navigation-anchor="">軀幹開始帶動後，上臂、前臂與手掌是否依序追上。</li>
+<li id="nav-eb3d91430fc9d376" data-navigation-anchor="">擊球時球是否仍在能夠控制的前上方，而不是身體已經被球點逼到只能伸手救球。</li>
+<li id="nav-7ce91b28ec8c3de3" data-navigation-anchor="">擊球後是否能順勢減速，而不是肩膀、脖子突然鎖住。</li>
 </ul>
-<h2 id="排球的主軸：旋轉是「把人送進擊球窗口」"><a href="#排球的主軸：旋轉是「把人送進擊球窗口」" class="headerlink" title="排球的主軸：旋轉是「把人送進擊球窗口」"></a>排球的主軸：旋轉是「把人送進擊球窗口」</h2><p>對我現在的排球來說，旋轉比較適合被理解成一種<strong>把身體送進可完成揮臂的擊球窗口</strong>的能力，而不是空中完成一個漂亮的大扭轉。</p>
-<p>斜向助跑可能有幫助，因為它讓我在起跳前先保留一點側身與轉正的空間；但它不是固定答案，也不是只要角度夠斜就代表旋轉一定會變好。它同時會提高對球的前後判斷要求，因此攻擊步必須保留調整能力：前段先讀球與設定方向，倒數第二步用步幅修正距離，最後一步再決定要把動量送向前方還是更多轉成向上。</p>
-<p>換句話說，斜向助跑不是「跑一條不能改的斜線」，而是先把自己帶進一個比較有利的區域，最後兩步仍然要對球做微調。如果球點偏開網、偏內、太貼或太深，優先調整起跳位置與步幅，不要在空中再用肩膀硬追旋轉。</p>
-<h2 id="左手向前伸，可能是替代方案，但不是旋轉按鈕"><a href="#左手向前伸，可能是替代方案，但不是旋轉按鈕" class="headerlink" title="左手向前伸，可能是替代方案，但不是旋轉按鈕"></a>左手向前伸，可能是替代方案，但不是旋轉按鈕</h2><p>如果起跳高度有限，左手未必能穩定高舉到理想高度。把左手改成在胸口到下巴前方<strong>向前延伸</strong>，可以先當成一個值得測試的方案：它的作用是幫忙找球、維持身體展開與建立方向感，不必把「向上高舉」當成唯一正確姿勢。</p>
-<p>但左手向前伸本身不會自動製造旋轉。真正要看的，是它有沒有讓胸口保持開放、讓右手不必拉得過後，以及收回時是否能讓身體繼續完成動作，而不是突然把肩膀拉向耳朵。</p>
-<p>影片中左手靠近 1 點鐘方向，也不應直接被判定為整個問題的根源。它可能是我在找球、配合球路或試圖增加側身預拉的結果。比較有意義的檢查是：</p>
+<h2 id="排球的主軸：旋轉是「把人送進擊球窗口」" data-navigation-anchor=""><a href="#排球的主軸：旋轉是「把人送進擊球窗口」" class="headerlink" title="排球的主軸：旋轉是「把人送進擊球窗口」"></a>排球的主軸：旋轉是「把人送進擊球窗口」</h2><p id="nav-b2f2bb72db5b7c29" data-navigation-anchor="">對我現在的排球來說，旋轉比較適合被理解成一種<strong>把身體送進可完成揮臂的擊球窗口</strong>的能力，而不是空中完成一個漂亮的大扭轉。</p>
+<p id="nav-022a11f249f50164" data-navigation-anchor="">斜向助跑可能有幫助，因為它讓我在起跳前先保留一點側身與轉正的空間；但它不是固定答案，也不是只要角度夠斜就代表旋轉一定會變好。它同時會提高對球的前後判斷要求，因此攻擊步必須保留調整能力：前段先讀球與設定方向，倒數第二步用步幅修正距離，最後一步再決定要把動量送向前方還是更多轉成向上。</p>
+<p id="nav-c338b27ce755086a" data-navigation-anchor="">換句話說，斜向助跑不是「跑一條不能改的斜線」，而是先把自己帶進一個比較有利的區域，最後兩步仍然要對球做微調。如果球點偏開網、偏內、太貼或太深，優先調整起跳位置與步幅，不要在空中再用肩膀硬追旋轉。</p>
+<h2 id="左手向前伸，可能是替代方案，但不是旋轉按鈕" data-navigation-anchor=""><a href="#左手向前伸，可能是替代方案，但不是旋轉按鈕" class="headerlink" title="左手向前伸，可能是替代方案，但不是旋轉按鈕"></a>左手向前伸，可能是替代方案，但不是旋轉按鈕</h2><p id="nav-1a8b1b6f232faf68" data-navigation-anchor="">如果起跳高度有限，左手未必能穩定高舉到理想高度。把左手改成在胸口到下巴前方<strong>向前延伸</strong>，可以先當成一個值得測試的方案：它的作用是幫忙找球、維持身體展開與建立方向感，不必把「向上高舉」當成唯一正確姿勢。</p>
+<p id="nav-19387decdda95fed" data-navigation-anchor="">但左手向前伸本身不會自動製造旋轉。真正要看的，是它有沒有讓胸口保持開放、讓右手不必拉得過後，以及收回時是否能讓身體繼續完成動作，而不是突然把肩膀拉向耳朵。</p>
+<p id="nav-b9d9f03a4f2b8388" data-navigation-anchor="">影片中左手靠近 1 點鐘方向，也不應直接被判定為整個問題的根源。它可能是我在找球、配合球路或試圖增加側身預拉的結果。比較有意義的檢查是：</p>
 <ul>
-<li>左手是否跨過身體中線，讓胸口變得內縮。</li>
-<li>左手伸出去時，脖子與左肩是否跟著上提。</li>
-<li>左手的位置是否讓右手被迫拉得更後、更晚才進入揮臂。</li>
-<li>左手收回後，右手是否能在身體仍然展開時接上，而不是等身體轉完才單獨出力。</li>
+<li id="nav-c08dca0de2758b2a" data-navigation-anchor="">左手是否跨過身體中線，讓胸口變得內縮。</li>
+<li id="nav-234c69e9a1ab22e5" data-navigation-anchor="">左手伸出去時，脖子與左肩是否跟著上提。</li>
+<li id="nav-c4146e0d4442592a" data-navigation-anchor="">左手的位置是否讓右手被迫拉得更後、更晚才進入揮臂。</li>
+<li id="nav-90225d0412bafbce" data-navigation-anchor="">左手收回後，右手是否能在身體仍然展開時接上，而不是等身體轉完才單獨出力。</li>
 </ul>
-<p>因此，暫時不把「1 點鐘」硬改成另一個固定鐘面角度。更穩妥的提示是：<strong>左手在前方找球，但不要為了找旋轉而抱過身體；右肩保持遠離耳朵，讓擊球臂在身體帶動後接上。</strong></p>
-<h2 id="目前的最小調整與驗證順序"><a href="#目前的最小調整與驗證順序" class="headerlink" title="目前的最小調整與驗證順序"></a>目前的最小調整與驗證順序</h2><p>為了延長打排球的時間，我現在比較適合一次只驗證一層：</p>
+<p id="nav-dfa897ce5439685d" data-navigation-anchor="">因此，暫時不把「1 點鐘」硬改成另一個固定鐘面角度。更穩妥的提示是：<strong>左手在前方找球，但不要為了找旋轉而抱過身體；右肩保持遠離耳朵，讓擊球臂在身體帶動後接上。</strong></p>
+<h2 id="目前的最小調整與驗證順序" data-navigation-anchor=""><a href="#目前的最小調整與驗證順序" class="headerlink" title="目前的最小調整與驗證順序"></a>目前的最小調整與驗證順序</h2><p id="nav-562c900e32fabc7c" data-navigation-anchor="">為了延長打排球的時間，我現在比較適合一次只驗證一層：</p>
 <ol>
-<li>先用較低速度的斜向助跑，確認球與起跳位置是否能讓我完成揮臂。</li>
-<li>再觀察左手向前找球時，胸口是否比原本更能保持展開，脖子是否比較不會縮起來。</li>
-<li>接著看擊球臂是不是在起跳早段就進入準備範圍，而不是拉到中段才補高度。</li>
-<li>最後才比較旋轉幅度、手肘路徑、擊球點與出球方向。</li>
+<li id="nav-c42e937b77ba3059" data-navigation-anchor="">先用較低速度的斜向助跑，確認球與起跳位置是否能讓我完成揮臂。</li>
+<li id="nav-c62b54c57e8b831f" data-navigation-anchor="">再觀察左手向前找球時，胸口是否比原本更能保持展開，脖子是否比較不會縮起來。</li>
+<li id="nav-d60c400fbd99b3c2" data-navigation-anchor="">接著看擊球臂是不是在起跳早段就進入準備範圍，而不是拉到中段才補高度。</li>
+<li id="nav-34ba29f424b59871" data-navigation-anchor="">最後才比較旋轉幅度、手肘路徑、擊球點與出球方向。</li>
 </ol>
-<p>每次只留一個主提示，並記錄四個結果：球是否打得到、揮臂是否完成、出球是否有向前的力量、肩膀與頸部在當下及隔天的感覺。若為了追求更大的旋轉，反而讓球點失控或肩膀不適增加，就表示這個旋轉不是目前可用的旋轉。</p>
-<p>目前比較精確的暫定結論是：</p>
+<p id="nav-7a436523fe14b9c8" data-navigation-anchor="">每次只留一個主提示，並記錄四個結果：球是否打得到、揮臂是否完成、出球是否有向前的力量、肩膀與頸部在當下及隔天的感覺。若為了追求更大的旋轉，反而讓球點失控或肩膀不適增加，就表示這個旋轉不是目前可用的旋轉。</p>
+<p id="nav-c1b68d8b0ccb5117" data-navigation-anchor="">目前比較精確的暫定結論是：</p>
 <blockquote>
-<p><strong>排球的旋轉不夠，不能只用「轉得更多」處理；我更需要先把助跑、球距離、左手找球與擊球臂準備時機接起來，讓軀幹已有的動量能在正確時間交給手臂。</strong></p>
+<p id="nav-4fabb61ec496b3e5" data-navigation-anchor=""><strong>排球的旋轉不夠，不能只用「轉得更多」處理；我更需要先把助跑、球距離、左手找球與擊球臂準備時機接起來，讓軀幹已有的動量能在正確時間交給手臂。</strong></p>
 </blockquote>
-<h1 id="延伸閱讀與搜尋"><a href="#延伸閱讀與搜尋" class="headerlink" title="延伸閱讀與搜尋"></a>延伸閱讀與搜尋</h1><p>目前比較值得繼續查的方向：</p>
+<h1 id="延伸閱讀與搜尋"><a href="#延伸閱讀與搜尋" class="headerlink" title="延伸閱讀與搜尋"></a>延伸閱讀與搜尋</h1><p id="nav-f34a05b313518499" data-navigation-anchor="">目前比較值得繼續查的方向：</p>
 <ul>
-<li><code>Volleyball spike kinetic chain</code></li>
-<li><code>Volleyball attack torso rotation arm swing</code></li>
-<li><code>Volleyball spike arm lag</code></li>
-<li><code>Volleyball arm swing sequencing</code></li>
-<li><code>Volleyball shoulder elevation spike</code></li>
-<li><code>Volleyball elbow position during spike</code></li>
-<li><code>Volleyball spike trunk rotation shoulder</code></li>
-<li><code>Volleyball spike hip shoulder separation</code></li>
-<li><code>Volleyball non hitting arm spike</code></li>
-<li><code>Volleyball trunk lateral flexion spike</code></li>
-<li><code>Volleyball circular arm swing</code></li>
-<li><code>Volleyball bow and arrow arm swing</code></li>
-<li><code>Volleyball spike contact point</code></li>
-<li><code>Volleyball attack follow through deceleration</code></li>
-<li><code>Volleyball shoulder load spike</code></li>
-<li><code>Volleyball spike biomechanics shoulder</code></li>
-<li><code>Volleyball relaxed arm swing</code></li>
+<li id="nav-615df3744cf5ff05" data-navigation-anchor=""><code>Volleyball spike kinetic chain</code></li>
+<li id="nav-e1a18f9a936f4744" data-navigation-anchor=""><code>Volleyball attack torso rotation arm swing</code></li>
+<li id="nav-5a9b26c4bfe8a50c" data-navigation-anchor=""><code>Volleyball spike arm lag</code></li>
+<li id="nav-2eaae73e7e19a246" data-navigation-anchor=""><code>Volleyball arm swing sequencing</code></li>
+<li id="nav-959df5c6792f3e92" data-navigation-anchor=""><code>Volleyball shoulder elevation spike</code></li>
+<li id="nav-408c2587b9323b1c" data-navigation-anchor=""><code>Volleyball elbow position during spike</code></li>
+<li id="nav-c2787c8efa075af2" data-navigation-anchor=""><code>Volleyball spike trunk rotation shoulder</code></li>
+<li id="nav-7b788bf4d5586eda" data-navigation-anchor=""><code>Volleyball spike hip shoulder separation</code></li>
+<li id="nav-485a4e404fbac1f5" data-navigation-anchor=""><code>Volleyball non hitting arm spike</code></li>
+<li id="nav-08dc685d7d93eded" data-navigation-anchor=""><code>Volleyball trunk lateral flexion spike</code></li>
+<li id="nav-0faa1a80ea0ceb1a" data-navigation-anchor=""><code>Volleyball circular arm swing</code></li>
+<li id="nav-2334b423faecfd3f" data-navigation-anchor=""><code>Volleyball bow and arrow arm swing</code></li>
+<li id="nav-b475247aac709385" data-navigation-anchor=""><code>Volleyball spike contact point</code></li>
+<li id="nav-5de6e4044afbcffc" data-navigation-anchor=""><code>Volleyball attack follow through deceleration</code></li>
+<li id="nav-1f1044c93c4e1c76" data-navigation-anchor=""><code>Volleyball shoulder load spike</code></li>
+<li id="nav-820c5b0ae94fd5ad" data-navigation-anchor=""><code>Volleyball spike biomechanics shoulder</code></li>
+<li id="nav-17f9aca961843b79" data-navigation-anchor=""><code>Volleyball relaxed arm swing</code></li>
 </ul>
-<h2 id="相關影片與延伸觀看"><a href="#相關影片與延伸觀看" class="headerlink" title="相關影片與延伸觀看"></a>相關影片與延伸觀看</h2><p>以下先當作觀察材料，不直接把教學影片中的提示當成唯一標準答案。</p>
-<p>觀看時主要注意：</p>
+<h2 id="相關影片與延伸觀看" data-navigation-anchor=""><a href="#相關影片與延伸觀看" class="headerlink" title="相關影片與延伸觀看"></a>相關影片與延伸觀看</h2><p id="nav-88bfd503d93d3235" data-navigation-anchor="">以下先當作觀察材料，不直接把教學影片中的提示當成唯一標準答案。</p>
+<p id="nav-025065245a6d568d" data-navigation-anchor="">觀看時主要注意：</p>
 <ul>
-<li><p>拉弓之後身體如何開始動。</p>
+<li><p id="nav-cd8ae5bed3e21d7d" data-navigation-anchor="">拉弓之後身體如何開始動。</p>
 </li>
-<li><p>軀幹和手肘誰先向前。</p>
+<li><p id="nav-8c58536a8754d441" data-navigation-anchor="">軀幹和手肘誰先向前。</p>
 </li>
-<li><p>肩膀是否明顯上提。</p>
+<li><p id="nav-802ce74abc506395" data-navigation-anchor="">肩膀是否明顯上提。</p>
 </li>
-<li><p>上臂、前臂與手掌的先後。</p>
+<li><p id="nav-e51017132e04b35e-2" data-navigation-anchor="">上臂、前臂與手掌的先後。</p>
 </li>
-<li><p>非擊球手何時收回。</p>
+<li><p id="nav-bfa959adf2a1624c" data-navigation-anchor="">非擊球手何時收回。</p>
 </li>
-<li><p>不同揮臂型態的差異。</p>
+<li><p id="nav-70509899641e3475" data-navigation-anchor="">不同揮臂型態的差異。</p>
 </li>
-<li><p>擊球後如何完成隨揮與減速。</p>
+<li><p id="nav-60f8378743c015b1" data-navigation-anchor="">擊球後如何完成隨揮與減速。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=VzkVivsRB_0">Arm Swing Mechanics: 3 Motions（part 1&#x2F;2）｜Elevate Yourself</a><br>用來觀察基本揮臂分段與整體節奏。</p>
+<li><p id="nav-4f83453d25b7b4aa" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=VzkVivsRB_0">Arm Swing Mechanics: 3 Motions（part 1/2）｜Elevate Yourself</a><br>用來觀察基本揮臂分段與整體節奏。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=8_QwOHXNK9o">Hip &amp; Shoulder Separation for Volleyball Power &amp; Mechanics｜PowerCore360</a><br>用來理解髖部、軀幹與肩膀之間的先後；其中訓練與傷害預防相關說法仍要另外查證。</p>
+<li><p id="nav-673ce3fbde5386fd" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=8_QwOHXNK9o">Hip &amp; Shoulder Separation for Volleyball Power &amp; Mechanics｜PowerCore360</a><br>用來理解髖部、軀幹與肩膀之間的先後；其中訓練與傷害預防相關說法仍要另外查證。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://volleyballtoolbox.net/drills/arm-swing-progressions">Arm Swing Progressions｜Volleyball Toolbox</a><br>包含利用投擲感建立揮臂的練習，可以拿來理解「身體帶動手臂」的體感，但不直接把投球照搬成扣球。</p>
+<li><p id="nav-ed2e14fd598613cc" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://volleyballtoolbox.net/drills/arm-swing-progressions">Arm Swing Progressions｜Volleyball Toolbox</a><br>包含利用投擲感建立揮臂的練習，可以拿來理解「身體帶動手臂」的體感，但不直接把投球照搬成扣球。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://www.jssm.org/video/circular.html">Volleyball spike arm-swing techniques 3D demonstrations</a><br>用來比較 Circular、Bow-and-Arrow 等不同揮臂型態，提醒自己不要把單一路徑當成唯一標準。</p>
+<li><p id="nav-295023dcbad5a56f" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.jssm.org/video/circular.html">Volleyball spike arm-swing techniques 3D demonstrations</a><br>用來比較 Circular、Bow-and-Arrow 等不同揮臂型態，提醒自己不要把單一路徑當成唯一標準。</p>
 </li>
 </ul>
-<h2 id="術語對照表"><a href="#術語對照表" class="headerlink" title="術語對照表"></a>術語對照表</h2><table>
+<h2 id="術語對照表" data-navigation-anchor=""><a href="#術語對照表" class="headerlink" title="術語對照表"></a>術語對照表</h2><table>
 <thead>
 <tr>
 <th>英文術語</th>
@@ -1389,7 +1397,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Arm Swing Mechanics &#x2F; Arm Path</td>
+<td>Arm Swing Mechanics / Arm Path</td>
 <td>攻擊揮臂機制／揮臂路徑。目前比起手經過哪些位置，更重視動作時序。</td>
 </tr>
 <tr>
@@ -1401,7 +1409,7 @@
 <td>手臂延遲。軀幹與上臂開始運動後，前臂與手掌暫時落後，之後再快速追上。</td>
 </tr>
 <tr>
-<td>Elbow Lead &#x2F; Elbow Drive</td>
+<td>Elbow Lead / Elbow Drive</td>
 <td>手肘引導。現在主要用來觀察上臂與前臂的先後，而不是固定幾何位置。</td>
 </tr>
 <tr>
@@ -1458,34 +1466,34 @@
 </tr>
 </tbody></table>
 <hr>
-<h1 id="目前的結論"><a href="#目前的結論" class="headerlink" title="目前的結論"></a>目前的結論</h1><p>這次最大的改變，不是找到一套新的「標準扣球姿勢」，而是把原本模糊的問題變成可以從影片檢查的動作線索。新的實戰資料也提醒我，起跳高度只是必要條件之一，不是所有揮臂不完整的唯一原因。</p>
-<p>目前最值得優先確認的，不是身體側彎幾度、手肘是否位在某個固定位置，或擊球點是否一定要在頭頂正上方，而是：</p>
+<h1 id="目前的結論"><a href="#目前的結論" class="headerlink" title="目前的結論"></a>目前的結論</h1><p id="nav-5f13f7a29daf16e5" data-navigation-anchor="">這次最大的改變，不是找到一套新的「標準扣球姿勢」，而是把原本模糊的問題變成可以從影片檢查的動作線索。新的實戰資料也提醒我，起跳高度只是必要條件之一，不是所有揮臂不完整的唯一原因。</p>
+<p id="nav-d959b44ca4678dde" data-navigation-anchor="">目前最值得優先確認的，不是身體側彎幾度、手肘是否位在某個固定位置，或擊球點是否一定要在頭頂正上方，而是：</p>
 <blockquote>
-<p><strong>我有沒有先把自己放到能完成揮臂的距離，並在起跳早段拉高手臂，而不是到了半路才用肩膀和手臂補救？</strong></p>
+<p id="nav-d790550beace22a9" data-navigation-anchor=""><strong>我有沒有先把自己放到能完成揮臂的距離，並在起跳早段拉高手臂，而不是到了半路才用肩膀和手臂補救？</strong></p>
 </blockquote>
-<p>暫時保留三個練習提示：</p>
+<p id="nav-e3456c4fe4025cb4" data-navigation-anchor="">暫時保留三個練習提示：</p>
 <blockquote>
-<p><strong>先把球放在能完成揮臂的距離。</strong><br><br><strong>起跳早段就拉高，不要半路才補。</strong><br><br><strong>身體帶手，把揮臂完整走完。</strong></p>
+<p id="nav-2f2242e4e6183fe6-2" data-navigation-anchor=""><strong>先把球放在能完成揮臂的距離。</strong><br><br><strong>起跳早段就拉高，不要半路才補。</strong><br><br><strong>身體帶手，把揮臂完整走完。</strong></p>
 </blockquote>
-<p>這個模型仍然需要真正有球的攻擊影片驗證；在那之前，手肘路徑、擊球點與軀幹側彎都先視為可以比較的結果，而不是已經確定的錯誤原因。</p>
+<p id="nav-403f49f4f5200c60" data-navigation-anchor="">這個模型仍然需要真正有球的攻擊影片驗證；在那之前，手肘路徑、擊球點與軀幹側彎都先視為可以比較的結果，而不是已經確定的錯誤原因。</p>
 <hr>
-<h1 id="預先收集：先看的核心資料"><a href="#預先收集：先看的核心資料" class="headerlink" title="預先收集：先看的核心資料"></a>預先收集：先看的核心資料</h1><p>以下資料先用來校準觀察語言，不把研究中的平均動作直接當成自己的標準姿勢。</p>
+<h1 id="預先收集：先看的核心資料"><a href="#預先收集：先看的核心資料" class="headerlink" title="預先收集：先看的核心資料"></a>預先收集：先看的核心資料</h1><p id="nav-a626a513f7e7f23b" data-navigation-anchor="">以下資料先用來校準觀察語言，不把研究中的平均動作直接當成自己的標準姿勢。</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3445065/">Upper Limb Biomechanics During the Volleyball Serve and Spike</a>：把攻擊動作拆成助跑、手臂蓄力、加速與隨揮四個階段，適合拿來標記實戰影片中的事件順序。</li>
-<li><a target="_blank" rel="noopener" href="https://journals.sagepub.com/doi/10.1177/1747954119899881">A systematic review of volleyball spike kinematics</a>：整理 18 篇三維動作研究，指出球速和手臂、軀幹速度有關，部分位置的斜線攻擊也和軀幹旋轉相關；但研究品質與傷害關係仍不能過度延伸。</li>
-<li><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6410979/">Spiking Kinematics in Volleyball Players With Shoulder Pain</a>：比較有肩痛與沒有肩痛球員在肩胛、肩關節與軀幹上的動作差異；它是橫斷面研究，適合提醒我觀察肩膀負荷，但不能拿來證明某個動作一定造成疼痛。</li>
-<li><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9459771/">Spike Arm Swing Techniques of Olympics Male and Female Elite Volleyball Players</a>：整理不同揮臂型態，說明 Circular、Snap 與拉弓式等方式在不同球員與比賽情境中都可能出現，不必急著追求唯一的手肘路徑。</li>
+<li id="nav-3d10aa193a3136de" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3445065/">Upper Limb Biomechanics During the Volleyball Serve and Spike</a>：把攻擊動作拆成助跑、手臂蓄力、加速與隨揮四個階段，適合拿來標記實戰影片中的事件順序。</li>
+<li id="nav-f462d427f2ad89c7" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://journals.sagepub.com/doi/10.1177/1747954119899881">A systematic review of volleyball spike kinematics</a>：整理 18 篇三維動作研究，指出球速和手臂、軀幹速度有關，部分位置的斜線攻擊也和軀幹旋轉相關；但研究品質與傷害關係仍不能過度延伸。</li>
+<li id="nav-9f4bb14ff66384c9" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6410979/">Spiking Kinematics in Volleyball Players With Shoulder Pain</a>：比較有肩痛與沒有肩痛球員在肩胛、肩關節與軀幹上的動作差異；它是橫斷面研究，適合提醒我觀察肩膀負荷，但不能拿來證明某個動作一定造成疼痛。</li>
+<li id="nav-c8fe7ef85259f2d6" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9459771/">Spike Arm Swing Techniques of Olympics Male and Female Elite Volleyball Players</a>：整理不同揮臂型態，說明 Circular、Snap 與拉弓式等方式在不同球員與比賽情境中都可能出現，不必急著追求唯一的手肘路徑。</li>
 </ol>
-<h2 id="我的參考意見"><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p>我目前的「身體先帶動、手臂再跟上」假說，可以先當成影片分析框架，而不是已經證實的技術結論。下一次拍有球的斜側面影片時，優先標記球與起跳位置、非擊球手收回、軀幹開始動、手肘跑到肩膀前方，以及擊球後的減速順序。研究最適合幫我決定要看什麼，不能替我診斷肩膀；若不適持續或影響日常活動，仍要交給合格專業人員評估。</p>
+<h2 id="我的參考意見" data-navigation-anchor=""><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p id="nav-aa38cf7398a17d4b" data-navigation-anchor="">我目前的「身體先帶動、手臂再跟上」假說，可以先當成影片分析框架，而不是已經證實的技術結論。下一次拍有球的斜側面影片時，優先標記球與起跳位置、非擊球手收回、軀幹開始動、手肘跑到肩膀前方，以及擊球後的減速順序。研究最適合幫我決定要看什麼，不能替我診斷肩膀；若不適持續或影響日常活動，仍要交給合格專業人員評估。</p>
 <hr>
 <h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
-<li><strong>2026-08-29</strong>：建立公開學習筆記，整理混排攻擊時遇到的揮臂、擊球點與節奏問題。</li>
-<li><strong>2026-09-01</strong>：重新整理問題模型，把焦點從手肘路徑與擊球點往前移到起跳節奏、身體帶動與出手時序。</li>
-<li><strong>2026-09-01 晚間</strong>：加入較完整的連續動作影格分析。觀察到非擊球手偏早收回、軀幹側彎明顯與整體動作偏急；將身體帶動不足、肩膀提早主導與 Arm Lag 列為待驗證假說。</li>
-<li><strong>2026-09-02</strong>：再次和朋友討論影片後，新增「手肘過早跑到肩膀前方」、「出手時肩膀上提、脖子縮起來、整個上半身縮起」等觀察。將軀幹側彎的優先順位降低，問題進一步收斂為「身體尚未充分帶動前，上肢是否太早接管攻擊」。</li>
-<li><strong>2026-09-02 01:14</strong>：重新整理段落層級與重複總結，保留手繪示意圖作為唯一圖片，讓文章在保留思考過程的同時更有閱讀留白。</li>
-<li><strong>2026-09-07</strong>：加入新的實戰觀察：單腳起跳且和球距離較遠時反而能完成揮臂、抓球距離仍不穩定、較好的球點在臉頰旁邊，以及高球雖然起跳高度足夠，卻因揮臂中段才拉高手臂而只剩指尖越過球。同步把問題優先順序從單純追起跳高度，調整為先找可完成揮臂的球距離，再確認早段拉臂時機；肩膀不適先記為可能涉及旋轉肌群負荷的症狀假說。</li>
-<li><strong>2026-09-10</strong>：加入後續討論，將「旋轉不夠」拆成起始方向、可用空間、時序、動量傳遞與減速支撐五層；以桌球引拍過深造成「旋轉很多但動作脫節」作為理解例子，並把斜向助跑、左手向前找球與影片中靠近 1 點鐘的線索整理成待驗證的排球調整方向。主軸仍放在排球攻擊窗口、擊球臂準備時機與肩膀負荷觀察。</li>
+<li id="nav-2bdf2de2184db1c3" data-navigation-anchor=""><strong>2026-08-29</strong>：建立公開學習筆記，整理混排攻擊時遇到的揮臂、擊球點與節奏問題。</li>
+<li id="nav-f0e83169e4c26528" data-navigation-anchor=""><strong>2026-09-01</strong>：重新整理問題模型，把焦點從手肘路徑與擊球點往前移到起跳節奏、身體帶動與出手時序。</li>
+<li id="nav-b584d3300f29e14a" data-navigation-anchor=""><strong>2026-09-01 晚間</strong>：加入較完整的連續動作影格分析。觀察到非擊球手偏早收回、軀幹側彎明顯與整體動作偏急；將身體帶動不足、肩膀提早主導與 Arm Lag 列為待驗證假說。</li>
+<li id="nav-7c6807cf35d8e5a2" data-navigation-anchor=""><strong>2026-09-02</strong>：再次和朋友討論影片後，新增「手肘過早跑到肩膀前方」、「出手時肩膀上提、脖子縮起來、整個上半身縮起」等觀察。將軀幹側彎的優先順位降低，問題進一步收斂為「身體尚未充分帶動前，上肢是否太早接管攻擊」。</li>
+<li id="nav-208c9cf79b68e219" data-navigation-anchor=""><strong>2026-09-02 01:14</strong>：重新整理段落層級與重複總結，保留手繪示意圖作為唯一圖片，讓文章在保留思考過程的同時更有閱讀留白。</li>
+<li id="nav-d0c893d870a8b370" data-navigation-anchor=""><strong>2026-09-07</strong>：加入新的實戰觀察：單腳起跳且和球距離較遠時反而能完成揮臂、抓球距離仍不穩定、較好的球點在臉頰旁邊，以及高球雖然起跳高度足夠，卻因揮臂中段才拉高手臂而只剩指尖越過球。同步把問題優先順序從單純追起跳高度，調整為先找可完成揮臂的球距離，再確認早段拉臂時機；肩膀不適先記為可能涉及旋轉肌群負荷的症狀假說。</li>
+<li id="nav-df5b08676f05a8e5" data-navigation-anchor=""><strong>2026-09-10</strong>：加入後續討論，將「旋轉不夠」拆成起始方向、可用空間、時序、動量傳遞與減速支撐五層；以桌球引拍過深造成「旋轉很多但動作脫節」作為理解例子，並把斜向助跑、左手向前找球與影片中靠近 1 點鐘的線索整理成待驗證的排球調整方向。主軸仍放在排球攻擊窗口、擊球臂準備時機與肩膀負荷觀察。</li>
 </ul>
 
     </div>
@@ -1536,8 +1544,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/learning/cms-content-modeling-field-review/" rel="next" title="CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記">
-                  CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記 <i class="fa fa-angle-right"></i>
+                <a href="/learning/agentic-transaction-acid-agent/" rel="next" title="Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記">
+                  Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

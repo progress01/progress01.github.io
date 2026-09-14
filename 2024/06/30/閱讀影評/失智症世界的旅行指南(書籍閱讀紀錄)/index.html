@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,16 +666,16 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《失智症世界的旅行指南》試著從失智者與照護者的角度，說明疾病如何改變認知、溝通與相處方式。它用清楚而友善的文字縮短彼此的資訊落差，也讓我重新回看自己曾經不理解的情緒。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-02d70b3812002ad4" data-navigation-anchor="">《失智症世界的旅行指南》試著從失智者與照護者的角度，說明疾病如何改變認知、溝通與相處方式。它用清楚而友善的文字縮短彼此的資訊落差，也讓我重新回看自己曾經不理解的情緒。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>家長有長輩得了失智症，從需要照顧到很需要人照顧，事實上我能了解生病，但我無法同理他的行為，也導致我產生了不少的情緒，關於他關於照護者，更關於我們該怎樣在這樣的困境下去相處，突然留意到書架之間的書就隨手拿起來了，也難怪後來書籍會得獎，雖然後來長輩先離開我才看完書，但我還是能想到自己那些不合時宜而且失禮的部分。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>從生病的長輩的角度告訴讀者，他們所面臨的困難，以及因為他們的認知所產生的他們認知內的行為，對於不可逆轉的失智，透過友善的資訊傳達可以讓兩者的資訊落差跟內心衝突可以更快的有一個中間的交集點，這本書在資訊轉達以及照護需求協助上表現得非常出色。</p>
-<p>尤其是對那些常見的溝通障礙花了不少功夫，簡易且清楚地傳達資訊我們都知道有多困難。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我討厭我得了失智症的長輩，永遠也不表達自己，也不明白他為何要把自己搞得如此糟糕，雖然不是作為主要照顧者但在從旁協助的時候我仍然會忍不住自己的情緒，「所以你到底要幹嘛？」</p>
-<p>雖然隨著後續她狀況惡化到無法住在家裡得委託別人照顧，但直到閱讀這本書之前依然會想起來氣憤，也曾經發表過愚孝的言論，但我想這本書確實有幫到我，從那種你要體諒到對方生病的立場，轉換到與他相同症狀的當事人說及他們眼中所遭遇的困難，頓時我的心氣也平和了很多，即使書中的症狀稍微輕微，特別肯定書中最後提到的，請與照顧者們溝通，我們真的想知道你的能與不能，再來也想知道為何你總是在錢上繞不過去，總是提著一些奇怪的事情…以及仿佛每分每秒都在尿急導致很難與你共同出行。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>書中提到了很多實際上病友(我覺得我稍微心情氣和了很多)內心的想法即生病後他們面對的旅程，我想這比從專業書籍或是醫生那邊知道的還好，對我來說重要的不是單純因為生病所以你為所欲為到把大家情緒搞糟糕，而是因為你的大腦讓你無法正確的表述你想像平常那樣做的事情，這對我來說很重要，至少你還是你…總比那個總是不知道在幹嘛的你好多了，身為協助者透過書籍找回了心平氣和。我也想了為了可能作為主要照顧者的日子，最推薦書籍最後一段，大家請保持溝通與支持！這很重要！</p>
-<p>最後感謝作者們與出版社，這本書對我滿重要的。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-f9a686acc1879ac9" data-navigation-anchor="">家長有長輩得了失智症，從需要照顧到很需要人照顧，事實上我能了解生病，但我無法同理他的行為，也導致我產生了不少的情緒，關於他關於照護者，更關於我們該怎樣在這樣的困境下去相處，突然留意到書架之間的書就隨手拿起來了，也難怪後來書籍會得獎，雖然後來長輩先離開我才看完書，但我還是能想到自己那些不合時宜而且失禮的部分。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-ef4c58ae99722109" data-navigation-anchor="">從生病的長輩的角度告訴讀者，他們所面臨的困難，以及因為他們的認知所產生的他們認知內的行為，對於不可逆轉的失智，透過友善的資訊傳達可以讓兩者的資訊落差跟內心衝突可以更快的有一個中間的交集點，這本書在資訊轉達以及照護需求協助上表現得非常出色。</p>
+<p id="nav-d250450de2d5a13e" data-navigation-anchor="">尤其是對那些常見的溝通障礙花了不少功夫，簡易且清楚地傳達資訊我們都知道有多困難。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-deb318266519a415" data-navigation-anchor="">我討厭我得了失智症的長輩，永遠也不表達自己，也不明白他為何要把自己搞得如此糟糕，雖然不是作為主要照顧者但在從旁協助的時候我仍然會忍不住自己的情緒，「所以你到底要幹嘛？」</p>
+<p id="nav-fa50207bd23cf566" data-navigation-anchor="">雖然隨著後續她狀況惡化到無法住在家裡得委託別人照顧，但直到閱讀這本書之前依然會想起來氣憤，也曾經發表過愚孝的言論，但我想這本書確實有幫到我，從那種你要體諒到對方生病的立場，轉換到與他相同症狀的當事人說及他們眼中所遭遇的困難，頓時我的心氣也平和了很多，即使書中的症狀稍微輕微，特別肯定書中最後提到的，請與照顧者們溝通，我們真的想知道你的能與不能，再來也想知道為何你總是在錢上繞不過去，總是提著一些奇怪的事情…以及仿佛每分每秒都在尿急導致很難與你共同出行。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-44e3b775de6d9565" data-navigation-anchor="">書中提到了很多實際上病友(我覺得我稍微心情氣和了很多)內心的想法即生病後他們面對的旅程，我想這比從專業書籍或是醫生那邊知道的還好，對我來說重要的不是單純因為生病所以你為所欲為到把大家情緒搞糟糕，而是因為你的大腦讓你無法正確的表述你想像平常那樣做的事情，這對我來說很重要，至少你還是你…總比那個總是不知道在幹嘛的你好多了，身為協助者透過書籍找回了心平氣和。我也想了為了可能作為主要照顧者的日子，最推薦書籍最後一段，大家請保持溝通與支持！這很重要！</p>
+<p id="nav-50e0333d3866d258" data-navigation-anchor="">最後感謝作者們與出版社，這本書對我滿重要的。</p>
 <img class="blogger-import-image" loading="lazy" decoding="async" width="385" height="504" src="/images/blogger-import/blogger-577582d225/01.webp" alt="圖片 1">
 (圖片來源: 喵喵書評)
 

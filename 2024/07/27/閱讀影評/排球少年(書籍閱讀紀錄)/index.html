@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,17 +666,17 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>《排球少年》陪我從大學打球讀到完結；我喜歡的不只是比賽，也包括角色在排球世界成長，以及漫畫和生活記憶交疊的感動。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-e8f392f49e2b9121" data-navigation-anchor="">《排球少年》陪我從大學打球讀到完結；我喜歡的不只是比賽，也包括角色在排球世界成長，以及漫畫和生活記憶交疊的感動。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>大學的時候就一直喜歡的漫畫，剛開始接觸的時候西谷剛登場，也夢想做一個很帥的自由球員，可惜因為人太少我們根本就沒人能打自由，又因為攻擊不夠好就去打了舉球(囧)，一路上一邊打ˊ著排球、看著真實世界的排球並有漫畫陪伴我一起成長，一直以來都能夠從各種角度想像跟帶入情感的漫畫也搬上大螢幕，其中的感動真的只能流淚來表達。</p>
-<p>當天在電影院應該很少有人能明白為何我電影開頭就哭了吧，就是一個放進心裡跟生活路上的故事，不只有聲有色的人物塑造，我喜歡這整個排球世界的積極向上。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>第一次遇到很難形容特色的漫畫，真實但又具有想像力，劇情雖然被說是王道，但因為角色刻畫的深刻以及台詞的深度，讓整個你跟漫畫互動的過程中，形成了一個享受排球喜怒哀樂的人跟一個想像代入自己相似回憶的場景，這些閱讀體驗對我來說都很特別。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>排球少年的好看在於建構於真實世界卻努力向前努力的人們，文學社會學裡面常常會討論世代的概念，作家的世代與其他等等，運動漫畫也能看到類似的榮景，我喜歡的排球少年是古館老師認真且溫柔的對待的黃金排球世代。</p>
-<p>細小的從隊伍的設定，人物的描繪到成長經歷以及最後誰都很重要，不會輕忽非人氣角色的溫柔，漫畫50幾集更像是從翔陽(主角)的眼睛來看世界，如果是網路小說吐槽的話大概會說，古館懂什麼排球少年阿，他不就是一個抄書的(意即抄出了他眼裡所看到的排球世界)。</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>若要說漫畫喜歡的部分很多，我想我最喜歡每個段落都有一個球員閃耀的瞬間，無論是討論你愛上排球的原因或其他很多，我其實也愛排球，但從來不是因為成就感，而是因為喜歡再加上我有能力享受這個快樂的加乘，有好多感動與有趣的地方，有時候運動漫畫的角色成長總讓人淚流，我覺得是相對於職場漫畫或其他，這些感動很純粹，至少我很喜歡這部漫畫。</p>
-<p>突然想到我的舉球動作應該算是看漫畫學的，就是有時候變的手太黏某次比賽被吹了五次犯規…後來也覺得那樣的動作對於練習穩定來說不一定適合?</p>
-<p>但反正我也過了每周練球的階段了(苦笑)</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-919c84cd8f7b0db8" data-navigation-anchor="">大學的時候就一直喜歡的漫畫，剛開始接觸的時候西谷剛登場，也夢想做一個很帥的自由球員，可惜因為人太少我們根本就沒人能打自由，又因為攻擊不夠好就去打了舉球(囧)，一路上一邊打ˊ著排球、看著真實世界的排球並有漫畫陪伴我一起成長，一直以來都能夠從各種角度想像跟帶入情感的漫畫也搬上大螢幕，其中的感動真的只能流淚來表達。</p>
+<p id="nav-cba3b2b39c97deb1" data-navigation-anchor="">當天在電影院應該很少有人能明白為何我電影開頭就哭了吧，就是一個放進心裡跟生活路上的故事，不只有聲有色的人物塑造，我喜歡這整個排球世界的積極向上。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-264903673cf6064a" data-navigation-anchor="">第一次遇到很難形容特色的漫畫，真實但又具有想像力，劇情雖然被說是王道，但因為角色刻畫的深刻以及台詞的深度，讓整個你跟漫畫互動的過程中，形成了一個享受排球喜怒哀樂的人跟一個想像代入自己相似回憶的場景，這些閱讀體驗對我來說都很特別。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-3af0381d2d3be211" data-navigation-anchor="">排球少年的好看在於建構於真實世界卻努力向前努力的人們，文學社會學裡面常常會討論世代的概念，作家的世代與其他等等，運動漫畫也能看到類似的榮景，我喜歡的排球少年是古館老師認真且溫柔的對待的黃金排球世代。</p>
+<p id="nav-4debeb430ea3241c" data-navigation-anchor="">細小的從隊伍的設定，人物的描繪到成長經歷以及最後誰都很重要，不會輕忽非人氣角色的溫柔，漫畫50幾集更像是從翔陽(主角)的眼睛來看世界，如果是網路小說吐槽的話大概會說，古館懂什麼排球少年阿，他不就是一個抄書的(意即抄出了他眼裡所看到的排球世界)。</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-8e6dc719a37eb1af" data-navigation-anchor="">若要說漫畫喜歡的部分很多，我想我最喜歡每個段落都有一個球員閃耀的瞬間，無論是討論你愛上排球的原因或其他很多，我其實也愛排球，但從來不是因為成就感，而是因為喜歡再加上我有能力享受這個快樂的加乘，有好多感動與有趣的地方，有時候運動漫畫的角色成長總讓人淚流，我覺得是相對於職場漫畫或其他，這些感動很純粹，至少我很喜歡這部漫畫。</p>
+<p id="nav-19e7065da143e788" data-navigation-anchor="">突然想到我的舉球動作應該算是看漫畫學的，就是有時候變的手太黏某次比賽被吹了五次犯規…後來也覺得那樣的動作對於練習穩定來說不一定適合?</p>
+<p id="nav-e27ad5af1740775d" data-navigation-anchor="">但反正我也過了每周練球的階段了(苦笑)</p>
 <img class="blogger-import-image" loading="lazy" decoding="async" width="314" height="451" src="/images/blogger-import/blogger-4be80b5c54/01.webp" alt="圖片 1">
 (圖片來源: 喵喵書評)
 

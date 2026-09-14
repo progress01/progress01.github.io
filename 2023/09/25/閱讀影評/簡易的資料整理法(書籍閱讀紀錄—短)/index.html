@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,19 +666,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我帶著對筆記與資料整理的困惑讀它，最後更看見工具之外的執行力與自省。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-e5ea8c41a49bdfb5" data-navigation-anchor="">我帶著對筆記與資料整理的困惑讀它，最後更看見工具之外的執行力與自省。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>020很常是放圖資系資料的地方，我偶爾路過該區的書架就會張望一下，看看四周是否有新增或是有什麼平常遺漏的書籍？這本俗到以紅白配色為主的書就這樣被我抽了起來，看了一下出版剛好是我出生那年，這年頭什麼都發展得很快，那我出生那年大家是怎樣整理資料的呢？尤其是這本還是一本翻譯書，讓我不禁又好奇又期待。</p>
-<h2 id="書籍特色"><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p>這本小說算是一個充分展示作者的想法及成果的書，雖然我對於很多想法的看法是不予置評，但執行力及成果還有自省能力是這本書裡面有點藏在眾多分享整理法中的中心思想。</p>
-<p>因為滿多大概會讓現代人很困惑的做法也許當年是可行的，也看到了懷念的錄音帶以及一些現在大家早就都這樣想的方式，但如果你偶爾也困惑於各種知識體系的大量整理，或到底要用哪款筆記軟體才算是不浪費自己的人生的時候，讀起來也別有趣味。</p>
-<p>名片算是這本書的作者花不少心力介紹的東西，但日本的泡沫時代從1986年12月到1991年3月左右，也不知道作者的名片及相關的創新有沒有後續，至少網路之上淺淺的搜尋幾個關鍵字是沒有他更進一步的消息了。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我其實真的很困擾於筆記軟體的事情，我喜歡寫心情、寫心得、寫東寫西，但近來科技發展的極快，當我還在Evernote是否要跟進時，再過幾年這個巨人就幾乎快倒了，當notion大量的人開始使用，開始在討論空白筆記的時候我應該還在onenote，當卡片和筆記出來又有一款新的筆記應用統治了一批新的子民，我的筆記遷徙更像是一邊在流浪並持續的迷茫。</p>
-<p>曾經有段時間還看過本地保存已經雲端保存的討論，而我帶著這些困惑來看這本當年出書的資料整理的時候，卻帶著小小的奇怪優越感，有點像是從穿越者的角度的傲視目光，卻赫然發現…</p>
-<p>即使是當年，積極收集情報利用的作者也曾面對且突破這些難題，像是作者提到的：理念不實踐就沒有價值，他會將需要的想法記錄裝訂成冊，並定期整理複習，而且他也為了橫向關聯而有其他的預期及補充，並會於睡前、一周內定期的整理他的萬用手冊。</p>
-<p>更令人驚奇的是現在有些人會使用手機或語音軟體紀錄所思所想，他竟然在當年也用錄音帶做過類似的事情(p112)，並且定期整理累積的資料及歸檔名片，當然你可能會笑話作者對於名片的執著，他至少在書裡面提到他做出來的兩種神祕的名片，分別是旋律、算命名片 …</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>算是閱讀感非常特別的書，我們總試圖為自己找到解決方法，卻沒料到一本偶遇介紹當年應用工具的書也帶給我這麼多的心情調適，即使時代走得很快，大家遇到的困難卻似乎並沒有差異太多，而且我們還來自於不同國家！</p>
-<p>在現代至少有非常多的應用手段來克服當年作者遇到的困難，雖然相對應的情況也複雜很多，但似乎透過書籍知道我出生那年的事情以及他們正在面對的資料整理困難，讓我從心裡邊輕笑邊湧現出那我再試試看吧的勇氣！</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-ccd5fb2374e05fa5" data-navigation-anchor="">020很常是放圖資系資料的地方，我偶爾路過該區的書架就會張望一下，看看四周是否有新增或是有什麼平常遺漏的書籍？這本俗到以紅白配色為主的書就這樣被我抽了起來，看了一下出版剛好是我出生那年，這年頭什麼都發展得很快，那我出生那年大家是怎樣整理資料的呢？尤其是這本還是一本翻譯書，讓我不禁又好奇又期待。</p>
+<h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-8cb12038e166cf78" data-navigation-anchor="">這本小說算是一個充分展示作者的想法及成果的書，雖然我對於很多想法的看法是不予置評，但執行力及成果還有自省能力是這本書裡面有點藏在眾多分享整理法中的中心思想。</p>
+<p id="nav-f3f82e1c75821464" data-navigation-anchor="">因為滿多大概會讓現代人很困惑的做法也許當年是可行的，也看到了懷念的錄音帶以及一些現在大家早就都這樣想的方式，但如果你偶爾也困惑於各種知識體系的大量整理，或到底要用哪款筆記軟體才算是不浪費自己的人生的時候，讀起來也別有趣味。</p>
+<p id="nav-b934b07c8ecf1e3f" data-navigation-anchor="">名片算是這本書的作者花不少心力介紹的東西，但日本的泡沫時代從1986年12月到1991年3月左右，也不知道作者的名片及相關的創新有沒有後續，至少網路之上淺淺的搜尋幾個關鍵字是沒有他更進一步的消息了。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-016088a360ff2dc7" data-navigation-anchor="">我其實真的很困擾於筆記軟體的事情，我喜歡寫心情、寫心得、寫東寫西，但近來科技發展的極快，當我還在Evernote是否要跟進時，再過幾年這個巨人就幾乎快倒了，當notion大量的人開始使用，開始在討論空白筆記的時候我應該還在onenote，當卡片和筆記出來又有一款新的筆記應用統治了一批新的子民，我的筆記遷徙更像是一邊在流浪並持續的迷茫。</p>
+<p id="nav-5279655069fb1f35" data-navigation-anchor="">曾經有段時間還看過本地保存已經雲端保存的討論，而我帶著這些困惑來看這本當年出書的資料整理的時候，卻帶著小小的奇怪優越感，有點像是從穿越者的角度的傲視目光，卻赫然發現…</p>
+<p id="nav-63ff9b23994fc4a9" data-navigation-anchor="">即使是當年，積極收集情報利用的作者也曾面對且突破這些難題，像是作者提到的：理念不實踐就沒有價值，他會將需要的想法記錄裝訂成冊，並定期整理複習，而且他也為了橫向關聯而有其他的預期及補充，並會於睡前、一周內定期的整理他的萬用手冊。</p>
+<p id="nav-e5bccd4613ca1b71" data-navigation-anchor="">更令人驚奇的是現在有些人會使用手機或語音軟體紀錄所思所想，他竟然在當年也用錄音帶做過類似的事情(p112)，並且定期整理累積的資料及歸檔名片，當然你可能會笑話作者對於名片的執著，他至少在書裡面提到他做出來的兩種神祕的名片，分別是旋律、算命名片 …</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-5b4f583f32f7fa6d" data-navigation-anchor="">算是閱讀感非常特別的書，我們總試圖為自己找到解決方法，卻沒料到一本偶遇介紹當年應用工具的書也帶給我這麼多的心情調適，即使時代走得很快，大家遇到的困難卻似乎並沒有差異太多，而且我們還來自於不同國家！</p>
+<p id="nav-11f5221b13f52001" data-navigation-anchor="">在現代至少有非常多的應用手段來克服當年作者遇到的困難，雖然相對應的情況也複雜很多，但似乎透過書籍知道我出生那年的事情以及他們正在面對的資料整理困難，讓我從心裡邊輕笑邊湧現出那我再試試看吧的勇氣！</p>
 <img class="blogger-import-image" loading="lazy" decoding="async" width="314" height="447" src="/images/blogger-import/blogger-e9b58ff411/01.webp" alt="圖片 1">
 (圖片來源:yahoo奇摩商城 書寶二手書店)
 

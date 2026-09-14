@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,25 +666,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我曾把終結單身當成願望，因書名讀《哈佛 ✕ Google 行為科學家的脫單指南》；它更像長久關係指南，仍把選擇留給讀者。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-acf36a1043633019" data-navigation-anchor="">我曾把終結單身當成願望，因書名讀《哈佛 ✕ Google 行為科學家的脫單指南》；它更像長久關係指南，仍把選擇留給讀者。</p>
 <span id="more"></span>
 
-<h2 id="閱讀歷程"><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p>終結單身是我2023年的小小願望，然而時至今日今年都快過完一半了，我一樣沒有任何變化，因此巡書架的時候這本書名非常的吸引我，趁著無人注意的時刻就趕緊借了就跑，而因為某樓層借書機的故障，導致我必須要在一樓完成借書的任務實在是非常的艱辛。</p>
-<p>所幸不是那種掉在小型自動借還書機還需要透過同事拿到的悲慘狀況，但斷斷續續的這本書也花了一些時間才看完，困難點是他一開始的章節屬於網路交友，而實際上我可能稍微有點排斥？風格上也需要習慣一下。</p>
-<h2 id="小說特色"><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p>書籍雖然翻譯叫做脫單指南，但實際上英文的書名更符合這本書的宗旨，整體閱讀下來感受應該是偏向於經營長久關係的幸福指南，除了作者作為感情顧問的協助經驗，自身與伴侶的相處經驗，再來就是輔以一些實際操作方式。</p>
-<p>這本書相較於其他書籍更讓我能接受的一點是由於他的友善性，有點類似於把操作與否或是行動程度之類的想法交給自己，他從一個行為上幫你分析並給出可以嘗試的做法，做法上因為文化差異有時候真的會有接受性問題，但無妨是一個選項沒錯。</p>
-<p>脫單是關係的第一步，但關係經營上脫單後還有許許多多的大小困難需要克服，甚至在脫單上還有許多屬於自己的難關，有趣的分析以及面向概覽來說這本書給我最大的樂趣。</p>
-<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>由於距離脫單仍有點遙遠，因此後續的關係經營我會小提到同事分享的部分。</p>
-<p>整本書讓我最有感受的是『一個不錯的交往關係，你要讓你喜歡對方的樣子是你自己喜歡的樣子』，如果將概念進一步引述，書中是說明了：對方可以引出你什麼樣的性格？而這個被引出的性格以及彼此在感情中相處的部分是不是被自己所討厭的？</p>
-<p>很常時候我們在歌曲裡面會聽到類似的歌詞是有關於：保持原樣因為那就是我喜歡你的樣子之類的描述，但在書籍的分析中我發現，實際上這個關係如果是長久會更健康的，你也會喜歡自己在關係裡面相處的模樣，也不一定是you complete me or you make me a better person.</p>
-<p>因為這本書跟同事討論的比較多，加碼紀錄同事分享的部分</p>
-<p>社群媒體在關係經營上造成的負面影響，例如它只呈現恩愛或所謂認知是幸福美滿的樣子，讓觀看社群軟體的人都會下意識地覺得其他人都很幸福美滿，那些別人想呈現的好的一面，沒看到所有的日常卻成為社群媒體害死人的部分。</p>
-<p>幸福關係的維持還是有非常多需要持續了解的部分，但希望我能早點脫單？</p>
-<h2 id="小小總結"><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p>脫單只是關係的第一步，無論是對關係的期待以及幻想，這本書提供你一個行動的參考，當然有滿多部分存在所謂的文化差異，但試著提出邀約以及試著在關係中讓相處更融洽，試著在關係中更自在，並試著維持長久的美好關係，是一個可以抱持著開放態度閱讀的書籍～</p>
-<p>很高興沒有因為書名或害羞的關係錯過他。</p>
+<h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-990f9fecd33b0f5c" data-navigation-anchor="">終結單身是我2023年的小小願望，然而時至今日今年都快過完一半了，我一樣沒有任何變化，因此巡書架的時候這本書名非常的吸引我，趁著無人注意的時刻就趕緊借了就跑，而因為某樓層借書機的故障，導致我必須要在一樓完成借書的任務實在是非常的艱辛。</p>
+<p id="nav-c20d17ba603ed771" data-navigation-anchor="">所幸不是那種掉在小型自動借還書機還需要透過同事拿到的悲慘狀況，但斷斷續續的這本書也花了一些時間才看完，困難點是他一開始的章節屬於網路交友，而實際上我可能稍微有點排斥？風格上也需要習慣一下。</p>
+<h2 id="小說特色" data-navigation-anchor=""><a href="#小說特色" class="headerlink" title="小說特色"></a>小說特色</h2><p id="nav-f7f392348e9ce0ad" data-navigation-anchor="">書籍雖然翻譯叫做脫單指南，但實際上英文的書名更符合這本書的宗旨，整體閱讀下來感受應該是偏向於經營長久關係的幸福指南，除了作者作為感情顧問的協助經驗，自身與伴侶的相處經驗，再來就是輔以一些實際操作方式。</p>
+<p id="nav-095692685ca09a9f" data-navigation-anchor="">這本書相較於其他書籍更讓我能接受的一點是由於他的友善性，有點類似於把操作與否或是行動程度之類的想法交給自己，他從一個行為上幫你分析並給出可以嘗試的做法，做法上因為文化差異有時候真的會有接受性問題，但無妨是一個選項沒錯。</p>
+<p id="nav-7c7b0dacd0d5c979" data-navigation-anchor="">脫單是關係的第一步，但關係經營上脫單後還有許許多多的大小困難需要克服，甚至在脫單上還有許多屬於自己的難關，有趣的分析以及面向概覽來說這本書給我最大的樂趣。</p>
+<h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-b0ddcf652233f66f" data-navigation-anchor="">由於距離脫單仍有點遙遠，因此後續的關係經營我會小提到同事分享的部分。</p>
+<p id="nav-ad3def7fd4aafc17" data-navigation-anchor="">整本書讓我最有感受的是『一個不錯的交往關係，你要讓你喜歡對方的樣子是你自己喜歡的樣子』，如果將概念進一步引述，書中是說明了：對方可以引出你什麼樣的性格？而這個被引出的性格以及彼此在感情中相處的部分是不是被自己所討厭的？</p>
+<p id="nav-c71b48f0244fb8ed" data-navigation-anchor="">很常時候我們在歌曲裡面會聽到類似的歌詞是有關於：保持原樣因為那就是我喜歡你的樣子之類的描述，但在書籍的分析中我發現，實際上這個關係如果是長久會更健康的，你也會喜歡自己在關係裡面相處的模樣，也不一定是you complete me or you make me a better person.</p>
+<p id="nav-060511392b4558b4" data-navigation-anchor="">因為這本書跟同事討論的比較多，加碼紀錄同事分享的部分</p>
+<p id="nav-cd4cddc240bc5ca1" data-navigation-anchor="">社群媒體在關係經營上造成的負面影響，例如它只呈現恩愛或所謂認知是幸福美滿的樣子，讓觀看社群軟體的人都會下意識地覺得其他人都很幸福美滿，那些別人想呈現的好的一面，沒看到所有的日常卻成為社群媒體害死人的部分。</p>
+<p id="nav-708c154fe72e0231" data-navigation-anchor="">幸福關係的維持還是有非常多需要持續了解的部分，但希望我能早點脫單？</p>
+<h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-87d95d7173bae4bd" data-navigation-anchor="">脫單只是關係的第一步，無論是對關係的期待以及幻想，這本書提供你一個行動的參考，當然有滿多部分存在所謂的文化差異，但試著提出邀約以及試著在關係中讓相處更融洽，試著在關係中更自在，並試著維持長久的美好關係，是一個可以抱持著開放態度閱讀的書籍～</p>
+<p id="nav-6d99827f9ee08ab1" data-navigation-anchor="">很高興沒有因為書名或害羞的關係錯過他。</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="237" height="307" src="/images/blogger-import/blogger-86c50b1144/01.webp" alt="圖片 1">
 
-<p>(圖片來源：博客來網路書店)</p>
+<p id="nav-11c5e0a407792fd8" data-navigation-anchor="">(圖片來源：博客來網路書店)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2023/08/google.html -->
 
     </div>

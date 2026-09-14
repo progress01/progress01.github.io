@@ -93,6 +93,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -147,7 +148,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -171,6 +172,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -206,19 +214,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -318,15 +326,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -334,19 +334,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -406,11 +414,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -566,7 +574,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -655,32 +663,32 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我很喜歡《請回答1988》。我想慢慢完成的 <strong>《請回答1988》三十題鐵人計畫</strong>。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-c0f83d9accc11431" data-navigation-anchor="">我很喜歡《請回答1988》。我想慢慢完成的 <strong>《請回答1988》三十題鐵人計畫</strong>。</p>
 <span id="more"></span>
 
 <blockquote>
-<p><strong>三十題，不是三十天。</strong></p>
-<p>我想替這個計畫留下終點，但不替它規定速度。</p>
-<p>寫完一題，就往前走一格。</p>
+<p id="nav-09791c68cdabd725" data-navigation-anchor=""><strong>三十題，不是三十天。</strong></p>
+<p id="nav-74fee77a9aa3803b" data-navigation-anchor="">我想替這個計畫留下終點，但不替它規定速度。</p>
+<p id="nav-07723b6f1a97eac5" data-navigation-anchor="">寫完一題，就往前走一格。</p>
 </blockquote>
-<h2 id="為什麼叫「三十題」，而不是三十篇影評？"><a href="#為什麼叫「三十題」，而不是三十篇影評？" class="headerlink" title="為什麼叫「三十題」，而不是三十篇影評？"></a>為什麼叫「三十題」，而不是三十篇影評？</h2><p>因為我沒有三十個答案。</p>
-<p>我只有三十個想繼續追下去的問題。</p>
-<p>有些問題可以從劇中的畫面、對話和人物選擇慢慢整理；有些問題需要重看之後，我才可能改變原本的理解。</p>
-<p>還有一些問題，劇根本沒有答案。</p>
-<p>那時候我會寫番外。</p>
-<p>對我來說，番外並不是「劇情結束後隨便想像他們過得很好」。</p>
-<p>它比較像是一種思想實驗。</p>
-<p>如果我認為阿澤和德善的關係不只是「德善照顧生活白痴」，那麼把兩個人放進聚少離多的生活裡，這個理解還成立嗎？</p>
-<p>如果我認為他們的愛最後會從心動變成陪伴，那麼讓阿澤有一天不再贏棋，我想像中的關係還撐得住嗎？</p>
-<p>如果我說雙門洞真正重要的不是那條巷子，而是那些人，那麼所有人搬走以後，我還能不能把這句話寫下去？</p>
-<p><strong>番外不是答案，而是拿自己的解讀去撞撞看的地方。</strong></p>
-<p>所以這三十題裡會有三種文字交錯出現：</p>
-<p><strong>劇中看得到的東西、我現在的理解，以及劇情之外的想像。</strong></p>
-<p>三者會盡量分清楚。</p>
-<p>因為我想留下的不是一套標準答案，而是自己究竟怎麼一步一步靠近這部劇。</p>
-<h1 id="第一部｜我為什麼一直想回雙門洞？"><a href="#第一部｜我為什麼一直想回雙門洞？" class="headerlink" title="第一部｜我為什麼一直想回雙門洞？"></a>第一部｜我為什麼一直想回雙門洞？</h1><p>先不急著猜老公，也不急著談誰比較適合德善。</p>
-<p>我要先回答一個更前面的問題：</p>
-<p><strong>為什麼我到現在還沒有離開這條巷子？</strong></p>
+<h2 id="為什麼叫「三十題」，而不是三十篇影評？" data-navigation-anchor=""><a href="#為什麼叫「三十題」，而不是三十篇影評？" class="headerlink" title="為什麼叫「三十題」，而不是三十篇影評？"></a>為什麼叫「三十題」，而不是三十篇影評？</h2><p id="nav-7957ae6649b8c559" data-navigation-anchor="">因為我沒有三十個答案。</p>
+<p id="nav-e7739963eac3b447" data-navigation-anchor="">我只有三十個想繼續追下去的問題。</p>
+<p id="nav-16937941c037cf22" data-navigation-anchor="">有些問題可以從劇中的畫面、對話和人物選擇慢慢整理；有些問題需要重看之後，我才可能改變原本的理解。</p>
+<p id="nav-4f185b6073f59123" data-navigation-anchor="">還有一些問題，劇根本沒有答案。</p>
+<p id="nav-84e7b750cb549dec" data-navigation-anchor="">那時候我會寫番外。</p>
+<p id="nav-7c5342ffbe5aea6a" data-navigation-anchor="">對我來說，番外並不是「劇情結束後隨便想像他們過得很好」。</p>
+<p id="nav-aff41136a6edea6e" data-navigation-anchor="">它比較像是一種思想實驗。</p>
+<p id="nav-89334620ec199edc" data-navigation-anchor="">如果我認為阿澤和德善的關係不只是「德善照顧生活白痴」，那麼把兩個人放進聚少離多的生活裡，這個理解還成立嗎？</p>
+<p id="nav-8f8d1979c86ff600" data-navigation-anchor="">如果我認為他們的愛最後會從心動變成陪伴，那麼讓阿澤有一天不再贏棋，我想像中的關係還撐得住嗎？</p>
+<p id="nav-7b66664f1a68344a" data-navigation-anchor="">如果我說雙門洞真正重要的不是那條巷子，而是那些人，那麼所有人搬走以後，我還能不能把這句話寫下去？</p>
+<p id="nav-a920bac2bd30b9fc" data-navigation-anchor=""><strong>番外不是答案，而是拿自己的解讀去撞撞看的地方。</strong></p>
+<p id="nav-e027c6d02e217862" data-navigation-anchor="">所以這三十題裡會有三種文字交錯出現：</p>
+<p id="nav-0f4ce0f5a50d3e8a" data-navigation-anchor=""><strong>劇中看得到的東西、我現在的理解，以及劇情之外的想像。</strong></p>
+<p id="nav-ad8f4f78f765cf8a" data-navigation-anchor="">三者會盡量分清楚。</p>
+<p id="nav-8e0ae5c4c74c9c3a" data-navigation-anchor="">因為我想留下的不是一套標準答案，而是自己究竟怎麼一步一步靠近這部劇。</p>
+<h1 id="第一部｜我為什麼一直想回雙門洞？"><a href="#第一部｜我為什麼一直想回雙門洞？" class="headerlink" title="第一部｜我為什麼一直想回雙門洞？"></a>第一部｜我為什麼一直想回雙門洞？</h1><p id="nav-332af3ebabaaab27" data-navigation-anchor="">先不急著猜老公，也不急著談誰比較適合德善。</p>
+<p id="nav-d9be0351bebfd828" data-navigation-anchor="">我要先回答一個更前面的問題：</p>
+<p id="nav-fa6c391657634efe" data-navigation-anchor=""><strong>為什麼我到現在還沒有離開這條巷子？</strong></p>
 <table>
 <thead>
 <tr>
@@ -715,13 +723,13 @@
 <td>地方、青春、父母還年輕的年代，還是當時還沒有失去的可能性？</td>
 </tr>
 </tbody></table>
-<p>這一部不是角色分析。</p>
-<p>它比較像替整個計畫回答：</p>
-<p><strong>我為什麼還在這裡？</strong></p>
-<h1 id="第二部｜愛到底是怎麼發生的？"><a href="#第二部｜愛到底是怎麼發生的？" class="headerlink" title="第二部｜愛到底是怎麼發生的？"></a>第二部｜愛到底是怎麼發生的？</h1><p>第一次看《請回答1988》，很容易一直追著「德善最後會選誰」。</p>
-<p>但知道結局以後，問題反而變多了。</p>
-<p>我真正感興趣的，不再只是誰贏了。</p>
-<p>而是這些人究竟怎麼一步一步走到那個選擇。</p>
+<p id="nav-661587d6d00cace5" data-navigation-anchor="">這一部不是角色分析。</p>
+<p id="nav-9612b967f9a0bd4b" data-navigation-anchor="">它比較像替整個計畫回答：</p>
+<p id="nav-df234d0d8633cc3d" data-navigation-anchor=""><strong>我為什麼還在這裡？</strong></p>
+<h1 id="第二部｜愛到底是怎麼發生的？"><a href="#第二部｜愛到底是怎麼發生的？" class="headerlink" title="第二部｜愛到底是怎麼發生的？"></a>第二部｜愛到底是怎麼發生的？</h1><p id="nav-2079593c622edb34" data-navigation-anchor="">第一次看《請回答1988》，很容易一直追著「德善最後會選誰」。</p>
+<p id="nav-e85361fe2372be4e" data-navigation-anchor="">但知道結局以後，問題反而變多了。</p>
+<p id="nav-6a5dfe8e42821784" data-navigation-anchor="">我真正感興趣的，不再只是誰贏了。</p>
+<p id="nav-73020f2ce198c41b" data-navigation-anchor="">而是這些人究竟怎麼一步一步走到那個選擇。</p>
 <table>
 <thead>
 <tr>
@@ -766,13 +774,13 @@
 <td>拿掉命中注定與初戀濾鏡後，德善和阿澤真正能一起生活的理由還剩下什麼？</td>
 </tr>
 </tbody></table>
-<p>走到這裡，我希望自己已經不再只問：</p>
-<p>「誰比較愛德善？」</p>
-<p>而開始問：</p>
-<p><strong>一段關係究竟怎麼從喜歡變成生活？</strong></p>
-<h1 id="第三部｜比愛情更難寫的是：怎麼一起活下去"><a href="#第三部｜比愛情更難寫的是：怎麼一起活下去" class="headerlink" title="第三部｜比愛情更難寫的是：怎麼一起活下去"></a>第三部｜比愛情更難寫的是：怎麼一起活下去</h1><p>故事很擅長拍相愛。</p>
-<p>生活真正困難的地方，通常發生在那之後。</p>
-<p>也是因為這樣，我後來越來越想寫那些劇中不存在的日子。</p>
+<p id="nav-8fc19bbcf7cd9a3c" data-navigation-anchor="">走到這裡，我希望自己已經不再只問：</p>
+<p id="nav-469fbd07dafee2c1" data-navigation-anchor="">「誰比較愛德善？」</p>
+<p id="nav-f919f252316255fe" data-navigation-anchor="">而開始問：</p>
+<p id="nav-a89e2d4d951679f8" data-navigation-anchor=""><strong>一段關係究竟怎麼從喜歡變成生活？</strong></p>
+<h1 id="第三部｜比愛情更難寫的是：怎麼一起活下去"><a href="#第三部｜比愛情更難寫的是：怎麼一起活下去" class="headerlink" title="第三部｜比愛情更難寫的是：怎麼一起活下去"></a>第三部｜比愛情更難寫的是：怎麼一起活下去</h1><p id="nav-132de9b758efbcc1" data-navigation-anchor="">故事很擅長拍相愛。</p>
+<p id="nav-4d3fc7bb3eb53b83" data-navigation-anchor="">生活真正困難的地方，通常發生在那之後。</p>
+<p id="nav-31e0693ee634f82e" data-navigation-anchor="">也是因為這樣，我後來越來越想寫那些劇中不存在的日子。</p>
 <table>
 <thead>
 <tr>
@@ -812,15 +820,15 @@
 <td>當我不再只期待愛情開花結果，友情、親情與彼此依靠會不會才是整部劇真正留下來的東西？</td>
 </tr>
 </tbody></table>
-<p>第 18 題會是這個系列很重要的一個中點。</p>
-<p>因為我曾經太期待故事開花。</p>
-<p>後來才開始注意到，花下面其實一直有土。</p>
-<h1 id="第四部｜家、時間，以及那些終究會消失的地方"><a href="#第四部｜家、時間，以及那些終究會消失的地方" class="headerlink" title="第四部｜家、時間，以及那些終究會消失的地方"></a>第四部｜家、時間，以及那些終究會消失的地方</h1><p>《請回答1988》真正殘忍的地方，也許不是有人沒有得到初戀。</p>
-<p>而是無論大家最後跟誰在一起，<strong>1988 年都還是會結束。</strong></p>
-<p>父母會老。</p>
-<p>孩子會搬走。</p>
-<p>房子會空下來。</p>
-<p>甚至連我們記得的故事，都會慢慢被後來的自己重新解釋。</p>
+<p id="nav-8122bc3fb5d625c6" data-navigation-anchor="">第 18 題會是這個系列很重要的一個中點。</p>
+<p id="nav-c409aa77dbfc66c2" data-navigation-anchor="">因為我曾經太期待故事開花。</p>
+<p id="nav-a5affcf0de77d747" data-navigation-anchor="">後來才開始注意到，花下面其實一直有土。</p>
+<h1 id="第四部｜家、時間，以及那些終究會消失的地方"><a href="#第四部｜家、時間，以及那些終究會消失的地方" class="headerlink" title="第四部｜家、時間，以及那些終究會消失的地方"></a>第四部｜家、時間，以及那些終究會消失的地方</h1><p id="nav-16f9c8f8d4c2cb0c" data-navigation-anchor="">《請回答1988》真正殘忍的地方，也許不是有人沒有得到初戀。</p>
+<p id="nav-337e0f2877110a3c" data-navigation-anchor="">而是無論大家最後跟誰在一起，<strong>1988 年都還是會結束。</strong></p>
+<p id="nav-e92c3777ba583797" data-navigation-anchor="">父母會老。</p>
+<p id="nav-492f1a90de40a0be" data-navigation-anchor="">孩子會搬走。</p>
+<p id="nav-f597d0834aa5148c" data-navigation-anchor="">房子會空下來。</p>
+<p id="nav-b1b720671545f763" data-navigation-anchor="">甚至連我們記得的故事，都會慢慢被後來的自己重新解釋。</p>
 <table>
 <thead>
 <tr>
@@ -860,13 +868,13 @@
 <td>如果把婚禮完整補上，它會讓故事更完整，還是反而破壞離別真正留下來的餘韻？</td>
 </tr>
 </tbody></table>
-<p>有些事情，我大概永遠都會希望它被拍出來。</p>
-<p>但寫到這裡，我也想試著承認：</p>
-<p><strong>沒有被拍出來，本身可能就是故事的一部分。</strong></p>
-<h1 id="第五部｜雙門洞的人沒有停在-1988"><a href="#第五部｜雙門洞的人沒有停在-1988" class="headerlink" title="第五部｜雙門洞的人沒有停在 1988"></a>第五部｜雙門洞的人沒有停在 1988</h1><p>我曾經很想一直把他們放回那條巷子。</p>
-<p>後來卻開始有另一個念頭。</p>
-<p>如果真的喜歡這些角色，也許不該只讓他們負責懷舊。</p>
-<p>他們應該繼續往前。</p>
+<p id="nav-e7170df123c533d6" data-navigation-anchor="">有些事情，我大概永遠都會希望它被拍出來。</p>
+<p id="nav-d00d5cffe8b7f079" data-navigation-anchor="">但寫到這裡，我也想試著承認：</p>
+<p id="nav-77c8c9f94311a001" data-navigation-anchor=""><strong>沒有被拍出來，本身可能就是故事的一部分。</strong></p>
+<h1 id="第五部｜雙門洞的人沒有停在-1988"><a href="#第五部｜雙門洞的人沒有停在-1988" class="headerlink" title="第五部｜雙門洞的人沒有停在 1988"></a>第五部｜雙門洞的人沒有停在 1988</h1><p id="nav-9a95ef22f194f2ae" data-navigation-anchor="">我曾經很想一直把他們放回那條巷子。</p>
+<p id="nav-e1064f0e2c1b9f09" data-navigation-anchor="">後來卻開始有另一個念頭。</p>
+<p id="nav-a2c2fedad839822a" data-navigation-anchor="">如果真的喜歡這些角色，也許不該只讓他們負責懷舊。</p>
+<p id="nav-82cf684843d8ddb2" data-navigation-anchor="">他們應該繼續往前。</p>
 <table>
 <thead>
 <tr>
@@ -891,14 +899,14 @@
 <td>音樂、電視、電影、圍棋、旅行與媒體改變，能不能成為另一種記錄時間的方法？</td>
 </tr>
 </tbody></table>
-<p>我很喜歡懷舊。</p>
-<p>但我不希望這個系列最後只能得到一句：</p>
-<p>「以前真好。」</p>
-<p>我更想知道的是：</p>
-<p><strong>曾經擁有過一個雙門洞的人，能不能因此比較有勇氣走進下一個年代？</strong></p>
-<h1 id="第六部｜最後，把鏡頭轉回自己"><a href="#第六部｜最後，把鏡頭轉回自己" class="headerlink" title="第六部｜最後，把鏡頭轉回自己"></a>第六部｜最後，把鏡頭轉回自己</h1><p>寫到最後，可能已經很難假裝這只是一套韓劇文章。</p>
-<p>因為我一直追問這些角色，有一部分原因，是他們剛好替我裝下了一些不知道要放去哪裡的問題。</p>
-<p>所以最後三題，我不打算再躲在角色後面。</p>
+<p id="nav-8d82c2b82978b29d" data-navigation-anchor="">我很喜歡懷舊。</p>
+<p id="nav-c6b5db30ede37b0b" data-navigation-anchor="">但我不希望這個系列最後只能得到一句：</p>
+<p id="nav-3ffa8d4bc7155d67" data-navigation-anchor="">「以前真好。」</p>
+<p id="nav-8164c484faada6a5" data-navigation-anchor="">我更想知道的是：</p>
+<p id="nav-01a69bbb6274a3e7" data-navigation-anchor=""><strong>曾經擁有過一個雙門洞的人，能不能因此比較有勇氣走進下一個年代？</strong></p>
+<h1 id="第六部｜最後，把鏡頭轉回自己"><a href="#第六部｜最後，把鏡頭轉回自己" class="headerlink" title="第六部｜最後，把鏡頭轉回自己"></a>第六部｜最後，把鏡頭轉回自己</h1><p id="nav-2920554c92e4f74f" data-navigation-anchor="">寫到最後，可能已經很難假裝這只是一套韓劇文章。</p>
+<p id="nav-346fc6ba9cd9a225" data-navigation-anchor="">因為我一直追問這些角色，有一部分原因，是他們剛好替我裝下了一些不知道要放去哪裡的問題。</p>
+<p id="nav-c296e426b292bcac" data-navigation-anchor="">所以最後三題，我不打算再躲在角色後面。</p>
 <table>
 <thead>
 <tr>
@@ -923,70 +931,70 @@
 <td>如果有些心意沒有被別人好好接住，我能不能至少用文字替自己保存？這部劇最後究竟幫助了我什麼？</td>
 </tr>
 </tbody></table>
-<p>我想讓第 30 題成為真正的終點。</p>
-<p>不是因為到了那一天，我就會完全理解《請回答1988》。</p>
-<p>而是我希望自己至少能回頭看見：</p>
-<p>原來我曾經帶著這麼多問題走進雙門洞。</p>
-<p>然後又慢慢帶著一些自己的答案走出來。</p>
-<h1 id="番外不是第-31-題"><a href="#番外不是第-31-題" class="headerlink" title="番外不是第 31 題"></a>番外不是第 31 題</h1><p>這個系列一定還會有番外。</p>
-<p>而且按照目前的情況，大概很多。</p>
-<p>婚禮、公開戀情、空服員時期、頭銜戰、旅行、父母年輕的年代、2026 年的一場普通聚會，甚至只是某一天阿澤和德善一起去買菜，都可能變成故事。</p>
-<p>但我不把它們加入三十題。</p>
-<p><strong>三十題是主線，番外是支線。</strong></p>
-<p>只要三十題寫完，這場鐵人就算完成。</p>
-<p>番外可以在任何一題旁邊長出來。</p>
-<p>例如：</p>
+<p id="nav-0fbb6f6db163866f" data-navigation-anchor="">我想讓第 30 題成為真正的終點。</p>
+<p id="nav-befc6ce59e4e67f1" data-navigation-anchor="">不是因為到了那一天，我就會完全理解《請回答1988》。</p>
+<p id="nav-cd77a461ab70f23c" data-navigation-anchor="">而是我希望自己至少能回頭看見：</p>
+<p id="nav-070c9200dbdb7f7c" data-navigation-anchor="">原來我曾經帶著這麼多問題走進雙門洞。</p>
+<p id="nav-58ba1d4220afea85" data-navigation-anchor="">然後又慢慢帶著一些自己的答案走出來。</p>
+<h1 id="番外不是第-31-題"><a href="#番外不是第-31-題" class="headerlink" title="番外不是第 31 題"></a>番外不是第 31 題</h1><p id="nav-fee755dd04a7fede" data-navigation-anchor="">這個系列一定還會有番外。</p>
+<p id="nav-720978ddf956a378" data-navigation-anchor="">而且按照目前的情況，大概很多。</p>
+<p id="nav-93f174e1ed24de55" data-navigation-anchor="">婚禮、公開戀情、空服員時期、頭銜戰、旅行、父母年輕的年代、2026 年的一場普通聚會，甚至只是某一天阿澤和德善一起去買菜，都可能變成故事。</p>
+<p id="nav-f92409101c3a49d5" data-navigation-anchor="">但我不把它們加入三十題。</p>
+<p id="nav-3c36e134952faa7a" data-navigation-anchor=""><strong>三十題是主線，番外是支線。</strong></p>
+<p id="nav-9a82210def6f65dc" data-navigation-anchor="">只要三十題寫完，這場鐵人就算完成。</p>
+<p id="nav-e2a888856aa52abe" data-navigation-anchor="">番外可以在任何一題旁邊長出來。</p>
+<p id="nav-82b21af8ebc1f06d" data-navigation-anchor="">例如：</p>
 <blockquote>
-<p><strong>第 15 題｜如果有一天阿澤不再贏棋呢？</strong></p>
-<p>正文：討論愛如何從崇拜、互補轉向生活。</p>
-<p>番外：四十歲的崔澤第一次遭遇長期連敗。</p>
-<p>回到正文：看看我想像出的故事，有沒有推翻自己原本的答案。</p>
+<p id="nav-de25540b36e290c0" data-navigation-anchor=""><strong>第 15 題｜如果有一天阿澤不再贏棋呢？</strong></p>
+<p id="nav-599d79340075f8f5" data-navigation-anchor="">正文：討論愛如何從崇拜、互補轉向生活。</p>
+<p id="nav-036ee0e08b1694e1" data-navigation-anchor="">番外：四十歲的崔澤第一次遭遇長期連敗。</p>
+<p id="nav-b90bd64442f939a9" data-navigation-anchor="">回到正文：看看我想像出的故事，有沒有推翻自己原本的答案。</p>
 </blockquote>
-<p>這樣番外就不是另一個永遠填不完的坑。</p>
-<p>它是我拿來思考問題的一種工具。</p>
-<h1 id="一篇文章怎麼算完成？"><a href="#一篇文章怎麼算完成？" class="headerlink" title="一篇文章怎麼算完成？"></a>一篇文章怎麼算完成？</h1><p>我不想替這個系列訂最低字數。</p>
-<p>也不要求每一篇都有完整理論。</p>
-<p>一篇只要留下四件事情，就算完成：</p>
+<p id="nav-67ad4954df280b97" data-navigation-anchor="">這樣番外就不是另一個永遠填不完的坑。</p>
+<p id="nav-e4ae05ce922f5011" data-navigation-anchor="">它是我拿來思考問題的一種工具。</p>
+<h1 id="一篇文章怎麼算完成？"><a href="#一篇文章怎麼算完成？" class="headerlink" title="一篇文章怎麼算完成？"></a>一篇文章怎麼算完成？</h1><p id="nav-ea5803c844469be5" data-navigation-anchor="">我不想替這個系列訂最低字數。</p>
+<p id="nav-a0a1b7dbd1491fc1" data-navigation-anchor="">也不要求每一篇都有完整理論。</p>
+<p id="nav-cafb7d0509dbb7c6" data-navigation-anchor="">一篇只要留下四件事情，就算完成：</p>
 <ol>
-<li><p><strong>問題從哪裡開始。</strong><br>是哪個場景、人物反應，或者自己的經驗讓我停下來？</p>
+<li><p id="nav-79d0d93b26adac2a" data-navigation-anchor=""><strong>問題從哪裡開始。</strong><br>是哪個場景、人物反應，或者自己的經驗讓我停下來？</p>
 </li>
-<li><p><strong>劇裡到底給了什麼。</strong><br>把真正看得到的畫面、對話、時間與人物選擇留下來。</p>
+<li><p id="nav-4d5596450cc32535" data-navigation-anchor=""><strong>劇裡到底給了什麼。</strong><br>把真正看得到的畫面、對話、時間與人物選擇留下來。</p>
 </li>
-<li><p><strong>我現在怎麼理解。</strong><br>不必假裝這是唯一答案，只需要寫出現在最能說服自己的版本。</p>
+<li><p id="nav-341ce38ba9e537d5" data-navigation-anchor=""><strong>我現在怎麼理解。</strong><br>不必假裝這是唯一答案，只需要寫出現在最能說服自己的版本。</p>
 </li>
-<li><p><strong>這個問題為什麼還跟我有關。</strong><br>有時候是一小段自己的經驗，有時候是一篇番外，有時候只是一個還沒有答案的新問題。</p>
+<li><p id="nav-86ea8eff397da8c3" data-navigation-anchor=""><strong>這個問題為什麼還跟我有關。</strong><br>有時候是一小段自己的經驗，有時候是一篇番外，有時候只是一個還沒有答案的新問題。</p>
 </li>
 </ol>
-<p>寫完，就算過關。</p>
-<p>以後重看改變想法，也可以再回來修改。</p>
-<p><strong>鐵人計畫的目的不是證明三十次自己是對的，而是留下三十次自己認真想過。</strong></p>
-<h1 id="不照編號寫"><a href="#不照編號寫" class="headerlink" title="不照編號寫"></a>不照編號寫</h1><p>三十題有順序，但我不準備按照 01、02、03 一路寫下去。</p>
-<p>哪一題現在最有感覺，就先寫哪一題。</p>
-<p>目前我最想先留下的五篇是：</p>
+<p id="nav-b0e8b6dd571b3c1c" data-navigation-anchor="">寫完，就算過關。</p>
+<p id="nav-43b1f6f0e4a0278d" data-navigation-anchor="">以後重看改變想法，也可以再回來修改。</p>
+<p id="nav-49c88d4352a276a3" data-navigation-anchor=""><strong>鐵人計畫的目的不是證明三十次自己是對的，而是留下三十次自己認真想過。</strong></p>
+<h1 id="不照編號寫"><a href="#不照編號寫" class="headerlink" title="不照編號寫"></a>不照編號寫</h1><p id="nav-8820d22fd6a7fa77" data-navigation-anchor="">三十題有順序，但我不準備按照 01、02、03 一路寫下去。</p>
+<p id="nav-fd5550d23ec0b040" data-navigation-anchor="">哪一題現在最有感覺，就先寫哪一題。</p>
+<p id="nav-9c95682a3d0b494d" data-navigation-anchor="">目前我最想先留下的五篇是：</p>
 <ul>
-<li>01｜我為什麼一直想回雙門洞？</li>
-<li>08｜德善最後為什麼選擇阿澤？</li>
-<li>18｜愛情是花，那麼托住他們的土壤是什麼？</li>
-<li>28｜為什麼我那麼在意「有沒有被算進去」？</li>
-<li>30｜為什麼我要把這些東西寫下來？</li>
+<li id="nav-9b0d63abbdacaf5c" data-navigation-anchor="">01｜我為什麼一直想回雙門洞？</li>
+<li id="nav-7ae190e704996383" data-navigation-anchor="">08｜德善最後為什麼選擇阿澤？</li>
+<li id="nav-a139e11a1d083efe" data-navigation-anchor="">18｜愛情是花，那麼托住他們的土壤是什麼？</li>
+<li id="nav-05a0b9e9c600908c" data-navigation-anchor="">28｜為什麼我那麼在意「有沒有被算進去」？</li>
+<li id="nav-1866eea2f851f7ca" data-navigation-anchor="">30｜為什麼我要把這些東西寫下來？</li>
 </ul>
-<p>它們剛好從「喜歡這部劇」，一路走到「這部劇為什麼跟我有關」。</p>
-<p>等這五篇有了，我想這個系列真正的聲音也會慢慢出現。</p>
-<h1 id="寫作狀態"><a href="#寫作狀態" class="headerlink" title="寫作狀態"></a>寫作狀態</h1><p>之後每一題只標四種狀態：</p>
-<p><strong>🌱 火種</strong>：只有問題，還不知道答案。<br><strong>🔎 在想</strong>：正在重看、找劇中證據或討論。<br><strong>✍️ 成文</strong>：已經整理成可以留下來的文章。<br><strong>↺ 再訪</strong>：後來有新的理解，準備重新回去看看。</p>
-<p>我希望這讓「還沒寫完」不是失敗。</p>
-<p>它只是還在路上。</p>
+<p id="nav-6fd666366be67d0b" data-navigation-anchor="">它們剛好從「喜歡這部劇」，一路走到「這部劇為什麼跟我有關」。</p>
+<p id="nav-fa9ecb0986211cd6" data-navigation-anchor="">等這五篇有了，我想這個系列真正的聲音也會慢慢出現。</p>
+<h1 id="寫作狀態"><a href="#寫作狀態" class="headerlink" title="寫作狀態"></a>寫作狀態</h1><p id="nav-95141e155fa97bd2" data-navigation-anchor="">之後每一題只標四種狀態：</p>
+<p id="nav-aa816fdd5ecff4e2" data-navigation-anchor=""><strong>🌱 火種</strong>：只有問題，還不知道答案。<br><strong>🔎 在想</strong>：正在重看、找劇中證據或討論。<br><strong>✍️ 成文</strong>：已經整理成可以留下來的文章。<br><strong>↺ 再訪</strong>：後來有新的理解，準備重新回去看看。</p>
+<p id="nav-cef7c83c15d277f6" data-navigation-anchor="">我希望這讓「還沒寫完」不是失敗。</p>
+<p id="nav-a2c267ab1d6fe082" data-navigation-anchor="">它只是還在路上。</p>
 <hr>
-<p>最開始，我只是希望《請回答1988》的故事不要結束。</p>
-<p>現在想想，我可能並不是真的想替編劇補完一個完整的結局。</p>
-<p>我只是想替那些曾經打中我的畫面，多停留一下。</p>
-<p>把沒有想懂的問題留下來。</p>
-<p>把喜歡過的人留下來。</p>
-<p>把曾經羨慕、失落、得到安慰的自己也留下來。</p>
-<p>故事當然早就結束了。</p>
-<p>雙門洞也早就搬空了。</p>
-<p>但只要還有人願意回頭，把那些沒有說完的事情再寫一點，</p>
-<p>故事好像就還可以，再往前走一格。</p>
+<p id="nav-6ca1374efd11cdd1" data-navigation-anchor="">最開始，我只是希望《請回答1988》的故事不要結束。</p>
+<p id="nav-a4469ea4ad37ba2b" data-navigation-anchor="">現在想想，我可能並不是真的想替編劇補完一個完整的結局。</p>
+<p id="nav-4e23ade4e26c77a3" data-navigation-anchor="">我只是想替那些曾經打中我的畫面，多停留一下。</p>
+<p id="nav-d9964b8988270440" data-navigation-anchor="">把沒有想懂的問題留下來。</p>
+<p id="nav-5a8d26afa71a607c" data-navigation-anchor="">把喜歡過的人留下來。</p>
+<p id="nav-bff1811d33850f8e" data-navigation-anchor="">把曾經羨慕、失落、得到安慰的自己也留下來。</p>
+<p id="nav-7747b6de490fb065" data-navigation-anchor="">故事當然早就結束了。</p>
+<p id="nav-7d1124737f34335a" data-navigation-anchor="">雙門洞也早就搬空了。</p>
+<p id="nav-951c40fafca61c41" data-navigation-anchor="">但只要還有人願意回頭，把那些沒有說完的事情再寫一點，</p>
+<p id="nav-3e1f3ce5cf2c97fc" data-navigation-anchor="">故事好像就還可以，再往前走一格。</p>
 
     </div>
 

@@ -96,6 +96,7 @@
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
 
@@ -150,7 +151,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-random"><a href="/random/" rel="section"><i class="fa fa-dice fa-fw"></i>隨機文章</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>Heat Map</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -174,6 +175,13 @@
         <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
           <i class="fa fa-times-circle"></i>
         </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
@@ -209,19 +217,19 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="生活紀錄">
-                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">生活紀錄</span>
-                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="音樂">
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="音樂">
                 <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">音樂</span>
                   <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -321,15 +329,7 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
@@ -337,19 +337,27 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
-                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
                   <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -409,11 +417,11 @@
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="search-recent-item" href="/learning/lis-research-1965-2025-content-analysis/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
                 <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">觀念與實驗</span>
-                  <span class="search-recent-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
                 </span>
                 <span class="search-recent-arrow" aria-hidden="true">↗</span>
               </a>
@@ -569,7 +577,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/categories/#browse-tags">
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -658,26 +666,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>我喜歡它用跳躍時間、旁白與照片拆開愛情，也在回頭理解時慢慢感到心碎。</p>
+    <div class="post-body" itemprop="articleBody"><p id="nav-19abdc24310d01d7" data-navigation-anchor="">我喜歡它用跳躍時間、旁白與照片拆開愛情，也在回頭理解時慢慢感到心碎。</p>
 <span id="more"></span>
 
-<h2 id="觀影歷程："><a href="#觀影歷程：" class="headerlink" title="觀影歷程："></a>觀影歷程：</h2><p>這部電影在我的清單上已久(可能至少有八年)，但因為遲遲下定不了決心來看這一部老早就聽說是悲劇的電影，直到在迪士尼串流平台上看到它，並且當我聽「噓」這首歌聽到有點厭倦之後，即使是交錯如電影般會放慢的錯覺，也該有一個心理的答案，希望這部電影是解答之一。</p>
-<p>整部電影雖然悲傷但不完全是一個悲劇，如同片名一樣韻味深長，甚至換一個角度會讓我們發現電影敘事中的神祕隱藏地圖，也許多想一點就能發現電影營造的一些巧思，它被人喜歡果然不是沒有道理的，但我大概只想看一次！</p>
-<p>即使有些台詞韻味深遠，但看著一廂情願的我們領悟點甚麼就像是童話的天空被撕開了一個大洞，心理空蕩蕩的，反轉反轉再反轉，你帶入誰都可以有點什麼體悟，畢竟這是一個如此真實的故事，無論是設計與走向，相信愛情與否其實並不重要不是嗎？</p>
-<h2 id="電影特色："><a href="#電影特色：" class="headerlink" title="電影特色："></a>電影特色：</h2><p>這部電影很難形容，我認為文青風格的拍攝節奏與旁白可以比較好的形容他在我心中的定位，他透過很多日落、照片以及台詞的方式在推動整部電影，我們可以跟隨男女主角的角度去體會同一件事情，也會被強迫體會心碎這個情緒，而且是不知道理由的，所以文青之外我覺得她很難定位。</p>
-<p>真實風格是另外一個我覺得電影的特色，哀而不傷，電影沒有很想讓你陷入在裡面，所以節奏上它甚至是跳躍的，我們其實是以男主角的時間線與主觀想法先過一遍再換一個角度，最後乾脆分割同時進行或跳躍到另外一個相遇，但在到點之前你無法預期你會收到什麼？</p>
-<p>所以它是自己一派的電影，完成在電影結束之後的影展類型的電影，漂亮且是有內涵的，即使我們對愛情或是一見鍾情仍一無所知(笑)。</p>
-<h2 id="我的感想："><a href="#我的感想：" class="headerlink" title="我的感想："></a>我的感想：</h2><p>愛情是不是命中注定我們可以先跳過不討論，當在這個關係裡面你會看到的哪一面是我覺得這部電影反覆思考之後的感想，我認為說旁白是這部電影有這個體悟的重要因素。</p>
-<p>旁白跟電影角度是一國的，他試圖影響你讓你完全站在男生的立場去看待這段過往，而事實上在又透過其他人的角度跟一種隱隱的詭異感讓你去站在女生的角度看這段荒唐！</p>
-<p>故事往往真實的讓人心碎，相信一見鍾情的男生在與兩個人相處，一個是想像中的女生一個是真實的女生，在很多時刻這兩個畫面無法重疊(到電影最後一刻甚至乾脆兩個分割的畫面一次給你，想像總是給得太多了)。</p>
-<p>畫面重疊這不是一個太大的問題，但這卻似乎暗示著男生的部分自私，與事後內心不斷責問下的無法釋懷，他似乎從沒真正的正視過他一見鍾情的女主角！</p>
-<p>電影也用一個有趣的方式來告訴我們，是有玄機！例如在故事中，爭吵往往是女生先釋出善意(這似乎也暗示著女生並不是無動於衷)，這些不同角度下的不同思考，劇中也很有意思的總是給出來回比較的畫面，到了電影最後，夏天離去與接續的秋天也很有趣，戀夏之後對於秋天我們是怎麼看的呢？</p>
-<p>電影特別有趣的是拍攝與設定上，讓電影的完成甚至是在電影結束之後，畢竟你在電影之中不會去想這些劇情之外的事情，但這些衝突感讓你能在回想之中挑出矛盾並且有所體悟。</p>
-<h2 id="小小總結："><a href="#小小總結：" class="headerlink" title="小小總結："></a>小小總結：</h2><p>這部電影也給我生活中不少想法，關於幻象中的與現實中的交錯這部分，我們總是要看清現實，但那個縫隙有很多僥倖與想像空間，因為其實那裏是以一個現實的你作為連結並加入很多期待的部分，揭穿他有多破滅我最近感受深刻！</p>
-<p>其他有關愛情的感受，我想等到我看完《脫單指南》之後有機會一起說了！</p>
+<h2 id="觀影歷程：" data-navigation-anchor=""><a href="#觀影歷程：" class="headerlink" title="觀影歷程："></a>觀影歷程：</h2><p id="nav-aebe7e6c0d84f7bc" data-navigation-anchor="">這部電影在我的清單上已久(可能至少有八年)，但因為遲遲下定不了決心來看這一部老早就聽說是悲劇的電影，直到在迪士尼串流平台上看到它，並且當我聽「噓」這首歌聽到有點厭倦之後，即使是交錯如電影般會放慢的錯覺，也該有一個心理的答案，希望這部電影是解答之一。</p>
+<p id="nav-8800af456be15f77" data-navigation-anchor="">整部電影雖然悲傷但不完全是一個悲劇，如同片名一樣韻味深長，甚至換一個角度會讓我們發現電影敘事中的神祕隱藏地圖，也許多想一點就能發現電影營造的一些巧思，它被人喜歡果然不是沒有道理的，但我大概只想看一次！</p>
+<p id="nav-e9efef9c295aea37" data-navigation-anchor="">即使有些台詞韻味深遠，但看著一廂情願的我們領悟點甚麼就像是童話的天空被撕開了一個大洞，心理空蕩蕩的，反轉反轉再反轉，你帶入誰都可以有點什麼體悟，畢竟這是一個如此真實的故事，無論是設計與走向，相信愛情與否其實並不重要不是嗎？</p>
+<h2 id="電影特色：" data-navigation-anchor=""><a href="#電影特色：" class="headerlink" title="電影特色："></a>電影特色：</h2><p id="nav-4ec39b809c10081c" data-navigation-anchor="">這部電影很難形容，我認為文青風格的拍攝節奏與旁白可以比較好的形容他在我心中的定位，他透過很多日落、照片以及台詞的方式在推動整部電影，我們可以跟隨男女主角的角度去體會同一件事情，也會被強迫體會心碎這個情緒，而且是不知道理由的，所以文青之外我覺得她很難定位。</p>
+<p id="nav-637ec40b4039bd59" data-navigation-anchor="">真實風格是另外一個我覺得電影的特色，哀而不傷，電影沒有很想讓你陷入在裡面，所以節奏上它甚至是跳躍的，我們其實是以男主角的時間線與主觀想法先過一遍再換一個角度，最後乾脆分割同時進行或跳躍到另外一個相遇，但在到點之前你無法預期你會收到什麼？</p>
+<p id="nav-b7926baab15d429f" data-navigation-anchor="">所以它是自己一派的電影，完成在電影結束之後的影展類型的電影，漂亮且是有內涵的，即使我們對愛情或是一見鍾情仍一無所知(笑)。</p>
+<h2 id="我的感想：" data-navigation-anchor=""><a href="#我的感想：" class="headerlink" title="我的感想："></a>我的感想：</h2><p id="nav-0cb71c61cae5cb85" data-navigation-anchor="">愛情是不是命中注定我們可以先跳過不討論，當在這個關係裡面你會看到的哪一面是我覺得這部電影反覆思考之後的感想，我認為說旁白是這部電影有這個體悟的重要因素。</p>
+<p id="nav-dce1692dc5503894" data-navigation-anchor="">旁白跟電影角度是一國的，他試圖影響你讓你完全站在男生的立場去看待這段過往，而事實上在又透過其他人的角度跟一種隱隱的詭異感讓你去站在女生的角度看這段荒唐！</p>
+<p id="nav-e7674bcd860270cf" data-navigation-anchor="">故事往往真實的讓人心碎，相信一見鍾情的男生在與兩個人相處，一個是想像中的女生一個是真實的女生，在很多時刻這兩個畫面無法重疊(到電影最後一刻甚至乾脆兩個分割的畫面一次給你，想像總是給得太多了)。</p>
+<p id="nav-137f4fa6639157ce" data-navigation-anchor="">畫面重疊這不是一個太大的問題，但這卻似乎暗示著男生的部分自私，與事後內心不斷責問下的無法釋懷，他似乎從沒真正的正視過他一見鍾情的女主角！</p>
+<p id="nav-0f361628bee8f411" data-navigation-anchor="">電影也用一個有趣的方式來告訴我們，是有玄機！例如在故事中，爭吵往往是女生先釋出善意(這似乎也暗示著女生並不是無動於衷)，這些不同角度下的不同思考，劇中也很有意思的總是給出來回比較的畫面，到了電影最後，夏天離去與接續的秋天也很有趣，戀夏之後對於秋天我們是怎麼看的呢？</p>
+<p id="nav-e27271d59d7100b6" data-navigation-anchor="">電影特別有趣的是拍攝與設定上，讓電影的完成甚至是在電影結束之後，畢竟你在電影之中不會去想這些劇情之外的事情，但這些衝突感讓你能在回想之中挑出矛盾並且有所體悟。</p>
+<h2 id="小小總結：" data-navigation-anchor=""><a href="#小小總結：" class="headerlink" title="小小總結："></a>小小總結：</h2><p id="nav-5b25bed16354a25d" data-navigation-anchor="">這部電影也給我生活中不少想法，關於幻象中的與現實中的交錯這部分，我們總是要看清現實，但那個縫隙有很多僥倖與想像空間，因為其實那裏是以一個現實的你作為連結並加入很多期待的部分，揭穿他有多破滅我最近感受深刻！</p>
+<p id="nav-0b723e9a5164f066" data-navigation-anchor="">其他有關愛情的感受，我想等到我看完《脫單指南》之後有機會一起說了！</p>
  <img class="blogger-import-image" loading="lazy" decoding="async" width="263" height="389" src="/images/blogger-import/blogger-3b038498fe/01.webp" alt="圖片 1">
 
-<p>(圖片來源: wiki)</p>
+<p id="nav-1607088f7fd31c1e" data-navigation-anchor="">(圖片來源: wiki)</p>
 <!-- Blogger 原文：https://eric402040531.blogspot.com/2023/02/500.html -->
 
     </div>
