@@ -15,19 +15,17 @@
     <div class="post-content">
       <div class="collection-title">
         <h1 class="collection-header">
-          {{- page.category }}
-          <small>{{ __('title.category') }}</small>
+          內容分類
         </h1>
       </div>
 
-      {{ post_template.render(page.posts) }}
+      {%- include '_partials/content-browser.njk' -%}
     </div>
   </div>
   {##########################}
   {### END CATEGORY BLOCK ###}
   {##########################}
 
-  {%- include '_partials/pagination.njk' -%}
 
 {% endblock %}
 

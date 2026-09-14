@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-09-14T07:54:27.913Z",
+  "timezone": "Asia/Taipei",
+  "config": {
+    "search": {
+      "path": "search.xml",
+      "field": "post",
+      "content": true,
+      "format": "html"
+    },
+    "renderDrafts": false,
+    "future": true
+  },
+  "counts": {
+    "publicArticles": 246,
+    "excludedPosts": 0,
+    "futurePublishedArticles": 0,
+    "microblog": 20,
+    "microblogWithoutId": 20,
+    "duplicateMicroblogPayloads": 0,
+    "learningGroups": 11,
+    "learningItems": 15,
+    "learningLinkedToArticles": 15
+  },
+  "issues": [],
+  "learningArticleMappings": [
+    {
+      "id": "reading-topic-01",
+      "title": "排球攻擊揮臂機制",
+      "addedDate": "2026-08-29",
+      "url": "/learning/volleyball-attack-arm-swing/",
+      "articleDate": "2026-08-29"
+    },
+    {
+      "id": "reading-topic-02",
+      "title": "前後台欄位對照與規格審查",
+      "addedDate": "2026-08-29",
+      "url": "/learning/cms-content-modeling-field-review/",
+      "articleDate": "2026-08-29"
+    },
+    {
+      "id": "reading-topic-03",
+      "title": "Agentic Transaction: Towards ACID-Compliant Agent Systems",
+      "addedDate": "2026-08-29",
+      "url": "/learning/agentic-transaction-acid-agent/",
+      "articleDate": "2026-08-29"
+    },
+    {
+      "id": "reading-topic-04",
+      "title": "Gemini Notebook Agent：從資料庫到可交付文件的工作流",
+      "addedDate": "2026-08-31",
+      "url": "/learning/gemini-notebook-agent-office-workflow/",
+      "articleDate": "2026-08-31"
+    },
+    {
+      "id": "reading-topic-05",
+      "title": "在台灣設立實驗室十一年：校準責任、內耗與自己｜思考方式筆記",
+      "addedDate": "2026-08-31",
+      "url": "/learning/lab-eleven-years-reflective-thinking/",
+      "articleDate": "2026-08-31"
+    },
+    {
+      "id": "reading-topic-06",
+      "title": "LIS Research 1965–2025：圖書資訊學研究的主題與方法演變",
+      "addedDate": "2026-08-31",
+      "url": "/learning/lis-research-1965-2025-content-analysis/",
+      "articleDate": "2026-08-31"
+    },
+    {
+      "id": "reading-topic-07",
+      "title": "網站品質與軟體測試：42 天鐵人挑戰學習路徑",
+      "addedDate": "2026-09-04",
+      "url": "/learning/website-quality-testing-roadmap/",
+      "articleDate": "2026-09-04"
+    },
+    {
+      "id": "reading-topic-08",
+      "title": "測試基本功：User Story、Test Case 與 Bug Report",
+      "addedDate": "2026-09-04",
+      "url": "/learning/software-testing-basics-test-case-bug-report/",
+      "articleDate": "2026-09-04"
+    },
+    {
+      "id": "reading-topic-09",
+      "title": "測試設計：等價類別、邊界值與風險導向測試",
+      "addedDate": "2026-09-04",
+      "url": "/learning/test-design-boundary-risk-based-testing/",
+      "articleDate": "2026-09-04"
+    },
+    {
+      "id": "reading-topic-10",
+      "title": "Web 自動化測試：Python、Pytest 與 Playwright",
+      "addedDate": "2026-09-04",
+      "url": "/learning/web-automation-python-pytest-playwright/",
+      "articleDate": "2026-09-04"
+    },
+    {
+      "id": "reading-topic-11",
+      "title": "發布品質：Git、CI/CD 與 Release Checklist",
+      "addedDate": "2026-09-04",
+      "url": "/learning/release-quality-git-ci-cd-checklist/",
+      "articleDate": "2026-09-04"
+    },
+    {
+      "id": "reading-topic-12",
+      "title": "混排攻擊與防守站位",
+      "addedDate": "2026-09-06",
+      "url": "/learning/mixed-volleyball-defense-positioning/",
+      "articleDate": "2026-09-06"
+    },
+    {
+      "id": "reading-topic-13",
+      "title": "痠痛改善研究：從下背、肩膀與小腿開始",
+      "addedDate": "2026-09-06",
+      "url": "/learning/pain-improvement-research/",
+      "articleDate": "2026-09-06"
+    },
+    {
+      "id": "reading-topic-14",
+      "title": "簡報製作與 open-slide 2.0",
+      "addedDate": "2026-09-07",
+      "url": "/learning/presentation-workflow-open-slide/",
+      "articleDate": "2026-09-07"
+    },
+    {
+      "id": "reading-topic-15",
+      "title": "AI 提問判斷順序：情境、目標與診斷／設計／驗證",
+      "addedDate": "2026-09-08",
+      "url": "/learning/ai-question-judgment-order/",
+      "articleDate": "2026-09-08"
+    }
+  ],
+  "sourcesUnchanged": true
+}

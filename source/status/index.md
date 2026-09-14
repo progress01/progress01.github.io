@@ -277,6 +277,8 @@ comments: false
     function createEntry(item) {
       var entry = document.createElement('article');
       entry.className = 'status-item';
+      entry.id = item.id;
+      entry.tabIndex = -1;
 
       var meta = document.createElement('div');
       meta.className = 'status-meta';
@@ -381,6 +383,26 @@ comments: false
       render();
     });
 
+    function locateEntry() {
+      if (!list.isConnected) return;
+      var id = location.hash.slice(1);
+      if (!id) return;
+      var index = data.findIndex(function(item) { return item.id === id; });
+      if (index < 0) {
+        if (document.getElementById(id)) return;
+        summary.textContent = '這則紀錄已不存在；可使用搜尋尋找其他內容。';
+        return;
+      }
+      search.value = query = '';
+      visibleLimit = Math.max(pageSize, index + 1);
+      render();
+      var entry = document.getElementById(id);
+      entry.closest('details').open = true;
+      entry.focus({ preventScroll: true });
+      entry.scrollIntoView({ block: 'center' });
+    }
+    window.addEventListener('hashchange', locateEntry);
+
     fetch('/microblog.json')
       .then(function(response) {
         if (!response.ok) throw new Error('找不到 microblog.json');
@@ -390,6 +412,7 @@ comments: false
         if (!Array.isArray(payload)) throw new Error('microblog.json 格式錯誤');
         data = payload;
         render();
+        locateEntry();
       })
       .catch(function() {
         list.innerHTML = '<div class="status-error">時光機暫時無法讀取，請稍後再試。</div>';

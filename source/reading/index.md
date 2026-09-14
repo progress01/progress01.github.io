@@ -132,6 +132,7 @@ comments: false
         var item = record.item;
         var link = document.createElement('a');
         link.className = 'reading-calendar-update-card';
+        link.id = item.id;
         link.href = item.url || '#';
 
         appendText(link, 'time', 'reading-calendar-update-date', item.date || '未標日期');
@@ -140,6 +141,7 @@ comments: false
         appendText(copy, 'span', 'reading-calendar-update-category', (record.topic.name || '未分類') + ' / ' + (item.source || '未標來源'));
         appendText(copy, 'strong', 'reading-calendar-update-title', item.title || '未命名學習題目');
         appendText(copy, 'span', 'reading-calendar-update-state', item.state === 'learning' ? '學習中' : (item.state === 'collected' ? '待整理' : '已成文'));
+        if (location.hash.slice(1) === item.id && item.note) appendText(copy, 'span', 'reading-calendar-update-note', item.note);
         link.appendChild(copy);
         appendText(link, 'span', 'reading-calendar-update-arrow', '↗');
         fragment.appendChild(link);
@@ -247,6 +249,26 @@ comments: false
       }
     }
 
+    function locateLearning() {
+      if (!updatesElement.isConnected || !readingData) return;
+      var id = location.hash.slice(1);
+      if (!id) return;
+      var record = allItems().find(function(entry) { return entry.item.id === id; });
+      if (!record) {
+        if (document.getElementById(id)) return;
+        detailNote.textContent = '這個題目已不存在；可選擇日期或搜尋其他紀錄。';
+        return;
+      }
+      var date = String(record.item.date || '').slice(0, 10);
+      if (date) showYear(date.slice(0, 4));
+      renderUpdates(date ? getAddedRecords(date) : [record], (date || '未標日期') + ' 學習紀錄', '已定位搜尋題目；點選卡片閱讀文章。');
+      statusElement.textContent = '顯示搜尋題目加入日期：' + (date || '未標日期');
+      var card = document.getElementById(id);
+      card.focus({ preventScroll: true });
+      card.scrollIntoView({ block: 'center' });
+    }
+    window.addEventListener('hashchange', locateLearning);
+
     fetch('/reading-desk.json')
       .then(function(response) {
         if (!response.ok) throw new Error('reading-desk.json request failed');
@@ -268,6 +290,7 @@ comments: false
         });
 
         showYear(latestYear);
+        locateLearning();
       })
       .catch(function(error) {
         console.error(error);

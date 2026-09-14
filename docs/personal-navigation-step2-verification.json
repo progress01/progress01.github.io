@@ -1,0 +1,10 @@
+{
+  "records": 266,
+  "articles": 246,
+  "microblog": 20,
+  "learningItems": 15,
+  "warnings": [],
+  "realCasesPassed": 3,
+  "allUrlsExist": true,
+  "microblogValuesAndOrderPreserved": true
+}

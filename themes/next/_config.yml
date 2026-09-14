@@ -104,7 +104,6 @@ open_graph:
 menu:
   home: / || fa fa-home
   categories: /categories/ || fa fa-th
-  tags: /tags/ || fa fa-tags
   reading: /reading-log/ || fa fa-book
   photos: /photos/ || fa fa-camera
   random: /random/ || fa fa-dice

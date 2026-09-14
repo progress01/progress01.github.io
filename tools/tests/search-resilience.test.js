@@ -9,9 +9,34 @@ const source = fs.readFileSync(
   'utf8'
 );
 
-test('HTTP 200 的錯誤 HTML 不能被當成空白搜尋索引', () => {
-  const parserLogic = source.slice(source.indexOf('  const stripSearchTags'), source.indexOf('  const fetchSearchData'));
+test('索引載入失敗後可重試，連續觸發不重複請求，成功才發布 loaded', async () => {
+  const fetchLogic = source.slice(source.indexOf('  const fetchSearchData'), source.indexOf('  const inputEventFunction'));
+  let requests = 0, failed = 0, loaded = 0;
   const context = {
+    localSearch: {}, Event,
+    parseSearchData: require('../../themes/next/source/js/third-party/search/navigation-search').parse,
+    populateFilters() {}, renderLoadingState() {}, renderFailureState() { failed++; },
+    window: { dispatchEvent() { loaded++; } }, console: { error() {} },
+    fetch: async () => {
+      requests++;
+      return { ok: true, text: async () => requests === 1 ? '<html>Error</html>' : '{"schemaVersion":1,"records":[]}' };
+    }
+  };
+  vm.runInNewContext("let searchState = 'idle'; let records = [];\n" + fetchLogic + '\nthis.fetchIndex = fetchSearchData;', context);
+  context.fetchIndex(); context.fetchIndex();
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(requests, 1); assert.equal(failed, 1); assert.equal(loaded, 0);
+  context.fetchIndex();
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(requests, 2); assert.equal(loaded, 1); assert.equal(context.localSearch.isfetched, true);
+  context.fetchIndex();
+  assert.equal(requests, 2);
+});
+
+test('HTTP 200 的錯誤 HTML 不能被當成空白搜尋索引', () => {
+  const parserLogic = source.slice(source.indexOf('  const parseSearchData'), source.indexOf('  const populateFilters'));
+  const context = {
+    NavigationSearch: require('../../themes/next/source/js/third-party/search/navigation-search'),
     CONFIG: { path: '/search.xml' },
     DOMParser: class {
       parseFromString() {

@@ -1,0 +1,42 @@
+{
+  "status": "Steps 1–3 verified in generated data and local desktop/mobile UI; return-state acceptance remains in step 4.",
+  "cases": [
+    {
+      "id": "article-recall",
+      "query": "有工作的第N+6天",
+      "source": "source/_posts/隨筆/有工作的第N+6天.md",
+      "expectedUrl": "/2026/09/13/隨筆/有工作的第N+6天/",
+      "expectedDate": "2026-09-13",
+      "expectedType": "article"
+    },
+    {
+      "id": "microblog-recall",
+      "query": "沒有被使用",
+      "source": "source/microblog.json",
+      "expectedContent": "我願意把事情做到最好，但一個很完整的成果，如果沒有被使用，究竟改變了什麼？",
+      "expectedDate": "2026-09-13",
+      "expectedUrlBase": "/status/",
+      "expectedType": "microblog",
+      "verifiedAnchor": "micro-56bb6eec75c50bcd"
+    },
+    {
+      "id": "learning-recall",
+      "query": "早段拉臂時機",
+      "source": "source/reading-desk.yml",
+      "expectedLearningId": "reading-topic-01",
+      "expectedUrl": "/learning/volleyball-attack-arm-swing/",
+      "expectedAddedDate": "2026-08-29",
+      "expectedResultCountForThisArticle": 1,
+      "verified": "One merged result retains added-date event, article passage link and /reading/#reading-topic-01 note link"
+    }
+  ],
+  "futureBehaviorCases": [
+    "Prepend and reorder microblog entries: existing links remain stable.",
+    "Edit an entry without changing its ID: old link locates updated content.",
+    "Linked learning note and article produce one result but retain separate date meanings.",
+    "Unpublished article or unresolved local target does not leak into public search.",
+    "Empty/missing optional fields, invalid dates and script/style text are handled explicitly.",
+    "HTML-sensitive search text is escaped; external learning links cannot become script URLs.",
+    "Search/return state, date boundaries and mobile interaction tested in later items."
+  ]
+}

@@ -1,0 +1,19 @@
+<section class="content-browser" data-content-browser data-category="{{ page.category | default('') | escape }}" data-tag="{{ page.tag | default('') | escape }}" aria-label="依分類與標籤找文章">
+  <p class="content-browser-intro">先選內容分類，再用主題標籤縮小範圍。</p>
+  <div class="content-browser-controls" hidden>
+    <div class="content-browser-group"><strong>內容分類</strong><div data-browse-categories aria-label="內容分類"></div></div>
+    <div class="content-browser-group" id="browse-tags"><strong>主題標籤</strong><div data-browse-tags aria-label="主題標籤"></div></div>
+    <button type="button" data-browse-clear>清除條件</button>
+  </div>
+  <p data-browse-summary role="status">所有文章，依發表日期排列。</p>
+  <div class="content-browser-list">
+    {%- for record in content_browser_records() %}
+      <article class="content-browser-item" data-browse-item data-categories="{{ record.categories | dump | escape }}" data-tags="{{ record.tags | dump | escape }}"{% if (page.category and page.category not in record.categories) or (page.tag and page.tag not in record.tags) %} hidden{% endif %}>
+        <time datetime="{{ record.date }}">{{ record.date }}</time>
+        <div><a href="{{ record.url | escape }}">{{ record.title | escape }}</a><small>{{ record.categories | join(' / ') | escape }}{% if record.tags.length %} · {{ record.tags | join(' / ') | escape }}{% endif %}</small></div>
+      </article>
+    {%- endfor %}
+  </div>
+  <noscript><p>可直接閱讀上方文章，或使用原有<a href="{{ url_for('/categories/') }}">分類入口</a>與<a href="{{ url_for('/tags/') }}">標籤入口</a>。</p>{{ list_categories() }}{{ list_tags() }}</noscript>
+</section>
+{{ next_js('content-browser.js') }}

@@ -14,6 +14,13 @@
           <i class="fa fa-times-circle"></i>
         </button>
       </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
+      </div>
       <div class="search-result-container" aria-live="polite">
         <section class="search-recent" data-search-recent aria-label="最近更新文章">
           <div class="search-recent-heading">

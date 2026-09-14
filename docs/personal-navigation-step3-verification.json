@@ -1,0 +1,29 @@
+{
+  "records": 266,
+  "verifiedPassageAnchors": 4435,
+  "rebuildStable": true,
+  "cases": [
+    {
+      "id": "article-recall",
+      "query": "有工作的第N+6天",
+      "resultCount": 1,
+      "target": "/2026/09/13/隨筆/有工作的第N+6天/#nav-1262a93f14197d13",
+      "learningId": null
+    },
+    {
+      "id": "microblog-recall",
+      "query": "沒有被使用",
+      "resultCount": 2,
+      "target": "/status/#micro-56bb6eec75c50bcd",
+      "learningId": null
+    },
+    {
+      "id": "learning-recall",
+      "query": "早段拉臂時機",
+      "resultCount": 1,
+      "target": "/learning/volleyball-attack-arm-swing/#nav-d2b206e3571568c2",
+      "learningId": "reading-topic-01"
+    }
+  ],
+  "status": "passed"
+}
