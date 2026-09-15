@@ -4,7 +4,7 @@ date: 2026-09-07 12:00:00
 updated: 2026-09-08 12:00:00
 permalink: /learning/presentation-workflow-open-slide/
 categories: [觀念與實驗]
-tags: [學習筆記, 簡報, AI Agent]
+tags: ["學習規劃","簡報"]
 longform: true
 learning: true
 learning_status: 進行中

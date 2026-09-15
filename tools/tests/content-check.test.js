@@ -83,7 +83,6 @@ test('註冊 tag 是 canonical source；alias 去重，未知 tag 產生錯誤�
   const unknownResult = checkContent({ root: unknownRoot });
   t.after(() => cleanupFixture(unknownRoot));
   assert.ok(unknownResult.errors.some(error => error.includes('未註冊標籤') && error.includes('post-0.md')));
-  assert.ok(unknownResult.errors.some(error => error.includes('缺少有效主標籤')));
   assert.deepEqual(getCanonicalTags(['新主標籤', '舊名稱'], buildTaxonomy([{ name: '新主標籤', aliases: ['舊名稱'] }]).aliases), ['新主標籤']);
   assert.deepEqual(getCanonicalTags(['toString'], new Map()), []);
   assert.ok(buildTaxonomy([{ name: 'A', aliases: ['same'] }, { name: 'B', aliases: ['same'] }]).errors.some(error => error.includes('同時指向')));

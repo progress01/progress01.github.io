@@ -1,11 +1,44 @@
-<section class="content-browser" data-content-browser data-category="{{ page.category | default('') | escape }}" data-tag="{{ page.tag | default('') | escape }}" aria-label="依分類與標籤找文章">
-  <p class="content-browser-intro">先選內容分類，再用主題標籤縮小範圍。</p>
+{% set browseTopics = content_browser_topics() %}
+<section class="content-browser" data-content-browser
+  data-category="{{ page.category | default('') | escape }}"
+  data-tag="{{ page.tag | default('') | escape }}"
+  data-tag-topics="{{ browseTopics | dump | escape }}"
+  aria-label="依分類與主題標籤找文章">
+  <p class="content-browser-intro">先選內容分類，再用該分類的主題標籤縮小範圍。</p>
   <div class="content-browser-controls" hidden>
-    <div class="content-browser-group"><strong>內容分類</strong><div data-browse-categories aria-label="內容分類"></div></div>
-    <div class="content-browser-group" id="browse-tags"><strong>主題標籤</strong><div data-browse-tags aria-label="主題標籤"></div></div>
-    <button type="button" data-browse-clear>清除條件</button>
+    <div class="content-browser-group content-browser-category-group">
+      <strong>內容分類</strong>
+      <div data-browse-categories aria-label="內容分類"></div>
+    </div>
+
+    <div id="browse-tags" class="content-browser-group content-browser-topic-group">
+      <strong>主題標籤</strong>
+      <div class="content-browser-topic-summary">
+        <span class="content-browser-topic-current" data-browse-label="topics">尚未選擇</span>
+        <span class="content-browser-filter-count" data-browse-selected-count="topics"></span>
+        <button type="button" class="content-browser-filter-trigger" data-browse-open="topics" aria-controls="browse-topics-panel" aria-expanded="false">
+          <span data-browse-action="topics">先選分類</span>
+        </button>
+      </div>
+      <div id="browse-topics-panel" class="content-browser-panel" data-browse-panel="topics" role="region" aria-labelledby="browse-topics-title" hidden>
+        <div class="content-browser-panel-header">
+          <h2 id="browse-topics-title">主題標籤</h2>
+          <button type="button" class="content-browser-panel-close" data-browse-close aria-label="收合主題標籤選擇區">收合</button>
+        </div>
+        <label class="content-browser-search">搜尋主題
+          <input type="search" data-browse-search="topics" placeholder="輸入主題名稱" autocomplete="off">
+        </label>
+        <div class="content-browser-options" data-browse-options="topics" role="listbox" aria-label="主題標籤選項"></div>
+        <button type="button" class="content-browser-panel-done" data-browse-close>收合主題標籤</button>
+      </div>
+    </div>
   </div>
-  <p data-browse-summary role="status">所有文章，依發表日期排列。</p>
+
+  <div class="content-browser-result-bar">
+    <p data-browse-summary role="status">所有文章，依發表日期排列。</p>
+    <button type="button" class="content-browser-clear" data-browse-clear>清除條件</button>
+  </div>
+
   <div class="content-browser-list">
     {%- for record in content_browser_records() %}
       <article class="content-browser-item" data-browse-item data-categories="{{ record.categories | dump | escape }}" data-tags="{{ record.tags | dump | escape }}"{% if (page.category and page.category not in record.categories) or (page.tag and page.tag not in record.tags) %} hidden{% endif %}>

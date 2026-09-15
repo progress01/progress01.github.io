@@ -5,7 +5,7 @@ date: 2024-07-03 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-78dea7d0c2/01.webp
 blogger_import: true
-tags: [閱讀紀錄]
+tags: ["閱讀心得"]
 ---
 
 我先看過電影才讀小說，更喜歡書裡赤裸的校園現實，也重新思考學人與學歷的差距。

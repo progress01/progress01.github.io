@@ -42,10 +42,58 @@ comments: false
     var detailTitle = document.getElementById('reading-calendar-detail-title');
     var detailNote = document.getElementById('reading-calendar-detail-note');
     var updatesElement = document.getElementById('reading-calendar-updates');
+    var selectedYear;
+    var selectedDate = '';
     var latestYear;
     var readingData;
+    var viewStateKey = 'reading-calendar-view-state-v1';
 
     var readingColors = ['#f0e8d9', '#f4c995', '#e9a267', '#c96545', '#79382f'];
+
+    function pageStateUrl() {
+      return window.location.pathname + window.location.search;
+    }
+
+    function saveViewState() {
+      var url = new URL(window.location.href);
+      if (selectedYear) url.searchParams.set('year', selectedYear);
+      else url.searchParams.delete('year');
+      if (selectedDate) url.searchParams.set('date', selectedDate);
+      else url.searchParams.delete('date');
+      window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+
+      try {
+        window.sessionStorage.setItem(viewStateKey, JSON.stringify({
+          url: pageStateUrl(),
+          scrollY: window.scrollY
+        }));
+      } catch (error) {
+        // 私密瀏覽或儲存空間受限時，網址狀態仍可復原選定內容。
+      }
+    }
+
+    function restoreScrollPosition() {
+      try {
+        var saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || 'null');
+        if (!saved || saved.url !== pageStateUrl() || !Number.isFinite(saved.scrollY)) return;
+        window.setTimeout(function() {
+          window.scrollTo({ top: saved.scrollY, behavior: 'auto' });
+        }, 0);
+      } catch (error) {
+        // 儲存資料損壞時回到瀏覽器預設位置。
+      }
+    }
+
+    function saveScrollPosition() {
+      try {
+        var saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || '{}');
+        saved.url = pageStateUrl();
+        saved.scrollY = window.scrollY;
+        window.sessionStorage.setItem(viewStateKey, JSON.stringify(saved));
+      } catch (error) {
+        // 儲存不可用時不阻斷文章連結。
+      }
+    }
 
     function appendText(parent, tagName, className, value) {
       var element = document.createElement(tagName);
@@ -170,18 +218,24 @@ comments: false
         button.title = key + '：' + (planned ? '預排，' : (future ? '尚未到達，' : '')) + '新增 ' + count + ' 個題目';
         button.addEventListener('click', function(selectedDate) {
           return function() {
-            var records = getAddedRecords(selectedDate);
-            var futureDate = selectedDate > todayKey();
-            var selectedPlanned = futureDate && records.length > 0;
-            renderUpdates(
-              records,
-              selectedDate + (selectedPlanned ? ' 預排內容' : (futureDate ? ' 尚未到達' : ' 新增內容')),
-              (selectedPlanned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的學習題目'
-            );
+            selectDate(selectedDate);
           };
         }(key));
         gridControls.appendChild(button);
       }
+    }
+
+    function selectDate(date) {
+      if (typeof selectedDate !== 'undefined') selectedDate = date;
+      var records = getAddedRecords(date);
+      var futureDate = date > todayKey();
+      var planned = futureDate && records.length > 0;
+      renderUpdates(
+        records,
+        date + (planned ? ' 預排內容' : (futureDate ? ' 尚未到達' : ' 新增內容')),
+        (planned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的學習題目'
+      );
+      if (typeof saveViewState === 'function') saveViewState();
     }
 
     function bindCalendarClick(chart) {
@@ -192,19 +246,13 @@ comments: false
         if (Array.isArray(date)) date = date[0];
         date = String(date || '').slice(0, 10);
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
-        var records = getAddedRecords(date);
-        var futureDate = date > todayKey();
-        var planned = futureDate && records.length > 0;
-        renderUpdates(
-          records,
-          date + (planned ? ' 預排內容' : (futureDate ? ' 尚未到達' : ' 新增內容')),
-          (planned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的學習題目'
-        );
+        selectDate(date);
       });
     }
 
     function showYear(year) {
-      var selectedYear = String(year);
+      selectedYear = String(year);
+      if (selectedDate && selectedDate.slice(0, 4) !== selectedYear) selectedDate = '';
       var backlog = buildBacklogData(selectedYear);
       calendarElement.innerHTML = '';
       var chart = Calendar.init('reading-calendar', {
@@ -231,19 +279,22 @@ comments: false
       renderGridControls(selectedYear);
       bindCalendarClick(chart);
 
+      var requestedDate = selectedDate && selectedDate.slice(0, 4) === selectedYear ? selectedDate : '';
       var latestDate = latestItemDate(selectedYear);
-      var latestRecords = latestDate ? getAddedRecords(latestDate) : [];
-      var latestPlanned = latestDate > todayKey();
-      statusElement.textContent = latestDate
-        ? '顯示 ' + selectedYear + ' 年：' + latestDate + (latestPlanned ? ' 預排' : '') + ' 新增 ' + latestRecords.length + ' 個題目'
+      var displayDate = requestedDate || latestDate;
+      var displayRecords = displayDate ? getAddedRecords(displayDate) : [];
+      var displayFuture = displayDate > todayKey();
+      var displayPlanned = displayFuture && displayRecords.length > 0;
+      statusElement.textContent = displayDate
+        ? '顯示 ' + selectedYear + ' 年：' + displayDate + (displayPlanned ? ' 預排' : '') + ' 新增 ' + displayRecords.length + ' 個題目'
         : '顯示 ' + selectedYear + ' 年：尚無新增題目';
 
       Array.prototype.forEach.call(yearsElement.querySelectorAll('button'), function(button) {
         button.classList.toggle('is-active', button.getAttribute('data-year') === selectedYear);
       });
 
-      if (latestDate) {
-        renderUpdates(latestRecords, latestDate + (latestPlanned ? ' 預排內容' : ' 新增內容'), (latestPlanned ? '預排日期；' : '') + '只顯示該日新增的學習題目；點選其他日期查看當日紀錄');
+      if (displayDate) {
+        renderUpdates(displayRecords, displayDate + (displayPlanned ? ' 預排內容' : ' 新增內容'), (displayPlanned ? '預排日期；' : '') + '只顯示該日新增的學習題目；點選其他日期查看當日紀錄');
       } else {
         renderUpdates([], selectedYear + ' 年新增內容', '點選熱力圖格子查看其他日期');
       }
@@ -260,8 +311,12 @@ comments: false
         return;
       }
       var date = String(record.item.date || '').slice(0, 10);
-      if (date) showYear(date.slice(0, 4));
+      if (date) {
+        selectedDate = date;
+        showYear(date.slice(0, 4));
+      }
       renderUpdates(date ? getAddedRecords(date) : [record], (date || '未標日期') + ' 學習紀錄', '已定位搜尋題目；點選卡片閱讀文章。');
+      if (typeof saveViewState === 'function') saveViewState();
       statusElement.textContent = '顯示搜尋題目加入日期：' + (date || '未標日期');
       var card = document.getElementById(id);
       card.focus({ preventScroll: true });
@@ -285,11 +340,21 @@ comments: false
           button.className = 'reading-calendar-year-button';
           button.setAttribute('data-year', year);
           button.textContent = year;
-          button.addEventListener('click', function() { showYear(year); });
+          button.addEventListener('click', function() {
+            selectedDate = '';
+            showYear(year);
+            saveViewState();
+          });
           yearsElement.appendChild(button);
         });
 
-        showYear(latestYear);
+        var params = new URLSearchParams(window.location.search);
+        var requestedYear = params.get('year');
+        var requestedDate = params.get('date');
+        selectedYear = years.indexOf(requestedYear) !== -1 ? requestedYear : latestYear;
+        selectedDate = requestedDate && /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : '';
+        showYear(selectedYear);
+        restoreScrollPosition();
         locateLearning();
       })
       .catch(function(error) {
@@ -298,6 +363,9 @@ comments: false
         calendarElement.innerHTML = '';
         updatesElement.innerHTML = '<div class="reading-calendar-empty">目前無法整理草稿紀錄。</div>';
       });
+
+    updatesElement.addEventListener('click', saveScrollPosition);
+    window.addEventListener('pagehide', saveScrollPosition);
   })();
 </script>
 

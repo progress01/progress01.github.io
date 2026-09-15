@@ -1,0 +1,5317 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-15T01:07:49.505Z",
+  "source": "正文判讀後的標籤重整清單",
+  "publicArticleCount": 246,
+  "uncertainCount": 3,
+  "entries": [
+    {
+      "path": "source/_posts/welcome-board.md",
+      "title": "System Ready...",
+      "categories": [
+        "站務"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "站務"
+      ],
+      "newTags": [],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文是首頁系統樣式與歡迎頁，沒有可供文章性質查找的內容。",
+      "bodySha256": "df2da82971d19491a30972aef1cc11bf91cb97c88760bf3030a4c810e24b5e63",
+      "date": "2026-01-21 21:00:00",
+      "updated": null,
+      "bodySha256BeforeLinkUpdate": "811b931f7651f5146824dfbc80e40f84aed4a38f1ec25e873a7c7ed843600182",
+      "linkUpdate": "首頁播放按鈕改連至歌曲推薦主標籤頁"
+    },
+    {
+      "path": "source/_posts/實驗室/AI提問判斷順序-情境目標與問題類型.md",
+      "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/ai-question-judgment-order/",
+      "oldTags": [
+        "學習筆記",
+        "AI",
+        "提問方法",
+        "工作方法"
+      ],
+      "newTags": [
+        "方法整理",
+        "提問方法"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文提出情境、目標、限制、暫定假設與驗證順序，形成可重複使用的提問框架。",
+      "bodySha256": "d3ef2e50d215350758824dc56bf70d677f8d6d962db360b1630b608565a39254",
+      "date": "2026-09-08 20:00:00",
+      "updated": "2026-09-09 09:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/Agentic-Transaction-ACID-Agent-學習筆記.md",
+      "title": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/agentic-transaction-acid-agent/",
+      "oldTags": [
+        "學習筆記",
+        "AI Agent",
+        "資料庫",
+        "工作流程",
+        "驗證"
+      ],
+      "newTags": [
+        "研究筆記",
+        "AI Agent"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以論文與 README 為來源，整理 Agent transaction 的探索、執行、驗證與提交流程，並標示尚未獨立重現。",
+      "bodySha256": "6a66b59e24265a889922f26c04855bffbe2be18f655d75249c52188a3adac4b9",
+      "date": "2026-08-29 12:00:00",
+      "updated": "'2026-09-11T19:02:32+08:00'"
+    },
+    {
+      "path": "source/_posts/實驗室/CMS前後台理解-欄位對照與規格審查.md",
+      "title": "CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/cms-content-modeling-field-review/",
+      "oldTags": [
+        "學習筆記"
+      ],
+      "newTags": [
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": true,
+      "basis": "正文先拆開內容建模、欄位、關聯與生命週期，仍是持續核對中的概念工作手冊。",
+      "bodySha256": "c0c49a87d71b0b52f5fd75060a275efb7203d329b32956b8362352636620f449",
+      "date": "2026-08-29 12:00:00",
+      "updated": "2026-08-29 22:09:03"
+    },
+    {
+      "path": "source/_posts/實驗室/Gemini-Notebook-Agent-文件產出工作流.md",
+      "title": "Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/gemini-notebook-agent-office-workflow/",
+      "oldTags": [
+        "學習筆記",
+        "AI Agent"
+      ],
+      "newTags": [
+        "研究筆記",
+        "AI Agent"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理外部產品資料與尚待驗證的文件產出流程，沒有宣稱已完成實測。",
+      "bodySha256": "6e63c019f955a51f7b25f89e09f86bbf0f9ebf9ce1193a58b3e56b3c8bf00b4d",
+      "date": "2026-08-31 12:00:00",
+      "updated": "2026-08-31 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/LIS-Research-1965-2025-內容分析學習筆記.md",
+      "title": "LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/lis-research-1965-2025-content-analysis/",
+      "oldTags": [
+        "學習筆記",
+        "圖書資訊學",
+        "研究方法",
+        "內容分析"
+      ],
+      "newTags": [
+        "研究筆記",
+        "內容分析"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以研究文章的摘要、方法與初步結果建立待核對問題，仍保留研究狀態。",
+      "bodySha256": "63d7584d9b048fdb2bac6ece7c9a7cb2f21217ea473dc2f075b1341e36880635",
+      "date": "2026-08-31 12:00:00",
+      "updated": "2026-08-31 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/Web-自動化測試-Python-Pytest與Playwright.md",
+      "title": "Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/web-automation-python-pytest-playwright/",
+      "oldTags": [
+        "學習筆記",
+        "軟體測試",
+        "Web 自動化",
+        "Python"
+      ],
+      "newTags": [
+        "學習規劃",
+        "Web 自動化"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文列出學習階段、工具範圍與尚未完成的過關條件，屬學習路徑而非完成紀錄。",
+      "bodySha256": "52852e9f20af4b09e96f933f445db41a767fc2612aeaa078df672bd17e838d36",
+      "date": "2026-09-04 12:00:00",
+      "updated": "2026-09-04 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/life-check-tool.md",
+      "title": "混亂日常的一個「存檔點」工具設計",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "學習筆記"
+      ],
+      "newTags": [
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文把工具展示改成存檔點的問題與設計判斷，重點是釐清設計取捨。",
+      "bodySha256": "ed0dd625912c77cd43a879111d7092864a9e4d2885a83a4f1b1a65b7a76e161f",
+      "date": "2026-02-02 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/在台灣設立實驗室十一年-思考方式筆記.md",
+      "title": "在台灣設立實驗室十一年｜校準責任、內耗與自己｜思考方式筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/lab-eleven-years-reflective-thinking/",
+      "oldTags": [
+        "學習筆記",
+        "思考方式"
+      ],
+      "newTags": [
+        "觀念釐清",
+        "思考方式"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文觀察外部文章如何處理成果、疲累、責任與角色變化，尚未形成實證方法。",
+      "bodySha256": "b590458ab17f09b7dfd1ec40bdb8cb792bf3c65a03975b86c870f89374eca366",
+      "date": "2026-08-31 12:00:00",
+      "updated": "2026-08-31 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-API需求排查紀錄.md",
+      "title": "工作知識｜API 需求排查：從前台現象回到資料來源",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/api-requirement-troubleshooting/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "問題排查"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文從外部來源、後台、排程、API 到前台建立資料流來定位異常。",
+      "bodySha256": "1103467c94313c947d6db522260805c9bf4c8ad70fc6742e0bffcb8d8dfbb31d",
+      "date": "2026-09-03 23:44:45",
+      "updated": "2026-09-03 23:44:45"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-上稿與表格排查紀錄.md",
+      "title": "工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/content-publishing-and-tables/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "問題排查"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文逐層區分 HTML、CSS、資料、編輯器與檔案權限造成的前台差異。",
+      "bodySha256": "08b8d5c10402f48ea6994e4c0ed88904d82a414cf6dcf83e0d270e5b0388a44b",
+      "date": "2026-09-03 23:55:00",
+      "updated": "2026-09-03 23:55:00"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-專案報價與成本估算.md",
+      "title": "工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/project-pricing-and-cost-estimation/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文提出工期、利潤、緩衝與隱形成本的可重用估算框架。",
+      "bodySha256": "2b12f6fa4d3b3d9ca08e9f67ef997196ec694bf70ba77a3c73e958c1ed2c8341",
+      "date": "2026-09-02 23:55:00",
+      "updated": "2026-09-03 23:55:00"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-簡報不是功能清單.md",
+      "title": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/presentation-as-mental-model/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理從聽眾、目的、故事線到呈現的簡報判斷順序。",
+      "bodySha256": "aae2973adaabaaa43a840e1df66cd141c8129b6c5c5f7a5d4bda7088a654b4e5",
+      "date": "2026-07-09 12:00:00",
+      "updated": "2026-09-10 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/排球攻擊揮臂機制.md",
+      "title": "排球攻擊揮臂機制｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/volleyball-attack-arm-swing/",
+      "oldTags": [
+        "學習筆記"
+      ],
+      "newTags": [
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文把擊球點、身體展開與出手順序重新放回動作節奏，並保留症狀假說的不確定性。",
+      "bodySha256": "e7d90fdb0c6cec77277412a2a6718d2435478fd4a16210f65f57005a31b7374c",
+      "date": "2026-08-29 12:00:00",
+      "updated": "2026-09-10 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/混排攻擊與防守站位.md",
+      "title": "混排攻擊與防守站位｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/mixed-volleyball-defense-positioning/",
+      "oldTags": [
+        "學習筆記"
+      ],
+      "newTags": [
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文先拆出主要防守、次要責任與補位方向，仍在建立問題地圖。",
+      "bodySha256": "41f45ee15db17b1ca255c8439ca32e809c341ebb2e950135a73cd2141c1d9243",
+      "date": "2026-09-06 19:55:24",
+      "updated": "2026-09-08 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/測試基本功-User-Story-Test-Case與Bug-Report.md",
+      "title": "測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/software-testing-basics-test-case-bug-report/",
+      "oldTags": [
+        "學習筆記",
+        "軟體測試",
+        "QA",
+        "測試案例"
+      ],
+      "newTags": [
+        "方法整理",
+        "測試案例"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理 User Story、Test Case、Bug Report 與驗收條件的操作框架，雖是系列初期仍已形成可重用方法。",
+      "bodySha256": "8b59a0f26a1ea490604a2a650548b93f9ae1e37b2a179c1b45df5db386217d7b",
+      "date": "2026-09-04 12:00:00",
+      "updated": "2026-09-04 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/測試設計-等價類別邊界值與風險導向測試.md",
+      "title": "測試設計｜等價類別、邊界值與風險導向測試｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/test-design-boundary-risk-based-testing/",
+      "oldTags": [
+        "學習筆記",
+        "軟體測試",
+        "測試設計",
+        "風險"
+      ],
+      "newTags": [
+        "方法整理",
+        "測試設計"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理等價類別、邊界值、決策表與風險排序的測試方法。",
+      "bodySha256": "a79c840a91217fb7d3e4909bf66e768a73b5bbc25459f0a68aad42dbdbaa97a9",
+      "date": "2026-09-04 12:00:00",
+      "updated": "2026-09-04 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/痠痛改善研究-從下背肩膀與小腿開始.md",
+      "title": "痠痛改善研究：從下背、肩膀與小腿開始",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/pain-improvement-research/",
+      "oldTags": [
+        "學習筆記"
+      ],
+      "newTags": [
+        "研究筆記"
+      ],
+      "reviewed": true,
+      "uncertain": true,
+      "basis": "正文以部位、誘發情境、介入方式與隔天反應建立待驗證觀察，明確不把內容當成診斷。",
+      "bodySha256": "fab53a9a986e76b808948407f6af97e339f696668da4d92b03ee1784988ed4e5",
+      "date": "2026-09-06 12:00:00",
+      "updated": "2026-09-08 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/發布品質-Git-CICD與Release-Checklist.md",
+      "title": "發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/release-quality-git-ci-cd-checklist/",
+      "oldTags": [
+        "學習筆記",
+        "軟體測試",
+        "Git",
+        "CI/CD"
+      ],
+      "newTags": [
+        "方法整理",
+        "CI/CD"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文把版本、環境、測試證據、發布判斷與回復流程整理成可交接的框架。",
+      "bodySha256": "198e7eb029c7dd6a489f66fddfbd6b82fbc3bfc63195d7a86eaa4591df33b17a",
+      "date": "2026-09-04 12:00:00",
+      "updated": "2026-09-04 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/簡報製作與Open-Slide學習筆記.md",
+      "title": "簡報製作與 open-slide 2.0｜從內容、結構到上台報告的學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/presentation-workflow-open-slide/",
+      "oldTags": [
+        "學習筆記",
+        "簡報",
+        "AI Agent"
+      ],
+      "newTags": [
+        "學習規劃",
+        "簡報"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文從資料與外部方法建立簡報學習流程，並為後續報告設定尚未完成的練習。",
+      "bodySha256": "8cd96b23d29ecae3be1c472c78c615717d763424a7fd0ef2d2e477304cfb2d32",
+      "date": "2026-09-07 12:00:00",
+      "updated": "2026-09-08 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/網站品質與軟體測試-從需求到上線驗證的學習路徑.md",
+      "title": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/website-quality-testing-roadmap/",
+      "oldTags": [
+        "學習筆記",
+        "網站品質",
+        "軟體測試",
+        "QA"
+      ],
+      "newTags": [
+        "學習規劃",
+        "網站品質"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文是 42 天學習挑戰的階段地圖與過關條件，明確標示尚未完成實作。",
+      "bodySha256": "0013ee318105a843df765e874070e3479ad60a1fbf210b27d7f1cbdedaaec919",
+      "date": "2026-09-04 12:00:00",
+      "updated": "2026-09-04 19:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/討論GEO篇一.md",
+      "title": "討論GEO篇一",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "學習筆記"
+      ],
+      "newTags": [
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文釐清 GEO、AEO、SEO 與 Schema 的差異及不能保證的範圍。",
+      "bodySha256": "8a48008cf8f4ddb2f51e1d6f81b56f29a4e97b83c1243b508e65d98fe7cedeb6",
+      "date": "2026-04-06 17:00:00",
+      "updated": "'2026-09-11T18:54:03+08:00'"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-2375.md",
+      "title": "歌曲推薦-2375",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "70c7297e3802aeb4af9558946157808bb25396c33f08f2be2101f35438dd89dc",
+      "date": "2025-10-24 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-All-for-you.md",
+      "title": "歌曲推薦-All for you",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b888a9e9e585eb99a0803cdaa7a752ac46bcea2a9447421e93faaea3a1101564",
+      "date": "2026-01-09 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Better-Man.md",
+      "title": "歌曲推薦-Better Man",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f1ac9cef942d48c44d827e05f6250e0db6ad859d61c2f3a57f973b248ce509f0",
+      "date": "2025-12-25 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Candy.md",
+      "title": "歌曲推薦-Candy",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "12c58611a433bb0cc002709d00cf89a3a12de86e06a160af6a7060ebac79a2fc",
+      "date": "2026-01-08 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Don-t-You-Worry.md",
+      "title": "歌曲推薦-Don't You Worry",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "a0d03e73f36cd7aa47faa1aede520b6610e9684519f70f3b0d9d73b12795ec56",
+      "date": "2025-12-30 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Free-Loop.md",
+      "title": "歌曲推薦-Free Loop",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "a050f2cdb5935371d0f2f84fcde052e8fa62ec93f662596bc162f20a79ce44f7",
+      "date": "2026-01-19 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-From-The-Start.md",
+      "title": "歌曲推薦-From The Start",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b32828160d3ce999ede4c8b41c0e966f19b2b0c7a42fad5e64f4a05e5e0ffbf9",
+      "date": "2026-05-19 12:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-How-long-will-I-love-you.md",
+      "title": "歌曲推薦-How long will I love you",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "446498d9bdbe5c7a40b200e5a2a0750a68cc26e4cbd4bea69722c4f8556b3c7d",
+      "date": "2026-07-29 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Hyehwa-dong.md",
+      "title": "歌曲推薦-Hyehwa dong",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "13f443bffd81dd00c7fb5fa545f3c5ff8971bfea93451b15c91f08d5e344634f",
+      "date": "2026-01-06 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-I will love you.md",
+      "title": "歌曲推薦-I will love you",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "5736046f9f462cb0f7ed889023745fd5a0bacdcfbf1828e39800ce8d36c908cc",
+      "date": "2026-09-04 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-I-love-you無望.md",
+      "title": "歌曲推薦-I love you無望",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "7588074b50a6c5a21a7343d6df9c9bb378d78a15ca90e6b91542842348c450ba",
+      "date": "2026-01-28 12:00:28",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Just Give Me A Reason.md",
+      "title": "歌曲推薦-Just Give Me A Reason",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "e8e6433e0c3ce4da03118f7a5931af0f80fcc419bc2aaedb5cb3ed79c99e20f2",
+      "date": "2026-09-09 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-My-heart-will-go-on.md",
+      "title": "歌曲推薦-My Heart Will Go On",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ba4483df7290978301a3e6da6a60e65d32281c9c2205a187ab24e322cb699102",
+      "date": "2026-07-30 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Nothing‘s-Gonna-Stop-Us-Now.md",
+      "title": "歌曲推薦-Nothing‘s Gonna Stop Us Now",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "91ecbe86a81d5818b3ad250d6ca360d83f1b34b0af76722ec2afa5475c1a6b9c",
+      "date": "2026-01-15 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Right-here-waiting.md",
+      "title": "歌曲推薦-Right Here Waiting",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "517b2684139a7b97ac3ed905f8f45605a86c652714c6ba840f7fbc0035fe7b20",
+      "date": "2026-07-31 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Secret-of-my-heart.md",
+      "title": "歌曲推薦-Secret of my heart",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "日語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "66715c35a34f5669f9e4cfc14690366d7ac1fd464fefd4f677fcd9617ec36c5f",
+      "date": "2026-01-12 12:00:00",
+      "updated": null,
+      "languageTag": "日語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為日語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Tally.md",
+      "title": "歌曲推薦-Tally",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "6f86e07f69acd5d714b8f5c9280cb31c273fb21685060b3db74cbdc4a1a7eab0",
+      "date": "2025-12-31 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Way-back-into-love.md",
+      "title": "歌曲推薦-Way back into love",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "1c93c44505f218d1afe92ef95a6de4605450cb5a0585bb7558d60e74433d46fc",
+      "date": "2026-07-28 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-When-you-say-nothing-at-all.md",
+      "title": "歌曲推薦-When you say nothing at all",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "e74e4b0e97dbf31da8a495e586b7b87d09eff8602a2dd4f5ecdddaf5f2398d24",
+      "date": "2026-01-22 12:00:30",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Wonderful-tonight.md",
+      "title": "歌曲推薦-Wonderful tonight",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "875ef17bd32b3072150be0f91e82f97a70ed77710532b5fe223db90969b67d4c",
+      "date": "2026-01-16 12:00:18",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-You-are-not-alone.md",
+      "title": "歌曲推薦-You are not alone",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "2daf8a06bc1ec654e3fe645f0c9acfc3e53b6819c9c7c7541288492c1720051b",
+      "date": "2026-01-27 12:00:18",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-free-magic.md",
+      "title": "歌曲推薦-free magic",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "日語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "81182b99a3e615123bfbf44caf2f00aa4254dd81d9db1ab8b6c680942d704c0f",
+      "date": "2026-01-30 12:00:39",
+      "updated": null,
+      "languageTag": "日語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為日語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-kiss-me.md",
+      "title": "歌曲推薦-kiss me",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "1cd6eb3f5d5c3373ccb0b1b4b6deda75d94fdb8f56576b9abec13afe380035e1",
+      "date": "2026-08-04 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-miles are wide.md",
+      "title": "歌曲推薦-miles are wide",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "9b31c5e6832e44f61d52677cc8cf593cc61cf170c3d4f5f30b7a0cabd762ee2f",
+      "date": "2026-08-24 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-sailing back to you.md",
+      "title": "歌曲推薦-sailing back to you",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "a7f67fd2f9b320713e85542defb3e544d7e577e2d8378a9f9a530a8412c25d27",
+      "date": "2026-09-01 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-tears.md",
+      "title": "歌曲推薦-Tears",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "日語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b4c1cc3f45d0052b5baa5001f25f3e3888a57b0e0cb3934e6946fe9796a88bb1",
+      "date": "2026-07-21 12:00:00",
+      "updated": null,
+      "languageTag": "日語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為日語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-the day you went away.md",
+      "title": "歌曲推薦-the day you went away",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "e48ff998479672ed23d26b10ab9d744d2b39ef795f6b121e029274e4b0894843",
+      "date": "2026-09-03 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-それぞれに.md",
+      "title": "歌曲推薦-それぞれに",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "日語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ef4f4b26e29d9905234f4bd4b9240422f9d7a9e5252d068806ab4c2eef3d573b",
+      "date": "2026-01-02 12:00:00",
+      "updated": null,
+      "languageTag": "日語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為日語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-プラスティック・ラブ.md",
+      "title": "歌曲推薦-プラスティック・ラブ",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "日語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "d67a311dd6ece28c3129bffb646a2436516df83372c37b07f17140aede37dbfb",
+      "date": "2025-12-26 12:00:00",
+      "updated": null,
+      "languageTag": "日語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為日語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-一世情緣.md",
+      "title": "歌曲推薦-一世情緣",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "a51ce41a60b8c8115b1ccc1dbf77a075d3522597a04f8ee4194776ecc1517b4b",
+      "date": "2026-05-04 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-一切再重來.md",
+      "title": "歌曲推薦-一切再重來",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f130aae22903d055e53fc8a90ff0e9d123271196d0468d9a4f094a64b30abcf4",
+      "date": "2026-5-14 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-一千年以後.md",
+      "title": "歌曲推薦-一千年以後",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "6305e266755801563492160c178823ab8b46f24bf419f80ddfcc7560be45e9fc",
+      "date": "2026-07-14 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-一直很安靜.md",
+      "title": "歌曲推薦-一直很安靜",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "d03d0ba7ee40eff9ef371b62047b98822e0ba960fa74e7dd3b5f03a7ca7bc885",
+      "date": "2026-07-13 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-一見鍾情.md",
+      "title": "歌曲推薦-一見鍾情",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "7fa2645bf87c9e49d4a782aa7eef885d28352969b7f4fc6cf5fd2106b88b8968",
+      "date": "2026-05-07 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-一輩子的孤單.md",
+      "title": "歌曲推薦-一輩子的孤單",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "419618f0978cfef3370e353c1c6bba1ad19693835e074181151407e9884da24d",
+      "date": "2026-01-23 12:00:54",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-上上籤.md",
+      "title": "歌曲推薦-上上籤",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "0cec62968b9ea73b484f1de903cf211ef98d5a12eb2ed698c070d2282d8533b0",
+      "date": "2026-01-14 12:00:54",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-不是我不明白.md",
+      "title": "歌曲推薦-不是我不明白",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "df86f38a787c4bf0048d65bf3a129d1fcb6816781dbb4435bf2df079f2a0a461",
+      "date": "2026-07-09 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-你不在.md",
+      "title": "歌曲推薦-你不在",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "0dfc51222f1a619e6db1d53c073996940ffef3402638c96dcba5c9a8c2d77454",
+      "date": "2026-07-07 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-你好嗎.md",
+      "title": "歌曲推薦-你好嗎",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ea97cc98e0dc1165b1ffef401c4fb402cbe3ef0b3ed7d3b6637e6f928231f478",
+      "date": "2026-02-04 12:00:54",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-像我這樣的人.md",
+      "title": "歌曲推薦-像我這樣的人",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b23e6b747a82c6ae244518c39de787d3b7de87116a77514b36f637ae71776f61",
+      "date": "2026-08-07 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-全世界我最喜歡你（可是你都不知道）.md",
+      "title": "歌曲推薦-全世界我最喜歡你（可是你都不知道）",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "93a3087d88fd7acf07c25eb74c8904c2ac0c30a7a6310650782f37e441c20a34",
+      "date": "2026-08-25 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-其實我真的很在乎.md",
+      "title": "歌曲推薦-其實我真的很在乎",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "531d8d2e15481c41c1bcf9e45789bdd70530f933240538bd1ee89f4f34ee0811",
+      "date": "2026-05-05 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-其實都沒有.md",
+      "title": "歌曲推薦-其實都沒有",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "4edb87d4cd75edfbef253d7e9415b103e7814d6e39342d9e7087644d8381196e",
+      "date": "2026-08-06 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-再會啦心愛的無緣的人.md",
+      "title": "歌曲推薦-再會啦心愛的無緣的人",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "4bbefd7de98bace227de5f56f1e4fcd8ac4ae258cdc88eef85bfa9ee1e7110a9",
+      "date": "2026-04-01 12:00:52",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-動不動就說愛我.md",
+      "title": "歌曲推薦-動不動就說愛我",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b2d3c9adedc058df9fe228d3679fb0cc9e2946d7410b1969c722277854292eb8",
+      "date": "2026-05-20 12:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-北極雪.md",
+      "title": "歌曲推薦-北極雪",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f82b9d83037147ba78de18c8683483965705fa103914fb9715046db7fbc9566c",
+      "date": "2025-10-20 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-千千闋歌.md",
+      "title": "歌曲推薦-千千闋歌",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "粵語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "1686cba119c6b0dffcced8b2812d6f2064c6512b5f8e49ee83f16890a6da718c",
+      "date": "2026-08-28 12:00:00",
+      "updated": null,
+      "languageTag": "粵語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為粵語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-告白（고백합니다）.md",
+      "title": "歌曲推薦-告白（고백합니다）",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "eb9842f99455076640c7984b31f3994fb065c2fa5ee801f6d77b3228b1752185",
+      "date": "2026-09-02 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-唯一.md",
+      "title": "歌曲推薦-唯一",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "486cdadcf6621a3265464a5e9629e2f458bce7d686896feb989896387667f4e3",
+      "date": "2026-07-23 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-噓.md",
+      "title": "歌曲推薦-噓",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "6744a1aba2160fd6b2c1015da1b99b446aee2563da98d6d1fe5a80cc57293970",
+      "date": "2025-12-21 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-回到過去.md",
+      "title": "歌曲推薦-回到過去",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "cb3045c178d2efe41c9fef35456f00c39137e41fa1a4bb1afc9cfa424927b4b1",
+      "date": "2026-01-26 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-因為寂寞.md",
+      "title": "歌曲推薦-因為寂寞",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "5d7cfbac4818d9e316d81c100d15dbf1bd80bb7f2fc2eb323d20bc48ff4d4e76",
+      "date": "2026-4-27 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-因為愛.md",
+      "title": "歌曲推薦-因為愛",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "9214d6283e11f8c50aa555904830b9d93d884fd9c33d9af7bd4b25f3754e8f9d",
+      "date": "2026-08-21 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-夜行性動物.md",
+      "title": "歌曲推薦-夜行性動物",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b97e0e2dac78529cf471289f74119b740b0c277177a6d93f515183ae0dee2bff",
+      "date": "2025-12-23 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-好心分手.md",
+      "title": "歌曲推薦-好心分手",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "粵語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f1093a357a5bc10e1b15c859adf5a8d82abee5a5bfff753e0d75055de156952e",
+      "date": "2026-09-11 12:00:00",
+      "updated": null,
+      "languageTag": "粵語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為粵語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-如你所願.md",
+      "title": "歌曲推薦-如你所願",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "0da59bd85ed2bb48224830c90aeef125aac8b22a9aac2f63b6a07484160f0b03",
+      "date": "2026-01-20 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-小風波.md",
+      "title": "歌曲推薦-小風波",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "粵語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f7ae584b3d920faabb55913461cd39592f1516ce90ee6c4bc598f9226346794d",
+      "date": "2025-9-8 12:00:00",
+      "updated": null,
+      "languageTag": "粵語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為粵語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-就值得愛了.md",
+      "title": "歌曲推薦-就值得愛了",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "c708cfd034580b301d6ee8efd87fc35c734a57bdbb57e18087d392ed35d3f4eb",
+      "date": "2026-01-05 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-就改天.md",
+      "title": "歌曲推薦-就改天",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "175243bd20dda6733061f860c523c3a2bd1fd7f863ce9c8c47b5991b4513b9ab",
+      "date": "2026-08-19 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-廣島之戀.md",
+      "title": "歌曲推薦-廣島之戀",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "9665fcac5a14b29615f8c70e7b26b9ab4b467088c179b60467008a990f4a21ae",
+      "date": "2026-5-8 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-復刻回憶.md",
+      "title": "歌曲推薦-復刻回憶",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "6d90ff82907e2cc0b0cc5013d2ac0a13ecb50a0bc810b0a92bcd6348eb751d93",
+      "date": "2025-10-22 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-忘了你忘了我.md",
+      "title": "歌曲推薦-忘了你忘了我",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "cc9d4d09ff7725cac8f8723060d2e863f6ada4377b956c8a922e84a4e783d6d1",
+      "date": "2026-02-23 12:50:40",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-悄悄告訴她.md",
+      "title": "歌曲推薦-悄悄告訴她",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "8c4176014cede62f5300064689ecf07cfe71431d22a02814a4609464b10ed157",
+      "date": "2026-02-02 12:00:54",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-愛丫愛丫.md",
+      "title": "歌曲推薦-愛丫愛丫",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "1d8950d39ba0edc2be422844faa085106e4efb44aae3535c92bde72edd9e1f8c",
+      "date": "2026-07-16 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-愛作夢的人.md",
+      "title": "歌曲推薦-愛作夢的人",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "91c83fbd7b119272b6e37153a8b9b5401e2d63d4dd6bf7ecdd916f2251293449",
+      "date": "2026-07-20 12:00:00",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-感謝勞力.md",
+      "title": "歌曲推薦-感謝勞力",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "86a8f81cf95c358839cd8cdc8f83466d42008277733ed0f4cd011ba53d3eb2db",
+      "date": "2026-08-31 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-愫.md",
+      "title": "歌曲推薦-愫",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "7e2e1dc8ec8ee83a3d0922d3b5ec3ae82b163f97afe55b0c9e950ab62c5cf303",
+      "date": "2026-01-29 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-慢火車.md",
+      "title": "歌曲推薦-慢火車",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "54e5abf9bc8fd42705c7c1b6d16cf38651821b0c8e8a4ff55845985802e16971",
+      "date": "2026-05-13 12:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-戀戀風塵.md",
+      "title": "歌曲推薦-戀戀風塵",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "0ece8aa2c209c4fa7921fad3a3e8ff4ee2e6790675c8b9eeab7deae56b6a17a5",
+      "date": "2026-02-13 12:00:32",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-戀曲1990.md",
+      "title": "歌曲推薦-戀曲1990",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "4d1f0d79f6b534891f64f7f415ae83b75346f7427a53ab997d69d57bdb7b2941",
+      "date": "2026-5-18 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-我一個人住.md",
+      "title": "歌曲推薦-我一個人住",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "349e211eac05cb9a86bd83164d6a2193c979782d742bd6c479ac7b5c70ac58d4",
+      "date": "2026-05-06 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-我們的故事.md",
+      "title": "歌曲推薦-我們的故事",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "8c5ae54efbb18cc8eb172dfed8175fec0c65ccec56f42a2b9e120bbbf46765eb",
+      "date": "2026-02-12 12:00:19",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-我們的歌.md",
+      "title": "歌曲推薦-我們的歌",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "0edeaa6eb96d2a03125369e356f2e4291605309a2310d693ea6961c8a1763304",
+      "date": "2026-07-08 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-我在紐約打電話給你.md",
+      "title": "歌曲推薦-我在紐約打電話給你",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "53c218d76997a170db3a68c0f9a3df008d9f15e545eb43a3ea56c30cc1d412b2",
+      "date": "2026-02-03 12:00:11",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-我為你傷心.md",
+      "title": "歌曲推薦-我為你傷心",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "c6e7c5f90594da164f288463418adf1959f952d7c2e5f98e8120e0619b65ecd9",
+      "date": "2026-05-11 12:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-抱著你.md",
+      "title": "歌曲推薦-抱著你",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f3e7e474408aa6ec427ee25fb1bd0b9aa6a6330646f1fde04b38830a474fc1cf",
+      "date": "2026-5-15 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-放風吹.md",
+      "title": "歌曲推薦-放風吹",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "3dd4ee9413bebc1e4e9b9404fb78a3c0d607ac26f9f67c9dba97f2cd37f79b74",
+      "date": "2026-04-02 12:00:05",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-星月神話.md",
+      "title": "歌曲推薦-星月神話",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b1f48c8b2fdcbe5e8abba23acdec6febc49e2faa236c24a9fb9cc3b7f10841ac",
+      "date": "2026-07-24 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-有沒有那麼一首歌會讓你想起我.md",
+      "title": "歌曲推薦-有沒有那麼一首歌會讓你想起我",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "1fed223b112a4acff2ee9ff2915442f96868bdcbcf65e4aaa66b67cee5866ec1",
+      "date": "2025-10-21 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-期待愛.md",
+      "title": "歌曲推薦-期待愛",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "76ed5f107d649efa42622355f9c7008a84dd1669ab6b575c3ae9d43ccdf5905c",
+      "date": "2026-07-22 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-淚海.md",
+      "title": "歌曲推薦-淚海",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ada211947b0e90df9a7e58aaaf2a0e61239d41c7318eb2e6f6f78bbffc64dcd2",
+      "date": "2026-02-11 12:00:49",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-無底洞.md",
+      "title": "歌曲推薦-無底洞",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "3ce2deb7af473afd2ac5c1c93e9444ab9a87f1314bf8337170c5445722aeb218",
+      "date": "2026-02-06 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-無眠.md",
+      "title": "歌曲推薦-無眠",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "991afefb0aa7338c332c06b5e0e7e5d29c1c9be589f5f3c37a2dfb9440599360",
+      "date": "2026-02-09 12:00:41",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-無窮.md",
+      "title": "歌曲推薦-無窮",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "90581f15121163b4fcce04c5b5edddeaf65eceb02a1879753d3f0a2e04d71f26",
+      "date": "2025-09-10 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-燃燒一瞬間.md",
+      "title": "歌曲推薦-燃燒一瞬間",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "d96ec67f5f7f4b99e4cf997523e30c3fdd2f79fe135ce006d3a1e67cd45763a7",
+      "date": "2026-4-29 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-理想.md",
+      "title": "歌曲推薦-理想",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "afb0c3ff4ea9bb06da86f83b08f657785bbfc7e40c83fd34a16b3fbfb6b7e33a",
+      "date": "2026-05-21 12:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-留不住的故事.md",
+      "title": "歌曲推薦-留不住的故事",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "4185c0693e7b818d6c5cc08b7f2dec65c20c120f8d3478320ddc557123e83772",
+      "date": "2026-05-12 12:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-神話.md",
+      "title": "歌曲推薦-神話",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦"
+      ],
+      "reviewed": true,
+      "uncertain": true,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "6fb5ec834bce61a0b020426cc8c39107f5459bdb8b557df6b8e0816729f07fc7",
+      "date": "2025-12-24 12:00:00",
+      "updated": null,
+      "languageTag": null,
+      "languageBasis": "國語與韓語混唱，暫不貼單一語言標籤。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-第一個清晨.md",
+      "title": "歌曲推薦-第一個清晨",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "d7d1c16f11f363ae127998e745ac41f2eb3a98558eae161ae399a2b90ce19d59",
+      "date": "2026-07-06 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-答案.md",
+      "title": "歌曲推薦-答案",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "c75e76f54a996acaf69f981d2092aca6d3ac507edf73a42960f93293b1167bd5",
+      "date": "2026-08-05 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-給我一首歌的時間.md",
+      "title": "歌曲推薦-給我一首歌的時間",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "572500119d7811b0052c2856153217d1d31b4ef2ab6dce2bb9affafb970136d3",
+      "date": "2026-01-13 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-給電影人的情書.md",
+      "title": "歌曲推薦-給電影人的情書",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "8d0535844b8669ac2b03b67ed334facc831e596d1fa8d1d2b3aea03e62180b60",
+      "date": "2026-02-10 12:00:23",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-練習.md",
+      "title": "歌曲推薦-練習",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "da109491950d34524b1bb7627fefa548a6747c5791f0164d203009b732757360",
+      "date": "2026-09-07 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-老男孩.md",
+      "title": "歌曲推薦-老男孩",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "8f703d02413d4e7141f3f9c41cf4c13c5d68838ee587b72fbc89a15318cf4bc6",
+      "date": "2025-10-21 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-舊愛.md",
+      "title": "歌曲推薦-舊愛",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "6e6f1833322ff97332e6588d3cb5a5097558b07dd0a933e4c41080af3bd55913",
+      "date": "2026-02-05 12:00:56",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-若我告訴你其實我愛的只是你.md",
+      "title": "歌曲推薦-若我告訴你其實我愛的只是你",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "64275fef0f4d05340a963e3324944d83fe14d2f782297fd97e8eecb7bfa4a3ca",
+      "date": "2026-4-30 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-茫茫到深更.md",
+      "title": "歌曲推薦-茫茫到深更",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ff60b8af000cc15c4ecc7ed712ac2c81562d51aa30ae7333f73a5b4e8f8d22c9",
+      "date": "2026-03-30 12:00:56",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-葉子.md",
+      "title": "歌曲推薦-葉子",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "65f7f527d6850754dd8eea2ee43d876da32c04d31b879c1978e565e583e5f44c",
+      "date": "2026-07-15 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-藍色眼睛.md",
+      "title": "歌曲推薦-藍色眼睛",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "651c5979bf9a90f39794638f8dcd0dab1926ce354ca4fe27333c8d7fcd8569a5",
+      "date": "2025-12-29 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-親愛的你啊.md",
+      "title": "歌曲推薦-親愛的你啊",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "479e03dd6d0ff81381470aca4e54279a545031970d29cba08f691bb917c4c82b",
+      "date": "2026-07-17 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-說，你愛我.md",
+      "title": "歌曲推薦-說，你愛我",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "7c18fa16e5005b7c156668a4cf32155e64477fea891c05f32495f8218aa47f32",
+      "date": "2026-01-21 12:00:54",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-逍遙嘆.md",
+      "title": "歌曲推薦-逍遙嘆",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "f2ac26349754c41938afafa65c955079abdaff3bee0536fa4f64d5e2a8973b3d",
+      "date": "2026-07-27 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-這些日子以來.md",
+      "title": "歌曲推薦-這些日子以來",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "459f0e6cd0def1724b34d3685d02debca12bd5406221e6ded55f6a5a3ccd6341",
+      "date": "2026-4-28 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-關於愛的定義.md",
+      "title": "歌曲推薦-關於愛的定義",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "67ef4c645907032363480f0fd602906e227fbe43129c389e42201018f4fc4941",
+      "date": "2026-08-18 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-雲中月圓.md",
+      "title": "歌曲推薦-雲中月圓",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "db7759f80f8494fdb339de41b91715e9f0c26e20498276e1af0be4546e1e5b8c",
+      "date": "2026-03-31 12:00:29",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-靜靜的.md",
+      "title": "歌曲推薦-靜靜的",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "9c420bd9c983b7155765e6281a8e5954a5e13ff0fcd0787fde656379ce636c42",
+      "date": "2026-09-10 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-非常時期.md",
+      "title": "歌曲推薦-非常時期",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "b08b862b9d9bcb1c72496bfd64497828795a8442af882c4036ebfc58a2fdedbf",
+      "date": "2026-08-27 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-鴨子.md",
+      "title": "歌曲推薦-鴨子",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "fdb9b2105cc6b9f2de5bece1a2723a8a3a414f5806f479ce174a139a1a59ea6e",
+      "date": "2026-05-22 12:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-시청-앞-지하철-역에서.md",
+      "title": "歌曲推薦-시청 앞 지하철 역에서",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "3894296938def88dc650aa347c65e462e92278347471151b540a1a260a010f36",
+      "date": "2026-08-26 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-아로하.md",
+      "title": "歌曲推薦-아로하",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "df2b81aed700c6e32ac7982e985384d1d08ca904094be9a425ac0019bbbfd473",
+      "date": "2026-01-07 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）.md",
+      "title": "歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦",
+        "專輯插圖"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "韓語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "d77a0383a34d3fa7185f258a7140d1ccea5cfff462cecfdeac108954087ec0ea",
+      "date": "2026-09-08 12:00:00",
+      "updated": null,
+      "languageTag": "韓語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為韓語。"
+    },
+    {
+      "path": "source/_posts/部落格改版規劃.md",
+      "title": "部落格改版規劃",
+      "categories": [
+        "站務"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "站務"
+      ],
+      "newTags": [
+        "站務規劃"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文列出網站格式、資料結構與改版方向。",
+      "bodySha256": "9408eedfaae25df653c0d41bf0858b3f5673f7b07c13d5a76a70d33ad4cab42f",
+      "date": "2026-01-25 01:22:38",
+      "updated": "2026-09-15 16:18:11"
+    },
+    {
+      "path": "source/_posts/閱讀影評/100天後會死的鱷魚(書籍閱讀紀錄).md",
+      "title": "100天後會死的鱷魚（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "968dc537fd4ef545145fd6a9f68b387a455c3d24fd006990c84004a3291dba61",
+      "date": "2024-07-09 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/ChatGPT應用手冊(書籍閱讀紀錄).md",
+      "title": "ChatGPT應用手冊（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "91c2f09ec3e0c317ad64143fa8d4dd1d840e64051ea52f322744a9d58a019a04",
+      "date": "2024-07-21 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/Five-Point-Someone(書籍閱讀紀錄).md",
+      "title": "Five Point Someone（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "f2da14948b4b897f8d6e67e9bbe991cd656311afaa03f7c982b646dfbb4bd772",
+      "date": "2024-07-03 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/The-Public(觀影紀錄).md",
+      "title": "The Public（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "a57722101f352a5fa14392327d394d46730e5fd783b95610795db9ec46025239",
+      "date": "2022-08-25 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/about-time(觀影紀錄).md",
+      "title": "about time（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "82623a400385d8a07191b557c1c4abbf0ff432c20bb25938035257c9de18b67b",
+      "date": "2022-08-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/不誤解、不離題，誰都喜歡你的精準表達技術(書籍閱讀紀錄).md",
+      "title": "不誤解、不離題，誰都喜歡你的精準表達技術（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "00ed747892b66303fad1fd56c62b3dd22b67057d00a5d3e8d06f7a12ed39be66",
+      "date": "2024-07-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/人氣條漫這樣畫(書籍閱讀紀錄).md",
+      "title": "人氣條漫這樣畫（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "3b49a081c13af79c22faf357e49320b83824b0ebc9684e4e8cd9b21e07c05432",
+      "date": "2024-07-22 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/以早乙女佳奈子為例.md",
+      "title": "以早乙女佳奈子為例（影片紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "5a7d04d4cc987e043cd16e789b2147dc5faace2a94cd031288a41c586330e131",
+      "date": "2026-08-29 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/來自地獄的法官.md",
+      "title": "來自地獄的法官（影片紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "fad202a7931c6eaa91274becadb8dc120868106f25940efd961482c4e48e350a",
+      "date": "2025-04-28 00:55:27",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/修真聊天群(網路小說閱讀紀錄-短).md",
+      "title": "修真聊天群（網路小說閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "d0a671acda4ba3200b24482d6906b14f792a1548c9c410701ea9adcdad641fd4",
+      "date": "2024-06-26 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/值得的等待.md",
+      "title": "值得的等待（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "7f00240d277d23a6ce3394ca76e881473b2cb7d67490f219c02737e7cc4b5ea4",
+      "date": "2026-09-10 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/健康不平等(書籍閱讀紀錄).md",
+      "title": "健康不平等（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "6e7c397a78b90eb5e492fb3d9e86014bda52778ca25b084d5c36d06ac5744d9a",
+      "date": "2022-08-01 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/偷書賊-建構統治者神話的文化洗劫與記憶消滅(書籍閱讀紀錄).md",
+      "title": "偷書賊:建構統治者神話的文化洗劫與記憶消滅（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "6b77abcb55c3ff343ab7d59b185c6f86c340af5db73d42a36aef22bddb216c6e",
+      "date": "2024-06-23 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/全能遊戲設計師(網路小說閱讀紀錄).md",
+      "title": "全能遊戲設計師（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "afc500776681cf7de5285a3b1298d69a714071768e9f2836c66a5bc966a9b567",
+      "date": "2022-07-10 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/化學課(書籍閱讀紀錄).md",
+      "title": "化學課（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "de17df0534d059eb76f9b687c47592dc5ffe984f88fb7ba6075393a940721c78",
+      "date": "2024-06-22 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/印度，Holy-Cow我的媽啊(書籍閱讀紀錄-短).md",
+      "title": "印度，Holy Cow我的媽啊（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "96b7f96799586023fb18920435d5ded794140f851061286cc406beb90003dc8a",
+      "date": "2024-06-11 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/去你的博士學位(書籍閱讀紀錄-短).md",
+      "title": "去你的博士學位（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "068a57d27b33e4efe41621bc1677adbf789a7be3c23e66bd1f2bb969cc8dba13",
+      "date": "2024-06-19 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/去唱卡啦OK吧(觀影紀錄).md",
+      "title": "去唱卡啦OK吧（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "6df47ace95763d60fc9d06807cfbf0ef2659debb26765beda12abb9262461538",
+      "date": "2024-12-16 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/反擊!-終結職場霸凌(書籍閱讀紀錄).md",
+      "title": "反擊! 終結職場霸凌（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "db9afac00b78545d5ed224cbee504006d8abde8915aa123f4f0df91695b23f3a",
+      "date": "2024-07-04 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/可汗學院的教育奇蹟(書籍閱讀紀錄).md",
+      "title": "可汗學院的教育奇蹟（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "9ba44b4e68d8a130d4937eba6d08dfa08850f2bd6c60120dd6fbd28d524dd322",
+      "date": "2024-12-30 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/呼吸.md",
+      "title": "呼吸（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "d1a2c0117836880e0317750a225406c370f13a74d401c2a1ab336556f4d2e7fe",
+      "date": "2025-04-09 00:55:27",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/哈佛-✕-Google行為科學家的脫單指南(書籍閱讀紀錄—短).md",
+      "title": "哈佛 ✕ Google行為科學家的脫單指南（書籍閱讀紀錄—短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "3abf1326c30b369ebd2f64db0e17408ef7f2c61896aac7f33901e18f3d423378",
+      "date": "2023-08-18 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/圖解犯罪心理學(書籍閱讀紀錄).md",
+      "title": "圖解犯罪心理學（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "9f4d563a09407349291eba8d7f0ba15e04494e14f98b13eb92616917194c9096",
+      "date": "2022-08-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/在世界的中心呼喊愛情(書籍閱讀紀錄).md",
+      "title": "在世界的中心呼喊愛情（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c2314eab3c6f2927acd8c10bec132e39d3ad89fd4030a85182d81201315e9e67",
+      "date": "2024-06-16 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/基地.md",
+      "title": "基地（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "ec3333a645da37f5f54d9f2b995e3a956512bb352916c97db811d4d3c4b10871",
+      "date": "2026-08-25 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/堀與宮村(書籍閱讀紀錄).md",
+      "title": "堀與宮村（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "e06783a7d0bca8895011f3a135d9ba2b86852924f0e9f326c1fd7e3c81e88924",
+      "date": "2024-07-26 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/大醫凌然(書籍閱讀紀錄).md",
+      "title": "大醫凌然（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "78b8c0d88373dde5a05af38d95b58d2fe427278c347995b6fec50b2b8d3fb917",
+      "date": "2024-08-08 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/大鼓翔平-超越夢想(觀影紀錄).md",
+      "title": "大鼓翔平: 超越夢想（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "270d9981184be0162443c3de1cd4bec10c4a32ca2cd57bc0e32705be4c5d786c",
+      "date": "2024-07-07 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/太宰治請留步(書籍閱讀紀錄).md",
+      "title": "太宰治請留步（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "60173750644130e296a1f165e7d3ecebb4a5d7ee2ae7f55f9be248fb1f49a436",
+      "date": "2024-07-08 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/失智症世界的旅行指南(書籍閱讀紀錄).md",
+      "title": "失智症世界的旅行指南（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "d341ed9da2e16903bc38b50285d42204f0d902a2ee910c457404efef2ee9f526",
+      "date": "2024-06-30 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/失業白領的職場漂流.md",
+      "title": "失業白領的職場漂流（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "e42aad173bd01fea7e9714d931acde1d9e8d6d6645b4f49496947862bf15b763",
+      "date": "2025-12-28 18:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/奧術神座(網路小說閱讀紀錄).md",
+      "title": "奧術神座（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "bd8be4ba6657528041a9ce75565d9532a3d8e1c79c8e2508c33b8030a1a5725c",
+      "date": "2022-08-25 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/女給時代：1930年代臺灣的珈琲店文化.md",
+      "title": "女給時代：1930年代臺灣的珈琲店文化（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "2125648689fde2644287a31104775f0f0e4ff3b7c33d6b933bcd58b126dd9a76",
+      "date": "2025-04-09 00:55:27",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/嫌疑犯X的獻身(書籍閱讀紀錄).md",
+      "title": "嫌疑犯X的獻身（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "ec0e2b7496d6b5171c3c8ffb70848b8b2b6485029385eb8da1223507101142ba",
+      "date": "2024-06-20 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/專案管理革命(書籍閱讀紀錄).md",
+      "title": "專案管理革命（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "4ba2149ec0c4b81804533253d0762ed6998ddea351b568effcc40d3ccf0204b6",
+      "date": "2022-07-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/忍者寶寶(觀影紀錄).md",
+      "title": "忍者寶寶（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "34aae74c733dc8024e96283d6d5279d98db0b56920644e3e47d0a9ade405de72",
+      "date": "2022-07-28 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/怦然心動(觀影紀錄).md",
+      "title": "怦然心動（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "115b5b6401048e9458af949e22114c11841dbc79e87e0f15a42a6b6fa306bf94",
+      "date": "2023-06-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/愛上設計-培養設計品味的第一本書(書籍閱讀紀錄).md",
+      "title": "愛上設計 - 培養設計品味的第一本書（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c342fa35656236101c5b58c0c0668e8cf2f2cf17c3b82ea328937d912e682365",
+      "date": "2024-07-19 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/戀夏500日(觀影紀錄).md",
+      "title": "戀夏500日（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "13d679002664774b221ff34ef071b87f4388414cef150ddd832eeb8eae4c7f1a",
+      "date": "2023-02-11 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我們的故事未完待續(觀影紀錄).md",
+      "title": "我們的故事未完待續（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "6a785f3a3e734356a3ac5af0c5e5f74c8bb8ffbc97fde5d376b915ab4997e321",
+      "date": "2022-07-15 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我們這一代(書籍閱讀紀錄-短).md",
+      "title": "我們這一代（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "521b559e0ed924d66c7a84ac79bba1f0d2e103880def46d43af30d273ebfebce",
+      "date": "2024-06-14 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我媽媽做小姐的時陣是文藝少女(書籍閱讀紀錄).md",
+      "title": "我媽媽做小姐的時陣是文藝少女（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c89ac9f905f23425ba1c3ee4b66bfdbdf9227f4fdb97168d6756950ffe0a0a71",
+      "date": "2024-06-03 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我家不只賣咖啡：星巴克帝國(書籍閱讀紀錄-短).md",
+      "title": "我家不只賣咖啡：星巴克帝國（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c38f2ea9765ba72553d676cc6a769592f7bab28ee633731fe3f2d2c6229f8ce8",
+      "date": "2023-08-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我家老婆來自一千年前(網路小說閱讀紀錄).md",
+      "title": "我家老婆來自一千年前（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "d498ac5f7fa5972acb07c6e06bd0692300b9606fc47ac13cd66f8fdb3f164217",
+      "date": "2023-02-13 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我想吃掉你的胰臟(觀影紀錄).md",
+      "title": "我想吃掉你的胰臟（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "e62403388162825fd06a774d5246a14b48e94a485c8947db0807baabd1dfddb7",
+      "date": "2024-06-13 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我想為你推薦一本書(書籍閱讀紀錄).md",
+      "title": "我想為你推薦一本書（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "6db41285ea7eaf72f74e2a91106bc6b5cf932efcf4843c370100c9c45652fa1e",
+      "date": "2024-06-21 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我要準時下班(書籍閱讀紀錄).md",
+      "title": "我要準時下班（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "adacfb48b2ed59f093b8e2393c7eb035ed99307e1adc4db03d6ad1b9a9ee5118",
+      "date": "2024-07-10 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/我跟地球掰掰了：超有事滅絕動物圖鑑(書籍閱讀紀錄).md",
+      "title": "我跟地球掰掰了：超有事滅絕動物圖鑑（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c7b28e2d926c81f29723cea2fa4741ebf0ffd88dcc8a15629398b273776f0f34",
+      "date": "2024-07-13 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/排球少年(書籍閱讀紀錄).md",
+      "title": "排球少年（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "01b544ffcd57e19931d35871657be7c4422b2c341e0e05c35e3c3eca8ccc85a2",
+      "date": "2024-07-27 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/數學奧林匹亞特訓班的一年(書籍閱讀紀錄).md",
+      "title": "數學奧林匹亞特訓班的一年（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "9075c1d0d1863f8f6f7a46749e4d54b59cba6465537f9c1704102022f934aef5",
+      "date": "2022-08-11 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/文學大數據(書籍閱讀紀錄).md",
+      "title": "文學大數據（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "039fa16739e677ac364b216d81c071453afa4923ae6c6dac83bdddbdebf9a3d3",
+      "date": "2024-08-08 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/文學少女系列(輕小說閱讀紀錄).md",
+      "title": "文學少女系列（輕小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "307e53dac89db8c8b14239761b33db9519f7f94a13556bc51828e5559325362b",
+      "date": "2022-07-02 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/文學少女系列2(輕小說閱讀紀錄).md",
+      "title": "文學少女系列2（輕小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "a4a4a9de40aeb1bbbc195a64e26126af9dfd817bc98ceae95629eec57d43b58d",
+      "date": "2022-07-22 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/明天別再來敲門.md",
+      "title": "明天別再來敲門（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c64ee346303f850bedcc3f6cc889386a0df73c4fa158bc50e8836b7caad9554c",
+      "date": "2022-07-31 23:21:24",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/有氧減肥大迷思(書籍閱讀紀錄).md",
+      "title": "有氧減肥大迷思（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "cbec67415ca338ac00b44e932262c1c8f0ecc4a60d29f800a04974225c51d386",
+      "date": "2024-07-05 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/朋友這種幻想(書籍閱讀紀錄—短.md",
+      "title": "朋友這種幻想（書籍閱讀紀錄—短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c26426b5491e8424abeee840c14f1731f0d71257e5604fe58c2282dea1b85e6b",
+      "date": "2023-09-15 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/村裡來了個暴走女外科(書籍閱讀紀錄).md",
+      "title": "村裡來了個暴走女外科（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "26a30c6665b3e60c1f0d75174780b690e7adc4d8ba7dd536b4e8f9f98e6f45a4",
+      "date": "2024-07-01 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/梅艷芳(觀影紀錄).md",
+      "title": "梅艷芳（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "ea2627d5fe5ba26d19d70b0f16e70167f47a87e3a3d1bf52dfa98a292399978a",
+      "date": "2024-07-11 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/檢察官內傳(觀影紀錄).md",
+      "title": "檢察官內傳（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "9470259ae7067b23ec2272234452b19d2b03ab3b1549a89d108da273eba113b6",
+      "date": "2022-08-05 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/歌舞青春：再譜樂曲(觀影紀錄).md",
+      "title": "歌舞青春：再譜樂曲（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "f5ae49cde075deebdc24a62c1c7e8903293e655dd3612381db03a08f35836b65",
+      "date": "2022-08-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/武道宗師(網路小說閱讀紀錄—短).md",
+      "title": "武道宗師（網路小說閱讀紀錄—短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "85914c8bb8782a103e022d95a34d8ad41072dc3e4e34d49a77e772f4114347de",
+      "date": "2023-08-22 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/沈君山說棋王故事五冊(書籍閱讀紀錄-短).md",
+      "title": "沈君山說棋王故事五冊（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "7c4b5a81b3f65cea8004fd467a3e234932b7d7af1da06fd01c76dbc87c245f17",
+      "date": "2024-06-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/為什麼書賣這麼貴(書籍閱讀紀錄).md",
+      "title": "為什麼書賣這麼貴（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "2afb30503e20d64b604e5e0520356c5cb666bf10a1391c200b4f50d42a8740e7",
+      "date": "2024-08-03 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/無職轉生25集（書籍閱讀紀錄）.md",
+      "title": "無職轉生25集（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "4e3e0e17f0ef9179a1ecde83bc61d41b6e6e557b44e9ab9c0d9a0760c6425c0d",
+      "date": "2024-07-25 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/狂粉是怎麼煉成的(書籍閱讀紀錄-短).md",
+      "title": "狂粉是怎麼煉成的（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "c4963fb2d7bf49fec82f445a73870dd196203b738d0f2ab8762f8f294497fa69",
+      "date": "2024-06-12 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/生活系遊戲(網路小說閱讀紀錄).md",
+      "title": "生活系遊戲（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "3c376ae7a2d64cb385d516abaa3066386f380860ae90fd3b6db837329990a7d3",
+      "date": "2022-07-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/畫出心之所嚮.md",
+      "title": "畫出心之所嚮（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "6a69f48fc2a78ddd6545e165bf5bdff700a2e6da9994fb938ca0fc79e150b562",
+      "date": "2026-01-24 14:21:24",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/百年爛漫：漫畫與臺灣美術的相遇(書籍閱讀紀錄).md",
+      "title": "百年爛漫：漫畫與臺灣美術的相遇（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "7a3dcbd875872a8219ca2aca7f0fdd9692c68a60a256d1fa15bdbdb027cf4034",
+      "date": "2024-07-15 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/相信閱讀：天下文化25年的故事(書籍閱讀紀錄).md",
+      "title": "相信閱讀：天下文化25年的故事（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "5cb7e52e29da7bc2bb12de0e76996ddfa4a0f3c05734bfeacf834e81c2f54c71",
+      "date": "2024-07-16 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/筆記術大全(書籍閱讀紀錄).md",
+      "title": "筆記術大全（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "9b3d15d740b6e55cee42ef657aa52e18e4d2dd4da36fbf16d51b415a19cc60b2",
+      "date": "2024-07-12 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/簡易的資料整理法(書籍閱讀紀錄—短).md",
+      "title": "簡易的資料整理法（書籍閱讀紀錄—短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "ddb143f54da3f651eef3ae293158ccae60ceea35386d5ca1fd67a964999df72a",
+      "date": "2023-09-25 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/紅嬰仔(書籍閱讀紀錄).md",
+      "title": "紅嬰仔（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "a4fab3d053714a7361c5364bd778b936ddfa30c7f8c940ae3d485a7179543b28",
+      "date": "2024-06-24 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/老婆請安分(網路小說閱讀紀錄).md",
+      "title": "老婆請安分（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "eaf0cd4d4ed562f731dbdede179d53514160dec3fe7f096f8255aa7e616dff88",
+      "date": "2022-07-07 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/老派少女購物路線(書籍閱讀紀錄).md",
+      "title": "老派少女購物路線（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "10afc56ed72c1f5a6fdfd7873f1f0d30f3c0d31dc2dcf11eea0ac2711a1821cb",
+      "date": "2024-06-26 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/脂肪的祕密生命(書籍閱讀紀錄).md",
+      "title": "脂肪的祕密生命（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "3a0fe61c12528a81876785a98c09a55e8037da32d968d5c439723ea85f970090",
+      "date": "2024-07-18 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/臺灣史上最有梗的臺灣史(書籍閱讀紀錄).md",
+      "title": "臺灣史上最有梗的臺灣史（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "80a5cded30bffb01d9954f3bab65e27a53740ffd03a05ca4fae1a43fb1069cc7",
+      "date": "2024-06-27 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/若草物語-戀愛姐妹與無法戀愛的我.md",
+      "title": "若草物語-戀愛姐妹與無法戀愛的我（影片紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "debb22f73689cf5862a96cf879a1a90b92127cd6f32894db2b9d688834d4dcb1",
+      "date": "2024-12-24 08:55:13",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/萬界圓夢師(網路小說閱讀紀錄).md",
+      "title": "萬界圓夢師（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "386728c5041716003ede74381b2562263110485b18ca4b6911f72cba002b2e70",
+      "date": "2022-07-26 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/蕉兵戰時記(書籍閱讀紀錄).md",
+      "title": "蕉兵戰時記（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "d4ad73a7463a4d4377bd67910e6ecb22f4cd529eb979724bf84f939b2e6fd65a",
+      "date": "2024-07-23 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/藍色巨星(觀影紀錄).md",
+      "title": "藍色巨星（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "0c6c1b2b1679af6ce3efc23e18e9c3a7f197c17e42466415fd6e024d0d852f7d",
+      "date": "2024-06-16 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/藍色時期(書籍閱讀紀錄).md",
+      "title": "藍色時期（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "7ca06262656b55075ecefa334f3b61c151e8fc7a777cdf3537440ecdfcc90f93",
+      "date": "2024-07-29 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/詭秘之主.md",
+      "title": "詭秘之主（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "dc191f9ef07ff99bf112f6c0f39d391dec19a3ea14fc2b6071d47a970bca5623",
+      "date": "2022-07-25 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/請不要在大家面前稱讚我.md",
+      "title": "請不要在大家面前稱讚我（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "be4ed0e192f8ef691ae581fb108fccad5fb52c3e56283aa559f6a1b65f2e29a5",
+      "date": "2025-01-07 01:34:55",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/請回答1988-雙門洞鐵人計畫.md",
+      "title": "請回答1988｜雙門洞三十題：把故事寫下去，也把自己的問題留下來",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": "/watch/reply-1988-30-questions/",
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "cec14eea93d6672b8d0f3d94c11f41d65f4a39699db8445aeeb1593465ec2092",
+      "date": "2026-09-06 12:00:00",
+      "updated": "2026-09-06 12:00:00"
+    },
+    {
+      "path": "source/_posts/閱讀影評/讀書會-75個心作戰（書籍閱讀紀錄）.md",
+      "title": "讀書會 75個心作戰（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "608a5fbac8e04cc3978fa5c5be415590122915d06484ee1b27bfc974d1d1b058",
+      "date": "2024-08-06 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/豐臣公主(書籍閱讀紀錄).md",
+      "title": "豐臣公主（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "6a719eb01f44ca439bed36e338d6139414431478764fc8c172dbe51db2fc10e4",
+      "date": "2023-02-15 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/超神機械師(網路小說閱讀紀錄).md",
+      "title": "超神機械師（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "512b3a8f5dcce900956bb7ccd21316cb7b602ae0b984579a71ecc43980031b00",
+      "date": "2022-08-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/超級英雄是這樣煉成的(書籍閱讀紀錄).md",
+      "title": "超級英雄是這樣煉成的（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "efa44252b66b105de6a53f16a4a7147a622a2904fa7a6a6a2ab67dbe1426f3f4",
+      "date": "2024-06-29 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/越南：世界史的失語者(書籍閱讀紀錄).md",
+      "title": "越南：世界史的失語者（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "20d0f68794847de9c3f066677a41495b84272789d0e4c6e434c02d51202d6460",
+      "date": "2024-06-18 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/車諾比的悲鳴(書籍閱讀紀錄-短).md",
+      "title": "車諾比的悲鳴（書籍閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "b4b61e6d4e95d824ab358186baa92cca07dd2806747611f767cb40c79840a9b7",
+      "date": "2023-08-18 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/轉角的換書商店(書籍閱讀紀錄).md",
+      "title": "轉角的換書商店（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "70504ee60ad3c301a224652048ea5485070e3491d3f4d4a5089141434738993c",
+      "date": "2024-07-28 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/近戰法師(網路小說閱讀紀錄).md",
+      "title": "近戰法師（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "ead653f0d338d7e0ce5edb643238c3d168d8aba326c5efbceba72de4caa7d77d",
+      "date": "2024-07-30 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/這個男人來自地球(觀影紀錄).md",
+      "title": "這個男人來自地球（觀影紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "觀影紀錄"
+      ],
+      "newTags": [
+        "觀影心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
+      "bodySha256": "e955dc19536033eb7ae234d8c45d72455199b979a0ae86fb622a9687c4b5ae1b",
+      "date": "2022-08-06 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/這是愛女也是厭女(書籍閱讀紀錄—短).md",
+      "title": "這是愛女也是厭女（書籍閱讀紀錄—短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "ed0517d893f4b5b3b2fba401816863e3883df10803f956181aa77f46e65b2b27",
+      "date": "2023-09-15 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/銀之匙（閱讀紀錄）.md",
+      "title": "銀之匙（閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "9f7088a0bc375a4aa8054c61863b48e6d526b3d0a1eba683fc82a8c810f7da24",
+      "date": "2024-08-04 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/長夜餘火(網路小說閱讀紀錄—短).md",
+      "title": "長夜餘火（網路小說閱讀紀錄—短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "f541e31d29772163ba9539515d73d658299a1f062530151ca8df8416fe2726ea",
+      "date": "2023-09-07 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/開始喜歡自己的不完美(書籍閱讀紀錄).md",
+      "title": "開始喜歡自己的不完美（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "e958032ce5dafae90ba5b4c97a4870ae66e4d37a39cebddf1af17046d90a0a09",
+      "date": "2024-07-20 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/阿宅的戀愛太難(書籍閱讀紀錄).md",
+      "title": "阿宅的戀愛太難（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "97ffd0dede22976d171efc148dfc36cae56cc2504be5c4722e11021031ec471e",
+      "date": "2024-07-06 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/雖然血淚，我還是喜歡翻譯(書籍閱讀紀錄).md",
+      "title": "雖然血淚，我還是喜歡翻譯（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "00c857f3157c05852d6d1f2151252386ddc4a486709be3e7a892cb7dd9ed859a",
+      "date": "2024-07-02 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/靈魂不歸法律管(書籍閱讀紀錄).md",
+      "title": "靈魂不歸法律管（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "4e5e03a7455a2620a020d07a5e8b4dca574d5c47d656a5f14183731f0c63f3fd",
+      "date": "2024-08-05 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/非正常美食文.md",
+      "title": "非正常美食文（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "062e5fd00d3d7c96865820516a5f9e257a7f84202d17454bd704ced06eec4290",
+      "date": "2026-08-26 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/頂級氣運，悄悄修練千年(網路小說閱讀紀錄).md",
+      "title": "頂級氣運，悄悄修練千年（網路小說閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "465297cd92f2b89d1d51d1efd7d33d0f97dc56632de179caaaa8ca3bb02bf048",
+      "date": "2022-07-31 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/黎明之劍(網路小說閱讀紀錄-短).md",
+      "title": "黎明之劍（網路小說閱讀紀錄-短）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "3f5c25e900b3dbe20951e274fbbd42a3a50df7712b44d2ec068c09492effb194",
+      "date": "2024-08-01 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/點燃最後一把火的送行者(書籍閱讀紀錄).md",
+      "title": "點燃最後一把火的送行者（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "274ca128ed448950473e5a08fdce19a1e9fa59ca1cd37df4b70cd61197e2a52d",
+      "date": "2024-06-29 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/閱讀影評/Ｚ世代員工解析大全（書籍閱讀紀錄）.md",
+      "title": "Ｚ世代員工解析大全（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "閱讀紀錄"
+      ],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "536a91feadfbc25effe01de490da31df74432c12e0ddbc76ce8e2806b90fa880",
+      "date": "2024-07-24 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/台中獨旅記.md",
+      "title": "台中獨旅記",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "旅行"
+      ],
+      "newTags": [
+        "生活回顧",
+        "旅行"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧實際旅行經驗與事後感受。",
+      "bodySha256": "3c88fcc39d070fff4dd35a8829ae771a5985c137dc9216342b43f8f35e77186f",
+      "date": "2024-07-14 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/在喜歡與被喜歡之間.md",
+      "title": "在喜歡與被喜歡之間",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活感受"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "b365ad4416c27cf2894389df3f4e7426e1dafca26f9835897c64ab6d4e4b8bf0",
+      "date": "2026-09-10 12:00:00",
+      "updated": "2026-09-13 21:00:00"
+    },
+    {
+      "path": "source/_posts/隨筆/有工作的第N+4天.md",
+      "title": "有工作的第N+4天",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活感受"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "9a1963e9a0d0d403b5d57b65d01be6ba92e75263fcbb0ef4644e1e9011bf4bd6",
+      "date": "2026-09-05 21:08:29",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/有工作的第N+5天.md",
+      "title": "有工作的第N+5天",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活感受"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "4c183c560ec537853de5297a71129a26a83c40dee862309b4883dad1d17f62fa",
+      "date": "2026-09-08 01:12:43",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/有工作的第N+6天.md",
+      "title": "有工作的第N+6天",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活感受"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "b929726891dd27cf154d9913fc9e6887ab78b75c88a579dbeed6f7d4e8687f1a",
+      "date": "2026-09-13 21:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/有工作的第N-2天.md",
+      "title": "有工作的第N+2天",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活感受"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "6c774010f922ea18ec2f2cf816a655cfc623eb3d6123bf8376416446ba488e7e",
+      "date": "2024-08-06 23:47:27",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/有工作的第N-3天.md",
+      "title": "有工作的第N+3天",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活感受"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "1f7697a5a41c9347101ebbed2b2085380122fe3eb4ecab9a6555af32525d6468",
+      "date": "2025-06-16 23:47:27",
+      "updated": null
+    }
+  ]
+}

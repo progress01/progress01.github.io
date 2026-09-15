@@ -10,14 +10,14 @@ comments: false
 <nav class="photo-wall-index" aria-label="圖牆分類" data-photo-wall-filter-group>
   <span class="photo-wall-index__label">PHOTO WALL / INDEX</span>
   <button type="button" data-photo-wall-filter="all" aria-pressed="false">全部 <span>201</span></button>
-  <button type="button" data-photo-wall-filter="music" aria-pressed="true">音樂推薦 <span>98</span></button>
-  <button type="button" data-photo-wall-filter="books" aria-pressed="false">書籍閱讀 <span>86</span></button>
-  <button type="button" data-photo-wall-filter="films" aria-pressed="false">觀影紀錄 <span>17</span></button>
+  <button type="button" data-photo-wall-filter="music" aria-pressed="true">歌曲推薦 <span>98</span></button>
+  <button type="button" data-photo-wall-filter="books" aria-pressed="false">閱讀心得 <span>86</span></button>
+  <button type="button" data-photo-wall-filter="films" aria-pressed="false">觀影心得 <span>17</span></button>
 </nav>
 <section class="photo-wall-section photo-wall-section--music" id="photo-wall-music" data-photo-wall-section="music">
   <header class="photo-wall-section__header">
     <span class="photo-wall-section__eyebrow">01 / LISTEN</span>
-    <h2 id="photo-wall-music-title">音樂推薦</h2>
+    <h2 id="photo-wall-music-title">歌曲推薦</h2>
     <p>歌曲推薦與那些留在耳邊的片段。</p>
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
@@ -1223,7 +1223,7 @@ comments: false
 <section class="photo-wall-section photo-wall-section--films" id="photo-wall-films" data-photo-wall-section="films">
   <header class="photo-wall-section__header">
     <span class="photo-wall-section__eyebrow">03 / WATCH</span>
-    <h2 id="photo-wall-films-title">觀影紀錄</h2>
+    <h2 id="photo-wall-films-title">觀影心得</h2>
     <p>看過的電影與影像，留下當時的觀看痕跡。</p>
   </header>
   <div class="ig-grid" data-photo-wall-grid="films" aria-labelledby="photo-wall-films-title">
@@ -1338,10 +1338,39 @@ comments: false
   (function() {
     var filters = Array.from(document.querySelectorAll("[data-photo-wall-filter]"));
     var sections = Array.from(document.querySelectorAll("[data-photo-wall-section]"));
-    var validKeys = ["music", "books", "films"];
+    var validKeys = ["all", "music", "books", "films"];
+    var viewStateKey = "photo-wall-view-state-v1";
+
+    function pageStateUrl() {
+      return window.location.pathname + window.location.search + window.location.hash;
+    }
+
+    function saveViewState() {
+      try {
+        window.sessionStorage.setItem(viewStateKey, JSON.stringify({
+          url: pageStateUrl(),
+          scrollY: window.scrollY
+        }));
+      } catch (error) {
+        // 私密瀏覽或儲存空間受限時，hash 篩選仍可正常運作。
+      }
+    }
+
+    function restoreViewState() {
+      try {
+        var saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || "null");
+        if (!saved || saved.url !== pageStateUrl() || !Number.isFinite(saved.scrollY)) return false;
+        window.setTimeout(function() {
+          window.scrollTo({top: saved.scrollY, behavior: "auto"});
+        }, 0);
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
 
     function keyFromHash() {
-      var match = window.location.hash.match(/^#photo-wall-(music|books|films)(?:-title)?$/);
+      var match = window.location.hash.match(/^#photo-wall-(all|music|books|films)(?:-title)?$/);
       return match ? match[1] : "music";
     }
 
@@ -1369,11 +1398,8 @@ comments: false
       filter.addEventListener("click", function() {
         var key = filter.dataset.photoWallFilter;
         showSection(key);
-        if (key !== "all" && validKeys.indexOf(key) !== -1) {
-          window.history.replaceState(null, "", "#photo-wall-" + key);
-        } else {
-          window.history.replaceState(null, "", window.location.pathname + window.location.search);
-        }
+        if (validKeys.indexOf(key) !== -1) window.history.replaceState(null, "", "#photo-wall-" + key);
+        saveViewState();
       });
     });
 
@@ -1383,8 +1409,10 @@ comments: false
     });
 
     showSection(keyFromHash());
-    if (window.location.hash) {
+    var restored = restoreViewState();
+    if (window.location.hash && !restored) {
       window.setTimeout(focusHashTarget, 0);
     }
+    window.addEventListener("pagehide", saveViewState);
   })();
 </script>

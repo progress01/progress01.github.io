@@ -4,7 +4,7 @@ date: 2026-09-04 12:00:00
 updated: 2026-09-04 12:00:00
 permalink: /learning/software-testing-basics-test-case-bug-report/
 categories: [觀念與實驗]
-tags: [學習筆記, 軟體測試, QA, 測試案例]
+tags: ["方法整理","測試案例"]
 longform: true
 learning: true
 learning_status: 進行中

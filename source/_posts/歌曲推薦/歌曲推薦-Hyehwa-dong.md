@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Hyehwa dong
 date: 2026-01-06 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "韓語"]
 cover: /images/song_Hyehwa_dong.webp
 ---
 

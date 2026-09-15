@@ -136,10 +136,14 @@ function checkContent({ root = path.resolve(__dirname, '..') } = {}) {
     postCategories.forEach(category => { if (!allowedCategories.has(category)) errors.push(`${relativePath} 使用未設定的分類「${category}」。`); });
     validateCover(frontmatter.cover, relativePath, root, errors);
     if (Object.prototype.hasOwnProperty.call(frontmatter, 'tags')) {
-      const tags = asList(frontmatter.tags).map(textValue).filter(Boolean); let validTag = false;
-      tags.forEach(tag => { if (taxonomy.aliases.has(tag)) validTag = true; else errors.push(`${relativePath} 使用未註冊標籤「${tag}」，請改用已登錄主標籤，或在 content-tags.yml 登錄相容別名。`); });
-      if (!validTag) errors.push(`${relativePath} 缺少有效主標籤。`);
-    } else errors.push(`${relativePath} 缺少 tags，必須設定有效主標籤。`);
+      const tags = asList(frontmatter.tags).map(textValue).filter(Boolean); const seenTags = new Set();
+      tags.forEach(tag => {
+        if (seenTags.has(tag)) errors.push(`${relativePath} 的 tags 有重複標籤「${tag}」。`);
+        seenTags.add(tag);
+        if (!taxonomy.aliases.has(tag)) errors.push(`${relativePath} 使用未註冊標籤「${tag}」，請改用已登錄主標籤，或在 content-tags.yml 登錄相容別名。`);
+      });
+      if (tags.length > 2) errors.push(`${relativePath} 的 tags 超過 2 個，請回到逐篇判斷清單檢查。`);
+    }
   });
   let lifeIndex; try { lifeIndex = JSON.parse(read('source/life-index.json')); } catch (error) { errors.push(`source/life-index.json 不是有效的 JSON：${error.message}`); }
   if (lifeIndex == null || typeof lifeIndex !== 'object' || Array.isArray(lifeIndex)) errors.push('life-index.json 頂層必須是物件。');

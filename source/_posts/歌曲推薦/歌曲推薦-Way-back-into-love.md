@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Way back into love
 date: 2026-07-28 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_way_back_into_love.webp
 ---
 

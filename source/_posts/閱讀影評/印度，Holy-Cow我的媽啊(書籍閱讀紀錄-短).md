@@ -5,7 +5,7 @@ date: 2024-06-11 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-cad4b14aac/01.webp
 blogger_import: true
-tags: [閱讀紀錄]
+tags: ["閱讀心得"]
 ---
 因為想找旅遊書，我讀了《印度，Holy Cow 我的媽啊》；照片與文字帶我看觀光景點和旅遊趣聞，卻不是深度旅行研究。
 

@@ -1,56 +1,170 @@
-# 訪客可瀏覽的九個主標籤。
-# 文章 front matter 使用主標籤；aliases 僅保留歷史相容名稱，建置時仍由 scripts/tags-normalizer.js 再次正規化。
-- name: 音樂推薦
-  aliases: [歌曲推薦, 專輯插圖]
-  code: AUDIO
+# 公開文章使用的主標籤。分類回答「文章談什麼」，標籤回答「文章是什麼性質」或補充一個窄主題。
+# 站內只使用以下主標籤；舊標籤頁不再生成，引用應直接指向新標籤或整合瀏覽頁。
+- name: 歌曲推薦
+  code: SONG_RECOMMENDATION
+  group: property
   icon: fa fa-music
-  url: /tags/音樂推薦/
-  description: 歌曲、歌手與反覆播放的旋律。
-- name: 閱讀紀錄
-  aliases: [書籍, 閱讀心得, 網路小說, 輕小說]
-  code: READ
+  url: /tags/歌曲推薦/
+  description: 有收聽連結與個人理由的歌曲推薦。
+- name: 華語
+  code: SONG_MANDARIN
+  group: topic
+  icon: fa fa-language
+  url: /tags/華語/
+  description: 以華語（普通話／國語）演唱的歌曲，用來跨歌手找同一語言的推薦。
+- name: 粵語
+  code: SONG_CANTONESE
+  group: topic
+  icon: fa fa-language
+  url: /tags/粵語/
+  description: 以粵語演唱的歌曲，用來集中查找粵語歌曲推薦。
+- name: 台語
+  code: SONG_TAIWANESE
+  group: topic
+  icon: fa fa-language
+  url: /tags/台語/
+  description: 以台語（臺灣閩南語）演唱的歌曲，用來集中查找台語歌曲推薦。
+- name: 英語
+  code: SONG_ENGLISH
+  group: topic
+  icon: fa fa-language
+  url: /tags/英語/
+  description: 以英語演唱的歌曲，用來集中查找英文歌曲推薦。
+- name: 日語
+  code: SONG_JAPANESE
+  group: topic
+  icon: fa fa-language
+  url: /tags/日語/
+  description: 以日語演唱的歌曲，用來集中查找日文歌曲推薦。
+- name: 韓語
+  code: SONG_KOREAN
+  group: topic
+  icon: fa fa-language
+  url: /tags/韓語/
+  description: 以韓語演唱的歌曲，用來集中查找韓文歌曲推薦。
+- name: 閱讀心得
+  code: READING_REVIEW
+  group: property
   icon: fa fa-book
-  url: /tags/閱讀紀錄/
-  description: 書籍、小說與讀完後留下的想法。
-- name: 觀影紀錄
-  aliases: [觀影心得, 影片]
-  code: SCREEN
+  url: /tags/閱讀心得/
+  description: 讀完書籍或小說後留下的理解與感受。
+- name: 觀影心得
+  code: SCREEN_REVIEW
+  group: property
   icon: fa fa-film
-  url: /tags/觀影紀錄/
-  description: 電影、影集與影像作品的觀看筆記。
-- name: 學習筆記
-  aliases: [內容建模, 前後台, 動作分析, 問題情境, 排球, 規格審查, 設計思考, 資料庫, 網站流量, ACID, Agent Systems, Agentic Transaction, CMS, GEO, AI Agent, 工作流程, 驗證, AI, 提問方法, 圖書資訊學, 研究方法, 內容分析, 軟體測試, Web 自動化, Python, 思考方式, QA, 測試案例, 測試設計, 風險, Git, CI/CD, 簡報, 網站品質]
-  code: STUDY
+  url: /tags/觀影心得/
+  description: 看完電影、影集或影像作品後的觀察與感受。
+- name: 問題排查
+  code: TROUBLESHOOTING
+  group: property
+  icon: fa fa-search
+  url: /tags/問題排查/
+  description: 從異常、證據與資料流定位問題的紀錄。
+- name: 實作紀錄
+  code: IMPLEMENTATION
+  group: property
+  icon: fa fa-code
+  url: /tags/實作紀錄/
+  description: 確實做過工具、功能或流程後留下的結果與證據。
+- name: 方法整理
+  code: METHOD
+  group: property
+  icon: fa fa-list-ol
+  url: /tags/方法整理/
+  description: 可重複使用的步驟、框架、檢查表或判斷順序。
+- name: 研究筆記
+  code: RESEARCH_NOTE
+  group: property
   icon: fa fa-flask
-  url: /tags/學習筆記/
-  description: 技術、研究、工作方法與問題拆解。
-- name: 工作方法
-  aliases: [系統排查, 問題排查]
-  code: WORK_METHOD
-  icon: fa fa-cogs
-  url: /tags/工作方法/
-  description: 工作流程、問題排查與可移植的判斷方法。
-- name: 重要紀錄
-  aliases: [工作紀錄]
-  code: WORK_LOG
-  icon: fa fa-briefcase
-  url: /tags/重要紀錄/
-  description: 值得長期保留的工作事件與思考轉折。
-- name: 生活感受
-  aliases: [心情, 困擾]
-  code: LIFE
+  url: /tags/研究筆記/
+  description: 以外部資料為來源、保留研究問題與待核對項目的筆記。
+- name: 學習規劃
+  code: LEARNING_PLAN
+  group: property
+  icon: fa fa-road
+  url: /tags/學習規劃/
+  description: 有目標、階段、過關條件或進度狀態的學習路徑。
+- name: 觀念釐清
+  code: CONCEPT_CLARIFICATION
+  group: property
+  icon: fa fa-lightbulb-o
+  url: /tags/觀念釐清/
+  description: 拆開現象、假設、問題邊界與仍待驗證的概念整理。
+- name: 生活回顧
+  code: LIFE_REVIEW
+  group: property
   icon: fa fa-heart
-  url: /tags/生活感受/
-  description: 情緒、困擾與日常觀察。
+  url: /tags/生活回顧/
+  description: 回顧生活、工作階段、人際經驗或旅行後的觀察。
+- name: 站務規劃
+  code: SITE_PLANNING
+  group: property
+  icon: fa fa-wrench
+  url: /tags/站務規劃/
+  description: 網站改版、資料結構或功能規劃。
+- name: AI Agent
+  code: AI_AGENT
+  group: topic
+  icon: fa fa-robot
+  url: /tags/AI%20Agent/
+  description: 與 AI Agent 工具、系統或工作流直接相關的窄主題。
+- name: 提問方法
+  code: QUESTIONING
+  group: topic
+  icon: fa fa-question-circle
+  url: /tags/提問方法/
+  description: 提問結構、問題拆解與和 AI 協作的方法主題。
+- name: 內容分析
+  code: CONTENT_ANALYSIS
+  group: topic
+  icon: fa fa-bar-chart
+  url: /tags/內容分析/
+  description: 內容分析研究與資料整理的窄主題。
+- name: Web 自動化
+  code: WEB_AUTOMATION
+  group: topic
+  icon: fa fa-cogs
+  url: /tags/Web%20自動化/
+  description: Web 自動化測試與瀏覽器工具的窄主題。
+- name: 思考方式
+  code: THINKING
+  group: topic
+  icon: fa fa-compass
+  url: /tags/思考方式/
+  description: 反思、責任與角色校準的思考主題。
+- name: 測試案例
+  code: TEST_CASE
+  group: topic
+  icon: fa fa-check-square-o
+  url: /tags/測試案例/
+  description: 測試案例與可重現測試紀錄的窄主題。
+- name: 測試設計
+  code: TEST_DESIGN
+  group: topic
+  icon: fa fa-sitemap
+  url: /tags/測試設計/
+  description: 等價類別、邊界值與風險導向測試設計。
+- name: CI/CD
+  code: CI_CD
+  group: topic
+  icon: fa fa-refresh
+  url: /tags/CI%2FCD/
+  description: 版本、持續整合、發布與回復流程的窄主題。
+- name: 簡報
+  code: PRESENTATION
+  group: topic
+  icon: fa fa-slideshare
+  url: /tags/簡報/
+  description: 簡報內容、結構、視覺與呈現的窄主題。
+- name: 網站品質
+  code: WEBSITE_QUALITY
+  group: topic
+  icon: fa fa-shield
+  url: /tags/網站品質/
+  description: 網站品質、測試流程與上線判斷的窄主題。
 - name: 旅行
-  aliases: []
   code: TRAVEL
+  group: topic
   icon: fa fa-map-marker
   url: /tags/旅行/
-  description: 出門走走與地方記憶。
-- name: 站務
-  aliases: []
-  code: SITE
-  icon: fa fa-wrench
-  url: /tags/站務/
-  description: 部落格改版與網站維護紀錄。
+  description: 出門走走與地方記憶的窄主題。

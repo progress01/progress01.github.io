@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-free magic
 date: 2026-01-30 12:00:39
-tags: [音樂推薦]
+tags: ["歌曲推薦", "日語"]
 cover: /images/song_free_magic.webp
 ---
 

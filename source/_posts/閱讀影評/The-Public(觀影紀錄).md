@@ -5,7 +5,7 @@ date: 2022-08-25 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-3aa914933d/01.webp
 blogger_import: true
-tags: [觀影紀錄]
+tags: ["觀影心得"]
 ---
 
 我被預告的圖書館題材吸引，卻發現電影真正談的是無家者、抗議與公共空間的選擇。

@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Just Give Me A Reason
 date: 2026-09-09 12:00:00
-tags: [音樂推薦, 專輯插圖]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_Just Give Me A Reason.webp
 ---
 

@@ -4,7 +4,7 @@ date: 2026-09-03 23:44:45
 updated: 2026-09-03 23:44:45
 permalink: /work/api-requirement-troubleshooting/
 categories: [工作知識]
-tags: [工作方法, 重要紀錄]
+tags: ["問題排查"]
 cover: /images/work-knowledge-card.svg
 work_knowledge: true
 work_note: 資料流與問題排查

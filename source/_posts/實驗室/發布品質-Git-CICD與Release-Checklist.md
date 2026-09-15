@@ -4,7 +4,7 @@ date: 2026-09-04 12:00:00
 updated: 2026-09-04 12:00:00
 permalink: /learning/release-quality-git-ci-cd-checklist/
 categories: [觀念與實驗]
-tags: [學習筆記, 軟體測試, Git, CI/CD]
+tags: ["方法整理","CI/CD"]
 longform: true
 learning: true
 learning_status: 進行中

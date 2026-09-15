@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let records = [];
   let selectedCategory = 'all';
   let searchState = 'idle';
+  const viewStateKey = 'navigation-search-view-state-v1';
+  let restoreRequested = false;
+  let viewStateRestored = false;
   let searchTrigger;
   let focusTimer;
   const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -40,6 +43,53 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const renderFailureState = () => {
     container.innerHTML = '<div class="search-empty-state"><i class="far fa-frown fa-3x"></i><p>搜尋索引暫時無法載入，請稍後重試。</p><button type="button" class="search-retry" data-search-retry>重新載入</button></div>';
+  };
+  const pageStateUrl = () => window.location.pathname + window.location.search + window.location.hash;
+  const readViewState = () => {
+    try {
+      const saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || 'null');
+      return saved && typeof saved === 'object' ? saved : null;
+    } catch (error) {
+      return null;
+    }
+  };
+  const clearViewState = () => {
+    try { window.sessionStorage.removeItem(viewStateKey); } catch (error) { /* storage unavailable */ }
+  };
+  const saveViewState = () => {
+    const existing = readViewState();
+    if (!document.body.classList.contains('search-active') && (!existing || existing.url !== pageStateUrl())) return;
+    try {
+      window.sessionStorage.setItem(viewStateKey, JSON.stringify({
+        url: pageStateUrl(),
+        query: input.value,
+        filters: { ...filters },
+        selectedCategory,
+        scrollY: window.scrollY,
+        isOpen: document.body.classList.contains('search-active')
+      }));
+    } catch (error) {
+      // 私密瀏覽或儲存空間受限時，不阻斷搜尋與文章連結。
+    }
+  };
+  const restoreViewState = () => {
+    if (!restoreRequested || viewStateRestored || searchState !== 'loaded') return;
+    const saved = readViewState();
+    if (!saved || saved.url !== pageStateUrl() || saved.isOpen !== true) return;
+    viewStateRestored = true;
+    input.value = typeof saved.query === 'string' ? saved.query : '';
+    Object.keys(filters).forEach(key => {
+      const value = saved.filters && typeof saved.filters[key] === 'string' ? saved.filters[key] : 'all';
+      filters[key] = value;
+      const select = filterElements.find(element => element.dataset.navigationFilter === key);
+      if (select) select.value = value;
+    });
+    selectedCategory = typeof saved.selectedCategory === 'string' ? saved.selectedCategory : 'all';
+    inputEventFunction();
+    openPopup(null);
+    if (Number.isFinite(saved.scrollY)) {
+      window.setTimeout(() => window.scrollTo({ top: saved.scrollY, behavior: 'auto' }), 0);
+    }
   };
   const renderRecent = (category = selectedCategory, restoreFocus = false) => {
     selectedCategory = category;
@@ -150,10 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
     input.value = '';
     selectedCategory = 'all';
     filterElements.forEach(select => { select.value = 'all'; filters[select.dataset.navigationFilter] = 'all'; });
+    clearViewState();
     inputEventFunction();
     input.focus();
   });
-  window.addEventListener('search:loaded', inputEventFunction);
+  window.addEventListener('search:loaded', () => {
+    inputEventFunction();
+    restoreViewState();
+  });
   container.addEventListener('click', event => {
     const retry = event.target.closest('[data-search-retry]');
     if (retry) {
@@ -161,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fetchSearchData();
       return;
     }
+    if (event.target.closest('.search-result-title, .search-note-link')) saveViewState();
     const button = event.target.closest('[data-search-category]');
     if (!button || input.value.trim()) return;
     renderRecent(button.dataset.searchCategory, true);
@@ -179,6 +234,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
     if (searchState !== 'loaded') fetchSearchData();
   };
+
+  const navigationEntry = typeof performance !== 'undefined' && typeof performance.getEntriesByType === 'function'
+    ? performance.getEntriesByType('navigation')[0]
+    : null;
+  restoreRequested = navigationEntry && (navigationEntry.type === 'back_forward' || navigationEntry.type === 'reload');
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) restoreRequested = true;
+    restoreViewState();
+  });
+  window.addEventListener('pagehide', saveViewState);
 
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {

@@ -27,7 +27,7 @@ function renderPost(overrides = {}) {
     content: '歌曲正文',
     learning: false,
     work_knowledge: false,
-    tags: tags(['音樂推薦']),
+    tags: tags(['歌曲推薦']),
     date: { format: () => '2026-09-11' },
     ...overrides
   };

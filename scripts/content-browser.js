@@ -5,3 +5,8 @@ hexo.extend.helper.register('content_browser_records', function() {
     categories: post.categories.toArray().map(item => item.name), tags: post.tags.toArray().map(item => item.name)
   }));
 });
+
+hexo.extend.helper.register('content_browser_topics', function() {
+  const definitions = this.site.data['content-tags'] || [];
+  return definitions.filter(item => item.group === 'topic').map(item => item.name);
+});

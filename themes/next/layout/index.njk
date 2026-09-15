@@ -78,7 +78,7 @@
             });
             var books = records.filter(function (item) {
               return item && item.categories && item.categories.indexOf('閱讀與影視') !== -1 &&
-                item.tags && item.tags.indexOf('閱讀紀錄') !== -1;
+                item.tags && item.tags.indexOf('閱讀心得') !== -1;
             });
             if (!songs.length || !books.length) throw new Error('no DJ records available');
 

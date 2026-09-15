@@ -4,7 +4,7 @@ date: 2026-08-29 12:00:00
 updated: 2026-08-29 22:09:03
 permalink: /learning/cms-content-modeling-field-review/
 categories: [觀念與實驗]
-tags: [學習筆記]
+tags: ["觀念釐清"]
 longform: true
 learning: true
 learning_status: 進行中

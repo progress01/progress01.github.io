@@ -38,7 +38,7 @@ PHOTO_WALL_CATEGORIES = {"音樂", "閱讀與影視"}
 SECTIONS = (
     {
         "key": "music",
-        "title": "音樂推薦",
+        "title": "歌曲推薦",
         "eyebrow": "01 / LISTEN",
         "description": "歌曲推薦與那些留在耳邊的片段。",
     },
@@ -50,7 +50,7 @@ SECTIONS = (
     },
     {
         "key": "films",
-        "title": "觀影紀錄",
+        "title": "觀影心得",
         "eyebrow": "03 / WATCH",
         "description": "看過的電影與影像，留下當時的觀看痕跡。",
     },

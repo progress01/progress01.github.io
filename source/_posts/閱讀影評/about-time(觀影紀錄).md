@@ -5,7 +5,7 @@ date: 2022-08-31 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-f97d22ee97/01.webp
 blogger_import: true
-tags: [觀影紀錄]
+tags: ["觀影心得"]
 ---
 
 我喜歡它穿越時空卻不拯救一切的溫柔，最後更明白珍惜每一天比修改遺憾重要。

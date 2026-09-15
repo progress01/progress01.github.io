@@ -4,7 +4,7 @@ date: 2026-08-31 12:00:00
 updated: 2026-08-31 12:00:00
 permalink: /learning/lis-research-1965-2025-content-analysis/
 categories: [觀念與實驗]
-tags: [學習筆記, 圖書資訊學, 研究方法, 內容分析]
+tags: ["研究筆記","內容分析"]
 longform: true
 learning: true
 learning_status: 進行中

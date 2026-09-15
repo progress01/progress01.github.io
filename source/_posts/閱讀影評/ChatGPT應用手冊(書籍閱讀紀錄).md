@@ -5,7 +5,7 @@ date: 2024-07-21 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-f252e324f4/01.webp
 blogger_import: true
-tags: [閱讀紀錄]
+tags: ["閱讀心得"]
 ---
 
 我帶著被 AI 時代拋下的恐慌閱讀，仍想保留自己的判斷力與知道事情頭尾的踏實感。

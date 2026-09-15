@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-sailing back to you
 date: 2026-09-01 12:00:00
-tags: [音樂推薦, 專輯插圖]
+tags: ["歌曲推薦", "韓語"]
 cover: /images/song_sailing back to you.webp
 ---
 

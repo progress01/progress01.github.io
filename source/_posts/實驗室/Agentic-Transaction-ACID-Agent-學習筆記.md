@@ -4,7 +4,7 @@ date: 2026-08-29 12:00:00
 updated: '2026-09-11T19:02:32+08:00'
 permalink: /learning/agentic-transaction-acid-agent/
 categories: [觀念與實驗]
-tags: [學習筆記, AI Agent, 資料庫, 工作流程, 驗證]
+tags: ["研究筆記","AI Agent"]
 longform: true
 learning: true
 learning_status: 進行中

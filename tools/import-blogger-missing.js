@@ -93,21 +93,21 @@ function classify(title) {
     return { folder: '歌曲推薦', category: '音樂', tags: ['歌曲推薦'] };
   }
   if (/^有工作的/.test(title)) {
-    return { folder: '隨筆', category: '生活紀錄', tags: ['工作', '心情'] };
+    return { folder: '隨筆', category: '生活紀錄', tags: ['生活回顧'] };
   }
   if (/^台中獨旅記$/.test(title)) {
-    return { folder: '隨筆', category: '生活紀錄', tags: ['旅行'] };
+    return { folder: '隨筆', category: '生活紀錄', tags: ['生活回顧', '旅行'] };
   }
   if (/觀影紀錄/.test(title)) {
-    return { folder: '閱讀影評', category: '閱讀與影視', tags: ['觀影紀錄'] };
+    return { folder: '閱讀影評', category: '閱讀與影視', tags: ['觀影心得'] };
   }
   if (/網路小說/.test(title)) {
-    return { folder: '閱讀影評', category: '閱讀與影視', tags: ['網路小說', '閱讀紀錄'] };
+    return { folder: '閱讀影評', category: '閱讀與影視', tags: ['閱讀心得'] };
   }
   if (/輕小說/.test(title)) {
-    return { folder: '閱讀影評', category: '閱讀與影視', tags: ['輕小說', '閱讀紀錄'] };
+    return { folder: '閱讀影評', category: '閱讀與影視', tags: ['閱讀心得'] };
   }
-  return { folder: '閱讀影評', category: '閱讀與影視', tags: ['書籍', '閱讀紀錄'] };
+  return { folder: '閱讀影評', category: '閱讀與影視', tags: ['閱讀心得'] };
 }
 
 function renderNode(node, $) {

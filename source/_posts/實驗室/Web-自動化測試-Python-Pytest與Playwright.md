@@ -4,7 +4,7 @@ date: 2026-09-04 12:00:00
 updated: 2026-09-04 12:00:00
 permalink: /learning/web-automation-python-pytest-playwright/
 categories: [觀念與實驗]
-tags: [學習筆記, 軟體測試, Web 自動化, Python]
+tags: ["學習規劃","Web 自動化"]
 longform: true
 learning: true
 learning_status: 進行中

@@ -5,7 +5,7 @@ date: 2024-06-20 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-0d71ebfd31/01.webp
 blogger_import: true
-tags: [閱讀紀錄]
+tags: ["閱讀心得"]
 ---
 
 我拖了很久才讀完，卻被精密的誤導與獻身的後勁留下深刻印象。

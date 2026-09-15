@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Tally
 date: 2025-12-31 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_Tally.webp
 ---
 

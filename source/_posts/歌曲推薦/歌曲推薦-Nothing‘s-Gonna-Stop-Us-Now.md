@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Nothing‘s Gonna Stop Us Now
 date: 2026-01-15 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_Nothing‘s_Gonna_Stop_Us_Now.webp
 ---
 

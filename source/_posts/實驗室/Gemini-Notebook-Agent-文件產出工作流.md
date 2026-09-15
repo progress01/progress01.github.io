@@ -4,7 +4,7 @@ date: 2026-08-31 12:00:00
 updated: 2026-08-31 12:00:00
 permalink: /learning/gemini-notebook-agent-office-workflow/
 categories: [觀念與實驗]
-tags: [學習筆記, AI Agent]
+tags: ["研究筆記","AI Agent"]
 longform: true
 learning: true
 learning_status: 進行中

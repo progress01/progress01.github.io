@@ -5,11 +5,13 @@
   "scripts": {
     "build": "hexo generate",
     "check:content": "node tools/content-check.js",
+    "check:tags": "node tools/tag-reorganization-check.js",
+    "check:song-tags": "node tools/song-language-tags.js",
     "check:excerpt": "node tools/excerpt-check.js",
     "check:site": "node tools/site-check.js",
     "test:regression": "node --test tools/tests/*.test.js",
     "test:blogger": "python -B -m unittest discover -s tools/tests -p \"test_blogger*.py\"",
-    "verify": "npm run check:content && npm run test:regression && npm run clean && npm run build && npm run check:site",
+    "verify": "npm run check:content && npm run check:tags && npm run check:song-tags && npm run test:regression && npm run clean && npm run build && npm run check:site",
     "clean": "hexo clean",
     "deploy": "npm run verify && hexo deploy",
     "server": "hexo server"

@@ -4,7 +4,7 @@ date: 2026-09-08 20:00:00
 updated: 2026-09-09 09:00:00
 permalink: /learning/ai-question-judgment-order/
 categories: [觀念與實驗]
-tags: [學習筆記, AI, 提問方法, 工作方法]
+tags: ["方法整理","提問方法"]
 longform: true
 learning: true
 learning_status: 進行中

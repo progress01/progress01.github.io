@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-Wonderful tonight
 date: 2026-01-16 12:00:18
-tags: [音樂推薦]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_wonderful_tonight.webp
 ---
 <div style="display: flex; gap: 20px; align-items: flex-start;">

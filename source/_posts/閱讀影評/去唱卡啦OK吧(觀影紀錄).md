@@ -5,7 +5,7 @@ date: 2024-12-16 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-a0fc2ecc42/01.webp
 blogger_import: true
-tags: [觀影紀錄]
+tags: ["觀影心得"]
 ---
 第一次和只聊過幾句的朋友看電影，就看了《去唱卡啦 OK 吧》；黑道卡拉 OK 比賽與少年變聲的故事，讓這段相遇留下細膩的徬徨。
 

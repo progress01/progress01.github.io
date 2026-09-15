@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-How long will I love you
 date: 2026-07-29 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_how_long_will_i_love_you.webp
 ---
 

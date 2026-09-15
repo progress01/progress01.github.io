@@ -43,7 +43,54 @@ comments: false
     var detailNote = document.getElementById('calendar-detail-note');
     var updatesElement = document.getElementById('calendar-updates');
     var selectedYear;
+    var selectedDate = '';
     var latestYear;
+    var viewStateKey = 'calendar-view-state-v1';
+
+    function pageStateUrl() {
+      return window.location.pathname + window.location.search;
+    }
+
+    function saveViewState() {
+      var url = new URL(window.location.href);
+      if (selectedYear) url.searchParams.set('year', selectedYear);
+      else url.searchParams.delete('year');
+      if (selectedDate) url.searchParams.set('date', selectedDate);
+      else url.searchParams.delete('date');
+      window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+
+      try {
+        window.sessionStorage.setItem(viewStateKey, JSON.stringify({
+          url: pageStateUrl(),
+          scrollY: window.scrollY
+        }));
+      } catch (error) {
+        // 私密瀏覽或儲存空間受限時，網址狀態仍可復原選定內容。
+      }
+    }
+
+    function restoreScrollPosition() {
+      try {
+        var saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || 'null');
+        if (!saved || saved.url !== pageStateUrl() || !Number.isFinite(saved.scrollY)) return;
+        window.setTimeout(function() {
+          window.scrollTo({ top: saved.scrollY, behavior: 'auto' });
+        }, 0);
+      } catch (error) {
+        // 儲存資料損壞時回到瀏覽器預設位置。
+      }
+    }
+
+    function saveScrollPosition() {
+      try {
+        var saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || '{}');
+        saved.url = pageStateUrl();
+        saved.scrollY = window.scrollY;
+        window.sessionStorage.setItem(viewStateKey, JSON.stringify(saved));
+      } catch (error) {
+        // 儲存不可用時不阻斷文章連結。
+      }
+    }
 
     function getYears(data) {
       var years = [];
@@ -151,7 +198,7 @@ comments: false
         if (Array.isArray(date)) date = date[0];
         date = normalizeDateKey(date);
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
-        renderUpdates(posts, [date], date + ' 發表內容', '點選其他格子查看日期');
+        selectDate(posts, date);
       });
     }
 
@@ -174,15 +221,22 @@ comments: false
         button.title = key + '：' + count + ' 篇文章';
         button.addEventListener('click', function(selectedDate) {
           return function() {
-            renderUpdates(posts, [selectedDate], selectedDate + ' 發表內容', '點選其他格子查看日期');
+            selectDate(posts, selectedDate);
           };
         }(key));
         gridControls.appendChild(button);
       }
     }
 
+    function selectDate(posts, date) {
+      if (typeof selectedDate !== 'undefined') selectedDate = date;
+      renderUpdates(posts, [date], date + ' 發表內容', '點選其他格子查看日期');
+      if (typeof saveViewState === 'function') saveViewState();
+    }
+
     function showYear(data, posts, year) {
       selectedYear = year;
+      if (selectedDate && selectedDate.slice(0, 4) !== selectedYear) selectedDate = '';
       calendarElement.innerHTML = '';
       var chart = Calendar.init('calendar', { data: data, year: year });
       renderGridControls(posts, year);
@@ -201,8 +255,10 @@ comments: false
         }
       }
 
+      var requestedDate = selectedDate && selectedDate.slice(0, 4) === selectedYear ? selectedDate : '';
       var latestDate = getLatestDate(posts, year);
-      renderUpdates(posts, latestDate ? [latestDate] : [], latestDate ? latestDate + ' 發表內容' : year + ' 年發表內容', '點選熱力圖格子查看其他日期');
+      var displayDate = requestedDate || latestDate;
+      renderUpdates(posts, displayDate ? [displayDate] : [], displayDate ? displayDate + ' 發表內容' : year + ' 年發表內容', '點選熱力圖格子查看其他日期');
     }
 
     Promise.all([
@@ -227,11 +283,21 @@ comments: false
           button.className = 'calendar-year-button';
           button.setAttribute('data-year', year);
           button.textContent = year;
-          button.addEventListener('click', function() { showYear(data, posts, year); });
+          button.addEventListener('click', function() {
+            selectedDate = '';
+            showYear(data, posts, year);
+            saveViewState();
+          });
           yearsElement.appendChild(button);
         });
 
-        showYear(data, posts, latestYear);
+        var params = new URLSearchParams(window.location.search);
+        var requestedYear = params.get('year');
+        var requestedDate = params.get('date');
+        selectedYear = years.indexOf(requestedYear) !== -1 ? requestedYear : latestYear;
+        selectedDate = requestedDate && /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : '';
+        showYear(data, posts, selectedYear);
+        restoreScrollPosition();
       })
       .catch(function(error) {
         console.error(error);
@@ -239,6 +305,9 @@ comments: false
         calendarElement.innerHTML = '';
         updatesElement.innerHTML = '<div class="calendar-empty">目前無法整理發表紀錄。</div>';
       });
+
+    updatesElement.addEventListener('click', saveScrollPosition);
+    window.addEventListener('pagehide', saveScrollPosition);
   })();
 </script>
 

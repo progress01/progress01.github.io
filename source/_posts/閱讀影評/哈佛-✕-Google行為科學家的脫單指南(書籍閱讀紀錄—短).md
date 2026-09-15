@@ -5,7 +5,7 @@ date: 2023-08-18 12:00:00
 longform: true
 cover: /images/blogger-import/thumbs/blogger-86c50b1144/01.webp
 blogger_import: true
-tags: [閱讀紀錄]
+tags: ["閱讀心得"]
 ---
 我曾把終結單身當成願望，因書名讀《哈佛 ✕ Google 行為科學家的脫單指南》；它更像長久關係指南，仍把選擇留給讀者。
 

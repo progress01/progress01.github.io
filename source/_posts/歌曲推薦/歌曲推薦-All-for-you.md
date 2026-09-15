@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-All for you
 date: 2026-01-09 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "韓語"]
 cover: /images/song_All-for-you.webp
 ---
 <div style="display: flex; gap: 20px; align-items: flex-start;">

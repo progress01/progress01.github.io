@@ -2,7 +2,7 @@
 categories: [音樂]
 title: 歌曲推薦-My Heart Will Go On
 date: 2026-07-30 12:00:00
-tags: [音樂推薦]
+tags: ["歌曲推薦", "英語"]
 cover: /images/song_my_heart_will_go_on.webp
 ---
 
