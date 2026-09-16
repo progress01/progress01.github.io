@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T01:07:49.505Z",
+  "generatedAt": "2026-09-16T17:30:15.284Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 246,
-  "uncertainCount": 3,
+  "publicArticleCount": 264,
+  "uncertainCount": 4,
   "entries": [
     {
       "path": "source/_posts/welcome-board.md",
@@ -289,6 +289,90 @@
       "bodySha256": "aae2973adaabaaa43a840e1df66cd141c8129b6c5c5f7a5d4bda7088a654b4e5",
       "date": "2026-07-09 12:00:00",
       "updated": "2026-09-10 12:00:00"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-把官網改版包裝成遊戲.md",
+      "title": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/gamifying-website-redesign/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文把未採用的遊戲化構想整理成改版亮點、任務設計、可行性邊界與最小原型驗證順序。",
+      "bodySha256": "a35c9aabbb56485c112275794d3c8a3de622ca09dc04717f310e30e82e58470d",
+      "date": "2026-02-26 16:24:00",
+      "updated": "2026-09-15"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-本地影片切割工具的想法.md",
+      "title": "工作知識｜本地影片切割工具的想法：先看清楚，再交給 BAT",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/local-video-cutting-helper/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理本地預覽、視覺化選取時間與透明腳本產生器的未完成工具構想。",
+      "bodySha256": "8c0ed491a0c94713f6a9b09ba69ed072a40ed6efabfc97f89684e9a1e6ca1b39",
+      "date": "2025-12-24 07:21:51",
+      "updated": "2026-09-15"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-租屋管理介面想法.md",
+      "title": "工作知識｜租屋管理介面的想法：把複雜留在底層，讓人少費力",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/rental-management-dashboard-idea/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理以狀態看板、聯絡紀錄與報表匯出降低特定使用者負擔的未完成原型構想。",
+      "bodySha256": "d26b6a93a41d34f9bccb04fba2fe5024fe3fecc666dd1415f06bdd0bb3f4e0ee",
+      "date": "2026-03-16 14:51:20",
+      "updated": "2026-09-15"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-讓工具服務心流.md",
+      "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/flow-friendly-work-system/",
+      "oldTags": [
+        "工作方法",
+        "重要紀錄"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理發想、可執行卡片、專注工作區與經驗回流的不同生命週期，並提出保護心流的最小工作協定。",
+      "bodySha256": "5e65d13930c8910021624d77af4eea808d93118dbc09aa54b9d3fa1046526018",
+      "date": "2026-05-28 15:12:39",
+      "updated": "2026-09-15"
     },
     {
       "path": "source/_posts/實驗室/排球攻擊揮臂機制.md",
@@ -3288,9 +3372,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文以觀看影像作品、人物、鏡頭或觀影感受為主。",
-      "bodySha256": "7f00240d277d23a6ce3394ca76e881473b2cb7d67490f219c02737e7cc4b5ea4",
+      "bodySha256": "3e134970fe685cd6510b2a3335cc63929fcaf004c163c599399c674fbe984327",
       "date": "2026-09-10 12:00:00",
-      "updated": null
+      "updated": "2026-09-15"
     },
     {
       "path": "source/_posts/閱讀影評/健康不平等(書籍閱讀紀錄).md",
@@ -5269,8 +5353,26 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "b929726891dd27cf154d9913fc9e6887ab78b75c88a579dbeed6f7d4e8687f1a",
+      "bodySha256": "85e9352367a3d8b5c80e337d22b5c1f1bfd53946945bb67a08c51f2d6d227902",
       "date": "2026-09-13 21:00:00",
+      "updated": "2026-09-17"
+    },
+    {
+      "path": "source/_posts/隨筆/有工作的第N+7天.md",
+      "title": "有工作的第N+7天",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
+      "bodySha256": "ee3c6f59684267275eb32d13794425fd45b64dbe83b84fff9812d1eb74151a8c",
+      "date": "2026-09-17 00:00:00",
       "updated": null
     },
     {
@@ -5311,6 +5413,267 @@
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
       "bodySha256": "1f7697a5a41c9347101ebbed2b2085380122fe3eb4ecab9a6555af32525d6468",
       "date": "2025-06-16 23:47:27",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-kungtari-shabara.md",
+      "title": "歌曲推薦-kungtari shabara",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦"
+      ],
+      "reviewed": true,
+      "uncertain": true,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "d66b94f77315a9b1cf71e23d87fb1fe4746de2224be498d96e9722affa99c4b2",
+      "date": "2026-09-14 12:00:00",
+      "updated": null,
+      "languageTag": null,
+      "languageBasis": "使用者提供內容未直接說明演唱語言，暫不貼單一語言標籤。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-你講的話.md",
+      "title": "歌曲推薦-你講的話",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "a3feb278f066ef8446c8f10959a7132cf38b2e1a17815657de7d66ec3d6f5cb3",
+      "date": "2026-09-15 12:00:00",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Angel.md",
+      "title": "歌曲推薦-Angel",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "音樂推薦"
+      ],
+      "newTags": [
+        "歌曲推薦"
+      ],
+      "reviewed": true,
+      "uncertain": true,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "9f2e7ebdc9d2045a2848e290ae37f168f7e6a26e47a83cab7c6e3061090cf133",
+      "date": "2026-08-21 12:00:00",
+      "updated": null,
+      "languageTag": null,
+      "languageBasis": "使用者提供內容未直接說明演唱語言，暫不貼單一語言標籤。"
+    },
+    {
+      "path": "source/_posts/隨筆/沖繩旅行的縫合線-系列規劃.md",
+      "title": "沖繩旅行的縫合線｜系列規劃",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": "/learning/okinawa-trip-reflection-series/",
+      "oldTags": [],
+      "newTags": [
+        "生活回顧",
+        "旅行"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文是旅行現場與延伸思考的系列規劃，屬生活回顧與旅行主題，並明確保留後續查證與整理狀態。",
+      "bodySha256": "dc1800289bf74c6cfdf3c2f80f2b5ea55a7648829dfbce8b7b15659fe28a7a13",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-22才の別れ.md",
+      "title": "歌曲推薦-22才の別れ",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "日語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "612a144ebbf78f0a3e6ba1158222ac4381129cedaf13b10f576a2b1bf7d226a5",
+      "date": "2026-09-16 12:00:00",
+      "updated": null,
+      "languageTag": "日語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為日語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-頌海.md",
+      "title": "歌曲推薦-頌海",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "753afb9c010712e544d7eeba380079032783e5d9bfe62f47dcf5b178df4701fc",
+      "date": "2026-08-17 12:00:00",
+      "updated": null,
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能一-先從真實工作問出系統該做什麼.md",
+      "title": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/from-real-work-to-features/",
+      "oldTags": [],
+      "newTags": [
+        "觀念釐清",
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "ae4b4f72b4b5f6aa2e3b0326a3c49b0446441b2b59bd8295bfbb8ac6b163a348",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能二-把會議逐字稿變成判斷模型.md",
+      "title": "工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/meeting-transcripts-to-judgment-model/",
+      "oldTags": [],
+      "newTags": [
+        "方法整理",
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "42053c3a5e69d6e651c6019baa5d441b64b9ed80989ee545baf11a26826b67b0",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能三-同一份規劃為什麼會被看成兩種工作.md",
+      "title": "工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/two-project-mental-models/",
+      "oldTags": [],
+      "newTags": [
+        "觀念釐清",
+        "思考方式"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "61dba84da70211c327ba2970bbd1ba82738a0ce24f98255589d24c428a289390",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能四-隱性規則與風險式補審.md",
+      "title": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/risk-based-review/",
+      "oldTags": [],
+      "newTags": [
+        "方法整理",
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "070c2dfa279d9bde8a3f600802846135f8e7d1078a4e7d33569f670283acc1f3",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能五-把主管要求拆成可遷移能力.md",
+      "title": "工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/transferable-project-capabilities/",
+      "oldTags": [],
+      "newTags": [
+        "方法整理",
+        "思考方式"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "2f043040586f07181e85bdd5388080fead69d2e03e73788384d43560d2debabf",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能六-外掛導師的雙軌工作法.md",
+      "title": "工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/ai-external-mentor-dual-track/",
+      "oldTags": [],
+      "newTags": [
+        "AI Agent",
+        "學習規劃"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "881696d25491c99ce0dec0c4423df9f61713221f134ffc4331706c2be3062ded",
+      "date": "2026-09-17 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從實際抽象功能七-先補PM-SA基本語言.md",
+      "title": "工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言",
+      "categories": [
+        "工作知識"
+      ],
+      "permalink": "/work/pm-sa-foundation-map/",
+      "oldTags": [],
+      "newTags": [
+        "學習規劃",
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
+      "bodySha256": "b7910d5f01c440048cf08fa017bdf0c28f6f226a3853fa22440657e1b97dfb90",
+      "date": "2026-09-17 12:00:00",
       "updated": null
     }
   ]

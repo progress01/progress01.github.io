@@ -106,7 +106,7 @@ function validateReadingDesk(root, errors) {
       if (item.resolved_date != null && !resolvedDate) errors.push(`${itemLabel} 的 resolved_date 必須是有效 YYYY-MM-DD 日期。`);
       if (date && resolvedDate && resolvedDate.timestamp < date.timestamp) errors.push(`${itemLabel} 的 resolved_date 不得早於 date。`);
       const url = textValue(item.url);
-      if (url && (!url.startsWith('/learning/') || url.includes('://'))) errors.push(`${itemLabel} 的 url 必須是 /learning/ 開頭的 root-relative 路徑。`);
+      if (url && ((!url.startsWith('/learning/') && !url.startsWith('/work/')) || url.includes('://'))) errors.push(`${itemLabel} 的 url 必須是 /learning/ 或 /work/ 開頭的 root-relative 路徑。`);
       if (item.state != null && !['collected', 'learning', 'published'].includes(textValue(item.state))) errors.push(`${itemLabel} 的 state 只能是 collected、learning 或 published。`);
     });
   });

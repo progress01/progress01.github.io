@@ -1,4 +1,4 @@
-# 閱讀台目前正在整理的學習題目。
+# 草稿夾目前正在整理的題目。
 # date 記錄加入草稿夾的日期；state 表示目前整理階段；完成後可補 resolved_date。
 year: 2026
 sample: false
@@ -173,3 +173,77 @@ topics:
         url: /learning/ai-question-judgment-order/
         state: learning
         note: 從「主觀判斷是否太早」的問題出發，整理情境、目標、限制、感受與原因假設的不同位置；再依問題狀態區分診斷型、設計型與驗證型提問，加入可接受取捨與「先獨立分析、再比較假設」的兩輪問法，避免文字接龍發散；補充 Google、Anthropic、OpenAI、Simon Willison 與 Tom's Guide 的提示設計、迭代測試、高訊號 context、代表性範例與建設性反駁經驗。
+
+  - id: travel-okinawa-stitch
+    code: B-01
+    name: 沖繩旅行的縫合線
+    description: 從旅遊景點延伸到歷史、觀光、日常與個人思考的公開系列草稿。
+    items:
+      - id: reading-topic-16
+        date: 2026-09-17
+        title: 沖繩旅行的縫合線｜系列規劃
+        source: 2025-12 沖繩旅行現場與對話整理
+        url: /learning/okinawa-trip-reflection-series/
+        state: collected
+        note: 先把前田高地、戰爭與平民、海生館、時間縫合、真實存在，以及金門風獅爺／沖繩 Shisa 整理成系列骨架；這是公開草稿，歷史與文化背景會逐篇查證，先保留個人觀看位置與尚未解決的問題。
+
+  - id: work-knowledge-real-to-abstract
+    code: B-02
+    name: 從實際抽象功能｜工作知識系列
+    description: 把工作對話、主管判斷與 PM／SA 基礎，整理成可遷移的工作知識；文章已公開，但仍在補證據與修訂。
+    items:
+      - id: reading-topic-17
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/from-real-work-to-features/
+        state: learning
+        note: 先把真實工作中的情境、期待結果與系統行動拆開，避免一開始就被抽象功能名稱帶著走；文章已公開，仍待補上更多實例與邊界。
+
+      - id: reading-topic-18
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/meeting-transcripts-to-judgment-model/
+        state: learning
+        note: 將會議中的修正、比較與判斷順序整理成模型，再思考如何做成會前教練；文章已公開，仍待補上可重複使用的整理範例。
+
+      - id: reading-topic-19
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/two-project-mental-models/
+        state: learning
+        note: 區分執行者的提案落地模型與審查者的效益、風險門閥模型；文章已公開，仍待補上兩種模型交接時的檢查點。
+
+      - id: reading-topic-20
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/risk-based-review/
+        state: learning
+        note: 用問題為什麼、資料在哪裡、誰負責決策、前置條件、失敗退路與交付證據，做風險式補審而不是全部重做；文章已公開，仍待補上風險分級例子。
+
+      - id: reading-topic-21
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/transferable-project-capabilities/
+        state: learning
+        note: 把要求拆成追溯、需求與實作、依賴與容量、證據與範圍、影響與退路、脈絡對齊及利害關係人引導等能力；文章已公開，仍待補上能力練習路徑。
+
+      - id: reading-topic-22
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/ai-external-mentor-dual-track/
+        state: learning
+        note: 讓 AI 同時支援專案交付與個人學習，把未知的未知轉成可命名、可追問的問題；文章已公開，仍待補上人機分工的失敗案例。
+
+      - id: reading-topic-23
+        date: 2026-09-17
+        title: 工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言
+        source: 從實際抽象功能.md｜工作知識系列
+        url: /work/pm-sa-foundation-map/
+        state: learning
+        note: 先建立 Scope、WBS、Dependency、Milestone、Deliverable／DoD、Gantt 與 Risk 的共同語言，再回到真實專案練習；文章已公開，仍待補上學習順序的實作紀錄。

@@ -22,6 +22,36 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/3BvcDfeSvjztT0A3UqkkdF?si=57dad319d2a64084" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_頌海.webp" alt="方大同 與 王詩安 - 頌海 - 同名單曲專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3TxwpAKVPg3qidiKqB1b6X?si=edace97ee86543b1" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_22才の別れ.webp" alt="Kaguyahime - 22才の別れ - 三階建の詩">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6NF9DZwxMn07Se9J7Z3HVv?si=ee0f422ed2784dcd" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Angel.webp" alt="MFBTY - Angel - 同名單曲專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0ITqAC19p1USXCh6wtKkDb?si=d3509cb0afb34846" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_你講的話.webp" alt="江蕙 - 你講的話 - 遠走高飛">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://www.youtube.com/watch?v=R4R3D1sk5zo" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_kungtari_shabara.webp" alt="clone - kungtari shabara - Are You Ready?">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/73Cw4sdOwn2NsmGRE4hoMA?si=537f0504851e4b3d" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_靜靜的.webp" alt="庾澄慶 - 靜靜的 - 戒不掉">
     </a>
@@ -1227,6 +1257,12 @@ comments: false
     <p>看過的電影與影像，留下當時的觀看痕跡。</p>
   </header>
   <div class="ig-grid" data-photo-wall-grid="films" aria-labelledby="photo-wall-films-title">
+  <div class="ig-card">
+    <a href="/2026/09/10/閱讀影評/值得的等待/" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/drama_worth_the_wait.webp" alt="《值得的等待》電影圖片">
+    </a>
+  </div>
+
   <div class="ig-card">
             <a href="/2026/08/29/閱讀影評/以早乙女佳奈子為例/" target="_blank">
               <img alt="《以早乙女佳奈子為例》劇集圖片" loading="lazy" decoding="async" src="/images/drama_以早乙女佳奈子為例.webp">

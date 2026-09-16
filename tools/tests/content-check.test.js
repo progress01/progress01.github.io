@@ -47,6 +47,14 @@ test('真 YAML 支援 inline/block categories，日期與 reading desk 通過', 
   assert.equal(result.warnings.length, 0);
 });
 
+test('reading desk 可以連到公開工作知識文章', t => {
+  const desk = validDesk.replace('/learning/test/', '/work/from-real-work-to-features/');
+  const root = makeFixture({ desk });
+  const result = checkContent({ root });
+  t.after(() => cleanupFixture(root));
+  assert.deepEqual(result.errors, []);
+});
+
 test('日期、duplicate ID、unknown state 與壞 cover 編碼會產生可讀錯誤', t => {
   const desk = validDesk.replace('state: learning', 'state: broken\n        resolved_date: 2026-02-27');
   const root = makeFixture({ desk, posts: ['title: Bad\ndate: 2026-02-31\ncategories: [音樂]\ntags: [主標籤]\ncover: /images/%E0%A4%A'] });

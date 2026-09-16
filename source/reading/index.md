@@ -20,7 +20,7 @@ comments: false
   <section class="reading-calendar-details" aria-live="polite">
     <div class="reading-calendar-details-heading">
       <span>RECENT / 草稿紀錄</span>
-      <h2 id="reading-calendar-detail-title">最近新增的學習題目</h2>
+      <h2 id="reading-calendar-detail-title">最近新增的草稿</h2>
       <small id="reading-calendar-detail-note">點選上方格子查看當天</small>
     </div>
     <div id="reading-calendar-updates" class="reading-calendar-updates">
@@ -171,7 +171,7 @@ comments: false
       updatesElement.innerHTML = '';
 
       if (!records.length) {
-        updatesElement.innerHTML = '<div class="reading-calendar-empty">這一天沒有新增的學習題目；可以點選其他日期查看當日紀錄。</div>';
+        updatesElement.innerHTML = '<div class="reading-calendar-empty">這一天沒有新增的草稿；可以點選其他日期查看當日紀錄。</div>';
         return;
       }
 
@@ -187,7 +187,7 @@ comments: false
         var copy = document.createElement('span');
         copy.className = 'reading-calendar-update-copy';
         appendText(copy, 'span', 'reading-calendar-update-category', (record.topic.name || '未分類') + ' / ' + (item.source || '未標來源'));
-        appendText(copy, 'strong', 'reading-calendar-update-title', item.title || '未命名學習題目');
+        appendText(copy, 'strong', 'reading-calendar-update-title', item.title || '未命名草稿');
         appendText(copy, 'span', 'reading-calendar-update-state', item.state === 'learning' ? '學習中' : (item.state === 'collected' ? '待整理' : '已成文'));
         if (location.hash.slice(1) === item.id && item.note) appendText(copy, 'span', 'reading-calendar-update-note', item.note);
         link.appendChild(copy);
@@ -233,7 +233,7 @@ comments: false
       renderUpdates(
         records,
         date + (planned ? ' 預排內容' : (futureDate ? ' 尚未到達' : ' 新增內容')),
-        (planned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的學習題目'
+        (planned ? '預排日期；' : (futureDate ? '尚未到達；尚無預排題目；' : '')) + '只顯示該日新增的草稿'
       );
       if (typeof saveViewState === 'function') saveViewState();
     }
@@ -294,7 +294,7 @@ comments: false
       });
 
       if (displayDate) {
-        renderUpdates(displayRecords, displayDate + (displayPlanned ? ' 預排內容' : ' 新增內容'), (displayPlanned ? '預排日期；' : '') + '只顯示該日新增的學習題目；點選其他日期查看當日紀錄');
+        renderUpdates(displayRecords, displayDate + (displayPlanned ? ' 預排內容' : ' 新增內容'), (displayPlanned ? '預排日期；' : '') + '只顯示該日新增的草稿；點選其他日期查看當日紀錄');
       } else {
         renderUpdates([], selectedYear + ' 年新增內容', '點選熱力圖格子查看其他日期');
       }
