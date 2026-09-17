@@ -45,9 +45,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文提出情境、目標、限制、暫定假設與驗證順序，形成可重複使用的提問框架。",
-      "bodySha256": "d3ef2e50d215350758824dc56bf70d677f8d6d962db360b1630b608565a39254",
+      "bodySha256": "a07597c184e30867351952eff37f07aa7f601983e5ebac58915eb1206df05557",
       "date": "2026-09-08 20:00:00",
-      "updated": "2026-09-09 09:00:00"
+      "updated": "2026-09-17 13:51:20"
     },
     {
       "path": "source/_posts/實驗室/Agentic-Transaction-ACID-Agent-學習筆記.md",
@@ -70,9 +70,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文以論文與 README 為來源，整理 Agent transaction 的探索、執行、驗證與提交流程，並標示尚未獨立重現。",
-      "bodySha256": "6a66b59e24265a889922f26c04855bffbe2be18f655d75249c52188a3adac4b9",
+      "bodySha256": "a3eedceed8e5095559169fcb5fd44d2ce15c1f2feed0527591511cd3c1503480",
       "date": "2026-08-29 12:00:00",
-      "updated": "'2026-09-11T19:02:32+08:00'"
+      "updated": "'2026-09-17T14:45:05+08:00'"
     },
     {
       "path": "source/_posts/實驗室/CMS前後台理解-欄位對照與規格審查.md",
@@ -160,9 +160,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文列出學習階段、工具範圍與尚未完成的過關條件，屬學習路徑而非完成紀錄。",
-      "bodySha256": "52852e9f20af4b09e96f933f445db41a767fc2612aeaa078df672bd17e838d36",
+      "bodySha256": "265a01f2f39ab1f215c7b1017057f27766561ac29804aaed449807eb3dae61b4",
       "date": "2026-09-04 12:00:00",
-      "updated": "2026-09-04 12:00:00"
+      "updated": "2026-09-17 15:08:00"
     },
     {
       "path": "source/_posts/實驗室/life-check-tool.md",
@@ -223,9 +223,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文從外部來源、後台、排程、API 到前台建立資料流來定位異常。",
-      "bodySha256": "1103467c94313c947d6db522260805c9bf4c8ad70fc6742e0bffcb8d8dfbb31d",
+      "bodySha256": "8599ca982caab5b3ee61359fe091895686d7aac42ebaa861204eee6598ec8ff8",
       "date": "2026-09-03 23:44:45",
-      "updated": "2026-09-03 23:44:45"
+      "updated": "2026-09-17 15:23:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-上稿與表格排查紀錄.md",
@@ -244,9 +244,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文逐層區分 HTML、CSS、資料、編輯器與檔案權限造成的前台差異。",
-      "bodySha256": "08b8d5c10402f48ea6994e4c0ed88904d82a414cf6dcf83e0d270e5b0388a44b",
+      "bodySha256": "39cab998bcbf00f5c9a0de16abcd528bbfb1db7c38424c1400d4a236e45fb678",
       "date": "2026-09-03 23:55:00",
-      "updated": "2026-09-03 23:55:00"
+      "updated": "2026-09-17 15:19:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-專案報價與成本估算.md",
@@ -265,9 +265,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文提出工期、利潤、緩衝與隱形成本的可重用估算框架。",
-      "bodySha256": "2b12f6fa4d3b3d9ca08e9f67ef997196ec694bf70ba77a3c73e958c1ed2c8341",
+      "bodySha256": "8c6a2ce51ce6e3805fc99787facb792726859f595d52b8085fc59d6705d8091e",
       "date": "2026-09-02 23:55:00",
-      "updated": "2026-09-03 23:55:00"
+      "updated": "2026-09-17 15:20:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-簡報不是功能清單.md",
@@ -286,9 +286,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理從聽眾、目的、故事線到呈現的簡報判斷順序。",
-      "bodySha256": "aae2973adaabaaa43a840e1df66cd141c8129b6c5c5f7a5d4bda7088a654b4e5",
+      "bodySha256": "8c1f047a7188d9bbf7aa973e8579f2d3c638397daba9c5778c52f33425d68238",
       "date": "2026-07-09 12:00:00",
-      "updated": "2026-09-10 12:00:00"
+      "updated": "2026-09-17 15:21:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-把官網改版包裝成遊戲.md",
@@ -307,9 +307,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文把未採用的遊戲化構想整理成改版亮點、任務設計、可行性邊界與最小原型驗證順序。",
-      "bodySha256": "a35c9aabbb56485c112275794d3c8a3de622ca09dc04717f310e30e82e58470d",
+      "bodySha256": "721eb9919db55e456ad5cdbb533a57a9f861de9a6018c3264ab2dce4718520e2",
       "date": "2026-02-26 16:24:00",
-      "updated": "2026-09-15"
+      "updated": "2026-09-17 15:25:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-本地影片切割工具的想法.md",
@@ -328,9 +328,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理本地預覽、視覺化選取時間與透明腳本產生器的未完成工具構想。",
-      "bodySha256": "8c0ed491a0c94713f6a9b09ba69ed072a40ed6efabfc97f89684e9a1e6ca1b39",
+      "bodySha256": "0f1e582c0c4ca1a65532db5146cff38b79458198259957946251ed4335ef17bc",
       "date": "2025-12-24 07:21:51",
-      "updated": "2026-09-15"
+      "updated": "2026-09-17 15:24:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-租屋管理介面想法.md",
@@ -370,9 +370,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理發想、可執行卡片、專注工作區與經驗回流的不同生命週期，並提出保護心流的最小工作協定。",
-      "bodySha256": "5e65d13930c8910021624d77af4eea808d93118dbc09aa54b9d3fa1046526018",
+      "bodySha256": "b2f7288cd703b1b4f2edcf2720f295e4652ef52e97e6341eb7d16f8da1b0d3b8",
       "date": "2026-05-28 15:12:39",
-      "updated": "2026-09-15"
+      "updated": "2026-09-17 15:22:00"
     },
     {
       "path": "source/_posts/實驗室/排球攻擊揮臂機制.md",
@@ -390,9 +390,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文把擊球點、身體展開與出手順序重新放回動作節奏，並保留症狀假說的不確定性。",
-      "bodySha256": "e7d90fdb0c6cec77277412a2a6718d2435478fd4a16210f65f57005a31b7374c",
+      "bodySha256": "5850e18e27d02d5045b8ac59bcae2bf7596fd8ed585162607206bd5294a929d5",
       "date": "2026-08-29 12:00:00",
-      "updated": "2026-09-10 12:00:00"
+      "updated": "2026-09-17 15:18:00"
     },
     {
       "path": "source/_posts/實驗室/混排攻擊與防守站位.md",
@@ -410,9 +410,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文先拆出主要防守、次要責任與補位方向，仍在建立問題地圖。",
-      "bodySha256": "41f45ee15db17b1ca255c8439ca32e809c341ebb2e950135a73cd2141c1d9243",
+      "bodySha256": "005d95a1666dbeb468938686edbfa15cc94ef616897c393dacbc2d59e4c2df67",
       "date": "2026-09-06 19:55:24",
-      "updated": "2026-09-08 12:00:00"
+      "updated": "2026-09-17 15:38:00"
     },
     {
       "path": "source/_posts/實驗室/測試基本功-User-Story-Test-Case與Bug-Report.md",
@@ -434,9 +434,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理 User Story、Test Case、Bug Report 與驗收條件的操作框架，雖是系列初期仍已形成可重用方法。",
-      "bodySha256": "8b59a0f26a1ea490604a2a650548b93f9ae1e37b2a179c1b45df5db386217d7b",
+      "bodySha256": "f66fa3bdd46a202bef34b61aad65c77d74ac32a2ec8c91d07fa32b7f5cd870b0",
       "date": "2026-09-04 12:00:00",
-      "updated": "2026-09-04 12:00:00"
+      "updated": "2026-09-17 15:02:00"
     },
     {
       "path": "source/_posts/實驗室/測試設計-等價類別邊界值與風險導向測試.md",
@@ -458,9 +458,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理等價類別、邊界值、決策表與風險排序的測試方法。",
-      "bodySha256": "a79c840a91217fb7d3e4909bf66e768a73b5bbc25459f0a68aad42dbdbaa97a9",
+      "bodySha256": "8c79622e0226ad640f94e1810c39f4f19907c702cc7511456e7974de295dce20",
       "date": "2026-09-04 12:00:00",
-      "updated": "2026-09-04 12:00:00"
+      "updated": "2026-09-17 15:11:00"
     },
     {
       "path": "source/_posts/實驗室/痠痛改善研究-從下背肩膀與小腿開始.md",
@@ -478,9 +478,9 @@
       "reviewed": true,
       "uncertain": true,
       "basis": "正文以部位、誘發情境、介入方式與隔天反應建立待驗證觀察，明確不把內容當成診斷。",
-      "bodySha256": "fab53a9a986e76b808948407f6af97e339f696668da4d92b03ee1784988ed4e5",
+      "bodySha256": "ce38c05604459266f97b2335b92ac15e56321d5500f1c292ca8fb4fb57c5332f",
       "date": "2026-09-06 12:00:00",
-      "updated": "2026-09-08 12:00:00"
+      "updated": "2026-09-17 14:58:12"
     },
     {
       "path": "source/_posts/實驗室/發布品質-Git-CICD與Release-Checklist.md",
@@ -502,9 +502,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文把版本、環境、測試證據、發布判斷與回復流程整理成可交接的框架。",
-      "bodySha256": "198e7eb029c7dd6a489f66fddfbd6b82fbc3bfc63195d7a86eaa4591df33b17a",
+      "bodySha256": "6503c5ff3dc1b4e9e0474b9c50740ccd62ed8113c4cd34d0cdde9764950353fe",
       "date": "2026-09-04 12:00:00",
-      "updated": "2026-09-04 12:00:00"
+      "updated": "2026-09-17 15:05:00"
     },
     {
       "path": "source/_posts/實驗室/簡報製作與Open-Slide學習筆記.md",
@@ -525,9 +525,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文從資料與外部方法建立簡報學習流程，並為後續報告設定尚未完成的練習。",
-      "bodySha256": "8cd96b23d29ecae3be1c472c78c615717d763424a7fd0ef2d2e477304cfb2d32",
+      "bodySha256": "3acfa668ad9cef12b6acbb87829ec5a6dcc2276d7e3ecda8516cf5222b523ad4",
       "date": "2026-09-07 12:00:00",
-      "updated": "2026-09-08 12:00:00"
+      "updated": "2026-09-17 15:28:00"
     },
     {
       "path": "source/_posts/實驗室/網站品質與軟體測試-從需求到上線驗證的學習路徑.md",
@@ -549,9 +549,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文是 42 天學習挑戰的階段地圖與過關條件，明確標示尚未完成實作。",
-      "bodySha256": "0013ee318105a843df765e874070e3479ad60a1fbf210b27d7f1cbdedaaec919",
+      "bodySha256": "4adc29aa098ced4430f43c10a9cc75d5e3e671b671106a7088494f233db032bf",
       "date": "2026-09-04 12:00:00",
-      "updated": "2026-09-04 19:00:00"
+      "updated": "2026-09-17 14:59:00"
     },
     {
       "path": "source/_posts/實驗室/討論GEO篇一.md",
@@ -569,9 +569,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文釐清 GEO、AEO、SEO 與 Schema 的差異及不能保證的範圍。",
-      "bodySha256": "8a48008cf8f4ddb2f51e1d6f81b56f29a4e97b83c1243b508e65d98fe7cedeb6",
+      "bodySha256": "4e158b699c8c5cfe74201931584ba4a1ff5b98418a0cf1752bff8e8fbeadfa5c",
       "date": "2026-04-06 17:00:00",
-      "updated": "'2026-09-11T18:54:03+08:00'"
+      "updated": "'2026-09-17T15:43:52+08:00'"
     },
     {
       "path": "source/_posts/歌曲推薦/歌曲推薦-2375.md",
@@ -3152,9 +3152,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文列出網站格式、資料結構與改版方向。",
-      "bodySha256": "9408eedfaae25df653c0d41bf0858b3f5673f7b07c13d5a76a70d33ad4cab42f",
+      "bodySha256": "ae8895bf424c54639b467bf4da872a4848a9f3862d6c84b7ad9239b091d65f37",
       "date": "2026-01-25 01:22:38",
-      "updated": "2026-09-15 16:18:11"
+      "updated": "2026-09-17 14:28:38"
     },
     {
       "path": "source/_posts/閱讀影評/100天後會死的鱷魚(書籍閱讀紀錄).md",
@@ -5293,9 +5293,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "b365ad4416c27cf2894389df3f4e7426e1dafca26f9835897c64ab6d4e4b8bf0",
+      "bodySha256": "b531c89b38c9e66a6a11bc4ddaf8dac1677b5fafd9d2f0a779094f2791a2d8a0",
       "date": "2026-09-10 12:00:00",
-      "updated": "2026-09-13 21:00:00"
+      "updated": "2026-09-17 15:43:52"
     },
     {
       "path": "source/_posts/隨筆/有工作的第N+4天.md",
@@ -5313,9 +5313,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "9a1963e9a0d0d403b5d57b65d01be6ba92e75263fcbb0ef4644e1e9011bf4bd6",
+      "bodySha256": "e3f705d7c1e819d11b024c2e947d6dad52a3ece1041d3a0db24b898fcfa84964",
       "date": "2026-09-05 21:08:29",
-      "updated": null
+      "updated": "2026-09-17 09:43:54"
     },
     {
       "path": "source/_posts/隨筆/有工作的第N+5天.md",
@@ -5333,9 +5333,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "4c183c560ec537853de5297a71129a26a83c40dee862309b4883dad1d17f62fa",
+      "bodySha256": "d51a6165799c9ee9527a48c61ae142ebb16117dffdf7d03ec70b1ff1c08d4a56",
       "date": "2026-09-08 01:12:43",
-      "updated": null
+      "updated": "2026-09-17 09:26:52"
     },
     {
       "path": "source/_posts/隨筆/有工作的第N+6天.md",
@@ -5353,9 +5353,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "85e9352367a3d8b5c80e337d22b5c1f1bfd53946945bb67a08c51f2d6d227902",
+      "bodySha256": "0d7fe71889ced1451376adf1f5da874ce59aec05522e7b3219cc54c606f0d484",
       "date": "2026-09-13 21:00:00",
-      "updated": "2026-09-17"
+      "updated": "2026-09-17 10:53:06"
     },
     {
       "path": "source/_posts/隨筆/有工作的第N+7天.md",
@@ -5371,9 +5371,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "ee3c6f59684267275eb32d13794425fd45b64dbe83b84fff9812d1eb74151a8c",
+      "bodySha256": "701898da9eaa6558f6fa6d961645f0daf13aa3e483eb1b9f572097d44adc12e0",
       "date": "2026-09-17 00:00:00",
-      "updated": null
+      "updated": "2026-09-17 13:33:17"
     },
     {
       "path": "source/_posts/隨筆/有工作的第N-2天.md",
@@ -5497,9 +5497,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文是旅行現場與延伸思考的系列規劃，屬生活回顧與旅行主題，並明確保留後續查證與整理狀態。",
-      "bodySha256": "dc1800289bf74c6cfdf3c2f80f2b5ea55a7648829dfbce8b7b15659fe28a7a13",
+      "bodySha256": "c1cbd6e397d0c5245938156e8c737ff6b163b0db563e00c9570bf3543f3a1199",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:43:52"
     },
     {
       "path": "source/_posts/歌曲推薦/歌曲推薦-22才の別れ.md",
@@ -5558,9 +5558,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "ae4b4f72b4b5f6aa2e3b0326a3c49b0446441b2b59bd8295bfbb8ac6b163a348",
+      "bodySha256": "210ace5ea00023857072e50f07b4a21568baf2199c70b1675bb140acfb4fbce1",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:12:14"
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能二-把會議逐字稿變成判斷模型.md",
@@ -5577,9 +5577,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "42053c3a5e69d6e651c6019baa5d441b64b9ed80989ee545baf11a26826b67b0",
+      "bodySha256": "623ae70309c8d9c8b017f649a1bbb031842056621b3db7f58698733d042e13c6",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:13:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能三-同一份規劃為什麼會被看成兩種工作.md",
@@ -5596,9 +5596,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "61dba84da70211c327ba2970bbd1ba82738a0ce24f98255589d24c428a289390",
+      "bodySha256": "8d7ed04782269721c52a6b6b32649fa7e7a48b5433d6ca80d808bc36eb7ba00e",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:14:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能四-隱性規則與風險式補審.md",
@@ -5615,9 +5615,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "070c2dfa279d9bde8a3f600802846135f8e7d1078a4e7d33569f670283acc1f3",
+      "bodySha256": "59b6d317040305bb06d2e716119585e0690d437536543e5e45e7433715bb1947",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:15:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能五-把主管要求拆成可遷移能力.md",
@@ -5634,9 +5634,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "2f043040586f07181e85bdd5388080fead69d2e03e73788384d43560d2debabf",
+      "bodySha256": "80e543ccd2656265ffb8b72949dddbbcce4e3a75cb6d61fb72e6bfac8e9eefec",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:16:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能六-外掛導師的雙軌工作法.md",
@@ -5653,9 +5653,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "881696d25491c99ce0dec0c4423df9f61713221f134ffc4331706c2be3062ded",
+      "bodySha256": "c48a265e74e95a357efcce26117484ca2d23576e1e2631fd0ea7b7c043a9fb8e",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:17:00"
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能七-先補PM-SA基本語言.md",
@@ -5672,9 +5672,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "由工作知識系列初次整理，依可遷移的專案判斷、方法與學習脈絡分類。",
-      "bodySha256": "b7910d5f01c440048cf08fa017bdf0c28f6f226a3853fa22440657e1b97dfb90",
+      "bodySha256": "e05b19513862c8a107b8204c39769f6b050d3c9e16a1fc5fe6f12a3ed193646f",
       "date": "2026-09-17 12:00:00",
-      "updated": null
+      "updated": "2026-09-17 15:18:00"
     }
   ]
 }
