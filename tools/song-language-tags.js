@@ -35,6 +35,7 @@ const SONG_LANGUAGE_GROUPS = {
   英語: [
     '歌曲推薦-Better-Man.md', '歌曲推薦-Free-Loop.md', '歌曲推薦-From-The-Start.md',
     '歌曲推薦-How-long-will-I-love-you.md', '歌曲推薦-Just Give Me A Reason.md',
+    '歌曲推薦-Misread.md',
     '歌曲推薦-kiss-me.md', '歌曲推薦-miles are wide.md', '歌曲推薦-My-heart-will-go-on.md',
     '歌曲推薦-Nothing‘s-Gonna-Stop-Us-Now.md', '歌曲推薦-Right-here-waiting.md',
     '歌曲推薦-Tally.md', '歌曲推薦-the day you went away.md',

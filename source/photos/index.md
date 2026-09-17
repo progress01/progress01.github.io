@@ -22,6 +22,12 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Misread.webp" alt="Kings of Convenience - Misread - Riot on An Empty Street">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/3BvcDfeSvjztT0A3UqkkdF?si=57dad319d2a64084" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_頌海.webp" alt="方大同 與 王詩安 - 頌海 - 同名單曲專輯">
     </a>

@@ -2,7 +2,7 @@
   "version": 1,
   "generatedAt": "2026-09-16T17:30:15.284Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 264,
+  "publicArticleCount": 265,
   "uncertainCount": 4,
   "entries": [
     {
@@ -5675,6 +5675,27 @@
       "bodySha256": "e05b19513862c8a107b8204c39769f6b050d3c9e16a1fc5fe6f12a3ed193646f",
       "date": "2026-09-17 12:00:00",
       "updated": "2026-09-17 15:18:00"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-Misread.md",
+      "title": "歌曲推薦-Misread",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "e3f4c3297679dc02f246c78f9cdd2a6f7a1608306d289ef872e126350bcc5f6e",
+      "date": "2026-09-17 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
     }
   ]
 }

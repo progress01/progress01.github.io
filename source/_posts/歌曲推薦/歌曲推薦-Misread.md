@@ -1,0 +1,31 @@
+---
+categories: [音樂]
+title: 歌曲推薦-Misread
+date: 2026-09-17 12:00:00
+tags: [歌曲推薦, 英語]
+cover: /images/song_Misread.webp
+---
+
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+  
+  <div style="flex: 1; text-align: left;">
+    <p style="margin-top: 0;">
+      推薦 Kings of Convenience 的 Misread
+      <br>
+      出自專輯 Riot on An Empty Street
+      <br>
+      <a href="https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb" target="_blank">收聽連結 -> 點此前往</a>
+    </p>
+  </div>
+
+  <div style="width: 150px; flex-shrink: 0;">
+    <img src="/images/song_Misread.webp" alt="Kings of Convenience - Misread - Riot on An Empty Street" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+  </div>
+
+</div>
+<!-- more --> 
+轉載自個人ig每日點播> chjuhsu05
+<br>
+這首吉他之外有一個清脆的聲音讓這首歌的感覺很特別，配樂非常吸引人，而且在人聲有一種特別的空靈感配合起來很不錯，不過他的用詞好難 What do you know?
+
+非常推薦啊啊啊
