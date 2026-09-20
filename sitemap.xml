@@ -11,9 +11,27 @@
   </url>
   
   <url>
+    <loc>https://progress01.github.io/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/</loc>
+    
+    <lastmod>2026-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://progress01.github.io/learning/okinawa-trip-reflection-series/</loc>
     
     <lastmod>2026-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/</loc>
+    
+    <lastmod>2026-09-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -452,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/learning/lis-research-1965-2025-content-analysis/</loc>
+    <loc>https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/</loc>
     
     <lastmod>2026-08-31</lastmod>
     
@@ -461,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/</loc>
+    <loc>https://progress01.github.io/learning/lis-research-1965-2025-content-analysis/</loc>
     
     <lastmod>2026-08-31</lastmod>
     
@@ -635,6 +653,15 @@
     <loc>https://progress01.github.io/2026/08/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%A0%8C%E6%B5%B7/</loc>
     
     <lastmod>2026-08-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/2026/08/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-the-real-world/</loc>
+    
+    <lastmod>2026-08-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2498,6 +2525,13 @@
   </url>
   
   <url>
+    <loc>https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://progress01.github.io/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2512,14 +2546,14 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/</loc>
+    <loc>https://progress01.github.io/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://progress01.github.io/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/</loc>
+    <loc>https://progress01.github.io/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2534,13 +2568,6 @@
   
   <url>
     <loc>https://progress01.github.io/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://progress01.github.io/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2568,13 +2595,6 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/tags/%E7%B0%A1%E5%A0%B1/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://progress01.github.io/tags/CI-CD/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2582,7 +2602,28 @@
   </url>
   
   <url>
+    <loc>https://progress01.github.io/tags/%E7%B0%A1%E5%A0%B1/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://progress01.github.io/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E6%97%85%E8%A1%8C/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2651,20 +2692,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://progress01.github.io/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://progress01.github.io/tags/%E6%97%85%E8%A1%8C/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -2689,6 +2716,13 @@
   </url>
   
   <url>
+    <loc>https://progress01.github.io/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2697,13 +2731,6 @@
   
   <url>
     <loc>https://progress01.github.io/categories/%E9%96%B1%E8%AE%80%E8%88%87%E5%BD%B1%E8%A6%96/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://progress01.github.io/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
