@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://progress01.github.io/learning/okinawa-trip-reflection-series/</loc>
+    <loc>https://progress01.github.io/learning/okinawa-trip-two-times/</loc>
     
     <lastmod>2026-09-20</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/learning/okinawa-trip-two-times/</loc>
+    <loc>https://progress01.github.io/learning/okinawa-trip-reflection-series/</loc>
     
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/</loc>
+    <loc>https://progress01.github.io/learning/lis-research-1965-2025-content-analysis/</loc>
     
     <lastmod>2026-08-31</lastmod>
     
@@ -461,7 +461,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/learning/lis-research-1965-2025-content-analysis/</loc>
+    <loc>https://progress01.github.io/learning/gemini-notebook-agent-office-workflow/</loc>
     
     <lastmod>2026-08-31</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/reading/index.html</loc>
+    <loc>https://progress01.github.io/calendar/index.html</loc>
     
     <lastmod>2026-08-29</lastmod>
     
@@ -515,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/calendar/index.html</loc>
+    <loc>https://progress01.github.io/reading/index.html</loc>
     
     <lastmod>2026-08-29</lastmod>
     
@@ -1289,7 +1289,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/reading-log/index.html</loc>
+    <loc>https://progress01.github.io/photos/index.html</loc>
     
     <lastmod>2026-01-19</lastmod>
     
@@ -1298,7 +1298,7 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/photos/index.html</loc>
+    <loc>https://progress01.github.io/reading-log/index.html</loc>
     
     <lastmod>2026-01-19</lastmod>
     
@@ -2498,13 +2498,6 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://progress01.github.io/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2513,6 +2506,13 @@
   
   <url>
     <loc>https://progress01.github.io/tags/AI-Agent/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2582,13 +2582,6 @@
   </url>
   
   <url>
-    <loc>https://progress01.github.io/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://progress01.github.io/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2597,6 +2590,13 @@
   
   <url>
     <loc>https://progress01.github.io/tags/%E6%97%A5%E8%AA%9E/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://progress01.github.io/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
