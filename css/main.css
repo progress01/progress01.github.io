@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffffbf;
+    background: #0f0e24;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4489,6 +4489,68 @@ body {
 .index .home-landing-entry p,
 .index .home-landing-entry .home-landing-link {
   display: none;
+}
+.index .home-outro {
+  margin-top: 8px;
+  overflow: hidden;
+}
+.index .home-outro-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.78;
+}
+@media (min-width: 992px) {
+  .index .home-outro {
+    width: calc(100% + 252px);
+    margin-left: -252px;
+  }
+}
+.index .home-outro-line,
+.index .home-outro-accent,
+.index .home-outro-ground,
+.index .home-outro-meter,
+.index .home-outro-reel {
+  vector-effect: non-scaling-stroke;
+}
+.index .home-outro-line,
+.index .home-outro-ground,
+.index .home-outro-meter,
+.index .home-outro-reel {
+  fill: none;
+  stroke: #332a25;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+.index .home-outro-accent {
+  fill: none;
+  stroke: #a65f43;
+  stroke-width: 1.8;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+.index .home-outro-accent-fill {
+  fill: #a65f43;
+}
+.index .home-outro-reel {
+  fill: #f5ead8;
+}
+.index .home-outro-meter {
+  opacity: 0.52;
+  stroke-dasharray: 4 4;
+}
+@media (max-width: 767px) {
+  .index .home-outro {
+    margin-top: 6px;
+    padding-bottom: 2px;
+  }
+  .index .home-outro-art {
+    width: 100%;
+    margin-left: 0;
+    transform: scaleY(1.08);
+    transform-origin: center;
+  }
 }
 .content-browser {
   color: #543b30;
