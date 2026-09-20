@@ -2,7 +2,7 @@
   "version": 1,
   "generatedAt": "2026-09-16T17:30:15.284Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 265,
+  "publicArticleCount": 266,
   "uncertainCount": 4,
   "entries": [
     {
@@ -5497,9 +5497,28 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文是旅行現場與延伸思考的系列規劃，屬生活回顧與旅行主題，並明確保留後續查證與整理狀態。",
-      "bodySha256": "c1cbd6e397d0c5245938156e8c737ff6b163b0db563e00c9570bf3543f3a1199",
+      "bodySha256": "6ca00dcc584f41cbf65e43604b71c194836d95b816eeaea8f27970013c0239e6",
       "date": "2026-09-17 12:00:00",
-      "updated": "2026-09-17 15:43:52"
+      "updated": "2026-09-20 09:27:52"
+    },
+    {
+      "path": "source/_posts/隨筆/沖繩旅行-兩個時空.md",
+      "title": "沖繩旅行的兩個時空｜歷史與日常的反差",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": "/learning/okinawa-trip-two-times/",
+      "oldTags": [],
+      "newTags": [
+        "生活回顧",
+        "旅行"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文是沖繩旅行現場、歷史衝擊與日常反差的個人整理，屬生活回顧與旅行主題；歷史細節保留後續查證界線。",
+      "bodySha256": "d84a4bbd63139f981028ea60589ffa72db89a88ced90b985a0091cb9f13fccb0",
+      "date": "2026-09-19 12:00:00",
+      "updated": "2026-09-20 10:17:28"
     },
     {
       "path": "source/_posts/歌曲推薦/歌曲推薦-22才の別れ.md",

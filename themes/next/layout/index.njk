@@ -8,131 +8,255 @@
 {% block content %}
 
   {% set home_posts = page.posts.toArray() %}
-  {% set has_pinned_post = home_posts[0] and home_posts[0].sticky %}
+  {% set is_home_landing = page.current == 1 %}
 
-  {% if has_pinned_post %}
-    <div class="home-pinned-post">
-      {{ partial('_macro/post.njk', {post: home_posts[0], is_index: true}) }}
-    </div>
-  {% endif %}
+  {% if is_home_landing %}
+    {% set has_pinned_post = home_posts[0] and home_posts[0].sticky %}
 
-  <section class="home-landing" aria-label="首頁內容入口">
-    <div class="home-archive-rail">
-      <div class="home-archive-rail-main">
-        <span class="home-archive-rail-label">A-01 / DJ PLAYBACK</span>
-        <strong class="home-archive-rail-heading">隨機點播</strong>
-        <div class="home-pick-grid">
-          <a id="home-dj-audio" class="home-pick" href="/random/">
-            <span class="home-pick-label">♫ AUDIO</span>
-            <strong data-dj-title>隨機選曲中…</strong>
-            <small data-dj-meta>DJ / LOADING</small>
-          </a>
-          <a id="home-dj-book" class="home-pick" href="/random/">
-            <span class="home-pick-label">▣ BOOK</span>
-            <strong data-dj-title>隨機選書中…</strong>
-            <small data-dj-meta>DJ / LOADING</small>
-          </a>
-        </div>
-        <small id="home-dj-status" class="home-pick-updated">DJ / RANDOM PLAYBACK</small>
+    {% if has_pinned_post %}
+      <div class="home-pinned-post">
+        {{ partial('_macro/post.njk', {post: home_posts[0], is_index: true}) }}
       </div>
-      <a class="home-archive-rail-index" href="/reading-log/">OPEN INDEX ↗</a>
-    </div>
-
-    <script>
-      (function () {
-        var audio = document.getElementById('home-dj-audio');
-        var book = document.getElementById('home-dj-book');
-        var status = document.getElementById('home-dj-status');
-        if (!audio || !book) return;
-
-        function randomItem(items) {
-          return items[Math.floor(Math.random() * items.length)];
-        }
-
-        function cleanTitle(title) {
-          return String(title || '未命名文章')
-            .replace(/^歌曲推薦\s*[-:：]?\s*/, '')
-            .replace(/\s*[-｜|]\s*歌曲推薦.*$/, '')
-            .replace(/\s*[-｜|]\s*書籍閱讀紀錄.*$/, '')
-            .replace(/\s*[（(]書籍閱讀紀錄[^）)]*[）)]\s*$/, '')
-            .trim();
-        }
-
-        function setPick(target, item) {
-          var title = target.querySelector('[data-dj-title]');
-          var meta = target.querySelector('[data-dj-meta]');
-          target.href = item.url || '/random/';
-          title.textContent = cleanTitle(item.title);
-          meta.textContent = 'REC / ' + (item.date || 'UNKNOWN');
-        }
-
-        fetch('/random.json')
-          .then(function (response) {
-            if (!response.ok) throw new Error('random archive request failed');
-            return response.json();
-          })
-          .then(function (items) {
-            var records = Array.isArray(items) ? items : [];
-            var songs = records.filter(function (item) {
-              return item && item.categories && item.categories.indexOf('音樂') !== -1;
-            });
-            var books = records.filter(function (item) {
-              return item && item.categories && item.categories.indexOf('閱讀與影視') !== -1 &&
-                item.tags && item.tags.indexOf('閱讀心得') !== -1;
-            });
-            if (!songs.length || !books.length) throw new Error('no DJ records available');
-
-            setPick(audio, randomItem(songs));
-            setPick(book, randomItem(books));
-            if (status) status.textContent = 'DJ / RANDOM PLAYBACK · NEW SET';
-          })
-          .catch(function () {
-            if (status) status.textContent = 'DJ / PLAYBACK STANDBY';
-          });
-      })();
-    </script>
-
-    <nav class="home-landing-entry-grid" aria-label="內容入口">
-      <a class="home-landing-entry" href="/reading-log/">
-        <span class="home-landing-label">01 / INDEX</span>
-        <h2>生活索引</h2>
-        <p>看完整的內容入口與長期紀錄。</p>
-        <span class="home-landing-link">OPEN INDEX ↗</span>
-      </a>
-      <a class="home-landing-entry" href="/reading/">
-        <span class="home-landing-label">02 / DRAFTS</span>
-        <h2>草稿夾</h2>
-        <p>把還沒想好的題目放進來。</p>
-        <span class="home-landing-link">OPEN DRAFTS ↗</span>
-      </a>
-      <a class="home-landing-entry" href="/photos/">
-        <span class="home-landing-label">03 / MEMORY</span>
-        <h2>記憶圖牆</h2>
-        <p>讓圖片替文字留下一點空氣。</p>
-        <span class="home-landing-link">OPEN MEMORY ↗</span>
-      </a>
-      <a class="home-landing-entry" href="/random/">
-        <span class="home-landing-label">04 / RANDOM</span>
-        <h2>隨機文章</h2>
-        <p>不預設主題，讓下一篇自己出現。</p>
-        <span class="home-landing-link">OPEN RANDOM ↗</span>
-      </a>
-    </nav>
-
-    <div class="home-landing-section-heading">
-      <span>B-01</span>
-      <h2>最近留下的紀錄</h2>
-      <small>RECENT ENTRIES</small>
-    </div>
-  </section>
-
-  {%- for post in home_posts %}
-    {% if not (has_pinned_post and loop.first) %}
-      {{ partial('_macro/post.njk', {post: post, is_index: true}) }}
     {% endif %}
-  {%- endfor %}
 
-  {%- include '_partials/pagination.njk' -%}
+    <section class="home-landing" aria-label="首頁內容入口">
+      <section class="home-random-feature" aria-labelledby="home-random-title">
+        <div class="home-random-heading">
+          <span>A-01 / RANDOM ACCESS</span>
+          <small id="home-random-status" aria-live="polite">正在翻找一篇紀錄……</small>
+        </div>
+        <div class="home-random-card">
+          <div id="home-random-meta" class="home-random-meta">RANDOM / LOADING</div>
+          <h2 id="home-random-title">今天隨機翻到……</h2>
+          <p id="home-random-excerpt">從公開文章與持續整理中的草稿裡，隨機找回一篇曾經留下的內容。</p>
+          <div class="home-random-actions">
+            <a id="home-random-open" class="home-random-button is-primary" href="/random/">閱讀這篇 ↗</a>
+            <button id="home-random-again" class="home-random-button" type="button" disabled>換一篇</button>
+            <a class="home-random-portal" href="/random/">完整隨機傳送門</a>
+          </div>
+        </div>
+        <noscript><p class="home-random-fallback">瀏覽器未啟用 JavaScript；可以前往<a href="/archives/">全部文章</a>或<a href="/random/">隨機傳送門</a>。</p></noscript>
+      </section>
+
+      <div class="home-archive-rail">
+        <div class="home-archive-rail-main">
+          <span class="home-archive-rail-label">A-02 / DJ PLAYBACK</span>
+          <strong class="home-archive-rail-heading">隨機點播</strong>
+          <div class="home-pick-grid">
+            <a id="home-dj-audio" class="home-pick" href="/random/">
+              <span class="home-pick-label">♫ AUDIO</span>
+              <strong data-dj-title>隨機選曲中…</strong>
+              <small data-dj-meta>DJ / LOADING</small>
+            </a>
+            <a id="home-dj-book" class="home-pick" href="/random/">
+              <span class="home-pick-label">▣ BOOK</span>
+              <strong data-dj-title>隨機選書中…</strong>
+              <small data-dj-meta>DJ / LOADING</small>
+            </a>
+          </div>
+          <small id="home-dj-status" class="home-pick-updated">DJ / RANDOM PLAYBACK</small>
+        </div>
+        <a class="home-archive-rail-index" href="/reading-log/">OPEN INDEX ↗</a>
+      </div>
+
+      <script>
+        (function () {
+          var records = [];
+          var selectedRecord;
+          var selectionKey = 'home-random-selection-v1';
+          var status = document.getElementById('home-random-status');
+          var meta = document.getElementById('home-random-meta');
+          var title = document.getElementById('home-random-title');
+          var excerpt = document.getElementById('home-random-excerpt');
+          var open = document.getElementById('home-random-open');
+          var again = document.getElementById('home-random-again');
+          var audio = document.getElementById('home-dj-audio');
+          var book = document.getElementById('home-dj-book');
+          var djStatus = document.getElementById('home-dj-status');
+          if (!status || !meta || !title || !excerpt || !open || !again) return;
+
+          function randomItem(items) {
+            return items[Math.floor(Math.random() * items.length)];
+          }
+
+          function validRecords(items) {
+            return (Array.isArray(items) ? items : []).filter(function (item) {
+              return item && typeof item.url === 'string' && item.url.charAt(0) === '/' && item.title;
+            });
+          }
+
+          function savedSelection() {
+            try {
+              return window.sessionStorage.getItem(selectionKey) || '';
+            } catch (error) {
+              return '';
+            }
+          }
+
+          function saveSelection(url) {
+            try {
+              window.sessionStorage.setItem(selectionKey, url);
+            } catch (error) {
+              // 儲存不可用時仍可在目前頁面繼續換文章。
+            }
+          }
+
+          function chooseRecord(excludedUrl) {
+            var candidates = records.filter(function (item) { return item.url !== excludedUrl; });
+            if (!candidates.length) candidates = records.slice();
+            var categories = [];
+            candidates.forEach(function (item) {
+              (item.categories || []).forEach(function (category) {
+                if (categories.indexOf(category) === -1) categories.push(category);
+              });
+            });
+            if (!categories.length) return randomItem(candidates);
+            var category = randomItem(categories);
+            return randomItem(candidates.filter(function (item) {
+              return (item.categories || []).indexOf(category) !== -1;
+            }));
+          }
+
+          function renderRecord(record) {
+            if (!record) throw new Error('no random record available');
+            selectedRecord = record;
+            meta.textContent = (record.categories || ['未分類']).join(' / ') + '  //  ' + (record.date || '日期未明');
+            title.textContent = record.title;
+            excerpt.textContent = record.excerpt || '這篇文章沒有摘要，可以直接打開閱讀。';
+            open.href = record.url;
+            again.disabled = records.length < 2;
+            status.textContent = '從公開文章與持續整理中的草稿隨機抽出';
+            saveSelection(record.url);
+          }
+
+          function cleanTitle(value) {
+            return String(value || '未命名文章')
+              .replace(/^歌曲推薦\s*[-:：]?\s*/, '')
+              .replace(/\s*[-｜|]\s*歌曲推薦.*$/, '')
+              .replace(/\s*[-｜|]\s*書籍閱讀紀錄.*$/, '')
+              .replace(/\s*[（(]書籍閱讀紀錄[^）)]*[）)]\s*$/, '')
+              .trim();
+          }
+
+          function setPick(target, item) {
+            if (!target || !item) return;
+            var pickTitle = target.querySelector('[data-dj-title]');
+            var pickMeta = target.querySelector('[data-dj-meta]');
+            target.href = item.url || '/random/';
+            pickTitle.textContent = cleanTitle(item.title);
+            pickMeta.textContent = 'REC / ' + (item.date || 'UNKNOWN');
+          }
+
+          again.addEventListener('click', function () {
+            renderRecord(chooseRecord(selectedRecord && selectedRecord.url));
+          });
+
+          fetch('/random.json')
+            .then(function (response) {
+              if (!response.ok) throw new Error('random archive request failed');
+              return response.json();
+            })
+            .then(function (items) {
+              records = validRecords(items);
+              if (!records.length) throw new Error('no random records available');
+              var restoredUrl = savedSelection();
+              var restored = records.find(function (item) { return item.url === restoredUrl; });
+              renderRecord(restored || chooseRecord(''));
+
+              var songs = records.filter(function (item) {
+                return item.categories && item.categories.indexOf('音樂') !== -1;
+              });
+              var books = records.filter(function (item) {
+                return item.categories && item.categories.indexOf('閱讀與影視') !== -1 &&
+                  item.tags && item.tags.indexOf('閱讀心得') !== -1;
+              });
+              if (songs.length && books.length) {
+                setPick(audio, randomItem(songs));
+                setPick(book, randomItem(books));
+                if (djStatus) djStatus.textContent = 'DJ / RANDOM PLAYBACK · NEW SET';
+              }
+            })
+            .catch(function () {
+              status.textContent = '隨機內容暫時無法讀取，可以改看全部文章。';
+              title.textContent = '完整文章仍然照時間保存';
+              excerpt.textContent = '前往全部文章查看所有公開文章與持續整理中的草稿。';
+              open.href = '/archives/';
+              open.textContent = '查看全部文章 ↗';
+              again.disabled = true;
+              if (djStatus) djStatus.textContent = 'DJ / PLAYBACK STANDBY';
+            });
+        })();
+      </script>
+
+      <nav class="home-landing-entry-grid" aria-label="內容入口">
+        <a class="home-landing-entry" href="/archives/">
+          <span class="home-landing-label">01 / ARCHIVE</span>
+          <h2>全部文章</h2>
+          <p>依發表時間查看所有文章與公開草稿。</p>
+          <span class="home-landing-link">OPEN ARCHIVE ↗</span>
+        </a>
+        <a class="home-landing-entry" href="/reading-log/">
+          <span class="home-landing-label">02 / INDEX</span>
+          <h2>生活索引</h2>
+          <p>看完整的內容入口與長期紀錄。</p>
+          <span class="home-landing-link">OPEN INDEX ↗</span>
+        </a>
+        <a class="home-landing-entry" href="/reading/">
+          <span class="home-landing-label">03 / DRAFTS</span>
+          <h2>草稿夾</h2>
+          <p>把還沒想好的題目放進來。</p>
+          <span class="home-landing-link">OPEN DRAFTS ↗</span>
+        </a>
+        <a class="home-landing-entry" href="/photos/">
+          <span class="home-landing-label">04 / MEMORY</span>
+          <h2>記憶圖牆</h2>
+          <p>讓圖片替文字留下一點空氣。</p>
+          <span class="home-landing-link">OPEN MEMORY ↗</span>
+        </a>
+      </nav>
+
+      <div class="home-outro" aria-hidden="true">
+        <svg class="home-outro-art" viewBox="0 0 920 80" focusable="false">
+          <g class="home-outro-cassette">
+            <rect class="home-outro-line" x="28" y="29" width="78" height="40"></rect>
+            <path class="home-outro-accent" d="M35 36h64"></path>
+            <rect class="home-outro-line" x="39" y="41" width="56" height="19"></rect>
+            <circle class="home-outro-reel" cx="53" cy="50.5" r="5.5"></circle>
+            <circle class="home-outro-reel" cx="81" cy="50.5" r="5.5"></circle>
+            <circle class="home-outro-accent-fill" cx="53" cy="50.5" r="1.5"></circle>
+            <circle class="home-outro-accent-fill" cx="81" cy="50.5" r="1.5"></circle>
+            <path class="home-outro-line" d="M45 64h44l-4 5H49z"></path>
+          </g>
+
+          <path class="home-outro-meter" d="M124 51h74m10 0h10m10 0h28"></path>
+          <rect class="home-outro-accent-fill" x="116" y="48" width="4" height="4"></rect>
+
+          <g class="home-outro-headphones">
+            <path class="home-outro-line" d="M822 58V43c0-15 9-24 25-24s25 9 25 24v15"></path>
+            <path class="home-outro-accent" d="M829 43c0-11 6-17 18-17s18 6 18 17"></path>
+            <rect class="home-outro-line" x="817" y="49" width="9" height="16"></rect>
+            <rect class="home-outro-line" x="868" y="49" width="9" height="16"></rect>
+            <path class="home-outro-line" d="M877 59h10v7h-7"></path>
+          </g>
+
+          <path class="home-outro-ground" d="M0 70h920"></path>
+          <rect class="home-outro-accent-fill" x="900" y="67" width="6" height="6"></rect>
+        </svg>
+      </div>
+    </section>
+  {% else %}
+    <section class="home-legacy-archive-notice">
+      <span>ARCHIVE / LEGACY PAGE</span>
+      <h1>文章列表已移至「全部文章」</h1>
+      <p>這個舊首頁分頁仍保留原本的時間清單；完整文章請改從新的文章區進入。</p>
+      <a href="/archives/">前往全部文章 ↗</a>
+    </section>
+
+    {%- for post in home_posts %}
+      {{ partial('_macro/post.njk', {post: post, is_index: true}) }}
+    {%- endfor %}
+    {%- include '_partials/pagination.njk' -%}
+  {% endif %}
 
 {% endblock %}
 

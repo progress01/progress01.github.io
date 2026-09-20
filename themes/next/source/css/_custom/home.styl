@@ -431,6 +431,143 @@
   margin: 20px 0 25px;
 }
 
+.index .home-random-feature {
+  margin-bottom: 12px;
+  padding: 18px;
+  color: #f8e8ca;
+  background: #4a3028;
+  border: 1px solid #6b4738;
+  box-shadow: 5px 5px 0 rgba(74, 48, 40, .16);
+}
+
+.index .home-random-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: #f1aa58;
+  font: 11px "Courier New", monospace;
+  letter-spacing: 1.4px;
+}
+
+.index .home-random-heading small {
+  color: #d9b994;
+  letter-spacing: .3px;
+  text-align: right;
+}
+
+.index .home-random-card {
+  margin-top: 14px;
+}
+
+.index .home-random-meta {
+  color: #f1aa58;
+  font: 10px "Courier New", monospace;
+  letter-spacing: 1.2px;
+}
+
+.index .home-random-card h2 {
+  margin: 9px 0 8px;
+  color: #fff0cf;
+  font-size: clamp(22px, 3.5vw, 32px);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.index .home-random-card p {
+  max-width: 720px;
+  margin: 0;
+  color: #ecd4b4;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.index .home-random-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.index .home-random-button {
+  padding: 8px 12px;
+  color: #ffe5ba;
+  background: transparent;
+  border: 1px solid #f1aa58;
+  font: 12px "Courier New", monospace;
+  letter-spacing: .7px;
+  cursor: pointer;
+}
+
+.index .home-random-button.is-primary {
+  color: #4a3028;
+  background: #f1aa58;
+}
+
+.index .home-random-button:hover,
+.index .home-random-button:focus-visible {
+  color: #fff;
+  background: #e36b2f;
+  border-color: #e36b2f;
+}
+
+.index .home-random-button:disabled {
+  opacity: .48;
+  cursor: not-allowed;
+}
+
+.index .home-random-portal {
+  margin-left: auto;
+  color: #d9b994;
+  border-bottom: 0;
+  font: 11px "Courier New", monospace;
+  letter-spacing: .6px;
+}
+
+.index .home-random-portal:hover {
+  color: #f1aa58;
+}
+
+.index .home-random-fallback {
+  margin: 12px 0 0;
+  color: #ecd4b4;
+}
+
+.index .home-random-fallback a {
+  color: #f1aa58;
+}
+
+.index .home-legacy-archive-notice {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  color: #4a3028;
+  background: #f1e4d1;
+  border-left: 4px solid #e36b2f;
+}
+
+.index .home-legacy-archive-notice > span {
+  color: #a65f43;
+  font: 11px "Courier New", monospace;
+  letter-spacing: 1.2px;
+}
+
+.index .home-legacy-archive-notice h1 {
+  margin: 7px 0 5px;
+  font-size: 20px;
+}
+
+.index .home-legacy-archive-notice p {
+  margin: 0 0 8px;
+  line-height: 1.7;
+}
+
+.index .home-legacy-archive-notice a {
+  color: #a34f30;
+  border-bottom: 0;
+  font-weight: bold;
+}
+
 .index .home-archive-rail {
   padding: 12px 13px 13px;
   background: #ebddc8;
@@ -533,6 +670,25 @@
 }
 
 @media (max-width: 767px) {
+  .index .home-random-feature {
+    padding: 16px;
+  }
+
+  .index .home-random-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .index .home-random-heading small {
+    text-align: left;
+  }
+
+  .index .home-random-portal {
+    width: 100%;
+    margin: 3px 0 0;
+  }
+
   .index .home-archive-rail-main {
     grid-template-columns: 1fr;
     grid-template-rows: none;
@@ -564,4 +720,78 @@
 .index .home-landing-entry p,
 .index .home-landing-entry .home-landing-link {
   display: none;
+}
+
+/* 首頁收尾：沿用播放面板語彙的器材線稿飾帶。 */
+.index .home-outro {
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.index .home-outro-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .78;
+}
+
+@media (min-width: 992px) {
+  .index .home-outro {
+    width: calc(100% + 252px);
+    margin-left: -252px;
+  }
+}
+
+.index .home-outro-line,
+.index .home-outro-accent,
+.index .home-outro-ground,
+.index .home-outro-meter,
+.index .home-outro-reel {
+  vector-effect: non-scaling-stroke;
+}
+
+.index .home-outro-line,
+.index .home-outro-ground,
+.index .home-outro-meter,
+.index .home-outro-reel {
+  fill: none;
+  stroke: #332a25;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.index .home-outro-accent {
+  fill: none;
+  stroke: #a65f43;
+  stroke-width: 1.8;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.index .home-outro-accent-fill {
+  fill: #a65f43;
+}
+
+.index .home-outro-reel {
+  fill: #f5ead8;
+}
+
+.index .home-outro-meter {
+  opacity: .52;
+  stroke-dasharray: 4 4;
+}
+
+@media (max-width: 767px) {
+  .index .home-outro {
+    margin-top: 6px;
+    padding-bottom: 2px;
+  }
+
+  .index .home-outro-art {
+    width: 100%;
+    margin-left: 0;
+    transform: scaleY(1.08);
+    transform-origin: center;
+  }
 }

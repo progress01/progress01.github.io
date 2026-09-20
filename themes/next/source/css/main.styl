@@ -659,6 +659,19 @@ body {
   text-wrap: pretty;
 }
 
+/* 全部文章：說明公開草稿仍會依發表時間出現在完整時間序列。 */
+.archive .collection-title::before {
+  top: 14px;
+}
+
+.archive .archive-intro {
+  max-width: 680px;
+  margin: 8px 0 0 20px;
+  color: #6b5547;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
 /* 手機版文章列表：補上窄螢幕的標題區塊間距 */
 @media (max-width: 767px) {
   .posts-collapse .post-content .post-meta-container {
@@ -1261,7 +1274,7 @@ body {
 .search-popup .search-result-list mark { background: #ffe2a5; color: #543020; }
 .search-popup .search-note-link { text-decoration: underline; }
 [data-navigation-anchor], .status-item, .reading-calendar-update-card { scroll-margin-top: 90px; }
-[data-navigation-anchor]:target, .status-item:target, .reading-calendar-update-card:target { outline: 2px solid #c96545; outline-offset: 5px; background-color: #fff3d6; }
+.status-item:target, .reading-calendar-update-card:target { outline: 2px solid #c96545; outline-offset: 5px; background-color: #fff3d6; }
 .reading-calendar-update-note { display: block; margin-top: 10px; font-size: 14px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
 @media (max-height: 550px) {
   .search-popup { min-height: 0 !important; height: 94vh !important; }

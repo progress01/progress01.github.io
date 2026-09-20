@@ -103,13 +103,12 @@ open_graph:
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
   categories: /categories/ || fa fa-th
   reading: /reading-log/ || fa fa-book
-  photos: /photos/ || fa fa-camera
-  random: /random/ || fa fa-dice
-  calendar: /calendar/ || fa fa-calendar
   reading_desk: /reading/ || fa fa-book-open
-  # 歸檔保留頁面，但不放在主要導覽列。
+  photos: /photos/ || fa fa-camera
+  calendar: /calendar/ || fa fa-calendar
 
 # Enable / Disable menu icons / item badges.
 menu_settings:

@@ -184,8 +184,15 @@ topics:
         title: 沖繩旅行的縫合線｜系列規劃
         source: 2025-12 沖繩旅行現場與對話整理
         url: /learning/okinawa-trip-reflection-series/
-        state: collected
-        note: 先把前田高地、戰爭與平民、海生館、時間縫合、真實存在，以及金門風獅爺／沖繩 Shisa 整理成系列骨架；這是公開草稿，歷史與文化背景會逐篇查證，先保留個人觀看位置與尚未解決的問題。
+        state: learning
+        note: 已重新整理為系列的工作頁面，保留前田高地、平民經驗、戰後土地、觀光日常與風獅爺／Shisa 等查證方向；文章會繼續修正，不把對話紀錄直接當成史料，也不先把系列硬拆成固定篇數。
+      - id: reading-topic-24
+        date: 2026-09-19
+        title: 沖繩旅行的兩個時空｜歷史與日常的反差
+        source: 2025-12 沖繩旅行現場與對話整理
+        url: /learning/okinawa-trip-two-times/
+        state: learning
+        note: 從遊覽車上聽到前田高地歷史開始，加入「戰爭見證地、平民呢、戰爭之後怎麼走到現在、怎樣的存在才是真實、走的時候要帶走什麼」等原始提問，整理高地、海岸、海生館與美國村之間的時空反差；文章會繼續修正，歷史與文化背景逐篇查證。
 
   - id: work-knowledge-real-to-abstract
     code: B-02

@@ -1,6 +1,8 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const cheerio = require('cheerio');
 const Search = require('../../themes/next/source/js/third-party/search/navigation-search');
 const { anchorContent, passagesOf } = require('../lib/navigation-anchors');
@@ -74,4 +76,9 @@ test('paragraph anchors preserve authored IDs, avoid duplicates and survive unre
   const after = passagesOf(anchorContent('<p>新段落</p><p>另一段</p><p>A &amp; B</p>', 'post-a')).find(item => item.text === 'A & B');
   assert.equal(before.id, after.id);
   assert.notEqual(before.id, passagesOf(anchorContent('<p>A &amp; B</p>', 'post-b'))[0].id);
+});
+test('article paragraph targets scroll into view without persistent highlight styling', () => {
+  const styles = fs.readFileSync(path.resolve(__dirname, '../../themes/next/source/css/main.styl'), 'utf8');
+  assert.doesNotMatch(styles, /\[data-navigation-anchor\]:target/);
+  assert.match(styles, /\.status-item:target, \.reading-calendar-update-card:target/);
 });
