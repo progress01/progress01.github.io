@@ -22,6 +22,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/1Fu02ezDW65QItC0tp5Q48?si=fdc5c5f647cd44e3" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_the_real_world.webp" alt="Owl City - the real world - All thing bright and beautiful">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/72V7sBDbyO4cRSsNd4kMFF?si=cf32833b42d14d96" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_繁華攏是夢.webp" alt="陳美鳳 和 伍浩哲 - 繁華攏是夢 - 同名專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_Misread.webp" alt="Kings of Convenience - Misread - Riot on An Empty Street">
     </a>

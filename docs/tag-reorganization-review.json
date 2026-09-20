@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-16T17:30:15.284Z",
+  "generatedAt": "2026-09-21T07:36:19.517+08:00",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 266,
-  "uncertainCount": 4,
+  "publicArticleCount": 269,
+  "uncertainCount": 5,
   "entries": [
     {
       "path": "source/_posts/welcome-board.md",
@@ -5516,9 +5516,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文是沖繩旅行現場、歷史衝擊與日常反差的個人整理，屬生活回顧與旅行主題；歷史細節保留後續查證界線。",
-      "bodySha256": "d84a4bbd63139f981028ea60589ffa72db89a88ced90b985a0091cb9f13fccb0",
+      "bodySha256": "80a06fc6f5dd2e5f7b881bba09fc2cd371a71002662b3101b3a05eebe776f52c",
       "date": "2026-09-19 12:00:00",
-      "updated": "2026-09-20 10:17:28"
+      "updated": "2026-09-21 07:39:06"
     },
     {
       "path": "source/_posts/歌曲推薦/歌曲推薦-22才の別れ.md",
@@ -5712,6 +5712,66 @@
       "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
       "bodySha256": "e3f4c3297679dc02f246c78f9cdd2a6f7a1608306d289ef872e126350bcc5f6e",
       "date": "2026-09-17 12:00:00",
+      "updated": null,
+      "languageTag": "英語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-繁華攏是夢.md",
+      "title": "歌曲推薦-繁華攏是夢",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "a88bcd00500fffffd8a51e146494d98fd0086c5bd1ed53c312dd45e097d43fc8",
+      "date": "2026-09-18 12:00:00",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/閱讀影評/阿里山不是一座山.md",
+      "title": "阿里山不是一座山（書籍閱讀紀錄）",
+      "categories": [
+        "閱讀與影視"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "閱讀心得"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文以讀完作品後的理解、評價或延伸思考為主。",
+      "bodySha256": "41b776622e89cee6082fa7d7a9cd399498b1f4af3584049bc3e48cf71dc45327",
+      "date": "2026-09-20 12:00:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-the-real-world.md",
+      "title": "歌曲推薦-the real world",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "英語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "eda4f198f1a4c57f40ce38ab25dfc3327a1fd8265d6df4cf87941fbff1587e5b",
+      "date": "2026-08-14 12:00:00",
       "updated": null,
       "languageTag": "英語",
       "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"

@@ -39,6 +39,7 @@ const SONG_LANGUAGE_GROUPS = {
     '歌曲推薦-kiss-me.md', '歌曲推薦-miles are wide.md', '歌曲推薦-My-heart-will-go-on.md',
     '歌曲推薦-Nothing‘s-Gonna-Stop-Us-Now.md', '歌曲推薦-Right-here-waiting.md',
     '歌曲推薦-Tally.md', '歌曲推薦-the day you went away.md',
+    '歌曲推薦-the-real-world.md',
     '歌曲推薦-Way-back-into-love.md', '歌曲推薦-When-you-say-nothing-at-all.md',
     '歌曲推薦-Wonderful-tonight.md', '歌曲推薦-You-are-not-alone.md'
   ],
@@ -59,7 +60,8 @@ const SONG_LANGUAGE_GROUPS = {
   台語: [
     '歌曲推薦-I-love-you無望.md', '歌曲推薦-再會啦心愛的無緣的人.md',
     '歌曲推薦-放風吹.md', '歌曲推薦-愛作夢的人.md',
-    '歌曲推薦-無眠.md', '歌曲推薦-茫茫到深更.md', '歌曲推薦-雲中月圓.md', '歌曲推薦-你講的話.md'
+    '歌曲推薦-無眠.md', '歌曲推薦-茫茫到深更.md', '歌曲推薦-雲中月圓.md', '歌曲推薦-你講的話.md',
+    '歌曲推薦-繁華攏是夢.md'
   ]
 };
 
