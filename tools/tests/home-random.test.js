@@ -19,6 +19,10 @@ const homeStyles = fs.readFileSync(
   path.join(__dirname, '../../themes/next/source/css/_custom/home.styl'),
   'utf8'
 );
+const randomGeneratorSource = fs.readFileSync(
+  path.join(__dirname, '../../scripts/random-generator.js'),
+  'utf8'
+);
 
 assert(source.includes('{% set is_home_landing = page.current == 1 %}'), '首頁第一頁與舊分頁必須分流');
 assert(source.includes('home-legacy-archive-notice'), '舊首頁分頁必須保留文章區引導');
@@ -47,6 +51,40 @@ assert(!source.includes('home-outro-scene'), '頁尾裝飾不應偽裝成可點�
 assert(!source.includes("scene.classList.add('is-playing')"), '靜態頁尾不應保留播放腳本');
 assert(homeStyles.includes('.index .home-outro-art'), '首頁插圖必須提供響應式樣式');
 assert(!homeStyles.includes('@keyframes home-outro'), '靜態頁尾不應保留動畫關鍵影格');
+assert(source.includes('id="home-random-visual"'), '首頁隨機卡必須保留文章類型視覺區');
+assert(source.includes('function renderVisual(record)'), '首頁隨機卡必須依文章類型更新視覺');
+assert(homeStyles.includes('grid-template-columns: minmax(0, 1fr) 168px'), '桌面隨機卡必須保留緊湊的文字與視覺比例');
+
+{
+  let generator;
+  vm.runInNewContext(randomGeneratorSource, {
+    hexo: { extend: { generator: { register: (name, callback) => { generator = callback; } } } }
+  });
+  const collection = values => ({ toArray: () => values.map(name => ({ name })) });
+  const result = generator({
+    posts: [
+      {
+        path: 'song/', source: 'source/_posts/歌曲推薦/song.md', title: '歌曲', cover: '/images/song.webp',
+        categories: collection(['音樂']), tags: collection(['歌曲推薦']), date: { format: () => '2026-09-21' }
+      },
+      {
+        path: 'study/', source: 'source/_posts/實驗室/study.md', title: '學習', learning: true,
+        learning_status: '進行中', cover: 'https://example.com/unsafe.jpg', categories: collection(['觀念與實驗']),
+        tags: collection(['研究筆記']), date: { format: () => '2026-09-20' }
+      },
+      {
+        path: 'movie/', source: 'source/_posts/閱讀影評/movie.md', title: '電影（觀影紀錄）',
+        cover: '/images/movie.webp', categories: collection(['閱讀與影視']), tags: collection(['觀影心得']),
+        date: { format: () => '2026-09-19' }
+      }
+    ]
+  });
+  const generated = JSON.parse(result.data);
+  assert.deepStrictEqual(Array.from(generated, item => item.kind), ['audio', 'learning', 'watch']);
+  assert.strictEqual(generated[0].cover, '/images/song.webp', '站內封面應提供給首頁視覺');
+  assert.strictEqual(generated[1].cover, '', '學習筆記與外部封面都不應載入首頁視覺');
+  assert.strictEqual(generated[1].note, '進行中');
+}
 
 const logicStart = source.indexOf('          function randomItem(items)');
 const logicEnd = source.indexOf('          function cleanTitle(value)', logicStart);
