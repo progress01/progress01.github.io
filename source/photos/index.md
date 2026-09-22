@@ -22,6 +22,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/3qS3bAtUm7Rtz1Q6L0JjA5?si=6433849d570c4262" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_海海人生.webp" alt="陳盈潔 - 海海人生 - 潔聲摯愛">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5ezpe0WxjrTXSp82nJDnsM?si=f52b6e8a9d3b4dd3" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_沈默是金.webp" alt="張國榮 - 沈默是金 - Hot summer">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/1Fu02ezDW65QItC0tp5Q48?si=fdc5c5f647cd44e3" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_the_real_world.webp" alt="Owl City - the real world - All thing bright and beautiful">
     </a>

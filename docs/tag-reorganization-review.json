@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-21T07:36:19.517+08:00",
+  "generatedAt": "2026-09-23T00:25:59.665+08:00",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 269,
+  "publicArticleCount": 271,
   "uncertainCount": 5,
   "entries": [
     {
@@ -5502,7 +5502,7 @@
       "updated": "2026-09-20 09:27:52"
     },
     {
-      "path": "source/_posts/隨筆/沖繩旅行-兩個時空.md",
+      "path": "source/_posts/隨筆/沖繩旅行的兩個時空.md",
       "title": "沖繩旅行的兩個時空｜歷史與日常的反差",
       "categories": [
         "生活紀錄"
@@ -5516,7 +5516,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文是沖繩旅行現場、歷史衝擊與日常反差的個人整理，屬生活回顧與旅行主題；歷史細節保留後續查證界線。",
-      "bodySha256": "80a06fc6f5dd2e5f7b881bba09fc2cd371a71002662b3101b3a05eebe776f52c",
+      "bodySha256": "dbcd656d516a424ddf13c759f9298fb242f01a63877b720a5d5b23d5e07db06b",
       "date": "2026-09-19 12:00:00",
       "updated": "2026-09-21 07:39:06"
     },
@@ -5775,6 +5775,48 @@
       "updated": null,
       "languageTag": "英語",
       "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為英語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-沈默是金.md",
+      "title": "歌曲推薦-沈默是金",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "粵語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ccd7e707ade88c7633de01d130c246ce3eefdfb3a43ca837ed1b9f50fe9946fb",
+      "date": "2026-09-22 12:00:00",
+      "updated": null,
+      "languageTag": "粵語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為粵語。"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-海海人生.md",
+      "title": "歌曲推薦-海海人生",
+      "categories": [
+        "音樂"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "歌曲推薦",
+        "台語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文包含歌曲連結、歌詞／旋律觀察或明確推薦理由。",
+      "bodySha256": "ce743fc0fbce8bc6d7ef9afec07effc29be5a8a8ac2a41e3546ff18534849f77",
+      "date": "2026-09-21 12:00:00",
+      "updated": null,
+      "languageTag": "台語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
     }
   ]
 }
