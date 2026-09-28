@@ -152,6 +152,7 @@
       global.document.addEventListener('pjax:send', disposeAll);
       global.document.addEventListener('pjax:success', boot);
       global.addEventListener('pagehide', disposeAll);
+      global.addEventListener('pageshow', boot);
       if (global.document.readyState === 'loading') global.document.addEventListener('DOMContentLoaded', boot, { once: true });
     }
     boot();

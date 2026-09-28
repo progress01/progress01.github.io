@@ -24,6 +24,8 @@ test('initializer consumes embedded profile data, uses local Calendar, and reboo
   assert.match(source, /visualMap:\s*\{\s*show:\s*false\s*\}/);
   assert.match(source, /global\.document\.addEventListener\('pjax:send', disposeAll\)/);
   assert.match(source, /global\.document\.addEventListener\('pjax:success', boot\)/);
+  assert.match(source, /global\.addEventListener\('pagehide', disposeAll\)/);
+  assert.match(source, /global\.addEventListener\('pageshow', boot\)/);
   assert.match(source, /instances\.has\(root\)/);
   assert.match(source, /\.dispose\?\./);
   assert.doesNotMatch(source, /fetch\s*\(|calendar-posts\.json|calendar\.json/);

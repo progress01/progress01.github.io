@@ -2,7 +2,7 @@
 title: 向 AI 提問前，先分清楚情境、假設與任務
 date: 2026-09-08 20:00:00
 updated: 2026-09-17 13:51:20
-surfaces: [profile]
+surfaces: [profile, memory]
 permalink: /learning/ai-question-judgment-order/
 categories: [觀念與實驗]
 tags: ["方法整理","提問方法"]

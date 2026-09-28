@@ -1,5 +1,12 @@
 # 個人網誌動線改善進度
 
+## 2026-09-29，修正 A 面返回後熱力圖消失（完成；返回實測與 fresh build 通過；未部署）
+
+- 問題發生在一般頁面導覽的瀏覽器返回快取：A 面離頁時，`pagehide` 會釋放 ECharts；按上一頁從 BFCache 還原時，頁面腳本不會重新執行，原程式又沒有 `pageshow` 重建，因此只剩覆在圖表上方的透明日期按鈕，其焦點框就是畫面中的單一小方塊。`profile-article-calendar.js` 現在成對處理 `pagehide`／`pageshow`：離頁仍釋放圖表，返回時重新執行既有 `boot`，不改文章、日期資料、網址或圖表樣式。
+- 專用回歸測試新增 `pageshow` 安裝護欄，並保留 PJAX send/success、重複初始化與 dispose 檢查；focused tests 2/2、`node --check themes/next/source/js/profile-article-calendar.js` 通過。fresh build 產生 1,014 files／383 HTML；surface-copy output 275 篇、site-check 138,560 個 href/src、archive/category 275 routes、側欄 A 11/6 與 B 275/6/27、SEO 275 article HTML／320 sitemap loc 均通過。
+- 本機瀏覽器由 A `/` 開啟文章 `/work/content-publishing-and-tables/` 後按上一頁：A 面完整顯示 12 個月份與活動色塊，chart／canvas 均為 860×250、10 個活動日期控制仍在、fallback 不存在；不需手動重新整理。QA 分頁與臨時 Hexo server 已關閉。
+- 完整 `npm run verify` 在與本修正無關的 microblog 核准基準中止：來源／輸出已有 23 筆，但兩個 regression 與 public-output 仍預期 21，另有 2 個新 ID 尚未納入既有核准清單；本輪沒有改 microblog 來源、ID 或其測試基準。下一步應將這項資料基準同步獨立處理後再重跑完整 verify；本輪未部署、未提交、未使用額度重置券。
+
 ## 2026-09-28，根首頁改為 A 面並上線（完成；手機 QA、部署與線上冒煙測試通過）
 
 - 依作者最新決定，將 `/` 固定為 A 面「工作與學習」，B 面隨機首頁移至 `/memory/`；`/profile/` 保留為 A 面相容入口，`/profile/articles/` 仍是完整文章庫。切換鈕、品牌、選單、搜尋預設範圍、側欄統計、文章面向標記與轉場路由均同步使用這組穩定網址，不依 referrer、storage 或首次造訪狀態判斷。
