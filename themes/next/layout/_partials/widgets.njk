@@ -1,7 +1,7 @@
 {# Widgets with fixed position #}
 
 {%- if theme.sidebar.display !== 'remove' %}
-  <div class="toggle sidebar-toggle" role="button">
+  <div class="toggle sidebar-toggle" role="button" tabindex="0" aria-label="{{ __('accessibility.nav_toggle') }}">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -10,7 +10,7 @@
 {%- endif %}
 
 {%- if theme.back2top.enable and not theme.back2top.sidebar %}
-  <div class="back-to-top" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
+  <div class="back-to-top" role="button" tabindex="0" aria-label="{{ __('accessibility.back_to_top') }}">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>

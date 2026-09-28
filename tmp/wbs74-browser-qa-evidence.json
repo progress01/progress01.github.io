@@ -1,0 +1,153 @@
+{
+  "browser": "Chrome headless via CDP",
+  "viewports": {
+    "desktop1280": {
+      "viewport": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "randomTop": 251.984375,
+      "randomHeight": 280.1875,
+      "bridgeTop": 734.921875,
+      "bridgeHeight": 67,
+      "bridgeWidth": 908,
+      "href": "http://127.0.0.1:8914/profile/",
+      "target": null,
+      "gridCount": 4
+    },
+    "mobile390": {
+      "viewport": 390,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "randomTop": 489.984375,
+      "randomHeight": 415.6875,
+      "bridgeTop": 1497.46875,
+      "bridgeHeight": 96,
+      "bridgeWidth": 374,
+      "linkRight": 141.921875,
+      "linkTop": 1556.46875
+    }
+  },
+  "checks": [
+    {
+      "label": "desktop no horizontal overflow",
+      "detail": {
+        "viewport": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "randomTop": 251.984375,
+        "randomHeight": 280.1875,
+        "bridgeTop": 734.921875,
+        "bridgeHeight": 67,
+        "bridgeWidth": 908,
+        "href": "http://127.0.0.1:8914/profile/",
+        "target": null,
+        "gridCount": 4
+      }
+    },
+    {
+      "label": "random feature remains primary and bridge is visually secondary below entries",
+      "detail": {
+        "viewport": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "randomTop": 251.984375,
+        "randomHeight": 280.1875,
+        "bridgeTop": 734.921875,
+        "bridgeHeight": 67,
+        "bridgeWidth": 908,
+        "href": "http://127.0.0.1:8914/profile/",
+        "target": null,
+        "gridCount": 4
+      }
+    },
+    {
+      "label": "bridge is an ordinary same-origin profile link",
+      "detail": {
+        "viewport": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "randomTop": 251.984375,
+        "randomHeight": 280.1875,
+        "bridgeTop": 734.921875,
+        "bridgeHeight": 67,
+        "bridgeWidth": 908,
+        "href": "http://127.0.0.1:8914/profile/",
+        "target": null,
+        "gridCount": 4
+      }
+    },
+    {
+      "label": "Tab reaches bridge link with visible focus",
+      "detail": {
+        "active": true,
+        "outline": "solid",
+        "width": "2px"
+      }
+    },
+    {
+      "label": "Enter opens A side"
+    },
+    {
+      "label": "direct A-side reload renders profile page"
+    },
+    {
+      "label": "Back returns to B homepage with bridge intact"
+    },
+    {
+      "label": "fresh tab opens stable A-side URL"
+    },
+    {
+      "label": "390px phone has no horizontal overflow",
+      "detail": {
+        "viewport": 390,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "randomTop": 489.984375,
+        "randomHeight": 415.6875,
+        "bridgeTop": 1497.46875,
+        "bridgeHeight": 96,
+        "bridgeWidth": 374,
+        "linkRight": 141.921875,
+        "linkTop": 1556.46875
+      }
+    },
+    {
+      "label": "mobile bridge wraps within viewport below random feature",
+      "detail": {
+        "viewport": 390,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "randomTop": 489.984375,
+        "randomHeight": 415.6875,
+        "bridgeTop": 1497.46875,
+        "bridgeHeight": 96,
+        "bridgeWidth": 374,
+        "linkRight": 141.921875,
+        "linkTop": 1556.46875
+      }
+    },
+    {
+      "label": "browser console has no warnings, errors, or exceptions",
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "console": [],
+  "ports": {
+    "http": 8914,
+    "cdp": 9354
+  },
+  "profile": "C:\\Blog\\blog-1988\\tmp\\wbs74-chrome-profile",
+  "injection": {
+    "identifier": "1"
+  },
+  "bootstrapGlobals": {
+    "LocalSearch": "function",
+    "Pjax": "function",
+    "anime": "function"
+  },
+  "profileCleaned": true
+}

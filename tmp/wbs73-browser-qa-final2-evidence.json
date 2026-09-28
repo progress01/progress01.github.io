@@ -1,0 +1,165 @@
+{
+  "browser": "Chrome headless via CDP",
+  "checks": [
+    {
+      "label": "home initial card is memory eligible",
+      "detail": "/learning/agentic-transaction-acid-agent/"
+    },
+    {
+      "label": "home change selects another memory article",
+      "detail": {
+        "homeUrl": "/learning/agentic-transaction-acid-agent/",
+        "changedHomeUrl": "/learning/cms-content-modeling-field-review/"
+      }
+    },
+    {
+      "label": "home reload restores the same card",
+      "detail": {
+        "changedHomeUrl": "/learning/cms-content-modeling-field-review/",
+        "restoredHomeUrl": "/learning/cms-content-modeling-field-review/"
+      }
+    },
+    {
+      "label": "home article Back restores the same card",
+      "detail": {
+        "changedHomeUrl": "/learning/cms-content-modeling-field-review/",
+        "backHomeUrl": "/learning/cms-content-modeling-field-review/"
+      }
+    },
+    {
+      "label": "random initial card is memory eligible",
+      "detail": "/2026/09/16/歌曲推薦/歌曲推薦-22才の別れ/"
+    },
+    {
+      "label": "real memory category button exists",
+      "detail": "<button class=\"random-filter\" type=\"button\" data-category=\"音樂\">音樂</button>"
+    },
+    {
+      "label": "category change selects within memory category",
+      "detail": {
+        "category": "音樂",
+        "url": "/2025/10/24/歌曲推薦/歌曲推薦-2375/",
+        "meta": "音樂  //  2025-10-24"
+      }
+    },
+    {
+      "label": "change card stays in category and avoids current article",
+      "detail": {
+        "category": "音樂",
+        "url": "/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/",
+        "meta": "音樂  //  2026-01-09"
+      }
+    },
+    {
+      "label": "random reload restores category and card",
+      "detail": {
+        "category": "音樂",
+        "url": "/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/"
+      }
+    },
+    {
+      "label": "random article Back restores category and card",
+      "detail": {
+        "category": "音樂",
+        "url": "/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/"
+      }
+    },
+    {
+      "label": "profile-only stale state cannot be restored",
+      "detail": {
+        "profileOnly": "/learning/ai-question-judgment-order/",
+        "restored": "/2026/08/21/歌曲推薦/歌曲推薦-Angel/"
+      }
+    },
+    {
+      "label": "dual-surface article can be presented",
+      "detail": "/work/flow-friendly-work-system/"
+    },
+    {
+      "label": "invalid category and stale URL fall back to all with valid card",
+      "detail": {
+        "category": "all",
+        "url": "/2026/09/16/歌曲推薦/歌曲推薦-22才の別れ/",
+        "valid": {
+          "category": "all",
+          "url": "/2026/09/16/歌曲推薦/歌曲推薦-22才の別れ/"
+        }
+      }
+    },
+    {
+      "label": "stale category record safely falls back to all",
+      "detail": {
+        "category": "all",
+        "url": "/2025/10/24/歌曲推薦/歌曲推薦-2375/"
+      }
+    },
+    {
+      "label": "random page 390px has no horizontal overflow",
+      "detail": {
+        "width": 390,
+        "doc": 390,
+        "body": 390
+      }
+    },
+    {
+      "label": "random page desktop has no horizontal overflow",
+      "detail": {
+        "width": 1280,
+        "doc": 1265,
+        "body": 1265
+      }
+    },
+    {
+      "label": "category button can receive keyboard focus",
+      "detail": {
+        "tag": "BUTTON",
+        "focus": true,
+        "visible": false
+      }
+    },
+    {
+      "label": "keyboard Enter activates category filter",
+      "detail": {
+        "category": "音樂",
+        "url": "/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/"
+      }
+    },
+    {
+      "label": "random article link is keyboard focusable",
+      "detail": {
+        "focused": true,
+        "href": "/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/"
+      }
+    },
+    {
+      "label": "keyboard Enter opens the focused random article",
+      "detail": {
+        "keyboardArticle": "/2026/01/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-All-for-you/",
+        "href": "/2026/01/09/歌曲推薦/歌曲推薦-All-for-you/"
+      }
+    },
+    {
+      "label": "home 390px has no horizontal overflow",
+      "detail": {
+        "width": 390,
+        "doc": 390,
+        "body": 390
+      }
+    },
+    {
+      "label": "no unexpected browser console warnings/errors/exceptions",
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "console": [],
+  "ports": {
+    "http": 8900,
+    "cdp": 9348
+  },
+  "process": {
+    "chromeStopped": false,
+    "serverStopped": true,
+    "profileRemoved": true
+  }
+}

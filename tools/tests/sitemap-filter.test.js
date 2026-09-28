@@ -68,4 +68,5 @@ test('persists the exclusion on real Hexo Warehouse Page documents', async () =>
   const sitemap = result.find(item => item.path === 'sitemap.xml').data;
   for (const endpoint of SITEMAP_EXCLUDED_DATA) assert.ok(!sitemap.includes(endpoint));
   assert.match(sitemap, /https:\/\/progress01\.github\.io\//);
+  assert.match(sitemap, /https:\/\/progress01\.github\.io\/memory\//);
 });

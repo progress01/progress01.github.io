@@ -201,7 +201,7 @@ topics:
     items:
       - id: reading-topic-17
         date: 2026-09-17
-        title: 工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼
+        title: 需求不是功能清單：從真實工作拆出系統該做的事
         source: 從實際抽象功能.md｜工作知識系列
         url: /work/from-real-work-to-features/
         state: learning
@@ -225,7 +225,7 @@ topics:
 
       - id: reading-topic-20
         date: 2026-09-17
-        title: 工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審
+        title: 專案做到一半才發現隱性規則，該怎麼補審？
         source: 從實際抽象功能.md｜工作知識系列
         url: /work/risk-based-review/
         state: learning

@@ -1,0 +1,307 @@
+{
+  "date": "2026-09-27",
+  "browser": "Chrome headless via CDP",
+  "publicRoot": "C:\\Blog\\blog-1988\\public",
+  "ports": {
+    "http": 8974,
+    "cdp": 9374
+  },
+  "checks": [
+    {
+      "label": "desktop-cover",
+      "pathname": "/profile/",
+      "hash": "",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "h1": "工作與學習",
+      "mainHref": "/work/from-solving-problems-to-choosing-what-matters/",
+      "coverLinks": [
+        "/work/from-solving-problems-to-choosing-what-matters/",
+        "/work/from-real-work-to-features/",
+        "/work/risk-based-review/"
+      ],
+      "coverCount": 3,
+      "filters": 0,
+      "rows": 0,
+      "visibleRows": 0,
+      "allText": "查看全部 9 篇",
+      "menu": [
+        {
+          "text": "工作與學習",
+          "href": "/profile/",
+          "current": "page"
+        },
+        {
+          "text": "全部文章",
+          "href": "/profile/articles/",
+          "current": null
+        }
+      ],
+      "scrollWidth": 1265,
+      "bodyWidth": 1265,
+      "main": {
+        "x": 328.5,
+        "y": 169,
+        "width": 860,
+        "height": 285.390625,
+        "right": 1188.5,
+        "bottom": 454.390625
+      },
+      "secondary": {
+        "x": 328.5,
+        "y": 476.390625,
+        "width": 422,
+        "height": 217.265625,
+        "right": 750.5,
+        "bottom": 693.65625
+      },
+      "archiveList": null
+    },
+    {
+      "label": "desktop-archive",
+      "pathname": "/profile/articles/",
+      "hash": "",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "h1": "工作與學習",
+      "coverLinks": [],
+      "coverCount": 0,
+      "filters": 1,
+      "rows": 9,
+      "visibleRows": 9,
+      "menu": [
+        {
+          "text": "工作與學習",
+          "href": "/profile/",
+          "current": null
+        },
+        {
+          "text": "全部文章",
+          "href": "/profile/articles/",
+          "current": "page"
+        }
+      ],
+      "scrollWidth": 1280,
+      "bodyWidth": 1280,
+      "main": null,
+      "secondary": null,
+      "archiveList": {
+        "x": 344,
+        "y": 260,
+        "width": 852,
+        "height": 419.34375,
+        "right": 1196,
+        "bottom": 679.34375
+      }
+    },
+    {
+      "label": "desktop-back-to-cover",
+      "pathname": "/profile/",
+      "hash": "",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "h1": "工作與學習",
+      "mainHref": "/work/from-solving-problems-to-choosing-what-matters/",
+      "coverLinks": [
+        "/work/from-solving-problems-to-choosing-what-matters/",
+        "/work/from-real-work-to-features/",
+        "/work/risk-based-review/"
+      ],
+      "coverCount": 3,
+      "filters": 0,
+      "rows": 0,
+      "visibleRows": 0,
+      "allText": "查看全部 9 篇",
+      "menu": [
+        {
+          "text": "工作與學習",
+          "href": "/profile/",
+          "current": "page"
+        },
+        {
+          "text": "全部文章",
+          "href": "/profile/articles/",
+          "current": null
+        }
+      ],
+      "scrollWidth": 1265,
+      "bodyWidth": 1265,
+      "main": {
+        "x": 328.5,
+        "y": 169,
+        "width": 860,
+        "height": 285.390625,
+        "right": 1188.5,
+        "bottom": 454.390625
+      },
+      "secondary": {
+        "x": 328.5,
+        "y": 476.390625,
+        "width": 422,
+        "height": 217.265625,
+        "right": 750.5,
+        "bottom": 693.65625
+      },
+      "archiveList": null
+    },
+    {
+      "label": "desktop-filter",
+      "pathname": "/profile/articles/",
+      "hash": "#tag=%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "h1": "工作與學習",
+      "coverLinks": [],
+      "coverCount": 0,
+      "filters": 1,
+      "rows": 9,
+      "visibleRows": 7,
+      "menu": [
+        {
+          "text": "工作與學習",
+          "href": "/profile/",
+          "current": null
+        },
+        {
+          "text": "全部文章",
+          "href": "/profile/articles/",
+          "current": "page"
+        }
+      ],
+      "scrollWidth": 1280,
+      "bodyWidth": 1280,
+      "main": null,
+      "secondary": null,
+      "archiveList": {
+        "x": 344,
+        "y": 260,
+        "width": 852,
+        "height": 326.15625,
+        "right": 1196,
+        "bottom": 586.15625
+      }
+    },
+    {
+      "label": "A-to-B",
+      "path": "/",
+      "aFilters": 0,
+      "nav": 8,
+      "profileCurrent": null
+    },
+    {
+      "label": "B-to-A",
+      "path": "/profile/",
+      "coverCount": 3,
+      "aFilters": 0,
+      "current": [
+        "/profile/"
+      ]
+    },
+    {
+      "label": "mobile-cover",
+      "pathname": "/profile/",
+      "hash": "",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "h1": "工作與學習",
+      "mainHref": "/work/from-solving-problems-to-choosing-what-matters/",
+      "coverLinks": [
+        "/work/from-solving-problems-to-choosing-what-matters/",
+        "/work/from-real-work-to-features/",
+        "/work/risk-based-review/"
+      ],
+      "coverCount": 3,
+      "filters": 0,
+      "rows": 0,
+      "visibleRows": 0,
+      "allText": "查看全部 9 篇",
+      "menu": [
+        {
+          "text": "工作與學習",
+          "href": "/profile/",
+          "current": "page"
+        },
+        {
+          "text": "全部文章",
+          "href": "/profile/articles/",
+          "current": null
+        }
+      ],
+      "scrollWidth": 375,
+      "bodyWidth": 375,
+      "main": {
+        "x": 32,
+        "y": 270,
+        "width": 311,
+        "height": 274.390625,
+        "right": 343,
+        "bottom": 544.390625
+      },
+      "secondary": {
+        "x": 32,
+        "y": 566.390625,
+        "width": 311,
+        "height": 246.703125,
+        "right": 343,
+        "bottom": 813.09375
+      },
+      "archiveList": null
+    },
+    {
+      "label": "mobile-archive",
+      "pathname": "/profile/articles/",
+      "hash": "",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "h1": "工作與學習",
+      "coverLinks": [],
+      "coverCount": 0,
+      "filters": 1,
+      "rows": 9,
+      "visibleRows": 9,
+      "menu": [
+        {
+          "text": "工作與學習",
+          "href": "/profile/",
+          "current": null
+        },
+        {
+          "text": "全部文章",
+          "href": "/profile/articles/",
+          "current": "page"
+        }
+      ],
+      "scrollWidth": 375,
+      "bodyWidth": 375,
+      "main": null,
+      "secondary": null,
+      "archiveList": {
+        "x": 40,
+        "y": 457,
+        "width": 303,
+        "height": 765,
+        "right": 343,
+        "bottom": 1222
+      }
+    }
+  ],
+  "screenshots": [
+    "tmp/wbs106-desktop-cover.png",
+    "tmp/wbs106-desktop-filter.png",
+    "tmp/wbs106-mobile-cover.png",
+    "tmp/wbs106-mobile-archive.png"
+  ],
+  "consoleIssues": []
+}

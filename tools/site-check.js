@@ -174,17 +174,20 @@ function checkDocument(html, from, options) {
   const recent = $('[data-search-recent]');
   if (recent.length) {
     const items = recent.find('[data-search-recent-item]');
-    const categoryCount = recent.find('[data-search-category]').length;
-    if (items.length > categoryCount * 10) errors.push('搜尋近期清單超過各分類最新十篇的上限。');
+    const itemUrls = items.map((_, item) => $(item).attr('href')).get();
+    if (new Set(itemUrls).size !== itemUrls.length) errors.push('搜尋近期候選包含重複文章網址。');
+    if (items.toArray().some(item => !/^(?:profile|memory)(?:\|(?:profile|memory))?$/.test($(item).attr('data-search-recent-surfaces') || ''))) {
+      errors.push('搜尋近期候選缺少有效 surfaces。');
+    }
     if (items.filter((_, item) => !$(item).is('[hidden]')).length > 10) errors.push('搜尋初始畫面顯示超過十篇。');
   }
   return { errors, references };
 }
 
-function run() {
+function run(outputOverride) {
   const root = path.resolve(__dirname, '..');
   const config = yaml.load(fs.readFileSync(path.join(root, '_config.yml'), 'utf8'));
-  const output = path.resolve(root, config.public_dir || 'public');
+  const output = outputOverride ? path.resolve(root, outputOverride) : path.resolve(root, config.public_dir || 'public');
   const settings = JSON.parse(fs.readFileSync(path.join(__dirname, 'site-check.config.json'), 'utf8'));
   const files = new Set();
   function walk(directory) {
@@ -230,4 +233,9 @@ function run() {
 }
 
 module.exports = { checkUrl, checkDocument };
-if (require.main === module) run();
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  const rootIndex = args.indexOf('--root');
+  if (rootIndex !== -1 && !args[rootIndex + 1]) throw new Error('missing_root');
+  run(rootIndex !== -1 ? args[rootIndex + 1] : undefined);
+}

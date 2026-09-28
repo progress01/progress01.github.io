@@ -632,7 +632,7 @@
 }
 
 .index .home-legacy-archive-notice > span {
-  color: #a65f43;
+  color: var(--surface-accent);
   font: 11px "Courier New", monospace;
   letter-spacing: 1.2px;
 }
@@ -715,6 +715,69 @@
   padding-top: 8px;
 }
 
+.index .home-profile-bridge {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  align-items: baseline;
+  gap: 5px 14px;
+  margin: 14px 0 8px;
+  padding: 10px 12px;
+  border-left: 2px solid var(--surface-border);
+  background: var(--surface-panel);
+  color: var(--surface-muted);
+}
+
+.index .home-profile-bridge-label {
+  grid-column: 1;
+  grid-row: 1;
+  color: var(--surface-accent);
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+.index .home-profile-bridge h2 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  color: var(--surface-ink);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.index .home-profile-bridge p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: var(--surface-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.index .home-profile-bridge a {
+  display: inline-flex;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  justify-self: end;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 6px;
+  color: var(--surface-accent-strong);
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.index .home-profile-bridge a:focus-visible {
+  outline: 2px solid var(--surface-focus);
+  outline-offset: 3px;
+}
+
 .index .home-landing-section-heading {
   margin-top: 18px;
   padding-bottom: 7px;
@@ -725,17 +788,17 @@
 .index .home-pick-label,
 .index .home-landing-label,
 .index .home-landing-section-heading > span {
-  color: #a65f43;
+  color: var(--surface-accent);
 }
 
 .index .home-archive-rail-index {
-  color: #8d7056;
+  color: var(--surface-muted);
 }
 
 .index .home-archive-rail-index:hover,
 .index .home-pick:hover strong,
 .index .home-landing-entry:hover .home-landing-link {
-  color: #e36b2f;
+  color: var(--surface-accent);
 }
 
 /* DJ 點播收成一條資訊列，避免首頁上方堆疊太多區塊。 */
@@ -823,6 +886,34 @@
 
   .index .home-pick-updated {
     margin-top: 3px;
+  }
+
+  .index .home-profile-bridge {
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 3px 10px;
+    padding: 9px 10px;
+  }
+
+  .index .home-profile-bridge-label {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .index .home-profile-bridge h2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .index .home-profile-bridge p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .index .home-profile-bridge a {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    margin-top: 2px;
   }
 }
 

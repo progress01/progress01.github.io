@@ -1,0 +1,11 @@
+// source/lib/languages.js
+var Calendar = Calendar || {};
+Calendar.languages = {
+    'zh-TW': {
+        months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        dayNames: ['日', '一', '二', '三', '四', '五', '六'],
+        week: '週',
+        stats: '共發表 {{total}} 篇文章',
+        heatmap: '文章熱力圖'
+    }
+};

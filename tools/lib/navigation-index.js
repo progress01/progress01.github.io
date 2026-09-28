@@ -3,6 +3,8 @@ const crypto = require('crypto');
 const cheerio = require('cheerio');
 const moment = require('moment-timezone');
 const { passagesOf } = require('./navigation-anchors');
+const { normalizeSurfaces, isSurfaceSubset } = require('./content-surfaces');
+const DEFAULT_LEGACY_SURFACES = require('../data/legacy-surfaces.v1.json');
 const TZ = 'Asia/Taipei';
 const list = value => value?.toArray ? value.toArray() : (Array.isArray(value) ? value : []);
 const names = value => list(value).map(item => String(item?.name || item));
@@ -36,17 +38,49 @@ function assignMicroblogIds(items) {
     return { ...item, id };
   });
 }
-function buildIndex({ posts, microblog, desk, origin }) {
+
+function stablePostSource(post) {
+  const source = String(post?.source || '').replaceAll('\\', '/').replace(/^\/+/, '');
+  if (!source) return '<unknown post source>';
+  return source.startsWith('source/') ? source : `source/${source}`;
+}
+
+function legacySets(manifest) {
+  if (!manifest || manifest.schemaVersion !== 1 || !Array.isArray(manifest.posts)
+      || !Array.isArray(manifest.microblogIds) || !Array.isArray(manifest.readingDeskItemIds)) {
+    throw new Error('legacy_surface_manifest_invalid [tools/data/legacy-surfaces.v1.json]');
+  }
+  return {
+    posts: new Set(manifest.posts),
+    microblogIds: new Set(manifest.microblogIds),
+    readingDeskItemIds: new Set(manifest.readingDeskItemIds)
+  };
+}
+
+function resolveSurfaces(record, source, missingPolicy, warnings, extra = {}) {
+  try {
+    const result = normalizeSurfaces(record, { source, missingPolicy, ...extra });
+    result.warnings.forEach(warning => warnings.push(`${warning.source} [${warning.code}]`));
+    return result.surfaces;
+  } catch (error) {
+    throw new Error(`${source} [${error.code || error.name}]: surface contract violation`);
+  }
+}
+
+function buildIndex({ posts, microblog, desk, origin, legacySurfaceManifest = DEFAULT_LEGACY_SURFACES }) {
   if (!Array.isArray(microblog) || !desk || !Array.isArray(desk.topics)) throw new Error('Invalid navigation source structure');
+  const legacy = legacySets(legacySurfaceManifest);
   const records = [], byUrl = new Map(), warnings = [];
   for (const post of list(posts)) {
     if (post.published === false || post.draft === true) continue;
     const url = target('/' + String(post.path || '').replace(/^\/+/, ''), origin).local;
-    if (!post.path || !post.title || !url || byUrl.has(url)) throw new Error('Missing/duplicate article target');
+    const source = stablePostSource(post);
+    if (!post.path || !post.title || !url || byUrl.has(url)) throw new Error(`${source} [missing_or_duplicate_article_target]`);
+    const surfaces = resolveSurfaces(post, source, legacy.posts.has(source) ? 'legacy' : 'error', warnings);
     const date = dateOf(post.date, post.title);
     const record = { id: 'article:' + url, kind: 'article', sources: ['article'], title: plain(post.title), text: plain(post.content), url,
       passages: passagesOf(post.content), categories: names(post.categories), tags: names(post.tags), date, dateKind: 'published',
-      events: date ? [{ kind: 'published', date }] : [], learningItems: [] };
+      events: date ? [{ kind: 'published', date }] : [], learningItems: [], surfaces };
     records.push(record); byUrl.set(url, record);
   }
   const assigned = assignMicroblogIds(microblog);
@@ -55,9 +89,11 @@ function buildIndex({ posts, microblog, desk, origin }) {
     if (item.published === false || item.draft === true) return;
     const text = plain(item.content), date = dateOf(item.date, item.id);
     if (!text) throw new Error('Empty microblog: ' + item.id);
+    const source = `source/microblog.json#${item.id}`;
+    const surfaces = resolveSurfaces(item, source, legacy.microblogIds.has(item.id) ? 'legacy' : 'error', warnings);
     records.push({ id: item.id, kind: 'microblog', sources: ['microblog'], title: Array.from(text).slice(0, 48).join(''), text,
       url: '/status/', categories: [], tags: item.tag ? [plain(item.tag)] : [], date, dateKind: 'recorded',
-      events: date ? [{ kind: 'recorded', date }] : [], learningItems: [] });
+      events: date ? [{ kind: 'recorded', date }] : [], learningItems: [], surfaces });
   });
   const learningIds = new Set();
   for (const group of desk.topics) {
@@ -71,7 +107,15 @@ function buildIndex({ posts, microblog, desk, origin }) {
       try { link = target(item.url, origin); } catch { warnings.push('Excluded unsafe learning URL: ' + item.id); continue; }
       const linked = link.local && byUrl.get(link.local);
       if (link.local && !linked) { warnings.push('Excluded unpublished/unresolved learning target: ' + item.id); continue; }
-      const learning = { id: item.id, title: plain(item.title), topic: plain(group.name), note: plain(item.note), source: plain(item.source), state: String(item.state || ''), addedDate };
+      const source = `source/reading-desk.yml#${item.id}`;
+      const isLegacy = legacy.readingDeskItemIds.has(item.id);
+      const surfaces = linked
+        ? resolveSurfaces(item, source, isLegacy ? 'inherit' : 'error', warnings, isLegacy ? { inheritedSurfaces: linked.surfaces } : {})
+        : resolveSurfaces(item, source, isLegacy ? 'legacy' : 'error', warnings);
+      if (linked && !isSurfaceSubset(surfaces, linked.surfaces, { source })) {
+        throw new Error(`${source} [surface_not_subset]: linked learning surfaces exceed target article`);
+      }
+      const learning = { id: item.id, title: plain(item.title), topic: plain(group.name), note: plain(item.note), source: plain(item.source), state: String(item.state || ''), addedDate, surfaces };
       const text = [learning.title, learning.topic, learning.note, learning.source].filter(Boolean).join(' ');
       const event = addedDate ? [{ kind: 'learning-added', date: addedDate, sourceId: item.id }] : [];
       if (linked) {
@@ -80,7 +124,7 @@ function buildIndex({ posts, microblog, desk, origin }) {
         linked.learningItems.push(learning); linked.events.push(...event);
       } else {
         records.push({ id: 'learning:' + item.id, kind: 'learning', sources: ['learning'], title: learning.title || learning.topic,
-          text, url: '/reading/', externalUrl: link.external, categories: [], tags: [], date: addedDate, dateKind: 'learning-added', events: event, learningItems: [learning] });
+          text, url: '/reading/', externalUrl: link.external, categories: [], tags: [], date: addedDate, dateKind: 'learning-added', events: event, learningItems: [learning], surfaces });
       }
     }
   }

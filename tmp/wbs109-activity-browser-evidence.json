@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-28",
+  "browser": "Chrome headless via CDP",
+  "viewport": {
+    "desktop": "1280x900",
+    "mobile": "375x812"
+  },
+  "ports": {
+    "http": 8978,
+    "cdp": 9378
+  },
+  "desktop": {
+    "h1": "工作與學習",
+    "year": "2026 更新日曆",
+    "articleTotal": 9,
+    "activeDateCount": 2,
+    "months": [
+      "09"
+    ],
+    "latest": "2026-09-27 更新內容",
+    "latestLinks": [
+      {
+        "title": "工作知識｜從解決問題，到判斷什麼值得解",
+        "href": "/work/from-solving-problems-to-choosing-what-matters/"
+      }
+    ],
+    "cta": "查看全部 9 篇",
+    "filterCount": 0,
+    "oldCards": 0,
+    "canvas": 1,
+    "widths": {
+      "document": 1265,
+      "body": 1265,
+      "viewport": 1280
+    }
+  },
+  "sameDayKeyboard": {
+    "heading": "2026-09-17 更新內容",
+    "links": [
+      {
+        "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "href": "/learning/ai-question-judgment-order/"
+      },
+      {
+        "title": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+        "href": "/learning/website-quality-testing-roadmap/"
+      },
+      {
+        "title": "工作知識｜API 需求排查：從前台現象回到資料來源",
+        "href": "/work/api-requirement-troubleshooting/"
+      },
+      {
+        "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "href": "/work/flow-friendly-work-system/"
+      },
+      {
+        "title": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+        "href": "/work/from-real-work-to-features/"
+      },
+      {
+        "title": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+        "href": "/work/gamifying-website-redesign/"
+      },
+      {
+        "title": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+        "href": "/work/presentation-as-mental-model/"
+      },
+      {
+        "title": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+        "href": "/work/risk-based-review/"
+      }
+    ],
+    "pressed": "true",
+    "focused": "2026-09-17"
+  },
+  "profileReloadDefault": "2026-09-27 更新內容",
+  "archive": {
+    "rows": 9,
+    "filters": 1,
+    "brand": "/profile/"
+  },
+  "bSurface": {
+    "brand": "/",
+    "calendar": false,
+    "search": true,
+    "calendarPage": true
+  },
+  "mobile": {
+    "viewport": 375,
+    "documentWidth": 375,
+    "bodyWidth": 375,
+    "containerWidth": 311,
+    "containerScrollWidth": 700,
+    "hasOverflow": true,
+    "cta": "查看全部 9 篇",
+    "switch": "/"
+  },
+  "runtimeErrors": []
+}

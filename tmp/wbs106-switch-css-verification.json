@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-27",
+  "workPackage": "WBS 10.6 destination-face and profile readability follow-up",
+  "head": "2d4d9d0375c1aa82d4d6407fb13699a2810d714d",
+  "build": {
+    "command": "npm run verify",
+    "exitCode": 0,
+    "regression": "249/249",
+    "publicFiles": 1007,
+    "siteCheck": "378 HTML / 134850 href-src",
+    "seo": "271 article canonicals and routes / 315 sitemap locs",
+    "publicOutput": "436 decoded text outputs / 0 old D-V fingerprint hits / 0 retired IDs / 568 source images retained",
+    "focusedTests": "22/22",
+    "surfaceOutputChecks": "visual, control, accessibility, responsive, and copy passed"
+  },
+  "httpCacheBust": {
+    "base": "http://127.0.0.1:8766",
+    "profileUrl": "/profile/?qa=destination-face",
+    "profileStatus": 200,
+    "cssUrl": "/css/main.css?qa=destination-face",
+    "cssStatus": 200,
+    "targetFaceAInMemory": true,
+    "targetFaceBInProfile": true,
+    "currentSideBadgeAbsent": true,
+    "profileSpecificMenuAndHeadingStyles": true,
+    "surfaceVisualControlAccessibilityResponsiveCopyOutputChecks": "pass"
+  },
+  "browserVisualQa": {
+    "status": "passed-by-mainline-live-qa-desktop",
+    "reason": "Mainline CUA desktop live visual and click-through verification",
+    "screenshots": [],
+    "note": "A shows cassette B with SIDE B; click reaches / with cassette A and SIDE A; Back restores the original profile path. AX link names unchanged. A menu rows measured 15px/48px; icon gaps and path headings visually clear. No mobile live visual QA; mobile has responsive source/output checks only. No screenshot saved."
+  },
+  "deploy": false,
+  "resetCouponUsed": false
+}

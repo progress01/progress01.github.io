@@ -1,0 +1,26 @@
+{% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
+{% set profile_home = site.data['profile-home'] %}
+
+{% block title %}{{ profile_home.presentation.pageTitle }} | {{ title }}{% endblock %}
+
+{% block class %}page posts-expand profile-page{% endblock %}
+
+{% block surface_control %}
+  {{ partial('_partials/dual-surface-control.njk', { current_surface: 'profile' }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="post-block profile-home" lang="{{ page.lang }}">
+    <header class="post-header profile-home-header">
+      <h1 class="post-title" id="profile-title">工作與學習</h1>
+    </header>
+    <div class="post-body profile-home-body">
+      {% include '_partials/profile-article-calendar.njk' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(page.toc.enable) }}
+{% endblock %}

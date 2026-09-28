@@ -1,15 +1,29 @@
 {% import 'menu-item.njk' as menu_item with context %}
+{% set page_path = page.path or '' %}
+{% set use_profile_menu = page_path === 'index.html' or page_path === 'profile/index.html' or page_path.indexOf('profile/') === 0 %}
+{% set profile_menu = site.data['surface-navigation'].menus.profile if use_profile_menu else [] %}
 
 {%- if theme.menu or theme.algolia_search.enable or theme.local_search.enable %}
 <nav class="site-nav">
-  <ul class="main-menu menu">
-    {%- for node in theme.main_menu %}
-      {{- menu_item.render(node) | trim }}
-    {%- endfor %}
+  <ul class="main-menu menu" data-navigation-surface="{{ 'profile' if use_profile_menu else 'memory' }}">
+    {%- if use_profile_menu %}
+      {%- for item in profile_menu %}
+        {%- set is_current = (item.id === 'home' and (page_path === 'index.html' or page_path === 'profile/index.html')) or (item.id === 'articles' and page_path.indexOf('profile/articles/') === 0) %}
+        <li class="menu-item menu-item-profile-{{ item.id }}{{ ' menu-item-active' if is_current else '' }}">
+          <a href="{{ url_for(item.href) }}" rel="section"{% if is_current %} aria-current="page"{% endif %}>
+            {%- if theme.menu_settings.icons and item.icon %}<i class="{{ item.icon }} fa-fw" aria-hidden="true"></i>{% endif %}{{ item.label }}
+          </a>
+        </li>
+      {%- endfor %}
+    {%- else %}
+      {%- for node in theme.main_menu %}
+        {{- menu_item.render(node) | trim }}
+      {%- endfor %}
+    {%- endif %}
 
-    {%- if theme.algolia_search.enable or theme.local_search.enable %}
+    {%- if not use_profile_menu and (theme.algolia_search.enable or theme.local_search.enable) %}
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger">
+        <a role="button" tabindex="0" class="popup-trigger" aria-label="{{ __('menu.search') }}">
           {%- if theme.menu_settings.icons %}<i class="fa fa-search fa-fw"></i>{% endif %}{{ __('menu.search') }}
         </a>
       </li>

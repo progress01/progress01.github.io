@@ -1,4 +1,16 @@
 // 自動產生隨機文章資料，讓隨機入口不必直接解析 search.xml。
+const { normalizeSurfaces } = require('../tools/lib/content-surfaces');
+const legacySurfaceManifest = require('../tools/data/legacy-surfaces.v1.json');
+if (legacySurfaceManifest?.schemaVersion !== 1 || !Array.isArray(legacySurfaceManifest.posts)) {
+  throw new Error('legacy_surface_manifest_invalid [tools/data/legacy-surfaces.v1.json]');
+}
+const legacyPostSources = new Set(legacySurfaceManifest.posts);
+
+function stablePostSource(post) {
+  const source = String(post.source || '').replaceAll('\\', '/').replace(/^\/+/, '');
+  if (!source) return '<unknown post source>';
+  return source.startsWith('source/') ? source : `source/${source}`;
+}
 
 function visualKind(post, categories, tags) {
   const source = String(post.source || '');
@@ -32,6 +44,18 @@ hexo.extend.generator.register('random_json', function(locals) {
 
     // 入口頁與站務文章不列入隨機內容，避免抽到控制頁或系統頁。
     if (!path || post.type === 'random' || categories.includes('站務')) return;
+
+    const source = stablePostSource(post);
+    let surfaces;
+    try {
+      const missingPolicy = legacyPostSources.has(source) ? 'legacy' : 'error';
+      const result = normalizeSurfaces(post, { source, missingPolicy });
+      surfaces = result.surfaces;
+      result.warnings.forEach(warning => hexo.log.warn(`${warning.source} [${warning.code}]`));
+    } catch (error) {
+      throw new Error(`${source} [${error.code || error.name}]: random surface contract violation`);
+    }
+    if (!surfaces.includes('memory')) return;
 
     const excerpt = String(post.description || post.excerpt || '')
       .replace(/<[^>]*>/g, ' ')

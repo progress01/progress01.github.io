@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "2d4d9d0375c1aa82d4b6407fb13699a2810d714d",
+  "source": "source/microblog.json",
+  "expectedPublicCount": 21,
+  "records": [
+    {
+      "id": "micro-e410b2604c189eb4",
+      "decision": "D",
+      "publicContent": "我其實很容易氣餒。只是現在還說不清楚，讓我退縮的到底是事情太難，還是我太快認定自己做不到。"
+    },
+    {
+      "id": "micro-7a5980df9ed2f10a",
+      "decision": "D",
+      "publicContent": "如果會前沒有文件，資訊也沒有先對齊，會議很容易變成即席作答。這也提醒我，面對抽象需求時，要試著把它拆成明確的流程、邏輯和可執行工項。提出方向是一回事，讓參與的人知道下一步怎麼做，也是規劃的一部分。"
+    },
+    {
+      "id": "micro-b66fecaa3574c31a",
+      "decision": "V"
+    }
+  ],
+  "retiredIds": ["micro-b66fecaa3574c31a"],
+  "historyPolicy": "no-tombstone; never-reuse-id"
+}

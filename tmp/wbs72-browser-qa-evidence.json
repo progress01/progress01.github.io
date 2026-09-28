@@ -1,0 +1,92 @@
+{
+  "browser": "Chrome headless via CDP",
+  "checks": [
+    {
+      "label": "dual article appears once in profile",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/",
+          "label": "收錄於：工作與學習・個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "dual article appears once in memory",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/",
+          "label": "收錄於：工作與學習・個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "dual article appears once in all",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/",
+          "label": "收錄於：工作與學習・個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "profile result surface label",
+      "detail": {
+        "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "href": "/learning/ai-question-judgment-order/",
+        "label": "收錄於：工作與學習"
+      }
+    },
+    {
+      "label": "memory result surface label",
+      "detail": {
+        "title": "System Ready...",
+        "href": "/2026/01/21/welcome-board/",
+        "label": "收錄於：個人記憶"
+      }
+    },
+    {
+      "label": "profile+memory result surface label",
+      "detail": {
+        "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "href": "/work/flow-friendly-work-system/",
+        "label": "收錄於：工作與學習・個人記憶"
+      }
+    },
+    {
+      "label": "keyword empty state is distinct",
+      "detail": null
+    },
+    {
+      "label": "filter-only empty state is distinct",
+      "detail": {
+        "source": "learning",
+        "category": "音樂",
+        "month": "all"
+      }
+    },
+    {
+      "label": "rapid retry clicks send one request",
+      "detail": 2
+    }
+  ],
+  "failures": [
+    {
+      "label": "runner",
+      "detail": "Error: Timed out: !document.querySelector('[data-search-retry]') && !document.querySelector('[data-navigation-filter=surface]').disabled\n    at CDP.wait (C:\\Blog\\blog-1988\\tmp\\wbs72-browser-qa.cjs:78:11)\n    at async C:\\Blog\\blog-1988\\tmp\\wbs72-browser-qa.cjs:182:5"
+    }
+  ],
+  "expectedErrors": [
+    {
+      "type": "error",
+      "text": "Error: search index request failed (503)\n    at http://127.0.0.1:8893/js/third-party/search/local-search.js:163:33"
+    },
+    {
+      "type": "error",
+      "text": "Error: search index request failed (503)\n    at http://127.0.0.1:8893/js/third-party/search/local-search.js:163:33"
+    }
+  ],
+  "anchors": {}
+}

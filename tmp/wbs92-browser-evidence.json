@@ -1,0 +1,186 @@
+{
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "routes": {
+    "desktop:/": {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand",
+      "scrollWidth": 1265,
+      "viewport": 1280,
+      "linkCount": 2
+    },
+    "desktop:/profile/": {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page",
+      "scrollWidth": 1265,
+      "viewport": 1280,
+      "linkCount": 1
+    },
+    "mobile:/": {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "linkCount": 2
+    },
+    "mobile:/profile/": {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "linkCount": 1
+    }
+  },
+  "transitions": [
+    {
+      "viewport": 1280,
+      "from": "/",
+      "to": "/profile/",
+      "urlElapsedMs": 76,
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page surface-transition-enter surface-transition-enter--profile",
+      "duration": "0.18s",
+      "opacity": "0.86",
+      "transform": "matrix3d(0.999848, 0, -0.0174524, 1.93916e-05, 0, 1, 0, 0, 0.0174524, 0, 0.999848, -0.00111094, -8, 0, 0, 1)",
+      "at": 66,
+      "intent": null,
+      "scrollWidth": 1265,
+      "finalClass": "main-inner page posts-expand profile-page"
+    },
+    {
+      "viewport": 1280,
+      "from": "/profile/",
+      "to": "/",
+      "urlElapsedMs": 77,
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand surface-transition-enter surface-transition-enter--memory",
+      "duration": "0.18s",
+      "opacity": "0.86",
+      "transform": "matrix3d(0.999848, 0, 0.0174524, -1.93916e-05, 0, 1, 0, 0, -0.0174524, 0, 0.999848, -0.00111094, 8, 0, 0, 1)",
+      "at": 85.60000002384186,
+      "intent": null,
+      "scrollWidth": 1265,
+      "finalClass": "main-inner index posts-expand"
+    },
+    {
+      "viewport": 390,
+      "from": "/",
+      "to": "/profile/",
+      "urlElapsedMs": 77,
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page surface-transition-enter surface-transition-enter--profile",
+      "duration": "0.18s",
+      "opacity": "0.86",
+      "transform": "matrix3d(0.999848, 0, -0.0174524, 1.93916e-05, 0, 1, 0, 0, 0.0174524, 0, 0.999848, -0.00111094, -8, 0, 0, 1)",
+      "at": 65.70000004768372,
+      "intent": null,
+      "scrollWidth": 390,
+      "finalClass": "main-inner page posts-expand profile-page"
+    },
+    {
+      "viewport": 390,
+      "from": "/profile/",
+      "to": "/",
+      "urlElapsedMs": 104,
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand surface-transition-enter surface-transition-enter--memory",
+      "duration": "0.18s",
+      "opacity": "0.86",
+      "transform": "matrix3d(0.999848, 0, 0.0174524, -1.93916e-05, 0, 1, 0, 0, -0.0174524, 0, 0.999848, -0.00111094, 8, 0, 0, 1)",
+      "at": 94.20000004768372,
+      "intent": null,
+      "scrollWidth": 390,
+      "finalClass": "main-inner index posts-expand"
+    }
+  ],
+  "reloads": [
+    {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page"
+    },
+    {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand"
+    },
+    {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page"
+    },
+    {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand"
+    }
+  ],
+  "back": [
+    {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand"
+    },
+    {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page"
+    },
+    {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand"
+    },
+    {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page"
+    }
+  ],
+  "reducedMotion": [
+    {
+      "beforeClickIntent": null
+    },
+    {
+      "pathname": "/profile/",
+      "className": "main-inner page posts-expand profile-page",
+      "duration": "0s",
+      "intent": null
+    }
+  ],
+  "noJs": [
+    "/profile/"
+  ],
+  "keyboard": [
+    "/profile/"
+  ],
+  "modifier": [
+    {
+      "current": {
+        "pathname": "/",
+        "intent": null,
+        "lastClick": {
+          "button": 0,
+          "ctrlKey": true,
+          "target": "A"
+        }
+      },
+      "pagesBefore": 2,
+      "pagesAfter": 3,
+      "pageUrls": [
+        "http://127.0.0.1:8922/profile/",
+        "http://127.0.0.1:8922/",
+        "http://127.0.0.1:8922/"
+      ],
+      "openedProfileTab": true
+    }
+  ],
+  "screenshots": [
+    "C:\\Blog\\blog-1988\\tmp\\wbs92-desktop-profile.png",
+    "C:\\Blog\\blog-1988\\tmp\\wbs92-desktop-memory.png",
+    "C:\\Blog\\blog-1988\\tmp\\wbs92-mobile-profile.png",
+    "C:\\Blog\\blog-1988\\tmp\\wbs92-mobile-memory.png"
+  ],
+  "console": [],
+  "consoleCount": 0
+}

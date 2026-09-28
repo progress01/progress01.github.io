@@ -322,7 +322,7 @@ VALIDATE：檢查主張、資料、測試、格式、限制與副作用
 
 ## 相關工作筆記
 
-- [AI 提問判斷順序｜從情境、目標到診斷、設計與驗證](/learning/ai-question-judgment-order/)：處理如何在 Agent 開始工作前，把情境、目標、限制與暫定假設分開。
+- [向 AI 提問前，先分清楚情境、假設與任務](/learning/ai-question-judgment-order/)：處理如何在 Agent 開始工作前，把情境、目標、限制與暫定假設分開。
 - [Gemini Notebook Agent｜從資料庫到可交付文件的工作流](/learning/gemini-notebook-agent-office-workflow/)：處理資料庫、AI 產出、人工判斷、驗證與交付物之間的流程。
 - [網站品質與軟體測試｜42 天鐵人挑戰學習路徑](/learning/website-quality-testing-roadmap/)：提供測試案例、缺陷、回歸與發布品質的工程語言。
 

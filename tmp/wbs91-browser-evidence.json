@@ -1,0 +1,566 @@
+{
+  "viewports": {
+    "desktop": {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  },
+  "routes": {
+    "desktop:/": {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#f1e4d1",
+        "ink": "#4a3028",
+        "muted": "#6b5547",
+        "border": "#d8c8b4",
+        "accent": "#914a32",
+        "accent-strong": "#79382f",
+        "focus": "#332a25",
+        "shadow": "3px 3px 0 rgba(74,48,40,0.14)"
+      },
+      "card": {
+        "background": "rgb(241, 228, 209)",
+        "color": "rgb(85, 85, 85)",
+        "border": "rgb(216, 200, 180)",
+        "shadow": "none",
+        "rect": {
+          "x": 304.5,
+          "y": 614.421875,
+          "width": 221,
+          "height": 82
+        }
+      },
+      "switch": {
+        "visible": true,
+        "color": "rgb(121, 56, 47)",
+        "background": "rgb(241, 228, 209)",
+        "rect": {
+          "x": 1053.046875,
+          "y": 3,
+          "width": 159.453125,
+          "height": 36
+        }
+      },
+      "marker": null,
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 1280,
+        "scrollWidth": 1265,
+        "bodyScrollWidth": 1265
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    },
+    "desktop:/profile/": {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#e8eef0",
+        "ink": "#263c47",
+        "muted": "#4e626a",
+        "border": "#b8c8cc",
+        "accent": "#326f68",
+        "accent-strong": "#24564f",
+        "focus": "#244f5a",
+        "shadow": "2px 3px 0 rgba(36,63,75,0.1)"
+      },
+      "card": {
+        "background": "rgb(232, 238, 240)",
+        "color": "rgb(38, 60, 71)",
+        "border": "rgb(50, 111, 104)",
+        "shadow": "rgba(36, 63, 75, 0.1) 2px 3px 0px 0px",
+        "rect": {
+          "x": 328.5,
+          "y": 216.4375,
+          "width": 424,
+          "height": 111.984375
+        }
+      },
+      "switch": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 1040.5625,
+          "y": 3,
+          "width": 171.9375,
+          "height": 36
+        }
+      },
+      "marker": null,
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 1280,
+        "scrollWidth": 1265,
+        "bodyScrollWidth": 1265
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    },
+    "desktop:/profile/articles/": {
+      "pathname": "/profile/articles/",
+      "mainClass": "main-inner page posts-expand profile-page profile-articles-page",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#e8eef0",
+        "ink": "#263c47",
+        "muted": "#4e626a",
+        "border": "#b8c8cc",
+        "accent": "#326f68",
+        "accent-strong": "#24564f",
+        "focus": "#244f5a",
+        "shadow": "2px 3px 0 rgba(36,63,75,0.1)"
+      },
+      "card": {
+        "background": "rgb(232, 238, 240)",
+        "color": "rgb(38, 60, 71)",
+        "border": "rgb(50, 111, 104)",
+        "shadow": "rgba(36, 63, 75, 0.1) 2px 3px 0px 0px",
+        "rect": {
+          "x": 336,
+          "y": 161,
+          "width": 424,
+          "height": 111.984375
+        }
+      },
+      "switch": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 1048.0625,
+          "y": 3,
+          "width": 171.9375,
+          "height": 36
+        }
+      },
+      "marker": null,
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 1280,
+        "scrollWidth": 1280,
+        "bodyScrollWidth": 1280
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    },
+    "mobile:/": {
+      "pathname": "/",
+      "mainClass": "main-inner index posts-expand",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#f1e4d1",
+        "ink": "#4a3028",
+        "muted": "#6b5547",
+        "border": "#d8c8b4",
+        "accent": "#914a32",
+        "accent-strong": "#79382f",
+        "focus": "#332a25",
+        "shadow": "3px 3px 0 rgba(74,48,40,0.14)"
+      },
+      "card": {
+        "background": "rgb(241, 228, 209)",
+        "color": "rgb(85, 85, 85)",
+        "border": "rgb(216, 200, 180)",
+        "shadow": "none",
+        "rect": {
+          "x": 8,
+          "y": 1081.125,
+          "width": 374,
+          "height": 82
+        }
+      },
+      "switch": {
+        "visible": true,
+        "color": "rgb(121, 56, 47)",
+        "background": "rgb(241, 228, 209)",
+        "rect": {
+          "x": 222.546875,
+          "y": 119,
+          "width": 159.453125,
+          "height": 42
+        }
+      },
+      "marker": null,
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    },
+    "mobile:/profile/": {
+      "pathname": "/profile/",
+      "mainClass": "main-inner page posts-expand profile-page",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#e8eef0",
+        "ink": "#263c47",
+        "muted": "#4e626a",
+        "border": "#b8c8cc",
+        "accent": "#326f68",
+        "accent-strong": "#24564f",
+        "focus": "#244f5a",
+        "shadow": "2px 3px 0 rgba(36,63,75,0.1)"
+      },
+      "card": {
+        "background": "rgb(232, 238, 240)",
+        "color": "rgb(38, 60, 71)",
+        "border": "rgb(50, 111, 104)",
+        "shadow": "rgba(36, 63, 75, 0.1) 2px 3px 0px 0px",
+        "rect": {
+          "x": 32,
+          "y": 319.4375,
+          "width": 326,
+          "height": 111.984375
+        }
+      },
+      "switch": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 210.0625,
+          "y": 119,
+          "width": 171.9375,
+          "height": 42
+        }
+      },
+      "marker": null,
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    },
+    "mobile:/profile/articles/": {
+      "pathname": "/profile/articles/",
+      "mainClass": "main-inner page posts-expand profile-page profile-articles-page",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#e8eef0",
+        "ink": "#263c47",
+        "muted": "#4e626a",
+        "border": "#b8c8cc",
+        "accent": "#326f68",
+        "accent-strong": "#24564f",
+        "focus": "#244f5a",
+        "shadow": "2px 3px 0 rgba(36,63,75,0.1)"
+      },
+      "card": {
+        "background": "rgb(232, 238, 240)",
+        "color": "rgb(38, 60, 71)",
+        "border": "rgb(50, 111, 104)",
+        "shadow": "rgba(36, 63, 75, 0.1) 2px 3px 0px 0px",
+        "rect": {
+          "x": 32,
+          "y": 264,
+          "width": 326,
+          "height": 111.984375
+        }
+      },
+      "switch": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 210.0625,
+          "y": 119,
+          "width": 171.9375,
+          "height": 42
+        }
+      },
+      "marker": null,
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    },
+    "desktop:/work/flow-friendly-work-system/": {
+      "pathname": "/work/flow-friendly-work-system/",
+      "mainClass": "main-inner post posts-expand",
+      "tokens": {
+        "paper": "#f4f0e6",
+        "base": "#f4f0e6",
+        "panel": "#f5ead9",
+        "ink": "#4a3028",
+        "muted": "#6b5547",
+        "border": "#d8c8b4",
+        "accent": "#914a32",
+        "accent-strong": "#79382f",
+        "focus": "#243d4b",
+        "shadow": "3px 3px 0 rgba(74,48,40,0.1)"
+      },
+      "card": null,
+      "switch": null,
+      "marker": {
+        "color": "rgb(136, 115, 103)",
+        "background": "rgba(0, 0, 0, 0)",
+        "hasRouteClass": false
+      },
+      "thinking": null,
+      "overflow": {
+        "innerWidth": 1280,
+        "scrollWidth": 1265,
+        "bodyScrollWidth": 1265
+      },
+      "pageBackground": "rgb(244, 240, 230)"
+    }
+  },
+  "screenshots": [
+    "C:\\Blog\\blog-1988\\tmp\\wbs91-desktop-memory.png",
+    "C:\\Blog\\blog-1988\\tmp\\wbs91-desktop-profile.png"
+  ],
+  "console": [],
+  "ports": {
+    "http": 8921,
+    "cdp": 9361
+  },
+  "checks": [
+    {
+      "name": "no-horizontal-overflow-desktop-/",
+      "passed": true,
+      "detail": {
+        "innerWidth": 1280,
+        "scrollWidth": 1265,
+        "bodyScrollWidth": 1265
+      }
+    },
+    {
+      "name": "surface-switch-visible-desktop-/",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "color": "rgb(121, 56, 47)",
+        "background": "rgb(241, 228, 209)",
+        "rect": {
+          "x": 1053.046875,
+          "y": 3,
+          "width": 159.453125,
+          "height": 36
+        }
+      }
+    },
+    {
+      "name": "no-horizontal-overflow-desktop-/profile/",
+      "passed": true,
+      "detail": {
+        "innerWidth": 1280,
+        "scrollWidth": 1265,
+        "bodyScrollWidth": 1265
+      }
+    },
+    {
+      "name": "surface-switch-visible-desktop-/profile/",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 1040.5625,
+          "y": 3,
+          "width": 171.9375,
+          "height": 36
+        }
+      }
+    },
+    {
+      "name": "no-horizontal-overflow-desktop-/profile/articles/",
+      "passed": true,
+      "detail": {
+        "innerWidth": 1280,
+        "scrollWidth": 1280,
+        "bodyScrollWidth": 1280
+      }
+    },
+    {
+      "name": "surface-switch-visible-desktop-/profile/articles/",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 1048.0625,
+          "y": 3,
+          "width": 171.9375,
+          "height": 36
+        }
+      }
+    },
+    {
+      "name": "no-horizontal-overflow-mobile-/",
+      "passed": true,
+      "detail": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      }
+    },
+    {
+      "name": "surface-switch-visible-mobile-/",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "color": "rgb(121, 56, 47)",
+        "background": "rgb(241, 228, 209)",
+        "rect": {
+          "x": 222.546875,
+          "y": 119,
+          "width": 159.453125,
+          "height": 42
+        }
+      }
+    },
+    {
+      "name": "no-horizontal-overflow-mobile-/profile/",
+      "passed": true,
+      "detail": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      }
+    },
+    {
+      "name": "surface-switch-visible-mobile-/profile/",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 210.0625,
+          "y": 119,
+          "width": 171.9375,
+          "height": 42
+        }
+      }
+    },
+    {
+      "name": "no-horizontal-overflow-mobile-/profile/articles/",
+      "passed": true,
+      "detail": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      }
+    },
+    {
+      "name": "surface-switch-visible-mobile-/profile/articles/",
+      "passed": true,
+      "detail": {
+        "visible": true,
+        "color": "rgb(36, 86, 79)",
+        "background": "rgb(232, 238, 240)",
+        "rect": {
+          "x": 210.0625,
+          "y": 119,
+          "width": 171.9375,
+          "height": 42
+        }
+      }
+    },
+    {
+      "name": "memory-profile-tokens-distinct",
+      "passed": true,
+      "detail": {
+        "memory": {
+          "paper": "#f4f0e6",
+          "base": "#f4f0e6",
+          "panel": "#f1e4d1",
+          "ink": "#4a3028",
+          "muted": "#6b5547",
+          "border": "#d8c8b4",
+          "accent": "#914a32",
+          "accent-strong": "#79382f",
+          "focus": "#332a25",
+          "shadow": "3px 3px 0 rgba(74,48,40,0.14)"
+        },
+        "profile": {
+          "paper": "#f4f0e6",
+          "base": "#f4f0e6",
+          "panel": "#e8eef0",
+          "ink": "#263c47",
+          "muted": "#4e626a",
+          "border": "#b8c8cc",
+          "accent": "#326f68",
+          "accent-strong": "#24564f",
+          "focus": "#244f5a",
+          "shadow": "2px 3px 0 rgba(36,63,75,0.1)"
+        }
+      }
+    },
+    {
+      "name": "memory-profile-card-panel-distinct",
+      "passed": true,
+      "detail": {
+        "memory": "rgb(241, 228, 209)",
+        "profile": "rgb(232, 238, 240)",
+        "articles": "rgb(232, 238, 240)"
+      }
+    },
+    {
+      "name": "ordinary-article-keeps-neutral-marker",
+      "passed": true,
+      "detail": {
+        "pathname": "/work/flow-friendly-work-system/",
+        "mainClass": "main-inner post posts-expand",
+        "tokens": {
+          "paper": "#f4f0e6",
+          "base": "#f4f0e6",
+          "panel": "#f5ead9",
+          "ink": "#4a3028",
+          "muted": "#6b5547",
+          "border": "#d8c8b4",
+          "accent": "#914a32",
+          "accent-strong": "#79382f",
+          "focus": "#243d4b",
+          "shadow": "3px 3px 0 rgba(74,48,40,0.1)"
+        },
+        "card": null,
+        "switch": null,
+        "marker": {
+          "color": "rgb(136, 115, 103)",
+          "background": "rgba(0, 0, 0, 0)",
+          "hasRouteClass": false
+        },
+        "thinking": null,
+        "overflow": {
+          "innerWidth": 1280,
+          "scrollWidth": 1265,
+          "bodyScrollWidth": 1265
+        },
+        "pageBackground": "rgb(244, 240, 230)"
+      }
+    },
+    {
+      "name": "console-warning-error-exception-zero",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "summary": {
+    "passed": 16,
+    "total": 16
+  },
+  "portsReleased": true
+}

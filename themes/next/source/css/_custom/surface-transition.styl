@@ -1,0 +1,65 @@
+.main-inner.surface-transition-enter.index,
+.main-inner.surface-transition-enter.profile-page {
+  animation: surface-transition-enter 180ms cubic-bezier(.2, .72, .25, 1) both;
+}
+
+@keyframes surface-transition-enter {
+  from {
+    opacity: .86;
+    transform: perspective(900px) translateX(8px) rotateY(-1deg);
+    transform-origin: left center;
+  }
+  to {
+    opacity: 1;
+    transform: perspective(900px) translateX(0) rotateY(0);
+    transform-origin: left center;
+  }
+}
+
+.main-inner.surface-transition-enter--profile.profile-page {
+  animation-name: surface-transition-enter-profile;
+}
+
+@keyframes surface-transition-enter-profile {
+  from {
+    opacity: .86;
+    transform: perspective(900px) translateX(-8px) rotateY(1deg);
+    transform-origin: right center;
+  }
+  to {
+    opacity: 1;
+    transform: perspective(900px) translateX(0) rotateY(0);
+    transform-origin: right center;
+  }
+}
+
+.main-inner.surface-transition-enter--memory.index {
+  animation-name: surface-transition-enter-memory;
+}
+
+@keyframes surface-transition-enter-memory {
+  from {
+    opacity: .86;
+    transform: perspective(900px) translateX(8px) rotateY(-1deg);
+    transform-origin: left center;
+  }
+  to {
+    opacity: 1;
+    transform: perspective(900px) translateX(0) rotateY(0);
+    transform-origin: left center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-inner.surface-transition-enter.index,
+  .main-inner.surface-transition-enter.profile-page {
+    animation: none !important;
+    animation-duration: 0s !important;
+    transition: none !important;
+    transition-duration: 0s !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .main-inner.surface-transition-enter--profile.profile-page,
+  .main-inner.surface-transition-enter--memory.index { animation: none !important; }
+}

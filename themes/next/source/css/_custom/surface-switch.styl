@@ -1,0 +1,71 @@
+/* The surface switch is a real link; animation remains a later progressive enhancement. */
+.surface-switch {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 18px;
+}
+
+.surface-switch-link {
+  display: inline-flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  gap: 7px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  color: var(--surface-accent-strong);
+  background: var(--surface-panel);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--surface-shadow);
+  font: 600 13px/1.5 system-ui, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.surface-switch--memory .surface-switch-cassette::before {
+  content: 'A';
+}
+
+.surface-switch--profile .surface-switch-cassette::before {
+  content: 'B';
+}
+
+.surface-switch-cassette {
+  display: inline-block;
+  box-sizing: border-box;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 24px;
+  position: relative;
+  border: 1px solid var(--surface-accent);
+  border-radius: 3px;
+  background:
+    radial-gradient(circle at 8px 8px, var(--surface-accent-strong) 0 2px, var(--surface-panel) 2.5px 4px, transparent 4.5px),
+    radial-gradient(circle at 26px 8px, var(--surface-accent-strong) 0 2px, var(--surface-panel) 2.5px 4px, transparent 4.5px),
+    linear-gradient(var(--surface-border), var(--surface-border)) 8px 17px / 18px 1px no-repeat,
+    linear-gradient(var(--surface-panel), var(--surface-panel));
+}
+
+.surface-switch--memory .surface-switch-cassette::before,
+.surface-switch--profile .surface-switch-cassette::before {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  color: var(--surface-accent-strong);
+  font: 600 9px/1 system-ui, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  text-align: center;
+}
+
+.surface-switch-link:hover,
+.surface-switch-link:focus-visible {
+  color: var(--surface-accent-strong);
+  background: var(--surface-paper);
+  border-color: var(--surface-accent-strong);
+}
+
+.surface-switch-link:focus-visible {
+  outline: 3px solid var(--surface-focus);
+  outline-offset: 3px;
+}

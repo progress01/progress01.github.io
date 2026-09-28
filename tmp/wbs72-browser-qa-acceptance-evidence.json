@@ -1,0 +1,260 @@
+{
+  "browser": "Chrome headless via CDP",
+  "checks": [
+    {
+      "label": "dual article appears once in profile",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/",
+          "label": "收錄於：工作與學習・個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "dual article appears once in memory",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/",
+          "label": "收錄於：工作與學習・個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "dual article appears once in all",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/",
+          "label": "收錄於：工作與學習・個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "profile result surface label",
+      "detail": {
+        "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "href": "/learning/ai-question-judgment-order/",
+        "label": "收錄於：工作與學習"
+      }
+    },
+    {
+      "label": "memory result surface label",
+      "detail": {
+        "title": "System Ready...",
+        "href": "/2026/01/21/welcome-board/",
+        "label": "收錄於：個人記憶"
+      }
+    },
+    {
+      "label": "profile+memory result surface label",
+      "detail": {
+        "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "href": "/work/flow-friendly-work-system/",
+        "label": "收錄於：工作與學習・個人記憶"
+      }
+    },
+    {
+      "label": "keyword empty state is distinct",
+      "detail": null
+    },
+    {
+      "label": "filter-only empty state is distinct",
+      "detail": {
+        "source": "learning",
+        "category": "音樂",
+        "month": "all"
+      }
+    },
+    {
+      "label": "rapid retry clicks send one request",
+      "detail": 2
+    },
+    {
+      "label": "successful retry retains query and scope results",
+      "detail": {
+        "query": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "surface": "profile",
+        "hrefs": [
+          "/work/flow-friendly-work-system/"
+        ]
+      }
+    },
+    {
+      "label": "article paragraph opens directly",
+      "detail": {
+        "hash": "#nav-213dbd6544b3dd13",
+        "found": true
+      }
+    },
+    {
+      "label": "article paragraph survives reload",
+      "detail": {
+        "hash": "#nav-213dbd6544b3dd13",
+        "found": true
+      }
+    },
+    {
+      "label": "microblog persistent ID opens directly",
+      "detail": {
+        "hash": "#micro-6fb6d85537a4a5ef",
+        "found": true
+      }
+    },
+    {
+      "label": "microblog persistent ID survives reload",
+      "detail": {
+        "hash": "#micro-6fb6d85537a4a5ef",
+        "found": true
+      }
+    },
+    {
+      "label": "learning note ID opens directly",
+      "detail": {
+        "hash": "#reading-topic-15",
+        "found": true
+      }
+    },
+    {
+      "label": "learning note ID survives reload",
+      "detail": {
+        "hash": "#reading-topic-15",
+        "found": true
+      }
+    },
+    {
+      "label": "article page defaults to all",
+      "detail": null
+    },
+    {
+      "label": "pjax success recalculates article scope",
+      "detail": null
+    },
+    {
+      "label": "profile page defaults to profile",
+      "detail": null
+    },
+    {
+      "label": "profile view-state test has a result target",
+      "detail": [
+        {
+          "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "href": "/learning/ai-question-judgment-order/",
+          "label": "收錄於：工作與學習"
+        },
+        {
+          "title": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+          "href": "/learning/agentic-transaction-acid-agent/#nav-c7302a5fa82d52f2",
+          "label": "收錄於：個人記憶"
+        }
+      ]
+    },
+    {
+      "label": "search state does not leak to another URL",
+      "detail": {
+        "query": "",
+        "surface": "all",
+        "open": false
+      }
+    },
+    {
+      "label": "same-URL Back restores search state",
+      "detail": {
+        "query": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "surface": "all",
+        "open": true
+      }
+    },
+    {
+      "label": "same-URL reload restores search state",
+      "detail": {
+        "query": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "surface": "all",
+        "open": true
+      }
+    },
+    {
+      "label": "B default scope is memory",
+      "detail": null
+    },
+    {
+      "label": "clear restores B default",
+      "detail": null
+    },
+    {
+      "label": "keyboard opens search with visible input focus",
+      "detail": {
+        "className": "search-input",
+        "visible": true
+      }
+    },
+    {
+      "label": "keyboard reaches close control with visible focus",
+      "detail": {
+        "tag": "BUTTON",
+        "visible": true
+      }
+    },
+    {
+      "label": "desktop viewport has no horizontal overflow",
+      "detail": {
+        "width": 1280,
+        "document": 1280,
+        "body": 1265
+      }
+    },
+    {
+      "label": "390px viewport has no horizontal overflow",
+      "detail": {
+        "width": 390,
+        "document": 390,
+        "body": 375
+      }
+    },
+    {
+      "label": "console has no unexpected warning/error/exception",
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "expectedErrors": [
+    {
+      "type": "error",
+      "text": "Error: search index request failed (503)\n    at http://127.0.0.1:8897/js/third-party/search/local-search.js:163:33"
+    }
+  ],
+  "anchors": {
+    "article paragraph": {
+      "direct": {
+        "hash": "#nav-213dbd6544b3dd13",
+        "found": true
+      },
+      "reload": {
+        "hash": "#nav-213dbd6544b3dd13",
+        "found": true
+      }
+    },
+    "microblog persistent ID": {
+      "direct": {
+        "hash": "#micro-6fb6d85537a4a5ef",
+        "found": true
+      },
+      "reload": {
+        "hash": "#micro-6fb6d85537a4a5ef",
+        "found": true
+      }
+    },
+    "learning note ID": {
+      "direct": {
+        "hash": "#reading-topic-15",
+        "found": true
+      },
+      "reload": {
+        "hash": "#reading-topic-15",
+        "found": true
+      }
+    }
+  },
+  "console": []
+}

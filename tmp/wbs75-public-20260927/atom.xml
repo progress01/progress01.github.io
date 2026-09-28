@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2026-09-22T04:00:00.000Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>歌曲推薦-沈默是金</title>
+    <link href="http://example.com/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/"/>
+    <id>http://example.com/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/</id>
+    <published>2026-09-22T04:00:00.000Z</published>
+    <updated>2026-09-22T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-af27e50df3f74047" data-navigation-anchor="">      推薦 張國榮 的 沈默是金      <br>      出自專輯 Hot summer      <br>      <a href="https://open.spotify.com/track/5ezpe0WxjrTXSp82nJDnsM?si=f52b6e8a9d3b4dd3" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_沈默是金.webp" alt="張國榮 - 沈默是金 - Hot summer" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05<br>這首是〈海海人生〉的原曲，但其實相較於那一首，我更愛這首。歌詞裡意境與豁達的部分更具體，而不是單純的海海而已。那種經過困難之後，把生活重心放回自己的內心與本分，真的非常引起我的共鳴。再來就是歌手的詮釋了，真誠又平易近人，這首真的給我不少力量。<p id="nav-22d906b59a06d54c" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 張國榮 的 沈默是金
+      &lt;br&gt;
+      出自專輯 Hot summer
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/5ezpe0WxjrTXSp82nJDnsM?si=f52b6e8a9d3b4dd3&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_沈默是金.webp&quot; alt=&quot;張國榮 - 沈默是金 - Hot summer&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="粵語" scheme="http://example.com/tags/%E7%B2%B5%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-海海人生</title>
+    <link href="http://example.com/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/"/>
+    <id>http://example.com/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/</id>
+    <published>2026-09-21T04:00:00.000Z</published>
+    <updated>2026-09-21T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-e8c13c6bc574c25f" data-navigation-anchor="">      推薦 陳盈潔 的 海海人生      <br>      出自專輯 潔聲摯愛      <br>      <a href="https://open.spotify.com/track/3qS3bAtUm7Rtz1Q6L0JjA5?si=6433849d570c4262" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_海海人生.webp" alt="陳盈潔 - 海海人生 - 潔聲摯愛" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05<br>豁達是這首歌給我最深刻的感覺，台語歌的勵志歌曲總有一種獨有的韌性，會有一種既然真的遇到了，那就笑笑乾一杯、繼續面對的感覺。尤其歌手的詮釋方式也像是一個前輩在安慰人一樣，但我現在其實更喜歡原曲的〈沈默是金〉。我想無論困難再怎樣重現，我還是無法用浮沉隨意的心態面對。<p id="nav-bc32562d848939b1" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 陳盈潔 的 海海人生
+      &lt;br&gt;
+      出自專輯 潔聲摯愛
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/3qS3bAtUm7Rtz1Q6L0JjA5?si=6433849d570c4262&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_海海人生.webp&quot; alt=&quot;陳盈潔 - 海海人生 - 潔聲摯愛&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="台語" scheme="http://example.com/tags/%E5%8F%B0%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里山不是一座山（書籍閱讀紀錄）</title>
+    <link href="http://example.com/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/"/>
+    <id>http://example.com/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/</id>
+    <published>2026-09-20T04:00:00.000Z</published>
+    <updated>2026-09-20T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-5240e7368e507052" data-navigation-anchor="">《阿里山不是一座山》從畫家、畫作、照片與地圖出發，讓我重新看一個原本很熟悉的地方。讀完後我才發現，風景畫也可以成為理解一座山的入口。</p><span id="more"></span><h2 id="閱讀歷程" data-navigation-anchor=""><a href="#閱讀歷程" class="headerlink" title="閱讀歷程"></a>閱讀歷程</h2><p id="nav-b2513a2feab5dbcb" data-navigation-anchor="">一開始讀《阿里山不是一座山》，是因為同事推薦。</p><p id="nav-2a54e270c735ab00" data-navigation-anchor="">沒想到實際讀起來比我預期快很多。</p><p id="nav-ba17803ec55eec3d" data-navigation-anchor="">也許是因為阿里山對我來說並不陌生。我去過很多次，甚至自認為知道它大概長什麼樣子。</p><p id="nav-5cbeda280c61b5fa" data-navigation-anchor="">如果現在要我想到阿里山，我大概會想到神木、阿里山小火車、日出、奮起湖，還有散落在附近大大小小的景點。這些東西慢慢拼起來，就成為我腦中的「阿里山」。</p><p id="nav-817375d13adc8ae3" data-navigation-anchor="">至於阿里山在日治時期如何被發現、開發，以及林業如何發展，這些內容以前在社會課本裡多少都看過。只是那些內容對我來說比較像歷史知識，和實際去阿里山旅行時看到的風景，始終沒有真正連在一起。</p><p id="nav-118b4916b8ecf36d" data-navigation-anchor="">《阿里山不是一座山》卻用了另外一個很有趣的入口。</p><p id="nav-2365b2bb5c3ec064" data-navigation-anchor="">它沒有從林業開發、觀光史或地理開始介紹阿里山，而是從曾經走進阿里山的畫家，以及他們留下的畫作出發。</p><p id="nav-2d1dfa39550c5225" data-navigation-anchor="">阿里山的神木、塔山、日出，以及很多今天已經十分熟悉的風景，在過去曾經是某個人實際走進山裡以後，看見、停留，再畫下來的景色。</p><p id="nav-9a502cf52cc0eac3" data-navigation-anchor="">也是從這裡開始，我突然覺得原本很熟悉的阿里山，又變得有點陌生。</p><p id="nav-2b1c7cf4d1846d31" data-navigation-anchor="">這本書讀起來很有趣的一個原因，是它放進了非常多的畫作、素描、照片和地圖。</p><p id="nav-89eac4dc593cbe52" data-navigation-anchor="">所以閱讀時，我不只知道某個畫家去過哪裡，也能一邊看著畫，一邊想像他當時看到的景色。</p><p id="nav-9271244ffebe0810" data-navigation-anchor="">像是神木，書裡不只有畫作，也有照片可以相互對照。</p><p id="nav-702eaf0ebb593426" data-navigation-anchor="">平常在美術館看到風景畫時，我通常會想畫家想畫什麼、光線怎麼處理、構圖怎麼安排，以及畫面裡有哪些值得注意的地方。</p><p id="nav-87ee2a0cb37675a7" data-navigation-anchor="">可是當一幅畫被放回它原本存在的地方之後，感覺又變得不太一樣。</p><p id="nav-318ca278019ae199" data-navigation-anchor="">那棵樹不是一棵想像中的樹，那座山也不是畫家為了構圖所創造出來的山。</p><p id="nav-3521915787fae5b0" data-navigation-anchor="">它就在那裡。</p><p id="nav-dd2bcd72c8e7bdbd" data-navigation-anchor="">畫家曾經真的走到那裡，看過那樣的景色。</p><p id="nav-441fdb937fd18824" data-navigation-anchor="">更有趣的是，這本書沒有只呈現最後完成的畫作。裡面還有很多素描、途中留下來的紀錄，以及畫家為了進入阿里山所經歷的旅程。</p><p id="nav-a914ae8391ec4ff4" data-navigation-anchor="">今天去阿里山，交通已經方便很多；但在那個年代，畫家為了進山，往往必須花上很長時間。</p><p id="nav-8f19bada3fdd83b6" data-navigation-anchor="">當書裡開始交代他是跟誰一起去、走到了哪裡、從什麼位置看到這片風景，再把那時候留下來的素描與最後完成的畫作並排出來時，畫作好像也不再只剩下「作品」本身。</p><p id="nav-6518ca65dac126d1" data-navigation-anchor="">我也很意外地看到，陳澄波留下了不少和阿里山有關的作品。</p><p id="nav-035739d35d47e664" data-navigation-anchor="">以前認識一位畫家時，我常常是從幾件代表作開始。名字和作品出現在課本裡、展覽裡，久了以後反而很容易把「畫家」理解成幾幅固定的名作。</p><p id="nav-15fb65162b90e8ee" data-navigation-anchor="">但是當我看到他也曾經走進阿里山、畫下那些風景時，就會突然感覺到，他並不是只存在於那些被反覆介紹的代表作裡。</p><p id="nav-91649aa21f04003c" data-navigation-anchor="">他也曾經站在山裡，看著眼前的景色，然後決定自己想把什麼留下來。</p><p id="nav-e6b6e70141d5edad" data-navigation-anchor="">這甚至比單純看到一幅名作更有趣。</p><p id="nav-048a493959bf9858" data-navigation-anchor="">我以前花過一些時間，想學著怎麼看畫。</p><p id="nav-f38b218b7c4dfdbb" data-navigation-anchor="">原本也曾經想去看一些風景畫相關的展覽，最後沒有成行。不過讀這本書時反而讓我發現，也許我自己對風景畫的興趣，比原本想像中還多一點。</p><p id="nav-da9b30f580f8c30a" data-navigation-anchor="">只是我好像很需要有人幫我把它們串起來。</p><p id="nav-d74ac0bacf57a071" data-navigation-anchor="">如果眼前只有一張風景畫，旁邊還掛著十張、二十張風景畫，我可能會看構圖、光影和筆觸，但是看完以後不一定真的留下很多東西。</p><p id="nav-42498e848816f84a" data-navigation-anchor="">可是如果有人告訴我：</p><p id="nav-40e515a29e071fd9" data-navigation-anchor="">這張畫是在什麼地方完成的。</p><p id="nav-d9d371f26cff5d74" data-navigation-anchor="">畫家怎麼去到那裡。</p><p id="nav-e4e53b9d5e657651" data-navigation-anchor="">他跟誰一起去。</p><p id="nav-24af8eb19787c5f5" data-navigation-anchor="">那個地方當時又是什麼樣子。</p><p id="nav-e7a87a3dba4f45bd" data-navigation-anchor="">甚至把地圖、照片和途中留下來的素描一起放出來。</p><p id="nav-fdb8ba7ba8ca6e83" data-navigation-anchor="">原本孤立的一張風景畫，就突然開始和周圍的世界產生關係。</p><p id="nav-4bd13120d8cd8ad5" data-navigation-anchor="">而我覺得這就是《阿里山不是一座山》非常吸引我的閱讀方式。</p><h2 id="書籍特色" data-navigation-anchor=""><a href="#書籍特色" class="headerlink" title="書籍特色"></a>書籍特色</h2><p id="nav-fd7772b5e18d0456" data-navigation-anchor="">《阿里山不是一座山》有意思的地方，其實從書名就已經開始了。</p><p id="nav-b321424d0ea6812c" data-navigation-anchor="">阿里山是一座山嗎？</p><p id="nav-40a9181f1f214def" data-navigation-anchor="">好像是，又好像不是。</p><p id="nav-46238a37f30b0f76" data-navigation-anchor="">如果只是從地理上來看，「阿里山」這個我們現在非常熟悉的名字，本來就不是一座單獨存在、可以簡單指出來的山峰。</p><p id="nav-64cc73bbcbdd8e86" data-navigation-anchor="">不同時代的測量、開發、命名與描繪，慢慢形塑了今天我們理解的阿里山。</p><p id="nav-de6f0079218218cd" data-navigation-anchor="">也因此，阿里山的意義從來不只是地理位置而已。</p><p id="nav-7e2a1504c5f59c12" data-navigation-anchor="">當這片山林開始被開發之後，林業產業進入其中；有人從健康、醫療或避暑的角度看待山林；有人把它視為登山與旅行的目的地；不同時代的人又不斷把自己的想像投射到阿里山上。</p><p id="nav-a5a9aa42246322af" data-navigation-anchor="">所以我們今天認識的阿里山，其實一直在被重新命名、開發、觀看與理解。</p><p id="nav-a3a1dd8f4d11fa62" data-navigation-anchor="">它既是產業開發的空間，也是自然風景；同時又是一個不斷被觀看、被理解、被描繪與被再現的文化空間。</p><p id="nav-c4a3720d1499b7d5" data-navigation-anchor="">這本書最有趣的地方，就是它沒有只用文字解釋這件事，而是把曾經走進阿里山的畫家與作品重新整理在一起。</p><p id="nav-c36ae34e76090e71" data-navigation-anchor="">當大量畫作、素描、照片、地圖和史料被放在一起，我們也開始可以看到，不同時代的人究竟怎麼觀看同一片山林。</p><p id="nav-e661c4257f2a7c78" data-navigation-anchor="">有些人看見神木。</p><p id="nav-d696116a9404c635" data-navigation-anchor="">有人注意塔山。</p><p id="nav-ae5fc78d592d6693" data-navigation-anchor="">有人尋找日出。</p><p id="nav-0ef93649d17dffee" data-navigation-anchor="">也有人從一段旅行裡找到自己想留下來的風景。</p><p id="nav-7b5ce92841a927d6" data-navigation-anchor="">因此這些畫並不單單只是對景觀的紀錄。</p><p id="nav-6f0c3a4c20c41ad5" data-navigation-anchor="">它們其實也保存了某一個時間點裡，一個人如何理解眼前這片土地。</p><p id="nav-aab1919b1df39369" data-navigation-anchor="">我覺得這本書另外一個很厲害的地方，就是它對材料的整理。</p><p id="nav-eb7360f00e22caff" data-navigation-anchor="">在導讀裡也有提到，書中的內容大量奠基在畫家經歷、畫作以及歷史資料上。有些人物的內在想法或言談，由於年代久遠，不可能完整留下，所以部分內容仍然需要根據史料進行推測與重建。</p><p id="nav-4a2f798d699f3b59" data-navigation-anchor="">因此，書中的敘述不能全部視為當事人留下的第一手紀錄。但這也讓我更注意到作者和編者整理材料的功夫。</p><p id="nav-7862f6d4fdcfe4aa" data-navigation-anchor="">他們不是只有蒐集「誰畫過阿里山」。</p><p id="nav-5a519df247ccf0ba" data-navigation-anchor="">而是試著把散落在不同地方的畫、資料與人物重新整理起來，再把它們組合成一段可以閱讀的旅程。</p><p id="nav-78e0aeecff20f804" data-navigation-anchor="">如果要自己寫一本這樣的書，我覺得困難的從來不只是找到幾幅漂亮的畫。</p><p id="nav-358910f2c0bef2b0" data-navigation-anchor="">真正困難的是：找到這麼多材料之後，要怎麼知道哪些東西應該被放在一起？怎麼安排讀者看見它們的順序？又要怎麼讓一張畫、一段人物經歷與一個真實存在的地點重新連結？</p><p id="nav-36670db7b6f84d8b" data-navigation-anchor="">這些都是我讀這本書時，除了內容以外，非常想要學習的地方。</p><h2 id="我的感想" data-navigation-anchor=""><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p id="nav-48faa523924a4258" data-navigation-anchor="">讀完以後，我沒有那種「我從這本書得到了一個非常巨大的結論」的感覺。</p><p id="nav-3a9c33339c6246e8" data-navigation-anchor="">但它確實改變了我看風景畫，以及看一個地方的方式。</p><p id="nav-b921f1b23125089a" data-navigation-anchor="">以前學著看畫時，我比較常把注意力放在畫本身。</p><p id="nav-f59dc4b26e46fe05" data-navigation-anchor="">畫家想表達什麼？</p><p id="nav-6fc81fa780f461bc" data-navigation-anchor="">光線是怎麼出現的？</p><p id="nav-a2f92cb1b0a2e963" data-navigation-anchor="">畫面怎麼安排？</p><p id="nav-850fdb68bf1a1292" data-navigation-anchor="">為什麼選擇這個題材？</p><p id="nav-4607d04262c8b3d6" data-navigation-anchor="">可是《阿里山不是一座山》讓我發現，至少對風景畫來說，還有另外一個很有趣的方向。</p><p id="nav-c76511dcc29b42b3" data-navigation-anchor="">那就是畫中的地方真的存在。</p><p id="nav-0496f8967dbec3e1" data-navigation-anchor="">而且這個存在，會讓不同時間的人產生某種奇怪的連結。</p><p id="nav-135e5e198e81effb" data-navigation-anchor="">一百年前，一個畫家可能花了很大的力氣走進阿里山，站在某個地方，看見眼前的神木、山峰或日出。</p><p id="nav-de808e089481e2f2" data-navigation-anchor="">後來他把那片景色畫下來。</p><p id="nav-d52f96eab82033a5" data-navigation-anchor="">多年以後，我可能去過同樣的地方。</p><p id="nav-a864ee1be72bd319" data-navigation-anchor="">又或者我根本沒有站在完全相同的位置，只是在書裡重新看見那幅畫。</p><p id="nav-1b443b0368442507" data-navigation-anchor="">可是當地圖、照片、史料和畫作全部被放在一起時，好像不同時間的人突然又被拉回了同一個空間裡。</p><p id="nav-2ff7da2138589237" data-navigation-anchor="">它甚至不一定要求我們真的抵達現場。</p><p id="nav-59652da14278bc91" data-navigation-anchor="">有時候只是翻著一本書，看著一張畫，知道畫中的景色在什麼地方、畫家曾經怎麼走到那裡，就已經會產生某種接近旅行的感覺。</p><p id="nav-41a4d35df52fa997" data-navigation-anchor="">以前我可能會覺得，一趟旅行總要真的抵達某個地方、看到什麼、得到什麼，才算有意義。</p><p id="nav-75869a4f0e8d0062" data-navigation-anchor="">但這本書好像又讓「抵達一個地方」這件事情變得沒有那麼單純。</p><p id="nav-2896cb986bd3a81b" data-navigation-anchor="">我們可以透過不同人的眼睛，回到一個早就不存在的阿里山。</p><p id="nav-db263491ff7ea865" data-navigation-anchor="">也可以站在今天的阿里山，重新想像以前的人看到的是什麼。</p><p id="nav-a90f38f8739c0470" data-navigation-anchor="">而我最近剛好也看了一些關於企劃、策劃與策展的書，所以讀到後面時，我又忍不住從另外一個角度去看這本書。</p><p id="nav-799b35222df4eacc" data-navigation-anchor="">我很容易先想到：</p><p id="nav-6e78e2bdf7b236ab" data-navigation-anchor="">「我要透過這個展覽讓大家看見什麼？」</p><p id="nav-7be3fb5521bc2e6f" data-navigation-anchor="">「我要傳達什麼理念？」</p><p id="nav-17804b5e6bd5199f" data-navigation-anchor="">「我要讓大家重新認識什麼？」</p><p id="nav-ccd0054905c9a84d" data-navigation-anchor="">這些話當然都沒有錯。</p><p id="nav-8a189be6506d5b5b" data-navigation-anchor="">這本書確實是透過畫家和畫作，帶讀者重新認識阿里山；但真正讓我改變看法的，是它安排材料的方式。</p><p id="nav-0f439c935f3b98cd" data-navigation-anchor="">但我讀完之後反而覺得，「讓大家重新看見阿里山」這個目的，好像可以放得稍微後面一點。</p><p id="nav-cb66fe675e1a6aa6" data-navigation-anchor="">因為真正讓我重新看見阿里山的，並不是這句話本身。</p><p id="nav-ea58899ed790548d" data-navigation-anchor="">而是前面那些非常仔細的安排。</p><p id="nav-8596fc740d404e44" data-navigation-anchor="">哪一張畫被放在這裡。</p><p id="nav-9b1ac1d83056e266" data-navigation-anchor="">旁邊搭配什麼照片。</p><p id="nav-ceae7cf350701d5a" data-navigation-anchor="">哪一段先講畫家，哪一段再回到地理。</p><p id="nav-5e69c8e4cbb9c60d" data-navigation-anchor="">地圖上標出什麼位置。</p><p id="nav-0aa1396c2d064304" data-navigation-anchor="">素描、完成作品和歷史資料又怎麼彼此對照。</p><p id="nav-95c8db2f8729e5d7" data-navigation-anchor="">這些材料被放在一起之後，我才真正產生「原來阿里山還可以這樣看」的感覺。</p><p id="nav-4cbc63b1759a1186" data-navigation-anchor="">所以最近在想企劃的時候，我也慢慢覺得，也許一個好的策劃不只是先想出一句很厲害的目的，再想辦法證明自己達成了它。</p><p id="nav-7153ab1fac04f8ad" data-navigation-anchor="">很多時候，真正重要的事情反而是在中間。</p><p id="nav-a6ee002aefbbbdeb" data-navigation-anchor="">你找了什麼材料。</p><p id="nav-2f5e4796736f38fd" data-navigation-anchor="">捨棄了什麼。</p><p id="nav-dbf66bbe60009d16" data-navigation-anchor="">哪些東西被放在一起。</p><p id="nav-d0a97185850d2e9c" data-navigation-anchor="">怎麼讓彼此原本沒有關係的資訊開始產生關係。</p><p id="nav-70f868012491ed92" data-navigation-anchor="">最後讀者才可能自己走到那個你原本希望他看見的地方。</p><p id="nav-3d330307bc4e896e" data-navigation-anchor="">如果把《阿里山不是一座山》想像成一個展覽，我應該也會非常有興趣。</p><p id="nav-87f01b0084e5db50" data-navigation-anchor="">但它變成一本書之後，又有另外一種有趣。</p><p id="nav-52cadd341678fadf" data-navigation-anchor="">我可以停下來，在畫作和地圖之間來回看；也可以翻回前面的照片，再去確認某個地方到底在哪裡。</p><p id="nav-2a984e1e0da31d17" data-navigation-anchor="">它讓我可以在材料之間反覆移動，不必只按照單一路線讀下去。</p><p id="nav-d4ecf809f4754f8c" data-navigation-anchor="">也正是這樣，我才慢慢感覺到，這本書真正整理的或許不只是阿里山的畫作。</p><p id="nav-aceb203c86af1a46" data-navigation-anchor="">它整理的是很多人觀看阿里山的方法。</p><h2 id="小小總結" data-navigation-anchor=""><a href="#小小總結" class="headerlink" title="小小總結"></a>小小總結</h2><p id="nav-992bdcc1dde4b7e3" data-navigation-anchor="">看完《阿里山不是一座山》，我其實沒有突然得到一套全新的阿里山知識。</p><p id="nav-b987f876ee37932b" data-navigation-anchor="">神木還是神木，小火車還是小火車，日出也還是在那裡。</p><p id="nav-a92d3f295be2ef44" data-navigation-anchor="">但原本我腦中由景點拼湊起來的阿里山，好像多出了另外一個維度。</p><p id="nav-c8c7df6002e6a04a" data-navigation-anchor="">它曾經被開發、被命名、被旅行，也不斷被觀看。</p><p id="nav-b60af9e1102d7a91" data-navigation-anchor="">而曾經有一群人真的走進山裡，站在不同地方，把自己所看到的阿里山畫了下來。</p><p id="nav-45b3180d88f84532" data-navigation-anchor="">多年以後，這些畫作又和照片、素描、地圖與歷史資料重新被整理在一本書裡。</p><p id="nav-6c0a772ace2c5259" data-navigation-anchor="">於是我們今天仍然可以沿著那些留下來的東西，再走一次當時的阿里山。</p><p id="nav-44c0377fe3b8b3e8" data-navigation-anchor="">我以前可能會覺得風景畫就是風景畫。</p><p id="nav-ec9cda4c65598684" data-navigation-anchor="">但現在會開始覺得，一幅風景畫有趣的不只是在它畫得好不好、光影漂不漂亮。</p><p id="nav-9ed7a2334c29d7e9" data-navigation-anchor="">它也可能是一個入口。</p><p id="nav-33b01ce3da8cc0a6" data-navigation-anchor="">讓今天的我，和很久以前站在同一片山林裡的人，在不同時間裡看見同一個地方。</p><p id="nav-e5750280141e03a2" data-navigation-anchor="">而一本書能把原本散落的這些入口全部整理起來，最後讓我自己產生「原來還可以這樣看阿里山」的感覺，大概就是我最喜歡《阿里山不是一座山》的地方。</p><p id="nav-6489048b5b4bcc03" data-navigation-anchor=""><img src="/images/book_%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1.webp" alt="《阿里山不是一座山》書籍封面"><br><em>(圖片來源：博客來網路書店)</em></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;《阿里山不是一座山》從畫家、畫作、照片與地圖出發，讓我重新看一個原本很熟悉的地方。讀完後我才發現，風景畫也可以成為理解一座山的入口。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="閱讀與影視" scheme="http://example.com/categories/%E9%96%B1%E8%AE%80%E8%88%87%E5%BD%B1%E8%A6%96/"/>
+    
+    
+    <category term="閱讀心得" scheme="http://example.com/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>沖繩旅行的兩個時空?</title>
+    <link href="http://example.com/learning/okinawa-trip-two-times/"/>
+    <id>http://example.com/learning/okinawa-trip-two-times/</id>
+    <published>2026-09-19T04:00:00.000Z</published>
+    <updated>2026-09-20T23:39:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="沖繩的兩個時空"><a href="#沖繩的兩個時空" class="headerlink" title="沖繩的兩個時空"></a>沖繩的兩個時空</h1><p id="nav-10f2ae17def5a4ee" data-navigation-anchor="">這是我第一次去沖繩。出發以前，我對沖繩其實沒有太多複雜的想像，大概就是海、水族館、美國村、Shisa，還有一個和日本本島有點不太一樣的觀光地。這次也是跟團，所以很多時候就是坐著遊覽車移動，導遊講到什麼，不熟的地方我就順手拿手機查一下，本來也沒有想過自己會一路查到這麼深。</p><p id="nav-6ef5a16ebd176a4a" data-navigation-anchor="">其中一個地方是前田高地。</p><h2 id="前田高地" data-navigation-anchor=""><a href="#前田高地" class="headerlink" title="前田高地"></a>前田高地</h2><p id="nav-48859e35d071b885" data-navigation-anchor="">一開始真的只是想知道前田高地是什麼，後來才知道這裡和沖繩戰役、《鋼鐵英雄》裡的故事有關，再繼續看，又會碰到更早以前的浦添城和琉球歷史。那時候很有趣的是，本來遊覽車經過的只是一個地名，可是一旦開始查它在戰爭中的位置，原本只是山坡、懸崖和道路的地方，好像突然有了另外一套解讀方式。為什麼這裡這麼難攻、日軍怎麼防守、美軍怎麼往前推進，一個山頭守了多久，都會開始和後面的戰局連在一起。</p><p id="nav-75e17434649fe47a" data-navigation-anchor="">我好像也是從這裡開始一直往下問。前面比較像是在理解發生過什麼，後來慢慢開始變成，如果不是這樣呢？如果前田高地沒有守這麼久，如果採取的是不同的防守方法，如果美軍更早突破，甚至其中一兩個決定改變了，後面的歷史會不會跟著變化。我後來回頭看，覺得自己當時其實很著迷於這條 IF 的線，因為我們平常看到歷史，看到的通常都是已經發生完的東西。時間線排好以後，很容易覺得事情本來就是這樣一路走下來，這場戰役結束，接著下一場，最後戰爭結束，世界變成現在這個樣子。</p><p id="nav-e672e7b9e329b321" data-navigation-anchor="">可是開始問「如果」以後，那種理所當然的感覺就會鬆掉。對當時的人來說，他們根本不知道接下來會發生什麼，現在被寫成幾行文字的戰役，在那個時間裡其實是一大堆人的判斷、命令、選擇和偶然慢慢疊起來的結果。現在回頭看會覺得是一條線，只是因為我們已經知道終點在哪裡。</p><p id="nav-2a2da2aa420be125" data-navigation-anchor="">我原本大概只是覺得這種歷史推演很有趣，可是問到後來，我突然發現前面看了那麼多東西，好像全部都在談軍隊。我一直在看誰攻下哪裡、哪個防線撐了多久、什麼戰術有效、如果戰役提早結束會發生什麼，但那些原本住在這裡的人，好像一直沒有出現在我的問題裡。</p><p id="nav-a2c6b849e309cc0c" data-navigation-anchor="">這件事讓我有點停下來。因為一旦把平民放回去，前面看到的很多東西好像突然就不是同一回事。對軍隊來說是地形、是防線、是洞穴和補給路線的地方，原本其實是別人的家。對一個住在那裡的人來說，他沒有什麼戰略目標，也不是為了哪一場戰役而存在，他可能只是剛好住在這裡，然後戰爭來了。</p><p id="nav-678e04c99daf8a4b" data-navigation-anchor="">以前當然也知道戰爭很殘酷，會死人、會受傷、會失去家園，這些事情本來就知道。可是那時候一邊查，一邊把普通人重新放進那些場景裡，感覺又變得很不一樣。軍隊至少還有進攻、撤退、防守、任務這些戰爭裡的語言，但平民很多時候連「不參加」都沒有辦法真正選擇。這也讓我前面那些 IF 開始有了另外一種重量，原本是在想如果一個戰術改變了，戰局會怎樣；後來會忍不住想到，如果戰爭早一點往另外一個方向發展，是不是有些人其實不用死，是不是有些原本只是想躲開戰火的人，不會又被捲進下一段戰爭裡。</p><p id="nav-05ee1419234b34e8" data-navigation-anchor="">當時我沒有真的得到什麼答案，只是越查越覺得沉重，而且很奇怪的是，旅行還是在往前走。</p><h2 id="兩個時空" data-navigation-anchor=""><a href="#兩個時空" class="headerlink" title="兩個時空"></a>兩個時空</h2><p id="nav-d7cc76c71a5f012d" data-navigation-anchor="">我記得後來走到海邊的時候，腦袋裡還停在前面查到的那些事情，可是眼前就是一片很普通、也很好看的海。有人散步、有人旅遊，行程還是在進行，等等還是要去下一個地方。那種感覺其實很奇怪，因為前幾十分鐘腦袋裡還全部都是戰爭、撤退、死亡和平民，可是眼前的沖繩卻非常平靜。</p><p id="nav-88e1ed8ab376c7ca" data-navigation-anchor="">我當時有一種好像同時看到兩個時空的感覺。一個是剛剛一路查進去的沖繩，另一個則是眼前正在正常生活的沖繩。一開始我會覺得那個落差很大，甚至有一點不知道怎麼調整，剛剛那些事情如果真的發生在這片土地上，為什麼現在可以這麼普通？可是後來又覺得，這個問題本身可能也有點奇怪，因為一個地方發生過很沉重的事情，並不代表住在這裡的人就應該永遠維持在那個沉重裡。</p><p id="nav-f3b3883a19344cf4" data-navigation-anchor="">後來去海生館的時候，這種感覺又更明顯。巨大水槽、魚群、小孩、遊客，大家都在拍照，那完全就是我原本想像中的沖繩，很漂亮、很適合觀光，也很輕鬆。可是到那時候，我已經沒有辦法只把它看成原本那個樣子了。不是因為這些東西變得不真實，反而是我開始覺得，這些也是真實的一部分。戰爭是真的，現在的平靜也是真的；有人曾經在這片土地上逃難是真的，現在有人住在附近、上下班、帶小孩出門也是真的。</p><p id="nav-e2c1ce596dac1004" data-navigation-anchor="">我後來好像是在這裡開始對「什麼才是真實的沖繩」這件事有點困惑。如果只是旅遊，很容易看到現在被整理出來給觀光客看的沖繩；如果只看歷史，又很容易讓整個沖繩只剩下戰爭和創傷。可是當兩個東西同時放在眼前，好像哪一邊都不能拿掉。</p><p id="nav-f717c5553a6f1ee4" data-navigation-anchor="">也是從這裡，我開始往後查戰爭結束之後的沖繩。以前知道沖繩和美軍基地有關，也知道美國文化對這裡有很深的影響，但那些東西在我腦袋裡其實都是分開的。這趟旅行裡看到的美國村、基地、美式餐廳、琉球文化、觀光景點，本來也都是一個一個獨立的東西，可是把戰後的時間放進來以後，它們開始慢慢連在一起。</p><p id="nav-aae3c7a07851eacf" data-navigation-anchor="">戰爭結束之後並不是一切直接回到原本的樣子，後來還有美國統治、基地、土地和城市的改變，再一路走到我現在看到的沖繩。我那時候很強烈地覺得，現在的沖繩並不是把過去清乾淨之後重新蓋起來的，比較像是一直在重組。琉球留下來的東西、日本留下來的東西、戰爭造成的破壞、美國統治留下來的文化和空間，後來又再加上觀光、商業和現在人的生活，它們其實沒有很整齊地分開，有些甚至就直接靠在一起。</p><p id="nav-5391c746d4c44c11" data-navigation-anchor="">也就是到這裡，我才慢慢想到「縫合」這個詞。時間好像一直把不同時期的沖繩縫在一起，可是縫線又沒有真的消失。有時候還是看得到，一邊是觀光區，一邊是基地；一個地方曾經是戰場，現在卻只是普通的公園或住宅。這些東西放在一起的時候其實有點不協調，可是那種不協調反而讓我覺得很真實。我原本可能會想知道哪一個才算真正的沖繩，可是後來反而覺得，可能就是因為每一個都是真的，所以才會這麼複雜。</p><h2 id="離開沖繩" data-navigation-anchor=""><a href="#離開沖繩" class="headerlink" title="離開沖繩"></a>離開沖繩</h2><p id="nav-d032bebb7aef7410" data-navigation-anchor="">旅行快結束的時候，我又開始注意到到處都看得到的 Shisa。不知道為什麼，我那時候一直想到金門的風獅爺。我去過金門，也記得那邊的風真的很大，所以風獅爺「鎮風」這件事情很直觀。沖繩的風沒有給我同樣的感覺，但兩個地方都留下了這種獅子的形象，又都各自經過很多不同的歷史和文化變化。當時我其實也沒有真的想出它們之間有什麼很完整的關係，只是突然覺得很有趣。</p><p id="nav-6c4dd8ed3dd58cf3" data-navigation-anchor="">可能也是從那個時候開始，我在想一趟旅行最後到底會帶走什麼。如果只是去過哪裡、吃了什麼、買了什麼，那些當然也都是旅行的一部分，可是這次最一直留在我腦袋裡的，反而是在遊覽車上拿著手機一路查下去的那段時間。原本只是想知道前田高地是什麼，後來看戰爭、看戰役，一直問如果，又突然發現自己忘記了平民，再從那些事情裡抬頭，看見一片非常平靜的海。</p><p id="nav-2765248b7e363aee" data-navigation-anchor="">那個落差一直留著。</p><p id="nav-17be54841bac1b96" data-navigation-anchor="">後來我會覺得沖繩是一個很有深度的地方，好像也不是因為它有很多歷史景點，或只是因為它經歷過戰爭。比較像是我第一次感覺到，一個地方現在的樣子，其實有很多時間一起疊在裡面。那些事情並沒有因為戰爭結束就完全離開，它們可能變成道路、基地、城市的樣子、飲食、文化，也可能變成紀念館和解說牌；還有更多時候，它們就只是變成日常的一部分，住在這裡的人甚至不會一直去想。</p><p id="nav-b0405a2e10900238" data-navigation-anchor="">以前我可能會覺得，如果一段歷史很重要，就應該一直被記得。可是這次旅行之後，我開始覺得這件事情好像也沒有那麼簡單。對住在這裡的人來說，能夠把注意力放回工作、家庭、塞車、晚餐、假日要去哪裡，可能本身就是時間往前走的一部分。我不太想替沖繩下結論說它已經療癒，也不覺得可以簡單地說大家已經放下，那都是一個短暫旅行的人沒有辦法替別人回答的事情。</p><p id="nav-99876c9b91f71018" data-navigation-anchor="">只是這趟旅行第一次讓我感覺到，平靜和歷史好像並不是互相排斥的。現在的日常不是因為過去不重要才存在，它反而可能就是過去經過很長一段時間之後，留下來的其中一種樣子。</p><p id="nav-9a7bb63f76803bf1" data-navigation-anchor="">所以這趟沖繩最後到底讓我帶走什麼，我現在還是沒有一個很完整的答案。但我好像開始會在看到一個地方的時候，多想一點它是怎麼走到現在的，那些曾經斷掉的東西怎麼接回來，不同時間留下來的痕跡又怎麼和現在的人一起生活。</p><p id="nav-eb3eaa2216a4465d" data-navigation-anchor="">我到現在還是會想到，當那些直接的困難已經過去之後，一個人要怎麼待在現在，才不會把那些事情完全忘記。</p><p id="nav-8a856430f11e0eaf" data-navigation-anchor="">這個問題我還沒有答案，但它大概就是我第一次去沖繩之後，真正留下來的東西。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;沖繩的兩個時空&quot;&gt;&lt;a href=&quot;#沖繩的兩個時空&quot; class=&quot;headerlink&quot; title=&quot;沖繩的兩個時空&quot;&gt;&lt;/a&gt;沖繩的兩個時空&lt;/h1&gt;&lt;p id=&quot;nav-10f2ae17def5a4ee&quot; data-navigation-anchor=&quot;</summary>
+      
+    
+    
+    
+    <category term="生活紀錄" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="生活回顧" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
+    
+    <category term="旅行" scheme="http://example.com/tags/%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-繁華攏是夢</title>
+    <link href="http://example.com/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/"/>
+    <id>http://example.com/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/</id>
+    <published>2026-09-18T04:00:00.000Z</published>
+    <updated>2026-09-18T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-5fac8d02f163823c" data-navigation-anchor="">      推薦 陳美鳳 和 伍浩哲 的 繁華攏是夢      <br>      出自同名專輯 繁華攏是夢      <br>      <a href="https://open.spotify.com/track/72V7sBDbyO4cRSsNd4kMFF?si=cf32833b42d14d96" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_繁華攏是夢.webp" alt="陳美鳳 和 伍浩哲 - 繁華攏是夢 - 同名專輯" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05<br>這首我真的很猶豫要怎樣介紹，從盧廣仲的翻唱到原唱我都非常喜歡，我覺得他營造出了一種屬於台語歌特有的感覺，哀而不怨（比較偏向於造化弄人），但實際上要怎樣解讀歌詞我仍然有點困惑，我想是一種特殊的緣盡與餘地吧？無論是對唱或自言自語，風吹一山過一山，吹不透心底的孤單，但既然曾有過繁華，落幕成空也就不必成怨。<p id="nav-3bb89a16d90061e8" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 陳美鳳 和 伍浩哲 的 繁華攏是夢
+      &lt;br&gt;
+      出自同名專輯 繁華攏是夢
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/72V7sBDbyO4cRSsNd4kMFF?si=cf32833b42d14d96&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_繁華攏是夢.webp&quot; alt=&quot;陳美鳳 和 伍浩哲 - 繁華攏是夢 - 同名專輯&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="台語" scheme="http://example.com/tags/%E5%8F%B0%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼</title>
+    <link href="http://example.com/work/from-real-work-to-features/"/>
+    <id>http://example.com/work/from-real-work-to-features/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:12:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-f5723ef8990d7e31" data-navigation-anchor="">資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。</p><span id="more"></span><p id="nav-76342bde05494c9e" data-navigation-anchor="">這個系列從一個問題開始：我想替一套「會議知識庫」找功能。直覺上，我可能會先問：「希望它有哪些功能？」但這個問題太抽象，最後很容易得到「整理重點、協助分析」之類的答案，卻仍然不知道系統到底要幫我完成哪個工作。</p><p id="nav-2deabca62e3ef35c" data-navigation-anchor="">我現在比較信任的順序是：</p><blockquote><p id="nav-52c401ecc6880c0d" data-navigation-anchor=""><strong>真實工作情境 → 想得到的結果 → 系統要做的動作 → 再命名成功能。</strong></p></blockquote><p id="nav-262345a1c4365911" data-navigation-anchor="">例如，不先問「會議知識庫要有哪些功能」，而是先放入一個即將發生的任務：我下週要準備一場改版會議，過去的會議資料能不能告訴我，主管可能追問什麼、我還缺哪些資料、會前應該準備什麼產物？</p><p id="nav-25dd552248dbaea2" data-navigation-anchor="">等幾個情境都得到類似輸出，再往上抽象出「會前完整度檢查」、「主管追問模擬」、「權責邊界檢查」或「交付物檢查」等功能。</p><h2 id="先不要急著相信既有分類" data-navigation-anchor=""><a href="#先不要急著相信既有分類" class="headerlink" title="先不要急著相信既有分類"></a>先不要急著相信既有分類</h2><p id="nav-b85d81e442c5fa04" data-navigation-anchor="">原本我曾經整理出四個審查面向：角色與權責、底層架構與前台呈現、時程與緩衝、實體交付物。我先把它們當作假說，但不應一開始就規定所有案例必須塞進這四格。</p><p id="nav-3928ea0a4a907861" data-navigation-anchor="">面對還不知道自己不知道什麼的問題，如果過早固定分類，可能只是把未知內容排除在外。比較好的第一輪問題是：</p><ul><li id="nav-66423ae9895d4299" data-navigation-anchor="">主管在哪裡主動追問、打斷或修正？</li><li id="nav-6664df8532bceb24" data-navigation-anchor="">原本的回答少了哪一步？</li><li id="nav-e796c92f60cde916" data-navigation-anchor="">哪些地方被要求補資料、清單、時程或具體產物？</li><li id="nav-115086d76145899b" data-navigation-anchor="">哪些事情其實涉及別人的決策權？</li><li id="nav-624d6843302eb502" data-navigation-anchor="">哪些新發現無法歸入既有分類？</li></ul><p id="nav-87234ae304185030" data-navigation-anchor="">案例累積後，再回頭看原本的四個面向是否仍然站得住腳。</p><h2 id="從實際案例先抓四種東西" data-navigation-anchor=""><a href="#從實際案例先抓四種東西" class="headerlink" title="從實際案例先抓四種東西"></a>從實際案例先抓四種東西</h2><p id="nav-903e09b6cf982788" data-navigation-anchor="">一個會議片段先不要急著命名成理論，只記錄四件事：</p><ol><li id="nav-43cb5dc682eafc99" data-navigation-anchor=""><strong>衝突或質問片段</strong>：主管在哪裡停下來問「為什麼」或「誰決定」？</li><li id="nav-783106f6c3372ac0" data-navigation-anchor=""><strong>隱性標準</strong>：這個追問背後是在意效益、權責、資料來源、時程還是風險？</li><li id="nav-c19c874fde6ef55e" data-navigation-anchor=""><strong>下次自檢問題</strong>：下一次在會前，我可以先問自己什麼？</li><li id="nav-dd972fee8670e18c" data-navigation-anchor=""><strong>可拿出的產物</strong>：答案要變成對照表、清單、時程、POC、決策紀錄，還是工程確認？</li></ol><p id="nav-71e235d013a9ea5d" data-navigation-anchor="">這條鏈能把逐字稿從「發生過的對話」變成可以重複使用的工作資產：</p><blockquote><p id="nav-cd67f8e79d7b175d" data-navigation-anchor=""><strong>衝突片段 → 隱性標準 → 會前問題 → 準備產物。</strong></p></blockquote><h2 id="第一版只驗證一件事" data-navigation-anchor=""><a href="#第一版只驗證一件事" class="headerlink" title="第一版只驗證一件事"></a>第一版只驗證一件事</h2><p id="nav-894e0e55216820a4" data-navigation-anchor="">一開始不用建立完整的專案管理百科。第一版只要測試：</p><blockquote><p id="nav-218dec5672e4b547" data-navigation-anchor=""><strong>下一次進會議以前，它能不能告訴我少準備了什麼？</strong></p></blockquote><p id="nav-238560d162d118ff" data-navigation-anchor="">輸入可以是會議目的、目前已知資訊與預計報告內容；輸出則先限制在五項：可能被追問的地方、目前缺少的資料、建議準備的產物、哪些可以承諾、哪些必須標示待確認。</p><p id="nav-b50dcd8eb87f17b4" data-navigation-anchor="">如果這個流程能讓我更早看到缺口，再逐步加入模擬提問、應對範本與專案判斷模型。這樣功能是從真實工作長出來的，而不是先做出一個漂亮的分類，再想辦法找用途。</p><h2 id="暫時留下的原則" data-navigation-anchor=""><a href="#暫時留下的原則" class="headerlink" title="暫時留下的原則"></a>暫時留下的原則</h2><ul><li id="nav-a6af586a1672361d" data-navigation-anchor="">不先問抽象功能，先放入真實任務。</li><li id="nav-6a1ed9b7570b4476" data-navigation-anchor="">不把第一版分類當成真理，讓案例反過來修正分類。</li><li id="nav-3f4ecc3ea91092ed" data-navigation-anchor="">不把資料整理本身當成果，要追問它支援哪個決定。</li><li id="nav-db98f3e9809bff9b" data-navigation-anchor="">不只保存答案，也保存「原來少想了哪一步」。</li><li id="nav-607cbe1d37850cad" data-navigation-anchor="">先驗證一個最小工作價值，再擴張成完整工具。</li></ul><p id="nav-9d6f51b0084bb334" data-navigation-anchor="">這篇目前只記錄問題的起點。後面還要處理的是：有了兩場逐字稿之後，怎麼把其中的追問分辨成通則、候選規則與單次情境。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-1d2a840655b3fc97" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第一篇文章，先記錄「從實際工作抽象成功能」的起點與第一版驗證目標。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="http://example.com/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="http://example.com/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言</title>
+    <link href="http://example.com/work/pm-sa-foundation-map/"/>
+    <id>http://example.com/work/pm-sa-foundation-map/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:18:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-73de18bb8d7f3b58" data-navigation-anchor="">開始學 WBS、Dependency 等詞後，我才發現自己需要先補上 PM／SA 的基本語言。</p><span id="more"></span><p id="nav-06c54fc3b471d2d6" data-navigation-anchor="">這不是證明自己完全沒有 PM 能力，而是我其實做過一些工作，只是以前沒有用一套共同詞彙把它們連在一起。</p><h2 id="先記住一條骨架" data-navigation-anchor=""><a href="#先記住一條骨架" class="headerlink" title="先記住一條骨架"></a>先記住一條骨架</h2><p id="nav-44292ece94217e8e" data-navigation-anchor="">我現在需要的不是一次讀完完整的專案管理理論，而是一條能對應手上工作的骨架：</p><blockquote><p id="nav-b8a052c32abfa94f" data-navigation-anchor=""><strong>任務 → Scope → WBS → Dependency → Milestone → Deliverable／DoD → Gantt → Risk。</strong></p></blockquote><ul><li id="nav-95bcfd0b7463936e" data-navigation-anchor=""><strong>Scope／範疇</strong>：這次到底做什麼、不做什麼？</li><li id="nav-c749d6be72b98572" data-navigation-anchor=""><strong>WBS／工作分解結構</strong>：要完成它，工作必須拆成哪些塊？</li><li id="nav-5bdccfbc352f2857" data-navigation-anchor=""><strong>Dependency／相依性</strong>：哪件事沒有完成，後面就不能安全開始？</li><li id="nav-cbe70eeea9ca0c68" data-navigation-anchor=""><strong>Milestone／里程碑</strong>：哪個關鍵節點完成，代表專案進到下一段？</li><li id="nav-d25236ad87aba105" data-navigation-anchor=""><strong>Deliverable／交付物</strong>：最後要拿出什麼東西？</li><li id="nav-7dd67eaf760952b5" data-navigation-anchor=""><strong>DoD／完成標準</strong>：做到什麼程度才算真的完成？</li><li id="nav-3449f5f520b80017" data-navigation-anchor=""><strong>Gantt／甘特圖</strong>：這些工作什麼時候做、做多久、誰先誰後？</li><li id="nav-d996f12e98e466c5" data-navigation-anchor=""><strong>Risk／風險</strong>：什麼事情可能讓計畫出問題？</li></ul><p id="nav-23d989a728d5ff30" data-navigation-anchor="">最容易混淆的是 WBS 和 Gantt：</p><blockquote><p id="nav-0627d531450019a3" data-navigation-anchor=""><strong>WBS 是拆事情；Gantt 是排事情。</strong></p></blockquote><p id="nav-6d8c9029b904d2ef" data-navigation-anchor="">如果 WBS 沒有把盤點、規格、確認和資料準備拆出來，甘特圖就算畫得很漂亮，也只是很精準地安排一份漏東漏西的計畫。</p><h2 id="再接上責任與決策" data-navigation-anchor=""><a href="#再接上責任與決策" class="headerlink" title="再接上責任與決策"></a>再接上責任與決策</h2><p id="nav-72fc6cb53cb5ab6c" data-navigation-anchor="">有了工作骨架，下一層才是：</p><ul><li id="nav-3fa8de8d0203a58d" data-navigation-anchor=""><strong>Owner</strong>：誰負責把工作推到完成？</li><li id="nav-bd4a0e43bbb997cb" data-navigation-anchor=""><strong>Stakeholder</strong>：誰會受影響、提供條件或做決定？</li><li id="nav-13df83ad01ed46a6" data-navigation-anchor=""><strong>Sign-off</strong>：誰有權正式確認可以往下走？</li><li id="nav-bc46a9d284ed0e81" data-navigation-anchor=""><strong>Change Management</strong>：既有範疇或資產變更時，如何記錄理由、影響與核准？</li><li id="nav-f695a95db56e3d6d" data-navigation-anchor=""><strong>Requirement</strong>：使用者或業務真正需要什麼？</li><li id="nav-bbd428ff54999d89" data-navigation-anchor=""><strong>Implementation</strong>：系統用什麼技術方式實現？</li><li id="nav-804441d95a519826" data-navigation-anchor=""><strong>SA</strong>：把問題、角色、資料與需求整理到足以讓工程團隊實作與驗證。</li></ul><p id="nav-66cd52e2a49e87ab" data-navigation-anchor="">這些詞不是一張張獨立的名詞卡。它們彼此有順序：先知道範疇，才知道要拆哪些工作；知道工作與相依性，才排得出時程；知道決策者與完成標準，才知道何時可以往下一步走。</p><h2 id="用一個小四格開始練" data-navigation-anchor=""><a href="#用一個小四格開始練" class="headerlink" title="用一個小四格開始練"></a>用一個小四格開始練</h2><p id="nav-98834812dbbdfc02" data-navigation-anchor="">每拿到一個新任務，可以先寫：</p><table><thead><tr><th>問題</th><th>先填什麼</th></tr></thead><tbody><tr><td>這次要做什麼決定？</td><td>例如某功能是否保留、某變更是否執行</td></tr><tr><td>做決定需要什麼證據？</td><td>使用者情境、流量、既有資料、工程限制</td></tr><tr><td>證據從哪裡取得？</td><td>自己查、工程師提供、客戶確認或主管決策</td></tr><tr><td>最後要形成什麼產物？</td><td>比較表、Mapping、規格、時程、POC 或決策紀錄</td></tr></tbody></table><p id="nav-dc1386eb54e07454" data-navigation-anchor="">這四格可以把「資料整理」往前推一步：資料不是成果本身，而是用來支撐判斷；整理也不是把所有東西收在一起，而是先知道最後要做哪個決定。</p><h2 id="建議的學習順序" data-navigation-anchor=""><a href="#建議的學習順序" class="headerlink" title="建議的學習順序"></a>建議的學習順序</h2><p id="nav-31c6822ac46e8fd4" data-navigation-anchor="">我目前會先按照以下順序補：</p><ol><li id="nav-3e13a096de93d32c" data-navigation-anchor=""><strong>專案基本語言</strong>：Scope、Requirement、Deliverable、Owner。</li><li id="nav-85713cb1340c4eac" data-navigation-anchor=""><strong>把工作拆出來</strong>：WBS、Dependency、Milestone、Gantt。</li><li id="nav-e88eaa0bb40d9d86" data-navigation-anchor=""><strong>知道誰能決定什麼</strong>：Stakeholder、Decision Boundary、Sign-off、Change。</li><li id="nav-1491908f3e46fc72" data-navigation-anchor=""><strong>避免做錯東西</strong>：User Scenario、Evidence、KPI、Scope Control。</li><li id="nav-4fe1d064b45e1610" data-navigation-anchor=""><strong>避免做完才爆炸</strong>：Impact Analysis、Risk、Fallback、Regression。</li><li id="nav-33f7a28763e5c50d" data-navigation-anchor=""><strong>帶著別人一起決定</strong>：共同脈絡、有限選項、會議與利害關係人引導。</li></ol><p id="nav-2d796201d246e536" data-navigation-anchor="">這個順序不是考試範圍，而是讓我逐漸看懂：主管為什麼問那個問題、那個問題在專案的哪一層、回答到什麼程度才足以往前走。</p><h2 id="先掌握到可以工作的程度" data-navigation-anchor=""><a href="#先掌握到可以工作的程度" class="headerlink" title="先掌握到可以工作的程度"></a>先掌握到可以工作的程度</h2><p id="nav-def2d3bf8e52ee0f" data-navigation-anchor="">我目前不需要背完每個框架的正式定義，也不需要為了使用一個英文詞而假裝自己已經精通整套方法。每個概念先回答三件事就夠了：</p><ol><li id="nav-7465b327e3d570e3" data-navigation-anchor="">它在處理什麼問題？</li><li id="nav-d45a152c23ea6130" data-navigation-anchor="">手上的哪個案例就是它？</li><li id="nav-33fc3aab5cf30572" data-navigation-anchor="">如果早一點知道，我會多做哪一個具體動作？</li></ol><p id="nav-553bca44f1aeea53" data-navigation-anchor="">當名詞能讓我更早看見工作缺口，而不是只讓文章變得更像專業文件，它才算真的變成我的能力。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-627ae7347a2b14b7" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第七篇文章，整理 PM／SA 基礎詞彙與學習前置關係。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;開始學 WBS、Dependency 等詞後，我才發現自己需要先補上 PM／SA 的基本語言。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="觀念釐清" scheme="http://example.com/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+    <category term="學習規劃" scheme="http://example.com/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作</title>
+    <link href="http://example.com/work/two-project-mental-models/"/>
+    <id>http://example.com/work/two-project-mental-models/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:14:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-1725c231e27713ad" data-navigation-anchor="">同一份專案規劃，執行者與主管可能正在回答不同問題：前者想著怎麼做，後者先確認值不值得做。</p><span id="more"></span><p id="nav-90c738bc7c68af18" data-navigation-anchor="">這不表示某一方不做事，也不代表主管只是在挑毛病。比較接近的說法是：雙方手上有不同層級的認知模型。</p><h2 id="執行者拿到的是「如何落地」" data-navigation-anchor=""><a href="#執行者拿到的是「如何落地」" class="headerlink" title="執行者拿到的是「如何落地」"></a>執行者拿到的是「如何落地」</h2><p id="nav-e7e9110cd4d119f1" data-navigation-anchor="">當前期有了功能規劃、版面方向或工程清單，執行者很自然會進入這條路徑：</p><blockquote><p id="nav-88073827291c21a3" data-navigation-anchor=""><strong>理解規劃 → 想辦法做出來 → 處理執行障礙 → 回報進度。</strong></p></blockquote><p id="nav-6e2b96f757d772c5" data-navigation-anchor="">所以看到一個功能時，會先想資料怎麼放、後台怎麼做、頁面怎麼接、工程要花多少時間。這些問題都是真問題，只是比較集中在「如何完成」。</p><h2 id="資深者看的還有「是否值得往下走」" data-navigation-anchor=""><a href="#資深者看的還有「是否值得往下走」" class="headerlink" title="資深者看的還有「是否值得往下走」"></a>資深者看的還有「是否值得往下走」</h2><p id="nav-bb5ab874f9fd0dff" data-navigation-anchor="">有幾次改版經驗的人，看到同一個功能，可能同時在問：</p><ul><li id="nav-12aa07ea2b8ace09" data-navigation-anchor="">它解決誰的問題？真的有使用情境嗎？</li><li id="nav-27701e8b253caa26" data-navigation-anchor="">資料從哪裡來，誰能長期維護？</li><li id="nav-9916c17d20f66004" data-navigation-anchor="">這是誰有權決定的變更？</li><li id="nav-1f596a1544e530f7" data-navigation-anchor="">前面的盤點、規格與確認是否已經排進時程？</li><li id="nav-35edfc97da96b4b7" data-navigation-anchor="">做下去會不會影響其他模組、流量、維運或驗收？</li><li id="nav-a5cb0fa59951d913" data-navigation-anchor="">如果工具或條件失敗，怎麼保底？</li><li id="nav-e02321fca95a3904" data-navigation-anchor="">會議上要拿出什麼，大家才有辦法做決定？</li></ul><p id="nav-228131bae7340490" data-navigation-anchor="">這不只是把「How」問得更細，而是先審查「Why、Who、What、Under which conditions」。</p><h2 id="真正的落差不只是經驗不足" data-navigation-anchor=""><a href="#真正的落差不只是經驗不足" class="headerlink" title="真正的落差不只是經驗不足"></a>真正的落差不只是經驗不足</h2><p id="nav-fbf0ee84297a3ec1" data-navigation-anchor="">如果前期沒有把這套判斷方法轉成共同的文件、案例或清單，執行者就只能在不知道評分規準的情況下作答。直到成果出現，主管才用自己的經驗一項一項指出缺口，執行者自然會感覺像在接受口試。</p><p id="nav-1f0b8187fbdcb9aa" data-navigation-anchor="">這裡至少有兩種缺口：</p><ol><li id="nav-cec18d823d8df40e" data-navigation-anchor=""><strong>個人經驗缺口</strong>：第一次做大型改版時，不知道前置盤點、決策邊界或影響分析本身也是工作。</li><li id="nav-0de9e707a2ecd879" data-navigation-anchor=""><strong>組織知識傳承缺口</strong>：資深經驗存在，但沒有被制度化成團隊可取得的會前審查框架、案例庫、Checklist 或 WBS 範本。</li></ol><p id="nav-bec2a870c5d59730" data-navigation-anchor="">不能因為主管看得出問題，就反推他一定曾經把判斷方法教給團隊；也不能因為執行者沒先想到，就把所有責任都歸為個人能力不足。</p><h2 id="審查者模式與教練模式" data-navigation-anchor=""><a href="#審查者模式與教練模式" class="headerlink" title="審查者模式與教練模式"></a>審查者模式與教練模式</h2><p id="nav-79ba3c47deb3fcc2" data-navigation-anchor="">兩種帶人的方式不同：</p><table><thead><tr><th>模式</th><th>工作方式</th></tr></thead><tbody><tr><td>審查者模式</td><td>你拿成果來，我指出缺口</td></tr><tr><td>教練模式</td><td>開始前先說明這類工作通常檢查什麼，再陪你修正第一版</td></tr></tbody></table><p id="nav-a4f44d308c85f2ce" data-navigation-anchor="">如果團隊長期只有前者，知識就會在 Review 現場被動釋出。每個新人都要先撞一次牆，下一個人還可能重新撞同一面牆。</p><h2 id="重新看待「支援」" data-navigation-anchor=""><a href="#重新看待「支援」" class="headerlink" title="重新看待「支援」"></a>重新看待「支援」</h2><p id="nav-1ecd5a94883b12df" data-navigation-anchor="">因此，問題不一定只是「主管有沒有幫我做事情」。我覺得更精確的問題是：</p><blockquote><p id="nav-516300bfd883c8ee" data-navigation-anchor=""><strong>一件事情做到什麼程度，才算可以安全進入下一步？這個判準有沒有提前被團隊看見？</strong></p></blockquote><p id="nav-87c6eca3e9cdfadc" data-navigation-anchor="">有些資料本來就該由 PM 主動盤點；有些工程限制要找工程師；有些既有資產的變更要由客戶或機關確認。真正需要的不是所有人都替執行者完成，而是先把資料來源、決策權與完成標準說清楚。</p><h2 id="目前留下的工作假說" data-navigation-anchor=""><a href="#目前留下的工作假說" class="headerlink" title="目前留下的工作假說"></a>目前留下的工作假說</h2><p id="nav-aa767096ad29bb11" data-navigation-anchor="">這段經驗可以先寫成一個暫定模型：</p><blockquote><p id="nav-ac42d9593d233c13" data-navigation-anchor=""><strong>執行者採取「提案落地模型」，資深者採取「效益與風險門閥模型」；當後者沒有在前期被轉譯成共享工作標準，兩邊就會在成果 Review 時才第一次對齊。</strong></p></blockquote><p id="nav-b06e5f493281016d" data-navigation-anchor="">這不是替任何一方定罪，而是讓下一步清楚：要把主管反覆使用的判斷方式拆出來，變成執行者能在事前使用的問題與產物。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-439a93add2b5ef18" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第三篇文章，整理執行者與資深者使用不同判斷模型的落差。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;同一份專案規劃，執行者與主管可能正在回答不同問題：前者想著怎麼做，後者先確認值不值得做。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="觀念釐清" scheme="http://example.com/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+    <category term="思考方式" scheme="http://example.com/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型</title>
+    <link href="http://example.com/work/meeting-transcripts-to-judgment-model/"/>
+    <id>http://example.com/work/meeting-transcripts-to-judgment-model/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:13:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-d02708f13490612a" data-navigation-anchor="">對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。</p><span id="more"></span><p id="nav-155b517e5f7e6500" data-navigation-anchor="">如果直接問「請分析這兩場會議」，很可能只得到「大家充分討論了需求與時程」。這種摘要沒有錯，卻沒有告訴我資深者究竟多做了哪一步判斷。</p><p id="nav-3661f100dee9fea4" data-navigation-anchor="">我想保留的是一條可重複的學習路徑：</p><blockquote><p id="nav-9597a2ce543eee61" data-navigation-anchor=""><strong>逐字稿 → 找到被校正的地方 → 比較不同案例 → 推測判斷順序 → 轉成會前自問。</strong></p></blockquote><h2 id="第一輪：分開找出被校正的地方" data-navigation-anchor=""><a href="#第一輪：分開找出被校正的地方" class="headerlink" title="第一輪：分開找出被校正的地方"></a>第一輪：分開找出被校正的地方</h2><p id="nav-760698d7a961453e" data-navigation-anchor="">每場會議先分開分析，不急著找通則，也不先套用既有分類。要找的不是「談了哪些主題」，而是：</p><ul><li id="nav-3cde1de41cbdd8d8" data-navigation-anchor="">主管主動追問了什麼？</li><li id="nav-02e0f6b08313f504" data-navigation-anchor="">哪些地方被打斷、修正或重新定義？</li><li id="nav-ec4257580c098ce2" data-navigation-anchor="">原本的回答為什麼沒有回答到真正關心的問題？</li><li id="nav-c0960389540c2158" data-navigation-anchor="">哪些地方被要求補資料、確認、清單、時程或具體產物？</li><li id="nav-027b74af37da1e88" data-navigation-anchor="">哪些話透露了決策權、資料責任或工作邊界？</li></ul><p id="nav-3400ac6a64b01e67" data-navigation-anchor="">每個案例先用這六格記錄：</p><table><thead><tr><th>問題</th><th>要留下的內容</th></tr></thead><tbody><tr><td>正在談什麼</td><td>具體議題，不先抽象化</td></tr><tr><td>原本怎麼準備</td><td>執行者當時採取的理解與工作方式</td></tr><tr><td>主管怎麼追問</td><td>原話或可核對的重點</td></tr><tr><td>真正關心什麼</td><td>效益、權責、資料、相依性、風險或驗收</td></tr><tr><td>事前少了什麼</td><td>若早知道，應補的資料或產物</td></tr><tr><td>反映哪種能力</td><td>先標「候選能力」，不要急著定案</td></tr></tbody></table><h2 id="第二輪：讓不同會議互相驗證" data-navigation-anchor=""><a href="#第二輪：讓不同會議互相驗證" class="headerlink" title="第二輪：讓不同會議互相驗證"></a>第二輪：讓不同會議互相驗證</h2><p id="nav-fbea4b2bc12279b6" data-navigation-anchor="">兩場分開拆完，才把它們放在一起比較。這時不要只問「哪場比較嚴格」，而是分成三類：</p><ul><li id="nav-9b7ec9b2ccd4aee5" data-navigation-anchor=""><strong>兩場都出現</strong>：有機會形成暫定通則。</li><li id="nav-9240cbaa890caaa6" data-navigation-anchor=""><strong>只在一場出現，但可能跨情境成立</strong>：先標候選規則。</li><li id="nav-acf97dcb53dc90eb" data-navigation-anchor=""><strong>只屬於特定專案或特定產物</strong>：保留案例，不過度泛化。</li></ul><p id="nav-a7244bd616f190a3" data-navigation-anchor="">每一條可能規則都要附上不同案例的證據、適用範圍與不適用的情況。這一步是為了避免把「這次要求三個方案」誤認成任何情況都必須準備三個方案，也避免把單一功能的流量問題升級成所有功能的刪除規則。</p><h2 id="第三輪：重建資深者的判斷順序" data-navigation-anchor=""><a href="#第三輪：重建資深者的判斷順序" class="headerlink" title="第三輪：重建資深者的判斷順序"></a>第三輪：重建資深者的判斷順序</h2><p id="nav-9f3391ebc3dd9367" data-navigation-anchor="">規則數量不是最重要的結果。更值得問的是：一個有經驗的人拿到新議題時，腦中可能按什麼順序檢查？</p><p id="nav-ade347dfd6b0d871" data-navigation-anchor="">可以沿著下面的結構重建：</p><ol><li id="nav-de3ec97d29d41385" data-navigation-anchor="">這件事要解決誰的什麼問題？</li><li id="nav-10d02f41332fce83" data-navigation-anchor="">資料與條件從哪裡來，由誰維護？</li><li id="nav-ddecfb0b932a3a42" data-navigation-anchor="">這是誰能決定的事情？</li><li id="nav-16865ee61c8985f0" data-navigation-anchor="">在進入設計或開發前，還少哪些前置工作？</li><li id="nav-5bfbbfad38885df5" data-navigation-anchor="">如果主要路徑失敗，怎麼處理？會影響誰？</li><li id="nav-571fb4cf28823b30" data-navigation-anchor="">這次討論需要拿出哪個具體產物，才能往下一步走？</li></ol><p id="nav-652fcb6616061136" data-navigation-anchor="">每個推論都要標示證據強度。逐字稿確實說過的，是觀察；從多個片段歸納出的，是推論；目前沒有足夠資料的，則保留成假說。</p><h2 id="第四輪：轉成外掛導師，而不是再做一份摘要" data-navigation-anchor=""><a href="#第四輪：轉成外掛導師，而不是再做一份摘要" class="headerlink" title="第四輪：轉成外掛導師，而不是再做一份摘要"></a>第四輪：轉成外掛導師，而不是再做一份摘要</h2><p id="nav-8ff8466ef2075eb9" data-navigation-anchor="">最後再把判斷模型改寫成會前問題。每題都要能改變我的準備方式，而不是只問「需求確認了嗎」這種太大的句子。</p><p id="nav-38e0bedd7bb8ae6a" data-navigation-anchor="">一個可用的問題應該同時包含：</p><ul><li id="nav-39c8ea97909ec374" data-navigation-anchor="">我要問自己的具體問題。</li><li id="nav-eaa7d491ca39bf09" data-navigation-anchor="">資深者為什麼在意。</li><li id="nav-f6af956a22af02c1" data-navigation-anchor="">什麼證據或產物才算回答到。</li><li id="nav-b171abd9884895a8" data-navigation-anchor="">如果現在答不出來，要找誰、標成待確認，或暫停哪一步。</li><li id="nav-d7289281c188b2f9" data-navigation-anchor="">這個問題來自哪個案例，以及它是不是只適用某個情境。</li></ul><p id="nav-74b4f8e36d8f1810" data-navigation-anchor="">這樣逐字稿才不會只停在一段對話。它會逐步變成一個「在工作開始前，先替我指出盲點」的檢查工具。</p><h2 id="需要一直保留的限制" data-navigation-anchor=""><a href="#需要一直保留的限制" class="headerlink" title="需要一直保留的限制"></a>需要一直保留的限制</h2><p id="nav-b531a6da1a9de7a6" data-navigation-anchor="">兩場會議不足以建立一套永遠正確的規則。每增加一場新資料，都要再問：它驗證了舊規則、修改了舊規則、提出新候選規則，還是只是一次性的特殊情況？</p><p id="nav-518d175da8397c96" data-navigation-anchor="">如果證據不足，就留下「目前不知道」，不要為了讓模型完整而硬湊答案。能指出未知的邊界，才是這份判斷模型真正開始可靠的地方。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-16812287c575734e" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第二篇文章，整理逐字稿的四輪轉化方法。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="http://example.com/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="http://example.com/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力</title>
+    <link href="http://example.com/work/transferable-project-capabilities/"/>
+    <id>http://example.com/work/transferable-project-capabilities/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:16:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-08fa5d228ed491bc" data-navigation-anchor="">主管要求的具體做法，不要直接全部內化成自己的規則。我覺得比較好的方法，是把每個要求拆成三層：底層原則、情境方法、專案或主管特定條件。</p><span id="more"></span><p id="nav-2d3e99c3cff15712" data-navigation-anchor="">這樣我才能同時做到兩件事：目前仍然通過既有 Review Gate，長期又不會把某位主管的格式偏好誤認成宇宙真理。</p><h2 id="七項目前值得保留的核心能力" data-navigation-anchor=""><a href="#七項目前值得保留的核心能力" class="headerlink" title="七項目前值得保留的核心能力"></a>七項目前值得保留的核心能力</h2><h3 id="1-變更與決策的可追溯性" data-navigation-anchor=""><a href="#1-變更與決策的可追溯性" class="headerlink" title="1. 變更與決策的可追溯性"></a>1. 變更與決策的可追溯性</h3><ul><li id="nav-29e7fd8745b7729f" data-navigation-anchor=""><strong>底層原則</strong>：既有資產、範疇或重要決策的異動，要能回溯標的、理由、決策者與下一步。</li><li id="nav-8f7553ff48fa671e" data-navigation-anchor=""><strong>情境方法</strong>：用新舊 Mapping、簽認節點與具體決策紀錄呈現差異。</li><li id="nav-ad2e3a5224d0f07d" data-navigation-anchor=""><strong>特定條件</strong>：某些舊網站名稱與內容帶有歷史決策或合約背景，所需紀錄密度可能特別高。</li></ul><h3 id="2-需求與技術實作的責任解耦" data-navigation-anchor=""><a href="#2-需求與技術實作的責任解耦" class="headerlink" title="2. 需求與技術實作的責任解耦"></a>2. 需求與技術實作的責任解耦</h3><ul><li id="nav-bf6f06f8a71e7fa7" data-navigation-anchor=""><strong>底層原則</strong>：PM／SA 說清楚 Why、What、使用情境與資料需求，工程團隊評估 How；雙方仍要對可行性對話。</li><li id="nav-6a011bd0704dbff1" data-navigation-anchor=""><strong>情境方法</strong>：把前台需求、欄位與使用者流程交給工程師，而不是先替後台硬塞資料結構。</li><li id="nav-3bd1a4b8f63cb810" data-navigation-anchor=""><strong>特定條件</strong>：報告對象可能看不懂內部模組名稱，就要做語意轉譯；對工程師討論時則仍需要精確技術語言。</li></ul><h3 id="3-前置相依性與團隊量能" data-navigation-anchor=""><a href="#3-前置相依性與團隊量能" class="headerlink" title="3. 前置相依性與團隊量能"></a>3. 前置相依性與團隊量能</h3><ul><li id="nav-f0469a6f42a045bd" data-navigation-anchor=""><strong>底層原則</strong>：資料準備、規格、確認與營運供給能力，都是開發能否準時發生的前置條件。</li><li id="nav-728284754823f895" data-navigation-anchor=""><strong>情境方法</strong>：把 PM 自己的盤點、SA、Mapping 與客戶確認排進 WBS 和時程。</li><li id="nav-4ec3ce7fb0f57e68" data-navigation-anchor=""><strong>特定條件</strong>：雙語內容、圖片與附件是否能長期供應，會受到特定機關營運量能與無障礙要求限制。</li></ul><h3 id="4-成效驗證與範疇減法" data-navigation-anchor=""><a href="#4-成效驗證與範疇減法" class="headerlink" title="4. 成效驗證與範疇減法"></a>4. 成效驗證與範疇減法</h3><ul><li id="nav-b1a5ea2f60a3e2a6" data-navigation-anchor=""><strong>底層原則</strong>：規劃裡的功能還是要用使用者行為、目的與成效證據重新驗證，必要時主動刪減或整合。</li><li id="nav-d71847a3a3afa226" data-navigation-anchor=""><strong>情境方法</strong>：檢查內容流量、搜尋行為、KPI 或功能重疊。</li><li id="nav-5548ab94dce3d879" data-navigation-anchor=""><strong>特定條件</strong>：公開網站可能重視 SEO 與流量；其他系統也許更在意作業時間、合規或錯誤率。</li></ul><h3 id="5-影響分析與失敗保底" data-navigation-anchor=""><a href="#5-影響分析與失敗保底" class="headerlink" title="5. 影響分析與失敗保底"></a>5. 影響分析與失敗保底</h3><ul><li id="nav-ae05ee2199b9b430" data-navigation-anchor=""><strong>底層原則</strong>：改動一個地方前，要想相依模組與資料流；主要路徑失敗時，要有事前定義的處理方式。</li><li id="nav-8433649164dcd2f0" data-navigation-anchor=""><strong>情境方法</strong>：盤點發布對周邊功能的影響，為工具覆蓋不到的資料設定 fallback。</li><li id="nav-7a27b02ba97e1cfe" data-navigation-anchor=""><strong>特定條件</strong>：即時資訊、授權宣告或特定稽核要求會改變保底策略的風險邊界。</li></ul><h3 id="6-溝通脈絡與對焦" data-navigation-anchor=""><a href="#6-溝通脈絡與對焦" class="headerlink" title="6. 溝通脈絡與對焦"></a>6. 溝通脈絡與對焦</h3><ul><li id="nav-7ed631bb331fa99c" data-navigation-anchor=""><strong>底層原則</strong>：進細節前，先讓參與者知道範圍、現況、分類與本次要決定的事情。</li><li id="nav-0ab055b4434ee3f1" data-navigation-anchor=""><strong>情境方法</strong>：用全貌頁、高階架構圖，或把導覽、版面等不同層次拆成獨立圖表。</li><li id="nav-a49c0147742db89e" data-navigation-anchor=""><strong>特定條件</strong>：會議議題越多、參與者越複雜，越需要先建立共同脈絡；但不一定每次都要固定一張同名投影片。</li></ul><h3 id="7-向上管理與決策引導" data-navigation-anchor=""><a href="#7-向上管理與決策引導" class="headerlink" title="7. 向上管理與決策引導"></a>7. 向上管理與決策引導</h3><ul><li id="nav-7052945f1ce78cc6" data-navigation-anchor=""><strong>底層原則</strong>：面對模糊又容易膨脹的需求，要把它轉成範疇、成本與風險可討論的有限選項。</li><li id="nav-4468f2119948fe8e" data-navigation-anchor=""><strong>情境方法</strong>：準備不同投入程度的方案，讓決策者選擇或確認取捨。</li><li id="nav-92e0667fc0fbfec2" data-navigation-anchor=""><strong>特定條件</strong>：方案數量、包裝語氣與需要的宣傳亮點，會隨決策者與專案情境改變。</li></ul><h2 id="幾個常見的重新翻譯" data-navigation-anchor=""><a href="#幾個常見的重新翻譯" class="headerlink" title="幾個常見的重新翻譯"></a>幾個常見的重新翻譯</h2><p id="nav-e8f0b5fb87ad39e0" data-navigation-anchor="">「會議紀錄要寫得很細」不必直接變成「每場紀錄都要很長」。更底層的原則是重要決策要能追溯，至於寫到哪個密度，要看文件用途與團隊節奏。</p><p id="nav-8c8fe0424d1187fd" data-navigation-anchor="">「前面要放 Big Picture」不必直接變成固定格式。可遷移的能力是進細節前先建立共同脈絡。</p><p id="nav-35ac6b10edf0604f" data-navigation-anchor="">「一定準備三個方案」不必永遠湊三個。值得留下的是把模糊需求整理成有限、可比較、可決策的選項。</p><p id="nav-8cf55c1edb8e09c9" data-navigation-anchor="">「掃不到就採最嚴格處理」也不等於任何未知都要一律封鎖。值得留下的是先定義 fallback，並依法律、業務與使用者代價選擇合理的預設。</p><h2 id="怎麼判斷一條要求值不值得內化" data-navigation-anchor=""><a href="#怎麼判斷一條要求值不值得內化" class="headerlink" title="怎麼判斷一條要求值不值得內化"></a>怎麼判斷一條要求值不值得內化</h2><p id="nav-62b97b5c538acbf2" data-navigation-anchor="">我會先問：如果忽略這條要求，是否會增加錯誤決策、重工、越權、時程失真、權責爭議、維運失控或驗收風險？</p><p id="nav-860e7cfbeb9e343a" data-navigation-anchor="">如果會，它多半是值得學的專案能力；如果只涉及某頁放左邊或某種個人語氣，就先留在偏好層。短期工作仍需符合目前的審查門檻，但長期要帶走的是「他為什麼知道要問這個問題」，而不是只背住表面格式。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-5adcf4b44c7aeca9" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第五篇文章，將原本的 11 條要求重組成 7 項三層能力。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;主管要求的具體做法，不要直接全部內化成自己的規則。我覺得比較好的方法，是把每個要求拆成三層：底層原則、情境方法、專案或主管特定條件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="http://example.com/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="思考方式" scheme="http://example.com/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法</title>
+    <link href="http://example.com/work/ai-external-mentor-dual-track/"/>
+    <id>http://example.com/work/ai-external-mentor-dual-track/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:17:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-0f6b203826831dad" data-navigation-anchor="">AI 不會替我承擔專案責任，但能把「我不知道自己少了什麼」轉成可追查的未知清單。</p><span id="more"></span><p id="nav-149173214e0812b3" data-navigation-anchor="">這個外掛導師不只是把資料換一種語氣整理，而是要走一條比較完整的路徑：</p><blockquote><p id="nav-6a0b6992e332a2f3" data-navigation-anchor=""><strong>資料進來 → 還原脈絡 → 套用已知規則 → 主動找缺口 → 換角度挑戰 → 指出需要真人判斷的地方 → 產出下一步。</strong></p></blockquote><h2 id="AI-能幫的，和不能替代的" data-navigation-anchor=""><a href="#AI-能幫的，和不能替代的" class="headerlink" title="AI 能幫的，和不能替代的"></a>AI 能幫的，和不能替代的</h2><p id="nav-e25cc96bf0540f80" data-navigation-anchor="">AI 可以拿過往案例提醒我：這是不是既有資產的變更、資料來源是否未確認、時程是否漏了前置工作、報告是否缺少共同脈絡，或主要方案失敗時有沒有保底。</p><p id="nav-5747f555973d0182" data-navigation-anchor="">但它不能替我確認客戶真正想要什麼、工程師尚未說出口的技術限制、誰擁有最終決策權，或某個日期是否真的能做到。這些仍然要找真人、看資料、取得確認。</p><p id="nav-2be2d07b619e9a8e" data-navigation-anchor="">所以我認為它的價值不是給出一個看似完整的答案，而是把狀態說清楚：</p><blockquote><p id="nav-cd06e21500b4963a" data-navigation-anchor=""><strong>現在有三個未知，其中一個要找工程、一個要問客戶、一個我可以自己查。</strong></p></blockquote><h2 id="專案軌：現在要交什麼" data-navigation-anchor=""><a href="#專案軌：現在要交什麼" class="headerlink" title="專案軌：現在要交什麼"></a>專案軌：現在要交什麼</h2><p id="nav-872d6f813a91d190" data-navigation-anchor="">專案有時間壓力時，我不能要求自己先完成一整套學習。這時 AI 應該切到「現在要交」模式，只回答：</p><ul><li id="nav-08581421fd751218" data-navigation-anchor="">現在要做哪個決定？</li><li id="nav-0789d1b150aab0da" data-navigation-anchor="">今天最少要交什麼產物？</li><li id="nav-c0779c6c681ec587" data-navigation-anchor="">最大的三個風險是什麼？</li><li id="nav-8e9ec83c089029ed" data-navigation-anchor="">哪些一定要找人確認？</li><li id="nav-0b7850683bc6f5d7" data-navigation-anchor="">哪些可以先做，哪些現在不要展開？</li></ul><p id="nav-2c0821daa4f3969f" data-navigation-anchor="">這時的目標不是最完整的判斷，而是資訊有限時仍足以安全進下一步的 <strong>Minimum Viable Decision</strong>。</p><p id="nav-2bc1ac9433fe9d9f" data-navigation-anchor="">如果星期五要交的是一頁決策比較表，就先完成那張表需要的資料與待確認欄位；不必因為還沒建立完整的 PM 詞彙，就把整個專案重新理論化。</p><h2 id="學習軌：交付後把經驗帶回來" data-navigation-anchor=""><a href="#學習軌：交付後把經驗帶回來" class="headerlink" title="學習軌：交付後把經驗帶回來"></a>學習軌：交付後把經驗帶回來</h2><p id="nav-c8f328a5cc658ee7" data-navigation-anchor="">交付完成後，再切回「我要升級」模式：</p><ul><li id="nav-465100fccc59bf79" data-navigation-anchor="">今天為什麼被追問？</li><li id="nav-4ca9dd9474976eef" data-navigation-anchor="">我原本採用哪個工作假設？</li><li id="nav-05ff096c41b9f22f" data-navigation-anchor="">資深者多做了哪一步判斷？</li><li id="nav-4a76af56b16098ed" data-navigation-anchor="">這是已知規則的新案例、舊規則的修正，還是新的候選規則？</li><li id="nav-7b6d921ff9db9b28" data-navigation-anchor="">下次要新增哪一題、哪個產物或哪個 Review Gate？</li></ul><p id="nav-b8c67418c61eab20" data-navigation-anchor="">這時再讓 AI 展開案例、規則、例外與學習路徑。工作先往前走，學習再反過來改善下一次工作。</p><h2 id="規則要能更新，而不是一次定稿" data-navigation-anchor=""><a href="#規則要能更新，而不是一次定稿" class="headerlink" title="規則要能更新，而不是一次定稿"></a>規則要能更新，而不是一次定稿</h2><p id="nav-9b74c90dd0f94f07" data-navigation-anchor="">這套模型可以先從 v0.1 開始。每加入一份新的會議資料，就執行一次小型更新：</p><ol><li id="nav-788cbb8c4b80e390" data-navigation-anchor="">找出新增或修正的判斷。</li><li id="nav-4eb0ec5f804a7602" data-navigation-anchor="">和既有規則逐條比對。</li><li id="nav-a8ff818d2c56f931" data-navigation-anchor="">分成已被驗證、需要修改、新候選規則與單次情境。</li><li id="nav-489654aaa399c39b" data-navigation-anchor="">說明修改理由與證據。</li><li id="nav-9ebb9206f69e1923" data-navigation-anchor="">更新版本，並列出這次真正值得帶到下一個專案的能力。</li></ol><p id="nav-0c8f0dacd8be65a0" data-navigation-anchor="">一場會議提出的新要求，不應立即升級成普遍規則。至少要再問：它是否有第二個案例支持？是不是只屬於特定主管或客戶？忽略它是否真的會造成風險？</p><h2 id="不能把-Checklist-變成另一座冰河" data-navigation-anchor=""><a href="#不能把-Checklist-變成另一座冰河" class="headerlink" title="不能把 Checklist 變成另一座冰河"></a>不能把 Checklist 變成另一座冰河</h2><p id="nav-7fc88f4b472e7266" data-navigation-anchor="">我建立清單的目的，是讓自己更早看到常見盲點，不是保證任何情況都不會出錯。如果每一件事都要完整跑完所有問題，清單反而會讓時間壓力更大。</p><p id="nav-6d4434a8a2595b11" data-navigation-anchor="">比較成熟的能力是：看到一個陌生任務時，能推導它需要哪些判斷、證據、角色與風險；清單只是起點，遇到條件不同時仍然要重新判斷。</p><p id="nav-2b6cd26089b36238" data-navigation-anchor="">所以，外掛導師最理想的定位不是「替我知道所有答案」，而是：</p><blockquote><p id="nav-15ae1454bf3b4fef" data-navigation-anchor=""><strong>在經驗不足、時間有限時，利用過去案例幫我更早發現少想了什麼；交付之後，再把新的經驗餵回模型。</strong></p></blockquote><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-b6b26e4175c477a3" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第六篇文章，整理 AI 外掛導師的專案軌、學習軌與版本更新方式。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;AI 不會替我承擔專案責任，但能把「我不知道自己少了什麼」轉成可追查的未知清單。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="AI Agent" scheme="http://example.com/tags/AI-Agent/"/>
+    
+    <category term="學習規劃" scheme="http://example.com/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審</title>
+    <link href="http://example.com/work/risk-based-review/"/>
+    <id>http://example.com/work/risk-based-review/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:15:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-5b7cdcdef4851abd" data-navigation-anchor="">專案進行一段時間後，才發現主管原來一直在檢查某些隱性條件，確實會讓人覺得已經太晚。但「現在才知道」不等於「現在不用再看」，也不等於要把所有已做過的工作全部打掉重來。</p><span id="more"></span><p id="nav-2078d10a6959bee9" data-navigation-anchor="">我目前比較可行的做法，是把新發現的規則變成風險式補審：優先檢查仍未定案、改動成本可接受、或一旦出錯就會造成重大重工的項目。</p><h2 id="從十條規則壓成六個問題" data-navigation-anchor=""><a href="#從十條規則壓成六個問題" class="headerlink" title="從十條規則壓成六個問題"></a>從十條規則壓成六個問題</h2><p id="nav-67600d234598dfd9" data-navigation-anchor="">目前從會議裡看到很多規則，但可以先用六個問題取代背誦：</p><ol><li id="nav-17d86efcbc473481" data-navigation-anchor=""><strong>為什麼做？</strong> 使用者、目的與成效證據是什麼？</li><li id="nav-6572518e9efa515c" data-navigation-anchor=""><strong>東西從哪裡來？</strong> 資料來源、範圍、維護者與系統相依是什麼？</li><li id="nav-9d644ddd9e77edac" data-navigation-anchor=""><strong>誰說了算？</strong> 是自己、工程師、客戶還是其他決策者的責任？</li><li id="nav-f8a7a93d4ebad5e8" data-navigation-anchor=""><strong>前面還少什麼？</strong> 規格、盤點、Mapping、確認與資料準備有沒有漏？</li><li id="nav-5866c8cc872c1d33" data-navigation-anchor=""><strong>出事怎麼辦？</strong> 影響範圍、Fallback 與最壞情境是什麼？</li><li id="nav-dc492317af16832e" data-navigation-anchor=""><strong>我要拿什麼去談？</strong> 這次需要全貌圖、對照表、清單、時程、POC 或決策題？</li></ol><p id="nav-5670363bfce63d09" data-navigation-anchor="">這六問不是永遠完整的規範，而是把未知問題提早浮出來的最小檢查框架。</p><h2 id="不要全面重審，要看專案狀態" data-navigation-anchor=""><a href="#不要全面重審，要看專案狀態" class="headerlink" title="不要全面重審，要看專案狀態"></a>不要全面重審，要看專案狀態</h2><p id="nav-3448312561cfde08" data-navigation-anchor="">可以先把工作分成三類：</p><table><thead><tr><th>狀態</th><th>建議做法</th></tr></thead><tbody><tr><td>尚未開發、尚未定案</td><td>完整套用六問，先補證據與決策邊界</td></tr><tr><td>已完成一部分、仍可調整</td><td>只查權責、資料來源、使用情境、相依性與驗收</td></tr><tr><td>已完成、已確認且改動昂貴</td><td>不因為新框架就翻案，除非出現明確重大風險</td></tr></tbody></table><p id="nav-1eb4e0af58542828" data-navigation-anchor="">這是在把時間與風險一起算進去。全面重審看起來很完整，卻可能讓專案停止；完全不補審則可能把已知風險帶到上線或驗收。</p><h2 id="問題要帶著處理路徑一起出現" data-navigation-anchor=""><a href="#問題要帶著處理路徑一起出現" class="headerlink" title="問題要帶著處理路徑一起出現"></a>問題要帶著處理路徑一起出現</h2><p id="nav-686fd9ca275a082e" data-navigation-anchor="">隱性規則不只是「要注意風險」。更有用的是把它寫成：</p><blockquote><p id="nav-1b900e23d624c7ef" data-navigation-anchor=""><strong>當我遇到某種情境時，要問什麼、拿什麼證據、找誰確認；如果仍然不能確認，下一步是暫停、標示待定、做 POC，還是啟用保底方案。</strong></p></blockquote><p id="nav-9f4471774e5570ce" data-navigation-anchor="">例如工具無法完整盤點資料時，不應只把「盤不完整」丟回客戶；可以先尋找替代工具，再為剩下的未知狀況定義一個符合業務與合規風險的預設處理。這裡真正可遷移的能力不是永遠採用最嚴格答案，而是<strong>主要路徑失敗前，就先定義系統或流程怎麼走</strong>。</p><p id="nav-e12893369a93ddb3" data-navigation-anchor="">同樣地，既有規劃也不是免審通行證。功能已經寫在規劃裡，不代表投入成本前就不用重新看使用行為、效益與功能重疊。</p><h2 id="時間壓力下的最小安全檢查" data-navigation-anchor=""><a href="#時間壓力下的最小安全檢查" class="headerlink" title="時間壓力下的最小安全檢查"></a>時間壓力下的最小安全檢查</h2><p id="nav-fd43edc2824b6a88" data-navigation-anchor="">如果只剩很短時間，可以把檢查分成三層：</p><ul><li id="nav-e4b1f58278971052" data-navigation-anchor=""><strong>一定要確認</strong>：不確認可能造成越權、重大重工、錯誤承諾、時程失真或合規風險。</li><li id="nav-099a5b02e54a2bf0" data-navigation-anchor=""><strong>重要但可延後</strong>：先記錄待確認，不阻塞目前可以安全完成的工作。</li><li id="nav-82b3f76138d013ac" data-navigation-anchor=""><strong>品質改善</strong>：有餘裕再補，不影響本階段交付。</li></ul><p id="nav-09f78eb74db01887" data-navigation-anchor="">我覺得這個分層很重要，因為學會完整性之後，很容易把每個問題都當成現在必須解完的問題。專案判斷的一部分，正是知道哪些事情現在一定要想，哪些可以進停車場。</p><h2 id="補審的真正目的" data-navigation-anchor=""><a href="#補審的真正目的" class="headerlink" title="補審的真正目的"></a>補審的真正目的</h2><p id="nav-a6eb1eb5d8919ef7" data-navigation-anchor="">補審的目的不是追究「為什麼當初沒想到」，而是把已經發生的經驗轉成下一次的提前量：</p><blockquote><p id="nav-b0443b31eaa09c8e" data-navigation-anchor=""><strong>事後被問一次 → 找到規則 → 為下一個工作建立最小檢查 → 新案例再修正規則。</strong></p></blockquote><p id="nav-8a9a428415ac2a7c" data-navigation-anchor="">只要新規則能減少下一次的盲點，就不算太晚；但也要承認，前面已經完成的工作不必為了證明自己學會而全部重做。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-7086d22c44aaf35f" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第四篇文章，整理隱性規則、六問與風險式補審。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;專案進行一段時間後，才發現主管原來一直在檢查某些隱性條件，確實會讓人覺得已經太晚。但「現在才知道」不等於「現在不用再看」，也不等於要把所有已做過的工作全部打掉重來。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="http://example.com/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="http://example.com/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="http://example.com/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>沖繩旅行的縫合線｜系列規劃</title>
+    <link href="http://example.com/learning/okinawa-trip-reflection-series/"/>
+    <id>http://example.com/learning/okinawa-trip-reflection-series/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-20T01:27:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-0353f04a8152b2de" data-navigation-anchor="">這一頁是沖繩系列的工作頁：整理旅行後的問題、查證方向，以及還沒寫完的路線。</p><span id="more"></span><h2 id="這個系列先不急著下結論" data-navigation-anchor=""><a href="#這個系列先不急著下結論" class="headerlink" title="這個系列先不急著下結論"></a>這個系列先不急著下結論</h2><p id="nav-3bc43adb11b5cc20" data-navigation-anchor="">我不會把沖繩整理成「從戰爭走向療癒」的故事。這樣說得太快，也容易讓旅人的理解蓋過在地人的生活。</p><p id="nav-7ebd52cfddd0c3f8" data-navigation-anchor="">我會把旅行時看見的景色、當下冒出的問題，和後來查到的歷史分開，再看它們在哪些地方碰在一起。縫合線不是把裂痕藏起來，而是承認不同時代本來就同時留在這座島上。</p><h2 id="接下來想沿著幾條線整理" data-navigation-anchor=""><a href="#接下來想沿著幾條線整理" class="headerlink" title="接下來想沿著幾條線整理"></a>接下來想沿著幾條線整理</h2><h3 id="1-從前田高地開始：現場怎麼改變歷史的讀法" data-navigation-anchor=""><a href="#1-從前田高地開始：現場怎麼改變歷史的讀法" class="headerlink" title="1. 從前田高地開始：現場怎麼改變歷史的讀法"></a>1. 從前田高地開始：現場怎麼改變歷史的讀法</h3><p id="nav-2929ca17420c579c" data-navigation-anchor="">遊覽車上聽到前田高地的歷史，是這趟旅行開始改變的地方。到了高地，我開始用「如果事情走向不同」的方式想像歷史，也感覺到年份和戰況不只是平面的資料。</p><p id="nav-a648ff30d4317da7" data-navigation-anchor="">先從現場地形、我實際看見的東西，以及資料能確認的戰役背景開始。IF 只作為思考工具，不把推演寫成另一種歷史，也不替任何轉折找唯一原因。</p><h3 id="2-從士兵之外看沖繩戰役：平民、家與被迫移動" data-navigation-anchor=""><a href="#2-從士兵之外看沖繩戰役：平民、家與被迫移動" class="headerlink" title="2. 從士兵之外看沖繩戰役：平民、家與被迫移動"></a>2. 從士兵之外看沖繩戰役：平民、家與被迫移動</h3><p id="nav-4fa866751ad6223d" data-navigation-anchor="">我在對話裡一路追問平民發生了什麼，但那些沉重描述不能直接當成史料。真的要寫時，我會回到可靠的地方史料、倖存者證言和研究，把已知事實和我的想像分開。</p><p id="nav-064361cacfc7ee13" data-navigation-anchor="">這條線不追求把苦難寫得更慘，而是要把問題問完整：當一個地方成為戰場，原本住在那裡的人去了哪裡？戰爭結束後，他們能不能回到原本的家？</p><h3 id="3-戰後怎麼留在今天的土地上" data-navigation-anchor=""><a href="#3-戰後怎麼留在今天的土地上" class="headerlink" title="3. 戰後怎麼留在今天的土地上"></a>3. 戰後怎麼留在今天的土地上</h3><p id="nav-97ec556fed3cbd5c" data-navigation-anchor="">高地走向海岸時，我開始注意到基地、道路、住宅、商場和海岸其實連在一起。它們可能都和戰後的土地使用、治理與重建有關，但這些連結要靠資料確認。</p><p id="nav-540367a9c504ff72" data-navigation-anchor="">這條線會把「戰爭結束了」和「戰爭留下的東西消失了」分開。也許直接的戰鬥已經過去，土地、制度、記憶與生活選擇卻還會繼續影響現在。</p><h3 id="4-觀光、海生館與美國村：日常不是歷史的反面" data-navigation-anchor=""><a href="#4-觀光、海生館與美國村：日常不是歷史的反面" class="headerlink" title="4. 觀光、海生館與美國村：日常不是歷史的反面"></a>4. 觀光、海生館與美國村：日常不是歷史的反面</h3><p id="nav-216eae61be395203" data-navigation-anchor="">美國村最明顯地讓我感覺到反差：明亮、商店、音樂、拍照和休息，都和剛剛讀到的沉重歷史放在同一趟行程裡。</p><p id="nav-41af3d54b8a391cb" data-navigation-anchor="">我會觀察人在歷史之後怎麼繼續買東西、工作、散步、接待旅客。這些日常不用再被抬高成某種象徵，它們就是現在的生活。</p><h3 id="5-旅行最後要帶走什麼" data-navigation-anchor=""><a href="#5-旅行最後要帶走什麼" class="headerlink" title="5. 旅行最後要帶走什麼"></a>5. 旅行最後要帶走什麼</h3><p id="nav-15b2334144d8b0d3" data-navigation-anchor="">金門風獅爺和沖繩 Shisa 的聯想，會先留在這一條線裡。它們讓我想起不同地方如何面對風、家和不安，但兩者的歷史與信仰背景仍要另外查證，不能只因為外形相似就下結論。</p><p id="nav-53811f1627aac5ac" data-navigation-anchor="">這條線最後不一定要收成一個紀念品或漂亮的句子。我現在只知道，這個問題會跟著我回到日常：知道那些事情之後，我要怎麼生活？</p><h2 id="兩篇文章目前怎麼分工" data-navigation-anchor=""><a href="#兩篇文章目前怎麼分工" class="headerlink" title="兩篇文章目前怎麼分工"></a>兩篇文章目前怎麼分工</h2><p id="nav-94abd56d1ce4422f" data-navigation-anchor="">這次先保留兩篇，各自有不同用途：</p><ol><li id="nav-485396a1f6a24cf6" data-navigation-anchor=""><strong>〈沖繩旅行的兩個時空｜歷史與日常的反差〉</strong>：寫這次旅行中情緒真正發生變化的地方，讓高地、海岸、美國村和沒有答案的問題先獨立成立。</li><li id="nav-9cc9f78456adb720" data-navigation-anchor=""><strong>〈沖繩旅行的縫合線｜系列規劃〉</strong>：保留後續要查什麼、哪些地方不能直接推論，以及未來文章可以沿著哪些問題展開。</li></ol><p id="nav-52d816fb6e8176e2" data-navigation-anchor="">等某條線查到足夠資料，再從規劃頁獨立成文；現階段先不固定篇數。</p><h2 id="寫作界線" data-navigation-anchor=""><a href="#寫作界線" class="headerlink" title="寫作界線"></a>寫作界線</h2><ul><li id="nav-1da24a84d48d26c8" data-navigation-anchor="">對話紀錄是我思考的起點，不是可以直接引用的歷史來源。</li><li id="nav-95e30761bd1a4ec5" data-navigation-anchor="">「我在現場感覺到」和「沖繩就是如此」要分開寫。</li><li id="nav-773fc07f07ab4b28" data-navigation-anchor="">歷史資料、傷亡數字、人物事蹟與戰後政策要有可追溯來源。</li><li id="nav-e5b0afbc397aae44" data-navigation-anchor="">IF 可以保留，但必須明確說它是反事實推演，不把可能性寫成歷史結果。</li><li id="nav-d779ab7f8fcaa459" data-navigation-anchor="">不替沖繩宣告已經痊癒，也不替在地人解釋沉默、忙碌或明亮的日常代表什麼。</li><li id="nav-9b1dd8fc7ec7aa8e" data-navigation-anchor="">每篇都可以留下一個沒有解決的問題，不必為了完整而補上一個答案。</li></ul><h2 id="目前狀態" data-navigation-anchor=""><a href="#目前狀態" class="headerlink" title="目前狀態"></a>目前狀態</h2><ul><li id="nav-ee4bf3971d32fe39" data-navigation-anchor="">系列規劃：已重新整理，持續公開修正。</li><li id="nav-5b7163ad4884f80a" data-navigation-anchor="">旅行文章：已另立為〈沖繩旅行的兩個時空｜歷史與日常的反差〉。</li><li id="nav-a7b9c9c991008c49" data-navigation-anchor="">歷史背景：先列出查證方向，不把附件中的說法直接當成史實。</li><li id="nav-ca6f2fa7eb1b4773" data-navigation-anchor="">下一步：先回頭核對前田高地、平民經驗與戰後土地使用的資料，再決定哪一條線值得獨立成篇。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;這一頁是沖繩系列的工作頁：整理旅行後的問題、查證方向，以及還沒寫完的路線。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活紀錄" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="生活回顧" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
+    
+    <category term="旅行" scheme="http://example.com/tags/%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-Misread</title>
+    <link href="http://example.com/2026/09/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Misread/"/>
+    <id>http://example.com/2026/09/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Misread/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-8106f3f77a1a0773" data-navigation-anchor="">      推薦 Kings of Convenience 的 Misread      <br>      出自專輯 Riot on An Empty Street      <br>      <a href="https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_Misread.webp" alt="Kings of Convenience - Misread - Riot on An Empty Street" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05<br>這首吉他之外有一個清脆的聲音讓這首歌的感覺很特別，配樂非常吸引人，而且在人聲有一種特別的空靈感配合起來很不錯，不過他的用詞好難 What do you know?<p id="nav-7a31b6c5b2a0a9f0" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 Kings of Convenience 的 Misread
+      &lt;br&gt;
+      出自專輯 Riot on An Empty Street
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_Misread.webp&quot; alt=&quot;Kings of Convenience - Misread - Riot on An Empty Street&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="英語" scheme="http://example.com/tags/%E8%8B%B1%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有工作的第N+7天</title>
+    <link href="http://example.com/2026/09/17/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+7%E5%A4%A9/"/>
+    <id>http://example.com/2026/09/17/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+7%E5%A4%A9/</id>
+    <published>2026-09-16T16:00:00.000Z</published>
+    <updated>2026-09-17T05:33:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-cfe6e77a673c524f" data-navigation-anchor="">上一篇寫到，我以前比較熟悉的是把交到手上的事情做好；現在才發現，工作還包括在事情成立以前，先知道要問哪些問題。</p><span id="more"></span><p id="nav-f06d1e3fcd778bab" data-navigation-anchor="">我原本以為，接下來需要學的只是另一套工作方法。</p><p id="nav-3ea687bec25be172" data-navigation-anchor="">例如怎麼拆工項、怎麼估時間、怎麼排前後順序，或者別把每件事都一路做到自己覺得完整為止。</p><p id="nav-31727011d71fc442" data-navigation-anchor="">這些確實都是我現在需要練的東西。</p><p id="nav-8cdf3ee290a21353" data-navigation-anchor="">只是最近幾次和主管討論事情之後，我慢慢發現另一個更麻煩的問題。</p><p id="nav-3fd0934f34b4820d" data-navigation-anchor="">有些時候，我不是不知道答案。</p><p id="nav-960ebf1b011d54b5" data-navigation-anchor="">而是直到別人問出來，我才發現那原來是一個需要先回答的問題。</p><h2 id="我以為我缺的是答案" data-navigation-anchor=""><a href="#我以為我缺的是答案" class="headerlink" title="我以為我缺的是答案"></a>我以為我缺的是答案</h2><p id="nav-9557de33e45b0ba2" data-navigation-anchor="">最近整理工作時，我常常遇到這種狀況。</p><p id="nav-7fd411b211a1833f" data-navigation-anchor="">我已經花了一段時間理解問題，也開始想可能怎麼做，甚至做到某個程度。</p><p id="nav-9f2035830c940954" data-navigation-anchor="">然後主管問了一個問題。</p><p id="nav-825b5044926781bb" data-navigation-anchor="">可能是：「這個東西最後是給誰用的？」、「為什麼現在要做這件事情？」、「前面的條件有確認了嗎？」</p><p id="nav-dca43c09c7e1f601" data-navigation-anchor="">也可能是：「如果這個假設不成立，後面的工作是不是就不用做？」、「這件事情是你可以直接決定的嗎？」</p><p id="nav-26952ff98e7f07f7" data-navigation-anchor="">這些問題本身都不複雜。</p><p id="nav-abdca9c106e2b47f" data-navigation-anchor="">有些問題一被問出來，我就會立刻覺得：「對，這個確實應該先想。」</p><p id="nav-ab38a4d6dd502486" data-navigation-anchor="">但真正讓我卡住的不是回答不出來。</p><p id="nav-b1518fc4c2775a1f" data-navigation-anchor="">而是我發現，在被問之前，我甚至沒有把它當成一個問題。</p><p id="nav-49a907c5a68ee46a" data-navigation-anchor="">這和單純的「不知道答案」不是同一回事。</p><p id="nav-98c474bbc967c514" data-navigation-anchor="">如果我知道自己不會某個工具，我可以去查。</p><p id="nav-a203e03f577e7f4d" data-navigation-anchor="">不知道甘特圖怎麼排，可以學。</p><p id="nav-b125c45b5d48b10d" data-navigation-anchor="">不知道 Excel 公式，可以找資料。</p><p id="nav-081759f0c89ef99b" data-navigation-anchor="">不知道怎麼寫測試案例，也可以去看別人怎麼做。</p><p id="nav-174d584dec1f3af9" data-navigation-anchor="">至少我知道自己缺的是什麼。</p><p id="nav-842371f7f2507f1b" data-navigation-anchor="">可是如果我連這裡需要先做判斷都不知道，就很難靠查資料直接補起來。</p><p id="nav-023279ef68902b7b" data-navigation-anchor="">因為搜尋框至少需要我先知道自己要搜尋什麼。</p><h2 id="原來開始做以前還有很多工作" data-navigation-anchor=""><a href="#原來開始做以前還有很多工作" class="headerlink" title="原來開始做以前還有很多工作"></a>原來開始做以前還有很多工作</h2><p id="nav-b8943358d067265c" data-navigation-anchor="">我現在回頭看，覺得這可能和我以前工作的起點有關。</p><p id="nav-b5405bbb1cd8ba9d" data-navigation-anchor="">過去很多工作交到我手上的時候，事情本身其實已經成立了。</p><p id="nav-b1a21bba11216e02" data-navigation-anchor="">讀書會就是要辦。</p><p id="nav-6b7a40703f3a4106" data-navigation-anchor="">網站內容就是要維護。</p><p id="nav-d4c86dc6a4899634" data-navigation-anchor="">利用教育就是要上。</p><p id="nav-b0eddaddc577d0d1" data-navigation-anchor="">某份資料就是要整理。</p><p id="nav-8196bcf4c929704d" data-navigation-anchor="">我還是需要自己決定方法、處理例外、改善流程，但「為什麼要做這件事情」通常不會是最主要的問題。</p><p id="nav-da913c32ce676d52" data-navigation-anchor="">所以我的工作很自然地從「這件事情要怎麼做好？」開始。</p><p id="nav-4643ba1225e9252c" data-navigation-anchor="">可是現在有些事情不太一樣。</p><p id="nav-00eccccc1da1aa2e" data-navigation-anchor="">例如做一個自動化工具時，我可能很快就會開始想：資料怎麼進來、程式怎麼處理、最後要輸出什麼。</p><p id="nav-7d899501228547fe" data-navigation-anchor="">這些對我來說比較具體，我也比較容易進入狀況。</p><p id="nav-d92252a8658d7113" data-navigation-anchor="">但再往前一步，還有很多問題：</p><ul><li id="nav-2e448004e09aba5e" data-navigation-anchor="">這個問題值得自動化嗎？</li><li id="nav-4fc08843030a1c81" data-navigation-anchor="">哪一段才是真正需要改善的地方？</li><li id="nav-4731f431d3edcaa0" data-navigation-anchor="">誰之後會使用？</li><li id="nav-67497c502025d693" data-navigation-anchor="">原本的流程為什麼長這樣？</li><li id="nav-2b92c4e87d215895" data-navigation-anchor="">哪些步驟一定要保留？</li><li id="nav-9d3a77e5b49e4ec3" data-navigation-anchor="">如果只有少數案例需要特殊處理，是要一起做到工具裡，還是另外分流？</li><li id="nav-cff44e28b8f8d5ec" data-navigation-anchor="">誰能決定這個版本已經足夠？</li></ul><p id="nav-1acfac4cbe5f9a93" data-navigation-anchor="">以前我比較容易把這些事情留到做的過程中再處理。</p><p id="nav-dd32702a4f8e495a" data-navigation-anchor="">現在才發現，有些問題其實是在決定：</p><p id="nav-1e69dd29b8c0e927" data-navigation-anchor="">後面的工作到底應不應該發生。</p><p id="nav-4375010ef9e2ff90" data-navigation-anchor="">這是我以前比較少處理的位置。</p><p id="nav-4b61286e9d4e2a20" data-navigation-anchor="">以前我常常接到一個已經存在的問題，再努力把它處理好。</p><p id="nav-9966a02c98f9d380" data-navigation-anchor="">現在碰到的事情，還包含另一個層次：</p><p id="nav-44d2a4ddebcd2904" data-navigation-anchor="">先把問題本身定義到足以被處理。</p><h2 id="有些事情不是方法，是經驗" data-navigation-anchor=""><a href="#有些事情不是方法，是經驗" class="headerlink" title="有些事情不是方法，是經驗"></a>有些事情不是方法，是經驗</h2><p id="nav-f8635237bf6e6994" data-navigation-anchor="">發現這件事情之後，我第一個反應還是：那我就去學。</p><p id="nav-d233e030388da950" data-navigation-anchor="">去找專案管理的方法、學工項怎麼拆、學甘特圖、看怎麼做需求分析。</p><p id="nav-9a90190da625a9df" data-navigation-anchor="">這些最近也確實幫我很多。</p><p id="nav-9cb9847bfcb589a4" data-navigation-anchor="">至少以前腦中混成一團的東西，現在可以分成：目的、成果、工項、前置條件、風險、驗收。</p><p id="nav-529667d86a2875a7" data-navigation-anchor="">原本只是「這件事情很多問題」，現在可以變成「現在是哪一個問題還沒關閉」。</p><p id="nav-0a4bd2361ee6e59b" data-navigation-anchor="">但學了一陣子之後，我又覺得，不能把所有問題都理解成「我還沒學到正確的方法」。</p><p id="nav-3205629ed9abdb7f" data-navigation-anchor="">有些事情真的要做過才知道。</p><p id="nav-a54a5d1b2676528e" data-navigation-anchor="">例如第一次做網站改版時，很難一開始就知道所有可能影響後續的環節。</p><p id="nav-b32079c5953edca4" data-navigation-anchor="">第一次和不同角色一起工作，也不會因此知道哪些事情應該自己判斷、哪些應該先確認。</p><p id="nav-739963681b900afc" data-navigation-anchor="">甚至同一種工作，換一個組織、主管或客戶，重要的點也可能完全不同。</p><p id="nav-79d800a05a0004bb" data-navigation-anchor="">所以現在我開始把「不知道」分成幾種。</p><p id="nav-58fe23447edcbc7d" data-navigation-anchor="">有些是知識。</p><p id="nav-550174e3df2990c8" data-navigation-anchor="">有些是方法。</p><p id="nav-3a7ea335730331b0" data-navigation-anchor="">有些是經驗。</p><p id="nav-87e38550be15b666" data-navigation-anchor="">還有一些，是只存在於這個環境裡的規則。</p><p id="nav-ed2947e1cb0bc64d" data-navigation-anchor="">以前我會很容易把它們全部混在一起，最後得到一個很簡單的結論：「我怎麼沒有先想到？」</p><p id="nav-107d871eda4692e5" data-navigation-anchor="">現在覺得，這句話有時候沒有那麼有幫助。</p><p id="nav-8ca835a2415e004d" data-navigation-anchor="">因為真正重要的可能不是責怪自己沒有預先知道全部，而是先確認：這到底是哪一種不知道？</p><h2 id="沒想到不一定都是同一種問題" data-navigation-anchor=""><a href="#沒想到不一定都是同一種問題" class="headerlink" title="沒想到不一定都是同一種問題"></a>沒想到不一定都是同一種問題</h2><p id="nav-03d2d9844a14260f" data-navigation-anchor="">最近我很容易特別在意「自己沒想到」這件事。</p><p id="nav-e1ee4181179a1943" data-navigation-anchor="">尤其當別人提出一個我原本沒有考慮的面向時，我會很快去想：為什麼我沒有想到？是不是我的思考不夠全面？是不是做專案的人本來就應該想到這些？</p><p id="nav-eac339b487e76e9d" data-navigation-anchor="">有些確實是。</p><p id="nav-70eaab7ca7b05180" data-navigation-anchor="">如果同一種問題已經發生好幾次，我還是完全沒有留下任何檢查方式，那就真的需要改善。</p><p id="nav-43a2253515783962" data-navigation-anchor="">但有些情況可能不是。</p><p id="nav-be787dd95bc5ea65" data-navigation-anchor="">例如第一次接觸某種工作，沒有相關案例，也沒有既有流程可以參考。</p><p id="nav-2c941089f230f12d" data-navigation-anchor="">這時候別人有經驗，所以知道哪裡容易出問題。</p><p id="nav-72a318f0b6d4297d" data-navigation-anchor="">而我不知道。</p><p id="nav-be50f9f25c511293" data-navigation-anchor="">這比較像是經驗上的差距，而不是單純的思考能力差。</p><p id="nav-cad084a306e19d94" data-navigation-anchor="">還有另一種情況，是組織裡本來就存在一些沒有寫下來的判斷。</p><p id="nav-ed056c02ee062aa9" data-navigation-anchor="">誰需要被通知。</p><p id="nav-d51252c4f2f5d883" data-navigation-anchor="">什麼情況主管會特別在意。</p><p id="nav-b0e06032e937b467" data-navigation-anchor="">哪一類問題看似很小，其實以前曾經出過大事。</p><p id="nav-989ad09c0c0ce10b" data-navigation-anchor="">如果沒有人說，第一次遇到的人本來就不太可能憑空知道。</p><p id="nav-b1510a9951b0ee49" data-navigation-anchor="">想到這裡，我反而覺得，比起要求自己把所有事情都想到，更實際的目標是：</p><p id="nav-4b431c7ab54d39b5" data-navigation-anchor="">讓自己越來越知道，遇到陌生工作時應該先去哪裡找未知。</p><p id="nav-78dd98a07082d129" data-navigation-anchor="">不是一次把未知消滅。</p><p id="nav-7104a352cdbf2d6a" data-navigation-anchor="">而是先知道哪些地方最可能藏著不知道的東西。</p><h2 id="我好像需要的不是一張萬用清單" data-navigation-anchor=""><a href="#我好像需要的不是一張萬用清單" class="headerlink" title="我好像需要的不是一張萬用清單"></a>我好像需要的不是一張萬用清單</h2><p id="nav-ebe91f032e53f03c" data-navigation-anchor="">前一陣子我很想替自己整理一份 checklist。</p><p id="nav-68fb9c6d5c728d9e" data-navigation-anchor="">我想，如果可以把主管問過的問題全部記下來，以後每一個專案都照著問一次，是不是就不會漏掉。</p><p id="nav-7bb2f97456aec986" data-navigation-anchor="">這應該還是有用。</p><p id="nav-a142889197959425" data-navigation-anchor="">例如開始一件工作以前，至少可以確認：目的、使用者、範圍、前置條件、交付成果、誰負責決策。</p><p id="nav-b713592cb8f1436f" data-navigation-anchor="">這些確實可以留下來。</p><p id="nav-7d468c2217aaf472" data-navigation-anchor="">但我現在開始覺得，如果只是一直把問題加進 checklist，最後可能會得到一張什麼都檢查、什麼都不敢開始的表。</p><p id="nav-40cab92ad7bdbe32" data-navigation-anchor="">這對我來說尤其危險。</p><p id="nav-e740d7fa25e88959" data-navigation-anchor="">因為我本來就很容易注意例外。</p><p id="nav-cba09728cc91053d" data-navigation-anchor="">如果再告訴自己：「成熟的 PM 應該把所有風險都先想完。」</p><p id="nav-90351fa5914f7d47" data-navigation-anchor="">那大概只會讓我更難開始。</p><p id="nav-edb7098501b4a213" data-navigation-anchor="">所以 checklist 真正要幫我的，可能不是「避免所有未知」。</p><p id="nav-6d1a6398ed96995f" data-navigation-anchor="">而是提醒我幾個需要停下來確認的地方：</p><ul><li id="nav-0d17d39046e630ab" data-navigation-anchor="">現在到底是在解什麼問題？</li><li id="nav-d2fc157a5b7e2817" data-navigation-anchor="">哪些事情已經知道？</li><li id="nav-a7acccb7fcff1156" data-navigation-anchor="">哪些事情只是暫時假設？</li><li id="nav-bbeb5fe78fc778e6" data-navigation-anchor="">哪一個未知如果不先處理，後面的工作可能全部白做？</li><li id="nav-6bb0aadc883afbb7" data-navigation-anchor="">誰可以幫我確認？</li><li id="nav-7437426e9a12ffe5" data-navigation-anchor="">下一個需要做決定的位置在哪裡？</li></ul><p id="nav-d2d7cd0b32815898" data-navigation-anchor="">這和「把所有可能都列出來」很不一樣。</p><h2 id="我以前想的是怎麼解決問題，現在還要學怎麼選問題" data-navigation-anchor=""><a href="#我以前想的是怎麼解決問題，現在還要學怎麼選問題" class="headerlink" title="我以前想的是怎麼解決問題，現在還要學怎麼選問題"></a>我以前想的是怎麼解決問題，現在還要學怎麼選問題</h2><p id="nav-89b07ac174e5bb2c" data-navigation-anchor="">這是最近另一個明顯的差異。</p><p id="nav-12cc4dbcc56d7001" data-navigation-anchor="">以前遇到問題時，我很自然會進入解決模式。</p><p id="nav-e55220b99d72d601" data-navigation-anchor="">看到網站有問題，就想怎麼檢查。</p><p id="nav-4b291dd835829a08" data-navigation-anchor="">資料整理很麻煩，就想怎麼自動化。</p><p id="nav-982668772d1a1205" data-navigation-anchor="">月報很重複，就想怎麼把流程縮短。</p><p id="nav-7012965b529334c3" data-navigation-anchor="">這部分我還滿喜歡的。</p><p id="nav-f328d95863ed08e4" data-navigation-anchor="">因為只要問題夠具體，我通常可以一直往下挖，找到可以改善的地方。</p><p id="nav-497176aec24777c4" data-navigation-anchor="">但最近發現，工作有時候不是缺少解法。</p><p id="nav-f8b661a6e93525f6" data-navigation-anchor="">而是前面還有一層：現在最值得解的是哪一個問題？</p><p id="nav-53c34e596d434cad" data-navigation-anchor="">可能一個流程裡有十個麻煩的地方。</p><p id="nav-7a355e8e2673432a" data-navigation-anchor="">其中三個可以自動化。</p><p id="nav-f14c966481ea8736" data-navigation-anchor="">但真正最影響使用者的，可能只有一個。</p><p id="nav-d8c1974ebdbf793c" data-navigation-anchor="">或者技術上最有趣的問題，根本不是現在最值得投入時間的問題。</p><p id="nav-3e58df335b51b65c" data-navigation-anchor="">這件事情對我來說還滿陌生。</p><p id="nav-e45e9d3f075baed5" data-navigation-anchor="">因為我以前比較習慣的是「問題存在 → 想辦法處理」。</p><p id="nav-ba6d85833dbfdee3" data-navigation-anchor="">現在卻還要先問：「問題存在 → 值得現在處理嗎？」</p><p id="nav-e4bc0cd722643f24" data-navigation-anchor="">甚至要問：「這真的是問題，還是只是我不喜歡它現在的做法？」</p><p id="nav-6e4a080882e73bec" data-navigation-anchor="">這種判斷比寫程式或整理資料更模糊。</p><p id="nav-4b1d593f2f4a46a6" data-navigation-anchor="">也更需要知道其他人的立場。</p><p id="nav-95127de5252fa4c0" data-navigation-anchor="">我到現在還沒有很穩定地做出這種判斷。</p><h2 id="主管問問題，好像不只是要答案" data-navigation-anchor=""><a href="#主管問問題，好像不只是要答案" class="headerlink" title="主管問問題，好像不只是要答案"></a>主管問問題，好像不只是要答案</h2><p id="nav-95c6fc057552268a" data-navigation-anchor="">最近我也開始重新理解主管問問題這件事。</p><p id="nav-5c48bdfc12eaad19" data-navigation-anchor="">以前被問到自己沒想到的東西時，我很容易理解成：「我漏掉了。」</p><p id="nav-36aa003db4a7b2d0" data-navigation-anchor="">現在慢慢覺得，有些問題其實不是在考我有沒有準備完整。</p><p id="nav-2af02f6d6afed623" data-navigation-anchor="">它可能只是在把一個判斷拉到桌面上。</p><p id="nav-ba4a6b882fcfc410" data-navigation-anchor="">例如「這件事情現在需要做到這麼多嗎？」並不一定代表我前面做錯，而是需要一起決定範圍。</p><p id="nav-2e61c22b4edc623b" data-navigation-anchor="">「這個資料來源確認過了嗎？」也不代表我早就應該知道答案，而是在提醒：這是一個後面工作開始以前必須關閉的未知。</p><p id="nav-b6b3426df6dfe17e" data-navigation-anchor="">這個差異我還需要時間習慣。</p><p id="nav-112f685bfe492dcc" data-navigation-anchor="">因為我的直覺還是很容易把問題理解成：「這件事情你怎麼沒有先想到？」</p><p id="nav-e7f31ee20a702eb3" data-navigation-anchor="">但也許專案裡很多問題，其實只是提醒：現在走到這裡了，我們需要做一個決定。</p><p id="nav-b933dbfe83bd814e" data-navigation-anchor="">如果是這樣，那被問到問題，不一定代表準備不足。</p><p id="nav-312c68e1723fd85d" data-navigation-anchor="">有時候，它就是工作的正常部分。</p><h2 id="那我要怎麼面對不知道自己不知道" data-navigation-anchor=""><a href="#那我要怎麼面對不知道自己不知道" class="headerlink" title="那我要怎麼面對不知道自己不知道"></a>那我要怎麼面對不知道自己不知道</h2><p id="nav-c687cea23009fab8" data-navigation-anchor="">我現在還沒有完整答案。</p><p id="nav-2aed025babef4439" data-navigation-anchor="">但和前一陣子相比，我好像開始有一些比較具體的做法。</p><p id="nav-c8c3ff19c953d72d" data-navigation-anchor="">遇到陌生工作時，不要求自己直接把完整方案想出來。</p><p id="nav-e38cf9991dbb2063" data-navigation-anchor="">先找一個做過類似事情的人問：「這種事情通常最容易漏掉什麼？」</p><p id="nav-0d19ef3a365724cb" data-navigation-anchor="">先看過去的案例，而不是只看現在的需求。</p><p id="nav-f3af293cb65d1240" data-navigation-anchor="">先把自己的暫定理解寫出來，讓別人有東西可以修正。</p><p id="nav-f7951340340f6ec1" data-navigation-anchor="">如果某個地方特別不確定，就不要假裝它已經確定，而是明確留下：「這裡還需要確認。」</p><p id="nav-74492b5556d1552f" data-navigation-anchor="">然後每一次被問到原本沒有想到的事情，再判斷一次：這可以變成下次固定檢查的原則，還是只是這個專案的特殊情況？</p><p id="nav-5097f41122838aa7" data-navigation-anchor="">如果能慢慢把兩者分開，也許就不需要每次從零開始。</p><p id="nav-26552b3c767a0d55" data-navigation-anchor="">這和我以前「把答案弄懂」的學習方式很不一樣。</p><p id="nav-1fa6961d82fbf770" data-navigation-anchor="">以前比較像是在累積答案。</p><p id="nav-89b39a116d7e74fe" data-navigation-anchor="">現在開始覺得，可能還要累積的是問題：知道什麼時候應該問什麼問題。</p><h2 id="暫時不知道，也可以成為一種工作狀態" data-navigation-anchor=""><a href="#暫時不知道，也可以成為一種工作狀態" class="headerlink" title="暫時不知道，也可以成為一種工作狀態"></a>暫時不知道，也可以成為一種工作狀態</h2><p id="nav-8644618b48689cde" data-navigation-anchor="">我以前很不喜歡「不知道」。</p><p id="nav-1451523826520725" data-navigation-anchor="">如果一件事情卡在不知道，我會覺得它還沒有準備好，還不能往下。</p><p id="nav-b4efd5cb523d6bb3" data-navigation-anchor="">現在慢慢接受，有些時候比較合理的狀態就是：</p><blockquote><p id="nav-a71c12a82e37ee90" data-navigation-anchor="">目前還不知道，但已經知道要怎麼確認。</p></blockquote><p id="nav-1910b95528bd2a86" data-navigation-anchor="">這兩種狀態差很多。</p><p id="nav-f8d354ac2f32724d" data-navigation-anchor="">「不知道」如果什麼都沒有，確實很危險。</p><p id="nav-4fe33c77c641845b" data-navigation-anchor="">可是如果已經知道缺哪一份資料、要問哪一個人、要測哪一個版本，以及哪個結果會影響下一步，那它其實已經是一個可以被管理的狀態。</p><p id="nav-d1a61014a980d8d1" data-navigation-anchor="">這件事情我覺得自己還在學。</p><p id="nav-01344af55133fcf6" data-navigation-anchor="">而且可能還會學很久。</p><p id="nav-fcdc5c1b1cac6396" data-navigation-anchor="">因為越開始碰以前沒做過的事情，就越會發現世界並沒有打算把所有前置條件整理好再交給我。</p><p id="nav-220336ad43a48b55" data-navigation-anchor="">有些規則藏在人的經驗裡。</p><p id="nav-6853a07afbd6ca77" data-navigation-anchor="">有些風險要真的遇過才會知道。</p><p id="nav-f4de0ec68c83475d" data-navigation-anchor="">有些問題甚至要先做錯一點，才知道原來問題在那裡。</p><p id="nav-5808d9bcb8b057e7" data-navigation-anchor="">好像也只能這樣。</p><h2 id="我現在比較想練的事情" data-navigation-anchor=""><a href="#我現在比較想練的事情" class="headerlink" title="我現在比較想練的事情"></a>我現在比較想練的事情</h2><p id="nav-116ac2cf9f45acdc" data-navigation-anchor="">如果 N+6 是發現自己的工作模式正在改變，那最近這段時間我想練的，可能是另外一件事情：遇到不知道的事情時，不要立刻要求自己知道全部。</p><p id="nav-158e62b793c9da12" data-navigation-anchor="">先判斷現在是哪一種不知道。</p><p id="nav-b7aa97a19253ea57" data-navigation-anchor="">如果是不會，就去學。</p><p id="nav-fa6d032ba4e05cfa" data-navigation-anchor="">如果是缺資料，就去找。</p><p id="nav-1f8110b8fe47a907" data-navigation-anchor="">如果是需要決策，就把問題提出來。</p><p id="nav-2e9e4723cb6024d0" data-navigation-anchor="">如果是沒有經驗，就找案例或找做過的人。</p><p id="nav-7ae05517ef0208bf" data-navigation-anchor="">如果連問題都還不知道，就先做一個足夠小的版本，讓問題有機會出現。</p><p id="nav-174b96ba049bad62" data-navigation-anchor="">這樣想之後，我好像比較能理解，為什麼最近一直覺得自己不知道的事情變多了。</p><p id="nav-69ef84a65240622e" data-navigation-anchor="">可能不是因為我退步。</p><p id="nav-c08d5b04b09360e1" data-navigation-anchor="">而是以前我的工作，多半是在別人已經畫好邊界的範圍裡。</p><p id="nav-88ad637e0f3c4d48" data-navigation-anchor="">現在開始往外走之後，我才看到邊界外原來還有這麼多事情。</p><p id="nav-3d548cb90ee53f99" data-navigation-anchor="">至於最後要走到哪裡，我現在還不知道。</p><p id="nav-e507762f2ba56ead" data-navigation-anchor="">但至少我開始知道，下一次別人問出一個自己沒有想到的問題時，也許不用急著把它解讀成：「我怎麼又漏掉了。」</p><p id="nav-9a2b985f446c0a77" data-navigation-anchor="">可以先問另一件事：這個問題是在提醒我哪一種未知？</p><p id="nav-15e9bb40d7aec061" data-navigation-anchor="">如果能慢慢學會這件事，或許我需要累積的就不只是更多答案。</p><p id="nav-a678e07de62d18dc" data-navigation-anchor="">而是一套讓自己在還沒有答案的時候，也能繼續工作的方式。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;上一篇寫到，我以前比較熟悉的是把交到手上的事情做好；現在才發現，工作還包括在事情成立以前，先知道要問哪些問題。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活紀錄" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="生活回顧" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-22才の別れ</title>
+    <link href="http://example.com/2026/09/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-22%E6%89%8D%E3%81%AE%E5%88%A5%E3%82%8C/"/>
+    <id>http://example.com/2026/09/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-22%E6%89%8D%E3%81%AE%E5%88%A5%E3%82%8C/</id>
+    <published>2026-09-16T04:00:00.000Z</published>
+    <updated>2026-09-16T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-67547ab49fc82296" data-navigation-anchor="">      推薦 Kaguyahime 的 22才の別れ      <br>      出自專輯 三階建の詩      <br>      <a href="https://open.spotify.com/track/3TxwpAKVPg3qidiKqB1b6X?si=edace97ee86543b1" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_22才の別れ.webp" alt="Kaguyahime - 22才の別れ - 三階建の詩" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05<br>流暢而明朗的木吉他旋律是最初想推薦這首歌的原因，但這首遠比想像中深沉，算是以女性視角的告別與成長的歌，宣告著一段長久相伴的終結與青春的定局，結尾雖然說著祝福但沒有人能接受情人這樣的道別，被告別的人不得不收起稜角走進社會的時代，卻支撐不起愛情的難受真的是一種很難受的被妥協。<p id="nav-2d9ac7eed1a7b187" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 Kaguyahime 的 22才の別れ
+      &lt;br&gt;
+      出自專輯 三階建の詩
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/3TxwpAKVPg3qidiKqB1b6X?si=edace97ee86543b1&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_22才の別れ.webp&quot; alt=&quot;Kaguyahime - 22才の別れ - 三階建の詩&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="日語" scheme="http://example.com/tags/%E6%97%A5%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-你講的話</title>
+    <link href="http://example.com/2026/09/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E8%AC%9B%E7%9A%84%E8%A9%B1/"/>
+    <id>http://example.com/2026/09/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E8%AC%9B%E7%9A%84%E8%A9%B1/</id>
+    <published>2026-09-15T04:00:00.000Z</published>
+    <updated>2026-09-15T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-a224e6f39eb2f0a4" data-navigation-anchor="">      推薦 江蕙 的 你講的話      <br>      出自專輯 遠走高飛      <br>      <a href="https://open.spotify.com/track/0ITqAC19p1USXCh6wtKkDb?si=d3509cb0afb34846" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_你講的話.webp" alt="江蕙 - 你講的話 - 遠走高飛" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span>轉載自個人ig每日點播&gt; chjuhsu05<br>我喜歡這首歌以細膩克制的方式描寫親情裡那些來不及的遺憾與思念，歌詞中面對道別時的溫柔視角，沒有陷在失去的悲傷裡，反而把要分開的結局，化作一場無比珍貴的相遇。歌詞裡面那段「你講無緣的命 無緣的人總要分西東 我講有緣的名 有緣的人才會做你的子」將離別換成對彼此緣分的感激。想念真的有很多種形式，而這種形式的想念真的滿撫慰人的。<br>非常推薦啊啊啊]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 江蕙 的 你講的話
+      &lt;br&gt;
+      出自專輯 遠走高飛
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/0ITqAC19p1USXCh6wtKkDb?si=d3509cb0afb34846&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_你講的話.webp&quot; alt=&quot;江蕙 - 你講的話 - 遠走高飛&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="台語" scheme="http://example.com/tags/%E5%8F%B0%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-kungtari shabara</title>
+    <link href="http://example.com/2026/09/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-kungtari-shabara/"/>
+    <id>http://example.com/2026/09/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-kungtari-shabara/</id>
+    <published>2026-09-14T04:00:00.000Z</published>
+    <updated>2026-09-14T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-cbc1afad369ad71a" data-navigation-anchor="">      推薦 clone 的 kungtari shabara      <br>      出自專輯 Are You Ready?      <br>      <a href="https://www.youtube.com/watch?v=R4R3D1sk5zo" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_kungtari_shabara.webp" alt="clone - kungtari shabara - Are You Ready?" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span>轉載自個人ig每日點播&gt; chjuhsu05<br>這首來自朋友推薦，他在失落的時候於韓國的音樂噴泉旁聽到，我喜歡這首歌裡面毫無保留、直率而飽滿的蓬勃朝氣，尤其搭配MV的時候更能感受到整首歌的氣氛，當生活中碰上心煩難耐的困境，與其被壓得喘不過氣，不如藉著音樂徹底宣洩、隨節奏起舞，用最原始的熱情把所有沉悶一掃而空。<br>非常推薦啊啊啊]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 clone 的 kungtari shabara
+      &lt;br&gt;
+      出自專輯 Are You Ready?
+      &lt;br&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=R4R3D1sk5zo&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_kungtari_shabara.webp&quot; alt=&quot;clone - kungtari shabara - Are You Ready?&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有工作的第N+6天</title>
+    <link href="http://example.com/2026/09/13/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+6%E5%A4%A9/"/>
+    <id>http://example.com/2026/09/13/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+6%E5%A4%A9/</id>
+    <published>2026-09-13T13:00:00.000Z</published>
+    <updated>2026-09-17T02:53:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-55f01d34125084d1" data-navigation-anchor="">最近突然開始回頭想，我以前到底是怎麼工作的。原來我不只是在學著把事情做好，也開始面對事情成立以前該問什麼、做到哪裡，以及由誰一起負責。</p><span id="more"></span><p id="nav-84d0e62cba46dcc6" data-navigation-anchor="">這個問題不是因為工作出了什麼大問題，而是最近幾次聽別人分享、和主管討論事情，也開始整理自己工作上的困惑之後，我慢慢發現：現在遇到的問題，不只是「還有很多事情不會」，而是我原本習慣的工作方式，和現在被要求的工作方式，本來就不太一樣。</p><p id="nav-8aee76a7724ae107" data-navigation-anchor="">以前的我很少真的去想，一件事情值得投入多少時間、應該做到什麼程度，或是哪個部分其實不應該繼續由我處理。</p><p id="nav-5a4d4ae27390a7e6" data-navigation-anchor="">事情只要交到我手上，我通常就是先把它弄懂，再盡可能把自己看到的問題處理掉。</p><p id="nav-d266fb009c51c017" data-navigation-anchor="">以前我會把這理解成「把工作做好」。</p><p id="nav-942471bc9ea2b7cc" data-navigation-anchor="">現在卻開始覺得，也許事情沒有這麼簡單。</p><h2 id="我好像很容易把事情養起來" data-navigation-anchor=""><a href="#我好像很容易把事情養起來" class="headerlink" title="我好像很容易把事情養起來"></a>我好像很容易把事情養起來</h2><p id="nav-a4b6a6ff2a665dbf" data-navigation-anchor="">以前在圖書館工作的時候，很多事情其實都很適合我原本的工作方式。</p><p id="nav-df05d010b1aabc6f" data-navigation-anchor="">例如負責一個活動、一個網站頁面、一套服務流程，我會先理解它原本怎麼運作，發現哪裡有問題，再慢慢補文件、改流程、整理規則。</p><p id="nav-8af6e185d293b931" data-navigation-anchor="">如果過程中看到新的問題，我通常也會一起處理。</p><p id="nav-f181670c28b5f7fc" data-navigation-anchor="">做久了之後，會知道它以前發生過什麼事情、為什麼會變成現在這樣、哪些地方容易出錯，以後可能還會遇到什麼。</p><p id="nav-e796475993d585a0" data-navigation-anchor="">現在回頭看，我好像不只是在「完成一個任務」。</p><p id="nav-63b4e82d9bdf54ed" data-navigation-anchor="">比較像是在養一件事情。</p><p id="nav-fd6f9cf25f15523e" data-navigation-anchor="">事情交到手上之後，我會逐漸理解它、補上缺少的東西、處理例外。連它之後怎麼被使用、怎麼維護，我也會一起放進考量裡。</p><p id="nav-4c018d84396e50c1" data-navigation-anchor="">這個模式也有它的好處。</p><p id="nav-510dec4955636d3b" data-navigation-anchor="">只要是我負責過一段時間的東西，我通常會很了解它。</p><p id="nav-88bb8de6aa62b20e" data-navigation-anchor="">而且只要我已經看見問題，就很難假裝自己沒有看見。</p><p id="nav-11107dc1513d44e2" data-navigation-anchor="">但現在開始遇到的困難也是從這裡來的。</p><p id="nav-d641f961e99260ad" data-navigation-anchor="">因為我以前比較少去問：</p><p id="nav-16fa9cc4325b3694" data-navigation-anchor="">這個問題現在一定要處理嗎？</p><p id="nav-d3c06712d2e54a5b" data-navigation-anchor="">這件事情做到哪裡其實就已經足夠？</p><p id="nav-a49d7b79fd7c1467" data-navigation-anchor="">後面的問題，還是現在這個工作的範圍嗎？</p><p id="nav-1fdc6934c3bf1155" data-navigation-anchor="">甚至是：</p><p id="nav-b9084034926103e5" data-navigation-anchor="">這件事情真的應該由我繼續負責嗎？</p><p id="nav-39d79223ff4f77bc" data-navigation-anchor="">以前我的答案常常只是：既然我看到了，那就順便把它做好。</p><p id="nav-65d316afddc7d9e9" data-navigation-anchor="">可是工作好像不一定能一直這樣做。</p><h2 id="月報不能最後一天才寫" data-navigation-anchor=""><a href="#月報不能最後一天才寫" class="headerlink" title="月報不能最後一天才寫"></a>月報不能最後一天才寫</h2><p id="nav-de8be3fc45b8feed" data-navigation-anchor="">前陣子突然想到，以前曾經有前輩跟我說過一句話：「月報不能最後一天才寫。」</p><p id="nav-618ec30de7ac65df" data-navigation-anchor="">我那時候一直沒有真正理解。</p><p id="nav-5635adbb27ec136f" data-navigation-anchor="">因為如果這個月事情還沒做完，要寫什麼？</p><p id="nav-c9ec5c6d96c25b00" data-navigation-anchor="">如果成果還不夠完整，好像也沒有什麼值得寫。</p><p id="nav-c90332811c1321a0" data-navigation-anchor="">所以我以前很容易把「成果」理解成某個已經完成的東西。</p><p id="nav-c6bbf851a850ad95" data-navigation-anchor="">事情完成了，才有成果。</p><p id="nav-687fdccd691b3ea3" data-navigation-anchor="">功能做好了，才有成果。</p><p id="nav-0528f666f04a66b0" data-navigation-anchor="">活動結束了，才有成果。</p><p id="nav-00d42479ba9585f6" data-navigation-anchor="">可是最近開始做比較多專案型的事情之後，我好像開始理解那句話的意思。</p><p id="nav-7312561805c02cab" data-navigation-anchor="">月報記錄的，不只是最後完成了什麼。</p><p id="nav-c036279ff66d2dfc" data-navigation-anchor="">也可以是：</p><ul><li id="nav-d602863ceaa461fa" data-navigation-anchor="">這個月確認了什麼。</li><li id="nav-99175dd282f52ee9" data-navigation-anchor="">排除了什麼。</li><li id="nav-ac9fbacd838538eb" data-navigation-anchor="">遇到什麼問題。</li><li id="nav-2b883a10a7b5220f" data-navigation-anchor="">改了什麼方向。</li><li id="nav-770124d99c3e225d" data-navigation-anchor="">現在事情走到哪裡。</li></ul><p id="nav-4e0b805ee301e058" data-navigation-anchor="">這樣想之後，月報其實比較像是月底做一次編輯，而不是月底才開始作文。</p><p id="nav-aafe09c1f65ce949" data-navigation-anchor="">這件事情對我來說比想像中重要。</p><p id="nav-b175d7fc749c161e" data-navigation-anchor="">因為它代表我得換一種工作方式。</p><p id="nav-d6670f195ea27f18" data-navigation-anchor="">以前我比較在意東西最後做得好不好，現在還要注意：</p><p id="nav-d4f3eb74fd47e288" data-navigation-anchor=""><strong>這件事情在這段時間裡往前了多少？</strong></p><p id="nav-caa6d6fb369ad467" data-navigation-anchor="">這是兩個不同的問題。</p><h2 id="我能想像的事情，才比較容易開始" data-navigation-anchor=""><a href="#我能想像的事情，才比較容易開始" class="headerlink" title="我能想像的事情，才比較容易開始"></a>我能想像的事情，才比較容易開始</h2><p id="nav-bdb620205834d1ca" data-navigation-anchor="">最近另一個越來越明顯的問題，是我很依賴「能不能先想像完整」。</p><p id="nav-0b63e6a4c19a7614" data-navigation-anchor="">如果事情是我熟悉的，我可以很快往下做。</p><p id="nav-b5bdc82d5cc31b6b" data-navigation-anchor="">我知道資料會長什麼樣、最後成果大概是什麼、過程可能遇到哪些問題，那我通常可以一路往下推。</p><p id="nav-0131294642e7ecc8" data-navigation-anchor="">可是只要有一大塊是我完全不知道的，我就會開始很不舒服。</p><p id="nav-5f7ae3c1093ed791" data-navigation-anchor="">例如不知道最後成果應該長什麼樣、不知道資料到底拿不拿得到、不知道這個方法能不能用，或者根本沒有做過類似的事情。</p><p id="nav-b8c5760307499b05" data-navigation-anchor="">我會想先把那些未知弄清楚。</p><p id="nav-560644c8b5d1d0ae" data-navigation-anchor="">這件事本身沒有問題。</p><p id="nav-80a297ebc04fcf67" data-navigation-anchor="">問題是，有些事情根本不可能在開始以前全部弄清楚。</p><p id="nav-ecdac6ea3aff6c24" data-navigation-anchor="">有時候就是要先做一版，才會知道需求有什麼問題。</p><p id="nav-aa06490822474ecb" data-navigation-anchor="">先拿幾筆資料測，才會知道資料能不能用。</p><p id="nav-62c65e54c80b907a" data-navigation-anchor="">先提出一個暫定方案，別人才有東西可以反對。</p><p id="nav-d5517273b887d05f" data-navigation-anchor="">這個概念我現在已經能理解了。</p><p id="nav-c75ae4387958ba79" data-navigation-anchor="">但真正要做的時候，我還是會卡住。</p><p id="nav-522611130e18b339" data-navigation-anchor="">因為我以前的工作順序比較像：</p><p id="nav-327e67e3d900c40d" data-navigation-anchor="">理解 → 確定 → 執行 → 完成。</p><p id="nav-581b40921ce3ab21" data-navigation-anchor="">現在有些工作卻是：</p><p id="nav-7ed35120b0955292" data-navigation-anchor="">暫時理解 → 做一版 → 得到新資訊 → 修正理解 → 再做下一版。</p><p id="nav-d68dc503804afa12" data-navigation-anchor="">中間會有很多「還不知道」。</p><p id="nav-57e6393513dca590" data-navigation-anchor="">而且那些還不知道的事情，不代表現在不能開始。</p><p id="nav-69bd6433b931aae0" data-navigation-anchor="">這個差異我到現在都還在習慣。</p><h2 id="我原本以為只是不要什麼都做到最好" data-navigation-anchor=""><a href="#我原本以為只是不要什麼都做到最好" class="headerlink" title="我原本以為只是不要什麼都做到最好"></a>我原本以為只是不要什麼都做到最好</h2><p id="nav-b7e41e27b2c193e7" data-navigation-anchor="">一開始我其實把這些問題理解得比較簡單。</p><p id="nav-053decb94276fc7a" data-navigation-anchor="">我想，也許只是因為自己以前太習慣把事情做到完整，所以現在需要學的是控制範圍、控制時間，不要什麼事情都一直往下補。</p><p id="nav-b7524ce9e8f68432" data-navigation-anchor="">這個理解沒有錯。</p><p id="nav-6da58ffee2e42749" data-navigation-anchor="">只是最近跟主管討論幾次事情之後，我開始覺得，事情不只這樣。</p><p id="nav-eed21e49e91bf360" data-navigation-anchor="">有些時候，我想的是：「這個東西要怎麼做？」</p><p id="nav-0efede48fbb70ec1" data-navigation-anchor="">但主管問的卻是：「為什麼要做這個？」</p><p id="nav-683ac1328180c32c" data-navigation-anchor="">或者我已經開始想工具怎麼做、資料怎麼處理了，卻突然被問：最後誰會用？前面的條件確認了嗎？誰有權決定這件事情？如果這個假設不成立，後面還需要做嗎？</p><p id="nav-0a5347c3e2238524" data-navigation-anchor="">這些問題本身並不奇怪。</p><p id="nav-04a45a18bf13a176" data-navigation-anchor="">但真正讓我受到衝擊的是：我發現有些問題不是我「回答不好」。</p><p id="nav-16ee132bcc0d58db" data-navigation-anchor="">而是我根本沒有想到，原來這些事情也是工作的一部分。</p><p id="nav-e955af6b5227c5ed" data-navigation-anchor="">以前很多時候，我接到事情時，「這件事情要做」本身就已經成立了。</p><p id="nav-886a6d575ace54ff" data-navigation-anchor="">需求已經存在，服務已經存在，活動也已經確定要辦。</p><p id="nav-ad5ff8fa7c19dfe9" data-navigation-anchor="">我的工作是接下來怎麼把它做好。</p><p id="nav-11b49d2d23ec39e0" data-navigation-anchor="">可是現在開始碰到的事情，有時候連「這件事情到底應該怎麼成立」都還沒確定。</p><p id="nav-f4d3dee795752fc3" data-navigation-anchor="">要先問目的、範圍、使用者、成本、前置條件、誰要參與、什麼時候需要確認。</p><p id="nav-a5a28e80c298e561" data-navigation-anchor="">我好像開始從「事情已經成立之後，怎麼把它做好」，慢慢走到「事情成立以前，要怎麼決定它應該長什麼樣子」。</p><p id="nav-93d08562ad56cffa" data-navigation-anchor="">這對我來說可能才是真正陌生的地方。</p><h2 id="原來我不知道的事情，比我以為的更多" data-navigation-anchor=""><a href="#原來我不知道的事情，比我以為的更多" class="headerlink" title="原來我不知道的事情，比我以為的更多"></a>原來我不知道的事情，比我以為的更多</h2><p id="nav-fde29d39143ce848" data-navigation-anchor="">發現這件事情之後，卻沒有比較安心。</p><p id="nav-98369fee68dc787e" data-navigation-anchor="">因為至少以前我會覺得，只要多學一些專案管理方法、多學甘特圖、多練工項拆解，大概就能把這個問題補起來。</p><p id="nav-72b7113bd7c4010c" data-navigation-anchor="">現在卻開始覺得，也許這裡混著幾種不同的能力。</p><p id="nav-5041e0dc044b9e48" data-navigation-anchor="">有些確實是方法。</p><p id="nav-33715906fe985900" data-navigation-anchor="">例如怎麼拆工項、怎麼排前後關係、怎麼定義完成、怎麼估時間。</p><p id="nav-47a1ad73fcb44ea6" data-navigation-anchor="">有些可能是經驗。</p><p id="nav-f338b02ad73870de" data-navigation-anchor="">沒有真的做過網站改版、需求規劃或跨角色協作，本來就不會知道每個階段容易掉什麼東西。</p><p id="nav-ec68b792f5156e86" data-navigation-anchor="">還有一些可能是組織裡面的隱性知識。</p><p id="nav-ef403d454c424423" data-navigation-anchor="">什麼事情要先問誰、哪些風險大家其實默認要先確認、哪些可以自己判斷、哪些需要主管決定。</p><p id="nav-75b4adbb5a56bf18" data-navigation-anchor="">更讓我不安的是：</p><p id="nav-ec1d4d28a202f1d7" data-navigation-anchor="">我現在甚至還不知道自己不知道什麼。</p><p id="nav-f9372ce52905eaac" data-navigation-anchor="">有些東西至少我已經知道自己不會，可以去學。</p><p id="nav-b2f5a3f0750f752d" data-navigation-anchor="">但如果連「原來這也是一個要思考的問題」都不知道，就很難靠自己直接補起來。</p><p id="nav-d22cfa2c12bbb66f" data-navigation-anchor="">這大概也是我最近一直問一些看起來零散的問題的原因。</p><p id="nav-d11f83d42e347187" data-navigation-anchor="">怎麼拆工作、怎麼估時間、怎麼看前置條件、怎麼提出方案、怎麼考慮不同人的立場、怎麼知道做到哪裡可以停。</p><p id="nav-8a53f369e08312a7" data-navigation-anchor="">它們表面上看起來不像同一件事情。</p><p id="nav-bbce360132bf9d71" data-navigation-anchor="">可是現在回頭看，好像都指向同一個地方：</p><p id="nav-820f5f2c5d931ad8" data-navigation-anchor="">我現在學的，不只是把一件事情做完。</p><p id="nav-a2b7b30baa0012ad" data-navigation-anchor="">而是怎麼讓一件還沒有完全成形的事情，慢慢變成大家可以一起往前做的東西。</p><h2 id="先留下每週四行" data-navigation-anchor=""><a href="#先留下每週四行" class="headerlink" title="先留下每週四行"></a>先留下每週四行</h2><p id="nav-dc4b6fa4462c63a3" data-navigation-anchor="">雖然現在知道的問題反而更多，但我還是不想讓它最後只剩下一堆抽象的反省。</p><p id="nav-05e5362bd4f502fe" data-navigation-anchor="">所以最近想先留下一個很小的習慣。</p><p id="nav-f4e0f8de1112f043" data-navigation-anchor="">每週只記四件事情：</p><ul><li id="nav-6d8d37511ee3380c" data-navigation-anchor="">這週完成了什麼。</li><li id="nav-5f549c8088f773cc" data-navigation-anchor="">確認了什麼。</li><li id="nav-7ea76f20cd40a7d5" data-navigation-anchor="">還卡在哪裡。</li><li id="nav-f3ac0a0b61ec6997" data-navigation-anchor="">下一步要做什麼。</li></ul><p id="nav-025fa03345ef6cef" data-navigation-anchor="">這看起來很普通。</p><p id="nav-d52b8a9f298aa41f" data-navigation-anchor="">但對我來說，它其實是在練習另一種以前比較少有的工作方式。</p><p id="nav-5b0f09bc56f8f96e" data-navigation-anchor="">不要等到事情完整了才承認它是一個成果。</p><p id="nav-c0ebec3c0a213a6a" data-navigation-anchor="">不要只看最後做出什麼，也要留下中間怎麼走過來。</p><p id="nav-00f055cad25dee2a" data-navigation-anchor="">也不要每次都想直接看到整條路，只先把下一個可以確認的位置留下來。</p><p id="nav-998214c7bbfbfbc1" data-navigation-anchor="">我不知道這個習慣最後能改變多少事情。</p><p id="nav-c6a7a9ea9659a5fd" data-navigation-anchor="">但至少它讓我開始可以看見，一件事情不是只有「完成」和「沒完成」兩種狀態。</p><h2 id="工作態度的下一個階段" data-navigation-anchor=""><a href="#工作態度的下一個階段" class="headerlink" title="工作態度的下一個階段"></a>工作態度的下一個階段</h2><p id="nav-cea23775bf657d69" data-navigation-anchor="">如果要替這段時間暫時整理，我會說：</p><p id="nav-603f413fb10582e5" data-navigation-anchor="">以前的我比較熟悉的是，怎麼對一件事情負責。</p><p id="nav-fe940c6f4dfe6e3e" data-navigation-anchor="">事情到了我手上，我會理解它、補完整、處理問題，盡可能讓它最後變成一個自己可以負責的成果。</p><p id="nav-cd9e4205e8827000" data-navigation-anchor="">這件事情我現在仍然覺得很重要。</p><p id="nav-f1cd4b6ec43e3352" data-navigation-anchor="">我也不想因為開始學專案管理，就把它變成另外一種「反正不在範圍內就不要管」的工作方式。</p><p id="nav-a1fb8743835f2f2b" data-navigation-anchor="">但現在還需要再加上一層。</p><p id="nav-a53cf20442b459c5" data-navigation-anchor="">除了問「我要怎麼把這件事情做好」，還要開始問：</p><p id="nav-043ca2019b97d7ec" data-navigation-anchor="">「這件事情現在應該做到哪裡？」</p><p id="nav-305641366d199f14" data-navigation-anchor="">「哪些問題值得現在處理？」</p><p id="nav-3b71e35b2226fa32" data-navigation-anchor="">「哪些需要先讓別人一起決定？」</p><p id="nav-33d9748b944ad65a" data-navigation-anchor="">「我現在真正要交付的，是完成品，還是足以讓下一步開始的東西？」</p><p id="nav-cab05edd70135a83" data-navigation-anchor="">以前我比較像是在學習，事情交到手上之後怎麼把它做好。</p><p id="nav-ea4f757b00291f0c" data-navigation-anchor="">現在開始碰到的，卻是事情還沒有完全成形以前，怎麼決定它要做什麼、做到哪裡、由誰參與，又要用什麼證據決定繼續往哪裡走。</p><p id="nav-c6e0ba406899f698" data-navigation-anchor="">這可能不只是工作方法的差異。</p><p id="nav-4e0d189f1d82636f" data-navigation-anchor="">也可能是我在工作裡站的位置，開始和以前不一樣了。</p><p id="nav-6524e664851eb1c7" data-navigation-anchor="">至於自己還有多少不知道的東西，我現在也不知道。</p><p id="nav-4ca0683985feaa79" data-navigation-anchor="">至少這一次，我比一開始多知道了一件事：</p><p id="nav-88257452b62a6155" data-navigation-anchor="">有些工作不是先把答案想清楚，才開始往前。</p><p id="nav-881ddd47d0911d4c" data-navigation-anchor="">而是在往前的過程裡，慢慢把原本不知道該問的問題也找出來。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;最近突然開始回頭想，我以前到底是怎麼工作的。原來我不只是在學著把事情做好，也開始面對事情成立以前該問什麼、做到哪裡，以及由誰一起負責。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活紀錄" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="生活回顧" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>歌曲推薦-好心分手</title>
+    <link href="http://example.com/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/"/>
+    <id>http://example.com/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/</id>
+    <published>2026-09-11T04:00:00.000Z</published>
+    <updated>2026-09-11T04:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-e1b8187d99a7baab" data-navigation-anchor="">      推薦 盧巧音 和 王力宏 的 好心分手      <br>      出自專輯 不能不愛…盧巧音精選      <br>      <a href="https://open.spotify.com/track/7DQOE8yIchm7bPPvJ0w6Bf?si=6b2958a3bc974e7d" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_好心分手.webp" alt="盧巧音 和 王力宏 - 好心分手 - 不能不愛…盧巧音精選" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05    <br>其實這首歌有兩個版本，個人獨唱版也非常好，但這個加入了王力宏的對唱版本，卻讓整首歌間變得立體。獨唱版像是一個人清醒後的單向通牒，合唱版卻把告別拉回了對峙的現場。王力宏的國語段落一進來，立刻帶來了一種極具穿透力、帶著不解與委屈的反駁，他標誌性乾淨且極具敘事感的聲音，把男方的慌亂與挽回表現得極其鮮明；而正是有了這層反抗，盧巧音在情感表達上的強度才被襯托得更加凌厲。她以沙啞又決絕的粵語咬字，一字一句斬斷虛耗的關係，冷靜中全是痛過之後的堅決。一軟一硬、一退一進的語言與情緒拉扯，讓整首歌不再只是單純的分手宣洩，很具張力。<p id="nav-d2fb606b3f3f7aa9" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
+    
+    
+    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
+  
+  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
+    &lt;p style=&quot;margin-top: 0;&quot;&gt;
+      推薦 盧巧音 和 王力宏 的 好心分手
+      &lt;br&gt;
+      出自專輯 不能不愛…盧巧音精選
+      &lt;br&gt;
+      &lt;a href=&quot;https://open.spotify.com/track/7DQOE8yIchm7bPPvJ0w6Bf?si=6b2958a3bc974e7d&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
+    &lt;img src=&quot;/images/song_好心分手.webp&quot; alt=&quot;盧巧音 和 王力宏 - 好心分手 - 不能不愛…盧巧音精選&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="音樂" scheme="http://example.com/categories/%E9%9F%B3%E6%A8%82/"/>
+    
+    
+    <category term="歌曲推薦" scheme="http://example.com/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
+    
+    <category term="粵語" scheme="http://example.com/tags/%E7%B2%B5%E8%AA%9E/"/>
+    
+  </entry>
+  
+</feed>

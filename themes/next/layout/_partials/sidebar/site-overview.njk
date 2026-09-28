@@ -8,6 +8,23 @@
 </div>
 
 {%- if theme.site_state %}
+{%- if brand_surface_context(page) === 'profile' %}
+  {%- set profile_library = profile_article_library() %}
+<div class="site-state-wrap animated" data-profile-site-state>
+  <nav class="site-state" aria-label="工作與學習統計">
+    <div class="site-state-item site-state-posts">
+      <a href="{{ url_for('/profile/articles/') }}">
+        <span class="site-state-item-count">{{ profile_library.total }}</span>
+        <span class="site-state-item-name">{{ __('state.posts') }}</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-tags">
+      <span class="site-state-item-count">{{ profile_library.tags.length }}</span>
+      <span class="site-state-item-name">{{ __('state.tags') }}</span>
+    </div>
+  </nav>
+</div>
+{%- else %}
 <div class="site-state-wrap animated">
   <nav class="site-state">
     {%- if config.archive_dir != '/' and site.posts.length > 0 %}
@@ -49,6 +66,7 @@
     {%- endif %}
   </nav>
 </div>
+{%- endif %}
 {%- endif %}
 
 {%- if theme.chat.enable and (theme.chatra.enable or theme.tidio.enable) %}

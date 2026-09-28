@@ -5,6 +5,8 @@
 {%- endif %}
 
 {{- next_js('utils.js') }}
+{{- next_js('surface-transition.js', { pjax: true }) }}
+{{- next_js('profile-article-filter.js', { pjax: true }) }}
 {%- if theme.motion.enable %}
   {{- next_js('motion.js') }}
 {%- endif %}

@@ -1,0 +1,362 @@
+{
+  "browser": "Chrome headless via CDP",
+  "base": "http://127.0.0.1:8892",
+  "checks": [
+    {
+      "label": "A /profile/ default scope",
+      "detail": "profile"
+    },
+    {
+      "label": "A profile-only article found",
+      "detail": [
+        {
+          "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "href": "/learning/ai-question-judgment-order/#nav-6370353feb8e9b06"
+        }
+      ]
+    },
+    {
+      "label": "A excludes memory-only result",
+      "detail": 0
+    },
+    {
+      "label": "A finds dual-surface article",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/"
+        }
+      ]
+    },
+    {
+      "label": "A all-scope finds memory-only result",
+      "detail": [
+        {
+          "title": "System Ready...",
+          "href": "/2026/01/21/welcome-board/"
+        }
+      ]
+    },
+    {
+      "label": "A clear restores profile default",
+      "detail": "profile"
+    },
+    {
+      "label": "B home default scope",
+      "detail": "memory"
+    },
+    {
+      "label": "B finds memory-only article",
+      "detail": [
+        {
+          "title": "System Ready...",
+          "href": "/2026/01/21/welcome-board/"
+        }
+      ]
+    },
+    {
+      "label": "B finds dual-surface article",
+      "detail": [
+        {
+          "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "href": "/work/flow-friendly-work-system/"
+        }
+      ]
+    },
+    {
+      "label": "B excludes profile-only article",
+      "detail": [
+        {
+          "title": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+          "href": "/learning/agentic-transaction-acid-agent/#nav-c7302a5fa82d52f2"
+        }
+      ]
+    },
+    {
+      "label": "B all-scope finds profile-only article",
+      "detail": [
+        {
+          "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "href": "/learning/ai-question-judgment-order/#nav-6370353feb8e9b06"
+        },
+        {
+          "title": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+          "href": "/learning/agentic-transaction-acid-agent/#nav-c7302a5fa82d52f2"
+        }
+      ]
+    },
+    {
+      "label": "B clear restores memory default",
+      "detail": "memory"
+    },
+    {
+      "label": "dual article default scope",
+      "detail": "all"
+    },
+    {
+      "label": "article/all finds profile-only",
+      "detail": [
+        {
+          "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "href": "/learning/ai-question-judgment-order/#nav-6370353feb8e9b06"
+        },
+        {
+          "title": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+          "href": "/learning/agentic-transaction-acid-agent/#nav-c7302a5fa82d52f2"
+        }
+      ]
+    },
+    {
+      "label": "article/all finds memory-only",
+      "detail": [
+        {
+          "title": "System Ready...",
+          "href": "/2026/01/21/welcome-board/"
+        }
+      ]
+    },
+    {
+      "label": "article clear restores all default",
+      "detail": "all"
+    },
+    {
+      "label": "PJAX A→article recomputes all scope",
+      "detail": {
+        "events": [
+          "/work/flow-friendly-work-system/"
+        ],
+        "surface": "all",
+        "marker": true
+      }
+    },
+    {
+      "label": "PJAX B→article recomputes all scope",
+      "detail": {
+        "events": [
+          "/work/flow-friendly-work-system/"
+        ],
+        "surface": "all"
+      }
+    },
+    {
+      "label": "same-URL reload restores open search view state",
+      "detail": {
+        "url": "/profile/",
+        "query": "AI 提問判斷順序",
+        "surface": "profile",
+        "disabled": false,
+        "open": true,
+        "saved": "{\"url\":\"/profile/\",\"query\":\"AI 提問判斷順序\",\"filters\":{\"surface\":\"profile\",\"source\":\"all\",\"category\":\"all\",\"month\":\"all\"},\"surface\":\"profile\",\"selectedCategory\":\"all\",\"scrollY\":0,\"isOpen\":true}"
+      }
+    },
+    {
+      "label": "same-URL back restores open search view state",
+      "detail": {
+        "url": "/profile/",
+        "query": "AI 提問判斷順序",
+        "surface": "profile",
+        "disabled": false,
+        "open": true,
+        "saved": "{\"url\":\"/profile/\",\"query\":\"AI 提問判斷順序\",\"filters\":{\"surface\":\"profile\",\"source\":\"all\",\"category\":\"all\",\"month\":\"all\"},\"surface\":\"profile\",\"selectedCategory\":\"all\",\"scrollY\":0,\"isOpen\":true}"
+      }
+    },
+    {
+      "label": "cross-URL search state does not leak",
+      "detail": {
+        "query": "",
+        "surface": "all"
+      }
+    },
+    {
+      "label": "recent A contains no memory-only candidates",
+      "detail": [
+        "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+        "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+        "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+        "工作知識｜API 需求排查：從前台現象回到資料來源",
+        "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+        "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫"
+      ]
+    },
+    {
+      "label": "recent B contains no profile-only candidates",
+      "detail": [
+        "歌曲推薦-沈默是金",
+        "歌曲推薦-海海人生",
+        "阿里山不是一座山（書籍閱讀紀錄）",
+        "沖繩旅行的兩個時空?",
+        "歌曲推薦-繁華攏是夢",
+        "工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言",
+        "工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作",
+        "工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型",
+        "工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力",
+        "工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法"
+      ]
+    },
+    {
+      "label": "recent category tabs retain valid selection state",
+      "detail": [
+        {
+          "name": "全部",
+          "selected": "true"
+        },
+        {
+          "name": "音樂",
+          "selected": "false"
+        },
+        {
+          "name": "閱讀與影視",
+          "selected": "false"
+        },
+        {
+          "name": "觀念與實驗",
+          "selected": "false"
+        },
+        {
+          "name": "工作知識",
+          "selected": "false"
+        },
+        {
+          "name": "生活紀錄",
+          "selected": "false"
+        }
+      ]
+    },
+    {
+      "label": "recent category tab filters items",
+      "detail": {
+        "active": "音樂",
+        "items": [
+          "歌曲推薦-沈默是金",
+          "歌曲推薦-海海人生",
+          "歌曲推薦-繁華攏是夢",
+          "歌曲推薦-Misread",
+          "歌曲推薦-22才の別れ",
+          "歌曲推薦-你講的話",
+          "歌曲推薦-kungtari shabara",
+          "歌曲推薦-好心分手",
+          "歌曲推薦-靜靜的",
+          "歌曲推薦-Just Give Me A Reason"
+        ]
+      }
+    },
+    {
+      "label": "desktop has no horizontal overflow",
+      "detail": {
+        "innerWidth": 1280,
+        "scrollWidth": 1280,
+        "bodyScrollWidth": 1265
+      }
+    },
+    {
+      "label": "390x844 has no horizontal overflow",
+      "detail": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 375
+      }
+    },
+    {
+      "label": "search input receives visible keyboard focus",
+      "detail": {
+        "active": "search-input",
+        "visible": true
+      }
+    },
+    {
+      "label": "search close button is keyboard reachable with visible focus",
+      "detail": {
+        "tag": "BUTTON",
+        "cls": "popup-btn-close",
+        "visible": true
+      }
+    },
+    {
+      "label": "scope select is keyboard reachable with visible focus",
+      "detail": {
+        "tag": "SELECT",
+        "filter": "surface",
+        "visible": true,
+        "disabled": false
+      }
+    },
+    {
+      "label": "recent results remain keyboard reachable with visible focus",
+      "detail": {
+        "tag": "BUTTON",
+        "cls": "search-category-tab",
+        "visible": true
+      }
+    },
+    {
+      "label": "browser console warning/error count is zero",
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "samples": {
+    "recentAll": [
+      "歌曲推薦-沈默是金",
+      "歌曲推薦-海海人生",
+      "阿里山不是一座山（書籍閱讀紀錄）",
+      "沖繩旅行的兩個時空?",
+      "歌曲推薦-繁華攏是夢",
+      "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+      "工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言",
+      "工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作",
+      "工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型",
+      "工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力"
+    ],
+    "recentA": [
+      "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+      "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+      "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+      "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+      "工作知識｜API 需求排查：從前台現象回到資料來源",
+      "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+      "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+      "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫"
+    ],
+    "recentB": [
+      "歌曲推薦-沈默是金",
+      "歌曲推薦-海海人生",
+      "阿里山不是一座山（書籍閱讀紀錄）",
+      "沖繩旅行的兩個時空?",
+      "歌曲推薦-繁華攏是夢",
+      "工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言",
+      "工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作",
+      "工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型",
+      "工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力",
+      "工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法"
+    ],
+    "tabs": [
+      {
+        "name": "全部",
+        "selected": "true"
+      },
+      {
+        "name": "音樂",
+        "selected": "false"
+      },
+      {
+        "name": "閱讀與影視",
+        "selected": "false"
+      },
+      {
+        "name": "觀念與實驗",
+        "selected": "false"
+      },
+      {
+        "name": "工作知識",
+        "selected": "false"
+      },
+      {
+        "name": "生活紀錄",
+        "selected": "false"
+      }
+    ],
+    "consoleErrors": []
+  }
+}

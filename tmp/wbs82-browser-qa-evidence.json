@@ -1,0 +1,148 @@
+{
+  "fixture": "synthetic only; no author article was modified",
+  "ports": {
+    "http": 8916,
+    "cdp": 9356
+  },
+  "viewports": {
+    "desktop1280": {
+      "viewport": 1280,
+      "documentWidth": 1265,
+      "bodyWidth": 1265,
+      "blockWidth": 676,
+      "blockScrollWidth": 676,
+      "blockText": "🚧 當前假設／探索中\n\n最近校準 2026-09-27\n\n目前適用邊界 這是 synthetic fixture；不代表作者文章。<img src=x onerror=alert(1)> & 僅供個人實作情境參考，不推論到所有團隊、產業或組織。這段長文字用來檢查狹窄畫面換行，並附上一段不含空格的長字串：exploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongword。",
+      "time": "2026-09-27",
+      "datetime": "2026-09-27",
+      "title": "🚧 當前假設／探索中",
+      "articleOrder": "status-before-body",
+      "hasInjectedImage": false,
+      "scriptCount": 0,
+      "inlineHandlers": [],
+      "cardLabels": [
+        "探索中・校準 2026-09-27",
+        "探索中・校準 2026-09-27",
+        "探索中・校準 2026-09-27"
+      ],
+      "cardOrder": true,
+      "computedDisplay": "block",
+      "stylesheetLoaded": true,
+      "screenshot": "C:\\Blog\\blog-1988\\tmp\\wbs82-desktop1280.png"
+    },
+    "mobile390": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "blockWidth": 338,
+      "blockScrollWidth": 338,
+      "blockText": "🚧 當前假設／探索中\n\n最近校準 2026-09-27\n\n目前適用邊界 這是 synthetic fixture；不代表作者文章。<img src=x onerror=alert(1)> & 僅供個人實作情境參考，不推論到所有團隊、產業或組織。這段長文字用來檢查狹窄畫面換行，並附上一段不含空格的長字串：exploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongwordexploringsyntheticboundarylongword。",
+      "time": "2026-09-27",
+      "datetime": "2026-09-27",
+      "title": "🚧 當前假設／探索中",
+      "articleOrder": "status-before-body",
+      "hasInjectedImage": false,
+      "scriptCount": 0,
+      "inlineHandlers": [],
+      "cardLabels": [
+        "探索中・校準 2026-09-27",
+        "探索中・校準 2026-09-27",
+        "探索中・校準 2026-09-27"
+      ],
+      "cardOrder": true,
+      "computedDisplay": "block",
+      "stylesheetLoaded": true,
+      "screenshot": "C:\\Blog\\blog-1988\\tmp\\wbs82-mobile390.png"
+    }
+  },
+  "checks": [
+    {
+      "label": "desktop1280: viewport applied",
+      "passed": true,
+      "detail": 1280
+    },
+    {
+      "label": "desktop1280: no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "document": 1265,
+        "body": 1265
+      }
+    },
+    {
+      "label": "desktop1280: long boundary fits",
+      "passed": true,
+      "detail": {
+        "content": 676,
+        "box": 676
+      }
+    },
+    {
+      "label": "desktop1280: semantic heading and calibration date",
+      "passed": true
+    },
+    {
+      "label": "desktop1280: boundary and article reading order",
+      "passed": true
+    },
+    {
+      "label": "desktop1280: escaped text and no script/handlers",
+      "passed": true
+    },
+    {
+      "label": "desktop1280: all three A card variants are compact",
+      "passed": true
+    },
+    {
+      "label": "desktop1280: compiled site stylesheet loaded",
+      "passed": true
+    },
+    {
+      "label": "mobile390: viewport applied",
+      "passed": true,
+      "detail": 390
+    },
+    {
+      "label": "mobile390: no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "document": 390,
+        "body": 390
+      }
+    },
+    {
+      "label": "mobile390: long boundary fits",
+      "passed": true,
+      "detail": {
+        "content": 338,
+        "box": 338
+      }
+    },
+    {
+      "label": "mobile390: semantic heading and calibration date",
+      "passed": true
+    },
+    {
+      "label": "mobile390: boundary and article reading order",
+      "passed": true
+    },
+    {
+      "label": "mobile390: escaped text and no script/handlers",
+      "passed": true
+    },
+    {
+      "label": "mobile390: all three A card variants are compact",
+      "passed": true
+    },
+    {
+      "label": "mobile390: compiled site stylesheet loaded",
+      "passed": true
+    }
+  ],
+  "console": [],
+  "profile": "C:\\Blog\\blog-1988\\tmp\\wbs82-chrome-profile",
+  "teardown": {
+    "chromeExited": true,
+    "httpServerClosed": true,
+    "profileRemoved": true
+  }
+}

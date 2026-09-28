@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-27",
+  "browser": "Chrome headless via CDP",
+  "base": "http://127.0.0.1:8975",
+  "ports": {
+    "http": 8975,
+    "cdp": 9375
+  },
+  "checks": [
+    {
+      "route": "/profile/",
+      "expected": "profile",
+      "click": true,
+      "before": {
+        "href": "/profile/",
+        "aria": "工作與學習封面",
+        "title": "工作與學習封面",
+        "nav": "profile",
+        "marker": null
+      },
+      "afterPath": "/profile/"
+    },
+    {
+      "route": "/profile/articles/",
+      "expected": "profile",
+      "click": true,
+      "before": {
+        "href": "/profile/",
+        "aria": "工作與學習封面",
+        "title": "工作與學習封面",
+        "nav": "profile",
+        "marker": null
+      },
+      "afterPath": "/profile/"
+    },
+    {
+      "route": "/work/from-solving-problems-to-choosing-what-matters/",
+      "expected": "memory",
+      "click": false,
+      "before": {
+        "href": "/",
+        "aria": null,
+        "title": null,
+        "nav": "memory",
+        "marker": "profile"
+      },
+      "afterPath": "/work/from-solving-problems-to-choosing-what-matters/"
+    },
+    {
+      "route": "/work/flow-friendly-work-system/",
+      "expected": "memory",
+      "click": false,
+      "before": {
+        "href": "/",
+        "aria": null,
+        "title": null,
+        "nav": "memory",
+        "marker": "profile memory"
+      },
+      "afterPath": "/work/flow-friendly-work-system/"
+    },
+    {
+      "route": "/",
+      "expected": "memory",
+      "click": true,
+      "before": {
+        "href": "/",
+        "aria": null,
+        "title": null,
+        "nav": "memory",
+        "marker": null
+      },
+      "afterPath": "/"
+    },
+    {
+      "route": "/2026/01/25/部落格改版規劃/",
+      "expected": "memory",
+      "click": false,
+      "before": {
+        "href": "/",
+        "aria": null,
+        "title": null,
+        "nav": "memory",
+        "marker": "memory"
+      },
+      "afterPath": "/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/"
+    }
+  ]
+}

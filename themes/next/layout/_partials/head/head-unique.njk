@@ -18,10 +18,10 @@
 {%- set page_name = page.title or config.title %}
 {%- set page_description = page.description or (page.excerpt and truncate(strip_html(page.excerpt), {length: 200, separator: ' '})) or config.description %}
 {%- set is_article = page.layout === 'post' or page.type === 'post' %}
-{%- set is_homepage = is_home() and (page_path === '' or page_path === 'index.html') %}
+{%- set is_homepage = page_path === '' or page_path === 'index.html' %}
 {%- set is_pagination = page_path.match(r/^page\/\d+(?:\/|$)/) %}
 {%- set is_collection = not is_article and not is_homepage and (
-  page.layout === 'archive' or page.layout === 'category' or page.layout === 'tag' or
+  page.layout === 'index' or page.layout === 'archive' or page.layout === 'category' or page.layout === 'tag' or
   page.type === 'archive' or page.type === 'category' or page.type === 'tag' or
   is_pagination or page_path.indexOf('categories/') === 0 or
   page_path.indexOf('tags/') === 0 or page_path.indexOf('archives/') === 0

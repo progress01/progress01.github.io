@@ -18,9 +18,11 @@ function randomContext(sessionStorage) {
     contentCategories: [],
     currentCategory: 'all',
     historyKey: 'random-tape-history',
+    selectionKey: 'random-tape-selection-v1',
     memoryHistory: [],
     storageDisabled: false,
     window: { sessionStorage },
+    filters: { querySelectorAll: () => [] },
     Math,
     Array,
     JSON,
@@ -29,6 +31,37 @@ function randomContext(sessionStorage) {
   };
   vm.runInNewContext(randomLogic, context);
   return context;
+}
+
+{
+  const values = new Map([
+    ['random-tape-selection-v1', JSON.stringify({ category: '音樂', url: '/song/' })]
+  ]);
+  const buttons = ['all', '音樂'].map(category => ({
+    getAttribute: name => name === 'data-category' ? category : null,
+    classList: { toggle() {} }
+  }));
+  const context = randomContext({
+    getItem: key => values.get(key) || null,
+    setItem: (key, value) => values.set(key, value),
+    removeItem: key => values.delete(key)
+  });
+  context.filters.querySelectorAll = () => buttons;
+  context.contentCategories = ['音樂', '閱讀與影視'];
+  context.records = [
+    { url: '/song/', categories: ['音樂'] },
+    { url: '/book/', categories: ['閱讀與影視'] }
+  ];
+  assert.strictEqual(context.restoreSelection().url, '/song/', 'valid category and record should restore');
+  assert.strictEqual(context.currentCategory, '音樂', 'restored selection should restore its category');
+  context.currentCategory = 'all';
+  values.set('random-tape-selection-v1', JSON.stringify({ category: '音樂', url: '/book/' }));
+  assert.strictEqual(context.restoreSelection(), null, 'selection outside the saved category should be discarded');
+  assert.strictEqual(values.has('random-tape-selection-v1'), false, 'invalid state should be removed');
+  values.set('random-tape-selection-v1', JSON.stringify({ category: '退役分類', url: '/song/' }));
+  assert.strictEqual(context.restoreSelection(), null, 'removed category should fall back safely');
+  values.set('random-tape-selection-v1', JSON.stringify({ category: 'all', url: '/removed/' }));
+  assert.strictEqual(context.restoreSelection(), null, 'stale URL should fall back safely');
 }
 
 {

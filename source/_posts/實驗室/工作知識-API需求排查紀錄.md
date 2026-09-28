@@ -1,7 +1,8 @@
 ---
-title: 工作知識｜API 需求排查：從前台現象回到資料來源
+title: API 資料異常怎麼排查？從一筆錯誤追到資料來源
 date: 2026-09-03 23:44:45
 updated: 2026-09-17 15:23:00
+surfaces: [profile]
 permalink: /work/api-requirement-troubleshooting/
 categories: [工作知識]
 tags: ["問題排查"]

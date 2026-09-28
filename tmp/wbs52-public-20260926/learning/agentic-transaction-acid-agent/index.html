@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"progress01.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋文章、標籤或關鍵字…","prompt":"輸入關鍵字，開始找回文章與紀錄。","empty":"找不到與「${query}」相關的文章或紀錄","hits_time":"找到 ${hits} 篇文章（約 ${time} 毫秒）","hits":"找到 ${hits} 篇文章"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="讀這篇 Agentic Transaction 論文時，我想把探索、執行、驗證與重試整理成一套可以共用的方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記">
+<meta property="og:url" content="https://progress01.github.io/learning/agentic-transaction-acid-agent/index.html">
+<meta property="og:site_name" content="DON&#39;T COUNT THE DAYS">
+<meta property="og:description" content="讀這篇 Agentic Transaction 論文時，我想把探索、執行、驗證與重試整理成一套可以共用的方法。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-08-29T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-17T06:45:05.000Z">
+<meta property="article:author" content="Ch-Ju">
+<meta property="article:tag" content="AI Agent">
+<meta property="article:tag" content="研究筆記">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://progress01.github.io/learning/agentic-transaction-acid-agent/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://progress01.github.io/learning/agentic-transaction-acid-agent/#article",
+  "url": "https://progress01.github.io/learning/agentic-transaction-acid-agent/",
+  "name": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+  "description": "讀這篇 Agentic Transaction 論文時，我想把探索、執行、驗證與重試整理成一套可以共用的方法。",
+  "inLanguage": "zh-TW",
+  "headline": "Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記",
+  "datePublished": "2026-08-29T12:00:00+08:00",
+  "dateModified": "2026-09-17T14:45:05+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Ch-Ju"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ch-Ju"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://progress01.github.io/learning/agentic-transaction-acid-agent/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://progress01.github.io/#website"
+  },
+  "articleSection": [
+    "觀念與實驗"
+  ],
+  "keywords": [
+    "研究筆記",
+    "AI Agent"
+  ]
+}
+</script>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://progress01.github.io/learning/agentic-transaction-acid-agent/","path":"/learning/agentic-transaction-acid-agent/","title":"Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記 | DON'T COUNT THE DAYS</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QR6QX786"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-L3QR6QX786","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/navigation-search.js" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="DON'T COUNT THE DAYS" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">DON'T COUNT THE DAYS</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">紀錄並凝視</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新日曆</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay" aria-hidden="true">
+    <div class="popup search-popup" role="dialog" aria-modal="true" aria-label="站內搜尋" tabindex="-1">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋文章、標籤或關鍵字…" spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <button class="popup-btn-close" type="button" aria-label="關閉搜尋">
+          <i class="fa fa-times-circle"></i>
+        </button>
+      </div>
+      <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
+        <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
+        <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
+        <button type="button" data-navigation-reset>清除條件</button>
+        <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
+      </div>
+      <div class="search-result-container" aria-live="polite">
+        <section class="search-recent" data-search-recent aria-label="最近更新文章">
+          <div class="search-recent-heading">
+            <span class="search-recent-kicker">JUST IN / 最近更新</span>
+            <span class="search-recent-note" data-search-recent-note>最近 10 篇</span>
+          </div>
+
+          <div class="search-category-tabs" role="tablist" aria-label="依文章分類瀏覽">
+            <button class="search-category-tab is-active" type="button" role="tab" aria-selected="true" data-search-category="all">全部</button>
+            
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="音樂">音樂</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="閱讀與影視">閱讀與影視</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="觀念與實驗">觀念與實驗</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="工作知識">工作知識</button>
+              <button class="search-category-tab" type="button" role="tab" aria-selected="false" data-search-category="生活紀錄">生活紀錄</button>
+          </div>
+
+          <div class="search-recent-list">
+              <a class="search-recent-item" href="/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/" data-search-recent-item data-search-recent-rank="0" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-22T12:00:00+08:00">09-22</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-沈默是金</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/" data-search-recent-item data-search-recent-rank="1" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-21T12:00:00+08:00">09-21</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-海海人生</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/" data-search-recent-item data-search-recent-rank="2" data-search-recent-categories="閱讀與影視">
+                <time class="search-recent-date" datetime="2026-09-20T12:00:00+08:00">09-20</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">阿里山不是一座山（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/okinawa-trip-two-times/" data-search-recent-item data-search-recent-rank="3" data-search-recent-categories="生活紀錄">
+                <time class="search-recent-date" datetime="2026-09-19T12:00:00+08:00">09-19</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">沖繩旅行的兩個時空?</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/" data-search-recent-item data-search-recent-rank="4" data-search-recent-categories="音樂">
+                <time class="search-recent-date" datetime="2026-09-18T12:00:00+08:00">09-18</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-繁華攏是夢</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/from-real-work-to-features/" data-search-recent-item data-search-recent-rank="5" data-search-recent-categories="工作知識">
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/pm-sa-foundation-map/" data-search-recent-item data-search-recent-rank="6" data-search-recent-categories="工作知識">
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/two-project-mental-models/" data-search-recent-item data-search-recent-rank="7" data-search-recent-categories="工作知識">
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 03｜同一份規劃為什麼會被看成兩種工作</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/meeting-transcripts-to-judgment-model/" data-search-recent-item data-search-recent-rank="8" data-search-recent-categories="工作知識">
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/transferable-project-capabilities/" data-search-recent-item data-search-recent-rank="9" data-search-recent-categories="工作知識">
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 05｜把主管要求拆成可遷移能力</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/ai-external-mentor-dual-track/" data-search-recent-item data-search-recent-rank="10" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/risk-based-review/" data-search-recent-item data-search-recent-rank="11" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/okinawa-trip-reflection-series/" data-search-recent-item data-search-recent-rank="12" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">沖繩旅行的縫合線｜系列規劃</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Misread/" data-search-recent-item data-search-recent-rank="13" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-17T12:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Misread</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/17/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+7%E5%A4%A9/" data-search-recent-item data-search-recent-rank="14" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-17T00:00:00+08:00">09-17</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+7天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/16/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-22%E6%89%8D%E3%81%AE%E5%88%A5%E3%82%8C/" data-search-recent-item data-search-recent-rank="15" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-16T12:00:00+08:00">09-16</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-22才の別れ</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%BD%A0%E8%AC%9B%E7%9A%84%E8%A9%B1/" data-search-recent-item data-search-recent-rank="16" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-15T12:00:00+08:00">09-15</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-你講的話</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-kungtari-shabara/" data-search-recent-item data-search-recent-rank="17" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-14T12:00:00+08:00">09-14</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-kungtari shabara</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/13/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+6%E5%A4%A9/" data-search-recent-item data-search-recent-rank="18" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-13T21:00:00+08:00">09-13</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+6天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/" data-search-recent-item data-search-recent-rank="19" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-11T12:00:00+08:00">09-11</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-好心分手</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%9A%A8%E7%AD%86/%E5%9C%A8%E5%96%9C%E6%AD%A1%E8%88%87%E8%A2%AB%E5%96%9C%E6%AD%A1%E4%B9%8B%E9%96%93/" data-search-recent-item data-search-recent-rank="20" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">在喜歡與被喜歡之間</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E9%9D%9C%E9%9D%9C%E7%9A%84/" data-search-recent-item data-search-recent-rank="21" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-靜靜的</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/10/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%80%BC%E5%BE%97%E7%9A%84%E7%AD%89%E5%BE%85/" data-search-recent-item data-search-recent-rank="22" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-09-10T12:00:00+08:00">09-10</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">值得的等待（觀影紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/09/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Just%20Give%20Me%20A%20Reason/" data-search-recent-item data-search-recent-rank="23" data-search-recent-categories="音樂" hidden>
+                <time class="search-recent-date" datetime="2026-09-09T12:00:00+08:00">09-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">音樂</span>
+                  <span class="search-recent-title">歌曲推薦-Just Give Me A Reason</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/ai-question-judgment-order/" data-search-recent-item data-search-recent-rank="24" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-08T20:00:00+08:00">09-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">AI 提問判斷順序｜從情境、目標到診斷、設計與驗證</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/08/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+5%E5%A4%A9/" data-search-recent-item data-search-recent-rank="26" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-08T01:12:43+08:00">09-08</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+5天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/presentation-workflow-open-slide/" data-search-recent-item data-search-recent-rank="27" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-07T12:00:00+08:00">09-07</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">簡報製作與 open-slide 2.0｜從內容、結構到上台報告的學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/mixed-volleyball-defense-positioning/" data-search-recent-item data-search-recent-rank="29" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-06T19:55:24+08:00">09-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">混排攻擊與防守站位｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/pain-improvement-research/" data-search-recent-item data-search-recent-rank="30" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-06T12:00:00+08:00">09-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">痠痛改善研究：從下背、肩膀與小腿開始</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/watch/reply-1988-30-questions/" data-search-recent-item data-search-recent-rank="31" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-09-06T12:00:00+08:00">09-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">請回答1988｜雙門洞三十題：把故事寫下去，也把自己的問題留下來</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/09/05/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+4%E5%A4%A9/" data-search-recent-item data-search-recent-rank="32" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2026-09-05T21:08:29+08:00">09-05</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+4天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/web-automation-python-pytest-playwright/" data-search-recent-item data-search-recent-rank="33" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/software-testing-basics-test-case-bug-report/" data-search-recent-item data-search-recent-rank="34" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/release-quality-git-ci-cd-checklist/" data-search-recent-item data-search-recent-rank="35" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">發布品質｜Git、CI/CD 與 Release Checklist｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/test-design-boundary-risk-based-testing/" data-search-recent-item data-search-recent-rank="36" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">測試設計｜等價類別、邊界值與風險導向測試｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/website-quality-testing-roadmap/" data-search-recent-item data-search-recent-rank="37" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-09-04T12:00:00+08:00">09-04</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/content-publishing-and-tables/" data-search-recent-item data-search-recent-rank="39" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-03T23:55:00+08:00">09-03</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/api-requirement-troubleshooting/" data-search-recent-item data-search-recent-rank="40" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-03T23:44:45+08:00">09-03</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜API 需求排查：從前台現象回到資料來源</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/work/project-pricing-and-cost-estimation/" data-search-recent-item data-search-recent-rank="42" data-search-recent-categories="工作知識" hidden>
+                <time class="search-recent-date" datetime="2026-09-02T23:55:00+08:00">09-02</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">工作知識</span>
+                  <span class="search-recent-title">工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/learning/gemini-notebook-agent-office-workflow/" data-search-recent-item data-search-recent-rank="45" data-search-recent-categories="觀念與實驗" hidden>
+                <time class="search-recent-date" datetime="2026-08-31T12:00:00+08:00">08-31</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">觀念與實驗</span>
+                  <span class="search-recent-title">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/29/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BB%A5%E6%97%A9%E4%B9%99%E5%A5%B3%E4%BD%B3%E5%A5%88%E5%AD%90%E7%82%BA%E4%BE%8B/" data-search-recent-item data-search-recent-rank="52" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-08-29T12:00:00+08:00">08-29</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">以早乙女佳奈子為例（影片紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/26/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%9D%9E%E6%AD%A3%E5%B8%B8%E7%BE%8E%E9%A3%9F%E6%96%87/" data-search-recent-item data-search-recent-rank="56" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-08-26T12:00:00+08:00">08-26</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">非正常美食文（網路小說閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/08/25/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%9F%BA%E5%9C%B0/" data-search-recent-item data-search-recent-rank="58" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-08-25T12:00:00+08:00">08-25</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">基地（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2026/01/24/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%95%AB%E5%87%BA%E5%BF%83%E4%B9%8B%E6%89%80%E5%9A%AE/" data-search-recent-item data-search-recent-rank="135" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2026-01-24T14:21:24+08:00">01-24</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">畫出心之所嚮（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/12/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%A4%B1%E6%A5%AD%E7%99%BD%E9%A0%98%E7%9A%84%E8%81%B7%E5%A0%B4%E6%BC%82%E6%B5%81/" data-search-recent-item data-search-recent-rank="156" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-12-28T18:00:00+08:00">12-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">失業白領的職場漂流（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/06/16/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-3%E5%A4%A9/" data-search-recent-item data-search-recent-rank="170" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2025-06-16T23:47:27+08:00">06-16</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+3天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/28/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E4%BE%86%E8%87%AA%E5%9C%B0%E7%8D%84%E7%9A%84%E6%B3%95%E5%AE%98/" data-search-recent-item data-search-recent-rank="171" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-28T00:55:27+08:00">04-28</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">來自地獄的法官（影片紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2025/04/09/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%91%BC%E5%90%B8/" data-search-recent-item data-search-recent-rank="172" data-search-recent-categories="閱讀與影視" hidden>
+                <time class="search-recent-date" datetime="2025-04-09T00:55:27+08:00">04-09</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">閱讀與影視</span>
+                  <span class="search-recent-title">呼吸（書籍閱讀紀錄）</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2024/08/06/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN-2%E5%A4%A9/" data-search-recent-item data-search-recent-rank="180" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2024-08-06T23:47:27+08:00">08-06</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">有工作的第N+2天</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="search-recent-item" href="/2024/07/14/%E9%9A%A8%E7%AD%86/%E5%8F%B0%E4%B8%AD%E7%8D%A8%E6%97%85%E8%A8%98/" data-search-recent-item data-search-recent-rank="202" data-search-recent-categories="生活紀錄" hidden>
+                <time class="search-recent-date" datetime="2024-07-14T12:00:00+08:00">07-14</time>
+                <span class="search-recent-copy">
+                  <span class="search-recent-category">生活紀錄</span>
+                  <span class="search-recent-title">台中獨旅記</span>
+                </span>
+                <span class="search-recent-arrow" aria-hidden="true">↗</span>
+              </a>
+          </div>
+          <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有更新，可以直接搜尋完整紀錄。</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AB%96%E6%96%87%E5%9F%BA%E6%9C%AC%E8%B3%87%E8%A8%8A"><span class="nav-number">1.</span> <span class="nav-text">論文基本資訊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E8%88%87%E6%A0%B8%E5%BF%83%E5%95%8F%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">一、研究背景與核心問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Agentic-Transaction-%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">二、Agentic Transaction 的形式化模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%AA%9E%E7%BE%A9-ACID-%E5%9B%9B%E5%A4%A7%E4%BF%9D%E8%AD%89"><span class="nav-number">4.</span> <span class="nav-text">三、語義 ACID 四大保證</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%97%9C%E9%8D%B5%E6%8A%80%E8%A1%93%E6%A9%9F%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">四、關鍵技術機制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BD%AE%E4%BF%A1%E5%BA%A6%E5%88%86%E6%AD%A7%E9%A9%97%E8%AD%89"><span class="nav-number">5.1.</span> <span class="nav-text">1. 置信度分歧驗證</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A4%B1%E6%95%97%E6%AD%A5%E9%A9%9F%E9%9A%94%E9%9B%A2"><span class="nav-number">5.2.</span> <span class="nav-text">2. 失敗步驟隔離</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C%E8%88%87%E5%9F%BA%E6%BA%96%E6%B8%AC%E8%A9%A6%EF%BC%9A%E5%B7%B2%E6%A0%B8%E5%B0%8D%EF%BC%8C%E4%BF%9D%E7%95%99%E8%AB%96%E6%96%87%E7%9F%9B%E7%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">五、實驗結果與基準測試：已核對，保留論文矛盾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%BB%E5%AF%A6%E9%A9%97%E8%A1%A8%E7%8F%BE"><span class="nav-number">6.1.</span> <span class="nav-text">1. 主實驗表現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%9F%B7%E8%A1%8C%E7%A9%A9%E5%AE%9A%E5%BA%A6"><span class="nav-number">6.2.</span> <span class="nav-text">2. 執行穩定度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B6%88%E8%9E%8D%E5%AF%A6%E9%A9%97"><span class="nav-number">6.3.</span> <span class="nav-text">3. 消融實驗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%BE%9E%E5%AD%B8%E8%A1%93-AI-%E9%A9%97%E8%AD%89%E5%9B%9E%E5%88%B0-Agentic-Transaction"><span class="nav-number">7.</span> <span class="nav-text">六、從學術 AI 驗證回到 Agentic Transaction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%9E%E7%BE%A9-ACID-%E5%A6%82%E4%BD%95%E6%94%AF%E6%92%90%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E6%8E%A8%E5%8B%95"><span class="nav-number">7.1.</span> <span class="nav-text">語義 ACID 如何支撐工作流程推動</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%80%8B%E6%88%91%E6%83%B3%E5%AF%A6%E4%BD%9C%E7%9A%84%E4%BB%A3%E7%90%86%E4%BA%8B%E5%8B%99%E5%BE%AA%E7%92%B0"><span class="nav-number">7.2.</span> <span class="nav-text">一個我想實作的代理事務循環</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%97%E8%AD%89%E9%96%98%E9%96%80%E8%A6%81%E9%A9%97%E8%AD%89%E4%BB%80%E9%BA%BC"><span class="nav-number">7.3.</span> <span class="nav-text">驗證閘門要驗證什麼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B1%E6%95%97%E4%B9%9F%E8%A6%81%E6%98%AF%E4%BA%A4%E6%98%93%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86"><span class="nav-number">7.4.</span> <span class="nav-text">失敗也要是交易的一部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%AF%A6%E5%8B%99%E8%90%BD%E5%9C%B0%E6%AA%A2%E6%9F%A5%E6%B8%85%E5%96%AE"><span class="nav-number">8.</span> <span class="nav-text">七、實務落地檢查清單</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E9%99%90%E5%88%B6%E8%88%87%E9%96%8B%E6%94%BE%E5%95%8F%E9%A1%8C"><span class="nav-number">9.</span> <span class="nav-text">八、限制與開放問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E4%B8%8D%E5%8F%AF%E9%80%86%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="nav-number">9.1.</span> <span class="nav-text">外部不可逆副作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BC%95%E9%87%8F%E9%A9%97%E8%AD%89%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%B3%9B%E5%8C%96"><span class="nav-number">9.2.</span> <span class="nav-text">輕量驗證模型的泛化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%B6%E9%81%B2%E8%88%87%E6%88%90%E6%9C%AC"><span class="nav-number">9.3.</span> <span class="nav-text">延遲與成本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%8C%E8%AA%9E%E7%BE%A9%E4%B8%80%E8%87%B4%E3%80%8D%E5%A6%82%E4%BD%95%E8%A2%AB%E5%AE%9A%E7%BE%A9"><span class="nav-number">9.4.</span> <span class="nav-text">「語義一致」如何被定義</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99%E8%88%87%E5%BE%85%E6%A0%B8%E5%B0%8D%E9%A0%85%E7%9B%AE"><span class="nav-number">10.</span> <span class="nav-text">參考資料與待核對項目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%8C%E7%BA%8C%E7%A0%94%E7%A9%B6%E6%B8%85%E5%96%AE"><span class="nav-number">11.</span> <span class="nav-text">後續研究清單</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%90%E5%85%88%E6%94%B6%E9%9B%86%EF%BC%9A%E5%85%88%E5%88%86%E6%B8%85%E6%A5%9A%E8%AB%96%E6%96%87%E4%B8%BB%E5%BC%B5%E8%88%87%E5%AF%A6%E4%BD%9C%E8%AD%89%E6%93%9A"><span class="nav-number">12.</span> <span class="nav-text">預先收集：先分清楚論文主張與實作證據</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E9%85%8D%E9%96%B1%E8%AE%80%EF%BC%9A%E5%BE%9E%E4%BA%A4%E6%98%93%E5%88%B0%E5%8F%AF%E9%A9%97%E8%AD%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">13.</span> <span class="nav-text">搭配閱讀：從交易到可驗證的工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%9A%8E%E6%AE%B5%EF%BC%9A%E5%85%88%E7%90%86%E8%A7%A3%E4%BA%A4%E6%98%93%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E8%A3%9C%E5%84%9F"><span class="nav-number">13.1.</span> <span class="nav-text">第一階段：先理解交易為什麼需要補償</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%9A%8E%E6%AE%B5%EF%BC%9A%E5%86%8D%E7%9C%8B%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%A6%82%E4%BD%95%E6%8C%81%E4%B9%85%E5%8C%96%E8%88%87%E6%81%A2%E5%BE%A9"><span class="nav-number">13.2.</span> <span class="nav-text">第二階段：再看工作流如何持久化與恢復</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%9A%8E%E6%AE%B5%EF%BC%9A%E6%9C%80%E5%BE%8C%E5%BB%BA%E7%AB%8B-Agent-%E7%9A%84%E5%AF%A6%E9%9A%9B%E8%A9%95%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="nav-number">13.3.</span> <span class="nav-text">第三階段：最後建立 Agent 的實際評估方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E6%9C%83%E6%80%8E%E9%BA%BC%E6%90%AD%E9%85%8D%E9%80%99%E4%BA%9B%E6%9D%90%E6%96%99"><span class="nav-number">13.4.</span> <span class="nav-text">我會怎麼搭配這些材料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E5%8F%83%E8%80%83%E6%84%8F%E8%A6%8B"><span class="nav-number">14.</span> <span class="nav-text">我的參考意見</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E5%B7%A5%E4%BD%9C%E7%AD%86%E8%A8%98"><span class="nav-number">15.</span> <span class="nav-text">相關工作筆記</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B4%80%E9%8C%84"><span class="nav-number">16.</span> <span class="nav-text">更新紀錄</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Ch-Ju</p>
+  <div class="site-description" itemprop="description">生活紀錄與學習部落格</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">271</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/categories/#browse-tags">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+    <article itemscope itemtype="https://schema.org/BlogPosting" itemid="https://progress01.github.io/learning/agentic-transaction-acid-agent/#article" class="post-content post-content-single post-content-longform post-content-learning" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://progress01.github.io/learning/agentic-transaction-acid-agent/">
+
+    <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ch-Ju">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Ch-Ju">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Agentic Transaction｜Towards ACID-Compliant Agent Systems｜學習筆記
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2026-08-29 12:00:00" itemprop="dateCreated datePublished" datetime="2026-08-29T12:00:00+08:00">2026-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2026-09-17 14:45:05" itemprop="dateModified" datetime="2026-09-17T14:45:05+08:00">2026-09-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/" itemprop="url" rel="index"><span itemprop="name">觀念與實驗</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>10 分鐘</span>
+    </span>
+</div>
+
+        </div>
+    </header>
+
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p id="nav-fa8f874740e08744" data-navigation-anchor="">讀這篇 Agentic Transaction 論文時，我想把探索、執行、驗證與重試整理成一套可以共用的方法。</p>
+<span id="more"></span>
+<p id="nav-1311d505ed6f8823" data-navigation-anchor="">這是一篇針對〈Agentic Transaction: Towards ACID-Compliant Agent Systems〉的公開研究筆記，先整理論文報告中的核心問題、形式化模型、系統機制與實務檢查清單。我真正想往下討論的，不只是代理系統如何提高可靠度，而是如何把「探索—執行—驗證—提交／重試」的結構，變成我在推動各種工作流程時可以共用的底層方法。</p>
+<p id="nav-abfe6573ed95cd99" data-navigation-anchor="">目前仍是研究摘記，不是完整的論文評讀；本文已核對論文 v1 的正式定義、門檻與實驗表格，也核對開放原始碼 README 的結構與執行條件。但獨立重現、程式碼與論文結果是否完全對應，以及工程上的泛化性，仍未完成核驗。</p>
+<blockquote>
+<p id="nav-9e90fcdb6bcaaf21" data-navigation-anchor=""><strong>資料狀態：論文數據與專案 README 第一輪核對完成</strong></p>
+<p id="nav-469c3be37f3ba787" data-navigation-anchor="">本文的正式定義、門檻、KramaBench 規模與論文表格，已依 <a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1">arXiv HTML v1</a> 核對；專案的結構、執行條件與成本限制，則依 <a target="_blank" rel="noopener" href="https://github.com/TsinghuaDatabaseGroup/ACID-Agent">TsinghuaDatabaseGroup/ACID-Agent README</a> 核對。論文敘述有一處模型名稱與表格不一致，成本也只代表該實驗設定；本文不宣稱獨立重現或工程泛化已被證明。</p>
+</blockquote>
+<h2 id="論文基本資訊" data-navigation-anchor=""><a href="#論文基本資訊" class="headerlink" title="論文基本資訊"></a>論文基本資訊</h2><ul>
+<li id="nav-f63bc76ee1a88969" data-navigation-anchor=""><strong>論文標題</strong>：Agentic Transaction: Towards ACID-Compliant Agent Systems</li>
+<li id="nav-5954308f474f54b3" data-navigation-anchor=""><strong>發表平台與編號</strong>：arXiv:2608.13900v1 [cs.DB]</li>
+<li id="nav-96e89bef5ccaea31" data-navigation-anchor=""><strong>發表日期</strong>：2026 年 8 月 14 日，已回到 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2608.13900">arXiv 原始頁面</a>核對</li>
+<li id="nav-814f644ab57fd5c8" data-navigation-anchor=""><strong>作者</strong>：Zhaoyan Sun、Xiaoxiao Wang、Guoliang Li，已回到原始頁面核對</li>
+<li id="nav-5ae6aad0032bb4ce" data-navigation-anchor=""><strong>開放原始碼專案</strong>：<a target="_blank" rel="noopener" href="https://github.com/TsinghuaDatabaseGroup/ACID-Agent">TsinghuaDatabaseGroup/ACID-Agent</a>。已確認 README 所列的 ACID-Agent、KramaBench、baseline harness、trace 與 cost logging；但程式碼與論文結果的獨立重現仍未執行</li>
+</ul>
+<h2 id="一、研究背景與核心問題" data-navigation-anchor=""><a href="#一、研究背景與核心問題" class="headerlink" title="一、研究背景與核心問題"></a>一、研究背景與核心問題</h2><p id="nav-d021b0f9248f5877" data-navigation-anchor="">大型語言模型驅動的自主代理已經不只是回答問題，也可能執行長流程任務、呼叫工具、產生程式碼與修改工作區。當代理從「產生文字」走向「改變外部狀態」，它面對的可靠性問題就開始接近資料庫與分散式系統的問題。</p>
+<p id="nav-3f8d6aa8b6384d1e" data-navigation-anchor="">目前先整理出四種風險：</p>
+<ol>
+<li id="nav-437c57e3090efac5" data-navigation-anchor=""><strong>部分失敗與工作區污染</strong>：代理執行數十步 API 呼叫或檔案寫入時，如果中途崩潰，可能留下未完成的修改、重複的外部副作用或不可逆的狀態。</li>
+<li id="nav-a608f21b32dc1c29" data-navigation-anchor=""><strong>語義不一致與非確定性</strong>：計畫即使在語法上可以執行，決策仍可能缺少證據；同一任務重複執行時，輸出也可能有很大差異。</li>
+<li id="nav-b29e1670501c981b" data-navigation-anchor=""><strong>多 Agent 干擾</strong>：多個子 Agent 並行時，提示詞、記憶、暫存檔案與工具配額可能互相覆蓋。</li>
+<li id="nav-0cafacb4c6c21d7b" data-navigation-anchor=""><strong>長期狀態遺失</strong>：代理狀態分散在 Context、終端輸出與臨時檔案中，上下文被壓縮後，可能無法可靠重構原本的事務語意。</li>
+</ol>
+<p id="nav-0d908f45496532df" data-navigation-anchor="">報告把這些問題整理成 <strong>Agentic Transaction</strong>，嘗試將資料庫中的 ACID 原則重新解釋為適用於非確定性 LLM 代理的語義 ACID 保證。</p>
+<h2 id="二、Agentic-Transaction-的形式化模型" data-navigation-anchor=""><a href="#二、Agentic-Transaction-的形式化模型" class="headerlink" title="二、Agentic Transaction 的形式化模型"></a>二、Agentic Transaction 的形式化模型</h2><p id="nav-29df0e03b7a8c30e" data-navigation-anchor="">論文 §2.1 的定義是：一個代理事務 τ，是代理與執行環境之間由 LLM 驅動的、有界且有限的互動序列：</p>
+<blockquote>
+<p id="nav-cdce56c47f384543" data-navigation-anchor="">τ = ⟨ r₁, r₂, …, rₙ ⟩</p>
+</blockquote>
+<p id="nav-f576cb90678c1e7d" data-navigation-anchor="">在給定工具集 T 與技能集 S 時，每個步驟 <code>rᵢ = (cᵢ, aᵢ, fᵢ)</code> 包含：</p>
+<ul>
+<li id="nav-18f1be25b5aa9dd0" data-navigation-anchor=""><code>cᵢ</code>：該步驟的 LLM Context，包括可用工具與技能。</li>
+<li id="nav-7d79e497e024a140" data-navigation-anchor=""><code>aᵢ</code>：代理呼叫工具或技能的 Action。</li>
+<li id="nav-d43a85a8703cb53b" data-navigation-anchor=""><code>fᵢ</code>：執行環境回傳的 Feedback 或 Observation。</li>
+</ul>
+<p id="nav-5e41ea60641f24e2" data-navigation-anchor="">暫時可以把 Commit 理解成有條件的提交：只有在任務完成、後置條件通過，而且所有語義不變量仍然成立時，事務才可以提交。否則，中間效應必須回滾，或透過補償機制消除。</p>
+<p id="nav-1fdc61181e92c1a7" data-navigation-anchor="">這裡還要繼續確認的是：哪些效應真的能回滾？哪些只能設計補償？如果代理已經寄出郵件、扣款或呼叫外部物流，單純回復本地工作區並不能讓外部世界回到原狀。</p>
+<h2 id="三、語義-ACID-四大保證" data-navigation-anchor=""><a href="#三、語義-ACID-四大保證" class="headerlink" title="三、語義 ACID 四大保證"></a>三、語義 ACID 四大保證</h2><table>
+<thead>
+<tr>
+<th>ACID 維度</th>
+<th>代理事務中的暫時理解</th>
+<th>主要系統挑戰</th>
+<th>報告整理的技術方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>語義原子性</td>
+<td>模型呼叫、工具執行與文件修改視為一個語義單元，只有驗證完成後才可見</td>
+<td>外部 API 常常不是事務性資源，部分失敗會污染工作區</td>
+<td>探索—執行—驗證循環、只提交通過驗證的效應、冪等鍵、WAL、檢查點與補償</td>
+</tr>
+<tr>
+<td>語義一致性</td>
+<td>最終成果必須滿足前置條件、後置條件與證據義務</td>
+<td>計畫可能語法正確但語義無效，或使用過時觀察</td>
+<td>置信度分歧驗證、多源可靠度信號、物化技能重用</td>
+</tr>
+<tr>
+<td>語義隔離性</td>
+<td>並行代理事務不應產生語義無效干擾，提交結果應接近可序列化執行</td>
+<td>衝突不只發生在資料，也可能發生在 Prompt、記憶、暫存檔案與工具配額</td>
+<td>獨立型、協同型、競爭型子 Agent 隔離、版本化工作區與快照</td>
+</tr>
+<tr>
+<td>語義持久性</td>
+<td>提交後的效應、證據與恢復資料必須持久化，不依賴短暫 Context</td>
+<td>長上下文壓縮可能使關鍵語義結構遺失</td>
+<td>事務感知動態記憶、僅追加工作區與執行溯源日誌</td>
+</tr>
+</tbody></table>
+<p id="nav-bee983abf5c35aed" data-navigation-anchor="">我目前覺得這個轉換最有意思的地方，是 ACID 不再只是資料庫內部的資料正確性，而是開始處理「代理到底做了什麼、根據什麼做、失敗後能不能說清楚」這些語義層問題。</p>
+<h2 id="四、關鍵技術機制" data-navigation-anchor=""><a href="#四、關鍵技術機制" class="headerlink" title="四、關鍵技術機制"></a>四、關鍵技術機制</h2><h3 id="1-置信度分歧驗證" data-navigation-anchor=""><a href="#1-置信度分歧驗證" class="headerlink" title="1. 置信度分歧驗證"></a>1. 置信度分歧驗證</h3><p id="nav-3777237818b66ecf" data-navigation-anchor="">論文 §2.2.2 將 confidence 定義為目標輸出平均 token log probability 的指數。§3.1 的實驗設定則說明，因為 API 型主模型沒有 token probability，研究改用本地 <code>Qwen3-0.6B</code> proxy 估計 confidence。對 decision，論文比較從探索摘要抽出的決策與實際執行的決策；對 code，則比較有、沒有探索證據 context 時，決策相關程式碼片段的 confidence（<a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1#S2.SS2">§2.2.2</a>、<a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1#S3.SS1">§3.1</a>）。</p>
+<p id="nav-2c6a2927d5fe71f1" data-navigation-anchor="">論文 §2.2.2 與 §3.1 記載兩個實驗門檻（<a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1#S3.SS1">§3.1</a>，不是通用信心標準）：</p>
+<ul>
+<li id="nav-69315f3e5d0d6fda" data-navigation-anchor=""><strong>Decision Confidence Divergence</strong>：分歧度低於 <code>0.25</code> 時，觸發 retry，論文將其解釋為執行決策沒有比替代方案獲得更強的證據支持。</li>
+<li id="nav-1852c2fce02acedb" data-navigation-anchor=""><strong>Code Confidence Divergence</strong>：最大分歧度低於 <code>0.50</code> 時，觸發 retry，論文將其解釋為生成程式碼缺乏證據支撐。</li>
+<li id="nav-d116baa66e070f6d" data-navigation-anchor="">探索階段另有分歧度超過 <code>0.45</code> 時提前停止的設定；它和上述 retry 門檻不同。</li>
+</ul>
+<p id="nav-d6ae43dfcab9452f" data-navigation-anchor="">這些數字是該研究設定中的操作門檻，不能當成通用的信心門檻。置信度分歧與實際正確性之間是否有穩定關聯，以及在不同模型、任務與語言下是否仍然成立，仍是開放問題。</p>
+<h3 id="2-失敗步驟隔離" data-navigation-anchor=""><a href="#2-失敗步驟隔離" class="headerlink" title="2. 失敗步驟隔離"></a>2. 失敗步驟隔離</h3><p id="nav-296f39b18f49b6e8" data-navigation-anchor="">傳統 ReAct 流程常常把失敗訊息直接堆回 Context，讓模型自己修正。報告認為，未經整理的錯誤嘗試可能造成注意力污染，讓後續決策持續受到錯誤路徑影響。</p>
+<p id="nav-6099a3a5869df954" data-navigation-anchor="">ACID-Agent 的做法是：</p>
+<ol>
+<li id="nav-48ba7f95a6292f59" data-navigation-anchor="">對驗證未通過的事務單元，不把完整執行歷史直接留在長期記憶。</li>
+<li id="nav-becf2ecd4d2cdc9a" data-navigation-anchor="">工作區透過版本快照回滾。</li>
+<li id="nav-4366149bb0d67be5" data-navigation-anchor="">只把整理過的結構化 Validation Feedback 傳給重試單元。</li>
+</ol>
+<p id="nav-c3a1fc322455543c" data-navigation-anchor="">這裡可以連到我目前的 CMS 與網站維護工作：如果 AI 修改檔案時只留下最後結果，日後很難知道哪些修改是已確認的，哪些只是失敗嘗試留下的殘片。版本化、差異檢查與可回復工作區，可能是代理協作的基本設施。</p>
+<h2 id="五、實驗結果與基準測試：已核對，保留論文矛盾" data-navigation-anchor=""><a href="#五、實驗結果與基準測試：已核對，保留論文矛盾" class="headerlink" title="五、實驗結果與基準測試：已核對，保留論文矛盾"></a>五、實驗結果與基準測試：已核對，保留論文矛盾</h2><p id="nav-8f5943dc13880cf9" data-navigation-anchor="">論文 §3.1 說明 KramaBench 包含六大領域、24 個資料來源、1,700 個真實資料檔案與 104 個自然語言資料科學任務；每項任務都需要處理異質資料與多步驟流程。以下表格依<a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1#S3.T2">論文 HTML v1 §3.1 Table 2</a>核對。</p>
+<h3 id="1-主實驗表現" data-navigation-anchor=""><a href="#1-主實驗表現" class="headerlink" title="1. 主實驗表現"></a>1. 主實驗表現</h3><table>
+<thead>
+<tr>
+<th>Agent 框架</th>
+<th>底層模型</th>
+<th align="right">整體分數</th>
+<th align="right">平均程式碼步數</th>
+<th align="right">Token 消耗</th>
+<th align="right">平均成本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude Code（ReAct）</td>
+<td>Qwen3.5-397B-A17B</td>
+<td align="right">64.0%</td>
+<td align="right">9.4</td>
+<td align="right">405K</td>
+<td align="right">$0.08</td>
+</tr>
+<tr>
+<td>Claude Code（ReAct）</td>
+<td>GLM-5.2</td>
+<td align="right">74.2%</td>
+<td align="right">8.8</td>
+<td align="right">289K</td>
+<td align="right">$0.12</td>
+</tr>
+<tr>
+<td>ACID-Agent</td>
+<td>Qwen3.5-397B-A17B</td>
+<td align="right">74.6%</td>
+<td align="right">22.8</td>
+<td align="right">348K</td>
+<td align="right">$0.10</td>
+</tr>
+<tr>
+<td>ACID-Agent</td>
+<td>GLM-5.2</td>
+<td align="right">77.4%</td>
+<td align="right">22.5</td>
+<td align="right">367K</td>
+<td align="right">$0.61</td>
+</tr>
+</tbody></table>
+<p id="nav-4e53d511f5283e76" data-navigation-anchor="">在 Table 2 的 Qwen3.5-397B-A17B 條件下，ACID-Agent 的 74.6% 減去 Claude Code 的 64.0%，是 <strong>10.6 個百分點</strong>。論文 §3.2 的敘述寫成 10.6%，並把該比較的模型寫成 Qwen3.5-197B-A17B；這和 §3.1 的 397B 設定及 Table 2 不一致。本文以表格與實驗設定為準，保留這個原文矛盾，不擅自替論文判定正確版本。表中的成本是作者在該平台與設定下報告的數字，不是可以跨供應商泛化的價格；README 也明確說明 API pricing is provider-specific。</p>
+<h3 id="2-執行穩定度" data-navigation-anchor=""><a href="#2-執行穩定度" class="headerlink" title="2. 執行穩定度"></a>2. 執行穩定度</h3><p id="nav-ca668c0112b54da8" data-navigation-anchor="">論文 §3.2 的 <a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1#S3.T3">Table 3</a> 以 <strong>Environment 領域、Qwen3.5-397B-A17B、三次獨立執行</strong>為條件，記載 Claude Code 的分數為 <code>63.9 ± 30.9</code>，ACID-Agent 為 <code>88.9 ± 18.6</code>。這裡的 <code>±</code> 是每個任務分數變異的平均值再開平方根，不是整體分數的標準差。在這組條件下，表格呈現 ACID-Agent 較低的任務層級變異，但不能直接泛化到其他領域或模型。</p>
+<p id="nav-6df62628b2b045a4" data-navigation-anchor="">三次重複執行仍只是論文自身的實驗證據，不等於本文已完成獨立重現。</p>
+<h3 id="3-消融實驗" data-navigation-anchor=""><a href="#3-消融實驗" class="headerlink" title="3. 消融實驗"></a>3. 消融實驗</h3><table>
+<thead>
+<tr>
+<th>系統配置</th>
+<th align="right">得分</th>
+<th align="right">程式碼步數</th>
+<th align="right">Token 消耗</th>
+<th align="right">成本</th>
+<th>報告中的解讀</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DA-Agent，無 ACID 的 ReAct 基準</td>
+<td align="right">65.2%</td>
+<td align="right">8.5</td>
+<td align="right">62K</td>
+<td align="right">$0.01</td>
+<td>基礎基準線</td>
+</tr>
+<tr>
+<td>Claude Code，三次多數決</td>
+<td align="right">75.2%</td>
+<td align="right">25.6</td>
+<td align="right">1,121K</td>
+<td align="right">$0.21</td>
+<td>Token 增加但仍落後 ACID-Agent</td>
+</tr>
+<tr>
+<td>ACID-Agent，移除失敗隔離</td>
+<td align="right">78.3%</td>
+<td align="right">20.1</td>
+<td align="right">333K</td>
+<td align="right">$0.10</td>
+<td>報告認為失敗記憶污染很重要</td>
+</tr>
+<tr>
+<td>ACID-Agent 完整版</td>
+<td align="right">90.0%</td>
+<td align="right">25.5</td>
+<td align="right">444K</td>
+<td align="right">$0.13</td>
+<td>論文完整配置</td>
+</tr>
+</tbody></table>
+<p id="nav-493fa4acb1b458af" data-navigation-anchor="">論文 §3.3 的 <a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1#S3.T4">Table 4</a> 明確限定 <strong>Environment 領域、Qwen3.5-397B-A17B</strong>，因此這裡的 90.0% 不能和 Table 2 全域條件的 74.6% 直接比較。論文說移除失敗隔離使分數下降 11.7%，而 90.0% 到 78.3% 的表格差值也是 11.7 個百分點。這是消融結果，不能單獨證明其他因果因素都已排除。</p>
+<h2 id="六、從學術-AI-驗證回到-Agentic-Transaction" data-navigation-anchor=""><a href="#六、從學術-AI-驗證回到-Agentic-Transaction" class="headerlink" title="六、從學術 AI 驗證回到 Agentic Transaction"></a>六、從學術 AI 驗證回到 Agentic Transaction</h2><p id="nav-e25d2d6bde7b6183" data-navigation-anchor="">我原本把「AI 驗證」想成一個獨立流程：先問問題、找證據、測試輸出，再決定能不能使用。但讀到 Agentic Transaction 後，我開始覺得這樣還不夠。驗證不應該只是工作完成後的檢查，而應該是代理事務能不能提交的條件。</p>
+<p id="nav-dbd3dbc8b371cb13" data-navigation-anchor="">學術研究重視的是：問題與方法要說得清楚，資料與分析要能追溯，結果要能被複核，限制也要被承認。Agentic Transaction 則提供一個系統語言，把這些要求放進代理的執行生命週期。這和 <a target="_blank" rel="noopener" href="https://www.nationalacademies.org/read/29212/chapter/2">National Academies 對 foundation models 用於科學工作的整理</a>相互呼應：AI 可以加速文獻回顧、實驗規劃、資料分析與程式開發，但可靠性、有效性、可重現性與 VVUQ 仍然是關鍵缺口。</p>
+<p id="nav-654fc21b8cad414a" data-navigation-anchor="">我目前想採用的對照是：</p>
+<table>
+<thead>
+<tr>
+<th>學術研究中的元素</th>
+<th>Agentic Transaction 中的元素</th>
+<th>工作上的對應物</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>研究問題與目的</td>
+<td>Transaction intent</td>
+<td>這次工作要改變什麼、交付什麼</td>
+</tr>
+<tr>
+<td>資料、方法與研究設計</td>
+<td>Input、context、tool 與版本</td>
+<td>來源、檔案、權限、prompt 與設定</td>
+</tr>
+<tr>
+<td>分析或實驗</td>
+<td>Exploration–execution</td>
+<td>在暫存區提出方案、執行修改或產出</td>
+</tr>
+<tr>
+<td>驗證、複核與限制</td>
+<td>Validation gate</td>
+<td>測試、來源查證、人工審查與失敗分類</td>
+</tr>
+<tr>
+<td>發表或採用結果</td>
+<td>Commit</td>
+<td>合併變更、交付文件、發布或通知他人</td>
+</tr>
+<tr>
+<td>實驗紀錄與方法揭露</td>
+<td>Durable trace</td>
+<td>diff、輸出、證據、版本、責任人與決策紀錄</td>
+</tr>
+</tbody></table>
+<p id="nav-7070b169e1a481ec" data-navigation-anchor="">因此，我真正想推動的是：</p>
+<blockquote>
+<p id="nav-c8e996f3016e02f1" data-navigation-anchor=""><strong>不要讓 Agent 直接把「生成結果」當成「已完成工作」；要讓它先在交易邊界內探索與執行，經過驗證閘門後，才把結果提交到真實工作環境。</strong></p>
+</blockquote>
+<p id="nav-a3bb0f629ed7e5f8" data-navigation-anchor="">這裡的「交易」不是把 LLM 假裝成傳統資料庫，而是借用資料庫最有用的控制思想：中間狀態不要直接公開，失敗不要默默留下污染，完成要有可持久化的證據，提交要有條件。</p>
+<h3 id="語義-ACID-如何支撐工作流程推動" data-navigation-anchor=""><a href="#語義-ACID-如何支撐工作流程推動" class="headerlink" title="語義 ACID 如何支撐工作流程推動"></a>語義 ACID 如何支撐工作流程推動</h3><p id="nav-2efe931df68bdfea" data-navigation-anchor="">傳統資料庫把多個更新包成 all-or-nothing 的操作，失敗時回滾，提交後保留永久紀錄；<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/18/tutorial-transactions.html">PostgreSQL 的交易文件</a>也用 <code>BEGIN</code>、<code>COMMIT</code>、<code>ROLLBACK</code> 與 <code>SAVEPOINT</code> 說明這個基本結構。Agentic Transaction 的難點在於，代理修改的不只是一列資料，還可能是檔案、程式碼、外部 API、文件內容與人的決策。</p>
+<p id="nav-0306ccaa8d6b9f25" data-navigation-anchor="">我會把四個語義保證改寫成工作語言：</p>
+<table>
+<thead>
+<tr>
+<th>語義保證</th>
+<th>對工作流程的要求</th>
+<th>可落地的控制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Semantic Atomicity</td>
+<td>一組相關變更不能只完成一半就被當成成果</td>
+<td>暫存工作區、快照、diff、提交或回滾；不可逆副作用放在人工閘門後</td>
+</tr>
+<tr>
+<td>Semantic Consistency</td>
+<td>結果要符合前置條件、後置條件、來源與工作規格</td>
+<td>驗收條件、schema、測試、來源查證與不變量檢查</td>
+</tr>
+<tr>
+<td>Semantic Isolation</td>
+<td>未完成或失敗的 Agent 狀態不能污染別人的工作</td>
+<td>分支、沙盒、版本化 context、獨立暫存區與結構化合併</td>
+</tr>
+<tr>
+<td>Semantic Durability</td>
+<td>提交後不只留下最後檔案，也留下能追問的依據</td>
+<td>版本、輸出、測試報告、引用、trace、責任人與決策紀錄</td>
+</tr>
+</tbody></table>
+<p id="nav-cba3df7625622254" data-navigation-anchor="">如此，學術 AI 驗證就不再只是事務外部的一張 checklist，而是直接進入 Semantic Consistency 與 Semantic Durability。驗證通過，才有資格提交；驗證不通過，就必須重試、修正、降級成人工處理，或停止這次事務。</p>
+<h3 id="一個我想實作的代理事務循環" data-navigation-anchor=""><a href="#一個我想實作的代理事務循環" class="headerlink" title="一個我想實作的代理事務循環"></a>一個我想實作的代理事務循環</h3><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre id="nav-c4961d374dc1a28f" data-navigation-anchor=""><span class="line">BEGIN：建立任務邊界、來源、版本與預期結果</span><br><span class="line">  ↓</span><br><span class="line">EXPLORE：理解資料，提出候選計畫，不修改正式環境</span><br><span class="line">  ↓</span><br><span class="line">EXECUTE：在快照／分支／沙盒中執行工具與檔案變更</span><br><span class="line">  ↓</span><br><span class="line">VALIDATE：檢查主張、資料、測試、格式、限制與副作用</span><br><span class="line">  ↓</span><br><span class="line">  ├─ 通過 → COMMIT：合併變更，保存證據與 trace</span><br><span class="line">  ├─ 可修正 → RETRY：只傳遞結構化失敗原因，不重播全部污染歷史</span><br><span class="line">  ├─ 可補償 → COMPENSATE：執行反向動作或人工收尾</span><br><span class="line">  └─ 不可接受 → ROLLBACK：回復快照並停止提交</span><br></pre></td></tr></tbody></table></figure>
+
+<p id="nav-2701dc309d8f001d" data-navigation-anchor="">這個循環和論文摘要中的 transactional exploration–execution–validation cycles、commit-or-retry semantics 相符；開放原始碼 README 也列出 candidate、retry、evidence review、execution trace 與 cost logging 等模組。不過，專案裡有這些檔案，不代表所有語義保證都已被證明。我仍要區分「論文提出的架構」、「程式碼中的實作」與「我的工作情境是否適用」。</p>
+<h3 id="驗證閘門要驗證什麼" data-navigation-anchor=""><a href="#驗證閘門要驗證什麼" class="headerlink" title="驗證閘門要驗證什麼"></a>驗證閘門要驗證什麼</h3><p id="nav-ec2c827557c627f0" data-navigation-anchor="">我不想只用一個模糊的 confidence score 決定是否提交。比較實際的驗證閘門，至少應該包含：</p>
+<ol>
+<li id="nav-3bd8063be00621e4" data-navigation-anchor=""><strong>輸入完整性</strong>：來源、欄位、日期、權限與版本是否正確。</li>
+<li id="nav-8d00d8f692f743ac" data-navigation-anchor=""><strong>主張可追溯</strong>：重要結論、數字與引用是否能回到原始資料。</li>
+<li id="nav-8fa08c2ee90926ab" data-navigation-anchor=""><strong>操作正確性</strong>：程式、公式、檔案或 API 是否真的執行成功。</li>
+<li id="nav-a84425046af41836" data-navigation-anchor=""><strong>流程一致性</strong>：結果是否符合前置條件、後置條件與使用者意圖。</li>
+<li id="nav-9756dae667b15a03" data-navigation-anchor=""><strong>例外可處理</strong>：缺值、衝突資料、格式變動、權限失敗與外部服務中斷時是否能安全停止。</li>
+<li id="nav-63c173be17ae6b9a" data-navigation-anchor=""><strong>交付可接手</strong>：別人能不能理解做了什麼、重做一次或從失敗點繼續。</li>
+<li id="nav-a2e2ba408910ee6b" data-navigation-anchor=""><strong>效益值得</strong>：節省的時間或提升的品質，是否大於驗證與人工收尾的成本。</li>
+</ol>
+<p id="nav-33d5715b5072a0ff" data-navigation-anchor="">這和 <a target="_blank" rel="noopener" href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST AI RMF 的 TEVV 與 Measure 要求</a>很接近：測試集、指標、工具細節、部署情境、獨立複核與限制都要被記錄，而且上線後仍要持續監測。對我來說，最重要的轉換是：</p>
+<blockquote>
+<p id="nav-8546d70abbbe83fa" data-navigation-anchor=""><strong>驗證結果不是報告最後的一段文字，而是 Agent 能不能取得 COMMIT 權限的依據。</strong></p>
+</blockquote>
+<h3 id="失敗也要是交易的一部分" data-navigation-anchor=""><a href="#失敗也要是交易的一部分" class="headerlink" title="失敗也要是交易的一部分"></a>失敗也要是交易的一部分</h3><p id="nav-ef9c9da6cbac5c7d" data-navigation-anchor="">如果失敗只被當成「AI 再試一次」，工作流程很容易留下無法追溯的半成品。失敗應該被分成幾種可處理的狀態：</p>
+<table>
+<thead>
+<tr>
+<th>失敗類型</th>
+<th>可能處理方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>輸入錯誤</td>
+<td>回到資料來源、權限或任務定義修正</td>
+</tr>
+<tr>
+<td>方法錯誤</td>
+<td>回到探索階段，比較另一個方案</td>
+</tr>
+<tr>
+<td>執行錯誤</td>
+<td>保留錯誤證據，修正程式或工具呼叫後重試</td>
+</tr>
+<tr>
+<td>驗證錯誤</td>
+<td>不提交，縮小範圍、補測試或轉人工複核</td>
+</tr>
+<tr>
+<td>不可逆副作用</td>
+<td>停止自動執行，改由人工確認或補償流程處理</td>
+</tr>
+</tbody></table>
+<p id="nav-ca91951dabaf2d1c" data-navigation-anchor="">這裡也要保留論文目前最需要繼續確認的一點：外部 API、寄信、扣款、物流與對外發布未必真的能 rollback。對這些操作，較實際的設計可能是 SAGA 式補償、預覽後確認，或把它們放在整個 Agent 事務的最後一個人工 commit gate。</p>
+<h2 id="七、實務落地檢查清單" data-navigation-anchor=""><a href="#七、實務落地檢查清單" class="headerlink" title="七、實務落地檢查清單"></a>七、實務落地檢查清單</h2><p id="nav-356d6c9078957a00" data-navigation-anchor="">如果要在既有 Agent 系統中導入類似的事務保障，目前先整理成以下幾個工程問題：</p>
+<ul>
+<li id="nav-46981809425076ab" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>工作區快照與版本化</strong>：Agent 修改程式、檔案或刪除資料前，是否能建立快照並回滾？</li>
+<li id="nav-d531db6d658b71e8" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>外部 API 的冪等性與補償</strong>：非唯讀 API 是否有 idempotency key？關鍵操作是否有反向補償函數？</li>
+<li id="nav-a4900bcf07618161" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>失敗步驟的 Context pruning</strong>：錯誤嘗試是否經過整理，才進入後續記憶？</li>
+<li id="nav-a85845dcdaaefb65" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>多代理沙盒與分支隔離</strong>：並行子 Agent 是否有獨立工作區，完成後再結構化合併？</li>
+<li id="nav-2c63745c3f3104ed" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>驗證閘門</strong>：重大決策是否有規則、測試、證據或輕量模型作為提交條件？</li>
+<li id="nav-ed412b2123ddd51e" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>提交證據與溯源</strong>：提交結果是否同時保存做了什麼、依據什麼、由哪個代理完成？</li>
+<li id="nav-f14bf57244fb9e47" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>交易邊界</strong>：是否清楚定義從哪一步開始、哪一步才算提交？</li>
+<li id="nav-23c253284d5a3d7d" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>語義不變量</strong>：除了程式沒有報錯，是否還有「來源正確、格式完整、沒有未授權變更」等條件？</li>
+<li id="nav-5512dc1a6c09f51a" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>提交狀態</strong>：每個工作最後是否明確標記為 committed、retry、compensated 或 rolled back？</li>
+<li id="nav-ba72600bb4a5124e" data-navigation-anchor=""><input disabled="" type="checkbox"> <strong>推動證據包</strong>：是否能用基準線、測試結果、失敗紀錄與人工成本向團隊說明為什麼值得採用？</li>
+</ul>
+<h2 id="八、限制與開放問題" data-navigation-anchor=""><a href="#八、限制與開放問題" class="headerlink" title="八、限制與開放問題"></a>八、限制與開放問題</h2><h3 id="外部不可逆副作用" data-navigation-anchor=""><a href="#外部不可逆副作用" class="headerlink" title="外部不可逆副作用"></a>外部不可逆副作用</h3><p id="nav-77711d7ea315a0db" data-navigation-anchor="">現實世界中的寄信、扣款、物流與實體操作，通常不能靠本地快照復原。未來可能需要分散式 SAGA 類型的補償協議，或把不可逆動作放在更嚴格的人工確認閘門之後。</p>
+<h3 id="輕量驗證模型的泛化" data-navigation-anchor=""><a href="#輕量驗證模型的泛化" class="headerlink" title="輕量驗證模型的泛化"></a>輕量驗證模型的泛化</h3><p id="nav-9f6a2f9f17045e73" data-navigation-anchor="">如果依賴較小模型計算 Token 機率分歧，它在不同領域、不同語言或高度主觀的創意任務上是否仍然有效，還需要更多實驗。</p>
+<h3 id="延遲與成本" data-navigation-anchor=""><a href="#延遲與成本" class="headerlink" title="延遲與成本"></a>延遲與成本</h3><p id="nav-10946f8997912f19" data-navigation-anchor="">驗證、快照、重試與補償都會增加流程長度。即使可靠度提高，也要衡量即時任務對延遲與 Token 成本的容忍度。</p>
+<h3 id="「語義一致」如何被定義" data-navigation-anchor=""><a href="#「語義一致」如何被定義" class="headerlink" title="「語義一致」如何被定義"></a>「語義一致」如何被定義</h3><p id="nav-86578aacae3a7c85" data-navigation-anchor="">資料庫的一致性可以透過 schema、constraint 或 transaction rule 描述，但代理任務常常包含開放式目標。如何把「有充分證據」「沒有偏離意圖」「結果足以交付」寫成可驗證的條件，可能是整個概念最難落地的地方。</p>
+<h2 id="參考資料與待核對項目" data-navigation-anchor=""><a href="#參考資料與待核對項目" class="headerlink" title="參考資料與待核對項目"></a>參考資料與待核對項目</h2><ol>
+<li id="nav-b3ad47a09165d278" data-navigation-anchor="">Sun, Z., Wang, X., &amp; Li, G. (2026). <em>Agentic Transaction: Towards ACID-Compliant Agent Systems</em>. arXiv preprint arXiv:2608.13900v1。</li>
+<li id="nav-ccd3155dbcf0df4a" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://github.com/TsinghuaDatabaseGroup/ACID-Agent">ACID-Agent 開放原始碼專案</a>，README 與專案結構已核對；尚未在本機執行其 Docker／模型環境，因此不宣稱可重現性。</li>
+<li id="nav-c07e5c73f7699455" data-navigation-anchor="">Claude Code 與 Agentic Workflow 的技術資料，需回到官方文件確認版本與說法。</li>
+<li id="nav-c966b0a5e3cf23f7" data-navigation-anchor="">KramaBench 研究資料：正式名稱、六大領域、24 個資料來源、1,700 個資料檔案、104 項任務與 Table 2–4 已依論文核對；論文 §3.2 的 197B／397B 模型名稱矛盾仍保留待釐清。</li>
+<li id="nav-3af0fc627ae10228" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST AI RMF Core：Measure 與 TEVV</a>，補充測試集、指標、部署情境、獨立複核與持續監測。</li>
+<li id="nav-9891fa5d3accdac4" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en">European Commission：Living guidelines on the responsible use of generative AI in research</a>，補充研究者責任、透明、交叉驗證、可重現與資料界線。</li>
+<li id="nav-48940ea76d5cd586" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.nationalacademies.org/read/29212/chapter/2">National Academies：Foundation Models for Scientific Discovery and Innovation</a>，補充科學工作中的可靠性、有效性、可重現性與 VVUQ。</li>
+<li id="nav-185bd6f7381e4b7a" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/18/tutorial-transactions.html">PostgreSQL 18：Transactions</a>，補回傳統資料庫中的 atomic、commit、rollback 與 savepoint 基礎。</li>
+</ol>
+<h2 id="後續研究清單" data-navigation-anchor=""><a href="#後續研究清單" class="headerlink" title="後續研究清單"></a>後續研究清單</h2><ul>
+<li id="nav-60368cb83b793fdb" data-navigation-anchor="">如果繼續往下做，我會先把已核對的正式定義、語義 ACID 與 validation gate，和「學術驗證／系統提交」的個人對照整理成正式模型；目前不宣稱這是論文提出的等價模型。</li>
+<li id="nav-02544aed8bc3ffbc" data-navigation-anchor="">接著針對論文 §3.2 的 197B／397B 敘述矛盾，向原作者或後續版本查證；Table 2–4 的現有數字與條件已記錄在 <code>tmp/aeo-research-evidence.md</code>。</li>
+<li id="nav-cbdb48751d5f01c0" data-navigation-anchor="">具備 Docker、資料集、模型與 API 等條件後，再執行獨立重現；目前只核對 README 所列的程式結構與執行方式。</li>
+<li id="nav-aae31dfd1c72b8e1" data-navigation-anchor="">把「代理修改網站檔案」當成小型案例，整理一次快照、驗證、提交與回滾流程，並記錄哪些步驟可以自動化、哪些必須人工核准。</li>
+<li id="nav-192c8d40d2f4d3af" data-navigation-anchor="">建立一份可重用的工作流程推動證據包，讓不同 AI 專案共用任務邊界、驗證閘門與交付紀錄。</li>
+<li id="nav-022b599f7cec09a4" data-navigation-anchor="">比較 Agentic Transaction 與 Saga、工作流引擎、事件溯源及傳統資料庫交易的差異。</li>
+</ul>
+<h2 id="預先收集：先分清楚論文主張與實作證據" data-navigation-anchor=""><a href="#預先收集：先分清楚論文主張與實作證據" class="headerlink" title="預先收集：先分清楚論文主張與實作證據"></a>預先收集：先分清楚論文主張與實作證據</h2><ol>
+<li id="nav-3b67970dc218a436" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://arxiv.org/html/2608.13900v1">Agentic Transaction: Towards ACID-Compliant Agent Systems</a>：原始論文 HTML v1；已核對 Semantic Atomicity、Consistency、Isolation、Durability、0.25／0.50 門檻與 Table 2–4，並記錄 197B／397B 的原文矛盾。</li>
+<li id="nav-82f7732e3402509f" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://github.com/TsinghuaDatabaseGroup/ACID-Agent">TsinghuaDatabaseGroup/ACID-Agent</a>：開放原始碼專案；已核對 README 的執行架構、資料與輸出位置、Docker／模型需求及 provider-specific cost 說明，尚未獨立執行。</li>
+<li id="nav-5baf7dc5c58a5ac0" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/18/tutorial-transactions.html">PostgreSQL 18｜Transactions</a>：用來補回傳統交易的基本概念，先分清楚 <code>BEGIN</code>、<code>COMMIT</code>、<code>ROLLBACK</code> 與 <code>SAVEPOINT</code>，再判斷「ACID for Agents」到底是沿用、改寫還是借用資料庫術語。</li>
+</ol>
+<h2 id="搭配閱讀：從交易到可驗證的工作流程" data-navigation-anchor=""><a href="#搭配閱讀：從交易到可驗證的工作流程" class="headerlink" title="搭配閱讀：從交易到可驗證的工作流程"></a>搭配閱讀：從交易到可驗證的工作流程</h2><p id="nav-12f8885f34535c78" data-navigation-anchor="">這篇論文比較像核心概念的入口：它提出 Agent 如何透過探索、執行、驗證與提交／重試，取得接近交易系統的可靠性。下面的材料則分別補上長流程的失敗處理、持久化執行、結果追溯與 Agent 評估。先不必一次全部讀完，可以依照自己的工作問題選擇。</p>
+<h3 id="第一階段：先理解交易為什麼需要補償" data-navigation-anchor=""><a href="#第一階段：先理解交易為什麼需要補償" class="headerlink" title="第一階段：先理解交易為什麼需要補償"></a>第一階段：先理解交易為什麼需要補償</h3><ol>
+<li id="nav-c30f63dfc520a477" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.cs.princeton.edu/techreports/1987/070.pdf">SAGAS：Long-Lived Transactions</a>：長時間交易的經典研究。適合用來理解為什麼跨系統、長流程工作通常不能依賴單一資料庫的全有或全無回滾，而要拆成多個可補償的局部交易。</li>
+<li id="nav-91f2d29f2b5cd090" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-patterns.html">AWS：Saga Patterns</a>：把 Saga 的 continuation、compensation、choreography 與 orchestration 說得比較工程化。讀這篇時可以對照 Agent 的 <code>RETRY</code>、<code>COMPENSATE</code> 與 <code>ROLLBACK</code>，並注意補償不一定等於恢復成完全相同的原狀。</li>
+<li id="nav-763ec9a550a86bce" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/en_en/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html">AWS：Transactional Outbox Pattern</a>：補充「狀態已提交但通知沒有送出」的 dual-write 問題。它適合對照 Agent 的 commit：不只要保存變更，也要保存後續事件、證據或工作佇列，而且消費端要能承受重複訊息。</li>
+</ol>
+<p id="nav-ecf1ee29d5e1016e" data-navigation-anchor="">讀完這一階段，我希望能回答：</p>
+<blockquote>
+<p id="nav-f0ce4f08b2df766c" data-navigation-anchor="">如果 Agent 做到一半失敗，我要回復什麼、補償什麼、保留什麼，以及如何避免同一個副作用被重複執行？</p>
+</blockquote>
+<h3 id="第二階段：再看工作流如何持久化與恢復" data-navigation-anchor=""><a href="#第二階段：再看工作流如何持久化與恢復" class="headerlink" title="第二階段：再看工作流如何持久化與恢復"></a>第二階段：再看工作流如何持久化與恢復</h3><ol start="4">
+<li id="nav-6dc74a386b2e7ed3" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://docs.temporal.io/">Temporal Durable Execution</a>：從實際的工作流引擎理解長時間執行、狀態保存、重試、暫停與故障恢復。它可以幫我把「持久性」從抽象的 Semantic Durability，轉成可觀察的 workflow state、history、retry policy 與人工介入點。</li>
+<li id="nav-a71e7e36fd5c7987" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.w3.org/TR/prov-primer/">W3C PROV Primer</a>：補上 provenance 的基本模型，整理一個結果涉及哪些 entity、activity 與 agent。對我的工作來說，就是追蹤哪份資料、哪個 prompt、哪個工具與哪次執行產生了最後的檔案或決策。</li>
+<li id="nav-ddf13425a2d50d41" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://book.the-turing-way.org/">The Turing Way</a>：以可重現、協作與研究倫理為主的開放手冊。它適合把「留下 trace」從工程要求轉成團隊習慣，思考別人能不能重做、接手與理解限制。</li>
+</ol>
+<p id="nav-de5aae16f5b6be6f" data-navigation-anchor="">這一階段最值得帶回工作流程的，不是導入 Temporal 本身，而是學會把每一個步驟的輸入、輸出、狀態、失敗原因與恢復位置保存下來。</p>
+<h3 id="第三階段：最後建立-Agent-的實際評估方法" data-navigation-anchor=""><a href="#第三階段：最後建立-Agent-的實際評估方法" class="headerlink" title="第三階段：最後建立 Agent 的實際評估方法"></a>第三階段：最後建立 Agent 的實際評估方法</h3><ol start="7">
+<li id="nav-c022aa4e934e22d2" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://nyaspubs.onlinelibrary.wiley.com/doi/full/10.1111/nyas.15007">HELM：Holistic Evaluation of Language Models</a>：提醒我不要用單一成功率代表模型品質，而要用不同情境與多個指標觀察準確性、穩健性、效率、偏誤與其他限制。</li>
+<li id="nav-166420a48b6b3349" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2406.12045">τ-bench：A Benchmark for Tool-Agent-User Interaction</a>：聚焦 Agent 使用工具、遵守領域政策與和使用者多輪互動的能力，適合思考「任務完成」之外，是否也遵守了流程條件。</li>
+<li id="nav-fa2ffd59b3ec54c1" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://inspect.aisi.org.uk/?lang=en-US">Inspect AI</a>：由英國 AI Security Institute 發展的開源評估框架，將資料集、Agent、工具、評分器與沙盒組合成可以執行的測試。它比較接近未來真的要做 Agent workflow eval 時的工具層。</li>
+</ol>
+<p id="nav-d96eb1e27278989a" data-navigation-anchor="">這一階段可以對照我自己的驗證閘門：正常案例、邊界案例、失敗案例、人工基準線、可接受錯誤與不可接受副作用。</p>
+<h3 id="我會怎麼搭配這些材料" data-navigation-anchor=""><a href="#我會怎麼搭配這些材料" class="headerlink" title="我會怎麼搭配這些材料"></a>我會怎麼搭配這些材料</h3><table>
+<thead>
+<tr>
+<th>讀完的材料</th>
+<th>回到 ACID-Agent 筆記時要補問的問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SAGAS／Transactional Outbox</td>
+<td>這一步是真的 rollback，還是只能 compensation？提交時是否同時保存狀態與事件？</td>
+</tr>
+<tr>
+<td>Temporal</td>
+<td>Agent 中斷後能從哪個 checkpoint 恢復？哪些步驟可以安全重試？</td>
+</tr>
+<tr>
+<td>W3C PROV／The Turing Way</td>
+<td>能不能說明資料、活動、Agent 與最後成果之間的關係？別人能不能重做？</td>
+</tr>
+<tr>
+<td>HELM／τ-bench／Inspect</td>
+<td>測試的是模型回答、工具操作、政策遵循、流程完成，還是整個工作結果？</td>
+</tr>
+</tbody></table>
+<p id="nav-e649c5291b506a86" data-navigation-anchor="">這些材料先作為搭配閱讀，不把不同領域的術語直接當成同義詞。Saga 的補償交易、Temporal 的 durable execution、W3C 的 provenance 與 ACID-Agent 的語義保證，彼此可以互相參照，但仍要回到各自的問題範圍與實作條件。</p>
+<h2 id="我的參考意見" data-navigation-anchor=""><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p id="nav-4776b753ee498cc2" data-navigation-anchor="">這個題目最值得先保留的，不是「代理也有 ACID」這句口號，而是把代理的工作拆成探索、執行、驗證、提交與失敗後處理。對我真正重要的轉換是：把學術上的驗證要求，變成 Agent 能否提交工作成果的系統條件；再把每次提交留下的證據，變成推動下一個工作流程時可以被團隊檢查的依據。</p>
+<p id="nav-15a9c82081b2ad0e" data-navigation-anchor="">目前應先把論文視為一個研究框架與設計假說，不能直接當成已經成熟的工程標準；閱讀順序應該是原論文定義 → 原始碼結構 → 實驗表格 → 自己的小案例。對我的網站工作來說，最容易落地的部分可能是修改前快照、驗證閘門、差異檢查、狀態標記與可追溯紀錄，而不是一開始就追求完整的語義交易系統。</p>
+<h2 id="相關工作筆記" data-navigation-anchor=""><a href="#相關工作筆記" class="headerlink" title="相關工作筆記"></a>相關工作筆記</h2><ul>
+<li id="nav-c7302a5fa82d52f2" data-navigation-anchor=""><a href="/learning/ai-question-judgment-order/">AI 提問判斷順序｜從情境、目標到診斷、設計與驗證</a>：處理如何在 Agent 開始工作前，把情境、目標、限制與暫定假設分開。</li>
+<li id="nav-24e14d307010eea9" data-navigation-anchor=""><a href="/learning/gemini-notebook-agent-office-workflow/">Gemini Notebook Agent｜從資料庫到可交付文件的工作流</a>：處理資料庫、AI 產出、人工判斷、驗證與交付物之間的流程。</li>
+<li id="nav-1dea9d4583dd18e2" data-navigation-anchor=""><a href="/learning/website-quality-testing-roadmap/">網站品質與軟體測試｜42 天鐵人挑戰學習路徑</a>：提供測試案例、缺陷、回歸與發布品質的工程語言。</li>
+</ul>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-b10c2281a2f0f5f0" data-navigation-anchor=""><strong>2026-08-29 22:09</strong>：建立 Agentic Transaction 公開研究筆記，加入語義 ACID、失敗隔離、驗證閘門、基準測試與實務檢查清單；全文暫列為待核對整理。</li>
+<li id="nav-0fd78beb5785b8bf" data-navigation-anchor=""><strong>2026-09-08</strong>：把學術 AI 驗證流程放回 Agentic Transaction 的語義層，補上交易邊界、驗證閘門、提交／重試／補償／回滾、持久化 trace 與工作流程推動證據包。</li>
+<li id="nav-ffd4f3c07342ce1f" data-navigation-anchor=""><strong>2026-09-11 19:02:32+08:00</strong>：依 arXiv HTML v1 與專案 README 核對正式定義、實驗門檻、KramaBench 規模與 Table 2–4；修正 10.6 個百分點、模型條件、成本與尚未獨立重現的界線，並保留論文內的 197B／397B 矛盾。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    
+      
+      
+      <section class="post-related-reading" aria-labelledby="post-related-reading-title">
+        <h3 id="post-related-reading-title">📚 延伸閱讀 (猜你也喜歡...)</h3>
+        <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/gemini-notebook-agent-office-workflow/" title="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記" rel="bookmark">Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/pain-improvement-research/" title="痠痛改善研究：從下背、肩膀與小腿開始" rel="bookmark">痠痛改善研究：從下背、肩膀與小腿開始</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/learning/lis-research-1965-2025-content-analysis/" title="LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記" rel="bookmark">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/work/ai-external-mentor-dual-track/" title="工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法" rel="bookmark">工作知識｜從實際抽象功能系列 06｜外掛導師的雙軌工作法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2026/02/02/%E5%AF%A6%E9%A9%97%E5%AE%A4/life-check-tool/" title="混亂日常的一個「存檔點」工具設計" rel="bookmark">混亂日常的一個「存檔點」工具設計</a></h3></div></li></ul>
+      </section>
+      
+    
+  
+
+    <footer class="post-footer">
+          <div class="followme followme-rss-only">
+  <span>歡迎關注我的其它發布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item social-item-rss">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" rel="tag"># 研究筆記</a>
+              <a href="/tags/AI-Agent/" rel="tag"># AI Agent</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/learning/cms-content-modeling-field-review/" rel="prev" title="CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記">
+                  <i class="fa fa-angle-left"></i> CMS 前後台理解｜前後台欄位對照與規格審查｜學習筆記
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/08/31/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%84%9F%E8%AC%9D%E5%8B%9E%E5%8A%9B/" rel="next" title="歌曲推薦-感謝勞力">
+                  歌曲推薦-感謝勞力 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ch-Ju</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">293k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">4:26</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

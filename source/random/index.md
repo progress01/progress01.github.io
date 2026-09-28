@@ -175,6 +175,7 @@ comments: false
     var contentCategories = [];
     var currentCategory = 'all';
     var historyKey = 'random-tape-history';
+    var selectionKey = 'random-tape-selection-v1';
     var memoryHistory = [];
     var storageDisabled = false;
     var filters = document.querySelector('.random-filters');
@@ -210,6 +211,48 @@ comments: false
       } catch (error) {
         storageDisabled = true;
       }
+    }
+
+    function savedSelection() {
+      if (storageDisabled) return null;
+      try {
+        return JSON.parse(window.sessionStorage.getItem(selectionKey) || 'null');
+      } catch (error) {
+        storageDisabled = true;
+        return null;
+      }
+    }
+
+    function saveSelection(record) {
+      if (storageDisabled || !record) return;
+      try {
+        window.sessionStorage.setItem(selectionKey, JSON.stringify({
+          category: currentCategory,
+          url: record.url
+        }));
+      } catch (error) {
+        storageDisabled = true;
+      }
+    }
+
+    function restoreSelection() {
+      var saved = savedSelection();
+      if (!saved || typeof saved !== 'object' || typeof saved.category !== 'string' || typeof saved.url !== 'string') {
+        return null;
+      }
+      var categoryExists = saved.category === 'all' || contentCategories.indexOf(saved.category) !== -1;
+      var record = records.find(function(item) { return item.url === saved.url; });
+      var belongsToCategory = saved.category === 'all' ||
+        (record && (record.categories || []).indexOf(saved.category) !== -1);
+      if (!categoryExists || !record || !belongsToCategory) {
+        try { window.sessionStorage.removeItem(selectionKey); } catch (error) { storageDisabled = true; }
+        return null;
+      }
+      currentCategory = saved.category;
+      categoryButtons().forEach(function(item) {
+        item.classList.toggle('is-active', item.getAttribute('data-category') === currentCategory);
+      });
+      return record;
     }
 
     function randomItem(items) {
@@ -260,6 +303,7 @@ comments: false
       open.href = record.url;
       status.textContent = currentCategory === 'all' ? '已從不同內容區平均抽取一段記憶。' : '目前抽取範圍：' + currentCategory;
       saveHistory(record.url);
+      saveSelection(record);
     }
 
     function draw() { renderRecord(chooseRecord()); }
@@ -296,7 +340,9 @@ comments: false
           if (!poolFor(category.name).length) button.classList.add('is-empty');
           filters.appendChild(button);
         });
-        draw();
+        var restored = restoreSelection();
+        if (restored) renderRecord(restored);
+        else draw();
       })
       .catch(function() {
         status.textContent = '時光機故障：找不到文章資料庫。';

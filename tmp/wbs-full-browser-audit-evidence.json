@@ -1,0 +1,466 @@
+{
+  "date": "2026-09-28",
+  "browser": "Chrome headless via CDP",
+  "viewport": {
+    "desktop": "1280x900",
+    "mobile": "375x812"
+  },
+  "harness": "local static server on 127.0.0.1; no-op anime stub; external CDN script/styles removed; local assets used; no production files changed",
+  "journeys": {
+    "bHome": {
+      "nav": [
+        {
+          "text": "首頁",
+          "href": "/"
+        },
+        {
+          "text": "全部文章",
+          "href": "/archives/"
+        },
+        {
+          "text": "內容分類",
+          "href": "/categories/"
+        },
+        {
+          "text": "生活索引",
+          "href": "/reading-log/"
+        },
+        {
+          "text": "草稿夾",
+          "href": "/reading/"
+        },
+        {
+          "text": "記憶圖牆",
+          "href": "/photos/"
+        },
+        {
+          "text": "更新日曆",
+          "href": "/calendar/"
+        },
+        {
+          "text": "搜尋",
+          "href": null
+        }
+      ],
+      "brand": "/",
+      "switch": "/profile/",
+      "bridge": "/profile/",
+      "searchTrigger": true,
+      "random": {
+        "title": "歌曲推薦-給我一首歌的時間",
+        "href": "/2026/01/13/歌曲推薦/歌曲推薦-給我一首歌的時間/",
+        "enabled": true
+      },
+      "widths": {
+        "doc": 1265,
+        "body": 1265,
+        "viewport": 1280
+      },
+      "randomDataEligibleRecords": 262,
+      "search": {
+        "scope": "memory",
+        "enabled": true
+      },
+      "searchClosedByEscape": true
+    },
+    "profileCover": {
+      "h1": "工作與學習",
+      "total": 9,
+      "events": 15,
+      "activeDates": 8,
+      "counts": {
+        "2026-02-26": 1,
+        "2026-05-28": 1,
+        "2026-07-09": 1,
+        "2026-09-03": 1,
+        "2026-09-04": 1,
+        "2026-09-08": 1,
+        "2026-09-17": 8,
+        "2026-09-27": 1
+      },
+      "heading": "2026-09-27 文章活動",
+      "links": [
+        {
+          "href": "/work/from-solving-problems-to-choosing-what-matters/",
+          "label": "發表",
+          "title": "工作知識｜從解決問題，到判斷什麼值得解"
+        }
+      ],
+      "sidebar": [
+        {
+          "count": "9",
+          "name": "文章"
+        },
+        {
+          "count": "6",
+          "name": "標籤"
+        }
+      ],
+      "brand": "/profile/",
+      "switch": "/",
+      "filters": 0,
+      "width": {
+        "doc": 1265,
+        "body": 1265,
+        "viewport": 1280
+      },
+      "keyboardSelection": {
+        "heading": "2026-09-17 文章活動",
+        "events": [
+          "發表",
+          "發表",
+          "更新",
+          "更新",
+          "更新",
+          "更新",
+          "更新",
+          "更新"
+        ],
+        "focused": "2026-09-17",
+        "pressed": "true"
+      },
+      "oldSelection": {
+        "heading": "2026-09-08 文章活動",
+        "labels": [
+          "發表"
+        ]
+      },
+      "reloadRestoredLatest": true
+    },
+    "aToB": {
+      "brand": "/",
+      "profile": false
+    },
+    "profileArchive": {
+      "archive": {
+        "rows": [
+          "/work/from-solving-problems-to-choosing-what-matters/",
+          "/work/from-real-work-to-features/",
+          "/work/risk-based-review/",
+          "/learning/ai-question-judgment-order/",
+          "/learning/website-quality-testing-roadmap/",
+          "/work/api-requirement-troubleshooting/",
+          "/work/presentation-as-mental-model/",
+          "/work/flow-friendly-work-system/",
+          "/work/gamifying-website-redesign/"
+        ],
+        "tagCount": 6,
+        "menu": [
+          {
+            "label": "工作與學習",
+            "current": false
+          },
+          {
+            "label": "全部文章",
+            "current": true
+          }
+        ],
+        "brand": "/profile/",
+        "filterVisible": true
+      },
+      "filtered": {
+        "hash": "#tag=%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86",
+        "visible": 7,
+        "total": 9
+      },
+      "reloadFilter": {
+        "visible": 7,
+        "hash": "#tag=%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86"
+      },
+      "coverRoundTrip": true
+    },
+    "articleRoutes": [
+      {
+        "route": "/work/from-solving-problems-to-choosing-what-matters/",
+        "expected": [
+          "profile"
+        ],
+        "canonicalCount": 1,
+        "canonical": "https://progress01.github.io/work/from-solving-problems-to-choosing-what-matters/",
+        "marker": "profile",
+        "markerLinks": [
+          "工作與學習"
+        ],
+        "menu": "memory",
+        "brand": "/",
+        "search": "all",
+        "title": "工作知識｜從解決問題，到判斷什麼值得解"
+      },
+      {
+        "route": "/work/flow-friendly-work-system/",
+        "expected": [
+          "profile",
+          "memory"
+        ],
+        "canonicalCount": 1,
+        "canonical": "https://progress01.github.io/work/flow-friendly-work-system/",
+        "marker": "profile memory",
+        "markerLinks": [
+          "工作與學習",
+          "個人記憶庫"
+        ],
+        "menu": "memory",
+        "brand": "/",
+        "search": "all",
+        "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計"
+      },
+      {
+        "route": "/2026/01/25/部落格改版規劃/",
+        "expected": [
+          "memory"
+        ],
+        "canonicalCount": 1,
+        "canonical": "https://progress01.github.io/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/",
+        "marker": "memory",
+        "markerLinks": [
+          "個人記憶庫"
+        ],
+        "menu": "memory",
+        "brand": "/",
+        "search": "all",
+        "title": "部落格改版規劃"
+      }
+    ],
+    "search": {
+      "searchAOnlyA": {
+        "initial": "profile",
+        "scope": "profile",
+        "results": [
+          {
+            "href": "/work/from-solving-problems-to-choosing-what-matters/#nav-c4e80cde2d1c1a5a",
+            "title": "工作知識｜從解決問題，到判斷什麼值得解",
+            "surfaces": "收錄於：工作與學習"
+          }
+        ],
+        "status": "找到 1 筆紀錄\n工作知識｜從解決問題，到判斷什麼值得解\n文章 · 工作知識\n發表 2026-09-27\n收錄於：工作與學習\n\n我還在練習從解決問題走到選擇問題。也許熟練不會是把所有可能性都先想完，而是越來越知道何時該查、該問、該試，何時要停下來確認這件事是否值得繼續。\n\n定位命中段落",
+        "closed": true
+      },
+      "searchAOnlyB": {
+        "initial": "memory",
+        "scope": "memory",
+        "results": [],
+        "status": "找不到與「從解決問題」相關的文章或紀錄",
+        "closed": true
+      },
+      "searchBOnlyA": {
+        "initial": "profile",
+        "scope": "profile",
+        "results": [],
+        "status": "找不到與「部落格改版規劃」相關的文章或紀錄",
+        "closed": true
+      },
+      "searchBOnlyB": {
+        "initial": "memory",
+        "scope": "memory",
+        "results": [
+          {
+            "href": "/2026/01/25/部落格改版規劃/",
+            "title": "部落格改版規劃",
+            "surfaces": "收錄於：個人記憶庫"
+          }
+        ],
+        "status": "找到 1 筆紀錄\n部落格改版規劃\n文章 · 站務\n發表 2026-01-25\n收錄於：個人記憶庫\n\n這個部落格的改版，不是一次把畫面全部換掉，而是在使用過程中，逐步處理幾類問題：看不清楚、找不到、回不去，以及不知道問題真正出在哪裡。 為什麼需要重新整理改版 最早記下來的站務問題有三個： 電腦版偶爾會出現一個字掉到下一行，或文字看起來不應該置中。 希望網站有一致的 JSON-LD 等結構化資料規範。 每次修正都應記錄問題情境、發現過程，以及最後釐清出的真正問…\n\n開啟文章",
+        "closed": true
+      },
+      "searchDualB": {
+        "initial": "memory",
+        "scope": "memory",
+        "results": [
+          {
+            "href": "/work/flow-friendly-work-system/",
+            "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "surfaces": "收錄於：工作與學習・個人記憶庫"
+          }
+        ],
+        "status": "找到 1 筆紀錄\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n文章 · 工作知識\n發表 2026-05-28\n收錄於：工作與學習・個人記憶庫\n\n我一直想設計一套符合自己工作方式的工具，後來發現，真正要調整的不是欄位，而是發想、執行與經驗整理的邊界。 我想設計的，其實不是更完整的工具 之前我一直想設計一套比較符合自己工作方式的工作系統。 一開始我很容易把問題想成「還缺哪個功能」：要不要有日曆、看板、工作區、筆記、搜尋，或是把不同任務之間的關係都連起來。只要想到新的需要，",
+        "closed": true
+      },
+      "searchArticleAll": {
+        "initial": "all",
+        "scope": "all",
+        "results": [
+          {
+            "href": "/work/flow-friendly-work-system/",
+            "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "surfaces": "收錄於：工作與學習・個人記憶庫"
+          }
+        ],
+        "status": "找到 1 筆紀錄\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n文章 · 工作知識\n發表 2026-05-28\n收錄於：工作與學習・個人記憶庫\n\n我一直想設計一套符合自己工作方式的工具，後來發現，真正要調整的不是欄位，而是發想、執行與經驗整理的邊界。 我想設計的，其實不是更完整的工具 之前我一直想設計一套比較符合自己工作方式的工作系統。 一開始我很容易把問題想成「還缺哪個功能」：要不要有日曆、看板、工作區、筆記、搜尋，或是把不同任務之間的關係都連起來。只要想到新的需要，",
+        "closed": true
+      }
+    },
+    "random": {
+      "randomUi": {
+        "title": "有工作的第N+3天",
+        "href": "/2025/06/16/隨筆/有工作的第N-3天/",
+        "filters": [
+          "全部",
+          "音樂",
+          "閱讀與影視",
+          "觀念與實驗",
+          "工作知識",
+          "生活紀錄"
+        ],
+        "brand": "/"
+      },
+      "randomUiAfter": {
+        "title": "歌曲推薦-放風吹",
+        "href": "/2026/04/02/歌曲推薦/歌曲推薦-放風吹/"
+      },
+      "dataCount": 262,
+      "aOnlyCount": 8,
+      "dualCount": 1
+    },
+    "bCalendar": {
+      "initial": {
+        "status": "顯示 2026 年：154 篇文章",
+        "heading": "近一週發表的文章",
+        "leakLinks": [
+          {
+            "href": "/work/from-solving-problems-to-choosing-what-matters/",
+            "title": "工作知識｜從解決問題，到判斷什麼值得解"
+          }
+        ],
+        "control": "2026-09-27 發表 1 篇文章"
+      },
+      "selected": {
+        "heading": "近一週發表的文章",
+        "links": [
+          {
+            "href": "/work/from-solving-problems-to-choosing-what-matters/",
+            "title": "工作知識｜從解決問題，到判斷什麼值得解"
+          },
+          {
+            "href": "/2026/09/22/歌曲推薦/歌曲推薦-沈默是金/",
+            "title": "歌曲推薦-沈默是金"
+          }
+        ],
+        "n7": true
+      },
+      "clickedThroughToAOnly": true
+    },
+    "mobile": {
+      "cover": {
+        "viewport": 375,
+        "doc": 375,
+        "body": 375,
+        "chartScroll": 700,
+        "chartClient": 311,
+        "chartInnerScroll": true,
+        "switch": "/",
+        "focusStyle": "none"
+      },
+      "menuToggle": {
+        "menuOpen": true,
+        "navWidth": 375,
+        "brand": "/profile/"
+      },
+      "archive": {
+        "doc": 375,
+        "body": 375,
+        "rows": 9,
+        "title": "工作知識｜從解決問題，到判斷什麼值得解",
+        "tags": 6
+      },
+      "searchOverlay": {
+        "doc": 375,
+        "body": 375,
+        "visible": true,
+        "scope": "profile"
+      }
+    },
+    "keyboardFocus": {
+      "tag": "A",
+      "href": "#main-content",
+      "focusVisible": true,
+      "outline": "solid"
+    },
+    "noJs": [
+      {
+        "route": "/",
+        "h1": "DON'T COUNT THE DAYS",
+        "links": 302,
+        "articleRows": 0,
+        "noScript": "<p class=\"home-random-fallback\">瀏覽器未啟用 JavaScript；可以前往<a href=\"/archives/\">全部文章</a>或<a href=\"/random/\">隨機傳送門</a>。</p>\n  <div class=\"noscript-warning\">Theme NexT works best with JavaScript enabled</div>",
+        "fallback": "",
+        "defaultDetails": [],
+        "archiveLink": 0,
+        "articleBody": "",
+        "bodyText": "跳到主要內容 DON'T COUNT THE DAYS 紀錄並凝視 首頁全部文章內容分類生活索引草稿夾記憶圖牆更新日曆 搜尋 搜尋範圍 工作與學習 個人記憶庫 全部公開內容 內容全部內容文章碎碎念學習筆記 分類全部分類 月份全部月份 清除條件 月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。 JUST IN / 最近更新 最近 10 篇 全部 音樂 閱讀與影視 觀念與實驗 工作知識 生活紀錄 09-27 工作知識 工作知識｜從解決問題，到判斷什麼值得解 ↗ 09-"
+      },
+      {
+        "route": "/profile/",
+        "h1": "工作與學習",
+        "links": 283,
+        "articleRows": 0,
+        "noScript": "<div class=\"noscript-warning\">Theme NexT works best with JavaScript enabled</div>",
+        "fallback": "熱力圖載入中；若無法顯示，請前往文章庫。",
+        "defaultDetails": [
+          "/work/from-solving-problems-to-choosing-what-matters/"
+        ],
+        "archiveLink": 4,
+        "articleBody": "",
+        "bodyText": "跳到主要內容 DON'T COUNT THE DAYS 紀錄並凝視 工作與學習 全部文章 搜尋範圍 工作與學習 個人記憶庫 全部公開內容 內容全部內容文章碎碎念學習筆記 分類全部分類 月份全部月份 清除條件 月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。 JUST IN / 最近更新 最近 10 篇 全部 音樂 閱讀與影視 觀念與實驗 工作知識 生活紀錄 09-27 工作知識 工作知識｜從解決問題，到判斷什麼值得解 ↗ 09-22 音樂 歌曲推薦-沈默是金 ↗ "
+      },
+      {
+        "route": "/profile/articles/",
+        "h1": "工作與學習",
+        "links": 289,
+        "articleRows": 9,
+        "noScript": "<div class=\"noscript-warning\">Theme NexT works best with JavaScript enabled</div>",
+        "fallback": "",
+        "defaultDetails": [],
+        "archiveLink": 2,
+        "articleBody": "",
+        "bodyText": "跳到主要內容 DON'T COUNT THE DAYS 紀錄並凝視 工作與學習 全部文章 搜尋範圍 工作與學習 個人記憶庫 全部公開內容 內容全部內容文章碎碎念學習筆記 分類全部分類 月份全部月份 清除條件 月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。 JUST IN / 最近更新 最近 10 篇 全部 音樂 閱讀與影視 觀念與實驗 工作知識 生活紀錄 09-27 工作知識 工作知識｜從解決問題，到判斷什麼值得解 ↗ 09-22 音樂 歌曲推薦-沈默是金 ↗ "
+      },
+      {
+        "route": "/work/from-solving-problems-to-choosing-what-matters/",
+        "h1": "工作知識｜從解決問題，到判斷什麼值得解",
+        "links": 308,
+        "articleRows": 0,
+        "noScript": "<div class=\"noscript-warning\">Theme NexT works best with JavaScript enabled</div>",
+        "fallback": "",
+        "defaultDetails": [],
+        "archiveLink": 0,
+        "articleBody": "工作不只是在找到解法後把事情做好；有時更早的一步，是發現眼前到底有什麼問題，以及它值不值得現在處理。 我以前比較習慣從「事情要怎麼做好」開始。當目標和範圍已經大致確定，接下來要拆步驟、找方法、處理例外，這些都比較容易進入狀況。近來我才注意到，有些工作還要先回答另一個問題：這件事為什麼要做？誰會使用結果？如果前提不成立，後面的工作還需要繼續嗎？ 這不是把原本的解題能力丟掉，而是發現解題之前也有一段工作。問題還沒被說清楚時，越快開始做，越可能只是把一個尚未確認的假設做得更完整。 不知道答案，和沒看見問題如果我知道自己不會某個工具或方法，至少可以描述缺口，再去查資料、練習或請教。這種「不知道答案」雖然會讓事情停一下，但有一個可搜尋的方向。 更難的是，當下根本沒有意識到還有一件事需要先判斷。沒看見的問題不會自己變成搜尋關鍵字；很多時候，是別人問出來，我才發現那本來就是工作的一部分。這時候我容易把它",
+        "bodyText": "跳到主要內容 DON'T COUNT THE DAYS 紀錄並凝視 首頁全部文章內容分類生活索引草稿夾記憶圖牆更新日曆 搜尋 搜尋範圍 工作與學習 個人記憶庫 全部公開內容 內容全部內容文章碎碎念學習筆記 分類全部分類 月份全部月份 清除條件 月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。 JUST IN / 最近更新 最近 10 篇 全部 音樂 閱讀與影視 觀念與實驗 工作知識 生活紀錄 09-27 工作知識 工作知識｜從解決問題，到判斷什麼值得解 ↗ 09-"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "label": "B calendar does not expose profile-only N+7",
+      "evidence": {
+        "initial": {
+          "status": "顯示 2026 年：154 篇文章",
+          "heading": "近一週發表的文章",
+          "leakLinks": [
+            {
+              "href": "/work/from-solving-problems-to-choosing-what-matters/",
+              "title": "工作知識｜從解決問題，到判斷什麼值得解"
+            }
+          ],
+          "control": "2026-09-27 發表 1 篇文章"
+        },
+        "selected": {
+          "heading": "近一週發表的文章",
+          "links": [
+            {
+              "href": "/work/from-solving-problems-to-choosing-what-matters/",
+              "title": "工作知識｜從解決問題，到判斷什麼值得解"
+            },
+            {
+              "href": "/2026/09/22/歌曲推薦/歌曲推薦-沈默是金/",
+              "title": "歌曲推薦-沈默是金"
+            }
+          ],
+          "n7": true
+        }
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "requestFailures": [],
+  "httpErrors": []
+}

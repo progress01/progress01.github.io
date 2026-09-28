@@ -939,6 +939,19 @@ body {
     text-decoration: none;
   }
 
+  .search-result-surfaces {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 2px 7px;
+    border: 1px solid #cdb9a2;
+    border-radius: 2px;
+    color: #5f5147;
+    font-size: .78em;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
   p.search-result {
     margin: 8px 0 0;
     padding: 0;
@@ -1194,7 +1207,19 @@ body {
 }
 
 // 首頁樣式獨立維護，載入位置保持在既有樣式之後。
+@import '_custom/dual-surface-visual';
+@import '_custom/accessibility';
 @import '_custom/home';
+// A／B 兩面共用的無腳本切換連結。
+@import '_custom/surface-switch';
+@import '_custom/surface-transition';
+// 單篇文章只標示收錄面向，不複製正文或改動網址。
+@import '_custom/post-surface';
+// A 面代表路徑與文章卡樣式獨立維護。
+@import '_custom/profile';
+// 明確標記為探索中的文章與 A 面卡片。
+@import '_custom/thinking-status';
+@import '_custom/surface-responsive';
 
 .content-browser { color: #543b30; text-align: left; }
 .post-block:has(.content-browser) .post-header,

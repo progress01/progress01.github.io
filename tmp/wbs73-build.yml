@@ -1,0 +1,3 @@
+public_dir: tmp/wbs73-public-20260927
+theme_config:
+  pjax: true

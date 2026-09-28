@@ -1,0 +1,69 @@
+# WBS 3.4 profile-home schema v1; WBS 9.5 presentation copy approved.
+# workingDescription is internal curation context only and must not render on /profile/.
+# role values: featured | supporting. status values describe publication/maturity, not success claims.
+schemaVersion: 1
+copyStatus: approved/10.6
+presentation:
+  pageTitle: 工作與學習
+  flipLabel: SIDE B／翻到個人記憶庫
+statusValues:
+  - published-note
+  - idea-unvalidated
+  - needs-validation
+  - learning-in-progress
+paths:
+  - id: observe-context-and-needs
+    title: 看見現場與需求
+    workingDescription: 從工作目標與資料脈絡出發，整理成可討論、可檢查的需求方向。
+    workingDescriptionVisibility: internal
+    items:
+      - url: /work/from-real-work-to-features/
+        role: featured
+        status: published-note
+        selectionReason: 將情境、期待結果與系統行動分開，呈現需求形成的思考步驟。
+        readerValue: 可了解如何先釐清實際工作，再討論系統要支援什麼。
+      - url: /work/api-requirement-troubleshooting/
+        role: featured
+        status: published-note
+        selectionReason: 依資料來源、處理流程、API 與前台結果逐層排查，並保留比對證據。
+        readerValue: 可了解如何從可觀察的異常追溯資料流，而不是先假定問題層次。
+      - url: /work/gamifying-website-redesign/
+        role: supporting
+        status: idea-unvalidated
+        selectionReason: 把改版推廣構想拆成訪客任務、使用行為、限制與最小驗證；原構想未採用。
+        readerValue: 可看到如何標記假設與未驗證範圍，不把構想包裝成已交付成果。
+  - id: organize-information-and-methods
+    title: 整理資訊與方法
+    workingDescription: 依風險與資料證據安排檢查，讓驗收範圍和交付狀態更清楚。
+    workingDescriptionVisibility: internal
+    items:
+      - url: /work/presentation-as-mental-model/
+        role: featured
+        status: published-note
+        selectionReason: 以受眾理解的流程安排簡報，區分工具、人工判斷、例外與下一步。
+        readerValue: 可了解如何將功能清單轉成較容易理解和討論的工作情境。
+      - url: /work/flow-friendly-work-system/
+        role: supporting
+        status: needs-validation
+        selectionReason: 區分發想、可行動任務、專注執行與事後整理，並提出小型試行觀察項目。
+        readerValue: 可了解一種降低流程切換負擔的工作系統構想；成效仍待驗證。
+  - id: implement-verify-and-improve
+    title: 實作、驗證與修正
+    workingDescription: 從溝通、學習與工具使用出發，整理哪些流程需要支援及仍待驗證的部分。
+    workingDescriptionVisibility: internal
+    items:
+      - url: /work/risk-based-review/
+        role: featured
+        status: published-note
+        selectionReason: 將決策原因、資料、權責、前置條件、失敗退路與交付證據整理為補審問題。
+        readerValue: 可了解如何按風險補足檢查，而非不分情況全部重做。
+      - url: /learning/website-quality-testing-roadmap/
+        role: supporting
+        status: learning-in-progress
+        selectionReason: 以 42 天、6 個單元與過關產物規劃網站品質和軟體測試學習。
+        readerValue: 可看到目前的學習範圍與自我檢查方式；這是進行中的學習，不代表已具完整 QA 實作經驗。
+      - url: /learning/ai-question-judgment-order/
+        role: supporting
+        status: learning-in-progress
+        selectionReason: 區分觀察、目標、限制與暫定假設，並整理診斷、設計和驗證型提問。
+        readerValue: 可了解目前如何整理問題與 AI 協作方法；內容仍在學習校準中。

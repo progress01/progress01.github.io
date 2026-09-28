@@ -5,7 +5,30 @@
 })(typeof globalThis === 'object' ? globalThis : this, function() {
   'use strict';
   const labels = { article: '文章', microblog: '碎碎念', learning: '學習筆記' };
+  const surfaceLabels = { profile: '工作與學習', memory: '個人記憶庫' };
   const dateLabels = { published: '發表', recorded: '記錄', 'learning-added': '加入學習' };
+  const scopes = new Set(['profile', 'memory', 'all']);
+  const validSurfaces = surfaces => Array.isArray(surfaces) &&
+    (surfaces.length === 1 && (surfaces[0] === 'profile' || surfaces[0] === 'memory') ||
+      surfaces.length === 2 && surfaces[0] === 'profile' && surfaces[1] === 'memory');
+  function defaultSurface(pathname, articlePage = false) {
+    const path = typeof pathname === 'string' ? pathname : '/';
+    if (path === '/' || path === '/profile' || path.startsWith('/profile/')) return 'profile';
+    if (articlePage) return 'all';
+    return 'memory';
+  }
+  function resetFilters(defaultScope) {
+    return { surface: scopes.has(defaultScope) && defaultScope !== 'all' ? defaultScope : 'all', source: 'all', category: 'all', month: 'all' };
+  }
+  function canRestoreViewState(saved, url, requested) {
+    return Boolean(requested && saved && typeof saved === 'object' && saved.url === url && scopes.has(saved.surface));
+  }
+  function recentIndexes(items, surface, category = 'all') {
+    const eligible = items.map((item, index) => ({ item, index }))
+      .filter(({ item }) => surface === 'all' || item.surfaces.includes(surface))
+      .filter(({ item }) => category === 'all' || item.categories.includes(category));
+    return new Set(eligible.slice(0, 10).map(({ index }) => index));
+  }
   const tokens = query => [...new Set(String(query).trim().toLowerCase().split(/\s+/).filter(Boolean))];
   const safeLocal = url => typeof url === 'string' && /^\/(?!\/)/.test(url) && !/[\\\u0000-\u001f\u007f]/.test(url);
   const escape = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -15,7 +38,7 @@
     if (data?.schemaVersion !== 1 || !Array.isArray(data.records)) throw new Error('Navigation index schema is invalid');
     const ids = new Set();
     for (const record of data.records) {
-      if (!record || typeof record.id !== 'string' || ids.has(record.id) || !labels[record.kind] ||
+      if (!record || typeof record.id !== 'string' || ids.has(record.id) || !labels[record.kind] || !validSurfaces(record.surfaces) ||
           typeof record.title !== 'string' || typeof record.text !== 'string' || !safeLocal(record.url) ||
           !Array.isArray(record.sources) || !record.sources.length || record.sources.some(value => !labels[value]) ||
           !Array.isArray(record.categories) || record.categories.some(value => typeof value !== 'string') ||
@@ -38,7 +61,11 @@
   }
   function search(records, query, filters = {}) {
     const words = tokens(query);
+    const seenIds = new Set();
     return records.filter(record => {
+      if (!record || typeof record.id !== 'string' || seenIds.has(record.id)) return false;
+      seenIds.add(record.id);
+      if (filters.surface && filters.surface !== 'all' && !record.surfaces.includes(filters.surface)) return false;
       if (filters.source && filters.source !== 'all' && !record.sources.includes(filters.source)) return false;
       if (filters.category && filters.category !== 'all' && !record.categories.includes(filters.category)) return false;
       if (filters.month && filters.month !== 'all' && !eventsFor(record, filters.source).some(event => event.date.startsWith(filters.month))) return false;
@@ -82,9 +109,11 @@
     const { record, href, locationLabel, snippet, learning } = result;
     const dates = [...new Set(record.events.map(event => dateLabels[event.kind] + ' ' + event.date))].join(' · ') || '未標日期';
     const detail = learning ? `<a class="search-note-link" data-pjax="false" href="/reading/#${escape(learning.id)}">查看命中的學習附註</a>` : '';
+    const surfaceLabel = record.surfaces.map(surface => surfaceLabels[surface]).join('・');
     return `<li><a class="search-result-title" data-pjax="false" href="${escape(href)}">${highlight(record.title, query)}</a>` +
       `<div class="search-result-meta">${escape(record.sources.map(source => labels[source]).join(' / '))} · ${escape(record.categories.join(' / ') || '未分類')}<br>${escape(dates)}</div>` +
+      `<div class="search-result-surfaces">收錄於：${escape(surfaceLabel)}</div>` +
       `<p class="search-result">${highlight(snippet, query)}</p><div class="search-result-location">${escape(locationLabel)}${detail ? ' · ' + detail : ''}</div></li>`;
   }
-  return { labels, parse, tokens, search, render, highlight, eventsFor };
+  return { labels, surfaceLabels, parse, tokens, search, render, highlight, eventsFor, defaultSurface, resetFilters, canRestoreViewState, recentIndexes };
 });

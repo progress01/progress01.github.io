@@ -1,6 +1,7 @@
 {{ partial('_partials/header/brand.njk') }}
 
-{{ partial('_partials/header/menu.njk', {}, {cache: theme.cache.enable}) }}
+{# The menu depends on page.path, so it must not reuse the first rendered page across surfaces. #}
+{{ partial('_partials/header/menu.njk', {}, {cache: false}) }}
 
 {{ partial('_partials/search/index.njk', {}, {cache: theme.cache.enable}) }}
 

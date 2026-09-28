@@ -1,0 +1,30 @@
+{% set calendar = profile_article_calendar() %}
+<section class="profile-article-calendar" data-profile-article-calendar aria-label="工作與學習更新日曆">
+  <h2 class="profile-calendar-year">{{ calendar.latestYear or '—' }} 更新日曆</h2>
+  <p class="profile-calendar-status" data-profile-calendar-status aria-live="polite">共 {{ calendar.articleTotal }} 篇文章，{{ calendar.activeDateCount }} 個活動日期</p>
+  <div class="profile-calendar-legend" aria-label="文章活動次數圖例"><span>少</span><span class="profile-calendar-gradient" aria-hidden="true"></span><span>多</span></div>
+  <div class="profile-calendar-scroll" tabindex="0" aria-label="全年更新熱力圖，可水平捲動">
+    <div id="profile-calendar-chart" class="profile-calendar-chart" role="img" aria-label="{{ calendar.latestYear or '全年' }} 工作與學習文章活動熱力圖">
+      <p class="profile-calendar-fallback" data-profile-calendar-fallback>熱力圖載入中；若無法顯示，請<a href="/profile/articles/">前往文章庫</a>。</p>
+    </div>
+    <div class="profile-calendar-controls" data-profile-calendar-controls role="group" aria-label="選擇有文章的日期"></div>
+  </div>
+  <section class="profile-calendar-details" aria-live="polite" aria-label="所選日期的文章活動">
+    <h3 data-profile-calendar-detail-heading>{% if calendar.latestDate %}{{ calendar.latestDate }} 文章活動{% else %}目前沒有文章活動{% endif %}</h3>
+    <div class="profile-calendar-updates" data-profile-calendar-updates>
+      {% if calendar.latestDate and calendar.postsByDate[calendar.latestDate] %}
+        {% for article in calendar.postsByDate[calendar.latestDate] %}
+          <a class="profile-calendar-article" href="{{ article.url }}"><span class="profile-calendar-event-label" data-event-type="{{ article.eventType }}">{{ article.eventLabel }}</span><span class="profile-calendar-article-title">{{ article.title }}</span></a>
+        {% endfor %}
+      {% else %}
+        <p class="profile-calendar-fallback">目前沒有可顯示的文章活動。</p>
+      {% endif %}
+    </div>
+  </section>
+  <nav class="profile-navigation" aria-label="文章導覽"><a href="/profile/articles/">查看全部 {{ calendar.articleTotal }} 篇</a></nav>
+  <script type="application/json" data-profile-calendar-data>{{ calendar.json | safe }}</script>
+  <script src="/lib/echarts.min.js" data-pjax></script>
+  <script src="/lib/languages.js" data-pjax></script>
+  <script src="/lib/calendar.js" data-pjax></script>
+  <script src="/js/profile-article-calendar.js" data-pjax></script>
+</section>

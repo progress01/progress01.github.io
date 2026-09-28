@@ -144,18 +144,30 @@ function buttonDocument(buttons) {
   const registered = {};
   const hexo = { extend: { generator: { register(name, generator) { registered[name] = generator; } } } };
   const generatorSource = sourceText('scripts/calendar-generator.js');
-  vm.runInNewContext(generatorSource, { hexo });
-  const post = {
-    title: '預排文章',
-    path: 'learning/planned/',
+  vm.runInNewContext(generatorSource, {
+    hexo,
+    require(modulePath) {
+      assert.strictEqual(modulePath, '../tools/lib/post-surface');
+      return require('../../tools/lib/post-surface');
+    }
+  });
+  const post = (title, path, surfaces) => ({
+    title,
+    path,
+    source: `source/_posts/${path.replaceAll('/', '-')}.md`,
+    surfaces,
     date: { format: () => '2026-09-20' },
     updated: { format: () => '2026-09-12' },
     categories: { toArray: () => [{ name: '學習' }] }
-  };
-  const locals = { posts: [post] };
+  });
+  const profileOnly = post('A-only', 'a-only/', ['profile']);
+  const memoryOnly = post('B-only', 'b-only/', ['memory']);
+  const dual = post('雙面', 'dual/', ['memory', 'profile']);
+  const locals = { posts: [profileOnly, memoryOnly, dual] };
   const calendar = JSON.parse(registered.calendar_json(locals).data);
   const details = JSON.parse(registered.calendar_posts_json(locals).data);
-  assert.deepStrictEqual(calendar, { '2026-09-20': 1 }, 'calendar event date must come from post.date');
+  assert.deepStrictEqual(calendar, { '2026-09-20': 2 }, 'B heatmap counts memory-only and dual posts, excluding profile-only posts');
+  assert.deepStrictEqual(details['2026-09-20'].map(item => item.url), ['/b-only/', '/dual/']);
   assert.strictEqual(details['2026-09-20'][0].date, '2026-09-20');
   assert.strictEqual(details['2026-09-12'], undefined, 'updated must not move an event to today');
 }

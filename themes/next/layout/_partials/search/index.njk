@@ -15,6 +15,11 @@
         </button>
       </div>
       <div class="search-filters" aria-label="篩選搜尋結果">
+        <label>搜尋範圍<select data-navigation-filter="surface" disabled>
+          <option value="profile">工作與學習</option>
+          <option value="memory">個人記憶庫</option>
+          <option value="all">全部公開內容</option>
+        </select></label>
         <label>內容<select data-navigation-filter="source" disabled><option value="all">全部內容</option><option value="article">文章</option><option value="microblog">碎碎念</option><option value="learning">學習筆記</option></select></label>
         <label>分類<select data-navigation-filter="category" disabled><option value="all">全部分類</option></select></label>
         <label>月份<select data-navigation-filter="month" disabled><option value="all">全部月份</option></select></label>
@@ -39,7 +44,7 @@
           <div class="search-recent-list">
             {%- for record in search_recent_posts() %}
               {%- set post = record.post %}
-              <a class="search-recent-item" href="{{ url_for(post.path) }}" data-search-recent-item data-search-recent-rank="{{ record.rank }}" data-search-recent-categories="{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %}|{% endif %}{% endfor %}"{% if record.rank >= 10 %} hidden{% endif %}>
+              <a class="search-recent-item" href="{{ url_for(post.path) }}" data-search-recent-item data-search-recent-rank="{{ record.rank }}" data-search-recent-surfaces="{{ record.surfaces | join('|') }}" data-search-recent-categories="{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %}|{% endif %}{% endfor %}"{% if record.rank >= 10 %} hidden{% endif %}>
                 <time class="search-recent-date" datetime="{{ moment(post.date).format() }}">{{ date(post.date, 'MM-DD') }}</time>
                 <span class="search-recent-copy">
                   <span class="search-recent-category">{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %} / {% endif %}{% endfor %}</span>

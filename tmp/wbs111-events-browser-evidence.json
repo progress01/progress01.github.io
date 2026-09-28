@@ -1,0 +1,128 @@
+{
+  "date": "2026-09-28",
+  "browser": "Chrome headless via CDP",
+  "viewports": {
+    "desktop": "1280x900",
+    "mobile": "375x812"
+  },
+  "ports": {
+    "http": 8981,
+    "cdp": 9381
+  },
+  "desktop": {
+    "year": "2026 更新日曆",
+    "articleTotal": 9,
+    "eventTotal": 15,
+    "activeDateCount": 8,
+    "counts": {
+      "2026-02-26": 1,
+      "2026-05-28": 1,
+      "2026-07-09": 1,
+      "2026-09-03": 1,
+      "2026-09-04": 1,
+      "2026-09-08": 1,
+      "2026-09-17": 8,
+      "2026-09-27": 1
+    },
+    "latest": "2026-09-27 文章活動",
+    "rows": [
+      {
+        "event": "發表",
+        "type": "published",
+        "title": "工作知識｜從解決問題，到判斷什麼值得解",
+        "url": "/work/from-solving-problems-to-choosing-what-matters/"
+      }
+    ],
+    "viewport": [
+      1280,
+      900
+    ],
+    "documentWidth": 1265,
+    "bodyWidth": 1265
+  },
+  "selectedDate": {
+    "heading": "2026-09-17 文章活動",
+    "rows": [
+      {
+        "event": "發表",
+        "type": "published",
+        "title": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+        "href": "/work/from-real-work-to-features/"
+      },
+      {
+        "event": "發表",
+        "type": "published",
+        "title": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+        "href": "/work/risk-based-review/"
+      },
+      {
+        "event": "更新",
+        "type": "updated",
+        "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "href": "/learning/ai-question-judgment-order/"
+      },
+      {
+        "event": "更新",
+        "type": "updated",
+        "title": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+        "href": "/learning/website-quality-testing-roadmap/"
+      },
+      {
+        "event": "更新",
+        "type": "updated",
+        "title": "工作知識｜API 需求排查：從前台現象回到資料來源",
+        "href": "/work/api-requirement-troubleshooting/"
+      },
+      {
+        "event": "更新",
+        "type": "updated",
+        "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "href": "/work/flow-friendly-work-system/"
+      },
+      {
+        "event": "更新",
+        "type": "updated",
+        "title": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+        "href": "/work/gamifying-website-redesign/"
+      },
+      {
+        "event": "更新",
+        "type": "updated",
+        "title": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+        "href": "/work/presentation-as-mental-model/"
+      }
+    ],
+    "pressed": "true",
+    "focus": "2026-09-17",
+    "publishedCount": 2,
+    "updatedCount": 6
+  },
+  "oldSelection": {
+    "rows": [
+      "發表"
+    ]
+  },
+  "archive": {
+    "rows": 9,
+    "brand": "/profile/"
+  },
+  "bSurface": {
+    "brand": "/",
+    "profileHeatmap": false,
+    "calendarLink": true
+  },
+  "mobile": {
+    "viewport": [
+      375,
+      812
+    ],
+    "documentWidth": 375,
+    "bodyWidth": 375,
+    "containerWidth": 311,
+    "containerScrollWidth": 700,
+    "labels": [
+      "發表"
+    ]
+  },
+  "runtimeErrors": []
+}

@@ -1,0 +1,17 @@
+{
+  "workPackage": "WBS 10.6",
+  "server": "python -m http.server 8766 --bind 127.0.0.1 --directory public",
+  "pid": 24528,
+  "startTime": "2026-09-27T15:26:44.0066181+08:00",
+  "host": "127.0.0.1",
+  "port": 8766,
+  "workingDirectory": "C:\\Blog\\blog-1988",
+  "publicFiles": 1007,
+  "externalExisting": false,
+  "listenerPresent": true,
+  "pidOwnsLoopbackListener": true,
+  "responseMatchesPublic": true,
+  "alternatePortReason": "A separate wildcard listener appeared on 8765 after this task's initial empty-port check; it was left untouched and the author preview was moved to 8766.",
+  "stdout": "C:\\Blog\\blog-1988\\tmp\\wbs106-preview-8766.stdout.log",
+  "stderr": "C:\\Blog\\blog-1988\\tmp\\wbs106-preview-8766.stderr.log"
+}

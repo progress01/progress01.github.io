@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T00:25:59.665+08:00",
+  "generatedAt": "2026-09-28T14:44:20.703Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 271,
+  "publicArticleCount": 275,
   "uncertainCount": 5,
   "entries": [
     {
@@ -27,7 +27,7 @@
     },
     {
       "path": "source/_posts/實驗室/AI提問判斷順序-情境目標與問題類型.md",
-      "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+      "title": "向 AI 提問前，先分清楚情境、假設與任務",
       "categories": [
         "觀念與實驗"
       ],
@@ -70,7 +70,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文以論文與 README 為來源，整理 Agent transaction 的探索、執行、驗證與提交流程，並標示尚未獨立重現。",
-      "bodySha256": "a3eedceed8e5095559169fcb5fd44d2ce15c1f2feed0527591511cd3c1503480",
+      "bodySha256": "61a91a95b79976e89045e2c6b45cb33a9d525743913416c0bd2c350d405c0174",
       "date": "2026-08-29 12:00:00",
       "updated": "'2026-09-17T14:45:05+08:00'"
     },
@@ -208,7 +208,7 @@
     },
     {
       "path": "source/_posts/實驗室/工作知識-API需求排查紀錄.md",
-      "title": "工作知識｜API 需求排查：從前台現象回到資料來源",
+      "title": "API 資料異常怎麼排查？從一筆錯誤追到資料來源",
       "categories": [
         "工作知識"
       ],
@@ -229,7 +229,7 @@
     },
     {
       "path": "source/_posts/實驗室/工作知識-上稿與表格排查紀錄.md",
-      "title": "工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現",
+      "title": "網站上稿為什麼會跑版？從 HTML、表格到附件權限逐層排查",
       "categories": [
         "工作知識"
       ],
@@ -243,14 +243,14 @@
       ],
       "reviewed": true,
       "uncertain": false,
-      "basis": "正文逐層區分 HTML、CSS、資料、編輯器與檔案權限造成的前台差異。",
-      "bodySha256": "39cab998bcbf00f5c9a0de16abcd528bbfb1db7c38424c1400d4a236e45fb678",
+      "basis": "正文逐層區分內容、HTML、CSS、表格資料與檔案權限造成的前台差異。",
+      "bodySha256": "049fc874bb1d48d93101c6a0035b011d05df9c2925c5e913ee412c3b8a6f7983",
       "date": "2026-09-03 23:55:00",
-      "updated": "2026-09-17 15:19:00"
+      "updated": "2026-09-28 22:06:25"
     },
     {
       "path": "source/_posts/實驗室/工作知識-專案報價與成本估算.md",
-      "title": "工作知識｜專案報價與成本估算：把工期、利潤與隱形成本算進去",
+      "title": "專案報價怎麼估？先拆成本、工期與風險，再談利潤",
       "categories": [
         "工作知識"
       ],
@@ -264,14 +264,14 @@
       ],
       "reviewed": true,
       "uncertain": false,
-      "basis": "正文提出工期、利潤、緩衝與隱形成本的可重用估算框架。",
-      "bodySha256": "8c6a2ce51ce6e3805fc99787facb792726859f595d52b8085fc59d6705d8091e",
+      "basis": "正文提出成本、投入比例、工期、利潤與風險緩衝的可重用估算框架。",
+      "bodySha256": "4faaccf67f6761f727e27e580a7703db7d57562e3e317bcb39a9ec65eee94193",
       "date": "2026-09-02 23:55:00",
-      "updated": "2026-09-17 15:20:00"
+      "updated": "2026-09-28 22:06:25"
     },
     {
       "path": "source/_posts/實驗室/工作知識-簡報不是功能清單.md",
-      "title": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+      "title": "功能簡報怎麼寫？先讓聽眾看懂事情如何完成",
       "categories": [
         "工作知識"
       ],
@@ -292,7 +292,7 @@
     },
     {
       "path": "source/_posts/實驗室/工作知識-把官網改版包裝成遊戲.md",
-      "title": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+      "title": "官網改版適合做成遊戲嗎？先驗證探索是否真的有價值",
       "categories": [
         "工作知識"
       ],
@@ -355,7 +355,7 @@
     },
     {
       "path": "source/_posts/實驗室/工作知識-讓工具服務心流.md",
-      "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+      "title": "用三個工作狀態，讓工具支援心流",
       "categories": [
         "工作知識"
       ],
@@ -531,7 +531,7 @@
     },
     {
       "path": "source/_posts/實驗室/網站品質與軟體測試-從需求到上線驗證的學習路徑.md",
-      "title": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+      "title": "42 天網站測試學習計畫：從需求檢核到上線驗證",
       "categories": [
         "觀念與實驗"
       ],
@@ -5279,7 +5279,7 @@
     },
     {
       "path": "source/_posts/隨筆/在喜歡與被喜歡之間.md",
-      "title": "在喜歡與被喜歡之間",
+      "title": "在喜歡與被喜歡之間（一）：我好像又開始喜歡一個人了",
       "categories": [
         "生活紀錄"
       ],
@@ -5292,10 +5292,70 @@
       ],
       "reviewed": true,
       "uncertain": false,
-      "basis": "正文回顧生活、工作階段或人際經驗的變化。",
-      "bodySha256": "b531c89b38c9e66a6a11bc4ddaf8dac1677b5fafd9d2f0a779094f2791a2d8a0",
+      "basis": "正文回顧重新喜歡一個人時，如何辨認感受並保留自己的生活節奏。",
+      "bodySha256": "2e46fdd3744e8359d90c2c393c30d0285c07d58339312581adb844e437b4a0bb",
       "date": "2026-09-10 12:00:00",
-      "updated": "2026-09-17 15:43:52"
+      "updated": "2026-09-28 19:42:47"
+    },
+    {
+      "path": "source/_posts/隨筆/在喜歡與被喜歡之間-二-那些我後來才看懂的時刻.md",
+      "title": "在喜歡與被喜歡之間（二）：那些我後來才看懂的時刻",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活回顧"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧互動細節與事後理解，保留關係尚未定義時的真實感受。",
+      "bodySha256": "df38e3bd36f5d5db89c016f23637bebe05f28859d9fc8ee2d72f499fdc5bca53",
+      "date": "2026-09-28 19:40:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/在喜歡與被喜歡之間-三-不要一個人把整條路走完.md",
+      "title": "在喜歡與被喜歡之間（三）：不要一個人把整條路走完",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活回顧"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理喜歡一個人時，如何分辨自己的想像與對方實際給出的回應。",
+      "bodySha256": "54f5e0f8f2465a084885b07087b8f7defe1a6d7ec64c2f9124bda234fed05d0d",
+      "date": "2026-09-28 19:41:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/在喜歡與被喜歡之間-四-沒有結果還是很氣人.md",
+      "title": "在喜歡與被喜歡之間（四）：沒有結果，還是很氣人",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活回顧"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文回顧一段沒有結果的喜歡，以及失落、氣憤與重新收回注意力的過程。",
+      "bodySha256": "86aac763c3acdd22e1ac3b29116a8f59ccd99f21bb9fc9a9d1236bb203704c41",
+      "date": "2026-09-28 19:42:00",
+      "updated": null
     },
     {
       "path": "source/_posts/隨筆/有工作的第N+4天.md",
@@ -5564,7 +5624,7 @@
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能一-先從真實工作問出系統該做什麼.md",
-      "title": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+      "title": "需求不是功能清單：從真實工作拆出系統該做的事",
       "categories": [
         "工作知識"
       ],
@@ -5621,7 +5681,7 @@
     },
     {
       "path": "source/_posts/實驗室/工作知識-從實際抽象功能四-隱性規則與風險式補審.md",
-      "title": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+      "title": "專案做到一半才發現隱性規則，該怎麼補審？",
       "categories": [
         "工作知識"
       ],
@@ -5817,6 +5877,26 @@
       "updated": null,
       "languageTag": "台語",
       "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為台語。"
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-從解決問題到判斷什麼值得解.md",
+      "title": "不是每個問題都值得解：先判斷未知屬於哪一種",
+      "categories": [
+        "工作知識"
+      ],
+      "date": "2026-09-27 21:31:00",
+      "updated": null,
+      "permalink": "/work/from-solving-problems-to-choosing-what-matters/",
+      "oldTags": [
+        "方法整理"
+      ],
+      "newTags": [
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理辨認未知的方式、checklist 限制與選擇問題的個人思考，屬可重用的方法整理。",
+      "bodySha256": "d0cdcb12667d859869f1f68f783d8515f10b991206227125a626c00fc2744027"
     }
   ]
 }

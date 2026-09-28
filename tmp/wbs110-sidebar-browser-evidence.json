@@ -1,0 +1,59 @@
+{
+  "browser": "Chrome headless via CDP",
+  "viewport": "default desktop",
+  "checks": [
+    {
+      "route": "/profile/",
+      "profile": true,
+      "items": [
+        {
+          "kind": "site-state-item site-state-posts",
+          "count": "9",
+          "name": "文章"
+        },
+        {
+          "kind": "site-state-item site-state-tags",
+          "count": "6",
+          "name": "標籤"
+        }
+      ]
+    },
+    {
+      "route": "/profile/articles/",
+      "profile": true,
+      "items": [
+        {
+          "kind": "site-state-item site-state-posts",
+          "count": "9",
+          "name": "文章"
+        },
+        {
+          "kind": "site-state-item site-state-tags",
+          "count": "6",
+          "name": "標籤"
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "profile": false,
+      "items": [
+        {
+          "kind": "site-state-item site-state-posts",
+          "count": "272",
+          "name": "文章"
+        },
+        {
+          "kind": "site-state-item site-state-categories",
+          "count": "6",
+          "name": "分類"
+        },
+        {
+          "kind": "site-state-item site-state-tags",
+          "count": "27",
+          "name": "標籤"
+        }
+      ]
+    }
+  ]
+}

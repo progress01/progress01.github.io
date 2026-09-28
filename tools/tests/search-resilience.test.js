@@ -22,15 +22,27 @@ test('索引載入失敗後可重試，連續觸發不重複請求，成功才�
       return { ok: true, text: async () => requests === 1 ? '<html>Error</html>' : '{"schemaVersion":1,"records":[]}' };
     }
   };
-  vm.runInNewContext("let searchState = 'idle'; let records = [];\n" + fetchLogic + '\nthis.fetchIndex = fetchSearchData;', context);
+  vm.runInNewContext("var searchState = 'idle'; let records = [];\n" + fetchLogic + '\nthis.fetchIndex = fetchSearchData;', context);
   context.fetchIndex(); context.fetchIndex();
   await new Promise(resolve => setImmediate(resolve));
   assert.equal(requests, 1); assert.equal(failed, 1); assert.equal(loaded, 0);
+  assert.equal(context.searchState, 'failed');
   context.fetchIndex();
   await new Promise(resolve => setImmediate(resolve));
   assert.equal(requests, 2); assert.equal(loaded, 1); assert.equal(context.localSearch.isfetched, true);
+  assert.equal(context.searchState, 'loaded');
   context.fetchIndex();
   assert.equal(requests, 2);
+});
+
+test('dynamic search states distinguish loading, index failure, keyword misses and filter-only misses accessibly', () => {
+  assert.match(source, /正在載入搜尋索引/);
+  assert.match(source, /搜尋索引暫時無法載入/);
+  assert.match(source, /重試載入搜尋索引/);
+  assert.match(source, /data-search-empty-kind="\$\{searchText \? 'keyword' : 'filters'\}"/);
+  assert.match(source, /role="status" aria-live="polite" aria-atomic="true"/);
+  assert.match(source, /searchState = 'failed'/);
+  assert.doesNotMatch(source, /searchState = 'error'/);
 });
 
 test('HTTP 200 的錯誤 HTML 不能被當成空白搜尋索引', () => {
@@ -46,6 +58,45 @@ test('HTTP 200 的錯誤 HTML 不能被當成空白搜尋索引', () => {
   };
   vm.runInNewContext(parserLogic + '\nthis.parseIndex = parseSearchData;', context);
   assert.throws(() => context.parseIndex('<html><body>Server unavailable</body></html>'), /invalid/);
+});
+
+test('preload 關閉時，同網址 reload 會先載入索引再還原且不重複請求', () => {
+  const requestLogic = source.slice(
+    source.indexOf('  const requestViewStateRestore'),
+    source.indexOf('  restoreRequested = navigationEntry')
+  );
+  assert(requestLogic.includes('fetchSearchData()'), 'restore request must be able to start the index load');
+  let fetches = 0;
+  let restores = 0;
+  const state = { url: '/profile/', isOpen: true, surface: 'profile', filters: { surface: 'profile' } };
+  const context = {
+    readViewState: () => state,
+    isRestorableViewState: saved => saved === state,
+    fetchSearchData: () => { fetches += 1; context.searchState = 'loading'; },
+    restoreViewState: () => { if (context.searchState === 'loaded') restores += 1; },
+    searchState: 'idle'
+  };
+  vm.runInNewContext(`${requestLogic}\nthis.requestRestore = requestViewStateRestore;`, context);
+  assert.equal(context.requestRestore(), true);
+  assert.equal(fetches, 1);
+  assert.equal(restores, 0);
+  assert.equal(context.requestRestore(), true);
+  assert.equal(fetches, 1, 'loading state must not start a duplicate request');
+  context.searchState = 'failed';
+  assert.equal(context.requestRestore(), true);
+  assert.equal(fetches, 2, 'failed state must be eligible for one retry');
+  assert.equal(context.requestRestore(), true);
+  assert.equal(fetches, 2, 'retry loading state must suppress duplicate requests');
+  context.searchState = 'loaded';
+  assert.equal(context.requestRestore(), true);
+  assert.equal(restores, 1);
+
+  context.isRestorableViewState = () => false;
+  context.searchState = 'idle';
+  assert.equal(context.requestRestore(), false);
+  assert.equal(fetches, 2, 'invalid or cross-URL state must not start a request');
+  assert.match(source, /restoreRequested = navigationEntry[^;]*;\s*requestViewStateRestore\(\);/s);
+  assert.match(source, /window\.addEventListener\('pageshow',[\s\S]*requestViewStateRestore\(\);/);
 });
 
 test('搜尋快速關閉後不會讓延遲 focus 落到隱藏 input，Ctrl+K 也保留原觸發者', () => {
@@ -111,6 +162,7 @@ test('搜尋快速關閉後不會讓延遲 focus 落到隱藏 input，Ctrl+K 也
       getResultItems() { return []; }
     },
     pjax: null,
+    NavigationSearch: require('../../themes/next/source/js/third-party/search/navigation-search'),
     document,
     window: {
       addEventListener: (event, callback) => { handlers[`window:${event}`] = callback; },

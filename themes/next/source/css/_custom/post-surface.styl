@@ -1,0 +1,46 @@
+.post-surface-marker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0;
+  margin: -4px 0 28px;
+  color: #806b60;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: .04em;
+}
+
+.post-surface-marker-label {
+  margin-right: 7px;
+}
+
+.post-surface-marker-link {
+  color: #604a3e;
+  text-decoration: underline;
+  text-decoration-color: #c6aa91;
+  text-underline-offset: 3px;
+}
+
+.post-surface-marker-link:hover,
+.post-surface-marker-link:focus-visible {
+  color: #79382f;
+  text-decoration-color: currentColor;
+}
+
+.post-surface-marker-link:focus-visible {
+  outline: 2px solid #243d4b;
+  outline-offset: 3px;
+}
+
+.post-surface-marker-separator {
+  margin: 0 2px;
+  color: #aa8c78;
+}
+
+@media (max-width: 600px) {
+  .post-surface-marker {
+    margin-bottom: 22px;
+    font-size: 13px;
+  }
+}

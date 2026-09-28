@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我閱讀 Gemini Notebook Agent 的案例，想弄清楚 AI 產出文件時哪些工作仍需人工判斷。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記">
+<meta property="og:url" content="http://example.com/learning/gemini-notebook-agent-office-workflow/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我閱讀 Gemini Notebook Agent 的案例，想弄清楚 AI 產出文件時哪些工作仍需人工判斷。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-31T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-31T04:00:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="AI Agent">
+<meta property="article:tag" content="研究筆記">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-實驗室/Gemini-Notebook-Agent-文件產出工作流" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/learning/gemini-notebook-agent-office-workflow/" class="article-date">
+  <time class="dt-published" datetime="2026-08-31T04:00:00.000Z" itemprop="datePublished">2026-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/">觀念與實驗</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p id="nav-855f35f6e359a756" data-navigation-anchor="">我閱讀 Gemini Notebook Agent 的案例，想弄清楚 AI 產出文件時哪些工作仍需人工判斷。</p>
+<span id="more"></span>
+<p id="nav-446a6a76daab0cfa" data-navigation-anchor="">這是一篇針對〈Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學〉的持續閱讀筆記。先不急著把功能整理成教學，而是想弄清楚：當 AI 不只是回答問題，而是能搜尋、分析、寫程式並產出可下載文件時，我要怎麼判斷它真的幫我完成了工作。</p>
+<p id="nav-92dbc24cc697b138" data-navigation-anchor=""><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html">Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學</a></p>
+<blockquote>
+<p id="nav-f9901f49733f69a7" data-navigation-anchor=""><strong>資料狀態：先建立問題，等待實際回答與後續實測</strong></p>
+<p id="nav-3ac9eaa79220d45a" data-navigation-anchor="">文章中的方案資格、功能開放時間、檔案格式與中文輸出效果，都屬於會變動的產品資訊；這篇先保存閱讀方向，不把單次實測直接當成穩定保證。</p>
+</blockquote>
+<h2 id="為什麼想繼續讀" data-navigation-anchor=""><a href="#為什麼想繼續讀" class="headerlink" title="為什麼想繼續讀"></a>為什麼想繼續讀</h2><p id="nav-b146cb0937eaf2a8" data-navigation-anchor="">這篇文章吸引我的地方，不只是 Gemini Notebook Agent 可以產出 Word、Excel 與 PowerPoint，而是它把一個資料處理流程往後推了一步：</p>
+<blockquote>
+<p id="nav-56b909c983205160" data-navigation-anchor="">資料庫 → 找出相關內容 → 分析與重組 → 產出檔案 → 下載、編輯、交接</p>
+</blockquote>
+<p id="nav-849c7e969420987a" data-navigation-anchor="">文章用四種案例說明這件事：把多份方法論整理成 30 天工作重整計畫、把多封讀者問題整理成回信與追蹤表、根據資料庫產出簡報，以及依照既有講義格式產出新的 Word 文件。這讓我想研究的核心，從「AI 能不能生成檔案」變成「怎麼把檔案生成納入一個可靠的工作流程」。</p>
+<h2 id="先請我回答的問題" data-navigation-anchor=""><a href="#先請我回答的問題" class="headerlink" title="先請我回答的問題"></a>先請我回答的問題</h2><p id="nav-9283fdff67ee2b83" data-navigation-anchor="">以下問題先留下來，你可以挑最有感的回答，不用一次全部完成：</p>
+<ol>
+<li id="nav-6208e8dae4ec983a" data-navigation-anchor=""><strong>你最想把哪一種工作交給這類 Agent？</strong> 是整理資料、做 Excel 追蹤表、產出簡報、寫文件，還是把多種產出串成一個工作包？</li>
+<li id="nav-774916bf4ebd9baf" data-navigation-anchor=""><strong>你手上的「資料庫」會是什麼？</strong> 例如部落格文章、專案文件、會議紀錄、表格、研究資料，或目前仍然分散在不同工具裡？</li>
+<li id="nav-f91786bc7389de59" data-navigation-anchor=""><strong>對你來說，什麼才算「可以直接使用」的產出？</strong> 內容正確、格式好看、公式能運作、來源可追溯、能交接，這幾項請怎麼排序？</li>
+<li id="nav-68eda9a9bc5a53b8" data-navigation-anchor=""><strong>哪些判斷你希望 AI 做，哪些判斷一定要自己保留？</strong> 例如資料篩選、結構安排、語氣、風險判斷、最後核准。</li>
+<li id="nav-34a33b249811dbaf" data-navigation-anchor=""><strong>如果 AI 產出一份看起來很完整的文件，你會用什麼方式驗證它？</strong> 你會檢查來源、逐項對照、實際執行公式，還是請另一個工具複核？</li>
+<li id="nav-6d294afcb4e64d1b" data-navigation-anchor=""><strong>你比較在意省下哪一種時間？</strong> 找資料、整理脈絡、排版組裝、重複輸入，或是把成果交接給別人？</li>
+<li id="nav-326638e68f39491e" data-navigation-anchor=""><strong>如果單次指令可以成功，你仍然會想拆成多輪嗎？</strong> 你覺得拆解的價值會在於提高正確率、方便修改，還是讓自己更理解過程？</li>
+<li id="nav-d01e5a83f27ffa6e" data-navigation-anchor=""><strong>這篇文章最值得帶走的是工具能力，還是工作流程的設計方式？</strong> 如果只能留下其中一項，你會選哪一項？</li>
+</ol>
+<h2 id="我目前的暫時理解" data-navigation-anchor=""><a href="#我目前的暫時理解" class="headerlink" title="我目前的暫時理解"></a>我目前的暫時理解</h2><ul>
+<li id="nav-5a503a1fb40e7157" data-navigation-anchor="">Agent 和一般摘要工具的差別，不只在輸出格式，而在於它會把資料重新組織成下一個工作可以接手的交付物。</li>
+<li id="nav-aac1929f41998d5c" data-navigation-anchor="">可編輯的文件很重要，因為成果不是停在對話框裡，而是要能被修改、檢查、保存與交接。</li>
+<li id="nav-cb135e2ad82b967f" data-navigation-anchor="">資料庫品質會影響輸出品質。來源是否整理好、命名是否清楚、彼此是否有衝突，可能比提示詞寫得長不長更重要。</li>
+<li id="nav-e9f41122af3fe919" data-navigation-anchor="">「成功產出檔案」不等於「工作完成」。內容、公式、版面、來源、權限與後續維護仍然需要驗證。</li>
+</ul>
+<h2 id="後續想實驗的最小案例" data-navigation-anchor=""><a href="#後續想實驗的最小案例" class="headerlink" title="後續想實驗的最小案例"></a>後續想實驗的最小案例</h2><p id="nav-c596ca1f1d380088" data-navigation-anchor="">等問題回答得比較清楚後，可以先選一個小型案例，不要一開始就追求完整自動化：</p>
+<ol>
+<li id="nav-24d1b469088b83d0" data-navigation-anchor="">選一組已經存在、但目前分散的資料。</li>
+<li id="nav-526149f8ec9bdec0" data-navigation-anchor="">先定義一個實際要交付的檔案，以及它的驗收條件。</li>
+<li id="nav-9e314a44d265ccbb" data-navigation-anchor="">請 Agent 產出初稿，同時保留來源與處理過程。</li>
+<li id="nav-e69f2846e622be95" data-navigation-anchor="">人工檢查內容、格式、公式與可交接性。</li>
+<li id="nav-5e90cc37ce3efa76" data-navigation-anchor="">記錄它真正省下的時間，以及新增的檢查成本。</li>
+</ol>
+<h2 id="待查證與待補充" data-navigation-anchor=""><a href="#待查證與待補充" class="headerlink" title="待查證與待補充"></a>待查證與待補充</h2><ul>
+<li id="nav-c01fad89a6b154b3" data-navigation-anchor="">Gemini Notebook Agent 的目前方案資格、功能範圍與檔案支援格式。</li>
+<li id="nav-b5eb7da98072f152" data-navigation-anchor="">中文 PDF、SVG、Excel 公式與 PowerPoint 排版的實際穩定度。</li>
+<li id="nav-1bf1f6be73efb182" data-navigation-anchor="">來源引用能否精確回到原始資料，而不只是產出一個看似合理的文件。</li>
+<li id="nav-6644f9371a6323a8" data-navigation-anchor="">產出文件是否能在後續任務中被再次讀取、修改與版本化。</li>
+<li id="nav-0911153099f64bcd" data-navigation-anchor="">這套流程和目前使用的 ChatGPT、Codex 或其他工具，應該如何分工。</li>
+</ul>
+<h2 id="預先收集：先核對產品能力，再看案例" data-navigation-anchor=""><a href="#預先收集：先核對產品能力，再看案例" class="headerlink" title="預先收集：先核對產品能力，再看案例"></a>預先收集：先核對產品能力，再看案例</h2><ol>
+<li id="nav-51f9cb43dbaa055e" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://www.playpcesor.com/2026/08/gemini-notebook-agent-wordexcelppt.html">Gemini Notebook Agent 可以從資料庫直接產出 Word、Excel、PPT！四種工作案例實測教學</a>：保留原本的四個工作案例，重點看它如何從資料庫走到可交付檔案，而不是只看產出畫面。</li>
+<li id="nav-7f987223d1e61568" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://support.google.com/gemininotebook/answer/16164461?hl=en">Learn about Gemini Notebook｜Google 說明</a>：確認目前可加入的來源類型、引用方式、研究整理功能與帳號／地區可用性。</li>
+<li id="nav-1a6afe536b5f727b" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/">Do your best research with NotebookLM｜Google</a>：了解官方目前對來源探索、程式分析、報告、試算表與簡報產出的描述；這些產品能力會更新，不能只依單篇實測文章判斷長期穩定度。</li>
+<li id="nav-7470f9599584ab53" data-navigation-anchor=""><a target="_blank" rel="noopener" href="https://support.google.com/notebooklm/answer/17003757">Notebooks in Gemini Apps｜Google 說明</a>：用來區分 Gemini Notebook 與 NotebookLM 的功能邊界，避免把不同產品或不同方案的能力混在一起。</li>
+</ol>
+<h2 id="我的參考意見" data-navigation-anchor=""><a href="#我的參考意見" class="headerlink" title="我的參考意見"></a>我的參考意見</h2><p id="nav-fc0c801ae8090d81" data-navigation-anchor="">這篇最值得實驗的不是「AI 能不能生出 Word、Excel、PPT」，而是它能不能把來源、判斷與產出一起交接。第一個小實驗可以固定一組資料，要求它產出一份文件和一張表，再逐項檢查：來源是否找對、引用能否回溯、內容是否漏掉、公式是否可運作、版面是否能編輯，以及別人能不能接手。產品功能與方案資格會變動，所以官方說明負責確認能力邊界，原文實測負責提供工作流靈感，最後仍要靠自己的小案例驗收。</p>
+<h2 id="閱讀紀錄" data-navigation-anchor=""><a href="#閱讀紀錄" class="headerlink" title="閱讀紀錄"></a>閱讀紀錄</h2><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>進度</th>
+<th>新增理解</th>
+<th>還沒回答的問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026-08-31</td>
+<td>建立筆記</td>
+<td>先把重點放在「資料庫到交付物」的流程，而不是功能清單</td>
+<td>以上 8 題，等待依實際工作情境調整</td>
+</tr>
+</tbody></table>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-4acb8802b0830bac" data-navigation-anchor=""><strong>2026-08-31</strong>：建立公開持續學習筆記，保存文章來源、四種案例的觀察，以及後續用來調整閱讀方向的問題。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/learning/gemini-notebook-agent-office-workflow/" data-id="cuidwfTgnj_qAzaztgkuxz3je" data-title="Gemini Notebook Agent｜從資料庫到可交付文件的工作流｜學習筆記" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" rel="tag">研究筆記</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          歌曲推薦-sailing back to you
+        
+      </div>
+    </a>
+  
+  
+    <a href="/learning/lis-research-1965-2025-content-analysis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LIS Research 1965–2025｜圖書資訊學研究的主題與方法演變｜學習筆記</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/">工作知識</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/">生活紀錄</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E5%8B%99/">站務</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/">觀念與實驗</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%96%B1%E8%AE%80%E8%88%87%E5%BD%B1%E8%A6%96/">閱讀與影視</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E6%A8%82/">音樂</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" rel="tag">Web 自動化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" rel="tag">內容分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%B0%E8%AA%9E/" rel="tag">台語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" rel="tag">問題排查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" rel="tag">學習規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" rel="tag">思考方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" rel="tag">提問方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" rel="tag">方法整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AA%9E/" rel="tag">日語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" rel="tag">歌曲推薦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" rel="tag">測試案例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" rel="tag">測試設計</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" rel="tag">生活回顧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" rel="tag">研究筆記</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" rel="tag">站務規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B0%A1%E5%A0%B1/" rel="tag">簡報</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B2%B5%E8%AA%9E/" rel="tag">粵語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" rel="tag">網站品質</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AA%9E/" rel="tag">英語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8F%AF%E8%AA%9E/" rel="tag">華語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" rel="tag">觀影心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" rel="tag">觀念釐清</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" rel="tag">閱讀心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%93%E8%AA%9E/" rel="tag">韓語</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI-Agent/" style="font-size: 11.54px;">AI Agent</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" style="font-size: 10px;">Web 自動化</a> <a href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" style="font-size: 10px;">內容分析</a> <a href="/tags/%E5%8F%B0%E8%AA%9E/" style="font-size: 14.62px;">台語</a> <a href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" style="font-size: 10.77px;">問題排查</a> <a href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" style="font-size: 13.08px;">學習規劃</a> <a href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" style="font-size: 11.54px;">思考方式</a> <a href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" style="font-size: 10px;">提問方法</a> <a href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" style="font-size: 16.15px;">方法整理</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 11.54px;">旅行</a> <a href="/tags/%E6%97%A5%E8%AA%9E/" style="font-size: 13.85px;">日語</a> <a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" style="font-size: 20px;">歌曲推薦</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" style="font-size: 10px;">測試案例</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" style="font-size: 10px;">測試設計</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" style="font-size: 14.62px;">生活回顧</a> <a href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" style="font-size: 12.31px;">研究筆記</a> <a href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" style="font-size: 10px;">站務規劃</a> <a href="/tags/%E7%B0%A1%E5%A0%B1/" style="font-size: 10px;">簡報</a> <a href="/tags/%E7%B2%B5%E8%AA%9E/" style="font-size: 12.31px;">粵語</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" style="font-size: 10px;">網站品質</a> <a href="/tags/%E8%8B%B1%E8%AA%9E/" style="font-size: 16.92px;">英語</a> <a href="/tags/%E8%8F%AF%E8%AA%9E/" style="font-size: 18.46px;">華語</a> <a href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" style="font-size: 17.69px;">觀影心得</a> <a href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" style="font-size: 15.38px;">觀念釐清</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 19.23px;">閱讀心得</a> <a href="/tags/%E9%9F%93%E8%AA%9E/" style="font-size: 15.38px;">韓語</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/09/">September 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/01/">January 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/">歌曲推薦-沈默是金</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/">歌曲推薦-海海人生</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/">阿里山不是一座山（書籍閱讀紀錄）</a>
+          </li>
+        
+          <li>
+            <a href="/learning/okinawa-trip-two-times/">沖繩旅行的兩個時空?</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/">歌曲推薦-繁華攏是夢</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

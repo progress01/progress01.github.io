@@ -1,0 +1,3568 @@
+{
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "routes": [
+    {
+      "pathname": "/",
+      "viewport": 1280,
+      "scrollWidth": 1265,
+      "bodyScrollWidth": 1265,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {
+        ".surface-switch-link": {
+          "width": 159.453125,
+          "height": 44,
+          "passes": true
+        },
+        ".home-profile-bridge a": {
+          "width": 79.109375,
+          "height": 44,
+          "passes": true
+        }
+      },
+      "contrast": [
+        {
+          "selector": ".surface-switch-link",
+          "text": "SIDE A／看工作與學習",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 6.93,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(121, 56, 47)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge a",
+          "text": "翻到 A 面 ↗",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "ratio": 6.93,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(121, 56, 47)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge h2",
+          "text": "工作與學習",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "ratio": 9.61,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(74, 48, 40)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge p",
+          "text": "看整理過的經驗與方法",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "ratio": 5.56,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(107, 85, 71)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge-label",
+          "text": "SIDE A",
+          "fontSize": 10,
+          "fontWeight": "400",
+          "ratio": 5.19,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(145, 74, 50)",
+          "bg": "rgb(241, 228, 209)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "desktop",
+        "route": "/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "雙面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "DON'T COUNT THE DAYS",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE A／看工作與學習",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "♫ AUDIO 親愛的你啊 REC / 2026-07-17",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "▣ BOOK 全能遊戲設計師（網路小說閱讀紀錄） REC / 2022-07-10",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "OPEN INDEX ↗",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "內容入口",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "藍色巨星（觀影紀錄）",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "閱讀這篇 ↗",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "換一篇",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "完整隨機傳送門",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "01 / ARCHIVE 全部文章",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "02 / INDEX 生活索引",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "03 / DRAFTS 草稿夾",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "04 / MEMORY 記憶圖牆",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作與學習",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE A／看工作與學習",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "PLAY",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Life_Vol.1",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "（´◔​∀◔`)",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "全部文章",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "生活索引",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "草稿夾",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "記憶圖牆",
+            "level": 2,
+            "ignored": false
+          }
+        ],
+        "headingCount": 7,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/profile/",
+      "viewport": 1280,
+      "scrollWidth": 1265,
+      "bodyScrollWidth": 1265,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {
+        ".surface-switch-link": {
+          "width": 171.9375,
+          "height": 44,
+          "passes": true
+        },
+        ".profile-article-link": {
+          "width": 424,
+          "height": 111.984375,
+          "passes": true
+        }
+      },
+      "contrast": [
+        {
+          "selector": ".surface-switch-link",
+          "text": "SIDE B／翻到個人記憶庫",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 7.11,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(36, 86, 79)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-home-header h1",
+          "text": "經驗與方法",
+          "fontSize": 40,
+          "fontWeight": "400",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-path h2",
+          "text": "看見現場與需求",
+          "fontSize": 21,
+          "fontWeight": "700",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-path h2",
+          "text": "整理資訊與方法",
+          "fontSize": 21,
+          "fontWeight": "700",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-path h2",
+          "text": "實作、驗證與修正",
+          "fontSize": 21,
+          "fontWeight": "700",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜API 需求排查：從前台現象回到資料來源",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-02",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-07",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-05",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "desktop",
+        "route": "/profile/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "雙面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE B／翻到個人記憶庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "經驗與方法",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "看見現場與需求",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "整理資訊與方法",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "實作、驗證與修正",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "最近正在學",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "看全部",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-02 工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-07 工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-05 工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": 3,
+            "ignored": false
+          }
+        ],
+        "headingCount": 15,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/profile/articles/",
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "bodyScrollWidth": 1280,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {
+        ".surface-switch-link": {
+          "width": 171.9375,
+          "height": 44,
+          "passes": true
+        },
+        ".profile-article-link": {
+          "width": 424,
+          "height": 111.984375,
+          "passes": true
+        }
+      },
+      "contrast": [
+        {
+          "selector": ".surface-switch-link",
+          "text": "SIDE B／翻到個人記憶庫",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 7.11,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(36, 86, 79)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-home-header h1",
+          "text": "全部文章",
+          "fontSize": 40,
+          "fontWeight": "400",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-07",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-05",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-02",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-navigation a",
+          "text": "經驗與方法",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 8.34,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(36, 86, 79)",
+          "bg": "rgb(255, 255, 255)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "desktop",
+        "route": "/profile/articles/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "雙面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "頁面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE B／翻到個人記憶庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "全部文章",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "經驗與方法",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-07 工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-05 工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-02 工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": 2,
+            "ignored": false
+          }
+        ],
+        "headingCount": 9,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/2022/07/02/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%96%87%E5%AD%B8%E5%B0%91%E5%A5%B3%E7%B3%BB%E5%88%97(%E8%BC%95%E5%B0%8F%E8%AA%AA%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/",
+      "viewport": 1280,
+      "scrollWidth": 1265,
+      "bodyScrollWidth": 1265,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {},
+      "contrast": [
+        {
+          "selector": ".post-surface-marker",
+          "text": "收錄於\n個人記憶",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "ratio": 5.01,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(128, 107, 96)",
+          "bg": "rgb(255, 255, 255)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "desktop",
+        "route": "/2022/07/02/閱讀影評/文學少女系列(輕小說閱讀紀錄)/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "文章收錄面向",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 閱讀歷程",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 小說特色",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 我的感想",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 小小總結",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "文學少女系列（輕小說閱讀紀錄）",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "閱讀與影視",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "個人記憶",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "📚 延伸閱讀 (猜你也喜歡...)",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "老婆請安分（網路小說閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "RSS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "# 閱讀心得",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "開始喜歡自己的不完美（書籍閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "黎明之劍（網路小說閱讀紀錄-短）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "數學奧林匹亞特訓班的一年（書籍閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "老婆請安分（網路小說閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "非正常美食文（網路小說閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "開始喜歡自己的不完美（書籍閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "黎明之劍（網路小說閱讀紀錄-短）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "數學奧林匹亞特訓班的一年（書籍閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "老婆請安分（網路小說閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "非正常美食文（網路小說閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          }
+        ],
+        "headingCount": 11,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {
+        ".surface-switch-link": {
+          "width": 159.453125,
+          "height": 44,
+          "passes": true
+        },
+        ".home-profile-bridge a": {
+          "width": 79.109375,
+          "height": 44,
+          "passes": true
+        }
+      },
+      "contrast": [
+        {
+          "selector": ".surface-switch-link",
+          "text": "SIDE A／看工作與學習",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 6.93,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(121, 56, 47)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge a",
+          "text": "翻到 A 面 ↗",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "ratio": 6.93,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(121, 56, 47)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge h2",
+          "text": "工作與學習",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "ratio": 9.61,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(74, 48, 40)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge p",
+          "text": "看整理過的經驗與方法",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "ratio": 5.56,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(107, 85, 71)",
+          "bg": "rgb(241, 228, 209)"
+        },
+        {
+          "selector": ".home-profile-bridge-label",
+          "text": "SIDE A",
+          "fontSize": 10,
+          "fontWeight": "400",
+          "ratio": 5.19,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(145, 74, 50)",
+          "bg": "rgb(241, 228, 209)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "mobile",
+        "route": "/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "搜尋",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "雙面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "DON'T COUNT THE DAYS",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "271 文章",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "6 分類",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "27 標籤",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE A／看工作與學習",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "♫ AUDIO 愛丫愛丫 REC / 2026-07-16",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "▣ BOOK 讀書會 75個心作戰 REC / 2024-08-06",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "OPEN INDEX ↗",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "內容入口",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "混亂日常的一個「存檔點」工具設計",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "閱讀這篇 ↗",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "換一篇",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "完整隨機傳送門",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "01 / ARCHIVE 全部文章",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "02 / INDEX 生活索引",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "03 / DRAFTS 草稿夾",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "04 / MEMORY 記憶圖牆",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作與學習",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE A／看工作與學習",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "PLAY",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Life_Vol.1",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "（´◔​∀◔`)",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "全部文章",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "生活索引",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "草稿夾",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "記憶圖牆",
+            "level": 2,
+            "ignored": false
+          }
+        ],
+        "headingCount": 7,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/profile/",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {
+        ".surface-switch-link": {
+          "width": 171.9375,
+          "height": 44,
+          "passes": true
+        },
+        ".profile-article-link": {
+          "width": 326,
+          "height": 111.984375,
+          "passes": true
+        }
+      },
+      "contrast": [
+        {
+          "selector": ".surface-switch-link",
+          "text": "SIDE B／翻到個人記憶庫",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 7.11,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(36, 86, 79)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-home-header h1",
+          "text": "經驗與方法",
+          "fontSize": 28,
+          "fontWeight": "400",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-path h2",
+          "text": "看見現場與需求",
+          "fontSize": 21,
+          "fontWeight": "700",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-path h2",
+          "text": "整理資訊與方法",
+          "fontSize": 21,
+          "fontWeight": "700",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-path h2",
+          "text": "實作、驗證與修正",
+          "fontSize": 21,
+          "fontWeight": "700",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜API 需求排查：從前台現象回到資料來源",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link h3",
+          "text": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "ratio": 9.85,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-02",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-07",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-05",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "mobile",
+        "route": "/profile/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "搜尋",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "雙面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "271 文章",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "6 分類",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "27 標籤",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE B／翻到個人記憶庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "經驗與方法",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "看見現場與需求",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "整理資訊與方法",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "實作、驗證與修正",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "最近正在學",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "看全部",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-02 工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-07 工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-05 工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": 3,
+            "ignored": false
+          }
+        ],
+        "headingCount": 15,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/profile/articles/",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {
+        ".surface-switch-link": {
+          "width": 171.9375,
+          "height": 44,
+          "passes": true
+        },
+        ".profile-article-link": {
+          "width": 326,
+          "height": 111.984375,
+          "passes": true
+        }
+      },
+      "contrast": [
+        {
+          "selector": ".surface-switch-link",
+          "text": "SIDE B／翻到個人記憶庫",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 7.11,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(36, 86, 79)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-home-header h1",
+          "text": "全部文章",
+          "fontSize": 28,
+          "fontWeight": "400",
+          "ratio": 11.54,
+          "required": 3,
+          "passes": true,
+          "fg": "rgb(38, 60, 71)",
+          "bg": "rgb(255, 255, 255)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-09",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-07",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-05",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-article-link time",
+          "text": "2026-02",
+          "fontSize": 11,
+          "fontWeight": "400",
+          "ratio": 5.46,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(78, 98, 106)",
+          "bg": "rgb(232, 238, 240)"
+        },
+        {
+          "selector": ".profile-navigation a",
+          "text": "經驗與方法",
+          "fontSize": 12,
+          "fontWeight": "700",
+          "ratio": 8.34,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(36, 86, 79)",
+          "bg": "rgb(255, 255, 255)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "mobile",
+        "route": "/profile/articles/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "搜尋",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "雙面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "頁面導覽",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "271 文章",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "6 分類",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "27 標籤",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "SIDE B／翻到個人記憶庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "全部文章",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "經驗與方法",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-09 工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-07 工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-05 工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2026-02 工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜API 需求排查：從前台現象回到資料來源",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+            "level": 2,
+            "ignored": false
+          }
+        ],
+        "headingCount": 9,
+        "mainCount": 1
+      }
+    },
+    {
+      "pathname": "/2022/07/02/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E6%96%87%E5%AD%B8%E5%B0%91%E5%A5%B3%E7%B3%BB%E5%88%97(%E8%BC%95%E5%B0%8F%E8%AA%AA%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "overflow": false,
+      "duplicateIds": [],
+      "invalidAriaRefs": [],
+      "boxes": {},
+      "contrast": [
+        {
+          "selector": ".post-surface-marker",
+          "text": "收錄於\n個人記憶",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "ratio": 5.01,
+          "required": 4.5,
+          "passes": true,
+          "fg": "rgb(128, 107, 96)",
+          "bg": "rgb(255, 255, 255)"
+        }
+      ],
+      "roleButtons": [
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "搜尋",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "切換導航欄",
+          "tabindex": "0",
+          "passes": true
+        },
+        {
+          "name": "回到頂端",
+          "tabindex": "0",
+          "passes": true
+        }
+      ],
+      "ax": {
+        "viewport": "mobile",
+        "route": "/2022/07/02/閱讀影評/文學少女系列(輕小說閱讀紀錄)/",
+        "orderedCoreNodes": [
+          {
+            "role": "link",
+            "name": "跳到主要內容",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "main",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "contentinfo",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "回到頂端",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "complementary",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "切換導航欄",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "DON'T COUNT THE DAYS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "button",
+            "name": "搜尋",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "Hexo",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "NexT.Gemini",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "navigation",
+            "name": "文章收錄面向",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 閱讀歷程",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 小說特色",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 我的感想",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": " 小小總結",
+            "level": 2,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "1. 閱讀歷程",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "2. 小說特色",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "3. 我的感想",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "4. 小小總結",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "文學少女系列（輕小說閱讀紀錄）",
+            "level": 1,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "閱讀與影視",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "個人記憶",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "📚 延伸閱讀 (猜你也喜歡...)",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "老婆請安分（網路小說閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "RSS",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "# 閱讀心得",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "開始喜歡自己的不完美（書籍閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "黎明之劍（網路小說閱讀紀錄-短）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "數學奧林匹亞特訓班的一年（書籍閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "老婆請安分（網路小說閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "heading",
+            "name": "非正常美食文（網路小說閱讀紀錄）",
+            "level": 3,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "開始喜歡自己的不完美（書籍閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "黎明之劍（網路小說閱讀紀錄-短）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "數學奧林匹亞特訓班的一年（書籍閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "老婆請安分（網路小說閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          },
+          {
+            "role": "link",
+            "name": "非正常美食文（網路小說閱讀紀錄）",
+            "level": null,
+            "ignored": false
+          }
+        ],
+        "headingCount": 11,
+        "mainCount": 1
+      }
+    }
+  ],
+  "keyboard": [
+    {
+      "flow": "skip-to-surface-switch",
+      "first": {
+        "className": "skip-link",
+        "text": "跳到主要內容",
+        "href": "#main-content",
+        "outline": "solid 3px rgb(38, 60, 75)",
+        "rect": {
+          "x": 8,
+          "y": 8,
+          "width": 128,
+          "height": 56
+        }
+      },
+      "afterSkip": {
+        "activeId": "main-content",
+        "hash": "#main-content"
+      },
+      "sequence": [
+        {
+          "tag": "A",
+          "text": "SIDE A／看工作與學習",
+          "href": "http://127.0.0.1:8923/profile/",
+          "className": "surface-switch-link",
+          "matches": true,
+          "outline": "solid 3px rgb(51, 42, 37)",
+          "rect": {
+            "x": 1053.046875,
+            "y": 0,
+            "width": 159.453125,
+            "height": 44
+          }
+        }
+      ],
+      "focus": {
+        "tag": "A",
+        "text": "SIDE A／看工作與學習",
+        "href": "http://127.0.0.1:8923/profile/",
+        "className": "surface-switch-link",
+        "matches": true,
+        "outline": "solid 3px rgb(51, 42, 37)",
+        "rect": {
+          "x": 1053.046875,
+          "y": 0,
+          "width": 159.453125,
+          "height": 44
+        }
+      }
+    },
+    {
+      "flow": "surface-switch-enter",
+      "destination": "/profile/"
+    },
+    {
+      "flow": "skip-to-profile-card",
+      "first": {
+        "className": "skip-link",
+        "text": "跳到主要內容",
+        "href": "#main-content",
+        "outline": "solid 3px rgb(38, 60, 75)",
+        "rect": {
+          "x": 8,
+          "y": 8,
+          "width": 128,
+          "height": 56
+        }
+      },
+      "afterSkip": {
+        "activeId": "main-content",
+        "hash": "#main-content"
+      },
+      "sequence": [
+        {
+          "tag": "A",
+          "text": "SIDE B／翻到個人記憶庫",
+          "href": "http://127.0.0.1:8923/",
+          "className": "surface-switch-link",
+          "matches": false,
+          "outline": "solid 3px rgb(36, 79, 90)",
+          "rect": {
+            "x": 1040.5625,
+            "y": 0,
+            "width": 171.9375,
+            "height": 44
+          }
+        },
+        {
+          "tag": "A",
+          "text": "2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+          "href": "http://127.0.0.1:8923/work/from-real-work-to-features/",
+          "className": "profile-article-link",
+          "matches": true,
+          "outline": "solid 3px rgb(36, 79, 90)",
+          "rect": {
+            "x": 328.3979187011719,
+            "y": 221.33541870117188,
+            "width": 424.0000305175781,
+            "height": 111.984375
+          }
+        }
+      ],
+      "focus": {
+        "tag": "A",
+        "text": "2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+        "href": "http://127.0.0.1:8923/work/from-real-work-to-features/",
+        "className": "profile-article-link",
+        "matches": true,
+        "outline": "solid 3px rgb(36, 79, 90)",
+        "rect": {
+          "x": 328.3979187011719,
+          "y": 221.33541870117188,
+          "width": 424.0000305175781,
+          "height": 111.984375
+        }
+      }
+    },
+    {
+      "flow": "profile-card-enter",
+      "destination": "/work/from-real-work-to-features/"
+    },
+    {
+      "flow": "skip-to-home-bridge",
+      "first": {
+        "className": "skip-link",
+        "text": "跳到主要內容",
+        "href": "#main-content",
+        "outline": "solid 3px rgb(38, 60, 75)",
+        "rect": {
+          "x": 8,
+          "y": 8,
+          "width": 128,
+          "height": 56
+        }
+      },
+      "afterSkip": {
+        "activeId": "main-content",
+        "hash": "#main-content"
+      },
+      "sequence": [
+        {
+          "tag": "A",
+          "text": "SIDE A／看工作與學習",
+          "href": "http://127.0.0.1:8923/profile/",
+          "className": "surface-switch-link",
+          "matches": false,
+          "outline": "solid 3px rgb(51, 42, 37)",
+          "rect": {
+            "x": 1053.046875,
+            "y": 0,
+            "width": 159.453125,
+            "height": 44
+          }
+        },
+        {
+          "tag": "A",
+          "text": "PLAY",
+          "href": "http://127.0.0.1:8923/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/",
+          "className": "play-btn",
+          "matches": false,
+          "outline": "none 0px rgb(230, 81, 0)",
+          "rect": {
+            "x": 330.5,
+            "y": 90,
+            "width": 61.21875,
+            "height": 25
+          }
+        },
+        {
+          "tag": "A",
+          "text": "Life_Vol.1",
+          "href": "http://127.0.0.1:8923/archives/",
+          "className": "tape-link",
+          "matches": false,
+          "outline": "none 0px rgb(255, 204, 128)",
+          "rect": {
+            "x": 955.640625,
+            "y": 87,
+            "width": 78.015625,
+            "height": 15
+          }
+        },
+        {
+          "tag": "A",
+          "text": "（´◔​∀◔`)",
+          "href": "http://127.0.0.1:8923/photos/",
+          "className": "tape-link",
+          "matches": false,
+          "outline": "none 0px rgb(255, 204, 128)",
+          "rect": {
+            "x": 955.640625,
+            "y": 128.59375,
+            "width": 71.40625,
+            "height": 15
+          }
+        },
+        {
+          "tag": "A",
+          "text": "閱讀這篇 ↗",
+          "href": "http://127.0.0.1:8923/2024/06/16/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E8%97%8D%E8%89%B2%E5%B7%A8%E6%98%9F(%E8%A7%80%E5%BD%B1%E7%B4%80%E9%8C%84)/",
+          "className": "home-random-button is-primary",
+          "matches": false,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "rect": {
+            "x": 323.5,
+            "y": 434.984375,
+            "width": 97.40625,
+            "height": 36
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "text": "換一篇",
+          "href": "",
+          "className": "home-random-button",
+          "matches": false,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "rect": {
+            "x": 429.90625,
+            "y": 434.984375,
+            "width": 64.109375,
+            "height": 36
+          }
+        },
+        {
+          "tag": "A",
+          "text": "完整隨機傳送門",
+          "href": "http://127.0.0.1:8923/random/",
+          "className": "home-random-portal",
+          "matches": false,
+          "outline": "none 0px rgb(217, 185, 148)",
+          "rect": {
+            "x": 922.296875,
+            "y": 444.984375,
+            "width": 81.203125,
+            "height": 16
+          }
+        },
+        {
+          "tag": "A",
+          "text": "♫ AUDIO\n一千年以後\nREC / 2026-07-14",
+          "href": "http://127.0.0.1:8923/2026/07/14/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E4%B8%80%E5%8D%83%E5%B9%B4%E4%BB%A5%E5%BE%8C/",
+          "className": "home-pick",
+          "matches": false,
+          "outline": "none 0px rgb(74, 48, 40)",
+          "rect": {
+            "x": 459.53125,
+            "y": 514.984375,
+            "width": 203.296875,
+            "height": 57.75
+          }
+        },
+        {
+          "tag": "A",
+          "text": "▣ BOOK\n圖解犯罪心理學\nREC / 2022-08-31",
+          "href": "http://127.0.0.1:8923/2022/08/31/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E5%9C%96%E8%A7%A3%E7%8A%AF%E7%BD%AA%E5%BF%83%E7%90%86%E5%AD%B8(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/",
+          "className": "home-pick",
+          "matches": false,
+          "outline": "none 0px rgb(74, 48, 40)",
+          "rect": {
+            "x": 676.828125,
+            "y": 514.984375,
+            "width": 203.296875,
+            "height": 57.75
+          }
+        },
+        {
+          "tag": "A",
+          "text": "OPEN INDEX ↗",
+          "href": "http://127.0.0.1:8923/reading-log/",
+          "className": "home-archive-rail-index",
+          "matches": false,
+          "outline": "none 0px rgb(107, 85, 71)",
+          "rect": {
+            "x": 1114.15625,
+            "y": 536.359375,
+            "width": 85.34375,
+            "height": 15
+          }
+        },
+        {
+          "tag": "A",
+          "text": "01 / ARCHIVE\n全部文章",
+          "href": "http://127.0.0.1:8923/archives/",
+          "className": "home-landing-entry",
+          "matches": false,
+          "outline": "none 0px rgb(85, 85, 85)",
+          "rect": {
+            "x": 304.5,
+            "y": 596.734375,
+            "width": 221,
+            "height": 82
+          }
+        },
+        {
+          "tag": "A",
+          "text": "02 / INDEX\n生活索引",
+          "href": "http://127.0.0.1:8923/reading-log/",
+          "className": "home-landing-entry",
+          "matches": false,
+          "outline": "none 0px rgb(85, 85, 85)",
+          "rect": {
+            "x": 533.5,
+            "y": 596.734375,
+            "width": 221,
+            "height": 82
+          }
+        },
+        {
+          "tag": "A",
+          "text": "03 / DRAFTS\n草稿夾",
+          "href": "http://127.0.0.1:8923/reading/",
+          "className": "home-landing-entry",
+          "matches": false,
+          "outline": "none 0px rgb(85, 85, 85)",
+          "rect": {
+            "x": 762.5,
+            "y": 596.734375,
+            "width": 221,
+            "height": 82
+          }
+        },
+        {
+          "tag": "A",
+          "text": "04 / MEMORY\n記憶圖牆",
+          "href": "http://127.0.0.1:8923/photos/",
+          "className": "home-landing-entry",
+          "matches": false,
+          "outline": "none 0px rgb(85, 85, 85)",
+          "rect": {
+            "x": 991.5,
+            "y": 596.734375,
+            "width": 221,
+            "height": 82
+          }
+        },
+        {
+          "tag": "A",
+          "text": "翻到 A 面 ↗",
+          "href": "http://127.0.0.1:8923/profile/",
+          "className": "",
+          "matches": true,
+          "outline": "solid 2px rgb(51, 42, 37)",
+          "rect": {
+            "x": 1121.390625,
+            "y": 704.234375,
+            "width": 79.109375,
+            "height": 44
+          }
+        }
+      ],
+      "focus": {
+        "tag": "A",
+        "text": "翻到 A 面 ↗",
+        "href": "http://127.0.0.1:8923/profile/",
+        "className": "",
+        "matches": true,
+        "outline": "solid 2px rgb(51, 42, 37)",
+        "rect": {
+          "x": 1121.390625,
+          "y": 704.234375,
+          "width": 79.109375,
+          "height": 44
+        }
+      }
+    },
+    {
+      "flow": "home-bridge-enter",
+      "destination": "/profile/"
+    },
+    {
+      "flow": "mobile-first-tab-skip",
+      "className": "skip-link",
+      "text": "跳到主要內容",
+      "outline": "solid 3px rgb(38, 60, 75)"
+    }
+  ],
+  "reducedMotion": [
+    {
+      "flow": [
+        "surface-switch-link"
+      ],
+      "result": {
+        "pathname": "/profile/",
+        "className": "main-inner page posts-expand profile-page",
+        "intent": null,
+        "animation": "0s",
+        "transition": "0s",
+        "transform": "none"
+      }
+    }
+  ],
+  "noJs": [
+    {
+      "focusedSkip": "skip-link",
+      "destination": "/profile/",
+      "intent": null
+    }
+  ],
+  "screenshots": [
+    "C:\\Blog\\blog-1988\\tmp\\wbs93-desktop-focus.png",
+    "C:\\Blog\\blog-1988\\tmp\\wbs93-mobile-focus.png"
+  ],
+  "console": [],
+  "articleRoute": "/2022/07/02/閱讀影評/文學少女系列(輕小說閱讀紀錄)/",
+  "roleButtonKeyboard": [
+    {
+      "key": "Enter",
+      "name": "切換導航欄",
+      "tabindex": "0",
+      "clickCount": 1,
+      "navOpen": true,
+      "outline": "solid 3px rgb(38, 60, 75)"
+    },
+    {
+      "key": " ",
+      "name": "切換導航欄",
+      "tabindex": "0",
+      "clickCount": 1,
+      "navOpen": false,
+      "outline": "solid 3px rgb(38, 60, 75)"
+    }
+  ],
+  "consoleCount": 0
+}

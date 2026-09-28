@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>工作知識｜本地影片切割工具的想法：先看清楚，再交給 BAT | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我曾想把影片剪輯前的時間選取，做成一個在本機運作、最後仍交給 BAT 執行的輔助工具。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工作知識｜本地影片切割工具的想法：先看清楚，再交給 BAT">
+<meta property="og:url" content="http://example.com/work/local-video-cutting-helper/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我曾想把影片剪輯前的時間選取，做成一個在本機運作、最後仍交給 BAT 執行的輔助工具。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-12-23T23:21:51.000Z">
+<meta property="article:modified_time" content="2026-09-17T07:24:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="方法整理">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-實驗室/工作知識-本地影片切割工具的想法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/work/local-video-cutting-helper/" class="article-date">
+  <time class="dt-published" datetime="2025-12-23T23:21:51.000Z" itemprop="datePublished">2025-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/">工作知識</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      工作知識｜本地影片切割工具的想法：先看清楚，再交給 BAT
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p id="nav-a087b69cd30c58f7" data-navigation-anchor="">我曾想把影片剪輯前的時間選取，做成一個在本機運作、最後仍交給 BAT 執行的輔助工具。</p>
+<span id="more"></span>
+<p id="nav-2b75f7f5c0442095" data-navigation-anchor="">這是一篇把一段未完成的工具構想去脈絡化後留下的紀錄。起點很單純：在受限的工作環境裡，想快速切出影片或音檔的一段內容，但又不想把檔案上傳到外部網站，也不想每次都手打時間碼。後來討論一路延伸到命令列工具、內建剪輯程式、本地 HTML、腳本產生器與打包成執行檔的取捨。</p>
+<p id="nav-699572399f7ccf92" data-navigation-anchor="">這些內容最後沒有形成正式工具，也沒有在特定環境中完成資安或相容性驗證。因此本文保留的是問題拆解與設計方向，不把附件裡的指令、工具名稱或操作步驟當成目前仍然適用的標準答案。</p>
+<h1 id="BAT-不是剪輯器，而是把流程串起來"><a href="#BAT-不是剪輯器，而是把流程串起來" class="headerlink" title="BAT 不是剪輯器，而是把流程串起來"></a>BAT 不是剪輯器，而是把流程串起來</h1><p id="nav-b8ea73e3a8437aae" data-navigation-anchor="">一開始的問題是：「BAT 檔能不能拿來切影片？」</p>
+<p id="nav-7f9a449f521ac5d5" data-navigation-anchor="">比較準確的說法是：BAT 本身不是影音處理器，它只是把命令交給另一個能讀懂影音格式的工具執行。這個分工很重要，因為它把問題拆成兩層：</p>
+<ul>
+<li id="nav-5ef4078d65b5956a" data-navigation-anchor=""><strong>影音工具</strong>負責讀取、切割、重新編碼或輸出檔案。</li>
+<li id="nav-5376e7e26f5da99d" data-navigation-anchor=""><strong>BAT 腳本</strong>負責帶入檔名、時間、輸出名稱與錯誤提示。</li>
+</ul>
+<p id="nav-b4fff5514c9d59b2" data-navigation-anchor="">如果只把 BAT 當成一個神奇的剪輯軟體，遇到「找不到檔案」「切點不準」「公司禁止執行程式」時，就會不知道問題到底出在哪一層。先把工具責任分清楚，後面才知道要改善的是影音處理、檔案路徑，還是使用者輸入。</p>
+<h1 id="真正的痛點不是剪輯，而是選時間"><a href="#真正的痛點不是剪輯，而是選時間" class="headerlink" title="真正的痛點不是剪輯，而是選時間"></a>真正的痛點不是剪輯，而是選時間</h1><p id="nav-218753306681ea79" data-navigation-anchor="">對偶爾剪片的人來說，最難的未必是執行一行指令，而是先回答：</p>
+<blockquote>
+<p id="nav-e8a7e963c0ade907" data-navigation-anchor="">我到底要從哪一秒開始，到哪一秒結束？</p>
+</blockquote>
+<p id="nav-e3bf838cd900d1fb" data-navigation-anchor="">如果完全用命令列處理，就要自己把影片播放到某個位置，再把時間換成指定格式。這個流程對熟悉指令的人不算困難，卻會把「看影片」與「輸入時間」拆成兩件需要來回切換的工作。</p>
+<p id="nav-368009d09e2ac84c" data-navigation-anchor="">所以後來我想到的，不是再寫一個完整剪輯器，而是做一個很薄的前端輔助層：</p>
+<ol>
+<li id="nav-aea3196511a7ea95" data-navigation-anchor="">在瀏覽器中選取本地影片。</li>
+<li id="nav-1e628ca6b8d9ecb9" data-navigation-anchor="">直接播放、暫停，或拖曳到想要的位置。</li>
+<li id="nav-c9106985be2a3ad1" data-navigation-anchor="">按按鈕記錄開始與結束時間。</li>
+<li id="nav-b61e7a1143cb254f" data-navigation-anchor="">由網頁產生一個帶有檔名與時間的 BAT 腳本。</li>
+<li id="nav-9a1b95768bf6555f" data-navigation-anchor="">再由使用者把腳本放回允許的本地工作資料夾執行。</li>
+</ol>
+<p id="nav-76a52471aaac6a97" data-navigation-anchor="">這個想法的重點不在功能很多，而在於把「目測畫面」和「精確輸入」接在一起。使用者仍然保有腳本的透明度，但不必先學會完整的影音指令語法。</p>
+<h1 id="為什麼要堅持本地處理？"><a href="#為什麼要堅持本地處理？" class="headerlink" title="為什麼要堅持本地處理？"></a>為什麼要堅持本地處理？</h1><p id="nav-72c1f74c45d29f44" data-navigation-anchor="">這個構想的限制條件很清楚：影片可能是工作資料，不能隨便上傳到線上剪輯網站；電腦可能沒有管理員權限；公司也可能不接受來路不明的安裝程式或執行檔。</p>
+<p id="nav-d450a7dfffb94cde" data-navigation-anchor="">在這個前提下，本地 HTML 輔助工具有一個值得保留的方向：它只負責讓使用者預覽檔案、記錄時間與產生文字腳本，影音檔不必先送到某個服務上。這能縮小資料流，也讓工具的行為比較容易被檢查。</p>
+<p id="nav-faee299634c89a4a" data-navigation-anchor="">但「在瀏覽器選取本地檔案」不等於自動保證沒有資料外流。若頁面引用外部程式庫、分析服務或第三方元件，仍然要確認它們的來源與網路行為；腳本最後要呼叫的影音工具，也仍然要符合公司的軟體政策。比較精確的說法應該是：</p>
+<blockquote>
+<p id="nav-55d5e57e4d24e4d5" data-navigation-anchor=""><strong>本地處理可以降低資料外流的風險，但不能替代組織的資安審查與執行權限規則。</strong></p>
+</blockquote>
+<p id="nav-244141dd88a7e5ad" data-navigation-anchor="">這也是這個構想需要收斂的地方。它不是一張「完全符合資安」的保證書，而是一個可以讓資料流更短、讓操作更透明的設計方向。</p>
+<h1 id="內建工具、腳本與執行檔的取捨"><a href="#內建工具、腳本與執行檔的取捨" class="headerlink" title="內建工具、腳本與執行檔的取捨"></a>內建工具、腳本與執行檔的取捨</h1><p id="nav-755ff2c16b20c482" data-navigation-anchor="">討論中其實有三條路可走：使用作業系統內建的圖形化工具、使用命令列影音工具搭配 BAT，或把邏輯包成另一種執行檔。</p>
+<h2 id="內建圖形化工具" data-navigation-anchor=""><a href="#內建圖形化工具" class="headerlink" title="內建圖形化工具"></a>內建圖形化工具</h2><p id="nav-1e664603c204cf92" data-navigation-anchor="">優點是通常比較容易被使用者與 IT 理解，也不需要另外學習腳本。缺點是操作比較偏手動，難以把一批影片套用同一套規則，也不一定能保留原本想要的輸出命名與資料夾流程。</p>
+<h2 id="命令列工具加-BAT" data-navigation-anchor=""><a href="#命令列工具加-BAT" class="headerlink" title="命令列工具加 BAT"></a>命令列工具加 BAT</h2><p id="nav-778c509089b2d118" data-navigation-anchor="">優點是文字腳本透明、可重複、容易批次處理，也可以把輸入檔名和輸出規則固定下來。缺點是使用者必須面對時間格式、檔名跳脫、影音格式與執行權限等問題；而且腳本能不能跑，取決於實際影音工具是否存在、版本是否相容，以及公司是否允許執行。</p>
+<h2 id="打包成執行檔" data-navigation-anchor=""><a href="#打包成執行檔" class="headerlink" title="打包成執行檔"></a>打包成執行檔</h2><p id="nav-e9279c0687e57aaa" data-navigation-anchor="">把所有功能包成一個看似方便的執行檔，表面上可以減少使用者看到的步驟，但也可能讓檔案更難被檢查、更難說明來源與行為。對受限制的工作環境來說，「使用者少做幾步」不一定比「IT 能看懂它做什麼」更重要。</p>
+<p id="nav-61fd0b22af13eac5" data-navigation-anchor="">這裡沒有永遠正確的技術選擇。真正要比較的是：使用者的操作負擔、批次需求、資料敏感性、組織政策、維護能力與錯誤可追蹤性。</p>
+<h1 id="這個想法的真正使用者是誰？"><a href="#這個想法的真正使用者是誰？" class="headerlink" title="這個想法的真正使用者是誰？"></a>這個想法的真正使用者是誰？</h1><p id="nav-b84558fe47ef3386" data-navigation-anchor="">如果使用者熟悉命令列，直接提供一組清楚的腳本可能就夠了；如果使用者只想選一段影片，卻不想理解時間碼，那麼本地前端輔助層才有價值。</p>
+<p id="nav-b1bab8487196b8dc" data-navigation-anchor="">因此工具不該從「我能不能寫出影音剪輯器」開始，而應該從使用者的工作路徑開始：</p>
+<blockquote>
+<p id="nav-875fbaf8f4762de5" data-navigation-anchor="">找到檔案 → 看見想保留的片段 → 記下起訖 → 產生可檢查的命令 → 執行 → 確認輸出</p>
+</blockquote>
+<p id="nav-70fe959b655624d7" data-navigation-anchor="">每一段都可以問一次：現在最容易出錯的是什麼？如果錯誤來自「看不準時間」，就做預覽與標記；如果錯誤來自「檔名太複雜」，就自動引用檔名並正確加上引號；如果錯誤來自「不知道工具是否存在」，就先做環境檢查；如果錯誤來自「輸出檔找不到」，就明確顯示資料夾與檔名。</p>
+<p id="nav-12cce5310b87444b" data-navigation-anchor="">這比一直增加播放、轉檔、字幕、特效等功能更接近原本的需要。</p>
+<h1 id="不要把「切得快」誤當成「切得準」"><a href="#不要把「切得快」誤當成「切得準」" class="headerlink" title="不要把「切得快」誤當成「切得準」"></a>不要把「切得快」誤當成「切得準」</h1><p id="nav-6a0844a849f45fe9" data-navigation-anchor="">影音切割有一個容易被忽略的取捨：快速處理與精確切點不一定同時成立。某些做法可以直接沿用原始影音資料，速度較快，但實際切點與音畫同步仍需要用不同格式、不同關鍵影格位置的檔案測試；若改用重新編碼，則可能增加時間、硬體負擔與輸出品質的檢查工作。</p>
+<p id="nav-d66da57b58e79efc" data-navigation-anchor="">因此，工具介面不應只顯示「完成」，還要讓使用者知道它採用哪種處理方式、輸出檔案在哪裡，以及必要時怎麼檢查頭尾是否正確。這部分在原始討論裡仍只是技術方向，尚未形成可宣稱的測試結論。</p>
+<h1 id="如果再做一次，先做最小版本"><a href="#如果再做一次，先做最小版本" class="headerlink" title="如果再做一次，先做最小版本"></a>如果再做一次，先做最小版本</h1><p id="nav-d71a250098cf337c" data-navigation-anchor="">我會把第一版限制在五個功能：</p>
+<ol>
+<li id="nav-b3b4373758542a2d" data-navigation-anchor="">選取本地影片或音檔並預覽。</li>
+<li id="nav-8f098f70a31f433e" data-navigation-anchor="">以按鈕記錄開始與結束時間。</li>
+<li id="nav-fc14a9e54f02c360" data-navigation-anchor="">在畫面上顯示檔名、起點、終點與輸出名稱。</li>
+<li id="nav-9ebd6fdde48f4054" data-navigation-anchor="">檢查結束時間是否晚於開始時間，並處理沒有設定終點的情況。</li>
+<li id="nav-0a4e6d9baf78b2d7" data-navigation-anchor="">產生一份純文字腳本，讓使用者在執行前可以閱讀與修改。</li>
+</ol>
+<p id="nav-c2986ce009ba83ec" data-navigation-anchor="">第一輪不必做完整時間軸、特效、批次佇列或資料庫。先用幾個實際檔案檢查：</p>
+<ul>
+<li id="nav-2b709f881c5f0d53" data-navigation-anchor="">中文、空白、括號與特殊符號檔名是否能正常處理。</li>
+<li id="nav-1d64f061467c43ba" data-navigation-anchor="">只設定起點、不設定終點時，使用者是否知道會發生什麼事。</li>
+<li id="nav-831f3ca288b9bcb2" data-navigation-anchor="">起點等於終點、終點早於起點時，錯誤訊息是否足夠清楚。</li>
+<li id="nav-a7c17fcac1b8eb9f" data-navigation-anchor="">影片很長、檔案很大或格式不常見時，頁面是否仍然能操作。</li>
+<li id="nav-5a2a7ddc7c224384" data-navigation-anchor="">產出的腳本是否清楚指出需要的工具、輸入檔與輸出檔。</li>
+<li id="nav-dd611fc3a36d87e3" data-navigation-anchor="">切完後是否能在不猜測的情況下找到結果。</li>
+</ul>
+<p id="nav-e8102451642a600d" data-navigation-anchor="">如果這五個功能都還沒有穩定，加入更漂亮的介面或把程式包成執行檔，只是在把不確定性藏得更深。</p>
+<h1 id="後來可能進化，但方向不必被綁死"><a href="#後來可能進化，但方向不必被綁死" class="headerlink" title="後來可能進化，但方向不必被綁死"></a>後來可能進化，但方向不必被綁死</h1><p id="nav-9812ff84178951d4" data-navigation-anchor="">這份討論是在特定的工具與公司限制下發生，現在可用的瀏覽器能力、影音工具、內建剪輯軟體與組織政策都可能已經不同。因此，這篇文章不把「BAT 加本地 HTML」當成唯一或目前最好的實作方式。</p>
+<p id="nav-f64f9842c496342b" data-navigation-anchor="">未來重新評估時，可以比較：瀏覽器是否能在完全離線的前提下完成更多處理、現成工具是否已經提供足夠的本地批次功能、公司是否有核准的影音工具，以及使用者是否真的需要產生腳本。技術可以換，值得保留的是那條設計原則：</p>
+<blockquote>
+<p id="nav-bd48454b8bb33ca1" data-navigation-anchor=""><strong>先讓使用者看清楚要做什麼，再把重複且容易出錯的部分交給自動化。</strong></p>
+</blockquote>
+<h1 id="這個小想法留下來的價值"><a href="#這個小想法留下來的價值" class="headerlink" title="這個小想法留下來的價值"></a>這個小想法留下來的價值</h1><p id="nav-8d110b9395a1857f" data-navigation-anchor="">它的亮點確實不算大，也還沒有成熟到能稱為完整產品。但它替一個很具體的困擾找到了一個溫和的入口：不要求使用者突然變成影音工程師，也不把敏感檔案丟到外部服務，而是在既有工作習慣旁邊加一個可以理解、可以檢查的輔助層。</p>
+<p id="nav-b7835aeebbf71321" data-navigation-anchor="">我想留下的不是「我寫過一個 BAT」，而是這個心意：當別人只是想完成一件小事時，工具可以替他先處理那些不必要的記憶、格式與路徑負擔。就算最後技術方案改了，這種替人多想一步的方向仍然值得保留。</p>
+<h1 id="一句話整理"><a href="#一句話整理" class="headerlink" title="一句話整理"></a>一句話整理</h1><blockquote>
+<p id="nav-7ab9d62ea3facc05" data-navigation-anchor=""><strong>好的自動化不一定要把所有事情包起來；有時只要先讓人看清楚，再把容易出錯的那一步交給腳本。</strong></p>
+</blockquote>
+<h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
+<li id="nav-ec4e56b74ad23d45" data-navigation-anchor=""><strong>2025-12-24</strong>：從 BAT 能否切影片、公司電腦限制與本地處理需求開始，討論命令列工具、內建剪輯方式與前端輔助產生腳本的可能性。</li>
+<li id="nav-bd52a352336471d4" data-navigation-anchor=""><strong>2026-09-15</strong>：重新整理為去脈絡化工作知識文章，保留「本地預覽、視覺化選時間、產生透明腳本」的想法，補上資料流、權限、精度、相容性與最小原型的判斷邊界；原方案未視為已驗證成果。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/work/local-video-cutting-helper/" data-id="cuidwajMgys4JGXJnptvmOlcE" data-title="工作知識｜本地影片切割工具的想法：先看清楚，再交給 BAT" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" rel="tag">方法整理</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/12/24/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%A5%9E%E8%A9%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          歌曲推薦-神話
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/12/23/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A4%9C%E8%A1%8C%E6%80%A7%E5%8B%95%E7%89%A9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">歌曲推薦-夜行性動物</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/">工作知識</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/">生活紀錄</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E5%8B%99/">站務</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/">觀念與實驗</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%96%B1%E8%AE%80%E8%88%87%E5%BD%B1%E8%A6%96/">閱讀與影視</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E6%A8%82/">音樂</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" rel="tag">Web 自動化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" rel="tag">內容分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%B0%E8%AA%9E/" rel="tag">台語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" rel="tag">問題排查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" rel="tag">學習規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" rel="tag">思考方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" rel="tag">提問方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" rel="tag">方法整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AA%9E/" rel="tag">日語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" rel="tag">歌曲推薦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" rel="tag">測試案例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" rel="tag">測試設計</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" rel="tag">生活回顧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" rel="tag">研究筆記</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" rel="tag">站務規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B0%A1%E5%A0%B1/" rel="tag">簡報</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B2%B5%E8%AA%9E/" rel="tag">粵語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" rel="tag">網站品質</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AA%9E/" rel="tag">英語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8F%AF%E8%AA%9E/" rel="tag">華語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" rel="tag">觀影心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" rel="tag">觀念釐清</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" rel="tag">閱讀心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%93%E8%AA%9E/" rel="tag">韓語</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI-Agent/" style="font-size: 11.54px;">AI Agent</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" style="font-size: 10px;">Web 自動化</a> <a href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" style="font-size: 10px;">內容分析</a> <a href="/tags/%E5%8F%B0%E8%AA%9E/" style="font-size: 14.62px;">台語</a> <a href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" style="font-size: 10.77px;">問題排查</a> <a href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" style="font-size: 13.08px;">學習規劃</a> <a href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" style="font-size: 11.54px;">思考方式</a> <a href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" style="font-size: 10px;">提問方法</a> <a href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" style="font-size: 16.15px;">方法整理</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 11.54px;">旅行</a> <a href="/tags/%E6%97%A5%E8%AA%9E/" style="font-size: 13.85px;">日語</a> <a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" style="font-size: 20px;">歌曲推薦</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" style="font-size: 10px;">測試案例</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" style="font-size: 10px;">測試設計</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" style="font-size: 14.62px;">生活回顧</a> <a href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" style="font-size: 12.31px;">研究筆記</a> <a href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" style="font-size: 10px;">站務規劃</a> <a href="/tags/%E7%B0%A1%E5%A0%B1/" style="font-size: 10px;">簡報</a> <a href="/tags/%E7%B2%B5%E8%AA%9E/" style="font-size: 12.31px;">粵語</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" style="font-size: 10px;">網站品質</a> <a href="/tags/%E8%8B%B1%E8%AA%9E/" style="font-size: 16.92px;">英語</a> <a href="/tags/%E8%8F%AF%E8%AA%9E/" style="font-size: 18.46px;">華語</a> <a href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" style="font-size: 17.69px;">觀影心得</a> <a href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" style="font-size: 15.38px;">觀念釐清</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 19.23px;">閱讀心得</a> <a href="/tags/%E9%9F%93%E8%AA%9E/" style="font-size: 15.38px;">韓語</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/09/">September 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/01/">January 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/">歌曲推薦-沈默是金</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/">歌曲推薦-海海人生</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/">阿里山不是一座山（書籍閱讀紀錄）</a>
+          </li>
+        
+          <li>
+            <a href="/learning/okinawa-trip-two-times/">沖繩旅行的兩個時空?</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/">歌曲推薦-繁華攏是夢</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

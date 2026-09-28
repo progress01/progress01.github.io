@@ -1,0 +1,211 @@
+{
+  "browser": "Chrome headless via CDP",
+  "viewports": {
+    "desktop1280": {
+      "count": 100,
+      "width": 1265,
+      "scroll": 1265,
+      "page": "/archives/"
+    },
+    "desktop1280Categories": {
+      "count": 271,
+      "scroll": 1265,
+      "width": 1265
+    },
+    "mobile390Archives": {
+      "width": 390,
+      "scroll": 390,
+      "rows": 100
+    },
+    "mobile390Categories": {
+      "width": 390,
+      "scroll": 390,
+      "body": 390,
+      "count": 11
+    }
+  },
+  "checks": [
+    {
+      "label": "desktop archives page 1 has 100 unique rows without overflow",
+      "detail": {
+        "count": 100,
+        "width": 1265,
+        "scroll": 1265,
+        "page": "/archives/"
+      }
+    },
+    {
+      "label": "archive pagination opens page 2",
+      "detail": {
+        "count": 100,
+        "href": "/2026/05/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%88%91%E7%82%BA%E4%BD%A0%E5%82%B7%E5%BF%83/"
+      }
+    },
+    {
+      "label": "archive pagination opens final page",
+      "detail": {
+        "count": 71,
+        "href": "/2024/07/16/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E7%9B%B8%E4%BF%A1%E9%96%B1%E8%AE%80%EF%BC%9A%E5%A4%A9%E4%B8%8B%E6%96%87%E5%8C%9625%E5%B9%B4%E7%9A%84%E6%95%85%E4%BA%8B(%E6%9B%B8%E7%B1%8D%E9%96%B1%E8%AE%80%E7%B4%80%E9%8C%84)/"
+      }
+    },
+    {
+      "label": "archive Back restores prior pagination pages"
+    },
+    {
+      "label": "categories default to all 271 with no overflow",
+      "detail": {
+        "count": 271,
+        "scroll": 1265,
+        "width": 1265
+      }
+    },
+    {
+      "label": "static no-script fallback is checked in generated HTML output audit"
+    },
+    {
+      "label": "Tab moves category controls with a visible keyboard focus ring",
+      "detail": {
+        "active": true,
+        "visible": true,
+        "value": "閱讀與影視"
+      }
+    },
+    {
+      "label": "category selection filters and persists state",
+      "detail": {
+        "count": 121,
+        "outline": "none",
+        "href": "?category=%E9%9F%B3%E6%A8%82&topic=&tag="
+      }
+    },
+    {
+      "label": "topic intersects category and persists query state",
+      "detail": {
+        "count": 11,
+        "search": "?category=%E9%9F%B3%E6%A8%82&topic=%E9%9F%93%E8%AA%9E&tag=%E9%9F%93%E8%AA%9E"
+      }
+    },
+    {
+      "label": "category/topic Back restores 121 then 271 results"
+    },
+    {
+      "label": "direct query and reload preserve filters"
+    },
+    {
+      "label": "clear restores all and serializes empty conditions"
+    },
+    {
+      "label": "fixed sample appears in categories listing",
+      "detail": "/work/from-real-work-to-features/"
+    },
+    {
+      "label": "sample link can receive keyboard focus",
+      "detail": "/work/from-real-work-to-features/"
+    },
+    {
+      "label": "sample opens original single canonical route with keyboard link",
+      "detail": {
+        "path": "/work/from-real-work-to-features/",
+        "canonical": "/work/from-real-work-to-features/",
+        "urlCount": 1
+      }
+    },
+    {
+      "label": "Back from sample returns to categories listing",
+      "detail": "/work/from-real-work-to-features/"
+    },
+    {
+      "label": "fixed sample appears in categories listing",
+      "detail": "/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/"
+    },
+    {
+      "label": "sample link can receive keyboard focus",
+      "detail": "/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/"
+    },
+    {
+      "label": "sample opens original single canonical route with keyboard link",
+      "detail": {
+        "path": "/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/",
+        "canonical": "/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/",
+        "urlCount": 1
+      }
+    },
+    {
+      "label": "Back from sample returns to categories listing",
+      "detail": "/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/"
+    },
+    {
+      "label": "fixed sample appears in categories listing",
+      "detail": "/work/flow-friendly-work-system/"
+    },
+    {
+      "label": "sample link can receive keyboard focus",
+      "detail": "/work/flow-friendly-work-system/"
+    },
+    {
+      "label": "sample opens original single canonical route with keyboard link",
+      "detail": {
+        "path": "/work/flow-friendly-work-system/",
+        "canonical": "/work/flow-friendly-work-system/",
+        "urlCount": 1
+      }
+    },
+    {
+      "label": "Back from sample returns to categories listing",
+      "detail": "/work/flow-friendly-work-system/"
+    },
+    {
+      "label": "fixed sample appears in categories listing",
+      "detail": "/2026/01/25/部落格改版規劃/"
+    },
+    {
+      "label": "sample link can receive keyboard focus",
+      "detail": "/2026/01/25/部落格改版規劃/"
+    },
+    {
+      "label": "sample opens original single canonical route with keyboard link",
+      "detail": {
+        "path": "/2026/01/25/部落格改版規劃/",
+        "canonical": "/2026/01/25/部落格改版規劃/",
+        "urlCount": 1
+      }
+    },
+    {
+      "label": "Back from sample returns to categories listing",
+      "detail": "/2026/01/25/部落格改版規劃/"
+    },
+    {
+      "label": "A-side full list remains exactly 8 articles",
+      "detail": 8
+    },
+    {
+      "label": "390px archives page has no horizontal overflow",
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "rows": 100
+      }
+    },
+    {
+      "label": "390px filtered categories page has no overflow",
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "body": 390,
+        "count": 11
+      }
+    },
+    {
+      "label": "console has zero warnings, errors, or exceptions",
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "console": [],
+  "ports": {
+    "http": 8915,
+    "cdp": 9355
+  },
+  "profile": "C:\\Blog\\blog-1988\\tmp\\wbs75-chrome-profile",
+  "profileCleaned": true
+}

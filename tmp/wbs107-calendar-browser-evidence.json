@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-27",
+  "browser": "Chrome headless via CDP",
+  "viewport": {
+    "desktop": "1280x900",
+    "mobile": "375x812"
+  },
+  "ports": {
+    "http": 8976,
+    "cdp": 9376
+  },
+  "desktop": {
+    "h1": "工作與學習",
+    "year": "2026 更新日曆",
+    "months": [
+      "2026 / 09",
+      "2026 / 07",
+      "2026 / 05",
+      "2026 / 02"
+    ],
+    "entries": [
+      {
+        "day": "27",
+        "title": "工作知識｜從解決問題，到判斷什麼值得解",
+        "href": "/work/from-solving-problems-to-choosing-what-matters/"
+      },
+      {
+        "day": "17",
+        "title": "工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼",
+        "href": "/work/from-real-work-to-features/"
+      },
+      {
+        "day": "17",
+        "title": "工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審",
+        "href": "/work/risk-based-review/"
+      },
+      {
+        "day": "08",
+        "title": "AI 提問判斷順序｜從情境、目標到診斷、設計與驗證",
+        "href": "/learning/ai-question-judgment-order/"
+      },
+      {
+        "day": "04",
+        "title": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+        "href": "/learning/website-quality-testing-roadmap/"
+      },
+      {
+        "day": "03",
+        "title": "工作知識｜API 需求排查：從前台現象回到資料來源",
+        "href": "/work/api-requirement-troubleshooting/"
+      },
+      {
+        "day": "09",
+        "title": "工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作",
+        "href": "/work/presentation-as-mental-model/"
+      },
+      {
+        "day": "28",
+        "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+        "href": "/work/flow-friendly-work-system/"
+      },
+      {
+        "day": "26",
+        "title": "工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫",
+        "href": "/work/gamifying-website-redesign/"
+      }
+    ],
+    "cta": "查看全部 9 篇",
+    "filterCount": 0,
+    "cards": 0,
+    "widths": {
+      "document": 1265,
+      "body": 1265,
+      "viewport": 1280
+    },
+    "columns": 2,
+    "hasCalendar": true
+  },
+  "archive": {
+    "rows": 9,
+    "filters": 1,
+    "visibleFilters": true,
+    "brand": "/profile/"
+  },
+  "tagFilter": {
+    "hash": "#tag=%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86",
+    "visibleRows": 7,
+    "initiallyFilteredRows": 7,
+    "rowsAfterHistoryBack": 9
+  },
+  "bSurface": {
+    "brand": "/",
+    "calendar": false,
+    "search": true
+  },
+  "mobile": {
+    "viewport": 375,
+    "documentWidth": 375,
+    "bodyWidth": 375,
+    "grid": 1,
+    "entries": [
+      "/work/from-solving-problems-to-choosing-what-matters/",
+      "/work/from-real-work-to-features/",
+      "/work/risk-based-review/",
+      "/learning/ai-question-judgment-order/",
+      "/learning/website-quality-testing-roadmap/",
+      "/work/api-requirement-troubleshooting/",
+      "/work/presentation-as-mental-model/",
+      "/work/flow-friendly-work-system/",
+      "/work/gamifying-website-redesign/"
+    ],
+    "switch": "/"
+  },
+  "articlePath": "/work/from-solving-problems-to-choosing-what-matters/",
+  "runtimeErrors": []
+}

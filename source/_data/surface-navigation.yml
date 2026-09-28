@@ -1,0 +1,20 @@
+version: 1
+controls:
+  memory:
+    target: profile
+    href: /
+    label: SIDE A／看工作與學習
+  profile:
+    target: memory
+    href: /memory/
+    label: SIDE B／翻到個人記憶庫
+menus:
+  profile:
+    - id: home
+      label: 工作與學習
+      href: /
+      icon: fa fa-briefcase
+    - id: articles
+      label: 全部文章
+      href: /profile/articles/
+      icon: fa fa-list

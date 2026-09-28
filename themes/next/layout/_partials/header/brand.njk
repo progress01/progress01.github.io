@@ -1,6 +1,6 @@
 <div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="{{ __('accessibility.nav_toggle') }}" role="button">
+    <div class="toggle" aria-label="{{ __('accessibility.nav_toggle') }}" role="button" tabindex="0">
       {%- if theme.menu %}
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -10,11 +10,12 @@
   </div>
 
   <div class="site-meta">
+    {%- set brand_surface = brand_surface_context(page) %}
     {%- if theme.custom_logo and theme.scheme === 'Muse' %}
       <img class="custom-logo-image" src="{{ url_for(theme.custom_logo) }}" alt="{{ title }}">
     {%- endif %}
 
-    <a href="{{ config.root }}" class="brand" rel="start">
+    <a href="{{ url_for('/' if brand_surface === 'profile' else '/memory/') }}" class="brand" rel="start"{% if brand_surface === 'profile' %} aria-label="工作與學習封面" title="工作與學習封面"{% endif %}>
       <i class="logo-line"></i>
       <{% if is_home() or is_archive() %}h1{% else %}p{% endif %} class="site-title">{{ title }}</{% if is_home() or is_archive() %}h1{% else %}p{% endif %}>
       <i class="logo-line"></i>
@@ -28,7 +29,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="{{ __('menu.search') }}" role="button">
+    <div class="toggle popup-trigger" aria-label="{{ __('menu.search') }}" role="button" tabindex="0">
       {%- if theme.algolia_search.enable or theme.local_search.enable %}
         <i class="fa fa-search fa-fw fa-lg"></i>
       {%- endif %}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記">
+<meta property="og:url" content="http://example.com/learning/web-automation-python-pytest-playwright/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-04T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-17T07:08:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Web 自動化">
+<meta property="article:tag" content="學習規劃">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-實驗室/Web-自動化測試-Python-Pytest與Playwright" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/learning/web-automation-python-pytest-playwright/" class="article-date">
+  <time class="dt-published" datetime="2026-09-04T04:00:00.000Z" itemprop="datePublished">2026-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/">觀念與實驗</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p id="nav-571444f83e0aac5f" data-navigation-anchor="">我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。</p>
+<span id="more"></span>
+<p id="nav-114cf040757fea34" data-navigation-anchor="">這篇是「網站品質與軟體測試」系列的第三階段。目標不是證明我會寫幾支瀏覽器腳本，而是挑出穩定、重複價值高的案例，讓電腦協助執行回歸測試，並在失敗時留下足夠證據。</p>
+<p id="nav-b83d42b37be86f90" data-navigation-anchor=""><strong>系列索引</strong>：<a href="/learning/website-quality-testing-roadmap/">從需求到上線驗證的學習路徑</a></p>
+<blockquote>
+<p id="nav-ad4215a1d5b69b7a" data-navigation-anchor=""><strong>資料狀態：建立工具學習順序，尚未完成可重複執行的測試專案</strong></p>
+</blockquote>
+<h2 id="本單元一定要會" data-navigation-anchor=""><a href="#本單元一定要會" class="headerlink" title="本單元一定要會"></a>本單元一定要會</h2><ul>
+<li id="nav-7ba00805a1e1dc2e" data-navigation-anchor="">能用 Python、Pytest 與 Playwright 從命令列執行瀏覽器測試。</li>
+<li id="nav-2a7f63d84ab3b0cb" data-navigation-anchor="">能使用穩定的 Locator 完成基本操作，並用 Assertion 驗證需求結果。</li>
+<li id="nav-1dfdb2ad35f452a6" data-navigation-anchor="">能把至少 5 個手動案例轉成可執行測試，並說明哪些案例值得自動化。</li>
+<li id="nav-7023690a2aaea9ab" data-navigation-anchor="">能在一次測試失敗時留下截圖或 Trace，知道如何查看失敗證據。</li>
+</ul>
+<h3 id="本單元先不學" data-navigation-anchor=""><a href="#本單元先不學" class="headerlink" title="本單元先不學"></a>本單元先不學</h3><p id="nav-5b01fb1cf681beb1" data-navigation-anchor="">JavaScript／TypeScript、API 測試、跨瀏覽器矩陣、Docker 與複雜框架抽象先不加入；先讓一條小而穩定的 Web 測試流程跑通。</p>
+<h3 id="過關條件" data-navigation-anchor=""><a href="#過關條件" class="headerlink" title="過關條件"></a>過關條件</h3><p id="nav-5f7835cd2fda3e98" data-navigation-anchor="">在不含工作機密的練習專案中，從乾淨環境執行至少 5 個測試，並在 README 寫清楚安裝方式、執行指令、測試範圍與已知限制。只貼程式碼、不知道怎麼重跑，不算過關。</p>
+<h2 id="為什麼先用-Python-Pytest-Playwright" data-navigation-anchor=""><a href="#為什麼先用-Python-Pytest-Playwright" class="headerlink" title="為什麼先用 Python + Pytest + Playwright"></a>為什麼先用 Python + Pytest + Playwright</h2><p id="nav-8475fed97e2681b4" data-navigation-anchor="">我已經有 Python 基礎，也希望先把手動測試與 Web 自動化接起來，因此第一輪不再同時增加 JavaScript、Appium、Maestro 等新工具。先用一組範圍清楚的技術完成最小可行專案，比先收集一堆工具名稱更能看出自己是否真的理解測試。</p>
+<h2 id="學習順序" data-navigation-anchor=""><a href="#學習順序" class="headerlink" title="學習順序"></a>學習順序</h2><h3 id="1-先讓瀏覽器完成最小流程" data-navigation-anchor=""><a href="#1-先讓瀏覽器完成最小流程" class="headerlink" title="1. 先讓瀏覽器完成最小流程"></a>1. 先讓瀏覽器完成最小流程</h3><p id="nav-f7fcb0d5b51fdd10" data-navigation-anchor="">先做到：開啟瀏覽器、進入測試頁面、找到元素、執行一個操作、關閉瀏覽器。這一步先確認環境、瀏覽器與測試資料可以運作，不急著設計複雜框架。</p>
+<h3 id="2-學會定位、操作與驗證" data-navigation-anchor=""><a href="#2-學會定位、操作與驗證" class="headerlink" title="2. 學會定位、操作與驗證"></a>2. 學會定位、操作與驗證</h3><p id="nav-6e75b1981d7b0ddf" data-navigation-anchor="">目前先整理這組基本能力：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre id="nav-f31f3ee89a15a7ea" data-navigation-anchor=""><span class="line">page.goto()</span><br><span class="line">get_by_role() / get_by_text() / locator()</span><br><span class="line">click() / fill()</span><br><span class="line">expect(...)</span><br></pre></td></tr></tbody></table></figure>
+
+<p id="nav-3e800d88062d7dac" data-navigation-anchor="">我真正要理解的是：定位方式是否穩定、操作後要觀察什麼、Assertion 是否真的對應需求，而不是把 API 名稱背起來。</p>
+<h3 id="3-接回-Pytest" data-navigation-anchor=""><a href="#3-接回-Pytest" class="headerlink" title="3. 接回 Pytest"></a>3. 接回 Pytest</h3><p id="nav-c11c1b7d2b1cce85" data-navigation-anchor="">把不同情境拆成容易理解的測試函式，例如登入成功、錯誤密碼、搜尋與基本導覽。每個測試都應該有清楚的目的、前置資料與可判斷的結果。</p>
+<h3 id="4-再學維護性" data-navigation-anchor=""><a href="#4-再學維護性" class="headerlink" title="4. 再學維護性"></a>4. 再學維護性</h3><p id="nav-64384055feecd57f" data-navigation-anchor="">測試跑起來後，再加入：</p>
+<ul>
+<li id="nav-9fa14029a2db4c0c" data-navigation-anchor=""><strong>Fixture</strong>：集中處理測試前準備、測試執行與清理。</li>
+<li id="nav-35cec5cca61143c1" data-navigation-anchor=""><strong>Parameterization</strong>：用多組資料重複執行同一測試，不複製整份程式。</li>
+<li id="nav-80139277d38eac29" data-navigation-anchor=""><strong>Screenshot／Trace</strong>：失敗時保留畫面、步驟與紀錄，方便回溯。</li>
+<li id="nav-878672996d1831fc" data-navigation-anchor=""><strong>Page Object Model</strong>：把頁面定位與操作整理在適當的物件中，降低測試案例互相綁死。</li>
+</ul>
+<h2 id="從手動案例挑自動化對象" data-navigation-anchor=""><a href="#從手動案例挑自動化對象" class="headerlink" title="從手動案例挑自動化對象"></a>從手動案例挑自動化對象</h2><p id="nav-c261365e328e7f4b" data-navigation-anchor="">不是每個 Test Case 都值得自動化。第一輪優先選：</p>
+<ul>
+<li id="nav-03845d086cc914dd" data-navigation-anchor="">需求穩定、近期會反覆執行的流程。</li>
+<li id="nav-aa784cf72eda502d" data-navigation-anchor="">操作步驟固定、預期結果明確的案例。</li>
+<li id="nav-9cdd27bed03595e0" data-navigation-anchor="">失敗會影響主要使用路徑的案例。</li>
+<li id="nav-fe30f86dd7f2b3c7" data-navigation-anchor="">人工重複執行成本高，但自動化後容易維護的案例。</li>
+</ul>
+<p id="nav-4353d0308fbef24e" data-navigation-anchor="">先從第一階段的登入成功、錯誤密碼與搜尋案例各挑一個，完成 3 個最小測試；再補到至少 5 個，並記錄哪些案例刻意保留手動執行，以及原因。</p>
+<h2 id="建議的練習專案結構" data-navigation-anchor=""><a href="#建議的練習專案結構" class="headerlink" title="建議的練習專案結構"></a>建議的練習專案結構</h2><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre id="nav-7d24ca506f2e11f1" data-navigation-anchor=""><span class="line">qa-demo/</span><br><span class="line">├─ README.md</span><br><span class="line">├─ requirements.txt</span><br><span class="line">├─ pages/</span><br><span class="line">│  ├─ login_page.py</span><br><span class="line">│  └─ search_page.py</span><br><span class="line">├─ tests/</span><br><span class="line">│  ├─ test_login.py</span><br><span class="line">│  └─ test_search.py</span><br><span class="line">└─ testcases/</span><br><span class="line">   └─ test-cases.md</span><br></pre></td></tr></tbody></table></figure>
+
+<p id="nav-058b02c4651b0c23" data-navigation-anchor="">這是起始結構，不代表每個專案都必須使用 Page Object Model。當測試數量很少或頁面仍頻繁變動時，過早抽象也可能增加理解成本。</p>
+<h2 id="自動化測試不能替代的事情" data-navigation-anchor=""><a href="#自動化測試不能替代的事情" class="headerlink" title="自動化測試不能替代的事情"></a>自動化測試不能替代的事情</h2><ul>
+<li id="nav-094278f525e59d68" data-navigation-anchor="">需求是否合理，仍需要產品與使用者脈絡。</li>
+<li id="nav-20373ab7faa48319" data-navigation-anchor="">視覺、內容、無障礙與可理解性，不能只靠幾個 DOM assertion 判斷。</li>
+<li id="nav-fae232535eb2a78b" data-navigation-anchor="">測試通過只表示特定條件下的檢查通過，不代表整個產品沒有問題。</li>
+<li id="nav-d2e74747bfb944c3" data-navigation-anchor="">不穩定的定位器、共享狀態與不乾淨的測試資料，會讓失敗結果失去可信度。</li>
+</ul>
+<h2 id="這篇的實作作業" data-navigation-anchor=""><a href="#這篇的實作作業" class="headerlink" title="這篇的實作作業"></a>這篇的實作作業</h2><ol>
+<li id="nav-777ce4ea7938ecd0" data-navigation-anchor="">建立一個不含工作機密的練習專案。</li>
+<li id="nav-f2a86a46c3e001b4" data-navigation-anchor="">先讓瀏覽器成功開啟並執行一個簡單操作。</li>
+<li id="nav-76a6adc529296a15" data-navigation-anchor="">寫出 5 個可以執行的自動化測試，至少涵蓋成功與失敗情境。</li>
+<li id="nav-fc90957a4a991e38" data-navigation-anchor="">加入一組參數化測試與一個失敗證據輸出。</li>
+<li id="nav-41e90352b67f5d4e" data-navigation-anchor="">將至少一個頁面的操作整理成 Page Object，並在 README 說明測試範圍與限制。</li>
+</ol>
+<h2 id="還沒回答的問題" data-navigation-anchor=""><a href="#還沒回答的問題" class="headerlink" title="還沒回答的問題"></a>還沒回答的問題</h2><ul>
+<li id="nav-1aa8319211053c89" data-navigation-anchor="">什麼情況下 locator 算穩定？</li>
+<li id="nav-ec8e94439dbc01ad" data-navigation-anchor="">測試資料要如何建立、重置與隔離？</li>
+<li id="nav-fbf2858b516f9076" data-navigation-anchor="">測試失敗時，如何區分產品缺陷、測試腳本問題與環境問題？</li>
+<li id="nav-0b95bbf162fe6a34" data-navigation-anchor="">哪些工作上的規則檢核適合當作 API 或資料層測試，而不是瀏覽器測試？</li>
+</ul>
+<h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul>
+<li id="nav-b1d57d42c5c9666c" data-navigation-anchor=""><strong>2026-09-04</strong>：建立系列第三階段筆記，整理 Python、Pytest、Playwright 與可維護 Web 測試專案的學習順序。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/learning/web-automation-python-pytest-playwright/" data-id="cuidMUKbuqWDGgXAhATYjpR4l" data-title="Web 自動化測試｜Python、Pytest 與 Playwright｜學習筆記" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" rel="tag">Web 自動化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" rel="tag">學習規劃</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/09/05/%E9%9A%A8%E7%AD%86/%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AC%ACN+4%E5%A4%A9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          有工作的第N+4天
+        
+      </div>
+    </a>
+  
+  
+    <a href="/learning/software-testing-basics-test-case-bug-report/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">測試基本功｜User Story、Test Case 與 Bug Report｜學習筆記</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/">工作知識</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/">生活紀錄</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E5%8B%99/">站務</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/">觀念與實驗</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%96%B1%E8%AE%80%E8%88%87%E5%BD%B1%E8%A6%96/">閱讀與影視</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E6%A8%82/">音樂</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" rel="tag">Web 自動化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" rel="tag">內容分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%B0%E8%AA%9E/" rel="tag">台語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" rel="tag">問題排查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" rel="tag">學習規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" rel="tag">思考方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" rel="tag">提問方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" rel="tag">方法整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AA%9E/" rel="tag">日語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" rel="tag">歌曲推薦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" rel="tag">測試案例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" rel="tag">測試設計</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" rel="tag">生活回顧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" rel="tag">研究筆記</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" rel="tag">站務規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B0%A1%E5%A0%B1/" rel="tag">簡報</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B2%B5%E8%AA%9E/" rel="tag">粵語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" rel="tag">網站品質</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AA%9E/" rel="tag">英語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8F%AF%E8%AA%9E/" rel="tag">華語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" rel="tag">觀影心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" rel="tag">觀念釐清</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" rel="tag">閱讀心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%93%E8%AA%9E/" rel="tag">韓語</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI-Agent/" style="font-size: 11.54px;">AI Agent</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" style="font-size: 10px;">Web 自動化</a> <a href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" style="font-size: 10px;">內容分析</a> <a href="/tags/%E5%8F%B0%E8%AA%9E/" style="font-size: 14.62px;">台語</a> <a href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" style="font-size: 10.77px;">問題排查</a> <a href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" style="font-size: 13.08px;">學習規劃</a> <a href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" style="font-size: 11.54px;">思考方式</a> <a href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" style="font-size: 10px;">提問方法</a> <a href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" style="font-size: 16.15px;">方法整理</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 11.54px;">旅行</a> <a href="/tags/%E6%97%A5%E8%AA%9E/" style="font-size: 13.85px;">日語</a> <a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" style="font-size: 20px;">歌曲推薦</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" style="font-size: 10px;">測試案例</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" style="font-size: 10px;">測試設計</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" style="font-size: 14.62px;">生活回顧</a> <a href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" style="font-size: 12.31px;">研究筆記</a> <a href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" style="font-size: 10px;">站務規劃</a> <a href="/tags/%E7%B0%A1%E5%A0%B1/" style="font-size: 10px;">簡報</a> <a href="/tags/%E7%B2%B5%E8%AA%9E/" style="font-size: 12.31px;">粵語</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" style="font-size: 10px;">網站品質</a> <a href="/tags/%E8%8B%B1%E8%AA%9E/" style="font-size: 16.92px;">英語</a> <a href="/tags/%E8%8F%AF%E8%AA%9E/" style="font-size: 18.46px;">華語</a> <a href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" style="font-size: 17.69px;">觀影心得</a> <a href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" style="font-size: 15.38px;">觀念釐清</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 19.23px;">閱讀心得</a> <a href="/tags/%E9%9F%93%E8%AA%9E/" style="font-size: 15.38px;">韓語</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/09/">September 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/01/">January 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/">歌曲推薦-沈默是金</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/">歌曲推薦-海海人生</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/">阿里山不是一座山（書籍閱讀紀錄）</a>
+          </li>
+        
+          <li>
+            <a href="/learning/okinawa-trip-two-times/">沖繩旅行的兩個時空?</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/">歌曲推薦-繁華攏是夢</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -5,6 +5,10 @@
 
 {% block class %}index posts-expand{% endblock %}
 
+{% block surface_control %}
+  {{ partial('_partials/dual-surface-control.njk', { current_surface: 'memory' }) }}
+{% endblock %}
+
 {% block content %}
 
   {% set home_posts = page.posts.toArray() %}
@@ -261,6 +265,14 @@
           <span class="home-landing-link">OPEN MEMORY ↗</span>
         </a>
       </nav>
+
+      {% set memory_surface_control = site.data['surface-navigation'].controls.memory %}
+      <section class="home-profile-bridge" aria-labelledby="home-profile-bridge-title">
+        <span class="home-profile-bridge-label">SIDE A</span>
+        <h2 id="home-profile-bridge-title">工作與學習</h2>
+        <p>看整理過的經驗與方法</p>
+        <a href="{{ memory_surface_control.href }}" data-target-surface="{{ memory_surface_control.target }}" aria-label="{{ memory_surface_control.label }}">翻到 A 面 ↗</a>
+      </section>
 
       <div class="home-outro" aria-hidden="true">
         <svg class="home-outro-art" viewBox="0 0 920 80" focusable="false">

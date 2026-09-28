@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Document note</title>
+  <desc id="desc">A 1988-style document note with a dark blue panel, a dotted guide line, and quiet status labels.</desc>
+  <rect width="220" height="220" fill="#243d4b"/>
+  <path d="M34 10V210" stroke="#f1aa58" stroke-width="1" stroke-dasharray="2 4" opacity=".8"/>
+
+  <rect x="46" y="18" width="7" height="7" rx="1" fill="#f1aa58"/>
+  <path d="M48 20h3M48 22h3" stroke="#243d4b" stroke-width=".7"/>
+  <text x="61" y="25" fill="#f1aa58" font-family="Courier New, monospace" font-size="8" font-weight="bold" letter-spacing=".7">TAPE: LEARNING_NOTE</text>
+
+  <rect x="46" y="48" width="7" height="9" rx="1" fill="#ffe0a8"/>
+  <path d="M48 51h3M48 53h3" stroke="#243d4b" stroke-width=".7"/>
+  <text x="61" y="56" fill="#ffe0a8" font-family="Courier New, monospace" font-size="8" font-weight="bold" letter-spacing=".7">TYPE: STUDY_LOG</text>
+
+  <circle cx="49" cy="81" r="5" fill="#ffe0a8"/>
+  <text x="61" y="84" fill="#ffe0a8" font-family="Courier New, monospace" font-size="8" font-weight="bold" letter-spacing=".6">STATUS: 進行中</text>
+
+  <text x="46" y="116" fill="#f1aa58" font-family="Courier New, monospace" font-size="8" font-weight="bold" letter-spacing=".6">TIME: 2026-09-03</text>
+
+  <circle cx="49" cy="145" r="5" fill="#e36f32"/>
+  <text x="61" y="148" fill="#b48b6d" font-family="Courier New, monospace" font-size="8" font-weight="bold" letter-spacing=".6">REC</text>
+</svg>

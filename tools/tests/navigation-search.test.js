@@ -8,10 +8,11 @@ const Search = require('../../themes/next/source/js/third-party/search/navigatio
 const { anchorContent, passagesOf } = require('../lib/navigation-anchors');
 const record = overrides => ({ id: 'article:/one/', kind: 'article', sources: ['article', 'learning'], title: '有工作的第N+6天',
   text: '中文 JavaScript <script> & 特殊字元 早段拉臂時機', url: '/one/', categories: ['隨筆'], tags: [], date: '2026-09-13',
+  surfaces: ['profile', 'memory'],
   events: [{ kind: 'published', date: '2026-09-13' }, { kind: 'learning-added', date: '2026-08-29' }],
   learningItems: [{ id: 'reading-topic-01', title: '排球', note: '早段拉臂時機', addedDate: '2026-08-29' }],
   passages: [{ id: 'nav-one', text: '中文 JavaScript <script> & 特殊字元' }], ...overrides });
-const micro = record({ id: 'micro-123', kind: 'microblog', sources: ['microblog'], title: '沒有被使用', text: '完整成果沒有被使用',
+const micro = record({ id: 'micro-123', kind: 'microblog', sources: ['microblog'], title: '沒有被使用', text: '完整成果沒有被使用', surfaces: ['memory'],
   url: '/status/', categories: [], learningItems: [], passages: [], events: [{ kind: 'recorded', date: '2026-09-13' }] });
 
 test('literal Chinese, English, + and HTML-sensitive keywords; metadata search; empty and no results', () => {
@@ -37,6 +38,55 @@ test('source, category, month intersect, with dates scoped to the selected sourc
     }
   }
 });
+test('surface scope intersects existing source, category, month and query filters', () => {
+  const profile = record({ id: 'profile', surfaces: ['profile'], title: '唯一 profile', categories: ['隨筆'] });
+  const memory = record({ id: 'memory', surfaces: ['memory'], title: '唯一 memory', categories: ['隨筆'] });
+  const dual = record({ id: 'dual', surfaces: ['profile', 'memory'], title: '雙面 dual', categories: ['工作'] });
+  assert.deepEqual(Search.search([profile, memory, dual], '', { surface: 'profile' }).map(hit => hit.record.id), ['dual', 'profile']);
+  assert.deepEqual(Search.search([profile, memory, dual], '唯一', { surface: 'memory', category: '隨筆' }).map(hit => hit.record.id), ['memory']);
+  assert.deepEqual(Search.search([profile, memory, dual], '', { surface: 'profile', source: 'article', category: '隨筆', month: '2026-09' }).map(hit => hit.record.id), ['profile']);
+});
+test('search de-duplicates stable record IDs without merging distinct records that share a URL', () => {
+  const first = record({ id: 'stable-one', url: '/shared/' });
+  const duplicate = { ...first, title: 'duplicate copy' };
+  const second = record({ id: 'stable-two', kind: 'microblog', sources: ['microblog'], url: '/shared/', title: 'different record', surfaces: ['memory'], learningItems: [], passages: [] });
+  const result = Search.search([first, duplicate, second], '', { surface: 'all' });
+  assert.deepEqual(result.map(item => item.record.id).sort(), ['stable-one', 'stable-two']);
+  assert.equal(result.filter(item => item.record.url === '/shared/').length, 2);
+});
+test('result labels describe actual surfaces and remain independent of the active scope', () => {
+  const profile = record({ id: 'profile-only', surfaces: ['profile'] });
+  const memory = record({ id: 'memory-only', surfaces: ['memory'] });
+  const dual = record({ id: 'dual-surface', surfaces: ['profile', 'memory'] });
+  for (const [item, expected] of [[profile, '工作與學習'], [memory, '個人記憶庫'], [dual, '工作與學習・個人記憶庫']]) {
+    const html = Search.render(Search.search([item], '', { surface: 'all' })[0], '');
+    assert.match(html, new RegExp(`收錄於：${expected}`));
+    assert.match(html, /class="search-result-surfaces"/);
+  }
+  assert.deepEqual(Search.search([dual], '', { surface: 'profile' }).map(hit => hit.record.surfaces), [['profile', 'memory']]);
+  assert.deepEqual(Search.search([dual], '', { surface: 'memory' }).map(hit => hit.record.surfaces), [['profile', 'memory']]);
+});
+test('scope defaults, clear behavior, same-URL view restore and complete recent selection', () => {
+  assert.equal(Search.defaultSurface('/', false), 'profile');
+  assert.equal(Search.defaultSurface('/profile/', false), 'profile');
+  assert.equal(Search.defaultSurface('/profile/articles/', false), 'profile');
+  assert.equal(Search.defaultSurface('/work/example/', true), 'all');
+  for (const path of ['/memory/', '/archives/', '/categories/', '/status/', '/reading/', '/photos/', '/calendar/']) {
+    assert.equal(Search.defaultSurface(path, false), 'memory');
+  }
+  assert.deepEqual(Search.resetFilters('profile'), { surface: 'profile', source: 'all', category: 'all', month: 'all' });
+  const state = { url: '/profile/?x=1', surface: 'all' };
+  assert.equal(Search.canRestoreViewState(state, '/profile/?x=1', true), true);
+  assert.equal(Search.canRestoreViewState(state, '/work/example/', true), false);
+  assert.equal(Search.canRestoreViewState({ ...state, surface: 'invalid' }, state.url, true), false);
+  assert.equal(Search.canRestoreViewState(state, state.url, false), false);
+  const candidates = Array.from({ length: 24 }, (_, index) => ({
+    surfaces: [index < 12 ? 'memory' : 'profile'], categories: [index < 12 ? '音樂' : '工作']
+  }));
+  candidates[11].surfaces = ['profile', 'memory'];
+  assert.deepEqual([...Search.recentIndexes(candidates, 'profile')], [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+  assert.deepEqual([...Search.recentIndexes(candidates, 'memory', '音樂')], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+});
 test('results link to a passage, stable micro ID, or learning note with article fallback', () => {
   assert.equal(Search.search([record()], 'JavaScript')[0].href, '/one/#nav-one');
   const note = Search.search([record()], '早段拉臂時機')[0];
@@ -58,7 +108,11 @@ test('schema rejects HTML responses, malformed records, duplicates and unsafe lo
   const pack = records => JSON.stringify({ schemaVersion: 1, records });
   assert.equal(Search.parse(pack([])).length, 0);
   assert.equal(Search.parse(pack([record({ url: '/中文 含空白/' })])).length, 1);
+  for (const surfaces of [['profile'], ['memory'], ['profile', 'memory']]) {
+    assert.equal(Search.parse(pack([record({ id: `surface-${surfaces.join('-')}`, surfaces })])).length, 1);
+  }
   for (const text of ['<html>error</html>', '{}', pack([record(), record()]), pack([record({ sources: null })]),
+    ...[undefined, null, [], ['unknown'], ['profile', 'profile'], ['memory', 'profile'], ['profile', 2]].map(surfaces => pack([record({ surfaces })])),
     ...['javascript:alert(1)', '//evil.test/', '/\\evil.test/', '/\nevil.test/'].map(url => pack([record({ url })]))]) {
     assert.throws(() => Search.parse(text), /invalid/);
   }

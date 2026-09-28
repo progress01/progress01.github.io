@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>工作知識｜API 需求排查：從前台現象回到資料來源 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我在排查 API 資料異常時，先回頭追查資料來源、處理流程與最後出現差異的層次。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工作知識｜API 需求排查：從前台現象回到資料來源">
+<meta property="og:url" content="http://example.com/work/api-requirement-troubleshooting/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我在排查 API 資料異常時，先回頭追查資料來源、處理流程與最後出現差異的層次。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-03T15:44:45.000Z">
+<meta property="article:modified_time" content="2026-09-17T07:23:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="問題排查">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-實驗室/工作知識-API需求排查紀錄" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/work/api-requirement-troubleshooting/" class="article-date">
+  <time class="dt-published" datetime="2026-09-03T15:44:45.000Z" itemprop="datePublished">2026-09-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/">工作知識</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      工作知識｜API 需求排查：從前台現象回到資料來源
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p id="nav-374ce47b79f7b71f" data-navigation-anchor="">我在排查 API 資料異常時，先回頭追查資料來源、處理流程與最後出現差異的層次。</p>
+<span id="more"></span>
+<p id="nav-573e810514358899" data-navigation-anchor="">這篇把工作事件去脈絡化後留下的知識紀錄。公司、人物、機構、網址、檔名、精確時間與特定資料內容都不放進來，只保留這次排查過程中可以移植到其他工作的思考方式。</p>
+<p id="nav-80c74b79babc0f70" data-navigation-anchor="">這次處理的需求和 API、批次更新、排程與外部資料來源有關。表面上看起來像是前台資料沒有更新，但真正需要釐清的問題其實是：</p>
+<blockquote>
+<p id="nav-fd25c4d3981231c6" data-navigation-anchor=""><strong>資料從哪裡來？中間經過哪些處理？最後是在哪一層出現差異？</strong></p>
+</blockquote>
+<h1 id="一開始容易走錯的方向"><a href="#一開始容易走錯的方向" class="headerlink" title="一開始容易走錯的方向"></a>一開始容易走錯的方向</h1><p id="nav-9af0c9fffceb9c16" data-navigation-anchor="">看到前台畫面、附件內容或使用者回報異常時，很容易一路追著前台找：</p>
+<ul>
+<li id="nav-6b6d3378292ead40" data-navigation-anchor="">這個畫面是不是沒有更新？</li>
+<li id="nav-c2a52c7c5b433f2e" data-navigation-anchor="">這個連結是不是指錯地方？</li>
+<li id="nav-ecfc7927dcc12e67" data-navigation-anchor="">是不是需要新增一支排程？</li>
+<li id="nav-261a09a3fec54ecf" data-navigation-anchor="">API 是不是沒有把最新資料帶回來？</li>
+</ul>
+<p id="nav-958021eb145ea44c" data-navigation-anchor="">這些問題都可以問，但如果一直停留在前台，就很難知道資料實際上是怎麼形成的。</p>
+<p id="nav-fe1f69e9de6d089c" data-navigation-anchor="">這次最重要的修正是：</p>
+<blockquote>
+<p id="nav-bc84ada84f95c3d5" data-navigation-anchor=""><strong>遇到 API 需求時，不能只看前台結果；要先建立從資料來源到前台的完整路徑。</strong></p>
+</blockquote>
+<p id="nav-d3e8c20a40a92c09" data-navigation-anchor="">前台只是最後看得到的結果，不一定是問題發生的位置。</p>
+<h1 id="先畫出資料流，再開始判斷"><a href="#先畫出資料流，再開始判斷" class="headerlink" title="先畫出資料流，再開始判斷"></a>先畫出資料流，再開始判斷</h1><p id="nav-4a5dcfcdeee67895" data-navigation-anchor="">這類需求可以先照下面的順序拆開：</p>
+<blockquote>
+<p id="nav-11fb578e3b58a613" data-navigation-anchor="">外部資料來源<br>→ 後台資料或附件<br>→ 排程／批次更新<br>→ API<br>→ 前台查詢與下載</p>
+</blockquote>
+<p id="nav-274750dc9de4b7a9" data-navigation-anchor="">每一層都要問一個不同的問題：</p>
+<table>
+<thead>
+<tr>
+<th>層次</th>
+<th>要確認的問題</th>
+<th>可以留下的證據</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外部資料來源</td>
+<td>原始資料是否真的已更新？來源位置有沒有變動？</td>
+<td>來源網址、檔案版本、更新紀錄</td>
+</tr>
+<tr>
+<td>後台資料或附件</td>
+<td>系統實際存的是哪一份資料？欄位和檔案在哪裡？</td>
+<td>後台位置、欄位、附件名稱</td>
+</tr>
+<tr>
+<td>排程／批次更新</td>
+<td>是否已有更新機制？多久執行？執行了什麼範圍？</td>
+<td>排程設定、原始碼、執行紀錄</td>
+</tr>
+<tr>
+<td>API</td>
+<td>回傳的是哪一層資料？是否已重新抓取或只是轉送舊資料？</td>
+<td>API 路徑、回應內容、請求時間</td>
+</tr>
+<tr>
+<td>前台</td>
+<td>使用者最後看到的內容是否和後台一致？</td>
+<td>頁面、下載檔、畫面擷取</td>
+</tr>
+</tbody></table>
+<p id="nav-03c7da2c484f646b" data-navigation-anchor="">這樣做是為了避免因為某一個人的口頭描述，就直接假設問題一定在前台、API 或排程其中一層。</p>
+<h1 id="這次最容易混淆的三件事"><a href="#這次最容易混淆的三件事" class="headerlink" title="這次最容易混淆的三件事"></a>這次最容易混淆的三件事</h1><h2 id="1-API-有問題，和來源資料有問題，不是同一件事" data-navigation-anchor=""><a href="#1-API-有問題，和來源資料有問題，不是同一件事" class="headerlink" title="1. API 有問題，和來源資料有問題，不是同一件事"></a>1. API 有問題，和來源資料有問題，不是同一件事</h2><p id="nav-4cbc3823f01ff797" data-navigation-anchor="">如果 API 正確地把上游提供的資料帶回來，但上游檔案本身是舊的、內容重複的、網址已經更換，前台看起來仍然會是錯的。</p>
+<p id="nav-632b575e2d0365fb" data-navigation-anchor="">因此排查時不能只問：</p>
+<blockquote>
+<p id="nav-4d09f07efb679695" data-navigation-anchor="">API 有沒有更新？</p>
+</blockquote>
+<p id="nav-5f428ffd6fea9514" data-navigation-anchor="">還要問：</p>
+<blockquote>
+<p id="nav-1d37454b1a5ffa20" data-navigation-anchor=""><strong>API 更新的資料，來源本身是不是正確而且最新？</strong></p>
+</blockquote>
+<p id="nav-a45bd6f0eb35cb47" data-navigation-anchor="">只有把來源、API 回傳與前台結果放在一起比較，才有機會判斷責任邊界。</p>
+<h2 id="2-確定有排程，和知道排程怎麼運作，是兩件事" data-navigation-anchor=""><a href="#2-確定有排程，和知道排程怎麼運作，是兩件事" class="headerlink" title="2. 確定有排程，和知道排程怎麼運作，是兩件事"></a>2. 確定有排程，和知道排程怎麼運作，是兩件事</h2><p id="nav-4328a112516af38d" data-navigation-anchor="">口頭上說「以前有排程」時，至少還有幾個問題沒有回答：</p>
+<ul>
+<li id="nav-45999d1c2d2120c0" data-navigation-anchor="">排程現在是否仍然存在？</li>
+<li id="nav-8034fdf58763fb08" data-navigation-anchor="">它實際多久執行一次？</li>
+<li id="nav-d35e3d36d7e24274" data-navigation-anchor="">每次執行會更新全部資料，還是只有部分資料？</li>
+<li id="nav-d4c87792de5ec4ea" data-navigation-anchor="">排程抓的是固定網址、檔案清單，還是某個 API？</li>
+<li id="nav-40e360783e9f6234" data-navigation-anchor="">執行成功代表資料內容真的改變了嗎？</li>
+</ul>
+<p id="nav-e141a603097c8bb1" data-navigation-anchor="">所以「有排程」不能直接等於「資料一定會更新」。排程設定、執行紀錄與實際檔案內容要分開確認。</p>
+<h2 id="3-系統標示的時間，不一定是資料真正的更新時間" data-navigation-anchor=""><a href="#3-系統標示的時間，不一定是資料真正的更新時間" class="headerlink" title="3. 系統標示的時間，不一定是資料真正的更新時間"></a>3. 系統標示的時間，不一定是資料真正的更新時間</h2><p id="nav-722cbd2bf15c21db" data-navigation-anchor="">畫面上可能有建立時間、抓取時間、處理時間或顯示時間，但這些不一定代表外部資料最後修改的時間。</p>
+<p id="nav-9463304cfc2c3d32" data-navigation-anchor="">如果檔案本身沒有可靠的更新日期，就不能只靠畫面上的時間判定資料是否真的更新。這時要改用版本差異、內容比對、來源頁面或實際下載結果交叉確認。</p>
+<h1 id="真正有用的排查方法"><a href="#真正有用的排查方法" class="headerlink" title="真正有用的排查方法"></a>真正有用的排查方法</h1><h2 id="先找到一筆已知異常的資料" data-navigation-anchor=""><a href="#先找到一筆已知異常的資料" class="headerlink" title="先找到一筆已知異常的資料"></a>先找到一筆已知異常的資料</h2><p id="nav-47797aed30447758" data-navigation-anchor="">隨機點資料有時候只能證明「某一筆看起來正常」。更有效的方式是先找到已經被回報、而且可以明確描述差異的資料，再從這一筆往回追：</p>
+<ul>
+<li id="nav-7ed838a1f953fec9" data-navigation-anchor="">前台顯示了什麼？</li>
+<li id="nav-a511b4fa67d7e28a" data-navigation-anchor="">後台對應到哪一筆？</li>
+<li id="nav-244bc003abeab65f" data-navigation-anchor="">API 回傳了哪一份？</li>
+<li id="nav-ac18da63e76eb19c" data-navigation-anchor="">外部來源目前提供什麼？</li>
+<li id="nav-b1be9155d15e0be0" data-navigation-anchor="">哪一層和其他版本不一致？</li>
+</ul>
+<p id="nav-5253d26dcd5c052c" data-navigation-anchor="">已知異常資料像一個定位點，可以讓排查從「猜測」變成「比對」。</p>
+<h2 id="在任何更新前先留下原始狀態" data-navigation-anchor=""><a href="#在任何更新前先留下原始狀態" class="headerlink" title="在任何更新前先留下原始狀態"></a>在任何更新前先留下原始狀態</h2><p id="nav-639bc006cb907412" data-navigation-anchor="">這次也讓我更確定，處理資料更新時，最容易失去的是「更新前的證據」。如果接到需求時資料已經被更新，就很難回頭證明原本到底是什麼狀態。</p>
+<p id="nav-9ed02dadbed898c4" data-navigation-anchor="">之後至少可以保留：</p>
+<ul>
+<li id="nav-bf0eca72476697a4" data-navigation-anchor="">異常頁面的畫面擷取。</li>
+<li id="nav-9c22c01ade8800b4" data-navigation-anchor="">來源頁面與檔案位置。</li>
+<li id="nav-e7caec1ea7fc0e19" data-navigation-anchor="">API 回應或下載檔案。</li>
+<li id="nav-52c7356a38dd8694" data-navigation-anchor="">觀察到的時間與版本資訊。</li>
+<li id="nav-abcf99219461b1ea" data-navigation-anchor="">哪些資料已經更新、哪些還沒有更新。</li>
+</ul>
+<p id="nav-9d49b9ca7b887177" data-navigation-anchor="">這些紀錄不是要把事情寫得很複雜，而是避免之後只能依靠記憶或口頭轉述。</p>
+<h2 id="如果問題可能不只一筆，先考慮完整更新" data-navigation-anchor=""><a href="#如果問題可能不只一筆，先考慮完整更新" class="headerlink" title="如果問題可能不只一筆，先考慮完整更新"></a>如果問題可能不只一筆，先考慮完整更新</h2><p id="nav-e22494143fd2cac5" data-navigation-anchor="">當回報顯示不只一個資料項目有問題時，只修正單一筆可能會留下更多沒有被看到的錯誤。</p>
+<p id="nav-35a447380c2b5b1c" data-navigation-anchor="">這時要先確認：</p>
+<ul>
+<li id="nav-7a82168cd529e5f8" data-navigation-anchor="">上游是否已經整批更新？</li>
+<li id="nav-2b16b136cd6f58e2" data-navigation-anchor="">API 是否能執行完整重抓？</li>
+<li id="nav-53ae374cfa7a1c76" data-navigation-anchor="">更新會不會影響其他資料？</li>
+<li id="nav-df045258bf9ef741" data-navigation-anchor="">更新後要用哪些已知異常資料驗證？</li>
+</ul>
+<p id="nav-a3212c912e1b5f50" data-navigation-anchor="">重點不是每次都要整批更新，而是要先判斷問題的範圍，再決定單筆修正或全面刷新。</p>
+<h1 id="為什麼原始碼與資料流文件很重要"><a href="#為什麼原始碼與資料流文件很重要" class="headerlink" title="為什麼原始碼與資料流文件很重要"></a>為什麼原始碼與資料流文件很重要</h1><p id="nav-31cacb2f6502bb2d" data-navigation-anchor="">如果只知道前台畫面，不知道後台位置、排程設定與資料來源，遇到異常時就只能一直問人，或從結果反推系統。</p>
+<p id="nav-a0efed64c3d40d58" data-navigation-anchor="">反過來，如果一開始就取得排程原始碼、API 欄位說明與資料來源位置，就能比較快回答：</p>
+<ul>
+<li id="nav-72f0eec839f3082a" data-navigation-anchor="">哪些事情系統本來就會做？</li>
+<li id="nav-91e3b48693c7d7b6" data-navigation-anchor="">哪些事情其實不需要重新開發？</li>
+<li id="nav-ec2c09a2afdbb067" data-navigation-anchor="">哪些設定只是承辦或使用者記憶中的版本？</li>
+<li id="nav-71a4275eb6db5e90" data-navigation-anchor="">哪些問題來自上游資料，而不是我們的程式？</li>
+</ul>
+<p id="nav-30a6f7b0cba0ade7" data-navigation-anchor="">原始碼不只是開發資產，也是排查問題時的系統地圖。越晚拿到，越容易在資訊不完整的情況下做出錯誤判斷。</p>
+<h1 id="可以留下來的工作原則"><a href="#可以留下來的工作原則" class="headerlink" title="可以留下來的工作原則"></a>可以留下來的工作原則</h1><p id="nav-32f54a85a4517c79" data-navigation-anchor="">這次我想保留的，不是某個特定系統的解法，而是下面幾個原則：</p>
+<ol>
+<li id="nav-e21d4d5627a2e611" data-navigation-anchor=""><strong>先確認資料流，再決定要改哪裡。</strong> 不要看到前台異常就直接修改前台或新增 API。</li>
+<li id="nav-e51310240adf2f59" data-navigation-anchor=""><strong>把口頭資訊當成線索，不當成現況。</strong> 排程週期、資料是否更新、誰負責來源，都要用設定或紀錄確認。</li>
+<li id="nav-cb6048fc028a69e5" data-navigation-anchor=""><strong>先找已知異常，再做前後比對。</strong> 一筆明確的錯誤資料，比大量模糊的正常資料更有定位價值。</li>
+<li id="nav-2e4e9d7833c4314d" data-navigation-anchor=""><strong>在更新前留下證據。</strong> 否則更新完成後，可能只剩下「現在看起來正常」可以證明。</li>
+<li id="nav-6708671d5e5f27a3" data-navigation-anchor=""><strong>分開判斷來源、後台、API 與前台。</strong> 某一層修好了，不代表整條資料鏈都正確。</li>
+<li id="nav-f88fc2cec1374b29" data-navigation-anchor=""><strong>先取得程式碼、欄位與排程資料。</strong> 有資料流圖，就不必只靠印象或猜測排查。</li>
+</ol>
+<h1 id="下次遇到類似需求，我會先問什麼"><a href="#下次遇到類似需求，我會先問什麼" class="headerlink" title="下次遇到類似需求，我會先問什麼"></a>下次遇到類似需求，我會先問什麼</h1><ul>
+<li id="nav-73b3c9d1e18a1093" data-navigation-anchor="">這次需求是要新增機制，還是既有機制沒有正常運作？</li>
+<li id="nav-e86d703c1af560c7" data-navigation-anchor="">前台看到的資料，對應到後台哪個欄位或檔案？</li>
+<li id="nav-dfa8e567820e933e" data-navigation-anchor="">API 是直接回傳後台內容，還是會重新抓取外部來源？</li>
+<li id="nav-bd5b4e6d10f896c1" data-navigation-anchor="">外部來源最後一次更新的證據在哪裡？</li>
+<li id="nav-2ecbfa7b8b70c37b" data-navigation-anchor="">排程的設定、執行頻率與實際更新範圍是什麼？</li>
+<li id="nav-af840083afbec6c9" data-navigation-anchor="">目前的異常是一筆、部分資料，還是整批資料？</li>
+<li id="nav-83067d002767572f" data-navigation-anchor="">在任何更新前，有沒有留下可以比較的原始狀態？</li>
+</ul>
+<p id="nav-8b9562962bc7bcac" data-navigation-anchor="">這些問題要先後問，比一開始就問「要不要改 API」更重要。</p>
+<h1 id="目前的結論"><a href="#目前的結論" class="headerlink" title="目前的結論"></a>目前的結論</h1><p id="nav-715c0934ec59b648" data-navigation-anchor="">這次讓我最清楚的一件事是：</p>
+<blockquote>
+<p id="nav-5cbf53c60d8c2600" data-navigation-anchor=""><strong>處理 API 需求時，真正要追的不是某個畫面，而是資料如何一路走到那個畫面。</strong></p>
+</blockquote>
+<p id="nav-584184ccc6c34b14" data-navigation-anchor="">前台是現象，後台是系統中的位置，排程是時間與流程，外部來源是資料的起點，API 則是中間的傳遞方式。只有把這幾層放在一起，才不會被單一畫面、模糊記憶或錯誤歸因帶著走。</p>
+<p id="nav-57b6447ddaa439e7" data-navigation-anchor="">最後可以把這次的方法濃縮成一句話：</p>
+<blockquote>
+<p id="nav-085531887b7e337f" data-navigation-anchor=""><strong>先畫資料流，先留原始狀態，再從已知異常往回追。</strong></p>
+</blockquote>
+<h1 id="更新紀錄"><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h1><ul>
+<li id="nav-bfcaa346114e0e7e" data-navigation-anchor=""><strong>2026-09-03</strong>：建立去脈絡化的工作知識紀錄，整理 API、後台、排程、上游資料來源與前台結果之間的排查順序。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/work/api-requirement-troubleshooting/" data-id="cuidvaHiF_2LYOnJMBtMYsPGx" data-title="工作知識｜API 需求排查：從前台現象回到資料來源" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" rel="tag">問題排查</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/work/content-publishing-and-tables/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          工作知識｜上稿不是貼上：HTML 標準、表格格式與前台呈現
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/09/03/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-the%20day%20you%20went%20away/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">歌曲推薦-the day you went away</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/">工作知識</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/">生活紀錄</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E5%8B%99/">站務</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A7%80%E5%BF%B5%E8%88%87%E5%AF%A6%E9%A9%97/">觀念與實驗</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%96%B1%E8%AE%80%E8%88%87%E5%BD%B1%E8%A6%96/">閱讀與影視</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9F%B3%E6%A8%82/">音樂</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-Agent/" rel="tag">AI Agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI&#x2F;CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" rel="tag">Web 自動化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" rel="tag">內容分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%B0%E8%AA%9E/" rel="tag">台語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" rel="tag">問題排查</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" rel="tag">學習規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" rel="tag">思考方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" rel="tag">提問方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" rel="tag">方法整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AA%9E/" rel="tag">日語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" rel="tag">歌曲推薦</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" rel="tag">測試案例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" rel="tag">測試設計</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" rel="tag">生活回顧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" rel="tag">研究筆記</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" rel="tag">站務規劃</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B0%A1%E5%A0%B1/" rel="tag">簡報</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B2%B5%E8%AA%9E/" rel="tag">粵語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" rel="tag">網站品質</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AA%9E/" rel="tag">英語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8F%AF%E8%AA%9E/" rel="tag">華語</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" rel="tag">觀影心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" rel="tag">觀念釐清</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" rel="tag">閱讀心得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%93%E8%AA%9E/" rel="tag">韓語</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI-Agent/" style="font-size: 11.54px;">AI Agent</a> <a href="/tags/CI-CD/" style="font-size: 10px;">CI/CD</a> <a href="/tags/Web-%E8%87%AA%E5%8B%95%E5%8C%96/" style="font-size: 10px;">Web 自動化</a> <a href="/tags/%E5%85%A7%E5%AE%B9%E5%88%86%E6%9E%90/" style="font-size: 10px;">內容分析</a> <a href="/tags/%E5%8F%B0%E8%AA%9E/" style="font-size: 14.62px;">台語</a> <a href="/tags/%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5/" style="font-size: 10.77px;">問題排查</a> <a href="/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/" style="font-size: 13.08px;">學習規劃</a> <a href="/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" style="font-size: 11.54px;">思考方式</a> <a href="/tags/%E6%8F%90%E5%95%8F%E6%96%B9%E6%B3%95/" style="font-size: 10px;">提問方法</a> <a href="/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" style="font-size: 16.15px;">方法整理</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 11.54px;">旅行</a> <a href="/tags/%E6%97%A5%E8%AA%9E/" style="font-size: 13.85px;">日語</a> <a href="/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/" style="font-size: 20px;">歌曲推薦</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E6%A1%88%E4%BE%8B/" style="font-size: 10px;">測試案例</a> <a href="/tags/%E6%B8%AC%E8%A9%A6%E8%A8%AD%E8%A8%88/" style="font-size: 10px;">測試設計</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/" style="font-size: 14.62px;">生活回顧</a> <a href="/tags/%E7%A0%94%E7%A9%B6%E7%AD%86%E8%A8%98/" style="font-size: 12.31px;">研究筆記</a> <a href="/tags/%E7%AB%99%E5%8B%99%E8%A6%8F%E5%8A%83/" style="font-size: 10px;">站務規劃</a> <a href="/tags/%E7%B0%A1%E5%A0%B1/" style="font-size: 10px;">簡報</a> <a href="/tags/%E7%B2%B5%E8%AA%9E/" style="font-size: 12.31px;">粵語</a> <a href="/tags/%E7%B6%B2%E7%AB%99%E5%93%81%E8%B3%AA/" style="font-size: 10px;">網站品質</a> <a href="/tags/%E8%8B%B1%E8%AA%9E/" style="font-size: 16.92px;">英語</a> <a href="/tags/%E8%8F%AF%E8%AA%9E/" style="font-size: 18.46px;">華語</a> <a href="/tags/%E8%A7%80%E5%BD%B1%E5%BF%83%E5%BE%97/" style="font-size: 17.69px;">觀影心得</a> <a href="/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/" style="font-size: 15.38px;">觀念釐清</a> <a href="/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" style="font-size: 19.23px;">閱讀心得</a> <a href="/tags/%E9%9F%93%E8%AA%9E/" style="font-size: 15.38px;">韓語</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/09/">September 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/01/">January 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/09/22/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B2%88%E9%BB%98%E6%98%AF%E9%87%91/">歌曲推薦-沈默是金</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E6%B5%B7%E6%B5%B7%E4%BA%BA%E7%94%9F/">歌曲推薦-海海人生</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/20/%E9%96%B1%E8%AE%80%E5%BD%B1%E8%A9%95/%E9%98%BF%E9%87%8C%E5%B1%B1%E4%B8%8D%E6%98%AF%E4%B8%80%E5%BA%A7%E5%B1%B1/">阿里山不是一座山（書籍閱讀紀錄）</a>
+          </li>
+        
+          <li>
+            <a href="/learning/okinawa-trip-two-times/">沖繩旅行的兩個時空?</a>
+          </li>
+        
+          <li>
+            <a href="/2026/09/18/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E7%B9%81%E8%8F%AF%E6%94%8F%E6%98%AF%E5%A4%A2/">歌曲推薦-繁華攏是夢</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

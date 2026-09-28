@@ -1,0 +1,28 @@
+{% set library = profile_article_library() %}
+<section class="profile-article-library" data-profile-article-library aria-label="工作與學習文章清單">
+  <p class="profile-library-count" data-profile-result-count aria-live="polite">全部 {{ library.total }}</p>
+  <div class="profile-tag-filters" data-profile-tag-filters role="group" aria-label="依標籤篩選" hidden>
+    <button type="button" class="profile-tag-filter is-active" data-profile-tag-all aria-pressed="true">全部 <span>{{ library.total }}</span></button>
+    {% for tag in library.tags %}
+      <button type="button" class="profile-tag-filter" data-profile-tag="{{ tag.name | escape }}" aria-pressed="false">{{ tag.name | escape }} <span>{{ tag.count }}</span></button>
+    {% endfor %}
+  </div>
+  <p class="profile-library-empty" data-profile-filter-empty hidden>目前沒有符合這個標籤的文章。</p>
+  {% if library.articles.length %}
+    <ul class="profile-article-list" data-profile-article-list>
+      {% for article in library.articles %}
+        <li class="profile-article-row" data-profile-article-row>
+          {% for tag in article.tags %}<span data-profile-article-tag="{{ tag | escape }}" hidden></span>{% endfor %}
+          <article class="profile-list-entry">
+            <a class="profile-list-link" href="{{ article.url }}">
+              <time class="profile-list-date" datetime="{{ article.datetime }}">{{ article.datetime }}</time>
+              <span class="profile-list-title">{{ article.title }}</span>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="profile-articles-empty">目前沒有可顯示的文章。</p>
+  {% endif %}
+</section>

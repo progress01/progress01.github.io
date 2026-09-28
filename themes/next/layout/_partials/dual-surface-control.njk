@@ -1,0 +1,11 @@
+{% set surface_navigation = site.data['surface-navigation'] %}
+{% set surface_control = surface_navigation.controls[current_surface] %}
+{% if surface_control %}
+  <nav class="surface-switch surface-switch--{{ current_surface }}"
+       aria-label="雙面導覽"
+       data-current-surface="{{ current_surface }}">
+    <a class="surface-switch-link"
+       href="{{ url_for(surface_control.href) }}"
+       data-target-surface="{{ surface_control.target }}"><span class="surface-switch-cassette" aria-hidden="true"></span>{{ surface_control.label }}</a>
+  </nav>
+{% endif %}

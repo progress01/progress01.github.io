@@ -1,0 +1,27 @@
+.skip-link {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: -10000px;
+  padding: 10px 14px;
+  color: #fff;
+  background: #263c4b;
+  border: 2px solid #fff;
+  outline: 3px solid #263c4b;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.skip-link:focus-visible {
+  left: 8px;
+  top: 8px;
+}
+
+[role="button"][tabindex="0"]:focus-visible {
+  outline: 3px solid #263c4b;
+  outline-offset: 3px;
+}
+
+#main-content:focus {
+  outline: none;
+}

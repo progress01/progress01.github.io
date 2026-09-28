@@ -1,0 +1,684 @@
+{
+  "date": "2026-09-27",
+  "dimensions": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 812
+    }
+  ],
+  "routes": [
+    "/",
+    "/profile/",
+    "/profile/articles/",
+    "/work/flow-friendly-work-system/"
+  ],
+  "checks": [
+    {
+      "title": "DON'T COUNT THE DAYS",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 632.5,
+          "y": 450,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 1265,
+      "documentWidth": 1265,
+      "viewportWidth": 1280,
+      "switchName": "SIDE A／看工作與學習",
+      "switchRect": {
+        "x": 1053.046875,
+        "y": 3,
+        "right": 1212.5,
+        "bottom": 47
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/"
+      ],
+      "expectedCanonicalPath": "/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "route": "/",
+      "searchOpen": false
+    },
+    {
+      "title": "經驗與方法",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 632.5,
+          "y": 450,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 1265,
+      "documentWidth": 1265,
+      "viewportWidth": 1280,
+      "switchName": "SIDE B／翻到個人記憶庫",
+      "switchRect": {
+        "x": 1040.5625,
+        "y": 3,
+        "right": 1212.5,
+        "bottom": 47
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/profile/"
+      ],
+      "expectedCanonicalPath": "/profile/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "route": "/profile/",
+      "searchOpen": false
+    },
+    {
+      "title": "全部文章",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 640,
+          "y": 450,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 1280,
+      "documentWidth": 1280,
+      "viewportWidth": 1280,
+      "switchName": "SIDE B／翻到個人記憶庫",
+      "switchRect": {
+        "x": 1048.0625,
+        "y": 3,
+        "right": 1220,
+        "bottom": 47
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/profile/articles/"
+      ],
+      "expectedCanonicalPath": "/profile/articles/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "route": "/profile/articles/",
+      "searchOpen": false
+    },
+    {
+      "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 632.5,
+          "y": 450,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 1265,
+      "documentWidth": 1265,
+      "viewportWidth": 1280,
+      "switchName": "",
+      "switchRect": null,
+      "markerLabel": "收錄於",
+      "surfaceLabels": [
+        "工作與學習",
+        "個人記憶庫"
+      ],
+      "separators": [
+        "・"
+      ],
+      "articleCount": 1,
+      "canonical": [
+        "https://progress01.github.io/work/flow-friendly-work-system/"
+      ],
+      "expectedCanonicalPath": "/work/flow-friendly-work-system/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "route": "/work/flow-friendly-work-system/",
+      "searchOpen": false
+    },
+    {
+      "title": "DON'T COUNT THE DAYS",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "transform": "none",
+        "rect": {
+          "x": 259,
+          "y": 109,
+          "width": 762,
+          "height": 682
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 1265,
+      "documentWidth": 1280,
+      "viewportWidth": 1280,
+      "switchName": "SIDE A／看工作與學習",
+      "switchRect": {
+        "x": 1053.046875,
+        "y": 3,
+        "right": 1212.5,
+        "bottom": 47
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/"
+      ],
+      "expectedCanonicalPath": "/",
+      "searchVisible": true,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "route": "/",
+      "searchOpen": true
+    },
+    {
+      "title": "DON'T COUNT THE DAYS",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 187.5,
+          "y": 406,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "viewportWidth": 375,
+      "switchName": "SIDE A／看工作與學習",
+      "switchRect": {
+        "x": 207.546875,
+        "y": 119,
+        "right": 367,
+        "bottom": 163
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/"
+      ],
+      "expectedCanonicalPath": "/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "route": "/",
+      "searchOpen": false
+    },
+    {
+      "title": "經驗與方法",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 187.5,
+          "y": 406,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "viewportWidth": 375,
+      "switchName": "SIDE B／翻到個人記憶庫",
+      "switchRect": {
+        "x": 195.0625,
+        "y": 119,
+        "right": 367,
+        "bottom": 163
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/profile/"
+      ],
+      "expectedCanonicalPath": "/profile/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "route": "/profile/",
+      "searchOpen": false
+    },
+    {
+      "title": "全部文章",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 187.5,
+          "y": 406,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "viewportWidth": 375,
+      "switchName": "SIDE B／翻到個人記憶庫",
+      "switchRect": {
+        "x": 195.0625,
+        "y": 119,
+        "right": 367,
+        "bottom": 163
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/profile/articles/"
+      ],
+      "expectedCanonicalPath": "/profile/articles/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "route": "/profile/articles/",
+      "searchOpen": false
+    },
+    {
+      "title": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "hidden",
+        "opacity": "1",
+        "transform": "matrix(0, 0, 0, 0, 0, 0)",
+        "rect": {
+          "x": 187.5,
+          "y": 406,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "viewportWidth": 375,
+      "switchName": "",
+      "switchRect": null,
+      "markerLabel": "收錄於",
+      "surfaceLabels": [
+        "工作與學習",
+        "個人記憶庫"
+      ],
+      "separators": [
+        "・"
+      ],
+      "articleCount": 1,
+      "canonical": [
+        "https://progress01.github.io/work/flow-friendly-work-system/"
+      ],
+      "expectedCanonicalPath": "/work/flow-friendly-work-system/",
+      "searchVisible": false,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "route": "/work/flow-friendly-work-system/",
+      "searchOpen": false
+    },
+    {
+      "title": "DON'T COUNT THE DAYS",
+      "primaryOpacity": 1,
+      "searchDialog": {
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "transform": "none",
+        "rect": {
+          "x": 9,
+          "y": 11,
+          "width": 357,
+          "height": 790
+        }
+      },
+      "scriptState": {
+        "ready": "complete",
+        "config": "object",
+        "configPath": "/search.xml",
+        "next": "object",
+        "localSearch": "function"
+      },
+      "bodyWidth": 375,
+      "documentWidth": 375,
+      "viewportWidth": 375,
+      "switchName": "SIDE A／看工作與學習",
+      "switchRect": {
+        "x": 207.546875,
+        "y": 119,
+        "right": 367,
+        "bottom": 163
+      },
+      "markerLabel": "",
+      "surfaceLabels": [],
+      "separators": [],
+      "articleCount": 0,
+      "canonical": [
+        "https://progress01.github.io/"
+      ],
+      "expectedCanonicalPath": "/",
+      "searchVisible": true,
+      "searchScope": [
+        [
+          "profile",
+          "工作與學習"
+        ],
+        [
+          "memory",
+          "個人記憶庫"
+        ],
+        [
+          "all",
+          "全部公開內容"
+        ]
+      ],
+      "skipName": "跳到主要內容",
+      "forbidden": false,
+      "failures": [],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "route": "/",
+      "searchOpen": true
+    }
+  ],
+  "consoleIssues": [],
+  "screenshotFiles": [
+    "wbs95-desktop-dual-article.png",
+    "wbs95-desktop-home.png",
+    "wbs95-desktop-profile.png",
+    "wbs95-desktop-search-open.png",
+    "wbs95-mobile-dual-article.png",
+    "wbs95-mobile-home.png",
+    "wbs95-mobile-profile.png",
+    "wbs95-mobile-search-open.png"
+  ]
+}

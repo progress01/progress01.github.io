@@ -53,6 +53,30 @@
     </header>
     {%- endif %}
 
+    {%- if not is_index %}
+      {%- set post_surface = post_surface_navigation(post) %}
+      {%- if post_surface %}
+        <nav class="post-surface-marker" aria-label="文章收錄面向" data-surfaces="{{ post_surface.surfaces | join(' ') }}">
+          <span class="post-surface-marker-label">收錄於</span>
+          {%- for item in post_surface.items %}
+            {%- if not loop.first %}<span class="post-surface-marker-separator" aria-hidden="true">・</span>{%- endif %}
+            <a class="post-surface-marker-link post-surface-marker-link--{{ item.id }}" href="{{ url_for(item.href) }}" data-surface="{{ item.id }}">{{ item.label }}</a>
+          {%- endfor %}
+        </nav>
+      {%- endif %}
+    {%- endif %}
+
+    {%- if not is_index %}
+      {%- set thinking = thinking_status(post) %}
+      {%- if thinking %}
+        <aside class="post-thinking-status" aria-labelledby="post-thinking-status-title">
+          <h2 id="post-thinking-status-title">🚧 當前假設／探索中</h2>
+          <p><span>最近校準</span> <time datetime="{{ thinking.updated }}">{{ thinking.updated }}</time></p>
+          <p><span>目前適用邊界</span> {{ escape_html(thinking.boundary) }}</p>
+        </aside>
+      {%- endif %}
+    {%- endif %}
+
     {# Reading, film, diary, learning, and work posts use a lightweight entry card on archive feeds. #}
     {%- set has_feature_card = is_index and (post.work_knowledge or (post.source and (post.source.indexOf('閱讀影評') !== -1 or post.source.indexOf('隨筆') !== -1 or post.learning))) %}
     {%- if has_feature_card %}

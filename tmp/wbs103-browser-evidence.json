@@ -1,0 +1,967 @@
+{
+  "date": "2026-09-27",
+  "timezone": "Asia/Taipei",
+  "wbs": "10.3",
+  "publicRoot": "C:\\Blog\\blog-1988\\public",
+  "source": "WBS 10.2 fresh public; no build/clean in this run",
+  "browser": "Google Chrome headless Chromium via CDP",
+  "ports": {
+    "http": 8963,
+    "cdp": 9363
+  },
+  "qaHarness": {
+    "anime": "local deterministic adapter applies each animation step final CSS/style values immediately, including transform/opacity, then calls callbacks",
+    "searchEvidence": "waits for visible overlay and popup, positive computed opacity, positive rect, aria-hidden=false; mobile requires popup fully inside viewport"
+  },
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "width": 375,
+      "height": 812
+    }
+  ],
+  "steps": [
+    {
+      "name": "desktop direct A entry",
+      "input": "direct navigate /profile/",
+      "expected": "profile surface, main, 3 paths, priority article card, switch to memory",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "path": "/profile/",
+        "title": "經驗與方法",
+        "main": true,
+        "mainText": "SIDE B／翻到個人記憶庫\n經驗與方法\n看見現場與需求\n2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼\n2026-09\n工作知識｜API 需求排查：從前台現象回到資料來源\n2026-02\n工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫\n整理資訊與方法\n2026-07\n工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作\n2026-05\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n實作、驗證與修正\n2026-09\n工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n最近正在學\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n\n看全部",
+        "switch": [
+          {
+            "text": "SIDE B／翻到個人記憶庫",
+            "href": "http://127.0.0.1:8963/",
+            "target": null
+          }
+        ],
+        "canonical": [
+          "https://progress01.github.io/profile/"
+        ],
+        "width": {
+          "inner": 1280,
+          "doc": 1265,
+          "body": 1265
+        },
+        "errors": [],
+        "cardCount": 3,
+        "priorityCard": {
+          "href": "http://127.0.0.1:8963/work/from-real-work-to-features/",
+          "text": "2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼"
+        },
+        "screenshot": "tmp/wbs103-desktop-profile.png",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "desktop profile reload",
+      "input": "browser reload",
+      "expected": "same A URL and core content",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "path": "/profile/",
+        "title": "經驗與方法",
+        "main": true,
+        "mainText": "SIDE B／翻到個人記憶庫\n經驗與方法\n看見現場與需求\n2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼\n2026-09\n工作知識｜API 需求排查：從前台現象回到資料來源\n2026-02\n工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫\n整理資訊與方法\n2026-07\n工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作\n2026-05\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n實作、驗證與修正\n2026-09\n工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n最近正在學\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n\n看全部",
+        "switch": [
+          {
+            "text": "SIDE B／翻到個人記憶庫",
+            "href": "http://127.0.0.1:8963/",
+            "target": null
+          }
+        ],
+        "canonical": [
+          "https://progress01.github.io/profile/"
+        ],
+        "width": {
+          "inner": 1280,
+          "doc": 1265,
+          "body": 1265
+        },
+        "errors": [],
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "A article and neutral URL",
+      "input": "click /work/from-real-work-to-features/ card",
+      "expected": "single neutral article URL/canonical/marker",
+      "actual": {
+        "url": "http://127.0.0.1:8963/work/from-real-work-to-features/",
+        "canonical": [
+          "https://progress01.github.io/work/from-real-work-to-features/"
+        ],
+        "marker": "收錄於\n工作與學習",
+        "main": false,
+        "articles": 1,
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/work/from-real-work-to-features/"
+    },
+    {
+      "name": "browser back to A",
+      "input": "browser history back",
+      "expected": "back to /profile/ and interactive switch remains",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "path": "/profile/",
+        "title": "經驗與方法",
+        "main": true,
+        "mainText": "SIDE B／翻到個人記憶庫\n經驗與方法\n看見現場與需求\n2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼\n2026-09\n工作知識｜API 需求排查：從前台現象回到資料來源\n2026-02\n工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫\n整理資訊與方法\n2026-07\n工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作\n2026-05\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n實作、驗證與修正\n2026-09\n工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n最近正在學\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n\n看全部",
+        "switch": [
+          {
+            "text": "SIDE B／翻到個人記憶庫",
+            "href": "http://127.0.0.1:8963/",
+            "target": null
+          }
+        ],
+        "canonical": [
+          "https://progress01.github.io/profile/"
+        ],
+        "width": {
+          "inner": 1280,
+          "doc": 1265,
+          "body": 1265
+        },
+        "errors": [],
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "A to B and B random",
+      "input": "click switch; wait for random data",
+      "expected": "native link navigates to /; candidate belongs to memory random.json and profile-only learning is excluded",
+      "actual": {
+        "url": "http://127.0.0.1:8963/",
+        "path": "/",
+        "label": "SIDE A／看工作與學習",
+        "href": "http://127.0.0.1:8963/profile/",
+        "randomHref": "http://127.0.0.1:8963/2025/10/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%80%81%E7%94%B7%E5%AD%A9/",
+        "randomTitle": "歌曲推薦-老男孩",
+        "status": "從公開文章與持續整理中的草稿隨機抽出",
+        "width": {
+          "doc": 1265,
+          "body": 1265,
+          "inner": 1280
+        },
+        "randomMembership": {
+          "candidate": true,
+          "profileOnlyExcluded": true,
+          "poolSize": 262
+        },
+        "switchHref": "http://127.0.0.1:8963/",
+        "switchTarget": null,
+        "switchRect": {
+          "x": 1040.5625,
+          "y": 3,
+          "right": 1212.5,
+          "bottom": 47
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "B random reroll control",
+      "input": "click 「換一篇」 button",
+      "expected": "selection changes to another eligible memory candidate",
+      "actual": {
+        "title": "歌曲推薦-Nothing‘s Gonna Stop Us Now",
+        "href": "http://127.0.0.1:8963/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/",
+        "status": "從公開文章與持續整理中的草稿隨機抽出",
+        "previousTitle": "歌曲推薦-老男孩",
+        "previousHref": "http://127.0.0.1:8963/2025/10/21/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E8%80%81%E7%94%B7%E5%AD%A9/",
+        "rerollMembership": {
+          "candidate": true,
+          "profileOnlyExcluded": true
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "random article URL/canonical",
+      "input": "click selected random card",
+      "expected": "one article and one canonical at the selected URL",
+      "actual": {
+        "url": "http://127.0.0.1:8963/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/",
+        "canonical": [
+          "https://progress01.github.io/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/"
+        ],
+        "count": 1,
+        "marker": "收錄於\n個人記憶庫",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/"
+    },
+    {
+      "name": "B to A official switch",
+      "input": "click SIDE A on B home",
+      "expected": "native href to /profile/, SIDE A label, no target override, A page loads",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "path": "/profile/",
+        "title": "經驗與方法",
+        "main": true,
+        "mainText": "SIDE B／翻到個人記憶庫\n經驗與方法\n看見現場與需求\n2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼\n2026-09\n工作知識｜API 需求排查：從前台現象回到資料來源\n2026-02\n工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫\n整理資訊與方法\n2026-07\n工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作\n2026-05\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n實作、驗證與修正\n2026-09\n工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n最近正在學\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n\n看全部",
+        "switch": [
+          {
+            "text": "SIDE B／翻到個人記憶庫",
+            "href": "http://127.0.0.1:8963/",
+            "target": null
+          }
+        ],
+        "canonical": [
+          "https://progress01.github.io/profile/"
+        ],
+        "width": {
+          "inner": 1280,
+          "doc": 1265,
+          "body": 1265
+        },
+        "errors": [],
+        "link": {
+          "href": "http://127.0.0.1:8963/profile/",
+          "target": null,
+          "text": "SIDE A／看工作與學習"
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "search memory: Sailing Back To You",
+      "input": {
+        "action": "click search, verify default scope, set scope, type query",
+        "scope": "memory",
+        "query": "Sailing Back To You"
+      },
+      "expected": "default memory; one result at /2026/09/01/歌曲推薦/歌曲推薦-sailing%20back%20to%20you/",
+      "actual": {
+        "overlay": true,
+        "overlayVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "right": 1280,
+            "bottom": 900,
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "popupVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 259,
+            "y": 109,
+            "right": 1021,
+            "bottom": 791,
+            "width": 762,
+            "height": 682
+          }
+        },
+        "focus": "search-input",
+        "scope": "memory",
+        "query": "Sailing Back To You",
+        "resultText": "找到 1 筆紀錄\n歌曲推薦-sailing back to you\n文章 · 音樂\n發表 2026-09-01\n收錄於：個人記憶庫\n\n推薦 jeebanoff 的 sailing back to you 出自專輯 Dream to you,pt2 收聽連結 -> 點此前往\n\n定位命中段落",
+        "results": [],
+        "matching": [
+          {
+            "text": "歌曲推薦-sailing back to you",
+            "href": "http://127.0.0.1:8963/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/#nav-b1d3c92bfae1f9de"
+          }
+        ],
+        "matchingCount": 1,
+        "visible": true,
+        "enabled": true,
+        "openHref": "",
+        "expectedPath": "/2026/09/01/歌曲推薦/歌曲推薦-sailing%20back%20to%20you/",
+        "initialScope": "memory",
+        "expectedDefault": "memory",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "search close and reopen",
+      "input": "close then reopen from B home with mouse",
+      "expected": "search closes and reopens with B memory default",
+      "actual": {
+        "active": true,
+        "scope": "memory",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "search profile: 網站品質與軟體測試",
+      "input": {
+        "action": "click search, verify default scope, set scope, type query",
+        "scope": "profile",
+        "query": "網站品質與軟體測試"
+      },
+      "expected": "default profile; one result at /learning/website-quality-testing-roadmap/",
+      "actual": {
+        "overlay": true,
+        "overlayVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "right": 1280,
+            "bottom": 900,
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "popupVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 259,
+            "y": 109,
+            "right": 1021,
+            "bottom": 791,
+            "width": 762,
+            "height": 682
+          }
+        },
+        "focus": "search-input",
+        "scope": "profile",
+        "query": "網站品質與軟體測試",
+        "resultText": "找到 1 筆紀錄\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n文章 / 學習筆記 · 觀念與實驗\n發表 2026-09-04 · 加入學習 2026-09-04\n收錄於：工作與學習\n\n2026-09-04：建立網站品質與軟體測試系列，改為 42 天、6 單元的鐵人挑戰，加入必會範圍、每日產物、過關條件、學習停車場、新知分流規則與英文伴走軌。\n\n定位命中段落 · 查看命中的學習附註",
+        "results": [],
+        "matching": [
+          {
+            "text": "網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記",
+            "href": "http://127.0.0.1:8963/learning/website-quality-testing-roadmap/#nav-3da997b9db78773c"
+          }
+        ],
+        "matchingCount": 1,
+        "visible": true,
+        "enabled": true,
+        "openHref": "",
+        "expectedPath": "/learning/website-quality-testing-roadmap/",
+        "initialScope": "profile",
+        "expectedDefault": "profile",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "search all: 讓工具服務心流",
+      "input": {
+        "action": "click search, verify default scope, set scope, type query",
+        "scope": "all",
+        "query": "讓工具服務心流"
+      },
+      "expected": "default memory; one result at /work/flow-friendly-work-system/",
+      "actual": {
+        "overlay": true,
+        "overlayVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "right": 1280,
+            "bottom": 900,
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "popupVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 259,
+            "y": 109,
+            "right": 1021,
+            "bottom": 791,
+            "width": 762,
+            "height": 682
+          }
+        },
+        "focus": "search-input",
+        "scope": "all",
+        "query": "讓工具服務心流",
+        "resultText": "找到 1 筆紀錄\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n文章 · 工作知識\n發表 2026-05-28\n收錄於：工作與學習・個人記憶庫\n\n我一直想設計一套符合自己工作方式的工具，後來發現，真正要調整的不是欄位，而是發想、執行與經驗整理的邊界。 我想設計的，其實不是更完整的工具 之前我一直想設計一套比較符合自己工作方式的工作系統。 一開始我很容易把問題想成「還缺哪個功能」：要不要有日曆、看板、工作區、筆記、搜尋，或是把不同任務之間的關係都連起來。只要想到新的需要，就很自然會想再加一個欄位或一個畫…\n\n開啟文章",
+        "results": [],
+        "matching": [
+          {
+            "text": "工作知識｜讓工具服務心流：從發想到工作區的脈絡設計",
+            "href": "http://127.0.0.1:8963/work/flow-friendly-work-system/"
+          }
+        ],
+        "matchingCount": 1,
+        "visible": true,
+        "enabled": true,
+        "openHref": "",
+        "expectedPath": "/work/flow-friendly-work-system/",
+        "initialScope": "memory",
+        "expectedDefault": "memory",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "search result opens dual article",
+      "input": "click unique result link",
+      "expected": "one neutral article URL and canonical",
+      "actual": {
+        "url": "http://127.0.0.1:8963/work/flow-friendly-work-system/",
+        "canonical": [
+          "https://progress01.github.io/work/flow-friendly-work-system/"
+        ],
+        "articles": 1,
+        "marker": "收錄於\n工作與學習\n・\n個人記憶庫",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/work/flow-friendly-work-system/"
+    },
+    {
+      "name": "search and browser back restore state",
+      "input": "browser Back from search result article",
+      "expected": "B page returns with prior all-public query and single dual result, no errors",
+      "actual": {
+        "url": "http://127.0.0.1:8963/",
+        "active": true,
+        "query": "讓工具服務心流",
+        "scope": "all",
+        "resultCount": 1,
+        "errors": [],
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "mobile direct A and layout",
+      "input": "direct navigate /profile/",
+      "expected": "main, three paths, no horizontal overflow, switch in viewport",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "path": "/profile/",
+        "title": "經驗與方法",
+        "main": true,
+        "mainText": "SIDE B／翻到個人記憶庫\n經驗與方法\n看見現場與需求\n2026-09\n工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼\n2026-09\n工作知識｜API 需求排查：從前台現象回到資料來源\n2026-02\n工作知識｜把官網改版包裝成遊戲：有趣的是探索，不是資料庫\n整理資訊與方法\n2026-07\n工作知識｜簡報不是功能清單：先讓人想像事情怎麼運作\n2026-05\n工作知識｜讓工具服務心流：從發想到工作區的脈絡設計\n實作、驗證與修正\n2026-09\n工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n最近正在學\n2026-09\nAI 提問判斷順序｜從情境、目標到診斷、設計與驗證\n2026-09\n網站品質與軟體測試｜42 天鐵人挑戰：從需求到上線驗證｜學習筆記\n\n看全部",
+        "switch": [
+          {
+            "text": "SIDE B／翻到個人記憶庫",
+            "href": "http://127.0.0.1:8963/",
+            "target": null
+          }
+        ],
+        "canonical": [
+          "https://progress01.github.io/profile/"
+        ],
+        "width": {
+          "inner": 375,
+          "doc": 375,
+          "body": 375
+        },
+        "errors": [],
+        "paths": 3,
+        "switchInViewport": true,
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "mobile B random interaction",
+      "input": "tap official switch; wait for random",
+      "expected": "random candidate visible, in candidate set and no overflow",
+      "actual": {
+        "url": "http://127.0.0.1:8963/",
+        "title": "歌曲推薦-Nothing‘s Gonna Stop Us Now",
+        "href": "http://127.0.0.1:8963/2026/01/15/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Nothing%E2%80%98s-Gonna-Stop-Us-Now/",
+        "width": {
+          "doc": 375,
+          "body": 375,
+          "inner": 375
+        },
+        "focus": "BODY",
+        "overlay": false,
+        "randomMembership": {
+          "candidate": true,
+          "profileOnlyExcluded": true
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "search memory: Sailing Back To You",
+      "input": {
+        "action": "click search, verify default scope, set scope, type query",
+        "scope": "memory",
+        "query": "Sailing Back To You"
+      },
+      "expected": "default memory; one result at /2026/09/01/歌曲推薦/歌曲推薦-sailing%20back%20to%20you/",
+      "actual": {
+        "overlay": true,
+        "overlayVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "right": 375,
+            "bottom": 812,
+            "width": 375,
+            "height": 812
+          }
+        },
+        "popupVisual": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "rect": {
+            "x": 9,
+            "y": 11,
+            "right": 366,
+            "bottom": 801,
+            "width": 357,
+            "height": 790
+          }
+        },
+        "focus": "search-input",
+        "scope": "memory",
+        "query": "Sailing Back To You",
+        "resultText": "找到 1 筆紀錄\n歌曲推薦-sailing back to you\n文章 · 音樂\n發表 2026-09-01\n收錄於：個人記憶庫\n\n推薦 jeebanoff 的 sailing back to you 出自專輯 Dream to you,pt2 收聽連結 -> 點此前往\n\n定位命中段落",
+        "results": [],
+        "matching": [
+          {
+            "text": "歌曲推薦-sailing back to you",
+            "href": "http://127.0.0.1:8963/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/#nav-b1d3c92bfae1f9de"
+          }
+        ],
+        "matchingCount": 1,
+        "visible": true,
+        "enabled": true,
+        "openHref": "",
+        "expectedPath": "/2026/09/01/歌曲推薦/歌曲推薦-sailing%20back%20to%20you/",
+        "initialScope": "memory",
+        "expectedDefault": "memory",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "mobile search focus and overlay",
+      "input": "open search and enter song query",
+      "expected": "visible, non-transparent overlay/popup, result, focused input, popup fully within viewport and no horizontal overflow",
+      "actual": {
+        "overlay": true,
+        "ariaHidden": "false",
+        "overlayVisual": {
+          "x": 0,
+          "y": 0,
+          "right": 375,
+          "bottom": 812,
+          "width": 375,
+          "height": 812,
+          "visibility": "visible",
+          "opacity": "1",
+          "display": "flex",
+          "background": "rgba(36, 62, 80, 0.52)"
+        },
+        "popupVisual": {
+          "x": 9,
+          "y": 11,
+          "right": 366,
+          "bottom": 801,
+          "width": 357,
+          "height": 790,
+          "visibility": "visible",
+          "opacity": "1",
+          "display": "flex",
+          "background": "rgb(248, 241, 228)"
+        },
+        "focus": true,
+        "rect": {
+          "x": 9,
+          "y": 11,
+          "right": 366,
+          "bottom": 801
+        },
+        "viewport": {
+          "w": 375,
+          "h": 812
+        },
+        "width": {
+          "doc": 375,
+          "body": 375
+        },
+        "searchActual": {
+          "overlay": true,
+          "overlayVisual": {
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "right": 375,
+              "bottom": 812,
+              "width": 375,
+              "height": 812
+            }
+          },
+          "popupVisual": {
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "rect": {
+              "x": 9,
+              "y": 11,
+              "right": 366,
+              "bottom": 801,
+              "width": 357,
+              "height": 790
+            }
+          },
+          "focus": "search-input",
+          "scope": "memory",
+          "query": "Sailing Back To You",
+          "resultText": "找到 1 筆紀錄\n歌曲推薦-sailing back to you\n文章 · 音樂\n發表 2026-09-01\n收錄於：個人記憶庫\n\n推薦 jeebanoff 的 sailing back to you 出自專輯 Dream to you,pt2 收聽連結 -> 點此前往\n\n定位命中段落",
+          "results": [],
+          "matching": [
+            {
+              "text": "歌曲推薦-sailing back to you",
+              "href": "http://127.0.0.1:8963/2026/09/01/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-sailing%20back%20to%20you/#nav-b1d3c92bfae1f9de"
+            }
+          ],
+          "matchingCount": 1,
+          "visible": true,
+          "enabled": true,
+          "openHref": "",
+          "expectedPath": "/2026/09/01/歌曲推薦/歌曲推薦-sailing%20back%20to%20you/",
+          "initialScope": "memory",
+          "expectedDefault": "memory"
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "mobile search closes",
+      "input": "tap close button",
+      "expected": "overlay closes and page remains usable",
+      "actual": {
+        "closeRect": {
+          "x": 336,
+          "y": 21,
+          "right": 356,
+          "bottom": 57
+        },
+        "active": false,
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "no-JS A anchors",
+      "input": "load /profile/ with script execution disabled",
+      "expected": "profile renders; switch/card have native hrefs",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "main": true,
+        "switchHtml": "<a class=\"surface-switch-link\" href=\"/\" data-target-surface=\"memory\">SIDE B／翻到個人記憶庫</a>",
+        "cardHtml": "<a class=\"profile-article-link\" href=\"/work/from-real-work-to-features/\">\n                      <time datetime=\"2026-09-17\">2026-09</time>\n                      <h3>工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼</h3>\n                      \n                    </a>",
+        "width": {
+          "doc": 375,
+          "body": 375
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "no-JS B bridge and navigation",
+      "input": "activate native switch anchor",
+      "expected": "B page has main and native bridge/archive/card hrefs",
+      "actual": {
+        "url": "http://127.0.0.1:8963/",
+        "main": true,
+        "bridge": [
+          {
+            "text": "SIDE A／看工作與學習",
+            "href": "http://127.0.0.1:8963/profile/",
+            "target": null
+          }
+        ],
+        "randomLink": "/random/",
+        "archive": "/archives/",
+        "switch": "/profile/",
+        "width": {
+          "doc": 375,
+          "body": 375
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "no-JS direct B and anchors",
+      "input": "load / directly with script execution disabled",
+      "expected": "B main renders; switch, home bridge, and random fallback retain hrefs",
+      "actual": {
+        "url": "http://127.0.0.1:8963/",
+        "main": true,
+        "randomHref": "/random/",
+        "bridge": [
+          "/profile/"
+        ],
+        "switchHtml": "<a class=\"surface-switch-link\" href=\"/profile/\" data-target-surface=\"profile\">SIDE A／看工作與學習</a>",
+        "width": {
+          "doc": 375,
+          "body": 375
+        },
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/"
+    },
+    {
+      "name": "no-JS B to A switch",
+      "input": "activate SIDE B switch anchor",
+      "expected": "native link navigates to /profile/",
+      "actual": {
+        "url": "http://127.0.0.1:8963/profile/",
+        "path": "/profile/",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/profile/"
+    },
+    {
+      "name": "no-JS article/card navigation",
+      "input": "bridge back to profile then click article card",
+      "expected": "article body readable and unique canonical remains",
+      "actual": {
+        "url": "http://127.0.0.1:8963/work/from-real-work-to-features/",
+        "main": true,
+        "article": true,
+        "canonical": [
+          "https://progress01.github.io/work/from-real-work-to-features/"
+        ],
+        "bodyText": "資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。\n\n這個系列從一個問題開始：我想替一套「會議知識庫」找功能。直覺上，我可能會先問：「希望它有哪些功能？」但這個問題太抽象，最後很容易得到「整理重點、協助分析」之類的答案，卻仍然不知道系統到底要幫我完成哪個工作。\n\n我現在比較信任的順序是：\n\n真實工作情境 ",
+        "ok": true
+      },
+      "pass": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "finalUrl": "http://127.0.0.1:8963/work/from-real-work-to-features/"
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "requestFailed": [],
+  "httpErrors": [],
+  "blockedExternal": [],
+  "screenshots": [
+    "tmp/wbs103-desktop-profile.png",
+    "tmp/wbs103-desktop-profile-reload.png",
+    "tmp/wbs103-desktop-home-random.png",
+    "tmp/wbs103-search-memory-1280.png",
+    "tmp/wbs103-search-profile-1280.png",
+    "tmp/wbs103-search-all-1280.png",
+    "tmp/wbs103-desktop-search-restored.png",
+    "tmp/wbs103-mobile-profile.png",
+    "tmp/wbs103-mobile-home-random.png",
+    "tmp/wbs103-search-memory-375.png",
+    "tmp/wbs103-mobile-search.png"
+  ],
+  "afterReloadCard": {
+    "path": "/profile/",
+    "anchorStyle": {
+      "display": "flex",
+      "visibility": "visible",
+      "opacity": "1",
+      "pointer": "auto"
+    },
+    "h3": {
+      "x": 345.5,
+      "y": 270.828125,
+      "w": 390,
+      "h": 50.59375,
+      "visibility": "visible",
+      "opacity": "1"
+    },
+    "hit": "<h3>工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼</h3>"
+  },
+  "lastClick": {
+    "selector": "a[href*=\"/work/from-real-work-to-features/\"]",
+    "label": "no-JS article card",
+    "x": 187.5,
+    "y": 406.4296875,
+    "width": 311,
+    "height": 111.984375,
+    "href": "http://127.0.0.1:8963/work/from-real-work-to-features/",
+    "target": "",
+    "hit": "<h3>工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼</h3>",
+    "pointerEvents": "auto"
+  },
+  "finalUrl": "http://127.0.0.1:8963/work/from-real-work-to-features/",
+  "summary": {
+    "steps": 24,
+    "passed": 24,
+    "failed": 0,
+    "console": 0,
+    "pageErrors": 0,
+    "requestFailed": 0,
+    "httpErrors": 0,
+    "blockedExternal": 0,
+    "screenshots": 11
+  },
+  "portsReleased": true,
+  "portCheck": {
+    "http": true,
+    "cdp": true
+  }
+}
