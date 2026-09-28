@@ -7,6 +7,8 @@ const pjax = new Pjax({
     'script[type="application/json"]',
     // Precede .main-inner to prevent placeholder TOC changes asap
     '.post-toc-wrap',
+    // The contextual menu is URL-derived and must follow the incoming document.
+    '.site-nav',
     '.main-inner',
     '.languages',
     '.pjax'

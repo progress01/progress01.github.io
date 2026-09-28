@@ -6,7 +6,7 @@
   <link href="https://progress01.github.io/atom.xml" rel="self"/>
   
   <link href="https://progress01.github.io/"/>
-  <updated>2026-09-22T04:00:00.000Z</updated>
+  <updated>2026-09-27T13:31:00.000Z</updated>
   <id>https://progress01.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不是每個問題都值得解：先判斷未知屬於哪一種</title>
+    <link href="https://progress01.github.io/work/from-solving-problems-to-choosing-what-matters/"/>
+    <id>https://progress01.github.io/work/from-solving-problems-to-choosing-what-matters/</id>
+    <published>2026-09-27T13:31:00.000Z</published>
+    <updated>2026-09-27T13:31:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-1ad60d353705b305" data-navigation-anchor="">工作不只是在找到解法後把事情做好；有時更早的一步，是發現眼前到底有什麼問題，以及它值不值得現在處理。</p><span id="more"></span><p id="nav-0277790f1a461995" data-navigation-anchor="">我以前比較習慣從「事情要怎麼做好」開始。當目標和範圍已經大致確定，接下來要拆步驟、找方法、處理例外，這些都比較容易進入狀況。近來我才注意到，有些工作還要先回答另一個問題：這件事為什麼要做？誰會使用結果？如果前提不成立，後面的工作還需要繼續嗎？</p><p id="nav-43edc6389864b7a8" data-navigation-anchor="">這不是把原本的解題能力丟掉，而是發現解題之前也有一段工作。問題還沒被說清楚時，越快開始做，越可能只是把一個尚未確認的假設做得更完整。</p><h2 id="不知道答案，和沒看見問題" data-navigation-anchor=""><a href="#不知道答案，和沒看見問題" class="headerlink" title="不知道答案，和沒看見問題"></a>不知道答案，和沒看見問題</h2><p id="nav-c0a4cdfa4da225ab" data-navigation-anchor="">如果我知道自己不會某個工具或方法，至少可以描述缺口，再去查資料、練習或請教。這種「不知道答案」雖然會讓事情停一下，但有一個可搜尋的方向。</p><p id="nav-d24c04fa88a98941" data-navigation-anchor="">更難的是，當下根本沒有意識到還有一件事需要先判斷。沒看見的問題不會自己變成搜尋關鍵字；很多時候，是別人問出來，我才發現那本來就是工作的一部分。這時候我容易把它解讀成自己又漏了什麼，但現在覺得先辨認未知的種類，可能比立刻責怪自己更有用。</p><h2 id="四種「不知道」需要不同的下一步" data-navigation-anchor=""><a href="#四種「不知道」需要不同的下一步" class="headerlink" title="四種「不知道」需要不同的下一步"></a>四種「不知道」需要不同的下一步</h2><p id="nav-27df784ba903906a" data-navigation-anchor="">我試著把未知分成四類，並不代表每件事都能清楚歸類，只是幫助我想下一步要做什麼。</p><ul><li id="nav-cf2842d82e9dc1d4" data-navigation-anchor=""><strong>知識</strong>：我缺少某項資訊或概念，可以查找資料，也可以確認資料是否足以回答眼前的問題。</li><li id="nav-f748fadf1a5e6555" data-navigation-anchor=""><strong>方法</strong>：我大致知道目標，卻不熟悉怎麼拆解或安排工作。學習一套方法能讓原本混在一起的目的、成果、前置條件和驗收變得較清楚。</li><li id="nav-decebfd51cc48c06" data-navigation-anchor=""><strong>經驗</strong>：有些情況要做過才會知道，或要向做過類似事情的人請教。第一次遇到時沒有想到所有例外，不一定能靠多背一張表解決。</li><li id="nav-4a7b1f8b5c0fed0b" data-navigation-anchor=""><strong>環境規則</strong>：有些判斷藏在特定組織、合作關係或過去事件裡。若規則沒有被說明，光看一般方法未必能猜中；需要找合適的人確認。</li></ul><p id="nav-472163bcf4befcaa" data-navigation-anchor="">分類本身也可能不準。它對我目前的用途，不是替未知貼上永久標籤，而是把「我不知道」往可行動的方向推一點：查資料、練方法、找案例，或提出需要確認的問題。</p><h2 id="Checklist-可以提醒，但不會替我判斷" data-navigation-anchor=""><a href="#Checklist-可以提醒，但不會替我判斷" class="headerlink" title="Checklist 可以提醒，但不會替我判斷"></a>Checklist 可以提醒，但不會替我判斷</h2><p id="nav-043b2fcbdac006e1" data-navigation-anchor="">我曾想把別人問過的問題全部收進 checklist，期待下一次照著檢查就不會漏掉。整理一份起始清單仍然有幫助：目的、使用者、範圍、前置條件、交付成果，以及誰能決定是否足夠，都是值得停下來看一眼的地方。</p><p id="nav-d01f1853c340ad44" data-navigation-anchor="">但清單不是對所有工作的完整描述。若每次遇到一個例外就多加一條，最後可能什麼都想確認，反而不知道何時可以開始。對我來說，它比較適合作為提醒：目前的理解是什麼？哪些只是暫時假設？哪一個未知若不先關閉，會讓後面的投入失去意義？</p><p id="nav-3ef10dd8c773954b" data-navigation-anchor="">清單也不能回答每個問題是不是值得投入。它讓問題浮上來，接下來仍需要人一起判斷，而不是把「有列到」當成「已經想清楚」。</p><h2 id="先選問題，再選解法" data-navigation-anchor=""><a href="#先選問題，再選解法" class="headerlink" title="先選問題，再選解法"></a>先選問題，再選解法</h2><p id="nav-47e7a3dcdee57fdd" data-navigation-anchor="">一個流程裡可能同時有很多不方便的地方。有些技術上很適合自動化，有些改善起來很有趣；但這不表示它們就是當下最值得做的事。真正影響使用者的，也許只是其中一處；也可能某個步驟看起來麻煩，卻有必須保留的理由。</p><p id="nav-16ba0600aee0f2be" data-navigation-anchor="">所以在進入解決模式前，我想練習多問幾句：現在要改善的是誰遇到的困難？這是實際問題，還是我只是不喜歡目前的做法？若先不處理會造成什麼影響？做完之後，誰能判斷結果已經足夠？</p><p id="nav-28e2643c5480292e" data-navigation-anchor="">我還沒有很穩定地做出這些判斷，也不能只靠一套問題清單得到答案。有時需要把暫定理解寫出來，請別人修正；有時要先做一個足夠小的版本，讓不清楚的地方浮現。哪個做法合適，仍取決於當下缺的是資訊、方法、經驗，還是需要共同決定的範圍。</p><h2 id="把未知變成下一步" data-navigation-anchor=""><a href="#把未知變成下一步" class="headerlink" title="把未知變成下一步"></a>把未知變成下一步</h2><p id="nav-3b132432ed5c9481" data-navigation-anchor="">現在遇到還不能回答的問題，我希望自己不要假裝它已經確定，也不必因此認定工作完全不能前進。我可以記下缺少什麼、要向誰或哪裡確認，以及確認結果會不會改變下一步。這樣做不保證沒有遺漏，卻能讓「不知道」不只是一個模糊的停滯狀態。</p><p id="nav-7dd108203ddb72b2" data-navigation-anchor="">我目前比較能接受的一句話是：「現在還不知道，但知道怎麼確認。」如果連確認方式也不清楚，那本身就是需要提出來的問題。這不是說所有未知都能被管理好，而是讓我在沒有完整答案時，仍知道眼前可以做哪個小決定。</p><p id="nav-c4e80cde2d1c1a5a" data-navigation-anchor="">我還在練習從解決問題走到選擇問題。也許熟練不會是把所有可能性都先想完，而是越來越知道何時該查、該問、該試，何時要停下來確認這件事是否值得繼續。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-81953bd31b50404c" data-navigation-anchor="">2026-09-27：整理問題定義、未知類型與選擇工作重點的個人反思。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;工作不只是在找到解法後把事情做好；有時更早的一步，是發現眼前到底有什麼問題，以及它值不值得現在處理。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>歌曲推薦-沈默是金</title>
@@ -184,7 +205,7 @@
   </entry>
   
   <entry>
-    <title>工作知識｜從實際抽象功能系列 01｜先從真實工作問出系統該做什麼</title>
+    <title>需求不是功能清單：從真實工作拆出系統該做的事</title>
     <link href="https://progress01.github.io/work/from-real-work-to-features/"/>
     <id>https://progress01.github.io/work/from-real-work-to-features/</id>
     <published>2026-09-17T04:00:00.000Z</published>
@@ -223,9 +244,9 @@
     <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
     
     
-    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
-    
     <category term="學習規劃" scheme="https://progress01.github.io/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/"/>
+    
+    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
     
   </entry>
   
@@ -249,29 +270,6 @@
     <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
     
     <category term="思考方式" scheme="https://progress01.github.io/tags/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型</title>
-    <link href="https://progress01.github.io/work/meeting-transcripts-to-judgment-model/"/>
-    <id>https://progress01.github.io/work/meeting-transcripts-to-judgment-model/</id>
-    <published>2026-09-17T04:00:00.000Z</published>
-    <updated>2026-09-17T07:13:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p id="nav-d02708f13490612a" data-navigation-anchor="">對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。</p><span id="more"></span><p id="nav-155b517e5f7e6500" data-navigation-anchor="">如果直接問「請分析這兩場會議」，很可能只得到「大家充分討論了需求與時程」。這種摘要沒有錯，卻沒有告訴我資深者究竟多做了哪一步判斷。</p><p id="nav-3661f100dee9fea4" data-navigation-anchor="">我想保留的是一條可重複的學習路徑：</p><blockquote><p id="nav-9597a2ce543eee61" data-navigation-anchor=""><strong>逐字稿 → 找到被校正的地方 → 比較不同案例 → 推測判斷順序 → 轉成會前自問。</strong></p></blockquote><h2 id="第一輪：分開找出被校正的地方" data-navigation-anchor=""><a href="#第一輪：分開找出被校正的地方" class="headerlink" title="第一輪：分開找出被校正的地方"></a>第一輪：分開找出被校正的地方</h2><p id="nav-760698d7a961453e" data-navigation-anchor="">每場會議先分開分析，不急著找通則，也不先套用既有分類。要找的不是「談了哪些主題」，而是：</p><ul><li id="nav-3cde1de41cbdd8d8" data-navigation-anchor="">主管主動追問了什麼？</li><li id="nav-02e0f6b08313f504" data-navigation-anchor="">哪些地方被打斷、修正或重新定義？</li><li id="nav-ec4257580c098ce2" data-navigation-anchor="">原本的回答為什麼沒有回答到真正關心的問題？</li><li id="nav-c0960389540c2158" data-navigation-anchor="">哪些地方被要求補資料、確認、清單、時程或具體產物？</li><li id="nav-027b74af37da1e88" data-navigation-anchor="">哪些話透露了決策權、資料責任或工作邊界？</li></ul><p id="nav-3400ac6a64b01e67" data-navigation-anchor="">每個案例先用這六格記錄：</p><table><thead><tr><th>問題</th><th>要留下的內容</th></tr></thead><tbody><tr><td>正在談什麼</td><td>具體議題，不先抽象化</td></tr><tr><td>原本怎麼準備</td><td>執行者當時採取的理解與工作方式</td></tr><tr><td>主管怎麼追問</td><td>原話或可核對的重點</td></tr><tr><td>真正關心什麼</td><td>效益、權責、資料、相依性、風險或驗收</td></tr><tr><td>事前少了什麼</td><td>若早知道，應補的資料或產物</td></tr><tr><td>反映哪種能力</td><td>先標「候選能力」，不要急著定案</td></tr></tbody></table><h2 id="第二輪：讓不同會議互相驗證" data-navigation-anchor=""><a href="#第二輪：讓不同會議互相驗證" class="headerlink" title="第二輪：讓不同會議互相驗證"></a>第二輪：讓不同會議互相驗證</h2><p id="nav-fbea4b2bc12279b6" data-navigation-anchor="">兩場分開拆完，才把它們放在一起比較。這時不要只問「哪場比較嚴格」，而是分成三類：</p><ul><li id="nav-9b7ec9b2ccd4aee5" data-navigation-anchor=""><strong>兩場都出現</strong>：有機會形成暫定通則。</li><li id="nav-9240cbaa890caaa6" data-navigation-anchor=""><strong>只在一場出現，但可能跨情境成立</strong>：先標候選規則。</li><li id="nav-acf97dcb53dc90eb" data-navigation-anchor=""><strong>只屬於特定專案或特定產物</strong>：保留案例，不過度泛化。</li></ul><p id="nav-a7244bd616f190a3" data-navigation-anchor="">每一條可能規則都要附上不同案例的證據、適用範圍與不適用的情況。這一步是為了避免把「這次要求三個方案」誤認成任何情況都必須準備三個方案，也避免把單一功能的流量問題升級成所有功能的刪除規則。</p><h2 id="第三輪：重建資深者的判斷順序" data-navigation-anchor=""><a href="#第三輪：重建資深者的判斷順序" class="headerlink" title="第三輪：重建資深者的判斷順序"></a>第三輪：重建資深者的判斷順序</h2><p id="nav-9f3391ebc3dd9367" data-navigation-anchor="">規則數量不是最重要的結果。更值得問的是：一個有經驗的人拿到新議題時，腦中可能按什麼順序檢查？</p><p id="nav-ade347dfd6b0d871" data-navigation-anchor="">可以沿著下面的結構重建：</p><ol><li id="nav-de3ec97d29d41385" data-navigation-anchor="">這件事要解決誰的什麼問題？</li><li id="nav-10d02f41332fce83" data-navigation-anchor="">資料與條件從哪裡來，由誰維護？</li><li id="nav-ddecfb0b932a3a42" data-navigation-anchor="">這是誰能決定的事情？</li><li id="nav-16865ee61c8985f0" data-navigation-anchor="">在進入設計或開發前，還少哪些前置工作？</li><li id="nav-5bfbbfad38885df5" data-navigation-anchor="">如果主要路徑失敗，怎麼處理？會影響誰？</li><li id="nav-571fb4cf28823b30" data-navigation-anchor="">這次討論需要拿出哪個具體產物，才能往下一步走？</li></ol><p id="nav-652fcb6616061136" data-navigation-anchor="">每個推論都要標示證據強度。逐字稿確實說過的，是觀察；從多個片段歸納出的，是推論；目前沒有足夠資料的，則保留成假說。</p><h2 id="第四輪：轉成外掛導師，而不是再做一份摘要" data-navigation-anchor=""><a href="#第四輪：轉成外掛導師，而不是再做一份摘要" class="headerlink" title="第四輪：轉成外掛導師，而不是再做一份摘要"></a>第四輪：轉成外掛導師，而不是再做一份摘要</h2><p id="nav-8ff8466ef2075eb9" data-navigation-anchor="">最後再把判斷模型改寫成會前問題。每題都要能改變我的準備方式，而不是只問「需求確認了嗎」這種太大的句子。</p><p id="nav-38e0bedd7bb8ae6a" data-navigation-anchor="">一個可用的問題應該同時包含：</p><ul><li id="nav-39c8ea97909ec374" data-navigation-anchor="">我要問自己的具體問題。</li><li id="nav-eaa7d491ca39bf09" data-navigation-anchor="">資深者為什麼在意。</li><li id="nav-f6af956a22af02c1" data-navigation-anchor="">什麼證據或產物才算回答到。</li><li id="nav-b171abd9884895a8" data-navigation-anchor="">如果現在答不出來，要找誰、標成待確認，或暫停哪一步。</li><li id="nav-d7289281c188b2f9" data-navigation-anchor="">這個問題來自哪個案例，以及它是不是只適用某個情境。</li></ul><p id="nav-74b4f8e36d8f1810" data-navigation-anchor="">這樣逐字稿才不會只停在一段對話。它會逐步變成一個「在工作開始前，先替我指出盲點」的檢查工具。</p><h2 id="需要一直保留的限制" data-navigation-anchor=""><a href="#需要一直保留的限制" class="headerlink" title="需要一直保留的限制"></a>需要一直保留的限制</h2><p id="nav-b531a6da1a9de7a6" data-navigation-anchor="">兩場會議不足以建立一套永遠正確的規則。每增加一場新資料，都要再問：它驗證了舊規則、修改了舊規則、提出新候選規則，還是只是一次性的特殊情況？</p><p id="nav-518d175da8397c96" data-navigation-anchor="">如果證據不足，就留下「目前不知道」，不要為了讓模型完整而硬湊答案。能指出未知的邊界，才是這份判斷模型真正開始可靠的地方。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-16812287c575734e" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第二篇文章，整理逐字稿的四輪轉化方法。</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
-    
-    
-    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
-    
-    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
     
   </entry>
   
@@ -322,7 +320,7 @@
   </entry>
   
   <entry>
-    <title>工作知識｜從實際抽象功能系列 04｜現在才發現隱性規則，還要不要補審</title>
+    <title>專案做到一半才發現隱性規則，該怎麼補審？</title>
     <link href="https://progress01.github.io/work/risk-based-review/"/>
     <id>https://progress01.github.io/work/risk-based-review/</id>
     <published>2026-09-17T04:00:00.000Z</published>
@@ -345,25 +343,25 @@
   </entry>
   
   <entry>
-    <title>沖繩旅行的縫合線｜系列規劃</title>
-    <link href="https://progress01.github.io/learning/okinawa-trip-reflection-series/"/>
-    <id>https://progress01.github.io/learning/okinawa-trip-reflection-series/</id>
+    <title>工作知識｜從實際抽象功能系列 02｜把會議逐字稿變成判斷模型</title>
+    <link href="https://progress01.github.io/work/meeting-transcripts-to-judgment-model/"/>
+    <id>https://progress01.github.io/work/meeting-transcripts-to-judgment-model/</id>
     <published>2026-09-17T04:00:00.000Z</published>
-    <updated>2026-09-20T01:27:52.000Z</updated>
+    <updated>2026-09-17T07:13:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p id="nav-0353f04a8152b2de" data-navigation-anchor="">這一頁是沖繩系列的工作頁：整理旅行後的問題、查證方向，以及還沒寫完的路線。</p><span id="more"></span><h2 id="這個系列先不急著下結論" data-navigation-anchor=""><a href="#這個系列先不急著下結論" class="headerlink" title="這個系列先不急著下結論"></a>這個系列先不急著下結論</h2><p id="nav-3bc43adb11b5cc20" data-navigation-anchor="">我不會把沖繩整理成「從戰爭走向療癒」的故事。這樣說得太快，也容易讓旅人的理解蓋過在地人的生活。</p><p id="nav-7ebd52cfddd0c3f8" data-navigation-anchor="">我會把旅行時看見的景色、當下冒出的問題，和後來查到的歷史分開，再看它們在哪些地方碰在一起。縫合線不是把裂痕藏起來，而是承認不同時代本來就同時留在這座島上。</p><h2 id="接下來想沿著幾條線整理" data-navigation-anchor=""><a href="#接下來想沿著幾條線整理" class="headerlink" title="接下來想沿著幾條線整理"></a>接下來想沿著幾條線整理</h2><h3 id="1-從前田高地開始：現場怎麼改變歷史的讀法" data-navigation-anchor=""><a href="#1-從前田高地開始：現場怎麼改變歷史的讀法" class="headerlink" title="1. 從前田高地開始：現場怎麼改變歷史的讀法"></a>1. 從前田高地開始：現場怎麼改變歷史的讀法</h3><p id="nav-2929ca17420c579c" data-navigation-anchor="">遊覽車上聽到前田高地的歷史，是這趟旅行開始改變的地方。到了高地，我開始用「如果事情走向不同」的方式想像歷史，也感覺到年份和戰況不只是平面的資料。</p><p id="nav-a648ff30d4317da7" data-navigation-anchor="">先從現場地形、我實際看見的東西，以及資料能確認的戰役背景開始。IF 只作為思考工具，不把推演寫成另一種歷史，也不替任何轉折找唯一原因。</p><h3 id="2-從士兵之外看沖繩戰役：平民、家與被迫移動" data-navigation-anchor=""><a href="#2-從士兵之外看沖繩戰役：平民、家與被迫移動" class="headerlink" title="2. 從士兵之外看沖繩戰役：平民、家與被迫移動"></a>2. 從士兵之外看沖繩戰役：平民、家與被迫移動</h3><p id="nav-4fa866751ad6223d" data-navigation-anchor="">我在對話裡一路追問平民發生了什麼，但那些沉重描述不能直接當成史料。真的要寫時，我會回到可靠的地方史料、倖存者證言和研究，把已知事實和我的想像分開。</p><p id="nav-064361cacfc7ee13" data-navigation-anchor="">這條線不追求把苦難寫得更慘，而是要把問題問完整：當一個地方成為戰場，原本住在那裡的人去了哪裡？戰爭結束後，他們能不能回到原本的家？</p><h3 id="3-戰後怎麼留在今天的土地上" data-navigation-anchor=""><a href="#3-戰後怎麼留在今天的土地上" class="headerlink" title="3. 戰後怎麼留在今天的土地上"></a>3. 戰後怎麼留在今天的土地上</h3><p id="nav-97ec556fed3cbd5c" data-navigation-anchor="">高地走向海岸時，我開始注意到基地、道路、住宅、商場和海岸其實連在一起。它們可能都和戰後的土地使用、治理與重建有關，但這些連結要靠資料確認。</p><p id="nav-540367a9c504ff72" data-navigation-anchor="">這條線會把「戰爭結束了」和「戰爭留下的東西消失了」分開。也許直接的戰鬥已經過去，土地、制度、記憶與生活選擇卻還會繼續影響現在。</p><h3 id="4-觀光、海生館與美國村：日常不是歷史的反面" data-navigation-anchor=""><a href="#4-觀光、海生館與美國村：日常不是歷史的反面" class="headerlink" title="4. 觀光、海生館與美國村：日常不是歷史的反面"></a>4. 觀光、海生館與美國村：日常不是歷史的反面</h3><p id="nav-216eae61be395203" data-navigation-anchor="">美國村最明顯地讓我感覺到反差：明亮、商店、音樂、拍照和休息，都和剛剛讀到的沉重歷史放在同一趟行程裡。</p><p id="nav-41af3d54b8a391cb" data-navigation-anchor="">我會觀察人在歷史之後怎麼繼續買東西、工作、散步、接待旅客。這些日常不用再被抬高成某種象徵，它們就是現在的生活。</p><h3 id="5-旅行最後要帶走什麼" data-navigation-anchor=""><a href="#5-旅行最後要帶走什麼" class="headerlink" title="5. 旅行最後要帶走什麼"></a>5. 旅行最後要帶走什麼</h3><p id="nav-15b2334144d8b0d3" data-navigation-anchor="">金門風獅爺和沖繩 Shisa 的聯想，會先留在這一條線裡。它們讓我想起不同地方如何面對風、家和不安，但兩者的歷史與信仰背景仍要另外查證，不能只因為外形相似就下結論。</p><p id="nav-53811f1627aac5ac" data-navigation-anchor="">這條線最後不一定要收成一個紀念品或漂亮的句子。我現在只知道，這個問題會跟著我回到日常：知道那些事情之後，我要怎麼生活？</p><h2 id="兩篇文章目前怎麼分工" data-navigation-anchor=""><a href="#兩篇文章目前怎麼分工" class="headerlink" title="兩篇文章目前怎麼分工"></a>兩篇文章目前怎麼分工</h2><p id="nav-94abd56d1ce4422f" data-navigation-anchor="">這次先保留兩篇，各自有不同用途：</p><ol><li id="nav-485396a1f6a24cf6" data-navigation-anchor=""><strong>〈沖繩旅行的兩個時空｜歷史與日常的反差〉</strong>：寫這次旅行中情緒真正發生變化的地方，讓高地、海岸、美國村和沒有答案的問題先獨立成立。</li><li id="nav-9cc9f78456adb720" data-navigation-anchor=""><strong>〈沖繩旅行的縫合線｜系列規劃〉</strong>：保留後續要查什麼、哪些地方不能直接推論，以及未來文章可以沿著哪些問題展開。</li></ol><p id="nav-52d816fb6e8176e2" data-navigation-anchor="">等某條線查到足夠資料，再從規劃頁獨立成文；現階段先不固定篇數。</p><h2 id="寫作界線" data-navigation-anchor=""><a href="#寫作界線" class="headerlink" title="寫作界線"></a>寫作界線</h2><ul><li id="nav-1da24a84d48d26c8" data-navigation-anchor="">對話紀錄是我思考的起點，不是可以直接引用的歷史來源。</li><li id="nav-95e30761bd1a4ec5" data-navigation-anchor="">「我在現場感覺到」和「沖繩就是如此」要分開寫。</li><li id="nav-773fc07f07ab4b28" data-navigation-anchor="">歷史資料、傷亡數字、人物事蹟與戰後政策要有可追溯來源。</li><li id="nav-e5b0afbc397aae44" data-navigation-anchor="">IF 可以保留，但必須明確說它是反事實推演，不把可能性寫成歷史結果。</li><li id="nav-d779ab7f8fcaa459" data-navigation-anchor="">不替沖繩宣告已經痊癒，也不替在地人解釋沉默、忙碌或明亮的日常代表什麼。</li><li id="nav-9b1dd8fc7ec7aa8e" data-navigation-anchor="">每篇都可以留下一個沒有解決的問題，不必為了完整而補上一個答案。</li></ul><h2 id="目前狀態" data-navigation-anchor=""><a href="#目前狀態" class="headerlink" title="目前狀態"></a>目前狀態</h2><ul><li id="nav-ee4bf3971d32fe39" data-navigation-anchor="">系列規劃：已重新整理，持續公開修正。</li><li id="nav-5b7163ad4884f80a" data-navigation-anchor="">旅行文章：已另立為〈沖繩旅行的兩個時空｜歷史與日常的反差〉。</li><li id="nav-a7b9c9c991008c49" data-navigation-anchor="">歷史背景：先列出查證方向，不把附件中的說法直接當成史實。</li><li id="nav-ca6f2fa7eb1b4773" data-navigation-anchor="">下一步：先回頭核對前田高地、平民經驗與戰後土地使用的資料，再決定哪一條線值得獨立成篇。</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;這一頁是沖繩系列的工作頁：整理旅行後的問題、查證方向，以及還沒寫完的路線。&lt;/p&gt;</summary>
+    <content type="html"><![CDATA[<p id="nav-d02708f13490612a" data-navigation-anchor="">對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。</p><span id="more"></span><p id="nav-155b517e5f7e6500" data-navigation-anchor="">如果直接問「請分析這兩場會議」，很可能只得到「大家充分討論了需求與時程」。這種摘要沒有錯，卻沒有告訴我資深者究竟多做了哪一步判斷。</p><p id="nav-3661f100dee9fea4" data-navigation-anchor="">我想保留的是一條可重複的學習路徑：</p><blockquote><p id="nav-9597a2ce543eee61" data-navigation-anchor=""><strong>逐字稿 → 找到被校正的地方 → 比較不同案例 → 推測判斷順序 → 轉成會前自問。</strong></p></blockquote><h2 id="第一輪：分開找出被校正的地方" data-navigation-anchor=""><a href="#第一輪：分開找出被校正的地方" class="headerlink" title="第一輪：分開找出被校正的地方"></a>第一輪：分開找出被校正的地方</h2><p id="nav-760698d7a961453e" data-navigation-anchor="">每場會議先分開分析，不急著找通則，也不先套用既有分類。要找的不是「談了哪些主題」，而是：</p><ul><li id="nav-3cde1de41cbdd8d8" data-navigation-anchor="">主管主動追問了什麼？</li><li id="nav-02e0f6b08313f504" data-navigation-anchor="">哪些地方被打斷、修正或重新定義？</li><li id="nav-ec4257580c098ce2" data-navigation-anchor="">原本的回答為什麼沒有回答到真正關心的問題？</li><li id="nav-c0960389540c2158" data-navigation-anchor="">哪些地方被要求補資料、確認、清單、時程或具體產物？</li><li id="nav-027b74af37da1e88" data-navigation-anchor="">哪些話透露了決策權、資料責任或工作邊界？</li></ul><p id="nav-3400ac6a64b01e67" data-navigation-anchor="">每個案例先用這六格記錄：</p><table><thead><tr><th>問題</th><th>要留下的內容</th></tr></thead><tbody><tr><td>正在談什麼</td><td>具體議題，不先抽象化</td></tr><tr><td>原本怎麼準備</td><td>執行者當時採取的理解與工作方式</td></tr><tr><td>主管怎麼追問</td><td>原話或可核對的重點</td></tr><tr><td>真正關心什麼</td><td>效益、權責、資料、相依性、風險或驗收</td></tr><tr><td>事前少了什麼</td><td>若早知道，應補的資料或產物</td></tr><tr><td>反映哪種能力</td><td>先標「候選能力」，不要急著定案</td></tr></tbody></table><h2 id="第二輪：讓不同會議互相驗證" data-navigation-anchor=""><a href="#第二輪：讓不同會議互相驗證" class="headerlink" title="第二輪：讓不同會議互相驗證"></a>第二輪：讓不同會議互相驗證</h2><p id="nav-fbea4b2bc12279b6" data-navigation-anchor="">兩場分開拆完，才把它們放在一起比較。這時不要只問「哪場比較嚴格」，而是分成三類：</p><ul><li id="nav-9b7ec9b2ccd4aee5" data-navigation-anchor=""><strong>兩場都出現</strong>：有機會形成暫定通則。</li><li id="nav-9240cbaa890caaa6" data-navigation-anchor=""><strong>只在一場出現，但可能跨情境成立</strong>：先標候選規則。</li><li id="nav-acf97dcb53dc90eb" data-navigation-anchor=""><strong>只屬於特定專案或特定產物</strong>：保留案例，不過度泛化。</li></ul><p id="nav-a7244bd616f190a3" data-navigation-anchor="">每一條可能規則都要附上不同案例的證據、適用範圍與不適用的情況。這一步是為了避免把「這次要求三個方案」誤認成任何情況都必須準備三個方案，也避免把單一功能的流量問題升級成所有功能的刪除規則。</p><h2 id="第三輪：重建資深者的判斷順序" data-navigation-anchor=""><a href="#第三輪：重建資深者的判斷順序" class="headerlink" title="第三輪：重建資深者的判斷順序"></a>第三輪：重建資深者的判斷順序</h2><p id="nav-9f3391ebc3dd9367" data-navigation-anchor="">規則數量不是最重要的結果。更值得問的是：一個有經驗的人拿到新議題時，腦中可能按什麼順序檢查？</p><p id="nav-ade347dfd6b0d871" data-navigation-anchor="">可以沿著下面的結構重建：</p><ol><li id="nav-de3ec97d29d41385" data-navigation-anchor="">這件事要解決誰的什麼問題？</li><li id="nav-10d02f41332fce83" data-navigation-anchor="">資料與條件從哪裡來，由誰維護？</li><li id="nav-ddecfb0b932a3a42" data-navigation-anchor="">這是誰能決定的事情？</li><li id="nav-16865ee61c8985f0" data-navigation-anchor="">在進入設計或開發前，還少哪些前置工作？</li><li id="nav-5bfbbfad38885df5" data-navigation-anchor="">如果主要路徑失敗，怎麼處理？會影響誰？</li><li id="nav-571fb4cf28823b30" data-navigation-anchor="">這次討論需要拿出哪個具體產物，才能往下一步走？</li></ol><p id="nav-652fcb6616061136" data-navigation-anchor="">每個推論都要標示證據強度。逐字稿確實說過的，是觀察；從多個片段歸納出的，是推論；目前沒有足夠資料的，則保留成假說。</p><h2 id="第四輪：轉成外掛導師，而不是再做一份摘要" data-navigation-anchor=""><a href="#第四輪：轉成外掛導師，而不是再做一份摘要" class="headerlink" title="第四輪：轉成外掛導師，而不是再做一份摘要"></a>第四輪：轉成外掛導師，而不是再做一份摘要</h2><p id="nav-8ff8466ef2075eb9" data-navigation-anchor="">最後再把判斷模型改寫成會前問題。每題都要能改變我的準備方式，而不是只問「需求確認了嗎」這種太大的句子。</p><p id="nav-38e0bedd7bb8ae6a" data-navigation-anchor="">一個可用的問題應該同時包含：</p><ul><li id="nav-39c8ea97909ec374" data-navigation-anchor="">我要問自己的具體問題。</li><li id="nav-eaa7d491ca39bf09" data-navigation-anchor="">資深者為什麼在意。</li><li id="nav-f6af956a22af02c1" data-navigation-anchor="">什麼證據或產物才算回答到。</li><li id="nav-b171abd9884895a8" data-navigation-anchor="">如果現在答不出來，要找誰、標成待確認，或暫停哪一步。</li><li id="nav-d7289281c188b2f9" data-navigation-anchor="">這個問題來自哪個案例，以及它是不是只適用某個情境。</li></ul><p id="nav-74b4f8e36d8f1810" data-navigation-anchor="">這樣逐字稿才不會只停在一段對話。它會逐步變成一個「在工作開始前，先替我指出盲點」的檢查工具。</p><h2 id="需要一直保留的限制" data-navigation-anchor=""><a href="#需要一直保留的限制" class="headerlink" title="需要一直保留的限制"></a>需要一直保留的限制</h2><p id="nav-b531a6da1a9de7a6" data-navigation-anchor="">兩場會議不足以建立一套永遠正確的規則。每增加一場新資料，都要再問：它驗證了舊規則、修改了舊規則、提出新候選規則，還是只是一次性的特殊情況？</p><p id="nav-518d175da8397c96" data-navigation-anchor="">如果證據不足，就留下「目前不知道」，不要為了讓模型完整而硬湊答案。能指出未知的邊界，才是這份判斷模型真正開始可靠的地方。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-16812287c575734e" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第二篇文章，整理逐字稿的四輪轉化方法。</li></ul>]]></content>
     
     
+    <summary type="html">&lt;p&gt;對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。&lt;/p&gt;</summary>
     
-    <category term="生活紀錄" scheme="https://progress01.github.io/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/"/>
     
     
-    <category term="生活回顧" scheme="https://progress01.github.io/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
+    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
     
-    <category term="旅行" scheme="https://progress01.github.io/tags/%E6%97%85%E8%A1%8C/"/>
+    
+    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
     
   </entry>
   
@@ -403,6 +401,29 @@
     <category term="歌曲推薦" scheme="https://progress01.github.io/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
     
     <category term="英語" scheme="https://progress01.github.io/tags/%E8%8B%B1%E8%AA%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>沖繩旅行的縫合線｜系列規劃</title>
+    <link href="https://progress01.github.io/learning/okinawa-trip-reflection-series/"/>
+    <id>https://progress01.github.io/learning/okinawa-trip-reflection-series/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-20T01:27:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-0353f04a8152b2de" data-navigation-anchor="">這一頁是沖繩系列的工作頁：整理旅行後的問題、查證方向，以及還沒寫完的路線。</p><span id="more"></span><h2 id="這個系列先不急著下結論" data-navigation-anchor=""><a href="#這個系列先不急著下結論" class="headerlink" title="這個系列先不急著下結論"></a>這個系列先不急著下結論</h2><p id="nav-3bc43adb11b5cc20" data-navigation-anchor="">我不會把沖繩整理成「從戰爭走向療癒」的故事。這樣說得太快，也容易讓旅人的理解蓋過在地人的生活。</p><p id="nav-7ebd52cfddd0c3f8" data-navigation-anchor="">我會把旅行時看見的景色、當下冒出的問題，和後來查到的歷史分開，再看它們在哪些地方碰在一起。縫合線不是把裂痕藏起來，而是承認不同時代本來就同時留在這座島上。</p><h2 id="接下來想沿著幾條線整理" data-navigation-anchor=""><a href="#接下來想沿著幾條線整理" class="headerlink" title="接下來想沿著幾條線整理"></a>接下來想沿著幾條線整理</h2><h3 id="1-從前田高地開始：現場怎麼改變歷史的讀法" data-navigation-anchor=""><a href="#1-從前田高地開始：現場怎麼改變歷史的讀法" class="headerlink" title="1. 從前田高地開始：現場怎麼改變歷史的讀法"></a>1. 從前田高地開始：現場怎麼改變歷史的讀法</h3><p id="nav-2929ca17420c579c" data-navigation-anchor="">遊覽車上聽到前田高地的歷史，是這趟旅行開始改變的地方。到了高地，我開始用「如果事情走向不同」的方式想像歷史，也感覺到年份和戰況不只是平面的資料。</p><p id="nav-a648ff30d4317da7" data-navigation-anchor="">先從現場地形、我實際看見的東西，以及資料能確認的戰役背景開始。IF 只作為思考工具，不把推演寫成另一種歷史，也不替任何轉折找唯一原因。</p><h3 id="2-從士兵之外看沖繩戰役：平民、家與被迫移動" data-navigation-anchor=""><a href="#2-從士兵之外看沖繩戰役：平民、家與被迫移動" class="headerlink" title="2. 從士兵之外看沖繩戰役：平民、家與被迫移動"></a>2. 從士兵之外看沖繩戰役：平民、家與被迫移動</h3><p id="nav-4fa866751ad6223d" data-navigation-anchor="">我在對話裡一路追問平民發生了什麼，但那些沉重描述不能直接當成史料。真的要寫時，我會回到可靠的地方史料、倖存者證言和研究，把已知事實和我的想像分開。</p><p id="nav-064361cacfc7ee13" data-navigation-anchor="">這條線不追求把苦難寫得更慘，而是要把問題問完整：當一個地方成為戰場，原本住在那裡的人去了哪裡？戰爭結束後，他們能不能回到原本的家？</p><h3 id="3-戰後怎麼留在今天的土地上" data-navigation-anchor=""><a href="#3-戰後怎麼留在今天的土地上" class="headerlink" title="3. 戰後怎麼留在今天的土地上"></a>3. 戰後怎麼留在今天的土地上</h3><p id="nav-97ec556fed3cbd5c" data-navigation-anchor="">高地走向海岸時，我開始注意到基地、道路、住宅、商場和海岸其實連在一起。它們可能都和戰後的土地使用、治理與重建有關，但這些連結要靠資料確認。</p><p id="nav-540367a9c504ff72" data-navigation-anchor="">這條線會把「戰爭結束了」和「戰爭留下的東西消失了」分開。也許直接的戰鬥已經過去，土地、制度、記憶與生活選擇卻還會繼續影響現在。</p><h3 id="4-觀光、海生館與美國村：日常不是歷史的反面" data-navigation-anchor=""><a href="#4-觀光、海生館與美國村：日常不是歷史的反面" class="headerlink" title="4. 觀光、海生館與美國村：日常不是歷史的反面"></a>4. 觀光、海生館與美國村：日常不是歷史的反面</h3><p id="nav-216eae61be395203" data-navigation-anchor="">美國村最明顯地讓我感覺到反差：明亮、商店、音樂、拍照和休息，都和剛剛讀到的沉重歷史放在同一趟行程裡。</p><p id="nav-41af3d54b8a391cb" data-navigation-anchor="">我會觀察人在歷史之後怎麼繼續買東西、工作、散步、接待旅客。這些日常不用再被抬高成某種象徵，它們就是現在的生活。</p><h3 id="5-旅行最後要帶走什麼" data-navigation-anchor=""><a href="#5-旅行最後要帶走什麼" class="headerlink" title="5. 旅行最後要帶走什麼"></a>5. 旅行最後要帶走什麼</h3><p id="nav-15b2334144d8b0d3" data-navigation-anchor="">金門風獅爺和沖繩 Shisa 的聯想，會先留在這一條線裡。它們讓我想起不同地方如何面對風、家和不安，但兩者的歷史與信仰背景仍要另外查證，不能只因為外形相似就下結論。</p><p id="nav-53811f1627aac5ac" data-navigation-anchor="">這條線最後不一定要收成一個紀念品或漂亮的句子。我現在只知道，這個問題會跟著我回到日常：知道那些事情之後，我要怎麼生活？</p><h2 id="兩篇文章目前怎麼分工" data-navigation-anchor=""><a href="#兩篇文章目前怎麼分工" class="headerlink" title="兩篇文章目前怎麼分工"></a>兩篇文章目前怎麼分工</h2><p id="nav-94abd56d1ce4422f" data-navigation-anchor="">這次先保留兩篇，各自有不同用途：</p><ol><li id="nav-485396a1f6a24cf6" data-navigation-anchor=""><strong>〈沖繩旅行的兩個時空｜歷史與日常的反差〉</strong>：寫這次旅行中情緒真正發生變化的地方，讓高地、海岸、美國村和沒有答案的問題先獨立成立。</li><li id="nav-9cc9f78456adb720" data-navigation-anchor=""><strong>〈沖繩旅行的縫合線｜系列規劃〉</strong>：保留後續要查什麼、哪些地方不能直接推論，以及未來文章可以沿著哪些問題展開。</li></ol><p id="nav-52d816fb6e8176e2" data-navigation-anchor="">等某條線查到足夠資料，再從規劃頁獨立成文；現階段先不固定篇數。</p><h2 id="寫作界線" data-navigation-anchor=""><a href="#寫作界線" class="headerlink" title="寫作界線"></a>寫作界線</h2><ul><li id="nav-1da24a84d48d26c8" data-navigation-anchor="">對話紀錄是我思考的起點，不是可以直接引用的歷史來源。</li><li id="nav-95e30761bd1a4ec5" data-navigation-anchor="">「我在現場感覺到」和「沖繩就是如此」要分開寫。</li><li id="nav-773fc07f07ab4b28" data-navigation-anchor="">歷史資料、傷亡數字、人物事蹟與戰後政策要有可追溯來源。</li><li id="nav-e5b0afbc397aae44" data-navigation-anchor="">IF 可以保留，但必須明確說它是反事實推演，不把可能性寫成歷史結果。</li><li id="nav-d779ab7f8fcaa459" data-navigation-anchor="">不替沖繩宣告已經痊癒，也不替在地人解釋沉默、忙碌或明亮的日常代表什麼。</li><li id="nav-9b1dd8fc7ec7aa8e" data-navigation-anchor="">每篇都可以留下一個沒有解決的問題，不必為了完整而補上一個答案。</li></ul><h2 id="目前狀態" data-navigation-anchor=""><a href="#目前狀態" class="headerlink" title="目前狀態"></a>目前狀態</h2><ul><li id="nav-ee4bf3971d32fe39" data-navigation-anchor="">系列規劃：已重新整理，持續公開修正。</li><li id="nav-5b7163ad4884f80a" data-navigation-anchor="">旅行文章：已另立為〈沖繩旅行的兩個時空｜歷史與日常的反差〉。</li><li id="nav-a7b9c9c991008c49" data-navigation-anchor="">歷史背景：先列出查證方向，不把附件中的說法直接當成史實。</li><li id="nav-ca6f2fa7eb1b4773" data-navigation-anchor="">下一步：先回頭核對前田高地、平民經驗與戰後土地使用的資料，再決定哪一條線值得獨立成篇。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;這一頁是沖繩系列的工作頁：整理旅行後的問題、查證方向，以及還沒寫完的路線。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活紀錄" scheme="https://progress01.github.io/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="生活回顧" scheme="https://progress01.github.io/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
+    
+    <category term="旅行" scheme="https://progress01.github.io/tags/%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
@@ -560,45 +581,6 @@
     
     
     <category term="生活回顧" scheme="https://progress01.github.io/tags/%E7%94%9F%E6%B4%BB%E5%9B%9E%E9%A1%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌曲推薦-好心分手</title>
-    <link href="https://progress01.github.io/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/"/>
-    <id>https://progress01.github.io/2026/09/11/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-%E5%A5%BD%E5%BF%83%E5%88%86%E6%89%8B/</id>
-    <published>2026-09-11T04:00:00.000Z</published>
-    <updated>2026-09-11T04:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-e1b8187d99a7baab" data-navigation-anchor="">      推薦 盧巧音 和 王力宏 的 好心分手      <br>      出自專輯 不能不愛…盧巧音精選      <br>      <a href="https://open.spotify.com/track/7DQOE8yIchm7bPPvJ0w6Bf?si=6b2958a3bc974e7d" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_好心分手.webp" alt="盧巧音 和 王力宏 - 好心分手 - 不能不愛…盧巧音精選" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05    <br>其實這首歌有兩個版本，個人獨唱版也非常好，但這個加入了王力宏的對唱版本，卻讓整首歌間變得立體。獨唱版像是一個人清醒後的單向通牒，合唱版卻把告別拉回了對峙的現場。王力宏的國語段落一進來，立刻帶來了一種極具穿透力、帶著不解與委屈的反駁，他標誌性乾淨且極具敘事感的聲音，把男方的慌亂與挽回表現得極其鮮明；而正是有了這層反抗，盧巧音在情感表達上的強度才被襯托得更加凌厲。她以沙啞又決絕的粵語咬字，一字一句斬斷虛耗的關係，冷靜中全是痛過之後的堅決。一軟一硬、一退一進的語言與情緒拉扯，讓整首歌不再只是單純的分手宣洩，很具張力。<p id="nav-d2fb606b3f3f7aa9" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
-    
-    
-    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
-  
-  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
-    &lt;p style=&quot;margin-top: 0;&quot;&gt;
-      推薦 盧巧音 和 王力宏 的 好心分手
-      &lt;br&gt;
-      出自專輯 不能不愛…盧巧音精選
-      &lt;br&gt;
-      &lt;a href=&quot;https://open.spotify.com/track/7DQOE8yIchm7bPPvJ0w6Bf?si=6b2958a3bc974e7d&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
-    &lt;img src=&quot;/images/song_好心分手.webp&quot; alt=&quot;盧巧音 和 王力宏 - 好心分手 - 不能不愛…盧巧音精選&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
-  &lt;/div&gt;
-
-&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="音樂" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82/"/>
-    
-    
-    <category term="歌曲推薦" scheme="https://progress01.github.io/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
-    
-    <category term="粵語" scheme="https://progress01.github.io/tags/%E7%B2%B5%E8%AA%9E/"/>
     
   </entry>
   

@@ -20,7 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const emptyMessageTemplate = CONFIG.i18n.empty || '找不到與「${query}」相關的文章或紀錄';
   const recentMarkup = container.innerHTML;
   const filterElements = [...popup.querySelectorAll('[data-navigation-filter]')];
-  const filters = { source: 'all', category: 'all', month: 'all' };
+  const currentPageSurface = () => NavigationSearch.defaultSurface(
+    window.location?.pathname || '/',
+    Boolean(document.querySelector('.post-surface-marker, article.post-content-single[itemtype*="BlogPosting"]'))
+  );
+  let defaultSurface = currentPageSurface();
+  const filters = NavigationSearch.resetFilters(defaultSurface);
+  const initialSurfaceFilter = filterElements.find(element => element.dataset.navigationFilter === 'surface');
+  if (initialSurfaceFilter) initialSurfaceFilter.value = defaultSurface;
   let records = [];
   let selectedCategory = 'all';
   let searchState = 'idle';
@@ -37,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '"': '&quot;',
     "'": '&#39;'
   })[character]);
-  const renderEmptyState = (icon, message) => `<div class="search-empty-state"><i class="${icon} fa-3x"></i><p>${message}</p></div>`;
+  const renderEmptyState = (icon, message) => `<div class="search-empty-state" role="status" aria-live="polite" aria-atomic="true"><i class="${icon} fa-3x" aria-hidden="true"></i><p>${message}</p></div>`;
   const renderLoadingState = () => {
-    container.innerHTML = '<div class="search-empty-state"><i class="fa fa-spinner fa-spin fa-3x"></i><p>正在載入搜尋索引……</p></div>';
+    container.innerHTML = '<div class="search-empty-state" role="status" aria-live="polite" aria-atomic="true"><i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i><p>正在載入搜尋索引……</p></div>';
   };
   const renderFailureState = () => {
-    container.innerHTML = '<div class="search-empty-state"><i class="far fa-frown fa-3x"></i><p>搜尋索引暫時無法載入，請稍後重試。</p><button type="button" class="search-retry" data-search-retry>重新載入</button></div>';
+    container.innerHTML = '<div class="search-empty-state" role="status" aria-live="polite" aria-atomic="true"><i class="far fa-frown fa-3x" aria-hidden="true"></i><p>搜尋索引暫時無法載入。</p><button type="button" class="search-retry" data-search-retry>重試載入搜尋索引</button></div>';
   };
   const pageStateUrl = () => window.location.pathname + window.location.search + window.location.hash;
   const readViewState = () => {
@@ -56,6 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearViewState = () => {
     try { window.sessionStorage.removeItem(viewStateKey); } catch (error) { /* storage unavailable */ }
   };
+  const isRestorableViewState = saved => {
+    if (!restoreRequested || !saved || saved.isOpen !== true || !saved.filters ||
+        saved.filters.surface !== saved.surface) return false;
+    return NavigationSearch.canRestoreViewState(saved, pageStateUrl(), restoreRequested);
+  };
   const saveViewState = () => {
     const existing = readViewState();
     if (!document.body.classList.contains('search-active') && (!existing || existing.url !== pageStateUrl())) return;
@@ -64,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         url: pageStateUrl(),
         query: input.value,
         filters: { ...filters },
+        surface: filters.surface,
         selectedCategory,
         scrollY: window.scrollY,
         isOpen: document.body.classList.contains('search-active')
@@ -73,11 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   const restoreViewState = () => {
-    if (!restoreRequested || viewStateRestored || searchState !== 'loaded') return;
+    if (viewStateRestored || searchState !== 'loaded') return;
     const saved = readViewState();
-    if (!saved || saved.url !== pageStateUrl() || saved.isOpen !== true) return;
+    if (!isRestorableViewState(saved)) return;
     viewStateRestored = true;
     input.value = typeof saved.query === 'string' ? saved.query : '';
+    filters.surface = saved.surface;
     Object.keys(filters).forEach(key => {
       const value = saved.filters && typeof saved.filters[key] === 'string' ? saved.filters[key] : 'all';
       filters[key] = value;
@@ -104,15 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const recentItems = [...recent.querySelectorAll('[data-search-recent-item]')];
-    const matchingItems = selectedCategory === 'all'
-      ? recentItems.filter(item => Number(item.dataset.searchRecentRank) < 10)
-      : recentItems.filter(item => {
-        const categories = item.dataset.searchRecentCategories.split('|');
-        return categories.includes(selectedCategory);
-      }).slice(0, 10);
-    const visibleSet = new Set(matchingItems);
-    const visibleItems = recentItems.filter(item => {
-      const isVisible = visibleSet.has(item);
+    const recentCandidates = recentItems.map(item => ({
+      surfaces: (item.dataset.searchRecentSurfaces || '').split('|').filter(Boolean),
+      categories: (item.dataset.searchRecentCategories || '').split('|').filter(Boolean)
+    }));
+    const visibleSet = NavigationSearch.recentIndexes(recentCandidates, filters.surface, selectedCategory);
+    const visibleItems = recentItems.filter((item, index) => {
+      const isVisible = visibleSet.has(index);
       item.hidden = !isVisible;
       return isVisible;
     });
@@ -160,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => {
         localSearch.isfetched = false;
-        searchState = 'error';
+        searchState = 'failed';
         console.error(error);
         renderFailureState();
       });
@@ -171,11 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchState !== 'loaded') return;
     const searchText = input.value.trim();
     const resultItems = NavigationSearch.search(records, searchText, filters);
-    if (!searchText && Object.values(filters).every(value => value === 'all')) {
+    if (!searchText && Object.entries(filters).every(([key, value]) => key === 'surface' || value === 'all')) {
       renderRecent(selectedCategory);
     } else if (resultItems.length === 0) {
-      const message = searchText ? emptyMessageTemplate.replace('${query}', escapeHtml(searchText)) : '沒有符合目前篩選條件的紀錄';
-      container.innerHTML = renderEmptyState('far fa-frown', message);
+      const message = searchText
+        ? emptyMessageTemplate.replace('${query}', escapeHtml(searchText))
+        : '目前篩選條件沒有符合的紀錄，請調整或清除條件。';
+      container.innerHTML = `<div data-search-empty-kind="${searchText ? 'keyword' : 'filters'}">${renderEmptyState('far fa-frown', message)}</div>`;
     } else {
       const stats = `找到 ${resultItems.length} 筆紀錄`;
 
@@ -199,7 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
   popup.querySelector('[data-navigation-reset]')?.addEventListener('click', () => {
     input.value = '';
     selectedCategory = 'all';
-    filterElements.forEach(select => { select.value = 'all'; filters[select.dataset.navigationFilter] = 'all'; });
+    Object.assign(filters, NavigationSearch.resetFilters(defaultSurface));
+    filterElements.forEach(select => { select.value = filters[select.dataset.navigationFilter] || 'all'; });
     clearViewState();
     inputEventFunction();
     input.focus();
@@ -233,15 +248,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (document.body.classList.contains('search-active')) input.focus();
     }, 500);
     if (searchState !== 'loaded') fetchSearchData();
+    else inputEventFunction();
   };
 
   const navigationEntry = typeof performance !== 'undefined' && typeof performance.getEntriesByType === 'function'
     ? performance.getEntriesByType('navigation')[0]
     : null;
+  const requestViewStateRestore = () => {
+    const saved = readViewState();
+    if (!isRestorableViewState(saved)) return false;
+    if (searchState === 'idle' || searchState === 'failed') fetchSearchData();
+    else restoreViewState();
+    return true;
+  };
   restoreRequested = navigationEntry && (navigationEntry.type === 'back_forward' || navigationEntry.type === 'reload');
+  requestViewStateRestore();
   window.addEventListener('pageshow', event => {
     if (event.persisted) restoreRequested = true;
-    restoreViewState();
+    requestViewStateRestore();
   });
   window.addEventListener('pagehide', saveViewState);
 
@@ -276,8 +300,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   closeButton.addEventListener('click', onPopupClose);
   document.addEventListener('pjax:success', () => {
+    defaultSurface = currentPageSurface();
+    filters.surface = defaultSurface;
+    const surfaceFilter = filterElements.find(element => element.dataset.navigationFilter === 'surface');
+    if (surfaceFilter) surfaceFilter.value = defaultSurface;
     localSearch.highlightSearchWords(document.querySelector('.post-body'));
     onPopupClose();
+    inputEventFunction();
   });
   window.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {

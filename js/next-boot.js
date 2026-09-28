@@ -17,6 +17,26 @@ NexT.boot.registerEvents = function() {
     document.body.classList.toggle('site-nav-on');
   });
 
+  document.querySelectorAll('[role="button"][tabindex="0"]').forEach(button => {
+    button.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        button.click();
+      } else if (event.key === ' ') {
+        event.preventDefault();
+        if (!button.dataset.spacePressed) button.dataset.spacePressed = 'true';
+      }
+    });
+    button.addEventListener('keyup', event => {
+      if (event.key !== ' ') return;
+      if (button.dataset.spacePressed) {
+        delete button.dataset.spacePressed;
+        button.click();
+      }
+    });
+    button.addEventListener('blur', () => { delete button.dataset.spacePressed; });
+  });
+
   document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
     element.addEventListener('click', () => {
       NexT.utils.activateSidebarPanel(index);
