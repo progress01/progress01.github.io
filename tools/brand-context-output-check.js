@@ -9,7 +9,7 @@ const CASES = Object.freeze([
   { file: 'index.html', context: 'profile' },
   { file: 'profile/index.html', context: 'profile' },
   { file: 'profile/articles/index.html', context: 'profile' },
-  { file: 'work/from-solving-problems-to-choosing-what-matters/index.html', context: 'memory', surfaces: 'profile' },
+  { file: 'work/from-solving-problems-to-choosing-what-matters/index.html', context: 'memory', surfaces: 'profile memory' },
   { file: 'work/flow-friendly-work-system/index.html', context: 'memory', surfaces: 'profile memory' },
   { file: '2026/01/25/部落格改版規劃/index.html', context: 'memory', surfaces: 'memory' },
   { file: 'memory/index.html', context: 'memory' }

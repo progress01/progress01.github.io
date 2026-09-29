@@ -164,7 +164,7 @@ function validateArchiveCategoryCompat({ root, baselineRoot } = {}) {
   } catch { errors.push('profile_articles_output_unreadable'); }
 
   const fixedSamples = [
-    { route: '/work/from-real-work-to-features/', surfaces: ['profile'] },
+    { route: '/work/from-real-work-to-features/', surfaces: ['profile', 'memory'] },
     { route: '/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/', surfaces: ['memory'] },
     { route: '/work/flow-friendly-work-system/', surfaces: ['profile', 'memory'] },
     { route: '/2026/01/25/部落格改版規劃/', surfaces: ['memory'] }

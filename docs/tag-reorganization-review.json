@@ -2,7 +2,7 @@
   "version": 1,
   "generatedAt": "2026-09-28T14:44:20.703Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 275,
+  "publicArticleCount": 277,
   "uncertainCount": 5,
   "entries": [
     {
@@ -5897,6 +5897,51 @@
       "uncertain": false,
       "basis": "正文整理辨認未知的方式、checklist 限制與選擇問題的個人思考，屬可重用的方法整理。",
       "bodySha256": "d0cdcb12667d859869f1f68f783d8515f10b991206227125a626c00fc2744027"
-    }
-  ]
+    },
+    {
+      "path": "source/_posts/實驗室/工作知識-附件下載重複與模組邊界.md",
+      "title": "網站上稿為什麼會出現兩次附件下載？先分清內文與 CMS 模組",
+      "categories": [
+        "工作知識"
+      ],
+      "date": "2026-09-29",
+      "updated": null,
+      "permalink": "/work/duplicate-attachment-module/",
+      "oldTags": [
+        "問題排查",
+        "方法整理"
+      ],
+      "newTags": [
+        "問題排查",
+        "方法整理"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文整理附件區塊重複時，如何區分文章內文與 CMS 自動生成模組的排查順序。",
+      "bodySha256": "f6adf3375e6eb858491bd05ae6be10edffd31c08b345ac227315941a40e2db87"
+    },
+    {
+      "path": "source/_posts/歌曲推薦/歌曲推薦-勇氣.md",
+      "title": "歌曲推薦-勇氣",
+      "categories": [
+        "音樂"
+      ],
+      "date": "2026-09-24 12:00:00",
+      "updated": null,
+      "permalink": null,
+      "oldTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "newTags": [
+        "歌曲推薦",
+        "華語"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "正文是歌曲推薦與個人聆聽感受，包含收聽連結與推薦理由。",
+      "bodySha256": "a1d3dc6a661094fc87aaac3d8d637c1c321c31f26129dd5ebdd467e26919aa25",
+      "languageTag": "華語",
+      "languageBasis": "依正文中的歌手、曲名與歌曲說明判定為華語。"
+    }  ]
 }

@@ -1,30 +1,11 @@
 [
   {
     "date": "2026-09-29",
-    "tag": "🏃",
-    "content": "跑步第三天：明後天吃飯再看看。水泥地板比紅土回饋扎實，但有點奇怪。",
-    "surfaces": [
-      "memory"
-    ],
-    "id": "micro-09862eeeae4537a0"
-  },
-  {
-    "date": "2026-09-29",
-    "tag": "🖥️",
-    "content": "最近在整理 Whisper 顯存不夠時的處理順序：如果 14～16 GB VRAM 已經吃滿、又想保留 large-v3 等級的辨識效果，可以先從 int8_float16／int8 量化開始，再考慮 large-v3-turbo；如果一定要用原版權重，就用 Accelerate 的 device_map=\"auto\" 做 CPU offload。長音訊則先用 VAD 切成 30 秒內的片段，真的不想受本機顯卡限制，再改走 Groq 或 OpenAI API。我的順序會是：量化 → Turbo → VAD → CPU offload → API。",
-    "surfaces": [
-      "memory"
-    ],
-    "id": "micro-f3e0849cddf1733d"
-  },
-  {
-    "date": "2026-09-29",
     "tag": "🎧",
     "content": "這份也是 AI 幫我整理的 Zoo 風格韓國民謠清單：金光石〈風吹來的地方〉、旅行者〈星星墜落〉、李文世〈舊愛〉、柳在夏〈被遮蔽的路〉、朴學基〈芳香的回憶〉、春夏秋冬〈人們似乎都會變〉、Lucid Fall〈青花魚〉、屋頂月光〈今天也辛苦了〉。共同點大概是清脆木吉他、質樸合聲，還有把日常唱得淡淡的惆悵。先存起來，之後想聽清爽散步感，就從前面幾首開始；想聽深夜沉靜敘事，再慢慢往後挖。",
     "surfaces": [
       "memory"
-    ],
-    "id": "micro-fc34fdd902d723dd"
+    ]
   },
   {
     "date": "2026-09-29",
@@ -56,7 +37,7 @@
   {
     "date": "2026-09-29",
     "tag": "🎮",
-    "content": "我最近楓之谷想嘗試的新職業：隱月。<a href=\"https://www.instagram.com/p/DcBE__jE4uJ/?img_index=1\" target=\"_blank\" rel=\"noopener noreferrer\">看貼文攻略 ↗</a>",
+    "content": "我最近楓之谷想嘗試的新職業：<a href=\"https://www.instagram.com/p/DcBE__jE4uJ/?img_index=1\" target=\"_blank\" rel=\"noopener noreferrer\">隱月</a>。",
     "surfaces": [
       "memory"
     ],

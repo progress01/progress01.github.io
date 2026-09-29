@@ -209,7 +209,9 @@ function validateOutput({ root, pages = {}, assets = {}, index } = {}) {
     if (record.surfaces?.length === 1 && record.surfaces[0] === 'memory') representatives.memory ||= record;
     if (record.surfaces?.length === 2 && record.surfaces[0] === 'profile' && record.surfaces[1] === 'memory') representatives.dual ||= record;
   }
-  if (Object.values(representatives).some(record => !record)) errors.push(diagnostic('surface_copy_representative_article_missing', 'navigation-index.json'));
+  if ((!representatives.profile && !representatives.dual) || (!representatives.memory && !representatives.dual)) {
+    errors.push(diagnostic('surface_copy_representative_article_missing', 'navigation-index.json'));
+  }
   const articleUrls = records.map(record => record.url);
   if (new Set(articleUrls).size !== articleUrls.length) errors.push(diagnostic('surface_copy_article_urls_not_unique', 'navigation-index.json'));
   for (const [kind, record] of Object.entries(representatives)) {

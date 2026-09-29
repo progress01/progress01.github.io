@@ -8,7 +8,7 @@ const assert = require('node:assert/strict');
 const { validateArchiveCategoryCompat, normalizeRoute } = require('../archive-category-compat-output-check');
 
 const samples = [
-  { url: '/work/from-real-work-to-features/', title: 'Profile sample', surfaces: ['profile'], category: '工作知識' },
+  { url: '/work/from-real-work-to-features/', title: 'Profile sample', surfaces: ['profile', 'memory'], category: '工作知識' },
   { url: '/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/', title: 'Song sample', surfaces: ['memory'], category: '音樂' },
   { url: '/work/flow-friendly-work-system/', title: 'Dual sample', surfaces: ['profile', 'memory'], category: '工作知識' },
   { url: '/2026/01/25/部落格改版規劃/', title: 'Site sample', surfaces: ['memory'], category: '站務' }
@@ -51,7 +51,7 @@ test('accepts complete archive, root browser, native categories, and one canonic
   assert.equal(result.counts.archiveUniqueRoutes, 4);
   assert.equal(result.counts.categoriesRootItems, 4);
   assert.equal(result.counts.nativeCategoryRoutes, 3);
-  assert.deepEqual(result.counts.surfaceDistribution, { profile: 2, memory: 3, dual: 1 });
+  assert.deepEqual(result.counts.surfaceDistribution, { profile: 2, memory: 4, dual: 2 });
 });
 
 test('rejects missing full-site and native-category memberships', t => {

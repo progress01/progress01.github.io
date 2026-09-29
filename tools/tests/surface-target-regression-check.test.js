@@ -5,8 +5,9 @@ const assert = require('node:assert/strict');
 const path = require('node:path');
 const { FIXED, SURFACE_CHECKS, parseArgs, validateFixedSamples } = require('../surface-target-regression-check');
 
-test('fixed-sample contract follows later author approval for profile-only learning and the actual dual article', () => {
-  assert.deepEqual(FIXED.learning.surfaces, ['profile']);
+test('fixed-sample contract follows later author approval for dual-surface profile articles', () => {
+  assert.deepEqual(FIXED.profileArticle.surfaces, ['profile', 'memory']);
+  assert.deepEqual(FIXED.learning.surfaces, ['profile', 'memory']);
   assert.equal(FIXED.learning.deskId, 'reading-topic-07');
   assert.deepEqual(FIXED.dual.surfaces, ['profile', 'memory']);
   assert.equal(FIXED.dual.url, '/work/flow-friendly-work-system/');

@@ -33,7 +33,7 @@ const FIXED = Object.freeze({
   profileArticle: {
     source: 'source/_posts/實驗室/工作知識-從實際抽象功能一-先從真實工作問出系統該做什麼.md',
     url: '/work/from-real-work-to-features/',
-    surfaces: ['profile'],
+    surfaces: ['profile', 'memory'],
     category: '工作知識',
     date: '2026-09-17',
     updated: '2026-09-17',
@@ -50,7 +50,7 @@ const FIXED = Object.freeze({
   learning: {
     source: 'source/_posts/實驗室/網站品質與軟體測試-從需求到上線驗證的學習路徑.md',
     url: '/learning/website-quality-testing-roadmap/',
-    surfaces: ['profile'],
+    surfaces: ['profile', 'memory'],
     date: '2026-09-04',
     updated: '2026-09-17',
     deskId: 'reading-topic-07',

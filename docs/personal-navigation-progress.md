@@ -1,5 +1,19 @@
 # 個人網誌動線改善進度
 
+## 2026-09-29，讓碎碎念與文章面向驗證跟上持續新增（完成；完整驗證通過；未部署）
+
+- 將 microblog 的 `expectedPublicCount: 21` 明確保留為 2026-09-14 邊界遷移的歷史基準，不再當成永久總數上限。來源、`public/microblog.json` 與 `navigation-index.json` 改以當次實際資料動態互相比對，因此第 22、23、24 則及後續新碎碎念不會再被誤判；既有基準紀錄的 ID、內容、相對順序、兩筆核准替換、退役 ID 不得復用等保護仍保留，新紀錄仍須有唯一穩定 ID 與明確 `surfaces`。
+- 同步目前文章資料基準：公開文章 276 篇、A 面 12 篇、B 面 276 篇，12 篇 A 面文章全數也是雙面；A 面精選 8 篇亦全為雙面。固定抽樣、SEO、品牌情境、archive/category、內容瀏覽器、navigation、random 與輸出檢查均改用現況；文章代表樣本允許以雙面文章代表 A，不再硬性要求一定存在 A-only 文章。
+- 新增「歷史 21 則不變但可合法追加第 22 則」的 boundary 與 public-output 正例，以及「沒有 A-only、仍有 dual」的輸出正例。完整 `npm run verify` exit 0：regression 269/269、fresh build 1,015 files／384 HTML；archive/category 276 routes，surface distribution A 12／B 276／dual 12；SEO 276 article HTML／321 sitemap loc；public-output 的 source／public／navigation microblog 均為 24，舊文字與退役 ID 命中皆為 0。
+- 下一步：每次新增碎碎念仍依規則先執行 `node tools/assign-microblog-ids.js` 預覽，再以 `--write` 只補新紀錄缺少的 ID，最後跑內容檢查與完整驗證；不需再修改歷史 21 則基準。本輪未部署、未提交、未使用額度重置券。
+
+## 2026-09-29，統一 B 面手機隨機卡縮圖（完成；手機實測與 fresh build 通過；未部署）
+
+- 修正 B 面首頁隨機卡在手機上因文章類型不同而出現的縮圖比例落差：原本 audio 封面使用 `cover`，reading／watch 等封面沿用 `contain` 與 8px 內距，導致同一個 84px 橫向圖框有時滿版、有時縮成中央小圖。現在只在 `max-width: 767px` 將所有有封面的隨機卡統一為零內距、`object-fit: cover`、置中裁切；桌機的分類視覺規則與固定手機圖框高度不變。
+- `home-random.test.js` 新增手機縮圖規則護欄，要求 767px breakpoint 下保留零內距、cover 與置中裁切。focused home-random test 1/1、surface-responsive source／fresh output 5 pages、surface-visual 均通過；`hexo clean` 後 fresh build 成功產生 1,014 files，正式 compiled CSS 已含新規則。
+- 390×844 本機瀏覽器以兩筆隔離資料實測作者截圖中的兩篇：`歌曲推薦-茫茫到深更`（784×745）與 `超神機械師（網路小說閱讀紀錄）`（480×480）切換後，外框皆為 325×84、圖片皆為 323×84，computed style 均為 cover／50% 50%／padding 0；兩次 document 水平溢出皆為 0，console warning／error 0。隔離資料、QA 分頁、viewport override 與臨時 server 均已還原或清理，正式 `random.json` 未改。
+- 完整 `npm run verify` 的本輪縮圖測試通過，但 regression 仍被 4 項既有資料基準擋住：目前 microblog 24 對舊基準 21，另有 memory surface／navigation sample 統計與既有 265／7 預期不一致；本輪沒有改文章面向、microblog、navigation 基準或其 ID。下一步應另開獨立步驟同步這些資料契約後再重跑完整 verify；本輪未部署、未提交、未使用額度重置券。
+
 ## 2026-09-29，修正 A 面返回後熱力圖消失（完成；返回實測與 fresh build 通過；未部署）
 
 - 問題發生在一般頁面導覽的瀏覽器返回快取：A 面離頁時，`pagehide` 會釋放 ECharts；按上一頁從 BFCache 還原時，頁面腳本不會重新執行，原程式又沒有 `pageshow` 重建，因此只剩覆在圖表上方的透明日期按鈕，其焦點框就是畫面中的單一小方塊。`profile-article-calendar.js` 現在成對處理 `pagehide`／`pageshow`：離頁仍釋放圖表，返回時重新執行既有 `boot`，不改文章、日期資料、網址或圖表樣式。

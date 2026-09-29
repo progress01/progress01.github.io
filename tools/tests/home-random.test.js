@@ -73,6 +73,16 @@ assert(source.includes('id="home-random-visual"'), '首頁隨機卡必須保留�
 assert(source.includes('function renderVisual(record)'), '首頁隨機卡必須依文章類型更新視覺');
 assert(homeStyles.includes('grid-template-columns: minmax(0, 1fr) 168px'), '桌面隨機卡必須保留緊湊的文字與視覺比例');
 
+const desktopVisualIndex = homeStyles.indexOf('.index .home-random-visual img');
+const mobileVisualMedia = homeStyles.indexOf('@media (max-width: 767px)', desktopVisualIndex);
+const mobileVisualStart = homeStyles.indexOf('.index .home-random-visual img {', mobileVisualMedia);
+const mobileVisualEnd = homeStyles.indexOf('}', mobileVisualStart);
+const mobileVisualStyles = homeStyles.slice(mobileVisualStart, mobileVisualEnd);
+assert(mobileVisualMedia >= 0 && mobileVisualStart >= 0 && mobileVisualEnd > mobileVisualStart, '手機隨機縮圖規則缺失');
+assert(/padding:\s*0/.test(mobileVisualStyles), '手機隨機縮圖不應保留分類專用內距');
+assert(/object-fit:\s*cover/.test(mobileVisualStyles), '手機隨機縮圖必須統一裁切填滿');
+assert(/object-position:\s*center/.test(mobileVisualStyles), '手機隨機縮圖必須置中裁切');
+
 {
   const generator = randomGenerator();
   const collection = values => ({ toArray: () => values.map(name => ({ name })) });

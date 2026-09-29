@@ -56,6 +56,17 @@ test('accepts exact source contract and output for core routes, search, and one-
   assert.equal(routeFile('/2026/01/25/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%94%B9%E7%89%88%E8%A6%8F%E5%8A%83/'), '2026/01/25/部落格改版規劃/index.html');
 });
 
+test('accepts dual articles as the profile representative when no profile-only article exists', () => {
+  const currentIndex = { records: index.records.map(record => record.id === 'p'
+    ? { ...record, surfaces: ['profile', 'memory'] }
+    : record) };
+  const pages = outputPages();
+  pages['a/index.html'] = article('/a/', ['profile', 'memory'], ['工作與學習', '個人記憶庫']);
+  const result = validateOutput({ root, pages, assets, index: currentIndex });
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.representativeKinds, ['memory', 'dual']);
+});
+
 test('rejects a real Unicode-route canonical mismatch after decoding both paths', () => {
   const pages = outputPages();
   pages[routeFile('/2026/01/25/部落格改版規劃/')] = pages[routeFile('/2026/01/25/部落格改版規劃/')]

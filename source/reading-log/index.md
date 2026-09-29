@@ -170,6 +170,10 @@ comments: false
   .life-index-log-tag { position: absolute; top: 12px; right: 12px; color: var(--life-gold); font-size: 15px; }
   .life-index-log-date { display: block; padding-bottom: 7px; color: #d19b6f; border-bottom: 1px dashed #89604b; font: 10px "Courier New", monospace; }
   .life-index-log-content { margin-top: 12px; color: #f8e8ca; font-size: 13px; line-height: 1.7; }
+  .life-index-log-content.is-collapsed { position: relative; max-height: 10.2em; overflow: hidden; }
+  .life-index-log-content.is-collapsed::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 2.8em; background: linear-gradient(transparent, var(--life-brown)); pointer-events: none; }
+  .life-index-log-more { margin-top: 9px; padding: 3px 0; color: #f1aa58; background: transparent; border: 0; border-bottom: 1px solid currentColor; font: 10px "Courier New", monospace; letter-spacing: 1px; cursor: pointer; }
+  .life-index-log-more:hover { color: #fff4dc; }
   .life-index-footnote { margin: 24px 0 0; color: #96745e; font: 11px "Courier New", monospace; letter-spacing: .8px; text-align: right; }
 
   @media (max-width: 767px) {
@@ -406,7 +410,25 @@ comments: false
         card.className = 'life-index-log-card';
         card.innerHTML = '<span class="life-index-log-tag">' + item.tag + '</span>' +
           '<span class="life-index-log-date">' + item.date + '</span>' +
-          '<div class="life-index-log-content">' + item.content + '</div>';
+          '<div class="life-index-log-content"></div>';
+        var content = card.querySelector('.life-index-log-content');
+        content.innerHTML = item.content || '';
+        var contentLength = Array.from(content.textContent || '').length;
+        if (contentLength > 120) {
+          content.classList.add('is-collapsed');
+          var more = document.createElement('button');
+          more.type = 'button';
+          more.className = 'life-index-log-more';
+          more.textContent = 'MORE ↗';
+          more.setAttribute('aria-expanded', 'false');
+          more.addEventListener('click', function() {
+            var expanded = content.classList.toggle('is-expanded');
+            content.classList.toggle('is-collapsed', !expanded);
+            more.textContent = expanded ? '收起 ↑' : 'MORE ↗';
+            more.setAttribute('aria-expanded', String(expanded));
+          });
+          card.appendChild(more);
+        }
         container.appendChild(card);
       });
     })

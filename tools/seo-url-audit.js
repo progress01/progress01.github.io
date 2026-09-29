@@ -7,9 +7,9 @@ const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 
 const FIXED_SAMPLES = Object.freeze([
-  { id: 'profile-work', route: '/work/from-real-work-to-features/', surfaces: ['profile'] },
+  { id: 'profile-work', route: '/work/from-real-work-to-features/', surfaces: ['profile', 'memory'] },
   { id: 'song-encoded', route: '/2026/09/01/歌曲推薦/歌曲推薦-sailing back to you/', surfaces: ['memory'] },
-  { id: 'profile-learning', route: '/learning/website-quality-testing-roadmap/', surfaces: ['profile'] },
+  { id: 'profile-learning', route: '/learning/website-quality-testing-roadmap/', surfaces: ['profile', 'memory'] },
   { id: 'dual-flow', route: '/work/flow-friendly-work-system/', surfaces: ['profile', 'memory'] },
   { id: 'site-planning', route: '/2026/01/25/部落格改版規劃/', surfaces: ['memory'] }
 ]);
@@ -130,7 +130,7 @@ function checkSitemap(root, origin, articleRoutes, htmlByRoute, errors) {
   return { urls: locs.length, routes };
 }
 
-function validateSeoUrls({ root, origin = 'https://progress01.github.io', expectedArticleCount = 275, samples = FIXED_SAMPLES } = {}) {
+function validateSeoUrls({ root, origin = 'https://progress01.github.io', expectedArticleCount = 276, samples = FIXED_SAMPLES } = {}) {
   const errors = [];
   const counts = { htmlFiles: 0, articleHtml: 0, navigationArticles: 0, uniqueArticleRoutes: 0, sitemapUrls: 0, duplicateBodyGroups: 0 };
   if (!root || !fs.existsSync(path.join(root, 'index.html'))) return { errors: [{ code: 'generated_root_invalid', path: String(root || '') }], counts };

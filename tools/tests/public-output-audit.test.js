@@ -119,7 +119,7 @@ test('rejects backups, private output paths, and a duplicated raw microblog file
   assert.ok(report.errors.some(error => error.code === 'microblog_source_duplicate'));
 });
 
-test('rejects duplicate or changed source, public, and navigation microblog IDs', t => {
+test('rejects duplicate generated IDs and loss of historical source IDs', t => {
   const fixture = makeFixture(t, { publicRecords: [
     ...sourceRecords, { ...sourceRecords[0] }
   ], navRecords: [
@@ -132,7 +132,18 @@ test('rejects duplicate or changed source, public, and navigation microblog IDs'
   assert.ok(report.errors.some(error => error.code === 'public_microblog_id_invalid_or_duplicate'));
   assert.ok(report.errors.some(error => error.code === 'navigation_microblog_count_mismatch'));
   assert.ok(report.errors.some(error => error.code === 'persistent_microblog_id_missing'));
-  assert.ok(report.errors.some(error => error.code === 'unexpected_microblog_id'));
+});
+
+test('accepts later microblog additions when source and generated datasets agree', t => {
+  const appended = { id: 'fixture-new1', content: 'new public entry', surfaces: ['memory'] };
+  const currentRecords = [...sourceRecords, appended];
+  const fixture = makeFixture(t, {
+    publicRecords: currentRecords,
+    navRecords: currentRecords.map(record => ({ id: record.id, kind: 'microblog', text: record.content }))
+  });
+  const report = audit(fixture, { sourceRecords: currentRecords });
+  assert.equal(report.ok, true, formatReport(report));
+  assert.deepEqual(report.microblog, { sourceCount: 4, publicCount: 4, navigationCount: 4 });
 });
 
 test('rejects a missing approved D replacement from required generated datasets', t => {

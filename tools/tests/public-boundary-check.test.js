@@ -54,6 +54,16 @@ test('passes clean generated output and skips .git objects', t => {
   assert.deepEqual(report.replacementPathCounts, [2, 2]);
 });
 
+test('accepts later microblog additions without changing the historical migration count', t => {
+  const appended = { id: 'fixture-new1', content: 'new public entry', surfaces: ['memory'] };
+  const currentRecords = [...sourceRecords, appended];
+  const root = makeOutput(t, { microblog: currentRecords });
+  const report = audit(root, { sourceRecords: currentRecords });
+  assert.equal(report.ok, true, formatReport(report));
+  assert.equal(report.sourceCount, 4);
+  assert.equal(plan.expectedPublicCount, 3);
+});
+
 test('detects an old D text without returning the matched text', t => {
   const root = makeOutput(t, { status: 'fixture-original-alpha' });
   const report = audit(root);

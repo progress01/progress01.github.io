@@ -153,12 +153,12 @@ test('real approved profile posts, microblogs, and linked learning samples recei
   const articles = index.records.filter(record => record.kind === 'article');
   assert.equal(articles.length, 8);
   assert.equal(new Set(articles.map(record => record.url)).size, 8);
-  assert.equal(articles.filter(record => record.surfaces.join(',') === 'profile').length, 7);
-  assert.equal(articles.filter(record => record.surfaces.join(',') === 'profile,memory').length, 1);
-  assert.equal(index.records.filter(record => record.kind === 'microblog').length, 21);
+  assert.equal(articles.filter(record => record.surfaces.join(',') === 'profile').length, 0);
+  assert.equal(articles.filter(record => record.surfaces.join(',') === 'profile,memory').length, 8);
+  assert.equal(index.records.filter(record => record.kind === 'microblog').length, microblog.length);
   assert.ok(index.records.filter(record => record.kind === 'microblog').every(record => record.surfaces.join(',') === 'memory'));
   assert.ok(index.records.every(record => Array.isArray(record.surfaces)));
   const linkedSample = articles.find(record => record.url === '/work/from-real-work-to-features/');
-  assert.deepEqual(linkedSample.learningItems.find(item => item.id === 'reading-topic-17').surfaces, ['profile']);
+  assert.deepEqual(linkedSample.learningItems.find(item => item.id === 'reading-topic-17').surfaces, ['profile', 'memory']);
   assert.ok(index.records.every(record => record.kind !== 'page'));
 });

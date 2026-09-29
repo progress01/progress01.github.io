@@ -22,6 +22,12 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/5ZfYbZvrHU1YgSbnsPXdg2?si=e9ae13de5a16480c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_勇氣.webp" alt="梁靜茹 - 勇氣 - 戀愛的力量">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/3qS3bAtUm7Rtz1Q6L0JjA5?si=6433849d570c4262" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_海海人生.webp" alt="陳盈潔 - 海海人生 - 潔聲摯愛">
     </a>

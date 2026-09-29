@@ -25,7 +25,7 @@ function baselineRecords() {
   return parseSafely(raw);
 }
 
-test('核准的 D/D/V public boundary migration matches the source baseline', () => {
+test('核准的 D/D/V public boundary migration preserves its baseline while allowing later additions', () => {
   const baseline = baselineRecords();
   const current = parseSafely(fs.readFileSync(sourcePath, 'utf8'));
   const expectedD = [...decisions.values()].filter(record => record.decision === 'D');
@@ -38,7 +38,10 @@ test('核准的 D/D/V public boundary migration matches the source baseline', ()
   assert.equal(plan.retiredIds.length, 1);
   assert.equal(plan.retiredIds[0], expectedV[0].id);
   assert.equal(plan.historyPolicy, 'no-tombstone; never-reuse-id');
-  assert.equal(current.length, plan.expectedPublicCount);
+  assert.ok(current.length >= plan.expectedPublicCount, 'later public records may append after the historical migration baseline');
+  const currentIds = current.map(item => item?.id);
+  assert.ok(currentIds.every(id => typeof id === 'string' && id.length > 0), 'all current records must keep a stable ID');
+  assert.equal(new Set(currentIds).size, currentIds.length, 'current record IDs must remain unique');
 
   for (const record of expectedD) {
     const before = baseline.find(item => item.id === record.id);
@@ -55,7 +58,11 @@ test('核准的 D/D/V public boundary migration matches the source baseline', ()
     assert.equal(current.some(item => item.id === record.id), false, 'V ID must not remain in public source');
   }
   const expectedIdsAfterMigration = baseline.map(item => item.id).filter(id => !expectedV.some(record => record.id === id));
-  assert.equal(JSON.stringify(current.map(item => item.id)), JSON.stringify(expectedIdsAfterMigration), 'remaining records must keep their original positions and order');
+  const historicalIds = new Set(expectedIdsAfterMigration);
+  const currentHistoricalIds = currentIds.filter(id => historicalIds.has(id));
+  assert.equal(JSON.stringify(currentHistoricalIds), JSON.stringify(expectedIdsAfterMigration), 'historical records must keep their original relative order');
+  const laterAdditions = current.filter(item => !historicalIds.has(item.id));
+  assert.ok(laterAdditions.every(item => Array.isArray(item.surfaces) && item.surfaces.length > 0), 'later additions must declare their publication surfaces explicitly');
 
   const unchangedIds = new Set(baseline.map(item => item.id).filter(id => !decisions.has(id)));
   const beforeP = baseline.filter(item => unchangedIds.has(item.id));

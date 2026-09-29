@@ -154,7 +154,6 @@ function validateMicroblog({ root, texts, plan, sourceRecords, baselineRecords, 
   ]) {
     if (ids.some(id => typeof id !== 'string') || new Set(ids).size !== ids.length) addError(errors, `${label}_microblog_id_invalid_or_duplicate`, relative);
   }
-  if (sourceRecords.length !== plan.expectedPublicCount) addError(errors, 'microblog_public_count_mismatch', plan.source, sourceRecords.length);
   if (!Array.isArray(publicRecords) || publicRecords.length !== sourceRecords.length) addError(errors, 'public_microblog_count_mismatch', 'microblog.json', Array.isArray(publicRecords) ? publicRecords.length : 0);
   if (navRecords.length !== sourceRecords.length) addError(errors, 'navigation_microblog_count_mismatch', 'navigation-index.json', navRecords.length);
 
@@ -173,10 +172,6 @@ function validateMicroblog({ root, texts, plan, sourceRecords, baselineRecords, 
     if (!decision && current.content !== baseline.content) addError(errors, 'unchanged_microblog_content_changed', plan.source);
     if (decision?.decision === 'D' && current.content !== decision.publicContent) addError(errors, 'd_replacement_mismatch', plan.source);
   }
-  for (const current of sourceRecords) {
-    if (!baselineById.has(current?.id)) addError(errors, 'unexpected_microblog_id', plan.source);
-  }
-
   const publicById = new Map((Array.isArray(publicRecords) ? publicRecords : []).filter(item => item?.id).map(item => [item.id, item]));
   const navById = new Map(navRecords.filter(item => item?.id).map(item => [item.id, item]));
   for (const source of sourceRecords) {

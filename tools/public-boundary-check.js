@@ -76,12 +76,12 @@ function auditBoundary({ root, plan, baselineRecords, sourceRecords }) {
       vRecords.some(record => !plan.retiredIds.includes(record.id))) {
     addError(errors, 'retired_id_plan_invalid', 'tools/data/microblog-boundary-migration.v1.json', plan?.retiredIds?.length || 0);
   }
-  if (sourceRecords.length !== plan?.expectedPublicCount) {
-    addError(errors, 'source_count_mismatch', 'source/microblog.json', sourceRecords.length);
-  }
-
   const baselineById = new Map(baselineRecords.filter(record => record && typeof record.id === 'string').map(record => [record.id, record]));
   const sourceById = new Map(sourceRecords.filter(record => record && typeof record.id === 'string').map(record => [record.id, record]));
+  const sourceIds = sourceRecords.map(record => record?.id);
+  if (sourceIds.some(id => typeof id !== 'string' || id.length === 0) || new Set(sourceIds).size !== sourceIds.length) {
+    addError(errors, 'source_microblog_id_invalid_or_duplicate', 'source/microblog.json', 1);
+  }
   const originalTexts = [];
   for (const decision of decisions) {
     const original = baselineById.get(decision.id);
@@ -97,6 +97,13 @@ function auditBoundary({ root, plan, baselineRecords, sourceRecords }) {
     } else if (decision.decision === 'V' && sourceById.has(decision.id)) {
       addError(errors, 'retired_id_in_source', 'source/microblog.json', 1);
     }
+  }
+
+  for (const baseline of baselineRecords) {
+    if (!baseline || typeof baseline.id !== 'string' || decisions.some(decision => decision.id === baseline.id)) continue;
+    const current = sourceById.get(baseline.id);
+    if (!current) addError(errors, 'persistent_microblog_id_missing', 'source/microblog.json', 1);
+    else if (current.content !== baseline.content) addError(errors, 'persistent_microblog_content_changed', 'source/microblog.json', 1);
   }
 
   let sourceOldTextHits = 0;
