@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #f714a8;
+    background: #ff2a9f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -4666,6 +4666,9 @@ body {
   }
   .index .home-random-visual img {
     min-height: 84px;
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
   }
   .index .home-random-console {
     min-height: 82px;
