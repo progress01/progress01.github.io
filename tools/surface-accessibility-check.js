@@ -83,7 +83,7 @@ function checkHtml(html, file, { article = false } = {}) {
     if (controls.length && heading.length && controls.first().index() > heading.index()) errors.push('surface_control_after_page_heading');
   }
 
-  const coreControls = $('.surface-switch a, .home-profile-bridge a, .profile-list-link, [data-profile-tag-filters] button, .profile-calendar-day-control, .profile-calendar-article, .profile-navigation a, .post-surface-marker a, .site-nav [role="button"], .site-brand-container [role="button"], .sidebar-toggle, .back-to-top');
+  const coreControls = $('.surface-switch a, .home-profile-bridge a, .profile-list-link, [data-profile-tag-filters] button, .profile-home-article-link, .profile-navigation a, .post-surface-marker a, .site-nav [role="button"], .site-brand-container [role="button"], .sidebar-toggle, .back-to-top');
   coreControls.each((_, element) => {
     const node = $(element);
     if (!accessibleName($, element)) errors.push('empty_name');
@@ -96,18 +96,14 @@ function checkHtml(html, file, { article = false } = {}) {
     const bridgeLink = bridge.children('a');
     if (bridge.length !== 1 || bridge.attr('aria-labelledby') !== 'home-profile-bridge-title' || bridgeLink.length !== 1 || !accessibleName($, bridgeLink[0])) errors.push('home_bridge_semantics_invalid');
   }
-  if ((file === 'index.html' || file === 'profile/index.html') && $('[data-profile-article-calendar]').length) {
-    const calendar = $('[data-profile-article-calendar]');
-    const chart = calendar.find('#profile-calendar-chart');
-    const scroll = calendar.find('.profile-calendar-scroll');
-    const controls = calendar.find('[data-profile-calendar-controls]');
-    const fallback = calendar.find('[data-profile-calendar-fallback] a');
-    if (chart.length !== 1 || chart.attr('role') !== 'img' || !text(chart.attr('aria-label'))) errors.push('profile_calendar_chart_name_invalid');
-    if (scroll.length !== 1 || scroll.attr('tabindex') !== '0' || !text(scroll.attr('aria-label'))) errors.push('profile_calendar_scroll_name_invalid');
-    if (controls.length !== 1 || controls.attr('role') !== 'group' || !text(controls.attr('aria-label'))) errors.push('profile_calendar_controls_name_invalid');
-    if (calendar.find('.profile-calendar-day-control').toArray().some(button => !text($(button).attr('aria-label')) || $(button).attr('type') !== 'button')) errors.push('profile_calendar_day_button_name_invalid');
-    if (calendar.find('.profile-calendar-article').toArray().some(link => !['發表', '更新'].includes(text($(link).find('.profile-calendar-event-label').text())) || !text($(link).find('.profile-calendar-article-title').text()))) errors.push('profile_calendar_event_label_invalid');
-    if (fallback.length !== 1 || fallback.attr('href') !== '/profile/articles/') errors.push('profile_calendar_fallback_link_invalid');
+  if (file === 'index.html' || file === 'profile/index.html') {
+    const home = $('[data-profile-article-home]');
+    const search = home.find('[data-profile-home-search]');
+    const input = search.find('input#profile-home-query[type="search"]');
+    if (home.length !== 1 || search.length !== 1 || search.find('label[for="profile-home-query"]').text().trim() !== '搜尋文章'
+        || input.length !== 1 || input.attr('aria-controls') !== 'profile-home-article-list') errors.push('profile_home_search_name_invalid');
+    if (!home.find('[data-profile-home-article-list] .profile-home-article-link').length
+        || home.find('.profile-home-article-link').toArray().some(link => !accessibleName($, link))) errors.push('profile_home_article_name_invalid');
   }
   if (article) {
     const marker = $('.post-surface-marker').first();
@@ -159,7 +155,7 @@ function checkOutput(root) {
     };
     const switchRule = rule('.surface-switch-link');
     const bridgeRule = rule('.index .home-profile-bridge a');
-    if (!/\.profile-calendar-day-control:focus-visible/.test(css)) errors.push('compiled_profile_calendar_focus_missing');
+    if (!/\.profile-home-search-field:focus-within/.test(css)) errors.push('compiled_profile_home_focus_missing');
     if (!/min-height:\s*44px/.test(switchRule) || !/min-width:\s*44px/.test(switchRule)) errors.push('compiled_surface_switch_target_too_small');
     if (!/min-height:\s*44px/.test(bridgeRule) || !/min-width:\s*44px/.test(bridgeRule)) errors.push('compiled_bridge_target_too_small');
     if (!/\.skip-link:focus-visible/.test(css)) errors.push('compiled_skip_focus_missing');

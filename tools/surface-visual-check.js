@@ -82,8 +82,8 @@ function checkSource(sources) {
       /\.post-content[^{}]*\{[^}]*--surface-/s.test(tokens)) {
     errors.push('article_styles_must_not_receive_route_tokens');
   }
-  if (!/\.profile-list-link:focus-visible/.test(profile) || !/\.profile-calendar-day-control:focus-visible/.test(profile) ||
-      !/\.profile-calendar-event-label/.test(profile) ||
+  if (!/\.profile-list-link:focus-visible/.test(profile) || !/\.profile-home-search-field:focus-within/.test(profile) ||
+      !/\.profile-home-article-link:focus-visible/.test(profile) ||
       !/\.surface-switch-link:focus-visible/.test(surfaceSwitch) ||
       !/\.home-profile-bridge a:focus-visible/.test(home)) {
     errors.push('focus_visible_missing');
@@ -135,7 +135,7 @@ function checkOutput(root) {
     if (!css.includes(`--surface-${token}:`)) errors.push(`visual_output_token_missing_${token}`);
   }
   for (const selector of [
-    '.main-inner.index', '.main-inner.profile-page', '.profile-page .profile-list-link', '.profile-page .profile-calendar-chart', '.profile-page .profile-calendar-event-label', '.surface-switch-link',
+    '.main-inner.index', '.main-inner.profile-page', '.profile-page .profile-list-link', '.profile-page .profile-home-search-field', '.profile-page .profile-home-article-link', '.surface-switch-link',
     '.surface-switch--memory .surface-switch-cassette::before', '.surface-switch--profile .surface-switch-cassette::before',
     '.main-menu[data-navigation-surface="profile"] .menu-item-profile-home > a', '.profile-page .profile-library-count'
   ]) {

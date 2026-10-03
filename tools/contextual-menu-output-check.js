@@ -17,14 +17,13 @@ const MEMORY_ITEMS = Object.freeze([
   Object.freeze({ label: '更新日曆', href: '/calendar/' })
 ]);
 const PROFILE_ITEMS = Object.freeze([
-  Object.freeze({ id: 'home', label: '工作與學習', href: '/', icon: 'fa fa-briefcase' }),
-  Object.freeze({ id: 'articles', label: '全部文章', href: '/profile/articles/', icon: 'fa fa-list' })
+  Object.freeze({ id: 'home', label: '工作與學習', href: '/', icon: 'fa fa-briefcase' })
 ]);
 const PAGES = Object.freeze([
   Object.freeze({ file: 'index.html', surface: 'profile', current: 'home' }),
   Object.freeze({ file: 'memory/index.html', surface: 'memory', current: null }),
   Object.freeze({ file: 'profile/index.html', surface: 'profile', current: 'home' }),
-  Object.freeze({ file: 'profile/articles/index.html', surface: 'profile', current: 'articles' })
+  Object.freeze({ file: 'profile/articles/index.html', surface: 'profile', current: null })
 ]);
 
 function diagnostic(code, file = CONFIG_PATH) {

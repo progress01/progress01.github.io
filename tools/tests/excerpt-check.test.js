@@ -101,6 +101,30 @@ test('frontmatter excerpt override reports its own visible length', () => {
   assert(report.warnings.some((message) => message.includes('exceeds the 86-character guide')));
 });
 
+test('pinned homepage dashboard is an explicit standalone exception', () => {
+  const dashboard = [
+    '{% raw %}',
+    '<div id="my-dashboard"><span id="typewriter-text"></span></div>',
+    '{% endraw %}'
+  ].join('\n');
+  const filename = 'source/_posts/welcome-board.md';
+  const allowed = checker.inspectExcerpt(post(dashboard, 'sticky: 100\n'), filename);
+  assert.strictEqual(allowed.ok, true);
+  assert.strictEqual(allowed.exemption, 'pinned-home-dashboard');
+  assert.match(checker.formatReport(allowed), /^EXEMPT /);
+
+  const hidden = checker.inspectExcerpt(post(dashboard + '\n<!-- more -->', 'sticky: 100\n'), filename);
+  assert.strictEqual(hidden.ok, false);
+  assert(hidden.errors.some(message => message.includes('must remain fully visible')));
+
+  const ordinary = checker.inspectExcerpt(post(dashboard, 'sticky: 100\n'), 'source/_posts/fixture.md');
+  assert.strictEqual(ordinary.ok, false);
+  const noLongerPinned = checker.inspectExcerpt(post(dashboard), filename);
+  assert.strictEqual(noLongerPinned.ok, false);
+  const overridden = checker.inspectExcerpt(post(dashboard, 'sticky: 100\ndescription: other preview\n'), filename);
+  assert.strictEqual(overridden.ok, false);
+});
+
 test('CLI argument and target path rules are deterministic', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'excerpt-check-'));
   try {

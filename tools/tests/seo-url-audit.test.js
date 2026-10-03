@@ -69,6 +69,10 @@ test('accepts unique A and dual article routes, including Unicode and a unique d
   assert.equal(result.counts.articleHtml, 2);
   assert.equal(result.counts.uniqueArticleRoutes, 2);
   assert.equal(result.counts.sitemapUrls, 6);
+  const automatic = validateSeoUrls({ root, origin, samples: fixtureSamples });
+  assert.deepEqual(automatic.errors, []);
+  const fixedCount = validateSeoUrls({ root, origin, expectedArticleCount: 3, samples: fixtureSamples });
+  assert.ok(fixedCount.errors.some(error => error.code === 'navigation_article_count_mismatch'));
 });
 
 test('rejects duplicate and non-self canonicals and duplicated article output/body', t => {

@@ -4,15 +4,14 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { checkSource, checkOutput } = require('../surface-responsive-check');
 
-function sources(css = `.main-inner{min-width:0;overflow-wrap:anywhere}.profile-page .profile-article-list{grid-template-columns:minmax(0,1fr)}.profile-calendar-scroll{overflow-x:auto}.profile-calendar-day-control:focus-visible{outline:2px solid}@media (max-width:767px){.profile-page .profile-article-list{grid-template-columns:minmax(0,1fr)}.index .home-landing-entry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.surface-switch{position:static}}@media (max-width:430px){.index .home-landing-entry-grid{grid-template-columns:minmax(0,1fr)}}.surface-switch-link{min-width:0;overflow-wrap:anywhere}.profile-list-link{min-height:44px}`) {
+function sources(css = `.main-inner{min-width:0;overflow-wrap:anywhere}.profile-page .profile-article-list{grid-template-columns:minmax(0,1fr)}.profile-home-article-link:focus-visible{outline:2px solid}.profile-home-search-field:focus-within{outline:2px solid}@media (max-width:767px){.profile-page .profile-article-list{grid-template-columns:minmax(0,1fr)}.index .home-landing-entry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.surface-switch{position:static}}@media (max-width:430px){.index .home-landing-entry-grid{grid-template-columns:minmax(0,1fr)}}.surface-switch-link{min-width:0;overflow-wrap:anywhere}.profile-list-link{min-height:44px}`) {
   return {
     css, mainCss: "@import '_custom/surface-responsive';", profile: '.profile-page .profile-article-list{}.profile-page .profile-list-link{grid-template-columns:100px minmax(0,1fr)}', home: '.home-landing-entry-grid{}',
     homeTemplate: '<nav class="home-landing-entry-grid"></nav>',
     switchCss: '.surface-switch-link{}', accessCss: '.skip-link:focus-visible{}',
-    profileTemplate: '<section class="profile-article-calendar"></section>',
+    profileTemplate: '<section class="profile-article-home"></section>',
     articlesTemplate: '<section class="profile-article-library"></section>',
-    profileCalendarTemplate: '<section class="profile-calendar-scroll"><div id="profile-calendar-chart"></div><div data-profile-calendar-controls></div></section>',
-    profileCalendarJs: "document.addEventListener('pjax:success', boot)",
+    profileHomeTemplate: '<section data-profile-home-article-list><div data-profile-home-search><input type="search"></div></section>',
     profileLibraryTemplate: '<div data-profile-tag-filters></div><ul data-profile-article-list></ul>',
     postTemplate: '<nav class="post-surface-marker"></nav>'
   };
@@ -20,8 +19,8 @@ function sources(css = `.main-inner{min-width:0;overflow-wrap:anywhere}.profile-
 function outputPages() {
   const frame = content => `<html><head><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="/css/main.css"></head><body><main><div class="main-inner">${content}</div></main></body></html>`;
   return {
-    'index.html': frame('<nav class="surface-switch"></nav><section class="profile-article-calendar"><div class="profile-calendar-scroll"><div id="profile-calendar-chart"></div><div data-profile-calendar-controls></div></div></section>'),
-    'profile/index.html': frame('<nav class="surface-switch"></nav><section class="profile-article-calendar"><div class="profile-calendar-scroll"><div id="profile-calendar-chart"></div><div data-profile-calendar-controls></div></div></section>'),
+    'index.html': frame('<nav class="surface-switch"></nav><section data-profile-article-home><div data-profile-home-search><input type="search"></div><ul data-profile-home-article-list><li><a class="profile-home-article-link"></a></li></ul></section>'),
+    'profile/index.html': frame('<nav class="surface-switch"></nav><section data-profile-article-home><div data-profile-home-search><input type="search"></div><ul data-profile-home-article-list><li><a class="profile-home-article-link"></a></li></ul></section>'),
     'profile/articles/index.html': frame('<nav class="surface-switch"></nav><ul data-profile-article-list><li><a class="profile-list-link"></a></li></ul>'),
     'memory/index.html': frame('<nav class="surface-switch"></nav><nav class="home-landing-entry-grid"></nav><section class="home-random-card"><div class="home-archive-rail-main"></div><div class="home-profile-bridge"></div></section>'),
     'work/flow-friendly-work-system/index.html': frame('<article class="post-content-single"><nav class="post-surface-marker"></nav></article>')

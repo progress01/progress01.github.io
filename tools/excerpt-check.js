@@ -9,6 +9,7 @@ const { marked } = require('marked');
 const EXCERPT_LIMIT = 86;
 const MORE_MARKER = /<!-- ?more ?-->/gi;
 const SONG_DIRECTORY = 'source/_posts/歌曲推薦';
+const STANDALONE_DASHBOARD_POST = 'source/_posts/welcome-board.md';
 
 function usage() {
   return [
@@ -170,6 +171,23 @@ function inspectExcerpt(content, filename = '<post>') {
   const risks = [];
   const body = parsed.body;
   const sourceMarkerInfo = findSourceMoreMarkers(body);
+  // The pinned post itself is the B-side homepage widget; a more marker would hide it.
+  const isStandaloneDashboard = filename.replaceAll('\\', '/') === STANDALONE_DASHBOARD_POST
+    && parsed.data.sticky === '100'
+    && !Object.prototype.hasOwnProperty.call(parsed.data, 'excerpt')
+    && !Object.prototype.hasOwnProperty.call(parsed.data, 'description')
+    && body.includes('{% raw %}')
+    && body.includes('{% endraw %}')
+    && body.includes('<div id="my-dashboard"')
+    && body.includes('id="typewriter-text"');
+  if (isStandaloneDashboard) {
+    if (sourceMarkerInfo.markers.length) errors.push(`${filename}: the pinned homepage dashboard must remain fully visible without a more marker`);
+    return {
+      filename, isSong: false, exemption: 'pinned-home-dashboard', ok: errors.length === 0,
+      errors, warnings, risks, visibleText: '', visibleCharacters: 0, paragraphs: 0, images: 0,
+      markerCount: sourceMarkerInfo.markers.length, hasFrontmatterExcerpt: false, hasFrontmatterDescription: false
+    };
+  }
   const rendered = renderMarkdown(body);
   const renderedMarkerInfo = findMoreMarkers(rendered);
   const isSong = filename.replaceAll('\\', '/').includes(`${SONG_DIRECTORY}/`);
@@ -280,6 +298,11 @@ function inspectFile(file, root) {
 }
 
 function formatReport(report) {
+  if (report.exemption === 'pinned-home-dashboard') {
+    const lines = [`${report.ok ? 'EXEMPT' : 'FAIL'} ${report.filename}: pinned homepage dashboard intentionally renders in full on /memory/`];
+    for (const error of report.errors) lines.push(`  ERROR ${error}`);
+    return lines.join('\n');
+  }
   const state = report.ok ? (report.warnings.length ? 'WARN' : 'PASS') : 'FAIL';
   const lines = [`${state} ${report.filename}: visible=${report.visibleCharacters}/${EXCERPT_LIMIT}, paragraphs=${report.paragraphs}, images=${report.images}, markers=${report.markerCount}`];
   for (const error of report.errors) lines.push(`  ERROR ${error}`);

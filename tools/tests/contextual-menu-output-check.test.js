@@ -12,8 +12,7 @@ const headerTemplate = fs.readFileSync(path.join(__dirname, '../../themes/next/l
 const config = {
   menus: {
     profile: [
-      { id: 'home', label: '工作與學習', href: '/', icon: 'fa fa-briefcase' },
-      { id: 'articles', label: '全部文章', href: '/profile/articles/', icon: 'fa fa-list' }
+      { id: 'home', label: '工作與學習', href: '/', icon: 'fa fa-briefcase' }
     ]
   }
 };
@@ -34,7 +33,7 @@ function fixtures() {
     'index.html': `${menu('profile', profileItems, 0)}<h1>工作與學習</h1>`,
     'memory/index.html': menu('memory', memoryItems),
     'profile/index.html': `${menu('profile', profileItems, 0)}<h1>工作與學習</h1>`,
-    'profile/articles/index.html': menu('profile', profileItems, 1)
+    'profile/articles/index.html': menu('profile', profileItems)
   };
 }
 
@@ -46,7 +45,7 @@ test('selects the profile menu from the stable profile URL namespace', () => {
   assert.match(headerTemplate, /partial\('_partials\/header\/menu\.njk', \{\}, \{cache: false\}\)/);
 });
 
-test('keeps seven memory entries plus search and gives A cover/archive two focused entries without menu search', () => {
+test('keeps seven memory entries plus search and gives A one article-and-search entry without menu search', () => {
   const result = validateContextualMenus({ config, pages: fixtures() });
   assert.deepEqual(result.errors, []);
   assert.equal(result.pageCount, 4);
@@ -66,9 +65,6 @@ test('requires the correct current profile menu entry and the existing B search 
   pages['profile/index.html'] = pages['profile/index.html'].replace(' aria-current="page"', '');
   const result = validateContextualMenus({ config, pages });
   assert.ok(codes(result).includes('contextual_menu_current_invalid'));
-  const archive = fixtures();
-  archive['profile/articles/index.html'] = archive['profile/articles/index.html'].replace(' aria-current="page"', '');
-  assert.ok(codes(validateContextualMenus({ config, pages: archive })).includes('contextual_menu_current_invalid'));
   assert.equal(codes(result).includes('contextual_menu_search_invalid'), false);
 });
 

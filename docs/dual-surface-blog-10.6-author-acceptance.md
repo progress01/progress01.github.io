@@ -1,5 +1,7 @@
 # 雙面部落格 WBS 10.6 作者驗收包
 
+> 2026-10-03 註：本文件保留 2026-09-28 熱力圖版本的驗收紀錄。A 面首頁已依作者新決定改為文章清單加全文搜尋；現行規格與驗證見 `dual-surface-copy-contract.md`、`dual-surface-visual-rules.md` 及 `personal-navigation-progress.md`。
+
 日期：2026-09-28（Asia/Taipei）  
 候選：作者已接受並於 2026-09-28 完成首次授權部署  
 HEAD 參考：`2d4d9d0375c1aa82d4b6407fb13699a2810d714d`  

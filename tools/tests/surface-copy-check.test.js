@@ -26,15 +26,7 @@ function page(current) {
 }
 function profileCover() {
   const records = index.records.filter(record => record.kind === 'article' && record.surfaces.includes('profile')).sort((a, b) => b.date.localeCompare(a.date));
-  const year = Math.max(...records.map(record => Number(record.date.slice(0, 4))));
-  const newestYear = records.filter(record => record.date.startsWith(`${year}-`));
-  const postsByDate = {};
-  newestYear.forEach(record => { (postsByDate[record.date] ||= []).push({ title: record.title, url: record.url, eventType: 'published', eventLabel: '發表' }); });
-  Object.keys(postsByDate).forEach(date => postsByDate[date].sort((left, right) => left.url.localeCompare(right.url)));
-  const counts = Object.fromEntries(Object.entries(postsByDate).map(([date, articles]) => [date, articles.length]));
-  const latestDate = Object.keys(counts).sort().pop();
-  const payload = JSON.stringify({ latestYear: String(year), latestDate, counts, postsByDate, articleTotal: records.length, eventTotal: records.length, activeDateCount: Object.keys(counts).length });
-  return `<section class="profile-article-calendar" data-profile-article-calendar aria-label="工作與學習更新日曆"><h2 class="profile-calendar-year">${year} 更新日曆</h2><p class="profile-calendar-status" data-profile-calendar-status>共 ${records.length} 篇文章，${Object.keys(counts).length} 個活動日期</p><div class="profile-calendar-legend" aria-label="文章活動次數圖例">少 <span class="profile-calendar-gradient"></span> 多</div><div class="profile-calendar-scroll" tabindex="0" aria-label="全年更新熱力圖，可水平捲動"><div id="profile-calendar-chart" role="img" aria-label="${year} 工作與學習文章活動熱力圖"></div><div data-profile-calendar-controls role="group" aria-label="選擇有文章的日期"></div></div><section aria-live="polite"><h3 data-profile-calendar-detail-heading>${latestDate} 文章活動</h3><div data-profile-calendar-updates>${postsByDate[latestDate].map(record => `<a class="profile-calendar-article" href="${record.url}"><span class="profile-calendar-event-label" data-event-type="${record.eventType}">${record.eventLabel}</span><span class="profile-calendar-article-title">${record.title}</span></a>`).join('')}</div></section><nav class="profile-navigation"><a href="/profile/articles/">查看全部 ${records.length} 篇</a></nav><script type="application/json" data-profile-calendar-data>${payload}</script><script src="/lib/echarts.min.js" data-pjax></script><script src="/lib/languages.js" data-pjax></script><script src="/lib/calendar.js" data-pjax></script><script src="/js/profile-article-calendar.js" data-pjax></script></section>`;
+  return `<section data-profile-article-home><div class="profile-home-tools"><h2>文章</h2><p class="profile-home-count">共 ${records.length} 篇・依發表時間排序</p></div><div data-profile-home-search hidden><label for="profile-home-query">搜尋文章</label><input id="profile-home-query" type="search" placeholder="搜尋文章標題或標籤"></div><ul data-profile-home-article-list>${records.map(record => `<li data-profile-home-article-row><a class="profile-home-article-link" href="${record.url}"><time datetime="${record.date}">${record.date}</time><span class="profile-home-article-title">${record.title}</span></a></li>`).join('')}</ul></section>`;
 }
 function profileLibrary() {
   const records = index.records.filter(record => record.kind === 'article' && record.surfaces.includes('profile'));

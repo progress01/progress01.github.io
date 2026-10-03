@@ -18,7 +18,7 @@ function menu(surface) { return `<nav class="site-nav"><ul class="main-menu" dat
 function entries() {
   return {
     'index.html': `${menu('memory')}<script src="/js/next-boot.js"></script>`,
-    'profile/index.html': `${menu('profile')}<section class="profile-article-calendar"><div id="profile-calendar-chart"></div><a href="/profile/articles/">查看全部</a></section>`,
+    'profile/index.html': `${menu('profile')}<section data-profile-article-home><a class="profile-home-article-link" href="/work/sample/">文章</a></section>`,
     'profile/articles/index.html': `${menu('profile')}<section data-profile-article-library><ul data-profile-article-list><li data-profile-article-row><a class="profile-list-link" href="/dual/">dual</a></li></ul></section>`,
     'archives/index.html': `${menu('memory')}<a class="archive-article-link" href="/dual/">dual</a>`,
     'dual/index.html': `${menu('memory')}<link rel="canonical" href="https://example.test/dual/"><article><nav class="post-surface-marker" data-surfaces="profile memory"></nav></article>`
@@ -34,7 +34,7 @@ test('accepts a shared ordinary article link from A and B with one neutral canon
   assert.equal(result.targetUrl, '/dual/');
 });
 
-test('uses the current A heatmap plus article-library architecture to find dual history links', () => {
+test('uses the A article homepage and article library to find dual history links', () => {
   const pages = entries();
   pages['profile/articles/index.html'] = pages['profile/articles/index.html'].replace('href="/dual/"', 'href="/profile/articles/"');
   const codes = validateSurfaceHistory({ root: '.', index, pages, sources }).errors.map(error => error.code);

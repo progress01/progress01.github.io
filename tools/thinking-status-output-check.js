@@ -25,7 +25,7 @@ function checkTemplateWiring(sourceRoot) {
       'thinking_status(post)', '<aside class="post-thinking-status"', 'aria-labelledby="post-thinking-status-title"',
       '🚧 當前假設／探索中', '最近校準', '目前適用邊界', 'escape_html(thinking.boundary)'
     ]],
-    ['themes/next/layout/profile.njk', ['profile-article-calendar']],
+    ['themes/next/layout/profile.njk', ['profile-article-home']],
     ['themes/next/layout/profile-articles.njk', ['profile-article-library']],
     ['scripts/thinking-status.js', ['resolveThinkingStatus(post, { source })', 'thinking status contract violation']],
     ['scripts/profile-learning.js', ['resolveThinkingStatus(post,', 'thinking: thinking.visible ? thinking : null']],

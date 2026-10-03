@@ -79,6 +79,19 @@ test('accepts approved public sources, stable IDs, required image files, and bin
   assert.ok(report.inventory.otherBinary >= 0);
 });
 
+test('accepts a new source image copied into public while an explicit count remains available', t => {
+  const fixture = makeFixture(t);
+  const image = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00]);
+  put(fixture.sourceImageRoot, 'new.png', image);
+  put(fixture.outputRoot, 'images/new.png', image);
+  const report = auditPublicOutput({
+    root: fixture.outputRoot, projectRoot: fixture.projectRoot, plan, baselineRecords, sourceRecords,
+    expectedThemeImages: new Set(), origin: 'https://example.test'
+  });
+  assert.equal(report.ok, true, formatReport(report));
+  assert.equal(report.images.sourceImageFiles, 3);
+  assert.ok(audit(fixture).errors.some(error => error.code === 'source_image_baseline_mismatch'));
+});
 test('scans decodable HTML, JSON, XML, JS, CSS and map outputs for approved fingerprints', t => {
   for (const relative of ['leak.html', 'leak.json', 'leak.xml', 'leak.js', 'leak.css', 'leak.map']) {
     const fixture = makeFixture(t, { files: { [relative]: 'fixture-original-alpha' } });

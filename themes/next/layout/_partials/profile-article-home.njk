@@ -1,0 +1,34 @@
+{% set library = profile_article_library() %}
+<section class="profile-article-home" data-profile-article-home aria-label="工作與學習文章">
+  <div class="profile-home-tools">
+    <div>
+      <p class="profile-home-kicker">SIDE A / ARTICLES</p>
+      <h2 class="profile-home-section-title">文章</h2>
+      <p class="profile-home-count" data-profile-home-count data-total="{{ library.total }}" aria-live="polite">共 {{ library.total }} 篇・依發表時間排序</p>
+    </div>
+  </div>
+  <div class="profile-home-search" data-profile-home-search hidden>
+    <label for="profile-home-query">搜尋文章</label>
+    <div class="profile-home-search-field">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input id="profile-home-query" type="search" autocomplete="off" placeholder="搜尋文章標題或標籤" aria-controls="profile-home-article-list">
+    </div>
+  </div>
+  {% if library.articles.length %}
+    <ul class="profile-home-article-list" id="profile-home-article-list" data-profile-home-article-list>
+      {% for article in library.articles %}
+        <li class="profile-home-article-row" data-profile-home-article-row data-profile-home-search-text="{{ article.title | escape }} {% for tag in article.tags %}{{ tag | escape }} {% endfor %}">
+          <a class="profile-home-article-link" href="{{ article.url }}">
+            <time datetime="{{ article.datetime }}">{{ article.datetime }}</time>
+            <span class="profile-home-article-title">{{ article.title }}</span>
+            <span class="profile-home-article-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="profile-home-empty" data-profile-home-empty hidden>找不到符合的文章，請換個關鍵字。</p>
+  {% else %}
+    <p class="profile-articles-empty">目前沒有可顯示的文章。</p>
+  {% endif %}
+  <script src="/js/profile-article-home-search.js" data-pjax defer></script>
+</section>

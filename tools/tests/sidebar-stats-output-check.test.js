@@ -11,7 +11,7 @@ const navigationIndex = { records: [
   { kind: 'article', surfaces: ['profile', 'memory'], categories: ['工作', '站務'], tags: ['方法', '整理'] },
   { kind: 'article', surfaces: ['memory'], categories: ['站務'], tags: ['照片'] }
 ] };
-const profile = '<div class="site-state-wrap" data-profile-site-state><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/profile/articles/"><span class="site-state-item-count">2</span></a></div><div class="site-state-item site-state-tags"><span class="site-state-item-count">3</span></div></nav></div>';
+const profile = '<div class="site-state-wrap" data-profile-site-state><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/#profile-home-article-list"><span class="site-state-item-count">2</span></a></div><div class="site-state-item site-state-tags"><span class="site-state-item-count">3</span></div></nav></div>';
 const memory = '<div class="site-state-wrap"><nav class="site-state"><div class="site-state-item site-state-posts"><span class="site-state-item-count">3</span></div><div class="site-state-item site-state-categories"><span class="site-state-item-count">2</span></div><div class="site-state-item site-state-tags"><span class="site-state-item-count">4</span></div></nav></div>';
 
 function pagesFor(profileHtml = profile, memoryHtml = memory) {
@@ -35,6 +35,6 @@ test('source branches only on the shared route context and disables sidebar part
   const sidebar = fs.readFileSync(path.join(root, 'themes/next/layout/_macro/sidebar.njk'), 'utf8');
   assert.match(template, /brand_surface_context\(page\) === 'profile'/);
   assert.match(template, /profile_article_library\(\)/);
-  assert.match(template, /url_for\('\/profile\/articles\/'\)/);
+  assert.match(template, /url_for\('\/'\) }}#profile-home-article-list/);
   assert.match(sidebar, /site-overview\.njk', \{\}, \{cache: false\}/);
 });

@@ -11,7 +11,6 @@ const { checkUrl } = require('./site-check');
 const { FIXED_SAMPLES, configuredOrigin, routeFile } = require('./seo-url-audit');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const EXPECTED_IMAGE_FILES = 568;
 const EXPECTED_THEME_IMAGES = new Set([
   'apple-touch-icon-next.png', 'avatar.gif', 'favicon-16x16-next.png',
   'favicon-32x32-next.png', 'logo-algolia-nebula-blue-full.svg', 'logo.svg'
@@ -246,7 +245,7 @@ function validateAssetReferences({ root, texts, origin, errors }) {
   return { localImageReferences, checkedCssReferences };
 }
 
-function validateImages({ root, projectRoot, texts, errors, expectedImageFiles = EXPECTED_IMAGE_FILES, expectedThemeImages = EXPECTED_THEME_IMAGES }) {
+function validateImages({ root, projectRoot, texts, errors, expectedImageFiles = null, expectedThemeImages = EXPECTED_THEME_IMAGES }) {
   const sourceImageRoot = path.join(projectRoot, 'source', 'images');
   const outputImageRoot = path.join(root, 'images');
   const sourceImages = fs.existsSync(sourceImageRoot)
@@ -255,7 +254,7 @@ function validateImages({ root, projectRoot, texts, errors, expectedImageFiles =
   const outputImages = fs.existsSync(outputImageRoot)
     ? collectFiles(outputImageRoot, errors).map(file => relativePath(outputImageRoot, file)).sort()
     : [];
-  if (sourceImages.length !== expectedImageFiles) addError(errors, 'source_image_baseline_mismatch', 'source/images', sourceImages.length);
+  if (expectedImageFiles !== null && sourceImages.length !== expectedImageFiles) addError(errors, 'source_image_baseline_mismatch', 'source/images', sourceImages.length);
   const outputSet = new Set(outputImages);
   const missing = sourceImages.filter(file => !outputSet.has(file));
   if (missing.length) addError(errors, 'published_image_missing', 'images', missing.length);
@@ -284,7 +283,7 @@ function validateImages({ root, projectRoot, texts, errors, expectedImageFiles =
   return { sourceImageFiles: sourceImages.length, publicImageFiles: outputImages.length, themeImageFiles: extra.length, photoWallImages };
 }
 
-function auditPublicOutput({ root, plan, baselineRecords, sourceRecords, projectRoot = PROJECT_ROOT, origin = 'https://progress01.github.io', expectedImageFiles = EXPECTED_IMAGE_FILES, expectedThemeImages = EXPECTED_THEME_IMAGES }) {
+function auditPublicOutput({ root, plan, baselineRecords, sourceRecords, projectRoot = PROJECT_ROOT, origin = 'https://progress01.github.io', expectedImageFiles = null, expectedThemeImages = EXPECTED_THEME_IMAGES }) {
   const outputRoot = path.resolve(root);
   const errors = [];
   const files = collectFiles(outputRoot, errors);

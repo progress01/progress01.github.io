@@ -50,11 +50,9 @@ test('profile-only menu and path headings use readable Traditional Chinese UI ty
   assert.match(profile, /\.main-menu\[data-navigation-surface="profile"\] \.menu-item-profile-home > a,[\s\S]*?min-height:\s*48px;/);
   assert.ok(profile.includes(`font-family: ${uiSans};`));
   assert.match(profile, /font-size:\s*15px;[\s\S]*?font-weight:\s*500;[\s\S]*?line-height:\s*1\.6;/);
-  assert.match(profile, /\.menu-item-profile-articles > a i[\s\S]*?margin-right:\s*12px;/);
   assert.match(profile, /\.profile-page \.profile-path h2\s*\{[^}]*margin-bottom:\s*20px;[^}]*font-weight:\s*600;[^}]*line-height:\s*1\.55;/s);
-  assert.match(profile, /\.profile-page \.profile-calendar-gradient[\s\S]*?var\(--surface-accent-strong\)/);
-  assert.match(profile, /\.profile-page \.profile-calendar-event-label/);
-  assert.match(profile, /\.profile-page \.profile-calendar-day-control:focus-visible/);
+  assert.match(profile, /\.profile-page \.profile-home-search-field[\s\S]*?var\(--surface-panel\)/);
+  assert.match(profile, /\.profile-page \.profile-home-article-link:focus-visible/);
   assert.doesNotMatch(profile, /#[\da-f]{3,8}\b|rgba?\(/i);
 });
 
@@ -74,7 +72,7 @@ test('compiled CSS output contains token scopes and component hooks', () => {
     fs.writeFileSync(path.join(root, 'css', 'main.css'), [
       ...['paper', 'base', 'panel', 'ink', 'muted', 'border', 'accent', 'accent-strong', 'focus', 'shadow']
         .map(name => `--surface-${name}: #ffffff;`),
-      '.main-inner.index{}', '.main-inner.profile-page{}', '.profile-page .profile-list-link{}', '.profile-page .profile-calendar-chart{}', '.profile-page .profile-calendar-event-label{}', '.surface-switch-link{}',
+      '.main-inner.index{}', '.main-inner.profile-page{}', '.profile-page .profile-list-link{}', '.profile-page .profile-home-search-field{}', '.profile-page .profile-home-article-link{}', '.surface-switch-link{}',
       '.surface-switch--memory .surface-switch-cassette::before{}', '.surface-switch--profile .surface-switch-cassette::before{}',
       '.main-menu[data-navigation-surface="profile"] .menu-item-profile-home > a{}', '.profile-page .profile-library-count{}'
     ].join('\n'));

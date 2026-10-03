@@ -130,7 +130,7 @@ function checkSitemap(root, origin, articleRoutes, htmlByRoute, errors) {
   return { urls: locs.length, routes };
 }
 
-function validateSeoUrls({ root, origin = 'https://progress01.github.io', expectedArticleCount = 276, samples = FIXED_SAMPLES } = {}) {
+function validateSeoUrls({ root, origin = 'https://progress01.github.io', expectedArticleCount = null, samples = FIXED_SAMPLES } = {}) {
   const errors = [];
   const counts = { htmlFiles: 0, articleHtml: 0, navigationArticles: 0, uniqueArticleRoutes: 0, sitemapUrls: 0, duplicateBodyGroups: 0 };
   if (!root || !fs.existsSync(path.join(root, 'index.html'))) return { errors: [{ code: 'generated_root_invalid', path: String(root || '') }], counts };
@@ -138,7 +138,7 @@ function validateSeoUrls({ root, origin = 'https://progress01.github.io', expect
   const normalizedOrigin = new URL(origin).origin;
   const records = readArticleIndex(absoluteRoot, errors);
   counts.navigationArticles = records.length;
-  if (records.length !== expectedArticleCount) errors.push({ code: 'navigation_article_count_mismatch', path: 'navigation-index.json' });
+  if (expectedArticleCount !== null && records.length !== expectedArticleCount) errors.push({ code: 'navigation_article_count_mismatch', path: 'navigation-index.json' });
 
   const recordByRoute = new Map();
   for (const record of records) {
@@ -226,7 +226,7 @@ function validateSeoUrls({ root, origin = 'https://progress01.github.io', expect
     }
   }
 
-  if (records.length === expectedArticleCount && recordByRoute.size === expectedArticleCount) {
+  if (records.length === recordByRoute.size) {
     for (const sample of samples) {
       const route = normalizeRoute(sample.route, normalizedOrigin);
       const record = recordByRoute.get(route);

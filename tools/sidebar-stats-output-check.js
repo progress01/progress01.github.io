@@ -43,7 +43,7 @@ function validateSidebarStats({ root, pages = {}, navigationIndex } = {}) {
       if (profileStats.length !== 1 || items.length !== 2) errors.push({ code: 'sidebar_profile_stats_shape_invalid', path: route.file });
       if (Number(profileStats.find('.site-state-posts .site-state-item-count').text().trim()) !== expected.profilePosts) errors.push({ code: 'sidebar_profile_post_count_invalid', path: route.file });
       if (Number(profileStats.find('.site-state-tags .site-state-item-count').text().trim()) !== expected.profileTags) errors.push({ code: 'sidebar_profile_tag_count_invalid', path: route.file });
-      if (profileStats.find('.site-state-item-categories').length || profileStats.find('a[href="/profile/articles/"]').length !== 1) errors.push({ code: 'sidebar_profile_stats_destination_invalid', path: route.file });
+      if (profileStats.find('.site-state-item-categories').length || profileStats.find('a[href="/#profile-home-article-list"]').length !== 1) errors.push({ code: 'sidebar_profile_stats_destination_invalid', path: route.file });
     } else {
       if (profileStats.length || items.length !== 3) errors.push({ code: 'sidebar_memory_stats_shape_invalid', path: route.file });
       if (Number($('.site-state-posts .site-state-item-count').text().trim()) !== expected.memoryPosts) errors.push({ code: 'sidebar_memory_post_count_invalid', path: route.file });

@@ -21,49 +21,37 @@ function normalizeTags(tags) {
   return [...new Set((Array.isArray(tags) ? tags : []).map(tag => String(tag ?? '').trim()).filter(Boolean))];
 }
 
-function sortObjectKeys(value) {
-  return Object.fromEntries(Object.keys(value || {}).sort().map(key => [key, value[key]]));
+function publicationTimestamp(article, root) {
+  if (!root) return Number.NEGATIVE_INFINITY;
+  try {
+    const target = new URL(article.url, 'https://local.invalid');
+    const route = decodeURIComponent(target.pathname).replace(/^\/+|\/+$/g, '');
+    const base = path.resolve(root);
+    const output = path.resolve(base, route, 'index.html');
+    if (target.origin !== 'https://local.invalid' || !output.startsWith(base + path.sep)) return Number.NEGATIVE_INFINITY;
+    const $ = cheerio.load(fs.readFileSync(output, 'utf8'));
+    for (const element of $('script[type="application/ld+json"]').toArray()) {
+      const data = JSON.parse($(element).text());
+      const candidates = Array.isArray(data) ? data : [data];
+      const posting = candidates.find(item => item?.['@type'] === 'BlogPosting' || item?.['@type']?.includes?.('BlogPosting'));
+      const timestamp = Date.parse(posting?.datePublished || '');
+      if (Number.isFinite(timestamp)) return timestamp;
+    }
+  } catch { /* Missing article output is reported by the route check below. */ }
+  return Number.NEGATIVE_INFINITY;
 }
 
-function expectedArticles(index) {
+function expectedArticles(index, root) {
   return index.records
     .filter(record => record?.kind === 'article' && Array.isArray(record.surfaces) && record.surfaces.includes('profile'))
-    .map(record => ({ ...record, tags: normalizeTags(record.tags) }))
-    .sort((left, right) => String(right.date || '').localeCompare(String(left.date || '')) || String(left.url || '').localeCompare(String(right.url || '')));
-}
-
-function calendarDate(value) {
-  const timestamp = Date.parse(value || '');
-  if (!Number.isFinite(timestamp)) return String(value || '').slice(0, 10);
-  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(timestamp);
-}
-
-function expectedActivityEvents(article, root) {
-  let publishedDate = calendarDate(article.date);
-  let updatedDate = '';
-  if (root) {
-    try {
-      const route = decodeURIComponent(new URL(article.url, 'https://local.invalid').pathname).replace(/^\/+|\/+$/g, '');
-      const base = path.resolve(root);
-      const output = path.resolve(base, route, 'index.html');
-      if (output.startsWith(base + path.sep)) {
-        const $ = cheerio.load(fs.readFileSync(output, 'utf8'));
-        for (const element of $('script[type="application/ld+json"]').toArray()) {
-          const data = JSON.parse($(element).text());
-          const candidates = Array.isArray(data) ? data : [data];
-          const posting = candidates.find(item => item?.['@type'] === 'BlogPosting' || item?.['@type']?.includes?.('BlogPosting'));
-          publishedDate = calendarDate(posting?.datePublished || article.date);
-          updatedDate = calendarDate(posting?.dateModified || '');
-          break;
-        }
-      }
-    } catch { /* The output contract below still checks its route and visible data. */ }
-  }
-  const events = [{ date: publishedDate, eventType: 'published', eventLabel: '發表' }];
-  if (/^\d{4}-\d{2}-\d{2}$/.test(updatedDate) && updatedDate !== publishedDate) {
-    events.push({ date: updatedDate, eventType: 'updated', eventLabel: '更新' });
-  }
-  return events;
+    .map(record => {
+      const article = { ...record, tags: normalizeTags(record.tags) };
+      return { article, timestamp: publicationTimestamp(article, root) };
+    })
+    .sort((left, right) => String(right.article.date || '').localeCompare(String(left.article.date || ''))
+      || right.timestamp - left.timestamp
+      || String(left.article.url || '').localeCompare(String(right.article.url || '')))
+    .map(entry => entry.article);
 }
 
 function validateProfileLibrary({ root, route = 'home', sourceRoot = path.resolve(__dirname, '..'), html, config, navigationIndex } = {}) {
@@ -87,100 +75,42 @@ function validateProfileLibrary({ root, route = 'home', sourceRoot = path.resolv
     return { errors: [diagnostic('profile_library_data_invalid', file)], articleCount: 0, tagCount: 0 };
   }
 
-  const articles = expectedArticles(navigationIndex);
-  const expectedByUrl = new Map(articles.map(article => [article.url, article.title]));
-  const expectedPostsByDate = {};
-  const expectedEvents = [];
-  for (const article of articles) {
-    for (const event of expectedActivityEvents(article, root)) {
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(event.date)) continue;
-      const row = { title: article.title, url: article.url, eventType: event.eventType, eventLabel: event.eventLabel };
-      expectedEvents.push({ ...row, date: event.date });
-      (expectedPostsByDate[event.date] ||= []).push(row);
-    }
-  }
-  const eventOrder = { published: 0, updated: 1 };
-  Object.keys(expectedPostsByDate).forEach(date => expectedPostsByDate[date].sort((left, right) => eventOrder[left.eventType] - eventOrder[right.eventType] || left.url.localeCompare(right.url) || left.title.localeCompare(right.title)));
-  const newestYear = Object.keys(expectedPostsByDate).sort().at(-1)?.slice(0, 4) || null;
-  const expectedCounts = Object.fromEntries(Object.entries(expectedPostsByDate)
-    .filter(([date]) => date.startsWith(`${newestYear}-`)).map(([date, entries]) => [date, entries.length]));
-  const expectedLatestDate = Object.keys(expectedCounts).sort().at(-1) || null;
-  const expectedCurrentArticles = Object.entries(expectedPostsByDate)
-    .filter(([date]) => date.startsWith(`${newestYear}-`)).flatMap(([, entries]) => entries);
-  const expectedCurrentEventKeys = expectedCurrentArticles.map(event => `${event.url}\u0000${event.eventType}`).sort();
+  const articles = expectedArticles(navigationIndex, root);
   const tagSummary = summarizeTagCounts(articles);
   const $ = cheerio.load(html);
   if (route === 'home') {
-    const cover = $('.profile-article-calendar');
+    const home = $('[data-profile-article-home]');
     if ($('h1#profile-title').text().trim() !== '工作與學習') errors.push(diagnostic('profile_cover_title_invalid', file));
-    if (cover.length !== 1 || cover.find('[data-profile-tag-filters], [data-profile-article-library], .profile-list-link').length) {
-      errors.push(diagnostic('profile_cover_root_invalid', file));
-    }
-    if (cover.find('.profile-cover-main, .profile-cover-secondary, .profile-cover-eyebrow, .profile-cover-tags, .profile-article-link, .profile-cover-read, .profile-calendar-months, .profile-calendar-month, .profile-calendar-entry').length
-        || cover.find('.profile-calendar-year').text().trim() !== (newestYear ? `${newestYear} 更新日曆` : '')
-        || cover.find('#profile-calendar-chart[role="img"]').length !== 1
-        || cover.find('[data-profile-calendar-controls][role="group"][aria-label="選擇有文章的日期"]').length !== 1) {
-      errors.push(diagnostic('profile_calendar_heatmap_markup_invalid', file));
-    }
-    const payloadNode = cover.find('script[type="application/json"][data-profile-calendar-data]');
-    let payload = null;
-    try { payload = JSON.parse(payloadNode.text()); } catch { /* diagnosed below */ }
-    const activityDates = Object.keys(payload?.counts || {}).sort();
-    const activityArticles = [];
-    let calendarValid = payload?.latestYear === newestYear
-      && JSON.stringify(sortObjectKeys(payload?.counts)) === JSON.stringify(sortObjectKeys(expectedCounts))
-      && payload?.latestDate === expectedLatestDate
-      && payload?.articleTotal === articles.length && payload?.eventTotal === expectedEvents.length
-      && payload?.activeDateCount === Object.keys(expectedCounts).length;
-    for (const date of activityDates) {
-      const entries = payload.postsByDate?.[date];
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !date.startsWith(`${payload.latestYear}-`)
-          || !Array.isArray(entries) || payload.counts[date] !== entries.length) calendarValid = false;
-      for (const entry of Array.isArray(entries) ? entries : []) {
-        if (!expectedByUrl.has(entry?.url) || expectedByUrl.get(entry.url) !== entry?.title
-            || !['published', 'updated'].includes(entry?.eventType)
-            || entry?.eventLabel !== (entry.eventType === 'published' ? '發表' : '更新')) calendarValid = false;
-        activityArticles.push(entry);
-      }
-    }
-    const activityEventKeys = activityArticles.map(event => `${event.url}\u0000${event.eventType}`).sort();
-    if (payloadNode.length !== 1 || !calendarValid || activityArticles.length !== expectedCurrentArticles.length
-        || new Set(activityEventKeys).size !== activityEventKeys.length
-        || JSON.stringify(activityEventKeys) !== JSON.stringify(expectedCurrentEventKeys)) {
-      errors.push(diagnostic('profile_calendar_data_invalid', file));
-    }
-    const fallbackLinks = cover.find('[data-profile-calendar-fallback] a');
-    if (fallbackLinks.length !== 1 || fallbackLinks.attr('href') !== '/profile/articles/') errors.push(diagnostic('profile_calendar_fallback_invalid', file));
-    if (cover.find('script[src="/lib/echarts.min.js"][data-pjax], script[src="/lib/languages.js"][data-pjax], script[src="/lib/calendar.js"][data-pjax], script[src="/js/profile-article-calendar.js"][data-pjax]').length !== 4
-        || /calendar(?:-posts)?\.json/.test(html)) errors.push(diagnostic('profile_calendar_assets_invalid', file));
-    const detailLinks = cover.find('[data-profile-calendar-updates] a.profile-calendar-article').toArray().map(link => ({
-      title: $(link).find('.profile-calendar-article-title').text().trim(),
-      url: $(link).attr('href'),
-      eventType: $(link).find('.profile-calendar-event-label').attr('data-event-type'),
-      eventLabel: $(link).find('.profile-calendar-event-label').text().trim()
-    }));
-    const expectedLatest = expectedPostsByDate[expectedLatestDate] || [];
-    if (JSON.stringify(detailLinks) !== JSON.stringify(expectedLatest)) {
-      errors.push(diagnostic('profile_calendar_latest_detail_invalid', file));
-    }
-    const oldCalendarText = /\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\b/.test(cover.text());
-    if (oldCalendarText || cover.find('[data-profile-tag-filters], .profile-cover-description, .profile-cover-category, .profile-cover-tags').length) {
-      errors.push(diagnostic('profile_calendar_extra_copy_invalid', file));
-    }
-    const allLink = cover.find('.profile-navigation a');
-    if (allLink.length !== 1 || allLink.attr('href') !== '/profile/articles/'
-        || allLink.text().replace(/\s+/g, ' ').trim() !== `查看全部 ${articles.length} 篇`) {
-      errors.push(diagnostic('profile_cover_all_articles_link_invalid', file));
-    }
-    if (cover.find('.profile-path, .profile-learning, .profile-all-articles').length) errors.push(diagnostic('profile_cover_legacy_curation_rendered', file));
+    if (home.length !== 1 || home.find('[data-profile-tag-filters], [data-profile-article-library]').length) errors.push(diagnostic('profile_cover_root_invalid', file));
+    const search = home.find('[data-profile-home-search]');
+    const input = search.find('input#profile-home-query[type="search"]');
+    if (search.length !== 1 || search.attr('hidden') === undefined
+        || search.find('label[for="profile-home-query"]').text().trim() !== '搜尋文章'
+        || input.length !== 1 || input.attr('aria-controls') !== 'profile-home-article-list'
+        || input.attr('placeholder') !== '搜尋文章標題或標籤'
+        || home.find('script[src="/js/profile-article-home-search.js"][data-pjax]').length !== 1
+        || home.find('.popup-trigger').length) errors.push(diagnostic('profile_home_search_invalid', file));
+    const count = home.find('.profile-home-count').text().replace(/\s+/g, ' ').trim();
+    if (count !== `共 ${articles.length} 篇・依發表時間排序`) errors.push(diagnostic('profile_home_count_invalid', file));
+    const rows = home.find('[data-profile-home-article-row]').toArray().map(row => {
+      const link = $(row).find('a.profile-home-article-link');
+      const time = link.find('time');
+      return { url: link.attr('href'), title: link.find('.profile-home-article-title').text().trim(), date: time.attr('datetime'), visibleDate: time.text().trim() };
+    });
+    if (home.find('ul#profile-home-article-list[data-profile-home-article-list]').length !== 1 || home.find('[data-profile-home-article-row]').toArray().some(row => !$(row).attr('data-profile-home-search-text')?.includes($(row).find('.profile-home-article-title').text().trim())) || JSON.stringify(rows) !== JSON.stringify(articles.map(article => ({
+      url: article.url, title: article.title, date: String(article.date).slice(0, 10), visibleDate: String(article.date).slice(0, 10)
+    })))) errors.push(diagnostic('profile_home_articles_invalid', file));
+    if (home.find('.profile-article-calendar, #profile-calendar-chart, .profile-calendar-month, .profile-cover-main, .profile-path').length
+        || $('script[src="/lib/echarts.min.js"], script[src="/lib/calendar.js"], script[src="/js/profile-article-calendar.js"]').length
+        || /calendar(?:-posts)?\.json/.test(html)) errors.push(diagnostic('profile_home_calendar_rendered', file));
+    if (home.find('.profile-path, .profile-learning, .profile-all-articles').length) errors.push(diagnostic('profile_cover_legacy_curation_rendered', file));
     const curationText = (config.paths || []).flatMap(entry => [entry.workingDescription,
       ...(entry.items || []).flatMap(item => [item.selectionReason, item.readerValue])])
       .filter(value => typeof value === 'string' && value.trim());
     if (curationText.some(value => html.includes(value)) || (config.statusValues || []).some(value => html.includes(value))) {
       errors.push(diagnostic('profile_library_internal_curation_leaked', file));
     }
-    const currentActivityArticles = expectedCurrentArticles.length;
-    return { errors, articleCount: articles.length, tagCount: tagSummary.length, eventTotal: expectedEvents.length, calendarYear: Number(payload?.latestYear) || null, calendarCount: currentActivityArticles, activeDateCount: Object.keys(expectedCounts).length, activityCounts: expectedCounts };
+    return { errors, articleCount: articles.length, tagCount: tagSummary.length };
   }
   if ($('h1#profile-title').text().trim() !== '工作與學習') errors.push(diagnostic('profile_library_title_invalid', file));
   const library = $('[data-profile-article-library]');
@@ -272,9 +202,8 @@ function runCli(args = process.argv.slice(2), route = 'home') {
     result.errors.forEach(error => console.error(`- ${error.code} path=${error.path}${error.url ? ` url=${error.url}` : ''}`));
     return 1;
   }
-  const calendar = route === 'home' ? `、${result.eventTotal} events／${result.activeDateCount} active dates ${JSON.stringify(result.activityCounts)}` : '';
-  console.log(`profile-library ${route} 通過：${result.articleCount} unique profile articles、${result.tagCount} tags${calendar}。`);
+  console.log(`profile-library ${route} 通過：${result.articleCount} unique profile articles、${result.tagCount} tags。`);
   return 0;
 }
 
-module.exports = { PAGE_PATHS, expectedArticles, expectedActivityEvents, validateProfileLibrary, runCli };
+module.exports = { PAGE_PATHS, expectedArticles, validateProfileLibrary, runCli };

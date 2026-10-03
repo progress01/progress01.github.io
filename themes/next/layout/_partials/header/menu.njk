@@ -8,7 +8,7 @@
   <ul class="main-menu menu" data-navigation-surface="{{ 'profile' if use_profile_menu else 'memory' }}">
     {%- if use_profile_menu %}
       {%- for item in profile_menu %}
-        {%- set is_current = (item.id === 'home' and (page_path === 'index.html' or page_path === 'profile/index.html')) or (item.id === 'articles' and page_path.indexOf('profile/articles/') === 0) %}
+        {%- set is_current = item.id === 'home' and (page_path === 'index.html' or page_path === 'profile/index.html') %}
         <li class="menu-item menu-item-profile-{{ item.id }}{{ ' menu-item-active' if is_current else '' }}">
           <a href="{{ url_for(item.href) }}" rel="section"{% if is_current %} aria-current="page"{% endif %}>
             {%- if theme.menu_settings.icons and item.icon %}<i class="{{ item.icon }} fa-fw" aria-hidden="true"></i>{% endif %}{{ item.label }}

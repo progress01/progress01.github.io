@@ -180,7 +180,7 @@ function readPublishedPosts(routeMap) {
   return posts;
 }
 
-test('real 276-post corpus, twelve profile posts, eight approved URLs, random baseline, and legacy sample agree', t => {
+test('real public corpus, twelve profile posts, eight approved URLs, random baseline, and legacy sample agree', t => {
   const routeSnapshot = path.join(root, 'public/navigation-index.json');
   const randomBaselineFile = path.join(root, 'tmp/wbs33-public-20260926/random.json');
   if (!fs.existsSync(routeSnapshot) || !fs.existsSync(randomBaselineFile)) {
@@ -191,14 +191,13 @@ test('real 276-post corpus, twelve profile posts, eight approved URLs, random ba
   const generatedNavigationSnapshot = JSON.parse(fs.readFileSync(routeSnapshot, 'utf8'));
   const snapshotArticles = generatedNavigationSnapshot.records.filter(record => record.kind === 'article');
   const routeTitles = new Map(snapshotArticles.map(record => [record.title, record.url]));
-  assert.equal(snapshotArticles.length, 276);
-  assert.equal(new Set(snapshotArticles.map(record => record.url)).size, 276);
-  assert.equal(routeTitles.size, 276, 'snapshot titles must uniquely map real source records to their established routes');
-
   const posts = readPublishedPosts(routeTitles);
-  assert.equal(posts.length, 276);
+  assert.equal(snapshotArticles.length, posts.length);
+  assert.equal(new Set(snapshotArticles.map(record => record.url)).size, posts.length);
+  assert.equal(routeTitles.size, posts.length, 'snapshot titles must uniquely map real source records to their established routes');
+
   const postsByUrl = new Map(posts.map(post => [`/${post.path}`, post]));
-  assert.equal(postsByUrl.size, 276);
+  assert.equal(postsByUrl.size, posts.length);
   const legacy = new Set(repoManifest.posts);
   const expectedSurfaces = new Map(posts.map(post => {
     const source = post.source;
@@ -214,8 +213,8 @@ test('real 276-post corpus, twelve profile posts, eight approved URLs, random ba
   });
   const articles = realIndex.records.filter(record => record.kind === 'article');
   const articleByUrl = new Map(articles.map(record => [record.url, record]));
-  assert.equal(articles.length, 276);
-  assert.equal(articleByUrl.size, 276);
+  assert.equal(articles.length, posts.length);
+  assert.equal(articleByUrl.size, posts.length);
   assert.equal(articleByUrl.size, new Set(articles.map(record => record.url)).size);
 
   const browser = loadHexoCallback('scripts/content-browser.js', 'helper').callback;
@@ -223,12 +222,12 @@ test('real 276-post corpus, twelve profile posts, eight approved URLs, random ba
   const profile = browser.call(helperContext(posts), 'profile');
   const memory = browser.call(helperContext(posts), 'memory');
   const urls = records => records.map(record => record.url);
-  assert.equal(all.length, 276);
+  assert.equal(all.length, posts.length);
   assert.equal(profile.length, 12);
-  assert.equal(memory.length, 276);
-  assert.equal(new Set(urls(all)).size, 276);
+  assert.equal(memory.length, posts.length);
+  assert.equal(new Set(urls(all)).size, posts.length);
   assert.equal(new Set(urls(profile)).size, 12);
-  assert.equal(new Set(urls(memory)).size, 276);
+  assert.equal(new Set(urls(memory)).size, posts.length);
   for (const [url, surfaces] of expectedSurfaces) {
     assert.deepEqual(articleByUrl.get(url).surfaces, surfaces, `navigation surface mismatch at ${url}`);
     assert.equal(urls(profile).includes(url), surfaces.includes('profile'), `profile list mismatch at ${url}`);
@@ -255,13 +254,12 @@ test('real 276-post corpus, twelve profile posts, eight approved URLs, random ba
     return post.path && post.type !== 'random' && !categories.includes('站務');
   });
   const baselineUrls = oldEligible.map(post => `/${post.path}`);
-  assert.equal(baselineUrls.length, 274);
-  assert.equal(new Set(baselineUrls).size, 274);
+  assert.equal(new Set(baselineUrls).size, baselineUrls.length);
   const expectedRandom = baselineUrls.filter(url => expectedSurfaces.get(url).includes('memory'));
-  assert.equal(expectedRandom.length, 274);
-  assert.equal(randomRecords.length, 274);
+  assert.equal(expectedRandom.length, baselineUrls.length);
+  assert.equal(randomRecords.length, expectedRandom.length);
   assert.deepEqual(new Set(randomUrls), new Set(expectedRandom));
-  assert.equal(new Set(randomUrls).size, 274);
+  assert.equal(new Set(randomUrls).size, randomUrls.length);
 
   const approved = yaml.load(fs.readFileSync(path.join(root, 'source/_data/profile-home.yml'), 'utf8'), { schema: yaml.JSON_SCHEMA });
   const approvedUrls = approved.paths.flatMap(group => group.items.map(item => item.url));

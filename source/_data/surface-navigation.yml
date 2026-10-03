@@ -14,7 +14,3 @@ menus:
       label: 工作與學習
       href: /
       icon: fa fa-briefcase
-    - id: articles
-      label: 全部文章
-      href: /profile/articles/
-      icon: fa fa-list

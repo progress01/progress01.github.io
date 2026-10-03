@@ -78,7 +78,7 @@ surfaces: [profile, memory]
 
 ## 4. Profile 封面與 A 文章庫
 
-- `/profile/` 是 A 面封面：依已發布文章的 `surfaces` 選出含 `profile` 的文章；每篇至少有一筆發表活動，日期為 `post.date`。有效 `post.updated` 需在文章 `date` 之後或同時，且其 Asia/Taipei 日曆日不得晚於建置時的台北今日（今日合法）；若更新日與發表日不同，再加一筆更新活動。更新時間含時區時，以其 instant 轉換至 Asia/Taipei 後判定當日日曆日，不採 UTC 日期或機器本地時區。缺少 `updated` 不另加事件；無效、早於 `date` 或晚於今日的 `updated` 由建置前 `content-check` 報錯阻擋，不由 profile helper 或 UI 靜默回退／修正。每篇最多兩筆（發表與最新更新），不保存中間版本歷史；熱力圖每日計數活動事件，狀態分別呈現唯一文章總數與活動日期數，明細列標出「發表／更新」。只呈現事件資料最新年份的全年熱力圖。年份動態產生；新年份出現時封面自動切換，舊年份仍可在文章庫找到。封面資料由既有 profile helper 內嵌，不讀取 B 面全站日曆 JSON，也不新增 endpoint。選取有活動的日期可查看當日所有活動及原文章 URL；不顯示摘要、標籤或人工 featured 清單；頁尾篇數來自全部 profile 文章。
+- `/` 與 `/profile/` 是 A 面文章首頁：依已發布文章的 `surfaces` 選出含 `profile` 的文章，按完整發表時間由新到舊顯示日期與標題，每篇只連到原文章 URL。清單上方搜尋欄依文章標題與標籤即時篩選，不預載全站搜尋索引；無 JavaScript 時仍顯示完整清單；首頁不載入 ECharts，也不引用 B 面全站日曆資料。文章更新日期仍由內容檢查驗證，但不在首頁另列更新事件；不顯示摘要、標籤或人工 featured 清單。
 - `/profile/articles/` 是 A 面完整文章庫：顯示全部含 `profile` 的已發布文章，依日期新到舊；標籤篩選與計數只讀文章既有 front matter tags，不推導面向或新增標籤。
 - `source/_data/profile-home.yml` 中的舊三路徑人工策展資料保留作內部歷史／驗證資料，不是正式 UI，不是文章分類欄位，也不能替文章宣告面向。
 - 每個引用必須是目前存在、已發布的本站文章 URL，且該文章解析後的 `surfaces` 必須包含 `profile`。引用不存在、未發布、重複或不含 `profile` 的文章都應由驗證器報錯並定位策展項目。

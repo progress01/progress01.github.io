@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const cheerio = require('cheerio');
-const { expectedActivityEvents } = require('./profile-library-output-check');
+const { expectedArticles } = require('./profile-library-output-check');
 
 const DEFAULT_SOURCE_ROOT = path.resolve(__dirname, '..');
 const FILES = Object.freeze({
@@ -18,7 +18,7 @@ const FILES = Object.freeze({
   profileTemplate: 'themes/next/layout/profile.njk',
   articlesTemplate: 'themes/next/layout/profile-articles.njk',
   profileLibraryTemplate: 'themes/next/layout/_partials/profile-article-library.njk',
-  profileCalendarTemplate: 'themes/next/layout/_partials/profile-article-calendar.njk',
+  profileHomeTemplate: 'themes/next/layout/_partials/profile-article-home.njk',
   filterScript: 'themes/next/source/js/profile-article-filter.js',
   layout: 'themes/next/layout/_layout.njk'
 });
@@ -56,10 +56,9 @@ function validateSourceContract({ sourceRoot = DEFAULT_SOURCE_ROOT, sources = {}
       || controls.profile?.target !== 'memory' || controls.profile?.href !== '/memory/' || controls.profile?.label !== 'SIDE B／翻到個人記憶庫') {
     errors.push(diagnostic('surface_copy_flip_contract_invalid', FILES.navigation));
   }
-  if (!Array.isArray(navigation?.menus?.profile) || navigation.menus.profile.length !== 2
+  if (!Array.isArray(navigation?.menus?.profile) || navigation.menus.profile.length !== 1
       || navigation.menus.profile[0]?.id !== 'home' || navigation.menus.profile[0]?.label !== '工作與學習'
-      || navigation.menus.profile[0]?.href !== '/' || navigation.menus.profile[1]?.id !== 'articles'
-      || navigation.menus.profile[1]?.label !== '全部文章' || navigation.menus.profile[1]?.href !== '/profile/articles/') {
+      || navigation.menus.profile[0]?.href !== '/') {
     errors.push(diagnostic('surface_copy_profile_menu_invalid', FILES.navigation));
   }
   const presentation = profile?.presentation || {};
@@ -79,10 +78,10 @@ function validateSourceContract({ sourceRoot = DEFAULT_SOURCE_ROOT, sources = {}
     ['searchTemplate', ['搜尋範圍', '<option value="profile">工作與學習</option>', '<option value="memory">個人記憶庫</option>', '<option value="all">全部公開內容</option>']],
     ['home', ['<span class="home-profile-bridge-label">SIDE A</span>', '<h2 id="home-profile-bridge-title">工作與學習</h2>', '看整理過的經驗與方法', '翻到 A 面 ↗']],
     ['post', ['收錄於', '文章收錄面向', '・', '🚧 當前假設／探索中', '最近校準', '目前適用邊界']],
-    ['profileTemplate', ['profile-article-calendar.njk', '工作與學習']],
+    ['profileTemplate', ['profile-article-home.njk', '工作與學習']],
     ['articlesTemplate', ['profile-article-library.njk', '工作與學習']],
     ['profileLibraryTemplate', ['data-profile-result-count', '全部 {{ library.total }}', 'data-profile-tag-filters', 'data-profile-article-row', 'article.tags', '目前沒有可顯示的文章。']],
-    ['profileCalendarTemplate', ['profile_article_calendar()', 'data-profile-calendar-data', 'data-profile-calendar-controls', 'profile-calendar-year', '個活動日期', '文章活動', 'eventLabel', '少', '多', '查看全部 {{ calendar.articleTotal }} 篇']],
+    ['profileHomeTemplate', ['profile_article_library()', 'data-profile-article-home', 'data-profile-home-search', '搜尋文章標題或標籤', 'data-profile-home-article-row', 'article.url', 'article.title']],
     ['filterScript', ['readTagFilter', 'serializeTagFilter', 'hashchange', 'popstate', 'pjax:success', '__profileArticleFilterInstalled', 'controls.hidden = false']],
     ['layout', ['class="skip-link" href="#main-content">跳到主要內容</a>']]
   ];
@@ -91,7 +90,7 @@ function validateSourceContract({ sourceRoot = DEFAULT_SOURCE_ROOT, sources = {}
   }
   if (!hasAll(text.searchTemplate, OPTIONS.map(([, label]) => label))) errors.push(diagnostic('surface_copy_search_scope_invalid', FILES.searchTemplate));
 
-  const activeSources = ['navigation', 'postSurface', 'searchJs', 'searchTemplate', 'home', 'post', 'profileTemplate', 'articlesTemplate', 'profileLibraryTemplate', 'profileCalendarTemplate', 'filterScript', 'layout'];
+  const activeSources = ['navigation', 'postSurface', 'searchJs', 'searchTemplate', 'home', 'post', 'profileTemplate', 'articlesTemplate', 'profileLibraryTemplate', 'profileHomeTemplate', 'filterScript', 'layout'];
   for (const key of activeSources) {
     if (/個人記憶(?!庫)/u.test(text[key])) errors.push(diagnostic('surface_copy_legacy_memory_name', FILES[key]));
     if (/私人模式|私密模式/u.test(text[key])) errors.push(diagnostic('surface_copy_private_mode_wording', FILES[key]));
@@ -140,7 +139,7 @@ function validateOutput({ root, pages = {}, assets = {}, index } = {}) {
   const profileShell = profilePage('.profile-home').first();
   const profileHeader = profileShell.children('.profile-home-header');
   const profileBody = profileShell.children('.profile-home-body');
-  const cover = profileBody.find('.profile-article-calendar');
+  const cover = profileBody.find('[data-profile-article-home]');
   if (profileShell.children().length !== 2 || profileHeader.length !== 1 || profileHeader.children().length !== 1
       || profileHeader.children('h1#profile-title').text().trim() !== '工作與學習'
       || profileBody.length !== 1
@@ -151,43 +150,17 @@ function validateOutput({ root, pages = {}, assets = {}, index } = {}) {
   }
 
   const compatibility = cheerio.load(readPage('profile/articles/index.html'));
-  const payloadNode = cover.find('script[data-profile-calendar-data]');
-  let profileCalendar = null;
-  try { profileCalendar = JSON.parse(payloadNode.text()); } catch { /* report through route contract below */ }
+  const expectedProfile = expectedArticles(index, root);
+  const expectedProfileUrls = expectedProfile.map(record => record.url).sort();
   const compatibilityLinks = compatibility('[data-profile-article-row] a.profile-list-link').toArray().map(link => compatibility(link).attr('href'));
-  const expectedProfileUrls = index.records.filter(record => record?.kind === 'article' && record.surfaces?.includes('profile')).map(record => record.url).sort();
-  const profileRecords = index.records.filter(record => record?.kind === 'article' && record.surfaces?.includes('profile'))
-    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')) || String(a.url || '').localeCompare(String(b.url || '')));
-  const activityRecords = profileRecords.flatMap(record => expectedActivityEvents(record, root).map(event => ({
-    title: record.title, url: record.url, eventType: event.eventType, eventLabel: event.eventLabel, date: event.date
-  })));
-  const newestYear = activityRecords.reduce((year, event) => Math.max(year, Number(String(event.date || '').slice(0, 4)) || 0), 0);
-  const expectedCoverRecords = activityRecords.filter(event => String(event.date || '').startsWith(`${newestYear}-`));
-  const expectedCoverUrls = expectedCoverRecords.map(event => `${event.url}\u0000${event.eventType}`).sort();
-  const expectedDates = [...new Set(expectedCoverRecords.map(event => event.date))].sort();
-  const profileLinks = Object.values(profileCalendar?.postsByDate || {}).flat().map(event => `${event.url}\u0000${event.eventType}`).sort();
-  const profileEvents = Object.values(profileCalendar?.postsByDate || {}).flat();
-  const profileEventLabelsValid = profileEvents.every(event => ['published', 'updated'].includes(event.eventType)
-    && event.eventLabel === (event.eventType === 'published' ? '發表' : '更新'));
-  const allLink = cover.find('.profile-navigation a');
-  const selectedDate = profileCalendar?.latestDate;
-  const selectedHeading = cover.find('[data-profile-calendar-detail-heading]').text().trim();
-  const activeDateCount = expectedDates.length;
-  if (JSON.stringify(profileLinks) !== JSON.stringify(expectedCoverUrls)
-      || cover.find('.profile-calendar-year').text().trim() !== (newestYear ? `${newestYear} 更新日曆` : '')
-      || profileCalendar?.latestYear !== String(newestYear)
-      || JSON.stringify(Object.keys(profileCalendar?.counts || {}).sort()) !== JSON.stringify(expectedDates)
-      || profileCalendar?.articleTotal !== profileRecords.length || profileCalendar?.activeDateCount !== activeDateCount
-      || selectedDate !== expectedDates.at(-1)
-      || profileCalendar?.eventTotal !== activityRecords.length
-      || !profileEventLabelsValid
-      || selectedHeading !== `${selectedDate} 文章活動`
-      || cover.find('.profile-calendar-status').text().replace(/\s+/g, ' ').trim() !== `共 ${profileRecords.length} 篇文章，${activeDateCount} 個活動日期`
-      || cover.find('.profile-calendar-month').length
-      || cover.find('.profile-cover-main, .profile-cover-secondary, .profile-cover-eyebrow, .profile-cover-tags, [data-profile-tag-filters]').length
-      || allLink.attr('href') !== '/profile/articles/' || !allLink.text().includes(`查看全部 ${expectedProfileUrls.length} 篇`)
+  const homeRows = cover.find('[data-profile-home-article-row] a.profile-home-article-link').toArray().map(link => ({
+    url: profilePage(link).attr('href'),
+    title: profilePage(link).find('.profile-home-article-title').text().trim()
+  }));
+  if (JSON.stringify(homeRows) !== JSON.stringify(expectedProfile.map(record => ({ url: record.url, title: record.title })))
+      || cover.find('[data-profile-home-search] input#profile-home-query').attr('placeholder') !== '搜尋文章標題或標籤'
+      || profilePage('script[src="/lib/echarts.min.js"], script[src="/lib/calendar.js"], script[src="/js/profile-article-calendar.js"]').length
       || JSON.stringify(compatibilityLinks.slice().sort()) !== JSON.stringify(expectedProfileUrls)
-      || new Set(profileLinks).size !== profileLinks.length
       || compatibility('h1#profile-title').text().trim() !== '工作與學習') {
     errors.push(diagnostic('surface_copy_output_profile_library_invalid', 'profile/articles/index.html'));
   }

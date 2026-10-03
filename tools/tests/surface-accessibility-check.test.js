@@ -9,7 +9,7 @@ function page(extra = '', { article = false } = {}) {
 }
 
 test('accepts core page semantics and neutral article ordering', () => {
-  assert.deepEqual(checkHtml(page('<section aria-labelledby="section-title"><h2 id="section-title">入口</h2><a href="/one/">第一篇文章</a></section>'), 'profile/index.html'), []);
+  assert.deepEqual(checkHtml(page('<section data-profile-article-home aria-labelledby="section-title"><h2 id="section-title">入口</h2><div data-profile-home-search><label for="profile-home-query">搜尋文章</label><input id="profile-home-query" type="search" aria-controls="profile-home-article-list"></div><ul id="profile-home-article-list" data-profile-home-article-list><li><a class="profile-home-article-link" href="/one/">第一篇文章</a></li></ul></section>'), 'profile/index.html'), []);
   assert.deepEqual(checkHtml(page('', { article: true }), 'post.html', { article: true }), []);
 });
 
@@ -27,13 +27,11 @@ test('rejects empty accessible names, positive tabindex, and small switch target
   assert.ok(checkSource(source).includes('surface_switch_target_too_small'));
 });
 
-test('profile heatmap exposes named scroll, chart, date controls, and article links', () => {
-  const calendar = '<section data-profile-article-calendar><div class="profile-calendar-scroll" tabindex="0" aria-label="全年熱力圖，可水平捲動"><div id="profile-calendar-chart" role="img" aria-label="2026 工作與學習文章活動熱力圖"></div><div data-profile-calendar-controls role="group" aria-label="選擇有文章的日期"><button class="profile-calendar-day-control" type="button" aria-label="2026-09-27，1 次工作與學習文章活動"></button></div></div><p data-profile-calendar-fallback>熱力圖載入中<a href="/profile/articles/">文章庫</a></p><a class="profile-calendar-article" href="/work/sample/"><span class="profile-calendar-event-label">發表</span><span class="profile-calendar-article-title">測試文章</span></a></section>';
-  assert.deepEqual(checkHtml(page(calendar), 'profile/index.html'), []);
-  const invalid = calendar.replace('aria-label="選擇有文章的日期"', '').replace('aria-label="2026-09-27，1 次工作與學習文章活動"', '');
-  const errors = checkHtml(page(invalid), 'profile/index.html');
-  assert.ok(errors.includes('profile_calendar_controls_name_invalid'));
-  assert.ok(errors.includes('profile_calendar_day_button_name_invalid'));
+test('profile article home exposes a labelled inline search and readable links', () => {
+  const home = '<section data-profile-article-home><div data-profile-home-search><label for="profile-home-query">搜尋文章</label><input id="profile-home-query" type="search" aria-controls="profile-home-article-list"></div><ul id="profile-home-article-list" data-profile-home-article-list><li><a class="profile-home-article-link" href="/work/sample/">測試文章</a></li></ul></section>';
+  assert.deepEqual(checkHtml(page(home), 'profile/index.html'), []);
+  const invalid = home.replace('for="profile-home-query"', 'for="missing"');
+  assert.ok(checkHtml(page(invalid), 'profile/index.html').includes('profile_home_search_name_invalid'));
 });
 
 test('rejects missing reduced motion and anchor interception contracts', () => {

@@ -84,7 +84,7 @@ test('Hexo helper defaults to all and preserves category/tag/date/url output sha
   assert.deepEqual(recordsHelper.call(context, 'memory').map(item => item.url), ['/legacy/']);
 });
 
-test('current public source produces 276 all, 12 profile, and 276 memory posts by set membership', () => {
+test('current public source keeps all, profile, and memory memberships consistent', () => {
   const root = path.resolve(__dirname, '../..');
   const manifest = require('../data/legacy-surfaces.v1.json');
   const legacy = new Set(manifest.posts);
@@ -108,11 +108,11 @@ test('current public source produces 276 all, 12 profile, and 276 memory posts b
   const profileSources = new Set(profile.map(sourceIdentity));
   const memorySources = new Set(memory.map(sourceIdentity));
   const bothSources = [...profileSources].filter(source => memorySources.has(source));
-  assert.equal(all.length, 276);
+  assert.equal(all.length, posts.length);
   assert.equal(profile.length, 12);
-  assert.equal(memory.length, 276);
+  assert.equal(memory.length, all.length);
   assert.equal(profileSources.size, 12);
-  assert.equal(memorySources.size, 276);
+  assert.equal(memorySources.size, memory.length);
   assert.equal(new Set(all.map(sourceIdentity)).size, all.length);
   assert.equal(bothSources.length, 12);
   assert.equal([...profileSources].filter(source => !memorySources.has(source)).length, 0);

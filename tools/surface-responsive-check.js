@@ -15,8 +15,7 @@ const SOURCE = {
   accessCss: 'themes/next/source/css/_custom/accessibility.styl',
   profileTemplate: 'themes/next/layout/profile.njk',
   articlesTemplate: 'themes/next/layout/profile-articles.njk',
-  profileCalendarTemplate: 'themes/next/layout/_partials/profile-article-calendar.njk',
-  profileCalendarJs: 'themes/next/source/js/profile-article-calendar.js',
+  profileHomeTemplate: 'themes/next/layout/_partials/profile-article-home.njk',
   profileLibraryTemplate: 'themes/next/layout/_partials/profile-article-library.njk',
   postTemplate: 'themes/next/layout/_macro/post.njk'
 };
@@ -44,10 +43,10 @@ function checkSource(sources) {
   if (!/@media\s*\(max-width:\s*767px\)[\s\S]*?\.index \.home-landing-entry-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/.test(css)) errors.push(diagnostic('home_entry_767_selector_or_grid_missing'));
   if (!/@media\s*\(max-width:\s*430px\)[\s\S]*?\.index \.home-landing-entry-grid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(css)) errors.push(diagnostic('home_entry_430_single_column_missing'));
   if (/\.index \.home-landing-grid\b/.test(css)) errors.push(diagnostic('home_entry_selector_mismatch'));
-  if (!/profile-article-calendar/.test(sources.profileTemplate || '') || !/profile-article-library/.test(sources.articlesTemplate || '')
-      || !/profile-calendar-scroll/.test(sources.profileCalendarTemplate || '')
-      || !/overflow-x:\s*auto/.test(bundle) || !/profile-calendar-day-control:focus-visible/.test(bundle)
-      || !/pjax:success/.test(sources.profileCalendarJs || '')
+  if (!/profile-article-home/.test(sources.profileTemplate || '') || !/profile-article-library/.test(sources.articlesTemplate || '')
+      || !/data-profile-home-article-list/.test(sources.profileHomeTemplate || '')
+      || !/data-profile-home-search/.test(sources.profileHomeTemplate || '')
+      || !/profile-home-article-link:focus-visible/.test(bundle)
       || !/data-profile-tag-filters/.test(sources.profileLibraryTemplate || '') || !/data-profile-article-list/.test(sources.profileLibraryTemplate || '')) errors.push(diagnostic('profile_library_template_hooks_missing'));
   if (!/post-surface-marker/.test(sources.postTemplate || '')) errors.push(diagnostic('article_hook_missing'));
   return errors;
@@ -75,7 +74,7 @@ function checkOutput({ root, pages } = {}) {
     if (!$('.home-landing-entry-grid').length) errors.push(diagnostic('home_entry_template_hook_missing', 'memory/index.html'));
   }
   for (const file of ['index.html', 'profile/index.html']) {
-    if (pageHtml[file] && !cheerio.load(pageHtml[file])('.profile-calendar-scroll #profile-calendar-chart, [data-profile-calendar-controls]').length) errors.push(diagnostic('profile_responsive_hooks_missing', file));
+    if (pageHtml[file] && !cheerio.load(pageHtml[file])('[data-profile-home-article-list] .profile-home-article-link, [data-profile-home-search] input[type=search]').length) errors.push(diagnostic('profile_responsive_hooks_missing', file));
   }
   if (pageHtml['profile/articles/index.html'] && !cheerio.load(pageHtml['profile/articles/index.html'])('[data-profile-article-list] .profile-list-link').length) errors.push(diagnostic('profile_articles_hooks_missing', 'profile/articles/index.html'));
   if (pageHtml[ARTICLE]) {
