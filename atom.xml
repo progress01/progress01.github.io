@@ -6,7 +6,7 @@
   <link href="https://progress01.github.io/atom.xml" rel="self"/>
   
   <link href="https://progress01.github.io/"/>
-  <updated>2026-10-05T03:23:00.000Z</updated>
+  <updated>2026-10-05T14:24:00.000Z</updated>
   <id>https://progress01.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>遇到陌生工作時，我先練習看見缺口</title>
+    <link href="https://progress01.github.io/work/learning-to-name-work-gaps/"/>
+    <id>https://progress01.github.io/work/learning-to-name-work-gaps/</id>
+    <published>2026-10-05T14:24:00.000Z</published>
+    <updated>2026-10-05T14:24:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-de7ce86512cc7e21" data-navigation-anchor="">我花了不少力氣學著規劃工作，卻常在任務剛開始時感到迷茫。最近一次討論讓我想試著把「我不會」說得更具體。</p><span id="more"></span><p id="nav-efbd0edd27ff2feb" data-navigation-anchor="">以前碰到不熟的任務，我容易先想：是不是該找一份完整的模板？是不是還要學更多專案管理方法？表格、排程和工具我都願意做，做完卻還是可能不知道自己漏了什麼。</p><p id="nav-9043cce78dc333f0" data-navigation-anchor="">這份困惑沒有因為一句「先把事情拆開」就消失。我也不想把前面的摸索都算成白費。至少那些反覆卡住的經驗，讓我開始分辨：有些工作我知道題目，只是不會解；有些工作則是題目本身還沒有被說清楚。</p><h2 id="對方也不知道答案，卻知道先問什麼" data-navigation-anchor=""><a href="#對方也不知道答案，卻知道先問什麼" class="headerlink" title="對方也不知道答案，卻知道先問什麼"></a>對方也不知道答案，卻知道先問什麼</h2><p id="nav-e48f92d482f90f00" data-navigation-anchor="">一次討論裡，我注意到另一種起手式。遇到不熟的工作時，對方不一定比我更清楚所有細節，卻會先問：最後要完成什麼？誰要使用結果？目前缺哪一塊資訊？這一塊可以找誰確認？</p><p id="nav-dc78009864146aa2" data-navigation-anchor="">我聽完才發現，自己常把「還不知道」直接接到「我是不是能力不足」。如果先把未知寫成一個問題，它就比較有機會變成可查、可問、可驗證的工作。這是我目前對差異的理解，還需要拿真實任務練習，不能只靠一次談話就認定自己已經學會。</p><h2 id="在排時間以前，先畫出工作的骨架" data-navigation-anchor=""><a href="#在排時間以前，先畫出工作的骨架" class="headerlink" title="在排時間以前，先畫出工作的骨架"></a>在排時間以前，先畫出工作的骨架</h2><p id="nav-469150e5d0b60c37" data-navigation-anchor="">例如有人說「把網站改版的上線前工作排出來」。我以前可能很快想到設計、前端、後端和時程。但這幾個大詞還不足以讓人開始合作：要確認哪些頁面？資料從哪裡來？誰決定畫面可以進入開發？測試發現問題後，誰確認修正完成？</p><p id="nav-29d6eb056171f9a0" data-navigation-anchor="">我想先用六個問題替陌生任務畫一張暫時的地圖：</p><ol><li id="nav-e6ef4728959fc178" data-navigation-anchor=""><strong>目標</strong>：做到什麼，這次才算完成？</li><li id="nav-ea821136d7358240" data-navigation-anchor=""><strong>對象</strong>：誰會使用成果，誰需要做決定？</li><li id="nav-3fb013ade9013441" data-navigation-anchor=""><strong>工作</strong>：從開始到交付，中間要做哪些具體動作？</li><li id="nav-89db6525649e6f7a" data-navigation-anchor=""><strong>已知與未知</strong>：哪些已有資料，哪些只是我的假設？</li><li id="nav-a97a124c8c98794e" data-navigation-anchor=""><strong>資訊來源</strong>：未知要查哪份資料，或找誰確認？</li><li id="nav-4e6283471fbebdc0" data-navigation-anchor=""><strong>確認點</strong>：哪個問題沒有答案，後面的工作就不適合往下排？</li></ol><p id="nav-5c395dd56ee8bd3e" data-navigation-anchor="">這張地圖不用一次畫對。它先幫我把「網站改版」這種主題，拆成「確認欄位」「核對資料來源」「取得畫面確認」等可以交付或追蹤的動作。等工作項目和相依關係比較清楚，再排時程才有依據。</p><h2 id="紀錄要讓下一次接得上" data-navigation-anchor=""><a href="#紀錄要讓下一次接得上" class="headerlink" title="紀錄要讓下一次接得上"></a>紀錄要讓下一次接得上</h2><p id="nav-f41f1bc21993f027" data-navigation-anchor="">我也曾把「要不要記更多」當成工具問題。現在比較想先問的是：這筆紀錄將來要回答什麼？</p><ul><li id="nav-c78431269bbc2d01" data-navigation-anchor=""><strong>下一步</strong>：現在要做什麼，卡在哪裡？</li><li id="nav-6b328d0bde77e41f" data-navigation-anchor=""><strong>確認結果</strong>：誰在什麼脈絡下決定了什麼，還有哪些未定？</li><li id="nav-37e71094d73a57e2" data-navigation-anchor=""><strong>工作骨架</strong>：這件事包含哪些工作，哪些確認要先發生？</li></ul><p id="nav-f70f37660d6fbf33" data-navigation-anchor="">工作途中冒出的想法，可以先簡短記下，不必當場整理成完整文件。若它後來變成新的工作、重要決定或新的未知，再放到適合追蹤的位置。正式文件仍留在原本的工作資料位置；我的個人看板只需要接住目前狀態與下一步。這樣紀錄才比較可能幫我回到工作，而不是變成另一份待維護的工作。</p><h2 id="努力和迷茫都是真的" data-navigation-anchor=""><a href="#努力和迷茫都是真的" class="headerlink" title="努力和迷茫都是真的"></a>努力和迷茫都是真的</h2><p id="nav-d4900c6dc6864dee" data-navigation-anchor="">我確實花了很多力氣做表、找方法、問人，也試著改善自己使用的工具。現在回頭看，那些努力不是藉口；迷茫也不必被說成毫無價值。它們讓我逐漸看見自己比較容易在哪個階段卡住。</p><p id="nav-afa340e6e4e11dde" data-navigation-anchor="">但如果每次都只停在「公司沒有標準」「我不熟」「我還沒想完整」，事情仍會留在原地。我想替這些解釋多接一句：<strong>那我現在能確認的下一件事是什麼？</strong> 可能是先列出目前想到的工作，請有經驗的人補漏；也可能是找到資料來源，或先確認這次到底要交付到什麼程度。</p><p id="nav-016b8a822a2ebc45" data-navigation-anchor="">接下來我想挑一件正在做的工作，先寫出六個問題的暫定答案。每次討論後，只檢查三件事：有沒有新的工作、做了什麼決定、還缺什麼資訊。過一段時間再回頭看，哪些問題真的幫我少走了彎路，哪些只是寫得好看。</p><p id="nav-6605acdd10ea898c" data-navigation-anchor="">我還沒有一套能套用到所有專案的方法。至少現在，當我說自己迷茫時，可以再往前問一點：<strong>我究竟缺哪個判斷？誰或什麼資料能幫我確認？</strong></p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-f9f658d3d6b78238" data-navigation-anchor="">2026-10-05：整理一次對工作規劃、紀錄與個人迷茫的反思，寫下接下來要練習的起手式。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;我花了不少力氣學著規劃工作，卻常在任務剛開始時感到迷茫。最近一次討論讓我想試著把「我不會」說得更具體。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+  </entry>
   
   <entry>
     <title>在喜歡與被喜歡之間（五）：不要急著替下一幕寫劇本</title>
@@ -345,29 +368,6 @@
   </entry>
   
   <entry>
-    <title>需求不是功能清單：從真實工作拆出系統該做的事</title>
-    <link href="https://progress01.github.io/work/from-real-work-to-features/"/>
-    <id>https://progress01.github.io/work/from-real-work-to-features/</id>
-    <published>2026-09-17T04:00:00.000Z</published>
-    <updated>2026-09-17T07:12:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p id="nav-f5723ef8990d7e31" data-navigation-anchor="">資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。</p><span id="more"></span><p id="nav-76342bde05494c9e" data-navigation-anchor="">這個系列從一個問題開始：我想替一套「會議知識庫」找功能。直覺上，我可能會先問：「希望它有哪些功能？」但這個問題太抽象，最後很容易得到「整理重點、協助分析」之類的答案，卻仍然不知道系統到底要幫我完成哪個工作。</p><p id="nav-2deabca62e3ef35c" data-navigation-anchor="">我現在比較信任的順序是：</p><blockquote><p id="nav-52c401ecc6880c0d" data-navigation-anchor=""><strong>真實工作情境 → 想得到的結果 → 系統要做的動作 → 再命名成功能。</strong></p></blockquote><p id="nav-262345a1c4365911" data-navigation-anchor="">例如，不先問「會議知識庫要有哪些功能」，而是先放入一個即將發生的任務：我下週要準備一場改版會議，過去的會議資料能不能告訴我，主管可能追問什麼、我還缺哪些資料、會前應該準備什麼產物？</p><p id="nav-25dd552248dbaea2" data-navigation-anchor="">等幾個情境都得到類似輸出，再往上抽象出「會前完整度檢查」、「主管追問模擬」、「權責邊界檢查」或「交付物檢查」等功能。</p><h2 id="先不要急著相信既有分類" data-navigation-anchor=""><a href="#先不要急著相信既有分類" class="headerlink" title="先不要急著相信既有分類"></a>先不要急著相信既有分類</h2><p id="nav-b85d81e442c5fa04" data-navigation-anchor="">原本我曾經整理出四個審查面向：角色與權責、底層架構與前台呈現、時程與緩衝、實體交付物。我先把它們當作假說，但不應一開始就規定所有案例必須塞進這四格。</p><p id="nav-3928ea0a4a907861" data-navigation-anchor="">面對還不知道自己不知道什麼的問題，如果過早固定分類，可能只是把未知內容排除在外。比較好的第一輪問題是：</p><ul><li id="nav-66423ae9895d4299" data-navigation-anchor="">主管在哪裡主動追問、打斷或修正？</li><li id="nav-6664df8532bceb24" data-navigation-anchor="">原本的回答少了哪一步？</li><li id="nav-e796c92f60cde916" data-navigation-anchor="">哪些地方被要求補資料、清單、時程或具體產物？</li><li id="nav-115086d76145899b" data-navigation-anchor="">哪些事情其實涉及別人的決策權？</li><li id="nav-624d6843302eb502" data-navigation-anchor="">哪些新發現無法歸入既有分類？</li></ul><p id="nav-87234ae304185030" data-navigation-anchor="">案例累積後，再回頭看原本的四個面向是否仍然站得住腳。</p><h2 id="從實際案例先抓四種東西" data-navigation-anchor=""><a href="#從實際案例先抓四種東西" class="headerlink" title="從實際案例先抓四種東西"></a>從實際案例先抓四種東西</h2><p id="nav-903e09b6cf982788" data-navigation-anchor="">一個會議片段先不要急著命名成理論，只記錄四件事：</p><ol><li id="nav-43cb5dc682eafc99" data-navigation-anchor=""><strong>衝突或質問片段</strong>：主管在哪裡停下來問「為什麼」或「誰決定」？</li><li id="nav-783106f6c3372ac0" data-navigation-anchor=""><strong>隱性標準</strong>：這個追問背後是在意效益、權責、資料來源、時程還是風險？</li><li id="nav-c19c874fde6ef55e" data-navigation-anchor=""><strong>下次自檢問題</strong>：下一次在會前，我可以先問自己什麼？</li><li id="nav-dd972fee8670e18c" data-navigation-anchor=""><strong>可拿出的產物</strong>：答案要變成對照表、清單、時程、POC、決策紀錄，還是工程確認？</li></ol><p id="nav-71e235d013a9ea5d" data-navigation-anchor="">這條鏈能把逐字稿從「發生過的對話」變成可以重複使用的工作資產：</p><blockquote><p id="nav-cd67f8e79d7b175d" data-navigation-anchor=""><strong>衝突片段 → 隱性標準 → 會前問題 → 準備產物。</strong></p></blockquote><h2 id="第一版只驗證一件事" data-navigation-anchor=""><a href="#第一版只驗證一件事" class="headerlink" title="第一版只驗證一件事"></a>第一版只驗證一件事</h2><p id="nav-894e0e55216820a4" data-navigation-anchor="">一開始不用建立完整的專案管理百科。第一版只要測試：</p><blockquote><p id="nav-218dec5672e4b547" data-navigation-anchor=""><strong>下一次進會議以前，它能不能告訴我少準備了什麼？</strong></p></blockquote><p id="nav-238560d162d118ff" data-navigation-anchor="">輸入可以是會議目的、目前已知資訊與預計報告內容；輸出則先限制在五項：可能被追問的地方、目前缺少的資料、建議準備的產物、哪些可以承諾、哪些必須標示待確認。</p><p id="nav-b50dcd8eb87f17b4" data-navigation-anchor="">如果這個流程能讓我更早看到缺口，再逐步加入模擬提問、應對範本與專案判斷模型。這樣功能是從真實工作長出來的，而不是先做出一個漂亮的分類，再想辦法找用途。</p><h2 id="暫時留下的原則" data-navigation-anchor=""><a href="#暫時留下的原則" class="headerlink" title="暫時留下的原則"></a>暫時留下的原則</h2><ul><li id="nav-a6af586a1672361d" data-navigation-anchor="">不先問抽象功能，先放入真實任務。</li><li id="nav-6a1ed9b7570b4476" data-navigation-anchor="">不把第一版分類當成真理，讓案例反過來修正分類。</li><li id="nav-3f4ecc3ea91092ed" data-navigation-anchor="">不把資料整理本身當成果，要追問它支援哪個決定。</li><li id="nav-db98f3e9809bff9b" data-navigation-anchor="">不只保存答案，也保存「原來少想了哪一步」。</li><li id="nav-607cbe1d37850cad" data-navigation-anchor="">先驗證一個最小工作價值，再擴張成完整工具。</li></ul><p id="nav-9d6f51b0084bb334" data-navigation-anchor="">這篇目前只記錄問題的起點。後面還要處理的是：有了兩場逐字稿之後，怎麼把其中的追問分辨成通則、候選規則與單次情境。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-1d2a840655b3fc97" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第一篇文章，先記錄「從實際工作抽象成功能」的起點與第一版驗證目標。</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
-    
-    
-    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
-    
-    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>工作知識｜從實際抽象功能系列 07｜先補 PM／SA 的基本語言</title>
     <link href="https://progress01.github.io/work/pm-sa-foundation-map/"/>
     <id>https://progress01.github.io/work/pm-sa-foundation-map/</id>
@@ -387,6 +387,29 @@
     <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
     
     <category term="學習規劃" scheme="https://progress01.github.io/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>需求不是功能清單：從真實工作拆出系統該做的事</title>
+    <link href="https://progress01.github.io/work/from-real-work-to-features/"/>
+    <id>https://progress01.github.io/work/from-real-work-to-features/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:12:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-f5723ef8990d7e31" data-navigation-anchor="">資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。</p><span id="more"></span><p id="nav-76342bde05494c9e" data-navigation-anchor="">這個系列從一個問題開始：我想替一套「會議知識庫」找功能。直覺上，我可能會先問：「希望它有哪些功能？」但這個問題太抽象，最後很容易得到「整理重點、協助分析」之類的答案，卻仍然不知道系統到底要幫我完成哪個工作。</p><p id="nav-2deabca62e3ef35c" data-navigation-anchor="">我現在比較信任的順序是：</p><blockquote><p id="nav-52c401ecc6880c0d" data-navigation-anchor=""><strong>真實工作情境 → 想得到的結果 → 系統要做的動作 → 再命名成功能。</strong></p></blockquote><p id="nav-262345a1c4365911" data-navigation-anchor="">例如，不先問「會議知識庫要有哪些功能」，而是先放入一個即將發生的任務：我下週要準備一場改版會議，過去的會議資料能不能告訴我，主管可能追問什麼、我還缺哪些資料、會前應該準備什麼產物？</p><p id="nav-25dd552248dbaea2" data-navigation-anchor="">等幾個情境都得到類似輸出，再往上抽象出「會前完整度檢查」、「主管追問模擬」、「權責邊界檢查」或「交付物檢查」等功能。</p><h2 id="先不要急著相信既有分類" data-navigation-anchor=""><a href="#先不要急著相信既有分類" class="headerlink" title="先不要急著相信既有分類"></a>先不要急著相信既有分類</h2><p id="nav-b85d81e442c5fa04" data-navigation-anchor="">原本我曾經整理出四個審查面向：角色與權責、底層架構與前台呈現、時程與緩衝、實體交付物。我先把它們當作假說，但不應一開始就規定所有案例必須塞進這四格。</p><p id="nav-3928ea0a4a907861" data-navigation-anchor="">面對還不知道自己不知道什麼的問題，如果過早固定分類，可能只是把未知內容排除在外。比較好的第一輪問題是：</p><ul><li id="nav-66423ae9895d4299" data-navigation-anchor="">主管在哪裡主動追問、打斷或修正？</li><li id="nav-6664df8532bceb24" data-navigation-anchor="">原本的回答少了哪一步？</li><li id="nav-e796c92f60cde916" data-navigation-anchor="">哪些地方被要求補資料、清單、時程或具體產物？</li><li id="nav-115086d76145899b" data-navigation-anchor="">哪些事情其實涉及別人的決策權？</li><li id="nav-624d6843302eb502" data-navigation-anchor="">哪些新發現無法歸入既有分類？</li></ul><p id="nav-87234ae304185030" data-navigation-anchor="">案例累積後，再回頭看原本的四個面向是否仍然站得住腳。</p><h2 id="從實際案例先抓四種東西" data-navigation-anchor=""><a href="#從實際案例先抓四種東西" class="headerlink" title="從實際案例先抓四種東西"></a>從實際案例先抓四種東西</h2><p id="nav-903e09b6cf982788" data-navigation-anchor="">一個會議片段先不要急著命名成理論，只記錄四件事：</p><ol><li id="nav-43cb5dc682eafc99" data-navigation-anchor=""><strong>衝突或質問片段</strong>：主管在哪裡停下來問「為什麼」或「誰決定」？</li><li id="nav-783106f6c3372ac0" data-navigation-anchor=""><strong>隱性標準</strong>：這個追問背後是在意效益、權責、資料來源、時程還是風險？</li><li id="nav-c19c874fde6ef55e" data-navigation-anchor=""><strong>下次自檢問題</strong>：下一次在會前，我可以先問自己什麼？</li><li id="nav-dd972fee8670e18c" data-navigation-anchor=""><strong>可拿出的產物</strong>：答案要變成對照表、清單、時程、POC、決策紀錄，還是工程確認？</li></ol><p id="nav-71e235d013a9ea5d" data-navigation-anchor="">這條鏈能把逐字稿從「發生過的對話」變成可以重複使用的工作資產：</p><blockquote><p id="nav-cd67f8e79d7b175d" data-navigation-anchor=""><strong>衝突片段 → 隱性標準 → 會前問題 → 準備產物。</strong></p></blockquote><h2 id="第一版只驗證一件事" data-navigation-anchor=""><a href="#第一版只驗證一件事" class="headerlink" title="第一版只驗證一件事"></a>第一版只驗證一件事</h2><p id="nav-894e0e55216820a4" data-navigation-anchor="">一開始不用建立完整的專案管理百科。第一版只要測試：</p><blockquote><p id="nav-218dec5672e4b547" data-navigation-anchor=""><strong>下一次進會議以前，它能不能告訴我少準備了什麼？</strong></p></blockquote><p id="nav-238560d162d118ff" data-navigation-anchor="">輸入可以是會議目的、目前已知資訊與預計報告內容；輸出則先限制在五項：可能被追問的地方、目前缺少的資料、建議準備的產物、哪些可以承諾、哪些必須標示待確認。</p><p id="nav-b50dcd8eb87f17b4" data-navigation-anchor="">如果這個流程能讓我更早看到缺口，再逐步加入模擬提問、應對範本與專案判斷模型。這樣功能是從真實工作長出來的，而不是先做出一個漂亮的分類，再想辦法找用途。</p><h2 id="暫時留下的原則" data-navigation-anchor=""><a href="#暫時留下的原則" class="headerlink" title="暫時留下的原則"></a>暫時留下的原則</h2><ul><li id="nav-a6af586a1672361d" data-navigation-anchor="">不先問抽象功能，先放入真實任務。</li><li id="nav-6a1ed9b7570b4476" data-navigation-anchor="">不把第一版分類當成真理，讓案例反過來修正分類。</li><li id="nav-3f4ecc3ea91092ed" data-navigation-anchor="">不把資料整理本身當成果，要追問它支援哪個決定。</li><li id="nav-db98f3e9809bff9b" data-navigation-anchor="">不只保存答案，也保存「原來少想了哪一步」。</li><li id="nav-607cbe1d37850cad" data-navigation-anchor="">先驗證一個最小工作價值，再擴張成完整工具。</li></ul><p id="nav-9d6f51b0084bb334" data-navigation-anchor="">這篇目前只記錄問題的起點。後面還要處理的是：有了兩場逐字稿之後，怎麼把其中的追問分辨成通則、候選規則與單次情境。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-1d2a840655b3fc97" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第一篇文章，先記錄「從實際工作抽象成功能」的起點與第一版驗證目標。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;資料都放進知識工具之後，最容易做的是請它整理摘要；但摘要不一定能告訴我，下一次工作開始前究竟少想了什麼。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
     
   </entry>
   
@@ -424,6 +447,29 @@
     
     
     <summary type="html">&lt;p&gt;對我來說，會議逐字稿最有價值的地方，不是它能被整理成一份摘要，而是它保留了「哪裡被追問、哪裡被修正、哪裡原本沒有想到」的現場。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
+    
+    
+    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    
+    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>專案做到一半才發現隱性規則，該怎麼補審？</title>
+    <link href="https://progress01.github.io/work/risk-based-review/"/>
+    <id>https://progress01.github.io/work/risk-based-review/</id>
+    <published>2026-09-17T04:00:00.000Z</published>
+    <updated>2026-09-17T07:15:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p id="nav-5b7cdcdef4851abd" data-navigation-anchor="">專案進行一段時間後，才發現主管原來一直在檢查某些隱性條件，確實會讓人覺得已經太晚。但「現在才知道」不等於「現在不用再看」，也不等於要把所有已做過的工作全部打掉重來。</p><span id="more"></span><p id="nav-2078d10a6959bee9" data-navigation-anchor="">我目前比較可行的做法，是把新發現的規則變成風險式補審：優先檢查仍未定案、改動成本可接受、或一旦出錯就會造成重大重工的項目。</p><h2 id="從十條規則壓成六個問題" data-navigation-anchor=""><a href="#從十條規則壓成六個問題" class="headerlink" title="從十條規則壓成六個問題"></a>從十條規則壓成六個問題</h2><p id="nav-67600d234598dfd9" data-navigation-anchor="">目前從會議裡看到很多規則，但可以先用六個問題取代背誦：</p><ol><li id="nav-17d86efcbc473481" data-navigation-anchor=""><strong>為什麼做？</strong> 使用者、目的與成效證據是什麼？</li><li id="nav-6572518e9efa515c" data-navigation-anchor=""><strong>東西從哪裡來？</strong> 資料來源、範圍、維護者與系統相依是什麼？</li><li id="nav-9d644ddd9e77edac" data-navigation-anchor=""><strong>誰說了算？</strong> 是自己、工程師、客戶還是其他決策者的責任？</li><li id="nav-f8a7a93d4ebad5e8" data-navigation-anchor=""><strong>前面還少什麼？</strong> 規格、盤點、Mapping、確認與資料準備有沒有漏？</li><li id="nav-5866c8cc872c1d33" data-navigation-anchor=""><strong>出事怎麼辦？</strong> 影響範圍、Fallback 與最壞情境是什麼？</li><li id="nav-dc492317af16832e" data-navigation-anchor=""><strong>我要拿什麼去談？</strong> 這次需要全貌圖、對照表、清單、時程、POC 或決策題？</li></ol><p id="nav-5670363bfce63d09" data-navigation-anchor="">這六問不是永遠完整的規範，而是把未知問題提早浮出來的最小檢查框架。</p><h2 id="不要全面重審，要看專案狀態" data-navigation-anchor=""><a href="#不要全面重審，要看專案狀態" class="headerlink" title="不要全面重審，要看專案狀態"></a>不要全面重審，要看專案狀態</h2><p id="nav-3448312561cfde08" data-navigation-anchor="">可以先把工作分成三類：</p><table><thead><tr><th>狀態</th><th>建議做法</th></tr></thead><tbody><tr><td>尚未開發、尚未定案</td><td>完整套用六問，先補證據與決策邊界</td></tr><tr><td>已完成一部分、仍可調整</td><td>只查權責、資料來源、使用情境、相依性與驗收</td></tr><tr><td>已完成、已確認且改動昂貴</td><td>不因為新框架就翻案，除非出現明確重大風險</td></tr></tbody></table><p id="nav-1eb4e0af58542828" data-navigation-anchor="">這是在把時間與風險一起算進去。全面重審看起來很完整，卻可能讓專案停止；完全不補審則可能把已知風險帶到上線或驗收。</p><h2 id="問題要帶著處理路徑一起出現" data-navigation-anchor=""><a href="#問題要帶著處理路徑一起出現" class="headerlink" title="問題要帶著處理路徑一起出現"></a>問題要帶著處理路徑一起出現</h2><p id="nav-686fd9ca275a082e" data-navigation-anchor="">隱性規則不只是「要注意風險」。更有用的是把它寫成：</p><blockquote><p id="nav-1b900e23d624c7ef" data-navigation-anchor=""><strong>當我遇到某種情境時，要問什麼、拿什麼證據、找誰確認；如果仍然不能確認，下一步是暫停、標示待定、做 POC，還是啟用保底方案。</strong></p></blockquote><p id="nav-9f4471774e5570ce" data-navigation-anchor="">例如工具無法完整盤點資料時，不應只把「盤不完整」丟回客戶；可以先尋找替代工具，再為剩下的未知狀況定義一個符合業務與合規風險的預設處理。這裡真正可遷移的能力不是永遠採用最嚴格答案，而是<strong>主要路徑失敗前，就先定義系統或流程怎麼走</strong>。</p><p id="nav-e12893369a93ddb3" data-navigation-anchor="">同樣地，既有規劃也不是免審通行證。功能已經寫在規劃裡，不代表投入成本前就不用重新看使用行為、效益與功能重疊。</p><h2 id="時間壓力下的最小安全檢查" data-navigation-anchor=""><a href="#時間壓力下的最小安全檢查" class="headerlink" title="時間壓力下的最小安全檢查"></a>時間壓力下的最小安全檢查</h2><p id="nav-fd43edc2824b6a88" data-navigation-anchor="">如果只剩很短時間，可以把檢查分成三層：</p><ul><li id="nav-e4b1f58278971052" data-navigation-anchor=""><strong>一定要確認</strong>：不確認可能造成越權、重大重工、錯誤承諾、時程失真或合規風險。</li><li id="nav-099a5b02e54a2bf0" data-navigation-anchor=""><strong>重要但可延後</strong>：先記錄待確認，不阻塞目前可以安全完成的工作。</li><li id="nav-82b3f76138d013ac" data-navigation-anchor=""><strong>品質改善</strong>：有餘裕再補，不影響本階段交付。</li></ul><p id="nav-09f78eb74db01887" data-navigation-anchor="">我覺得這個分層很重要，因為學會完整性之後，很容易把每個問題都當成現在必須解完的問題。專案判斷的一部分，正是知道哪些事情現在一定要想，哪些可以進停車場。</p><h2 id="補審的真正目的" data-navigation-anchor=""><a href="#補審的真正目的" class="headerlink" title="補審的真正目的"></a>補審的真正目的</h2><p id="nav-a6eb1eb5d8919ef7" data-navigation-anchor="">補審的目的不是追究「為什麼當初沒想到」，而是把已經發生的經驗轉成下一次的提前量：</p><blockquote><p id="nav-b0443b31eaa09c8e" data-navigation-anchor=""><strong>事後被問一次 → 找到規則 → 為下一個工作建立最小檢查 → 新案例再修正規則。</strong></p></blockquote><p id="nav-8a9a428415ac2a7c" data-navigation-anchor="">只要新規則能減少下一次的盲點，就不算太晚；但也要承認，前面已經完成的工作不必為了證明自己學會而全部重做。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-7086d22c44aaf35f" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第四篇文章，整理隱性規則、六問與風險式補審。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;專案進行一段時間後，才發現主管原來一直在檢查某些隱性條件，確實會讓人覺得已經太晚。但「現在才知道」不等於「現在不用再看」，也不等於要把所有已做過的工作全部打掉重來。&lt;/p&gt;</summary>
     
     
     
@@ -479,68 +525,6 @@
     <category term="AI Agent" scheme="https://progress01.github.io/tags/AI-Agent/"/>
     
     <category term="學習規劃" scheme="https://progress01.github.io/tags/%E5%AD%B8%E7%BF%92%E8%A6%8F%E5%8A%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>專案做到一半才發現隱性規則，該怎麼補審？</title>
-    <link href="https://progress01.github.io/work/risk-based-review/"/>
-    <id>https://progress01.github.io/work/risk-based-review/</id>
-    <published>2026-09-17T04:00:00.000Z</published>
-    <updated>2026-09-17T07:15:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p id="nav-5b7cdcdef4851abd" data-navigation-anchor="">專案進行一段時間後，才發現主管原來一直在檢查某些隱性條件，確實會讓人覺得已經太晚。但「現在才知道」不等於「現在不用再看」，也不等於要把所有已做過的工作全部打掉重來。</p><span id="more"></span><p id="nav-2078d10a6959bee9" data-navigation-anchor="">我目前比較可行的做法，是把新發現的規則變成風險式補審：優先檢查仍未定案、改動成本可接受、或一旦出錯就會造成重大重工的項目。</p><h2 id="從十條規則壓成六個問題" data-navigation-anchor=""><a href="#從十條規則壓成六個問題" class="headerlink" title="從十條規則壓成六個問題"></a>從十條規則壓成六個問題</h2><p id="nav-67600d234598dfd9" data-navigation-anchor="">目前從會議裡看到很多規則，但可以先用六個問題取代背誦：</p><ol><li id="nav-17d86efcbc473481" data-navigation-anchor=""><strong>為什麼做？</strong> 使用者、目的與成效證據是什麼？</li><li id="nav-6572518e9efa515c" data-navigation-anchor=""><strong>東西從哪裡來？</strong> 資料來源、範圍、維護者與系統相依是什麼？</li><li id="nav-9d644ddd9e77edac" data-navigation-anchor=""><strong>誰說了算？</strong> 是自己、工程師、客戶還是其他決策者的責任？</li><li id="nav-f8a7a93d4ebad5e8" data-navigation-anchor=""><strong>前面還少什麼？</strong> 規格、盤點、Mapping、確認與資料準備有沒有漏？</li><li id="nav-5866c8cc872c1d33" data-navigation-anchor=""><strong>出事怎麼辦？</strong> 影響範圍、Fallback 與最壞情境是什麼？</li><li id="nav-dc492317af16832e" data-navigation-anchor=""><strong>我要拿什麼去談？</strong> 這次需要全貌圖、對照表、清單、時程、POC 或決策題？</li></ol><p id="nav-5670363bfce63d09" data-navigation-anchor="">這六問不是永遠完整的規範，而是把未知問題提早浮出來的最小檢查框架。</p><h2 id="不要全面重審，要看專案狀態" data-navigation-anchor=""><a href="#不要全面重審，要看專案狀態" class="headerlink" title="不要全面重審，要看專案狀態"></a>不要全面重審，要看專案狀態</h2><p id="nav-3448312561cfde08" data-navigation-anchor="">可以先把工作分成三類：</p><table><thead><tr><th>狀態</th><th>建議做法</th></tr></thead><tbody><tr><td>尚未開發、尚未定案</td><td>完整套用六問，先補證據與決策邊界</td></tr><tr><td>已完成一部分、仍可調整</td><td>只查權責、資料來源、使用情境、相依性與驗收</td></tr><tr><td>已完成、已確認且改動昂貴</td><td>不因為新框架就翻案，除非出現明確重大風險</td></tr></tbody></table><p id="nav-1eb4e0af58542828" data-navigation-anchor="">這是在把時間與風險一起算進去。全面重審看起來很完整，卻可能讓專案停止；完全不補審則可能把已知風險帶到上線或驗收。</p><h2 id="問題要帶著處理路徑一起出現" data-navigation-anchor=""><a href="#問題要帶著處理路徑一起出現" class="headerlink" title="問題要帶著處理路徑一起出現"></a>問題要帶著處理路徑一起出現</h2><p id="nav-686fd9ca275a082e" data-navigation-anchor="">隱性規則不只是「要注意風險」。更有用的是把它寫成：</p><blockquote><p id="nav-1b900e23d624c7ef" data-navigation-anchor=""><strong>當我遇到某種情境時，要問什麼、拿什麼證據、找誰確認；如果仍然不能確認，下一步是暫停、標示待定、做 POC，還是啟用保底方案。</strong></p></blockquote><p id="nav-9f4471774e5570ce" data-navigation-anchor="">例如工具無法完整盤點資料時，不應只把「盤不完整」丟回客戶；可以先尋找替代工具，再為剩下的未知狀況定義一個符合業務與合規風險的預設處理。這裡真正可遷移的能力不是永遠採用最嚴格答案，而是<strong>主要路徑失敗前，就先定義系統或流程怎麼走</strong>。</p><p id="nav-e12893369a93ddb3" data-navigation-anchor="">同樣地，既有規劃也不是免審通行證。功能已經寫在規劃裡，不代表投入成本前就不用重新看使用行為、效益與功能重疊。</p><h2 id="時間壓力下的最小安全檢查" data-navigation-anchor=""><a href="#時間壓力下的最小安全檢查" class="headerlink" title="時間壓力下的最小安全檢查"></a>時間壓力下的最小安全檢查</h2><p id="nav-fd43edc2824b6a88" data-navigation-anchor="">如果只剩很短時間，可以把檢查分成三層：</p><ul><li id="nav-e4b1f58278971052" data-navigation-anchor=""><strong>一定要確認</strong>：不確認可能造成越權、重大重工、錯誤承諾、時程失真或合規風險。</li><li id="nav-099a5b02e54a2bf0" data-navigation-anchor=""><strong>重要但可延後</strong>：先記錄待確認，不阻塞目前可以安全完成的工作。</li><li id="nav-82b3f76138d013ac" data-navigation-anchor=""><strong>品質改善</strong>：有餘裕再補，不影響本階段交付。</li></ul><p id="nav-09f78eb74db01887" data-navigation-anchor="">我覺得這個分層很重要，因為學會完整性之後，很容易把每個問題都當成現在必須解完的問題。專案判斷的一部分，正是知道哪些事情現在一定要想，哪些可以進停車場。</p><h2 id="補審的真正目的" data-navigation-anchor=""><a href="#補審的真正目的" class="headerlink" title="補審的真正目的"></a>補審的真正目的</h2><p id="nav-a6eb1eb5d8919ef7" data-navigation-anchor="">補審的目的不是追究「為什麼當初沒想到」，而是把已經發生的經驗轉成下一次的提前量：</p><blockquote><p id="nav-b0443b31eaa09c8e" data-navigation-anchor=""><strong>事後被問一次 → 找到規則 → 為下一個工作建立最小檢查 → 新案例再修正規則。</strong></p></blockquote><p id="nav-8a9a428415ac2a7c" data-navigation-anchor="">只要新規則能減少下一次的盲點，就不算太晚；但也要承認，前面已經完成的工作不必為了證明自己學會而全部重做。</p><h2 id="更新紀錄" data-navigation-anchor=""><a href="#更新紀錄" class="headerlink" title="更新紀錄"></a>更新紀錄</h2><ul><li id="nav-7086d22c44aaf35f" data-navigation-anchor=""><strong>2026-09-17</strong>：建立系列第四篇文章，整理隱性規則、六問與風險式補審。</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;專案進行一段時間後，才發現主管原來一直在檢查某些隱性條件，確實會讓人覺得已經太晚。但「現在才知道」不等於「現在不用再看」，也不等於要把所有已做過的工作全部打掉重來。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工作知識" scheme="https://progress01.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%9F%A5%E8%AD%98/"/>
-    
-    
-    <category term="方法整理" scheme="https://progress01.github.io/tags/%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/"/>
-    
-    <category term="觀念釐清" scheme="https://progress01.github.io/tags/%E8%A7%80%E5%BF%B5%E9%87%90%E6%B8%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>歌曲推薦-Misread</title>
-    <link href="https://progress01.github.io/2026/09/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Misread/"/>
-    <id>https://progress01.github.io/2026/09/17/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6-Misread/</id>
-    <published>2026-09-17T04:00:00.000Z</published>
-    <updated>2026-09-17T04:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<div style="display: flex; gap: 20px; align-items: flex-start;">    <div style="flex: 1; text-align: left;">    <p style="margin-top: 0;" id="nav-8106f3f77a1a0773" data-navigation-anchor="">      推薦 Kings of Convenience 的 Misread      <br>      出自專輯 Riot on An Empty Street      <br>      <a href="https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb" target="_blank">收聽連結 -&gt; 點此前往</a>    </p>  </div>  <div style="width: 150px; flex-shrink: 0;">    <img src="/images/song_Misread.webp" alt="Kings of Convenience - Misread - Riot on An Empty Street" style="border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">  </div></div><span id="more"></span> 轉載自個人ig每日點播&gt; chjuhsu05<br>這首吉他之外有一個清脆的聲音讓這首歌的感覺很特別，配樂非常吸引人，而且在人聲有一種特別的空靈感配合起來很不錯，不過他的用詞好難 What do you know?<p id="nav-7a31b6c5b2a0a9f0" data-navigation-anchor="">非常推薦啊啊啊</p>]]></content>
-    
-    
-    <summary type="html">&lt;div style=&quot;display: flex; gap: 20px; align-items: flex-start;&quot;&gt;
-  
-  &lt;div style=&quot;flex: 1; text-align: left;&quot;&gt;
-    &lt;p style=&quot;margin-top: 0;&quot;&gt;
-      推薦 Kings of Convenience 的 Misread
-      &lt;br&gt;
-      出自專輯 Riot on An Empty Street
-      &lt;br&gt;
-      &lt;a href=&quot;https://open.spotify.com/track/3O090PYVo1do7s3PMCoVoz?si=deeb8817d8454fdb&quot; target=&quot;_blank&quot;&gt;收聽連結 -&gt; 點此前往&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style=&quot;width: 150px; flex-shrink: 0;&quot;&gt;
-    &lt;img src=&quot;/images/song_Misread.webp&quot; alt=&quot;Kings of Convenience - Misread - Riot on An Empty Street&quot; style=&quot;border-radius: 5px; width: 100%; height: auto; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);&quot;&gt;
-  &lt;/div&gt;
-
-&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="音樂" scheme="https://progress01.github.io/categories/%E9%9F%B3%E6%A8%82/"/>
-    
-    
-    <category term="歌曲推薦" scheme="https://progress01.github.io/tags/%E6%AD%8C%E6%9B%B2%E6%8E%A8%E8%96%A6/"/>
-    
-    <category term="英語" scheme="https://progress01.github.io/tags/%E8%8B%B1%E8%AA%9E/"/>
     
   </entry>
   
