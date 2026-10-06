@@ -109,12 +109,12 @@ test('current public source keeps all, profile, and memory memberships consisten
   const memorySources = new Set(memory.map(sourceIdentity));
   const bothSources = [...profileSources].filter(source => memorySources.has(source));
   assert.equal(all.length, posts.length);
-  assert.equal(profile.length, 12);
+  assert.equal(profile.length, 13);
   assert.equal(memory.length, all.length);
-  assert.equal(profileSources.size, 12);
+  assert.equal(profileSources.size, 13);
   assert.equal(memorySources.size, memory.length);
   assert.equal(new Set(all.map(sourceIdentity)).size, all.length);
-  assert.equal(bothSources.length, 12);
+  assert.equal(bothSources.length, 13);
   assert.equal([...profileSources].filter(source => !memorySources.has(source)).length, 0);
   const explicitPermalinkPosts = all.filter(item => typeof item.permalink === 'string' && item.permalink.trim());
   assert.equal(new Set(explicitPermalinkPosts.map(item => item.permalink)).size, explicitPermalinkPosts.length);

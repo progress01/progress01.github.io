@@ -180,7 +180,7 @@ function readPublishedPosts(routeMap) {
   return posts;
 }
 
-test('real public corpus, twelve profile posts, eight approved URLs, random baseline, and legacy sample agree', t => {
+test('real public corpus, thirteen profile posts, eight approved URLs, random baseline, and legacy sample agree', t => {
   const routeSnapshot = path.join(root, 'public/navigation-index.json');
   const randomBaselineFile = path.join(root, 'tmp/wbs33-public-20260926/random.json');
   if (!fs.existsSync(routeSnapshot) || !fs.existsSync(randomBaselineFile)) {
@@ -223,10 +223,10 @@ test('real public corpus, twelve profile posts, eight approved URLs, random base
   const memory = browser.call(helperContext(posts), 'memory');
   const urls = records => records.map(record => record.url);
   assert.equal(all.length, posts.length);
-  assert.equal(profile.length, 12);
+  assert.equal(profile.length, 13);
   assert.equal(memory.length, posts.length);
   assert.equal(new Set(urls(all)).size, posts.length);
-  assert.equal(new Set(urls(profile)).size, 12);
+  assert.equal(new Set(urls(profile)).size, 13);
   assert.equal(new Set(urls(memory)).size, posts.length);
   for (const [url, surfaces] of expectedSurfaces) {
     assert.deepEqual(articleByUrl.get(url).surfaces, surfaces, `navigation surface mismatch at ${url}`);

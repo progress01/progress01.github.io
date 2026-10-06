@@ -174,6 +174,19 @@ topics:
         state: learning
         note: 從「主觀判斷是否太早」的問題出發，整理情境、目標、限制、感受與原因假設的不同位置；再依問題狀態區分診斷型、設計型與驗證型提問，加入可接受取捨與「先獨立分析、再比較假設」的兩輪問法，避免文字接龍發散；補充 Google、Anthropic、OpenAI、Simon Willison 與 Tom's Guide 的提示設計、迭代測試、高訊號 context、代表性範例與建設性反駁經驗。
 
+  - id: english-lyrics-conditionals
+    code: A-12
+    name: 歌詞裡的英文條件句
+    description: 用情歌裡的 if 句比較現在式、過去式與過去完成式如何表達條件和現實的關係。
+    items:
+      - id: reading-topic-25
+        date: 2026-10-06
+        title: 從歌詞看 if 的三種時態：可能、假想與已經錯過的過去
+        source: 歌曲《Nothing's Gonna Change My Love for You》《How Do I Live》與 Cambridge Dictionary、British Council 文法資料
+        url: /learning/if-three-tenses-in-song-lyrics/
+        surfaces: [memory]
+        state: published
+        note: 從歌詞的 had to 與 would 出發，用「你離開」的三個平行例句，對照 if 後現在式、過去式、過去完成式如何表達開放可能、較遠假想與回頭改寫的過去。
   - id: travel-okinawa-stitch
     code: B-01
     name: 沖繩旅行的縫合線
