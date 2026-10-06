@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T17:25:48.278Z",
+  "generatedAt": "2026-10-06T08:47:28.000Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 280,
+  "publicArticleCount": 281,
   "uncertainCount": 5,
   "entries": [
     {
@@ -5293,7 +5293,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧重新喜歡一個人時，如何辨認感受並保留自己的生活節奏。",
-      "bodySha256": "23560c4dd95302e5dfbcc4c998455e6c4374e5a4e7b1424fb92808a29b77ade1",
+      "bodySha256": "6d675bfb7927d57fe97260869ac5640332d63af16d670a8f2ca855e1644c5eec",
       "date": "2026-09-10 12:00:00",
       "updated": "2026-09-28 19:42:47"
     },
@@ -5313,7 +5313,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧互動細節與事後理解，保留關係尚未定義時的真實感受。",
-      "bodySha256": "b3192661f887f731b7d78512fb60fc562962c7b3c870a4df2f2a9d6b5a3badf4",
+      "bodySha256": "a0789820fa84c031a5e10a3435b5498d8b0b342b609166267565062f774183b6",
       "date": "2026-09-28 19:40:00",
       "updated": null
     },
@@ -5333,7 +5333,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理喜歡一個人時，如何分辨自己的想像與對方實際給出的回應。",
-      "bodySha256": "f8a2feeb5506656cadb2ef3e4a6da9797b70d90a9e2a4b253cf7f050a8f3b568",
+      "bodySha256": "d6e92f2fcf14c2dc8cb2c8446167259c7767ef6e5d57cde120ff9d51f13fb874",
       "date": "2026-09-28 19:41:00",
       "updated": null
     },
@@ -5353,7 +5353,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧一段沒有結果的喜歡，以及失落、氣憤與重新收回注意力的過程。",
-      "bodySha256": "7715acd87aa6387fa89cf3a7f218f6ab6b7428182bf3a190baa14de56562a38c",
+      "bodySha256": "7e112b71fecf8032b27a14abcf077dad8ac070348c9b88aa2df2e8bd44a9fe1c",
       "date": "2026-09-28 19:42:00",
       "updated": null
     },
@@ -6002,8 +6002,28 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "回顧人際互動中的期待、停頓與自己的生活，適用生活回顧。",
-      "bodySha256": "9f9af4a9433f8fc4f1ad74149618e20e99530781fdabfafe74d2abfe54d59b46",
+      "bodySha256": "dc65741370ef4c4a14326464ee486d0b728cde619c6f87d760c681d218f97a1a",
       "date": "2026-10-05 11:23:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/在喜歡與被喜歡之間-六-有些空白不是我一個人能填滿.md",
+      "title": "在喜歡與被喜歡之間（六）：有些空白，不是我一個人能填滿",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [
+        "生活回顧"
+      ],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "回顧互動中的表達、停頓與自我評價，適用生活回顧。",
+      "bodySha256": "b0f7bc269b405b35060e3691760119e83706e2e04bc6e689a895ca43e198b557",
+      "date": "2026-10-06 16:47:00",
       "updated": null
     }
   ]
