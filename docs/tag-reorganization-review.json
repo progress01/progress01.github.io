@@ -2,7 +2,7 @@
   "version": 1,
   "generatedAt": "2026-10-06T08:47:28.000Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 281,
+  "publicArticleCount": 282,
   "uncertainCount": 5,
   "entries": [
     {
@@ -6024,6 +6024,24 @@
       "basis": "回顧互動中的表達、停頓與自我評價，適用生活回顧。",
       "bodySha256": "b0f7bc269b405b35060e3691760119e83706e2e04bc6e689a895ca43e198b557",
       "date": "2026-10-06 16:47:00",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/實驗室/從歌詞理解go-on與容易混淆的文法.md",
+      "title": "歌詞裡的 go on：延續的是你，也是我的心",
+      "categories": [
+        "觀念與實驗"
+      ],
+      "permalink": "/learning/go-on-grammar-in-song-lyrics/",
+      "oldTags": [],
+      "newTags": [
+        "觀念釐清"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "新增英文學習文章，整理 go on 的文法混淆與歌詞意境，使用觀念釐清標籤。",
+      "bodySha256": "da484706eaec0fdca36d437827216af3e7f8317f54e9c25f6b5f12dbcc5361da",
+      "date": "2026-10-10",
       "updated": null
     }
   ]
