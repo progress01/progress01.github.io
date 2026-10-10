@@ -6008,7 +6008,7 @@
     },
     {
       "path": "source/_posts/隨筆/在喜歡與被喜歡之間-六-有些空白不是我一個人能填滿.md",
-      "title": "在喜歡與被喜歡之間（六）：有些空白，不是我一個人能填滿",
+      "title": "在喜歡與被喜歡之間（六）：我的喜歡，和她的答案",
       "categories": [
         "生活紀錄"
       ],
@@ -6022,9 +6022,9 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "回顧互動中的表達、停頓與自我評價，適用生活回顧。",
-      "bodySha256": "b0f7bc269b405b35060e3691760119e83706e2e04bc6e689a895ca43e198b557",
+      "bodySha256": "d4c61557c500dc3c0ace4b89816aa2ebed48f0cc928ef1cf0ca2a86887473486",
       "date": "2026-10-06 16:47:00",
-      "updated": null
+      "updated": "2026-10-11"
     },
     {
       "path": "source/_posts/實驗室/從歌詞理解go-on與容易混淆的文法.md",
