@@ -2,7 +2,7 @@
   "version": 1,
   "generatedAt": "2026-10-06T08:47:28.000Z",
   "source": "正文判讀後的標籤重整清單",
-  "publicArticleCount": 282,
+  "publicArticleCount": 283,
   "uncertainCount": 5,
   "entries": [
     {
@@ -5293,7 +5293,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧重新喜歡一個人時，如何辨認感受並保留自己的生活節奏。",
-      "bodySha256": "6d675bfb7927d57fe97260869ac5640332d63af16d670a8f2ca855e1644c5eec",
+      "bodySha256": "42b779058c561bd6b28c6f7b2047cd97f0447823ce6f1aa1382f6a5973e9d659",
       "date": "2026-09-10 12:00:00",
       "updated": "2026-09-28 19:42:47"
     },
@@ -5313,7 +5313,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧互動細節與事後理解，保留關係尚未定義時的真實感受。",
-      "bodySha256": "a0789820fa84c031a5e10a3435b5498d8b0b342b609166267565062f774183b6",
+      "bodySha256": "a7beb4719bb6c1065d7042493fe0cd9d551f83bbcf8972eb7a596b450653c09b",
       "date": "2026-09-28 19:40:00",
       "updated": null
     },
@@ -5333,7 +5333,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文整理喜歡一個人時，如何分辨自己的想像與對方實際給出的回應。",
-      "bodySha256": "d6e92f2fcf14c2dc8cb2c8446167259c7767ef6e5d57cde120ff9d51f13fb874",
+      "bodySha256": "803ccfd9ac774b222f36ca361b296a18c358ae9a1be85c51d09650c372d2012c",
       "date": "2026-09-28 19:41:00",
       "updated": null
     },
@@ -5353,7 +5353,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "正文回顧一段沒有結果的喜歡，以及失落、氣憤與重新收回注意力的過程。",
-      "bodySha256": "7e112b71fecf8032b27a14abcf077dad8ac070348c9b88aa2df2e8bd44a9fe1c",
+      "bodySha256": "5a3e3b0213f80d61d49cfb713a920858dd2a84e3b3a0f6f59e89cd331359a3b3",
       "date": "2026-09-28 19:42:00",
       "updated": null
     },
@@ -6002,7 +6002,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "回顧人際互動中的期待、停頓與自己的生活，適用生活回顧。",
-      "bodySha256": "dc65741370ef4c4a14326464ee486d0b728cde619c6f87d760c681d218f97a1a",
+      "bodySha256": "9d578abe36bbb50fc17384572a04bb153e2b2b19eaeb17deb2c60cd3015cadc3",
       "date": "2026-10-05 11:23:00",
       "updated": null
     },
@@ -6022,7 +6022,7 @@
       "reviewed": true,
       "uncertain": false,
       "basis": "回顧互動中的表達、停頓與自我評價，適用生活回顧。",
-      "bodySha256": "d4c61557c500dc3c0ace4b89816aa2ebed48f0cc928ef1cf0ca2a86887473486",
+      "bodySha256": "c2c492523c2b89adec0e3a39bb7adc4755f403730fd7f0dd02b3bcd9eb431574",
       "date": "2026-10-06 16:47:00",
       "updated": "2026-10-11"
     },
@@ -6042,6 +6042,24 @@
       "basis": "新增英文學習文章，整理 go on 的文法混淆與歌詞意境，使用觀念釐清標籤。",
       "bodySha256": "da484706eaec0fdca36d437827216af3e7f8317f54e9c25f6b5f12dbcc5361da",
       "date": "2026-10-10",
+      "updated": null
+    },
+    {
+      "path": "source/_posts/隨筆/在喜歡與被喜歡之間-七-不要急著替自己畫上紅鼻子.md",
+      "title": "在喜歡與被喜歡之間（七）：不要急著替自己畫上紅鼻子",
+      "categories": [
+        "生活紀錄"
+      ],
+      "permalink": null,
+      "oldTags": [],
+      "newTags": [
+        "生活回顧"
+      ],
+      "reviewed": true,
+      "uncertain": false,
+      "basis": "延續感情系列，回顧關係期待、告白後的混亂與自我評價，適用生活回顧。",
+      "bodySha256": "c13dd3bbf74088e983f8dac95bd16a16e3cf3bd10059e89f94dde9031ac06df0",
+      "date": "2026-10-12",
       "updated": null
     }
   ]
