@@ -64,6 +64,27 @@ test('accepts later microblog additions without changing the historical migratio
   assert.equal(plan.expectedPublicCount, 3);
 });
 
+test('accepts ordinary public text edits and reordering while preserving IDs and D replacements', t => {
+  const edited = sourceRecords.map(item => item.id === 'fixture-p1'
+    ? { ...item, content: 'updated public wording', date: '2026-10-14', tag: 'new tag' }
+    : { ...item }).reverse();
+  const root = makeOutput(t, { microblog: edited });
+  const report = audit(root, { sourceRecords: edited });
+  assert.equal(report.ok, true, formatReport(report));
+});
+
+test('ordinary edits cannot lose their historical ID or restore private original text under another ID', t => {
+  const renamed = sourceRecords.map(item => item.id === 'fixture-p1' ? { ...item, id: 'replacement-id' } : item);
+  const renamedRoot = makeOutput(t, { microblog: renamed });
+  assert.ok(audit(renamedRoot, { sourceRecords: renamed }).errors.some(error => error.code === 'persistent_microblog_id_missing'));
+  const leaked = sourceRecords.map(item => item.id === 'fixture-p1' ? { ...item, content: 'fixture-original-alpha' } : item);
+  const leakedRoot = makeOutput(t, { microblog: leaked });
+  const report = audit(leakedRoot, { sourceRecords: leaked });
+  assert.ok(report.errors.some(error => error.code === 'old_text_in_source'));
+  assert.ok(report.errors.some(error => error.code === 'old_text_in_output'));
+  assert.equal(formatReport(report).includes('fixture-original-alpha'), false);
+});
+
 test('detects an old D text without returning the matched text', t => {
   const root = makeOutput(t, { status: 'fixture-original-alpha' });
   const report = audit(root);

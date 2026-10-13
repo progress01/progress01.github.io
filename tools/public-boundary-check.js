@@ -103,7 +103,8 @@ function auditBoundary({ root, plan, baselineRecords, sourceRecords }) {
     if (!baseline || typeof baseline.id !== 'string' || decisions.some(decision => decision.id === baseline.id)) continue;
     const current = sourceById.get(baseline.id);
     if (!current) addError(errors, 'persistent_microblog_id_missing', 'source/microblog.json', 1);
-    else if (current.content !== baseline.content) addError(errors, 'persistent_microblog_content_changed', 'source/microblog.json', 1);
+    // Ordinary public records may be edited; their identity must remain stable.
+    // D/V originals are still scanned below, even when copied into another ID.
   }
 
   let sourceOldTextHits = 0;

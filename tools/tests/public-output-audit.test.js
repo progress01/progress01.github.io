@@ -159,6 +159,39 @@ test('accepts later microblog additions when source and generated datasets agree
   assert.deepEqual(report.microblog, { sourceCount: 4, publicCount: 4, navigationCount: 4 });
 });
 
+test('accepts edited and reordered ordinary historical records when outputs match the current source', t => {
+  const edited = sourceRecords.map(item => item.id === 'fixture-p1'
+    ? { ...item, content: 'updated public wording', date: '2026-10-14', tag: 'new tag' }
+    : { ...item }).reverse();
+  const fixture = makeFixture(t, {
+    publicRecords: edited,
+    navRecords: edited.map(item => ({ id: item.id, kind: 'microblog', text: item.content }))
+  });
+  const report = audit(fixture, { sourceRecords: edited });
+  assert.equal(report.ok, true, formatReport(report));
+});
+
+test('rejects stale public and navigation text after an ordinary historical record is edited', t => {
+  const edited = sourceRecords.map(item => item.id === 'fixture-p1' ? { ...item, content: 'new public wording' } : item);
+  const report = audit(makeFixture(t), { sourceRecords: edited });
+  assert.ok(report.errors.some(error => error.code === 'public_microblog_source_mismatch'));
+  assert.ok(report.errors.some(error => error.code === 'navigation_microblog_source_mismatch'));
+});
+
+test('editing an ordinary public record cannot reintroduce D/V original text', t => {
+  for (const original of ['fixture-original-alpha', 'fixture-original-beta', 'fixture-original-vanish']) {
+    const edited = sourceRecords.map(item => item.id === 'fixture-p1' ? { ...item, content: original } : item);
+    const fixture = makeFixture(t, {
+      publicRecords: edited,
+      navRecords: edited.map(item => ({ id: item.id, kind: 'microblog', text: item.content }))
+    });
+    const report = audit(fixture, { sourceRecords: edited });
+    assert.ok(report.errors.some(error => error.code === 'approved_private_fingerprint_in_output'));
+    assert.ok(report.errors.some(error => error.code === 'old_text_in_source'));
+    assert.equal(formatReport(report).includes(original), false);
+  }
+});
+
 test('rejects a missing approved D replacement from required generated datasets', t => {
   const fixture = makeFixture(t, { publicRecords: [], navRecords: [] });
   const report = audit(fixture);

@@ -168,7 +168,6 @@ function validateMicroblog({ root, texts, plan, sourceRecords, baselineRecords, 
       continue;
     }
     if (!current) { addError(errors, 'persistent_microblog_id_missing', plan.source); continue; }
-    if (!decision && current.content !== baseline.content) addError(errors, 'unchanged_microblog_content_changed', plan.source);
     if (decision?.decision === 'D' && current.content !== decision.publicContent) addError(errors, 'd_replacement_mismatch', plan.source);
   }
   const publicById = new Map((Array.isArray(publicRecords) ? publicRecords : []).filter(item => item?.id).map(item => [item.id, item]));
