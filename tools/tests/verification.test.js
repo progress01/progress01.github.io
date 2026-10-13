@@ -50,7 +50,7 @@ test('first verify is full, article-only changes use the candidate path, and dep
   fs.writeFileSync(path.join(root, 'source/_posts/article.md'), 'edited body and updated date\n');
   const candidateCalls = [];
   const candidate = runVerification({ root, receiptPath, clock, runner: fakeRunner(root, candidateCalls) });
-  assert.deepEqual(candidate, { action: 'auto', level: 'article', reused: false, deployed: false });
+  assert.deepEqual(candidate, { action: 'auto', level: 'content', reused: false, deployed: false });
   assert.ok(candidateCalls.includes('check:content'));
   assert.ok(candidateCalls.includes('check:profile-home'));
   assert.ok(candidateCalls.includes('check:site'));
@@ -59,7 +59,7 @@ test('first verify is full, article-only changes use the candidate path, and dep
 
   const deployCalls = [];
   const deployed = runVerification({ action: 'deploy', root, receiptPath, clock, runner: stage => deployCalls.push(stage) });
-  assert.deepEqual(deployed, { action: 'deploy', level: 'article', reused: true, deployed: true });
+  assert.deepEqual(deployed, { action: 'deploy', level: 'content', reused: true, deployed: true });
   assert.deepEqual(deployCalls, ['deploy']);
 });
 
@@ -79,7 +79,7 @@ test('code, untracked inputs, and dependency metadata changes force full verific
 
   fs.writeFileSync(path.join(root, 'public/index.html'), 'manually changed output');
   calls = [];
-  assert.equal(runVerification({ root, receiptPath, clock, runner: fakeRunner(root, calls) }).level, 'article');
+  assert.equal(runVerification({ root, receiptPath, clock, runner: fakeRunner(root, calls) }).level, 'content');
   assert.ok(calls.includes('build'));
   assert.ok(!calls.includes('test:regression'));
 
@@ -99,6 +99,77 @@ test('source files named like root temp files remain fingerprinted', t => {
   const calls = [];
   assert.equal(runVerification({ root, receiptPath, clock, runner: fakeRunner(root, calls) }).level, 'full');
   assert.ok(calls.includes('test:regression'));
+});
+
+test('adding, editing and deleting raster images and microblog data uses content checks', t => {
+  const { root, receiptPath, clock } = makeFixture(t);
+  runVerification({ root, receiptPath, clock, runner: fakeRunner(root, []) });
+  fs.mkdirSync(path.join(root, 'source/images'), { recursive: true });
+  const photo = path.join(root, 'source/images/new-photo.webp');
+  const edits = [
+    () => fs.writeFileSync(photo, 'fixture image one'),
+    () => fs.writeFileSync(photo, 'fixture image two'),
+    () => fs.unlinkSync(photo),
+    () => fs.writeFileSync(path.join(root, 'source/microblog.json'), '[]'),
+    () => fs.writeFileSync(path.join(root, 'source/microblog.json'), '[{"id":"new","content":"new text"}]')
+  ];
+  for (const edit of edits) {
+    edit();
+    const calls = [];
+    const result = runVerification({ root, receiptPath, clock, runner: fakeRunner(root, calls) });
+    assert.equal(result.level, 'content');
+    assert.equal(result.reused, false);
+    for (const check of ['check:content', 'check:microblog-history', 'build', 'check:site', 'check:public-output']) {
+      assert.ok(calls.includes(check), check);
+    }
+    assert.ok(!calls.includes('test:regression'));
+  }
+  fs.writeFileSync(photo, 'image with a failed output check');
+  const calls = [];
+  assert.throws(() => runVerification({ action: 'deploy', root, receiptPath, clock,
+    runner: fakeRunner(root, calls, { failAt: 'check:public-output' }) }), /failed check:public-output/);
+  assert.ok(!calls.includes('deploy'));
+  assert.equal(readReceipt(receiptPath), null);
+});
+
+test('ordinary notes reuse the result while executable, contract and other data inputs require full checks', t => {
+  const { root, receiptPath, clock } = makeFixture(t);
+  runVerification({ root, receiptPath, clock, runner: fakeRunner(root, []) });
+  fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
+  for (const file of ['docs/new-review.md', 'docs/personal-navigation-progress.md', '網站維護更新手冊.md', 'AGENTS.md']) {
+    fs.writeFileSync(path.join(root, file), 'documentation only');
+  }
+  const noteCalls = [];
+  assert.equal(runVerification({ root, receiptPath, clock, runner: fakeRunner(root, noteCalls) }).reused, true);
+  assert.deepEqual(noteCalls, []);
+
+  for (const file of [
+    'docs/dual-surface-visual-rules.md', 'docs/config.json', 'source/new-page.md',
+    'source/images/script.js', 'source/images/interactive.svg', 'tools/data/migration.json',
+    'source/life-index.json', 'source/reading-desk.yml', '_config.yml'
+  ]) {
+    fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
+    fs.writeFileSync(path.join(root, file), 'changed input');
+    const calls = [];
+    const result = runVerification({ root, receiptPath, clock, runner: fakeRunner(root, calls) });
+    assert.equal(result.level, 'full', file);
+    assert.equal(result.reused, false, file);
+    assert.ok(calls.includes('test:regression'), file);
+  }
+});
+
+test('previous receipt versions and explicit full mode cannot skip the complete suite', t => {
+  const { root, receiptPath, clock } = makeFixture(t);
+  runVerification({ root, receiptPath, clock, runner: fakeRunner(root, []) });
+  const oldReceipt = readReceipt(receiptPath);
+  oldReceipt.version = 1;
+  fs.writeFileSync(receiptPath, JSON.stringify(oldReceipt));
+  const upgradeCalls = [];
+  assert.equal(runVerification({ root, receiptPath, clock, runner: fakeRunner(root, upgradeCalls) }).level, 'full');
+  assert.ok(upgradeCalls.includes('test:regression'));
+  const forcedCalls = [];
+  assert.equal(runVerification({ action: 'full', root, receiptPath, clock, runner: fakeRunner(root, forcedCalls) }).reused, false);
+  assert.ok(forcedCalls.includes('test:regression'));
 });
 
 test('missing or malformed receipt requires a full baseline', t => {
@@ -123,7 +194,7 @@ test('time-dependent checks refresh on a new Taipei day', t => {
   const nextDay = () => new Date('2026-10-13T16:30:00.000Z');
   const calls = [];
   const refreshed = runVerification({ root, receiptPath, clock: nextDay, runner: fakeRunner(root, calls) });
-  assert.equal(refreshed.level, 'article');
+  assert.equal(refreshed.level, 'content');
   assert.ok(calls.includes('check:content'));
   assert.ok(calls.includes('build'));
 });
@@ -178,5 +249,5 @@ test('failed, mutated, or changed-before-deploy inputs never issue a receipt or 
 test('both verification routes build before public-dependent regression tests', () => {
   const full = verificationStages('full');
   assert.ok(full.indexOf('build') < full.indexOf('test:regression'));
-  assert.ok(!verificationStages('article').includes('test:regression'));
+  assert.ok(!verificationStages('content').includes('test:regression'));
 });

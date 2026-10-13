@@ -30,6 +30,7 @@
     "check:public-output": "node tools/public-output-audit.js --root public",
     "check:tags": "node tools/tag-reorganization-check.js",
     "check:tag-snapshot": "node tools/tag-reorganization-snapshot-check.js",
+    "check:microblog-history": "node --test tools/tests/microblog-boundary-migration.test.js",
     "check:song-tags": "node tools/song-language-tags.js",
     "check:excerpt": "node tools/excerpt-check.js",
     "check:site": "node tools/site-check.js",

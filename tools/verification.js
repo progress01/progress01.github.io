@@ -7,16 +7,24 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
-const RECEIPT_VERSION = 1;
+const RECEIPT_VERSION = 2;
 const RECEIPT_PATH = path.join(ROOT, 'node_modules', '.cache', 'blog-verify-receipt.json');
 const OMIT_DIRECTORIES = new Set(['.git', 'node_modules', 'public', 'tmp', '.deploy_git']);
 const OMIT_FILES = new Set(['db.json', '.DS_Store', 'Thumbs.db']);
-const OMIT_DOCUMENTATION = new Set([
-  'docs/dual-surface-publishing-sop.md',
-  'docs/personal-navigation-progress.md',
-  'docs/site-change-log.md',
-  'docs/computer-restore-2026-10-10.md'
-]);
+// This Markdown file is read by a verifier, unlike ordinary author notes.
+// Add future documentation inputs here when a build/checker begins reading them.
+const CHECK_DOCUMENTATION = new Set(['docs/dual-surface-visual-rules.md']);
+
+function isDocumentation(name) {
+  return !CHECK_DOCUMENTATION.has(name) &&
+    (/^[^/]+\.md$/i.test(name) || /^docs\/.*\.md$/i.test(name));
+}
+
+function isContentPath(name) {
+  return /^source\/_posts\/.*\.md$/i.test(name) ||
+    /^source\/images\/.*\.(?:png|jpe?g|gif|webp|avif|ico)$/i.test(name) ||
+    name === 'source/microblog.json';
+}
 const SOURCE_CHECKS = ['check:content', 'check:tags', 'check:song-tags', 'check:profile-home'];
 const FULL_SOURCE_CHECKS = [
   ...SOURCE_CHECKS,
@@ -50,7 +58,7 @@ function walkFiles(root, current = root, output = []) {
       walkFiles(root, filename, output);
     } else if (entry.isFile() &&
         !(current === root && (OMIT_FILES.has(entry.name) || entry.name.toLowerCase().endsWith('.log'))) &&
-        !OMIT_DOCUMENTATION.has(relativePath(root, filename))) {
+        !isDocumentation(relativePath(root, filename))) {
       output.push(filename);
     }
   }
@@ -80,15 +88,15 @@ function inputInventory(root = ROOT) {
   return files;
 }
 
-function articleInventory(files) {
+function contentInventory(files) {
   return Object.fromEntries(Object.entries(files)
-    .filter(([name]) => /^source\/\_posts\/.*\.md$/i.test(name))
+    .filter(([name]) => isContentPath(name))
     .sort(([left], [right]) => left.localeCompare(right)));
 }
 
-function nonArticleFingerprint(files) {
+function programFingerprint(files) {
   return sha256(JSON.stringify(Object.entries(files)
-    .filter(([name]) => !/^source\/\_posts\/.*\.md$/i.test(name))
+    .filter(([name]) => !isContentPath(name))
     .sort(([left], [right]) => left.localeCompare(right))));
 }
 
@@ -118,33 +126,33 @@ function readReceipt(receiptPath = RECEIPT_PATH) {
   try {
     const receipt = JSON.parse(fs.readFileSync(receiptPath, 'utf8'));
     const fingerprint = /^[a-f0-9]{64}$/;
-    if (receipt?.version !== RECEIPT_VERSION || !['full', 'article'].includes(receipt.level) ||
+    if (receipt?.version !== RECEIPT_VERSION || !['full', 'content'].includes(receipt.level) ||
         !/^\d{4}-\d{2}-\d{2}$/.test(receipt.day || '') || !fingerprint.test(receipt.sourceFingerprint || '') ||
         !fingerprint.test(receipt.fullSourceFingerprint || '') || !fingerprint.test(receipt.publicFingerprint || '') ||
-        !receipt.articles || typeof receipt.articles !== 'object' || Array.isArray(receipt.articles) ||
-        Object.entries(receipt.articles).some(([name, hash]) => !/^source\/\_posts\/.*\.md$/i.test(name) || !fingerprint.test(hash))) return null;
+        !receipt.content || typeof receipt.content !== 'object' || Array.isArray(receipt.content) ||
+        Object.entries(receipt.content).some(([name, hash]) => !isContentPath(name) || !fingerprint.test(hash))) return null;
     return receipt;
   } catch { return null; }
 }
 
 function isExactReceipt(receipt, files, outputHash, day) {
   return Boolean(receipt && receipt.day === day && receipt.sourceFingerprint === inventoryFingerprint(files) &&
-    receipt.publicFingerprint === outputHash && receipt.fullSourceFingerprint === nonArticleFingerprint(files));
+    receipt.publicFingerprint === outputHash && receipt.fullSourceFingerprint === programFingerprint(files));
 }
 
 function selectLevel({ action, receipt, files, outputHash, day }) {
   if (action === 'full') return 'full';
-  const currentCodeFingerprint = nonArticleFingerprint(files);
+  const currentCodeFingerprint = programFingerprint(files);
   if (!receipt) return 'full';
   if (currentCodeFingerprint !== receipt.fullSourceFingerprint) return 'full';
-  return 'article';
+  return 'content';
 }
 
 function levelReason({ action, receipt, files }) {
-  if (action === 'full') return 'requested full verification';
-  if (!receipt) return 'no successful full baseline receipt';
-  if (nonArticleFingerprint(files) !== receipt.fullSourceFingerprint) return 'non-article source or runtime inputs changed';
-  return 'non-article inputs match the successful full baseline';
+  if (action === 'full') return '指定執行完整檢查';
+  if (!receipt) return '尚無適用的完整驗證紀錄';
+  if (programFingerprint(files) !== receipt.fullSourceFingerprint) return '程式、設定或其他需要完整檢查的輸入已變更';
+  return '程式與設定未變更，重新檢查內容與生成網站';
 }
 
 function writeReceipt(receipt, receiptPath = RECEIPT_PATH) {
@@ -174,7 +182,9 @@ function verificationStages(level) {
   if (level === 'full') return [
     ...FULL_SOURCE_CHECKS, 'clean', 'build', ...OUTPUT_CHECKS, 'test:regression'
   ];
-  return [...SOURCE_CHECKS, 'clean', 'build', ...OUTPUT_CHECKS];
+  // Preserve the historical microblog privacy migration assertions when the
+  // wider regression suite is skipped. Its editing restrictions are separate.
+  return [...SOURCE_CHECKS, 'check:microblog-history', 'clean', 'build', ...OUTPUT_CHECKS];
 }
 
 function runVerificationStages(level, root, runner) {
@@ -203,7 +213,7 @@ function runVerification({ action = 'auto', root = ROOT, receiptPath = RECEIPT_P
   const plannedLevel = selectLevel({ action, receipt, files: before.files, outputHash: beforePublic, day: before.day });
   const reuse = action !== 'full' && isExactReceipt(receipt, before.files, beforePublic, before.day);
   const displayLevel = reuse ? receipt.level : plannedLevel;
-  console.log(`驗證階段：${reuse ? '沿用既有' : ''}${displayLevel === 'full' ? '完整驗證' : '文章候選驗證'}（${reuse ? '來源、public 與日期指紋完全吻合' : levelReason({ action, receipt, files: before.files })}）。`);
+  console.log(`驗證階段：${reuse ? '沿用既有' : ''}${displayLevel === 'full' ? '完整驗證' : '內容更新驗證'}（${reuse ? '來源、public 與日期指紋完全吻合' : levelReason({ action, receipt, files: before.files })}）。`);
 
   if (reuse) {
     if (action === 'deploy') {
@@ -233,8 +243,8 @@ function runVerification({ action = 'auto', root = ROOT, receiptPath = RECEIPT_P
       level,
       day: before.day,
       sourceFingerprint: before.sourceFingerprint,
-      fullSourceFingerprint: nonArticleFingerprint(before.files),
-      articles: articleInventory(before.files),
+      fullSourceFingerprint: programFingerprint(before.files),
+      content: contentInventory(before.files),
       publicFingerprint: outputHash,
       verifiedAt: clock().toISOString()
     };
@@ -261,8 +271,8 @@ function main(args = process.argv.slice(2)) {
   const action = args.includes('--full') ? 'full' : args.includes('--deploy') ? 'deploy' : 'auto';
   try {
     const result = runVerification({ action });
-    if (result.deployed) console.log(`已部署；採用${result.level === 'full' ? '完整' : '文章候選'}驗證${result.reused ? '憑證' : ''}。`);
-    else console.log(`${result.reused ? '沿用既有' : '完成'}${result.level === 'full' ? '完整' : '文章候選'}驗證；public 與來源指紋已核對。`);
+    if (result.deployed) console.log(`已部署；採用${result.level === 'full' ? '完整' : '內容更新'}驗證${result.reused ? '憑證' : ''}。`);
+    else console.log(`${result.reused ? '沿用既有' : '完成'}${result.level === 'full' ? '完整' : '內容更新'}驗證；public 與來源指紋已核對。`);
     return 0;
   } catch (error) {
     console.error(`驗證／部署未完成：${error.message}`);
@@ -273,7 +283,7 @@ function main(args = process.argv.slice(2)) {
 if (require.main === module) process.exitCode = main();
 
 module.exports = {
-  RECEIPT_VERSION, articleInventory, currentState, inputInventory, inventoryFingerprint,
-  isExactReceipt, main, nonArticleFingerprint, publicFingerprint, readReceipt,
+  RECEIPT_VERSION, contentInventory, currentState, inputInventory, inventoryFingerprint,
+  isContentPath, isDocumentation, isExactReceipt, main, programFingerprint, publicFingerprint, readReceipt,
   runVerification, runVerificationStages, selectLevel, taipeiDate, verificationStages, writeReceipt
 };
