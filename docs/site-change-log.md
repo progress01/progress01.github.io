@@ -49,7 +49,7 @@ Git 歷史可確認這一段建立或調整了搜尋、隨機文章、文章列�
 - 導覽資料盤點、統一索引、搜尋篩選與段落定位：見 [personal-navigation-progress.md](personal-navigation-progress.md)、`personal-navigation-data-contract.md`、`personal-navigation-step2-verification.json`、`personal-navigation-step3-verification.json`。
 - 公開文章標籤逐篇重整、舊標籤引用清理、歌曲語言標籤：見 `tag-reorganization-review.json`、`tools/reorganize-tags.js`、`tools/song-language-tags.js` 及進度檔的 2026-09-15 條目。
 - 內容分類頁的收合、依分類產生主題、原位展開與移除文章性質篩選：見進度檔的四個 2026-09-15 條目；目前仍保留分類／主題網址與直接標籤頁行為。
-- 站內連結、搜尋資料、JSON-LD、圖牆數量及生成檔案檢查：由 `tools/site-check.js`、`tools/content-check.js`、`tools/tag-reorganization-check.js` 和 `npm run verify` 組成現行驗證鏈。
+- 站內連結、搜尋資料、JSON-LD、圖牆數量及生成檔案檢查：由 `tools/site-check.js`、`tools/content-check.js` 與 `npm run verify` 組成現行驗證鏈。`check:tags` 只驗證目前標籤；逐篇重整歷史快照另由 `check:tag-snapshot` 維護檢查。
 
 ## 問題情境回溯
 

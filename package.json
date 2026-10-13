@@ -29,6 +29,7 @@
     "check:public-boundary": "node tools/public-boundary-check.js",
     "check:public-output": "node tools/public-output-audit.js --root public",
     "check:tags": "node tools/tag-reorganization-check.js",
+    "check:tag-snapshot": "node tools/tag-reorganization-snapshot-check.js",
     "check:song-tags": "node tools/song-language-tags.js",
     "check:excerpt": "node tools/excerpt-check.js",
     "check:site": "node tools/site-check.js",
@@ -36,9 +37,10 @@
     "check:surface-regression": "node tools/surface-target-regression-check.js",
     "test:regression": "node --test --test-concurrency=1 tools/tests/*.test.js",
     "test:blogger": "python -B -m unittest discover -s tools/tests -p \"test_blogger*.py\"",
-    "verify": "npm run check:content && npm run check:article-scaffold && npm run check:profile-home && npm run check:surface-copy && npm run check:surface-visual && npm run check:surface-transition && npm run check:surface-accessibility && npm run check:surface-responsive && npm run check:tags && npm run check:song-tags && npm run test:regression && npm run clean && npm run build && npm run check:surface-copy-output && npm run check:site && npm run check:archive-category-compat && npm run check:sidebar-stats && npm run check:seo-urls && npm run check:public-output",
+    "verify": "node tools/verification.js",
+    "verify:full": "node tools/verification.js --full",
     "clean": "hexo clean",
-    "deploy": "npm run verify && hexo deploy",
+    "deploy": "node tools/verification.js --deploy",
     "server": "hexo server"
   },
   "hexo": {
