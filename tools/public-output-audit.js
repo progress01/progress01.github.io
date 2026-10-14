@@ -2,11 +2,13 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { TextDecoder } = require('node:util');
+const { TextDecoder, isDeepStrictEqual } = require('node:util');
 const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 const { auditBoundary, countOccurrences, loadBoundaryInputs } = require('./public-boundary-check');
-const { plain } = require('./lib/navigation-index');
+const { plain, dateOf } = require('./lib/navigation-index');
+const { normalizeSurfaces } = require('./lib/content-surfaces');
+const legacyMicroblogIds = new Set(require('./data/legacy-surfaces.v1.json').microblogIds);
 const { checkUrl } = require('./site-check');
 const { FIXED_SAMPLES, configuredOrigin, routeFile } = require('./seo-url-audit');
 
@@ -155,6 +157,8 @@ function validateMicroblog({ root, texts, plan, sourceRecords, baselineRecords, 
   }
   if (!Array.isArray(publicRecords) || publicRecords.length !== sourceRecords.length) addError(errors, 'public_microblog_count_mismatch', 'microblog.json', Array.isArray(publicRecords) ? publicRecords.length : 0);
   if (navRecords.length !== sourceRecords.length) addError(errors, 'navigation_microblog_count_mismatch', 'navigation-index.json', navRecords.length);
+  if (!isDeepStrictEqual(publicIds, sourceIds)) addError(errors, 'public_microblog_order_mismatch', 'microblog.json');
+  if (!isDeepStrictEqual(navIds, sourceIds)) addError(errors, 'navigation_microblog_order_mismatch', 'navigation-index.json');
 
   const baselineById = new Map(baselineRecords.filter(item => typeof item?.id === 'string').map(item => [item.id, item]));
   const sourceById = new Map(sourceRecords.filter(item => typeof item?.id === 'string').map(item => [item.id, item]));
@@ -175,8 +179,28 @@ function validateMicroblog({ root, texts, plan, sourceRecords, baselineRecords, 
   for (const source of sourceRecords) {
     const output = publicById.get(source.id);
     const indexed = navById.get(source.id);
-    if (!output || output.content !== source.content) addError(errors, 'public_microblog_source_mismatch', 'microblog.json');
+    // This JSON is a source copy: field order may differ, but values and record order must not.
+    if (!isDeepStrictEqual(output, source)) addError(errors, 'public_microblog_source_mismatch', 'microblog.json');
     if (!indexed || plain(indexed.text) !== plain(source.content)) addError(errors, 'navigation_microblog_source_mismatch', 'navigation-index.json');
+    let date, surfaces;
+    try {
+      date = dateOf(source.date, 'microblog');
+      surfaces = normalizeSurfaces(source, {
+        source: plan.source, missingPolicy: legacyMicroblogIds.has(source.id) ? 'legacy' : 'error'
+      }).surfaces;
+    } catch {
+      // Report the contract failure without echoing source text or private IDs.
+      addError(errors, 'navigation_microblog_source_invalid', plan.source);
+      continue;
+    }
+    const expected = {
+      title: Array.from(plain(source.content)).slice(0, 48).join(''),
+      date, dateKind: 'recorded', events: date ? [{ kind: 'recorded', date }] : [],
+      tags: source.tag ? [plain(source.tag)] : [], surfaces
+    };
+    if (!indexed || Object.keys(expected).some(key => !isDeepStrictEqual(indexed[key], expected[key]))) {
+      addError(errors, 'navigation_microblog_metadata_mismatch', 'navigation-index.json');
+    }
   }
   for (const d of (plan.records || []).filter(item => item.decision === 'D')) {
     if (publicById.get(d.id)?.content !== d.publicContent) addError(errors, 'd_replacement_missing_public_json', 'microblog.json');

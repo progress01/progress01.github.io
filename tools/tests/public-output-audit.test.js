@@ -22,10 +22,18 @@ const baselineRecords = [
   { id: 'fixture-p1', content: 'published unchanged' }
 ];
 const sourceRecords = [
-  { id: 'fixture-d1', content: 'approved public alpha' },
-  { id: 'fixture-d2', content: 'approved public beta' },
-  { id: 'fixture-p1', content: 'published unchanged' }
+  { id: 'fixture-d1', content: 'approved public alpha', surfaces: ['memory'] },
+  { id: 'fixture-d2', content: 'approved public beta', surfaces: ['memory'] },
+  { id: 'fixture-p1', content: 'published unchanged', surfaces: ['memory'] }
 ];
+
+// Fixtures use plain text and date-only values; transformed inputs have explicit expectations below.
+function navigationRecord(record) {
+  const date = record.date || null;
+  return { id: record.id, kind: 'microblog', text: record.content, title: record.content,
+    date, dateKind: 'recorded', events: date ? [{ kind: 'recorded', date }] : [],
+    tags: record.tag ? [record.tag] : [], surfaces: record.surfaces || ['memory'] };
+}
 
 function put(root, relative, content) {
   const filename = path.join(root, relative);
@@ -40,7 +48,7 @@ function makeFixture(t, overrides = {}) {
   const sourceImageRoot = path.join(projectRoot, 'source', 'images');
   fs.mkdirSync(outputRoot, { recursive: true });
   const publicRecords = overrides.publicRecords || sourceRecords;
-  const navRecords = overrides.navRecords || sourceRecords.map(record => ({ id: record.id, kind: 'microblog', text: record.content }));
+  const navRecords = overrides.navRecords || sourceRecords.map(navigationRecord);
   put(outputRoot, 'microblog.json', JSON.stringify(publicRecords));
   put(outputRoot, 'navigation-index.json', JSON.stringify({ records: navRecords }));
   put(outputRoot, 'status/index.html', '<html><body><script>fetch("/microblog.json")</script></body></html>');
@@ -136,7 +144,7 @@ test('rejects duplicate generated IDs and loss of historical source IDs', t => {
   const fixture = makeFixture(t, { publicRecords: [
     ...sourceRecords, { ...sourceRecords[0] }
   ], navRecords: [
-    ...sourceRecords.map(record => ({ id: record.id, kind: 'microblog', text: record.content })),
+    ...sourceRecords.map(navigationRecord),
     { id: 'changed-id', kind: 'microblog', text: 'safe synthetic extra' }
   ] });
   const report = audit(fixture, { sourceRecords: [
@@ -152,7 +160,7 @@ test('accepts later microblog additions when source and generated datasets agree
   const currentRecords = [...sourceRecords, appended];
   const fixture = makeFixture(t, {
     publicRecords: currentRecords,
-    navRecords: currentRecords.map(record => ({ id: record.id, kind: 'microblog', text: record.content }))
+    navRecords: currentRecords.map(navigationRecord)
   });
   const report = audit(fixture, { sourceRecords: currentRecords });
   assert.equal(report.ok, true, formatReport(report));
@@ -165,7 +173,7 @@ test('accepts edited and reordered ordinary historical records when outputs matc
     : { ...item }).reverse();
   const fixture = makeFixture(t, {
     publicRecords: edited,
-    navRecords: edited.map(item => ({ id: item.id, kind: 'microblog', text: item.content }))
+    navRecords: edited.map(navigationRecord)
   });
   const report = audit(fixture, { sourceRecords: edited });
   assert.equal(report.ok, true, formatReport(report));
@@ -178,12 +186,64 @@ test('rejects stale public and navigation text after an ordinary historical reco
   assert.ok(report.errors.some(error => error.code === 'navigation_microblog_source_mismatch'));
 });
 
+test('rejects stale date, tag and surfaces independently in either generated dataset', t => {
+  for (const update of [{ date: '2026-10-14' }, { tag: 'updated tag' }, { surfaces: ['profile'] }]) {
+    const edited = sourceRecords.map(item => item.id === 'fixture-p1' ? { ...item, ...update } : item);
+    const stalePublic = audit(makeFixture(t, { navRecords: edited.map(navigationRecord) }), { sourceRecords: edited });
+    assert.ok(stalePublic.errors.some(error => error.code === 'public_microblog_source_mismatch'));
+    assert.ok(!stalePublic.errors.some(error => error.code === 'navigation_microblog_metadata_mismatch'));
+    const staleNavigation = audit(makeFixture(t, { publicRecords: edited }), { sourceRecords: edited });
+    assert.ok(staleNavigation.errors.some(error => error.code === 'navigation_microblog_metadata_mismatch'));
+    assert.ok(!staleNavigation.errors.some(error => error.code === 'public_microblog_source_mismatch'));
+  }
+});
+
+test('rejects stale record order in either copy while accepting reordered object keys', t => {
+  const reordered = [...sourceRecords].reverse();
+  const stalePublic = audit(makeFixture(t, { navRecords: reordered.map(navigationRecord) }), { sourceRecords: reordered });
+  assert.ok(stalePublic.errors.some(error => error.code === 'public_microblog_order_mismatch'));
+  const staleNavigation = audit(makeFixture(t, { publicRecords: reordered }), { sourceRecords: reordered });
+  assert.ok(staleNavigation.errors.some(error => error.code === 'navigation_microblog_order_mismatch'));
+  const publicRecords = reordered.map(item => Object.fromEntries(Object.entries(item).reverse()));
+  const report = audit(makeFixture(t, { publicRecords, navRecords: reordered.map(navigationRecord) }), { sourceRecords: reordered });
+  assert.equal(report.ok, true, formatReport(report));
+});
+
+test('accepts normalized navigation metadata and legacy default surfaces without changing raw source', t => {
+  const legacyId = require('../data/legacy-surfaces.v1.json').microblogIds[0];
+  const edited = [...sourceRecords, { id: legacyId, content: 'legacy public fixture' }, {
+    id: 'fixture-normalized', content: '<b>public fixture</b>', tag: '<b>tag</b>',
+    date: '2026-10-13T18:30:00Z', surfaces: ['memory', 'profile', 'memory']
+  }];
+  const navRecords = edited.map(navigationRecord);
+  Object.assign(navRecords.at(-1), {
+    text: 'public fixture', title: 'public fixture', tags: ['tag'], date: '2026-10-14',
+    events: [{ kind: 'recorded', date: '2026-10-14' }], surfaces: ['profile', 'memory']
+  });
+  const report = audit(makeFixture(t, { publicRecords: edited, navRecords }), { sourceRecords: edited });
+  assert.equal(report.ok, true, formatReport(report));
+});
+
+test('rejects stale navigation titles, event dates and event kinds', t => {
+  const edited = sourceRecords.map(item => ({ ...item, date: '2026-10-14' }));
+  for (const update of [
+    { title: 'stale title' }, { dateKind: 'published' },
+    { events: [{ kind: 'recorded', date: '2026-10-13' }] },
+    { events: [{ kind: 'published', date: '2026-10-14' }] }
+  ]) {
+    const navRecords = edited.map(navigationRecord);
+    Object.assign(navRecords[2], update);
+    const report = audit(makeFixture(t, { publicRecords: edited, navRecords }), { sourceRecords: edited });
+    assert.ok(report.errors.some(error => error.code === 'navigation_microblog_metadata_mismatch'));
+  }
+});
+
 test('editing an ordinary public record cannot reintroduce D/V original text', t => {
   for (const original of ['fixture-original-alpha', 'fixture-original-beta', 'fixture-original-vanish']) {
     const edited = sourceRecords.map(item => item.id === 'fixture-p1' ? { ...item, content: original } : item);
     const fixture = makeFixture(t, {
       publicRecords: edited,
-      navRecords: edited.map(item => ({ id: item.id, kind: 'microblog', text: item.content }))
+      navRecords: edited.map(navigationRecord)
     });
     const report = audit(fixture, { sourceRecords: edited });
     assert.ok(report.errors.some(error => error.code === 'approved_private_fingerprint_in_output'));
