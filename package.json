@@ -42,6 +42,7 @@
     "verify:full": "node tools/verification.js --full",
     "clean": "hexo clean",
     "deploy": "node tools/verification.js --deploy",
+    "publish": "node tools/publish.js",
     "server": "hexo server"
   },
   "hexo": {

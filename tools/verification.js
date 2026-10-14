@@ -285,5 +285,5 @@ if (require.main === module) process.exitCode = main();
 module.exports = {
   RECEIPT_VERSION, contentInventory, currentState, inputInventory, inventoryFingerprint,
   isContentPath, isDocumentation, isExactReceipt, main, programFingerprint, publicFingerprint, readReceipt,
-  runVerification, runVerificationStages, selectLevel, taipeiDate, verificationStages, writeReceipt
+  runNpmScript, runVerification, runVerificationStages, selectLevel, taipeiDate, verificationStages, writeReceipt
 };
