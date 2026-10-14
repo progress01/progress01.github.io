@@ -40,8 +40,8 @@ function checkArticleTemplate(name, text, expectedKeys, hasDate) {
     errors.push(`${name}: date scaffold placeholder 不符`);
   }
   if (data?.tags !== null) errors.push(`${name}: tags 欄位形狀須保留空值`);
-  if (!Array.isArray(data?.surfaces) || data.surfaces.length !== 0) {
-    errors.push(`${name}: surfaces 必須是刻意未完成的空陣列`);
+  if (!Array.isArray(data?.surfaces) || data.surfaces.length !== 1 || data.surfaces[0] !== 'memory') {
+    errors.push(`${name}: 新文章必須預設只放 B 面，surfaces 為 [memory]`);
   }
   if (parts.body.trim() !== '') errors.push(`${name}: 提示只能在 front matter 註解，正文必須為空`);
   if (/^\s*(?:thinking_status|thinking_updated|thinking_boundary)\s*:/m.test(parts.frontmatter)) {
@@ -50,24 +50,11 @@ function checkArticleTemplate(name, text, expectedKeys, hasDate) {
 
   const comments = parts.frontmatter.split(/\r?\n/).filter(line => /^\s*#/.test(line)).join('\n');
   const semanticChecks = [
-    ['public-boundary', /任何人.{0,25}直接網址閱讀/.test(comments)
-      && /純宣洩/.test(comments) && /可辨識.{0,12}人事衝突/.test(comments)
-      && /未公開專案/.test(comments) && /他人隱私/.test(comments)
-      && /A\/B.{0,12}公開.{0,8}不是隱私/.test(comments)],
-    ['surface-choice', /改為\s*\[memory\]/.test(comments)
-      && /\[profile\]/.test(comments) && /\[profile, memory\]/.test(comments)
-      && /profile.{0,12}工作與學習/.test(comments)
-      && /memory.{0,12}個人記憶庫/.test(comments)
-      && /同一文章.{0,8}同一 URL/.test(comments)],
-    ['thinking-guidance', /僅探索中/.test(comments)
-      && /取消下方三行註解/.test(comments)
-      && /# thinking_status:\s*exploring/.test(comments)
-      && /# thinking_updated:\s*YYYY-MM-DD/.test(comments)
-      && /# thinking_boundary:.*非空適用邊界/.test(comments)
-      && /成熟文章.{0,15}省略整組欄位/.test(comments)
-      && /不填 stable\/published/.test(comments)],
-    ['curation-guidance', /首頁策展選填/.test(comments)
-      && /不代表自動列為 A 面代表作/.test(comments)]
+    ['public-boundary', /發布前確認/.test(comments) && /私人或未公開資料/.test(comments)
+      && /A\/B.{0,12}公開入口/.test(comments)],
+    ['memory-first', /新文章先放 B 面/.test(comments) && /整理好且作者確認/.test(comments)
+      && /再加入 A 面/.test(comments) && /\[profile, memory\]/.test(comments)
+      && /同一文章.{0,8}同一 URL/.test(comments)]
   ];
   for (const [code, passed] of semanticChecks) {
     if (!passed) errors.push(`${name}: 缺少必要註解 ${code}`);

@@ -1,6 +1,6 @@
 # 雙面部落格內容面向與成熟度資料契約（WBS 1.1、8.1）
 
-版本日期：2026-09-27（Asia/Taipei）
+版本日期：2026-10-14（Asia/Taipei）；新文章先 B 後 A 的作者決策優先於舊 scaffold 選擇流程。
 工作包：WBS 1.1「定義欄位規格」、WBS 8.1「成熟度資料契約」
 狀態：面向規格、成熟度契約與共用 helper 已完成；WBS 8.2 探索中資訊呈現、8.3 新文章 scaffold、8.4 發布驗證訊息及 8.5 作者發布 SOP 均已完成；G8 通過。下一步 WBS 9.1。
 適用施工：[雙面部落格 WBS](dual-surface-blog-wbs.md)；前置基準：[Git 與資料流](dual-surface-blog-baseline.md)、[路由與內容樣本](dual-surface-blog-samples.md)、[驗收與回復規則](dual-surface-blog-validation-and-recovery.md)。
@@ -33,11 +33,11 @@ surfaces: [profile, memory]
 | 輸入 | 預期行為 |
 | --- | --- |
 | 舊文章省略 `surfaces` | 以 `[memory]` 解讀，維持既有文章承接至 B 面的相容規則。舊文身分由 surface 契約啟用前的既存來源／相容清單界定，不用文章日期或檔案時間猜新舊。 |
-| 契約啟用後新文章省略欄位 | 建置前檢查錯誤；新文章必須明確填寫一個或兩個允許值。文章 scaffold 的 `surfaces: []` 是刻意未完成的阻擋占位，發布前必須換成合法值。 |
+| 契約啟用後新文章省略欄位 | 建置前檢查錯誤；新文章 scaffold 已預填 `surfaces: [memory]`，先放 B 面。整理好且作者確認後，再改為 `[profile, memory]` 加入 A 面。 |
 | 舊 microblog／standalone learning item 省略欄位 | 以 `[memory]` 解讀。既有私人性不能由此預設；其來源是否可公開仍是獨立決策。 |
 | 舊 linked learning item 省略欄位 | 繼承其已解析的目標文章 `surfaces`，因此不擴大文章可見面向；目標文章按本文規則解析。 |
 | 新 microblog／reading-desk item 省略欄位 | 建置前檢查錯誤；未來發布範本提供明確值。本工作包不改來源或範本。 |
-| `surfaces: []` | 錯誤。新文章 scaffold 暫留此占位時代表尚未完成發布選擇；空陣列不是私人、隱藏、或「不顯示於任何面」的合法值。 |
+| `surfaces: []` | 錯誤。空陣列不是私人、隱藏、或「不顯示於任何面」的合法值；新文章 scaffold 不再使用空陣列。 |
 | `surfaces: null`、裸 `surfaces:` | 錯誤；明確 null 不視為欄位缺漏。 |
 | `surfaces: profile` 或單一字串 | 錯誤；欄位必須是陣列，即使只有一個值也一樣。 |
 | 整數、布林、物件、混合型別或巢狀陣列 | 錯誤；不做隱式字串化或型別轉換。 |
@@ -52,7 +52,7 @@ surfaces: [profile, memory]
 ### 已發布文章 posts
 
 - 所有作為文章內容記錄的已發布 post 均使用此欄位，包括一般文章、工作知識、學習文章及站務文章。
-- 現有文章缺欄位時按舊文相容規則為 `[memory]`。新文章 scaffold 以 `surfaces: []` 阻止遺漏選擇；發布前必須明確選擇，不能根據分類、標籤、檔名或 `work_knowledge`／`learning` 等其他欄位推測面向。
+- 現有文章缺欄位時按舊文相容規則為 `[memory]`。新文章與草稿 scaffold 預填 `[memory]`，不需逐篇選面向；整理好且作者確認後才加入 `profile`，不能根據分類、標籤、檔名或成熟度自動加入 A 面。
 - `draft: true`、`published: false` 或尚未進入公開建置的內容，不因設定 `surfaces` 而自動公開；發佈狀態與面向判斷彼此獨立。
 
 ### microblog
@@ -161,7 +161,7 @@ thinking_boundary: 目前只整理個人實作經驗，尚未涵蓋大型團隊�
 
 ## 9. 新文章 scaffold（WBS 8.3）
 
-`scaffolds/post.md` 與 `scaffolds/draft.md` 的 `surfaces: []` 是未完成、會阻擋發布的提醒占位，不是合法面向，也不代表私人或不公開；發布前須改成 `[memory]`、`[profile]` 或 `[profile, memory]`。註解依序提醒公開判斷、面向、探索中成熟度欄位及首頁策展為選填；提示只在 front matter，成熟文章省略整組 thinking 欄位。首頁策展不在 scaffold 預填，文章發布也不會自動成為 A 面代表作。固定功能頁使用 `scaffolds/page.md`，不加入文章面向欄位。
+`scaffolds/post.md` 與 `scaffolds/draft.md` 預填 `surfaces: [memory]`，新文章先放 B 面。範本只保留公開提醒及「整理好、作者確認後再加入 A 面」的簡短說明，不預填 thinking 欄位。日後改成 `[profile, memory]` 時保留 B 面、同一篇正文與同一網址，不另做副本。成熟度欄位仍是選填，詳見本規格，不會自動調整面向。固定功能頁使用 `scaffolds/page.md`，不加入文章面向欄位。
 
 ## 10. 作者發布 SOP（WBS 8.5）
 

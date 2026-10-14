@@ -25,6 +25,9 @@ hexo.on('new', result => {
 
   const generated = fs.readFileSync(result.path, 'utf8');
   if (/^\s*# 發布前確認/m.test(generated)) return;
-  const withReminders = generated.replace(/^(surfaces:\s*\[\]\s*)$/m, `${reminders.join('\n')}\n$1`);
+  const newline = generated.includes('\r\n') ? '\r\n' : '\n';
+  // Hexo may serialize the surface array in either inline or block YAML form.
+  const withReminders = generated.replace(/^surfaces:[^\r\n]*/m,
+    line => `${reminders.join(newline)}${newline}${line}`);
   if (withReminders !== generated) fs.writeFileSync(result.path, withReminders, 'utf8');
 });

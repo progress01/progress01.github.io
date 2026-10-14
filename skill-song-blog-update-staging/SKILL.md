@@ -65,7 +65,8 @@ Keep the article filename pattern `歌曲推薦-XXX.md`. For English filenames, 
    categories: [音樂]
    title: 歌曲推薦-<song title>
    date: YYYY-MM-DD HH:mm:ss
-   tags: [音樂推薦, 專輯插圖]
+   tags: [歌曲推薦]
+   surfaces: [memory]
    ---
 
    <div style="display: flex; gap: 20px; align-items: flex-start;">

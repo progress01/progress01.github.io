@@ -600,7 +600,8 @@ source/_posts/
 title: 文章標題
 date: 2026-08-31 12:00:00
 categories: [閱讀與影視]
-tags: [閱讀紀錄]
+tags: [閱讀心得]
+surfaces: [memory]
 ---
 ~~~
 

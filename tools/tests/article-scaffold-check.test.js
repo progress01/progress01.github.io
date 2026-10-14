@@ -15,12 +15,12 @@ const readTemplates = () => Object.fromEntries(['post', 'draft', 'page'].map(nam
   fs.readFileSync(path.join(root, 'scaffolds', `${name}.md`), 'utf8')
 ]));
 
-test('post and draft scaffolds have parseable active fields and all four front matter reminders', () => {
+test('post and draft scaffolds start on memory with concise publication guidance', () => {
   assert.deepEqual(validateArticleScaffolds(readTemplates()), []);
   for (const name of ['post', 'draft']) {
     const { frontmatter, body } = splitTemplate(fs.readFileSync(path.join(root, `scaffolds/${name}.md`), 'utf8'));
     const data = yaml.load(frontmatter);
-    assert.deepEqual(data.surfaces, []);
+    assert.deepEqual(data.surfaces, ['memory']);
     assert.equal(Object.hasOwn(data, 'thinking_status'), false);
     assert.equal(body, '');
   }
@@ -33,12 +33,15 @@ test('draft keeps its no-date shape and fixed page scaffold stays byte-for-byte 
   assert.deepEqual(validateArticleScaffolds({ ...templates, page: `${PAGE_TEMPLATE}surfaces: []\n` }).some(error => error.startsWith('page.md:')), true);
 });
 
-test('checker rejects default memory, missing public reminder, active thinking placeholders and body prompts', () => {
+test('checker rejects empty or profile defaults, missing reminders, active placeholders and body prompts', () => {
   const templates = readTemplates();
   const rejected = [
-    { ...templates, post: templates.post.replace('surfaces: []', 'surfaces: [memory]') },
+    ...['[]', '[profile]', '[profile, memory]'].map(surfaces => ({
+      ...templates, post: templates.post.replace('surfaces: [memory]', `surfaces: ${surfaces}`)
+    })),
     { ...templates, post: templates.post.replace(/^# 發布前確認.*\r?\n/m, '') },
-    { ...templates, draft: templates.draft.replace('surfaces: []', 'surfaces: []\nthinking_updated: YYYY-MM-DD') },
+    { ...templates, post: templates.post.replace(/^# 新文章先放.*\r?\n/m, '') },
+    { ...templates, draft: templates.draft.replace('surfaces: [memory]', 'surfaces: [memory]\nthinking_updated: YYYY-MM-DD') },
     { ...templates, post: templates.post.replace(/---\r?\n$/, '請在發布前判斷。\n') }
   ];
   for (const fixture of rejected) assert.notDeepEqual(validateArticleScaffolds(fixture), []);
@@ -46,7 +49,7 @@ test('checker rejects default memory, missing public reminder, active thinking p
 
 test('checker rejects duplicate A/B article markers and article fields on page scaffold', () => {
   const templates = readTemplates();
-  const duplicate = { ...templates, post: templates.post.replace('surfaces: []', 'surfaces: []\n# A版文章與B版文章各複製一份') };
+  const duplicate = { ...templates, post: templates.post.replace('surfaces: [memory]', 'surfaces: [memory]\n# A版文章與B版文章各複製一份') };
   assert.ok(validateArticleScaffolds(duplicate).some(error => error.includes('文章副本')));
   const pageWithSurface = { ...templates, page: templates.page.replace('date: {{ date }}', 'date: {{ date }}\nsurfaces: []') };
   assert.ok(validateArticleScaffolds(pageWithSurface).some(error => error.startsWith('page.md:')));
@@ -60,9 +63,9 @@ test('deterministic Hexo placeholder rendering keeps comments in front matter an
   const data = yaml.load(frontmatter);
   assert.equal(data.title, 'Template Rendered Title');
   assert.equal(data.date.toISOString(), '2026-09-27T12:34:56.000Z');
-  assert.deepEqual(data.surfaces, []);
-  assert.match(frontmatter, /任何人.*直接網址閱讀/);
-  assert.match(frontmatter, /僅探索中才取消下方三行註解/);
+  assert.deepEqual(data.surfaces, ['memory']);
+  assert.match(frontmatter, /發布前確認.*適合公開/);
+  assert.match(frontmatter, /新文章先放 B 面.*作者確認/);
   assert.equal(body, '');
 });
 
@@ -96,8 +99,9 @@ test('real Hexo scaffold API renders post and draft into an isolated temporary s
       assert.ok(frontmatter, `${layout} output has front matter`);
       const data = yaml.load(frontmatter);
       assert.equal(data.title, title);
-      assert.deepEqual(data.surfaces, [], `${layout} Hexo output front matter: ${frontmatter}`);
-      assert.equal(/任何人.*直接網址閱讀/.test(frontmatter), true);
+      assert.deepEqual(data.surfaces, ['memory'], `${layout} Hexo output front matter: ${frontmatter}`);
+      assert.equal(/發布前確認.*適合公開/.test(frontmatter), true);
+      assert.equal(/新文章先放 B 面.*作者確認/.test(frontmatter), true);
       assert.equal(/發布前確認/.test(body), false);
       for (const key of ['thinking_status', 'thinking_updated', 'thinking_boundary']) {
         assert.equal(Object.hasOwn(data, key), false, `${layout} has no active ${key}`);
