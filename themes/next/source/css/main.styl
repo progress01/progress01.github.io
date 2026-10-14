@@ -672,6 +672,65 @@ body {
   line-height: 1.8;
 }
 
+/* 全部文章沿用既有摘要；歌曲保留資訊卡與可操作的收聽連結。 */
+.archive .archive-preview {
+  margin: 12px 2px 24px 17px;
+  color: var(--surface-muted);
+  font-size: 14px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.archive .archive-preview-song > div {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 18px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-panel);
+}
+
+.archive .archive-preview-song > div > div:first-child {
+  min-width: 0;
+}
+
+.archive .archive-preview-song > div > div:last-child {
+  width: 150px !important;
+  max-width: 100%;
+}
+
+.archive .archive-preview-song p {
+  margin-bottom: 0;
+}
+
+.archive .archive-preview-song img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.archive .archive-preview-song a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--surface-accent-strong);
+}
+
+@media (max-width: 767px) {
+  .archive .archive-preview-song > div {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding: 16px;
+  }
+
+  .archive .archive-preview-song > div > div:last-child {
+    order: -1;
+    width: 100% !important;
+    max-width: 180px;
+    align-self: center;
+  }
+}
+
 /* 手機版文章列表：補上窄螢幕的標題區塊間距 */
 @media (max-width: 767px) {
   .posts-collapse .post-content .post-meta-container {

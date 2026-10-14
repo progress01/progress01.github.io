@@ -1,4 +1,4 @@
-{% macro render(posts) %}
+{% macro render(posts, show_preview = false) %}
 {%- set current_year = '1970' %}
 {%- for post in posts.toArray() %}
 
@@ -35,6 +35,14 @@
 
       {{ post_gallery(post.photos) }}
     </header>
+    {%- if show_preview %}
+      {%- set preview = archive_preview(post) %}
+      {%- if preview and preview.kind == 'song' %}
+        <div class="archive-preview archive-preview-song">{{ preview.html }}</div>
+      {%- elif preview %}
+        <p class="archive-preview archive-preview-text">{{ escape_html(preview.text) }}</p>
+      {%- endif %}
+    {%- endif %}
   </article>
 
 {%- endfor %}
