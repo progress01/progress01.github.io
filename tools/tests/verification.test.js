@@ -144,9 +144,9 @@ test('ordinary notes reuse the result while executable, contract and other data 
   assert.deepEqual(noteCalls, []);
 
   for (const file of [
-    'docs/dual-surface-visual-rules.md', 'docs/config.json', 'source/new-page.md',
+    'docs/dual-surface-visual-rules.md', 'docs/config.json', 'source/new-page.md', 'source/_data/content-tags.yml', 'tools/check-script.js',
     'source/images/script.js', 'source/images/interactive.svg', 'tools/data/migration.json',
-    'source/life-index.json', 'source/reading-desk.yml', '_config.yml'
+    '_config.yml'
   ]) {
     fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
     fs.writeFileSync(path.join(root, file), 'changed input');
@@ -155,6 +155,30 @@ test('ordinary notes reuse the result while executable, contract and other data 
     assert.equal(result.level, 'full', file);
     assert.equal(result.reused, false, file);
     assert.ok(calls.includes('test:regression'), file);
+  }
+});
+
+test('life and reading desk changes use content verification while output checks remain enabled', t => {
+  const { root, receiptPath, clock } = makeFixture(t);
+  runVerification({ root, receiptPath, clock, runner: fakeRunner(root, []) });
+
+  const changes = [
+    ['source/life-index.json', () => fs.writeFileSync(path.join(root, 'source/life-index.json'), '{"current":{"listen":{"title":"new"}}}\n')],
+    ['source/reading-desk.yml', () => fs.writeFileSync(path.join(root, 'source/reading-desk.yml'), 'topics:\n  - id: topic\n    name: New\n    items: []\n')],
+    ['source/life-index.json modify', () => fs.writeFileSync(path.join(root, 'source/life-index.json'), '{"current":{"listen":{"title":"changed"}}}\n')],
+    ['source/reading-desk.yml modify', () => fs.writeFileSync(path.join(root, 'source/reading-desk.yml'), 'topics: []\n')],
+    ['source/life-index.json delete', () => fs.unlinkSync(path.join(root, 'source/life-index.json'))],
+    ['source/reading-desk.yml delete', () => fs.unlinkSync(path.join(root, 'source/reading-desk.yml'))]
+  ];
+  for (const [file, change] of changes) {
+    change();
+    const calls = [];
+    const result = runVerification({ root, receiptPath, clock, runner: fakeRunner(root, calls) });
+    assert.equal(result.level, 'content', file);
+    assert.ok(calls.includes('check:content'), file);
+    assert.ok(calls.includes('clean') && calls.includes('build'), file);
+    assert.ok(calls.includes('check:record-data-output'), file);
+    assert.ok(!calls.includes('test:regression'), file);
   }
 });
 

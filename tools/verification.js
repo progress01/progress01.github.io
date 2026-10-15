@@ -23,7 +23,9 @@ function isDocumentation(name) {
 function isContentPath(name) {
   return /^source\/_posts\/.*\.md$/i.test(name) ||
     /^source\/images\/.*\.(?:png|jpe?g|gif|webp|avif|ico)$/i.test(name) ||
-    name === 'source/microblog.json';
+    name === 'source/microblog.json' ||
+    name === 'source/life-index.json' ||
+    name === 'source/reading-desk.yml';
 }
 const SOURCE_CHECKS = ['check:content', 'check:tags', 'check:song-tags', 'check:profile-home'];
 const FULL_SOURCE_CHECKS = [
@@ -32,7 +34,7 @@ const FULL_SOURCE_CHECKS = [
   'check:surface-transition', 'check:surface-accessibility', 'check:surface-responsive'
 ];
 const OUTPUT_CHECKS = [
-  'check:surface-copy-output', 'check:site', 'check:archive-category-compat',
+  'check:surface-copy-output', 'check:site', 'check:record-data-output', 'check:archive-category-compat',
   'check:sidebar-stats', 'check:seo-urls', 'check:public-output'
 ];
 

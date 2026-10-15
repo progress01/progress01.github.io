@@ -5,7 +5,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { git, parseArgs, planPublication, readState, runPublication } = require('../publish');
+const { git, parseArgs, planPublication, readState, runPublication, confirmPages, writeState } = require('../publish');
 
 const article = 'source/_posts/中文 空白 & [稿].md';
 function fixture(t) {
@@ -34,11 +34,16 @@ function fixture(t) {
   const initial = git(root, ['rev-parse', 'HEAD']).trim();
   fs.writeFileSync(path.join(root, article), 'edited\n');
   const events = [];
+  const pagesCalls = [];
+  const deploymentSha = 'a'.repeat(40);
   const options = { root, repository: remote, message: '更新 & $(literal)', execute: true,
     log: () => {}, verify: () => events.push('verify'),
     push: commit => { events.push('push'); git(root, ['push', 'origin', `${commit}:refs/heads/source`]); },
-    deploy: guard => { guard(); events.push('deploy'); } };
-  return { root, remote, initial, events, options,
+    deploy: guard => { guard(); events.push('deploy'); },
+    resolveSha: () => deploymentSha,
+    queryPages: ({ deploymentSha: sha, timeoutMs }) => { pagesCalls.push({ sha, timeoutMs }); return { status: 'confirmed', build: { status: 'built', commit: sha } }; },
+    sleep: () => {} };
+  return { root, remote, initial, events, pagesCalls, deploymentSha, options,
     statePath: path.join(root, 'node_modules/.cache/blog-publish-state.json') };
 }
 
@@ -50,6 +55,7 @@ test('preview is read-only and CLI flags cannot silently execute', t => {
   assert.equal(git(f.root, ['rev-parse', 'HEAD']).trim(), f.initial);
   assert.equal(fs.existsSync(f.statePath), false);
   assert.equal(fs.existsSync(path.join(f.root, 'node_modules')), false);
+  assert.deepEqual(f.pagesCalls, []);
   assert.throws(() => parseArgs(['--excute']), /未知選項/);
   assert.throws(() => parseArgs([article]), /不需指定檔案/);
   assert.throws(() => parseArgs(['--message']), /缺少/);
@@ -62,11 +68,60 @@ test('one execution verifies, commits all current changes with literal paths, ba
   assert.deepEqual(f.events, ['verify', 'push', 'deploy']);
   assert.equal(result.backedUp, true);
   assert.equal(readState(f.statePath).stage, 'deployed');
+  assert.equal(readState(f.statePath).deploymentSha, f.deploymentSha);
+  assert.equal(result.pages, 'confirmed');
+  assert.deepEqual(f.pagesCalls, [{ sha: f.deploymentSha, timeoutMs: 10000 }]);
   assert.equal(git(f.root, ['log', '-1', '--format=%s']).trim(), '更新 & $(literal)');
   assert.equal(git(f.root, ['ls-remote', '--heads', 'origin', 'source']).split(/\s/)[0], result.commit);
   assert.equal(git(f.root, ['diff', '--cached', '--name-only']), '');
   assert.equal(fs.readFileSync(path.join(f.root, 'notes.md'), 'utf8'), 'unfinished notes');
   assert.equal(git(f.root, ['ls-files', '--', 'notes.md']).trim(), 'notes.md');
+});
+
+test('Pages pending or query errors keep the successfully deployed stage', t => {
+  const f = fixture(t);
+  const state = { version: 1, stage: 'deployed', commit: 'c'.repeat(40), fingerprint: 'd'.repeat(64), repository: f.remote };
+  writeState(f.statePath, state);
+  const pending = confirmPages({ root: f.root, repository: f.remote, state, statePath: f.statePath,
+    resolveSha: () => f.deploymentSha, queryPages: () => ({ status: 'pending' }), sleep: () => {} });
+  assert.equal(pending.status, 'pending');
+  assert.equal(readState(f.statePath).stage, 'deployed');
+  const unavailable = confirmPages({ root: f.root, repository: f.remote, state, statePath: f.statePath,
+    resolveSha: () => f.deploymentSha, queryPages: () => { throw new Error('network down'); } });
+  assert.equal(unavailable.status, 'unavailable');
+  assert.equal(readState(f.statePath).stage, 'deployed');
+});
+
+test('legacy deployed state without a saved SHA is never guessed', () => {
+  const { saveDeploymentSha } = require('../publish');
+  assert.equal(saveDeploymentSha({ state: { stage: 'deployed' } }), null);
+});
+
+test('deployment SHA is accepted only when local deploy HEAD and remote main match it', t => {
+  const { saveDeploymentSha } = require('../publish');
+  const folder = fs.mkdtempSync(path.join(os.tmpdir(), 'blog-pages-sha-'));
+  t.after(() => fs.rmSync(folder, { recursive: true, force: true }));
+  const root = path.join(folder, 'root');
+  const deploy = path.join(root, '.deploy_git');
+  const remote = path.join(folder, 'remote.git');
+  fs.mkdirSync(deploy, { recursive: true });
+  fs.mkdirSync(remote, { recursive: true });
+  git(remote, ['init', '--bare']);
+  git(deploy, ['init', '--initial-branch=main']);
+  git(deploy, ['config', 'user.name', 'Fixture']);
+  git(deploy, ['config', 'user.email', 'fixture@example.test']);
+  fs.writeFileSync(path.join(deploy, 'index.html'), 'first');
+  git(deploy, ['add', 'index.html']);
+  git(deploy, ['commit', '-m', 'first']);
+  const savedSha = git(deploy, ['rev-parse', 'HEAD']).trim();
+  git(deploy, ['push', remote, 'HEAD:refs/heads/main']);
+  const state = { stage: 'deployed', deploymentSha: savedSha };
+  assert.equal(saveDeploymentSha({ root, repository: remote, state }), savedSha);
+  fs.writeFileSync(path.join(deploy, 'index.html'), 'second');
+  git(deploy, ['commit', '-am', 'second']);
+  git(deploy, ['push', remote, 'HEAD:refs/heads/main']);
+  git(deploy, ['reset', '--hard', savedSha]);
+  assert.equal(saveDeploymentSha({ root, repository: remote, state }), null);
 });
 
 test('other unfinished public records are included in the same publication', t => {

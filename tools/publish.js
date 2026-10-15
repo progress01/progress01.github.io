@@ -7,16 +7,18 @@ const { spawnSync } = require('node:child_process');
 const yaml = require('js-yaml');
 const { inputInventory, inventoryFingerprint, isDocumentation, publicFingerprint,
   readReceipt, runVerification, runNpmScript, taipeiDate } = require('./verification');
+const { queryPagesBuild } = require('./pages-build');
 
 const ROOT = path.resolve(__dirname, '..');
 const REPOSITORY = 'https://github.com/progress01/progress01.github.io.git';
 const splitPaths = output => output.split('\0').filter(Boolean);
 const samePaths = (left, right) => JSON.stringify([...left].sort()) === JSON.stringify([...right].sort());
 
-function git(root, args) {
+function git(root, args, timeout = 0) {
   // Paths and commit messages are arguments, never interpolated into a shell command.
   const result = spawnSync('git', ['--literal-pathspecs', ...args], {
-    cwd: root, encoding: 'utf8', shell: false, maxBuffer: 32 * 1024 * 1024
+    cwd: root, encoding: 'utf8', shell: false, maxBuffer: 32 * 1024 * 1024,
+    ...(timeout ? { timeout } : {})
   });
   if (result.error) throw new Error(`Git 無法執行：${result.error.message}`);
   if (result.status !== 0) throw new Error(`Git ${args[0]} 失敗：${result.stderr.trim()}`);
@@ -56,6 +58,56 @@ function readState(filename) {
 function writeState(filename, state) {
   fs.mkdirSync(path.dirname(filename), { recursive: true });
   fs.writeFileSync(filename, `${JSON.stringify(state, null, 2)}\n`);
+}
+
+function saveDeploymentSha({ root = ROOT, repository = REPOSITORY, state, statePath } = {}) {
+  if (!state?.deploymentSha || !/^[a-f0-9]{40,64}$/i.test(state.deploymentSha)) return null;
+  const deployGit = path.join(root, '.deploy_git');
+  if (!fs.existsSync(path.join(deployGit, '.git'))) return null;
+  let deploySha;
+  try { deploySha = git(root, ['-C', deployGit, 'rev-parse', 'HEAD']).trim(); }
+  catch { return null; }
+  if (!/^[a-f0-9]{40,64}$/i.test(deploySha)) return null;
+  let remoteMain;
+  try { remoteMain = git(root, ['ls-remote', '--heads', repository, 'refs/heads/main'], 10000).trim().split(/\s+/)[0]; }
+  catch { return null; }
+  if (remoteMain !== deploySha || state.deploymentSha !== deploySha) return null;
+  return deploySha;
+}
+
+function sleepSync(ms) { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms); }
+
+function confirmPages({ root, repository, state, statePath, queryPages = queryPagesBuild,
+  resolveSha = saveDeploymentSha, sleep = sleepSync } = {}) {
+  let deploymentSha;
+  try { deploymentSha = resolveSha({ root, repository, state, statePath }); }
+  catch (error) { return { status: 'unavailable', reason: `無法確認 main SHA：${error.message}` }; }
+  if (!deploymentSha || !/^[a-f0-9]{40,64}$/i.test(deploymentSha)) return { status: 'unavailable', reason: '無法以 .deploy_git 與遠端 main 確認部署 SHA。' };
+  let result;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try { result = queryPages({ deploymentSha, timeoutMs: 10000 }); }
+    catch (error) { result = { status: 'unavailable', reason: `GitHub Pages 查詢失敗：${error.message}` }; }
+    if (!result || !['confirmed', 'pending', 'failed', 'unavailable'].includes(result.status)) result = { status: 'unavailable', reason: 'GitHub Pages 查詢回傳無效狀態。' };
+    if (result.status !== 'pending' || attempt === 2) break;
+    try { sleep(5000); } catch (error) { result = { status: 'unavailable', reason: `Pages 輪詢中止：${error.message}` }; break; }
+  }
+  const latest = readState(statePath);
+  try {
+    if (latest?.stage === 'deployed' && latest.commit === state.commit) {
+      latest.repository = repository;
+      latest.deploymentSha = deploymentSha;
+      latest.pages = { status: result.status, checkedAt: new Date().toISOString(), ...(result.reason ? { reason: result.reason } : {}), ...(result.build ? { commit: result.build.commit, buildStatus: result.build.status } : {}) };
+      writeState(statePath, latest);
+    }
+  } catch { /* Pages status persistence cannot undo a completed deploy. */ }
+  return { ...result, deploymentSha };
+}
+
+function reportPages(result, log) {
+  if (result.status === 'confirmed') log(`GitHub Pages 已確認完成部署（main ${result.deploymentSha.slice(0, 9)}）。`);
+  else if (result.status === 'failed') log(`source 已備份、main 已推送，Pages 建置失敗${result.build?.error?.message ? `：${result.build.error.message}` : ''}。`);
+  else if (result.status === 'pending') log('source 已備份、main 已推送，Pages 尚待確認/建置完成。');
+  else log(`source 已備份、main 已推送，Pages 尚待確認（狀態查詢不可用：${result.reason || '未知原因'}）。`);
 }
 
 function planPublication({ root = ROOT, resume = false, repository = REPOSITORY } = {}) {
@@ -107,6 +159,7 @@ function printPlan(plan, log) {
 
 function runPublication({ root = ROOT, message = '更新部落格紀錄', execute = false, resume = false,
   repository = REPOSITORY, log = console.log,
+  queryPages = queryPagesBuild, resolveSha = saveDeploymentSha, sleep = sleepSync,
   verify = () => runVerification({ root, receiptPath: path.join(root, 'node_modules/.cache/blog-verify-receipt.json') }),
   push = commit => git(root, ['push', 'origin', `${commit}:refs/heads/source`]),
   deploy = guard => runVerification({ action: 'deploy', root,
@@ -140,8 +193,9 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
     if (!message.trim()) throw new Error('更新說明不可空白。');
     if (plan.previous?.stage === 'deployed' && plan.previous.commit === plan.head
         && plan.previous.fingerprint === plan.fingerprint && plan.previous.day === taipeiDate() && !plan.changed.length) {
-      log('這個版本已完成部署推送；線上 Pages 狀態請另外確認。');
-      return { commit: plan.head, alreadyDeployed: true };
+      const pages = confirmPages({ root, repository, state: plan.previous, statePath: plan.statePath, queryPages, resolveSha, sleep });
+      reportPages(pages, log);
+      return { commit: plan.head, alreadyDeployed: true, pages: pages.status };
     }
     let expectedHead = plan.head;
     let expectedIndex = plan.indexTree;
@@ -178,7 +232,7 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
       expectedIndex = indexFingerprint(root);
       guard();
     }
-    let state = { version: 1, stage: 'committed', commit: expectedHead, fingerprint: plan.fingerprint };
+    let state = { version: 1, stage: 'committed', commit: expectedHead, fingerprint: plan.fingerprint, repository };
     writeState(plan.statePath, state);
     guard();
     log(`正在備份 source：${state.commit.slice(0, 9)}`);
@@ -192,9 +246,13 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
     // Verification may rebuild for a new day, so capture the candidate at its final deploy stage.
     deploy(guard);
     // A successful remote push stays successful even if the author starts another edit meanwhile.
-    writeState(plan.statePath, { ...state, stage: 'deployed', day: taipeiDate() });
-    log('來源已備份，網站部署推送完成。GitHub Pages 是否已上線仍待確認。');
-    return { commit: state.commit, backedUp: true, deployed: true };
+    let candidateSha = null;
+    try { candidateSha = git(root, ['-C', path.join(root, '.deploy_git'), 'rev-parse', 'HEAD']).trim(); } catch {}
+    state = { ...state, stage: 'deployed', day: taipeiDate(), ...(candidateSha && /^[a-f0-9]{40,64}$/i.test(candidateSha) ? { deploymentSha: candidateSha } : {}) };
+    writeState(plan.statePath, state);
+    const pages = confirmPages({ root, repository, state, statePath: plan.statePath, queryPages, resolveSha, sleep });
+    reportPages(pages, log);
+    return { commit: state.commit, backedUp: true, deployed: true, pages: pages.status, deploymentSha: pages.deploymentSha };
   } finally {
     if (lock !== undefined) { fs.closeSync(lock); fs.unlinkSync(lockPath); }
   }
@@ -222,4 +280,4 @@ if (require.main === module) {
     process.exitCode = 1;
   }
 }
-module.exports = { git, parseArgs, planPublication, readState, runPublication };
+module.exports = { git, parseArgs, planPublication, readState, writeState, saveDeploymentSha, confirmPages, reportPages, runPublication };

@@ -9,4 +9,4 @@
 - 新文章一律先放 B 面（`surfaces: [memory]`），包含歌曲文章與草稿轉正式文章；不用每篇再詢問放哪一面。調整好並經作者明確指定後，才在同一篇加入 A 面（`surfaces: [profile, memory]`），保留 B 面與原網址，不因分類、標籤或成熟度自動加入 A 面。既有文章的面向不批次變更。
 - 日常發布使用 `npm run publish -- --execute`，串接驗證、全部原稿修改的 Git 提交、source 備份與整站部署；不需另外手動 verify／commit／push／deploy。`npm run publish` 僅預覽計畫，`--resume` 接續相同版本的失敗操作。部署本身仍需明確授權，整理或測試流程不等於要求立即上線。
 - 保留作者原有網站用途、文章與網址、以及進場前未提交修改。部署需有明確授權。
-- 維護 `source/microblog.json` 時保留每筆既有 `id`，不隨改文或排序重算。新增紀錄後先執行 `node tools/assign-microblog-ids.js` 預覽，再以 `--write` 補齊新 ID；此工具保留既有欄位與順序。建置若報缺失或重複 ID，先修正來源，不能改成每次建置臨時產生。
+- 維護 `source/microblog.json` 時保留每筆既有 `id`，不隨改文或排序重算。日常新增可使用 `npm run record -- microblog --text "紀錄內容"` 自動補齊日期、B 面與 ID；手動新增 JSON 紀錄時才先執行 `node tools/assign-microblog-ids.js` 預覽，再以 `--write` 補齊新 ID。工具保留既有欄位與順序；建置若報缺失或重複 ID，先修正來源，不能改成每次建置臨時產生。
