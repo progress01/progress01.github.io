@@ -89,6 +89,70 @@ function buttonDocument(buttons) {
 }
 
 {
+  const source = sourceText('source/calendar/index.md');
+  const posts = {
+    '2026-09-12': [{ title: 'recent' }],
+    '2026-09-10': [{ title: 'recent two' }],
+    '2026-09-02': [{ title: 'selected old date' }],
+    '2025-12-31': [{ title: 'older year' }]
+  };
+
+  function renderFor({ year, latestYear = '2026', selectedDate = '' }) {
+    const rendered = [];
+    const context = vm.createContext({
+      Date: FixedDate,
+      selectedYear: year,
+      selectedDate,
+      latestYear,
+      calendarElement: { innerHTML: '' },
+      Calendar: { init() { return {}; } },
+      renderGridControls() {},
+      bindCalendarClick() {},
+      statusElement: { textContent: '' },
+      yearsElement: { querySelectorAll() { return []; } },
+      getArticleCount() { return 4; },
+      renderUpdates(_posts, dates, title) { rendered.push({ dates: Array.from(dates), title }); }
+    });
+    vm.runInContext(functionsBetween(source, 'parseDate', 'getRecords'), context);
+    const showYearStart = source.indexOf('    function showYear');
+    const showYearEnd = source.indexOf('    Promise.all([', showYearStart);
+    assert(showYearStart >= 0 && showYearEnd > showYearStart, 'showYear block is missing');
+    vm.runInContext(source.slice(showYearStart, showYearEnd), context);
+    context.showYear({}, posts, year);
+    return { context, rendered: rendered.at(-1) };
+  }
+
+  const selectedLatestYear = renderFor({ year: '2026', selectedDate: '2026-09-02' });
+  assert.deepStrictEqual(selectedLatestYear.rendered.dates, ['2026-09-02'],
+    'a selected date with posts in the latest year must take priority over the recent-week default');
+
+  const defaultLatestYear = renderFor({ year: '2026' });
+  assert.deepStrictEqual(defaultLatestYear.rendered.dates, ['2026-09-12', '2026-09-10'],
+    'the latest year must keep the recent-week default when no date was selected');
+  assert.strictEqual(defaultLatestYear.rendered.title, '近一週發表的文章');
+
+  const selectedOlderYear = renderFor({ year: '2025', selectedDate: '2025-12-31' });
+  assert.deepStrictEqual(selectedOlderYear.rendered.dates, ['2025-12-31'],
+    'a selected date in an older year must remain selected');
+
+  const crossYearDate = renderFor({ year: '2026', selectedDate: '2025-12-31' });
+  assert.strictEqual(crossYearDate.context.selectedDate, '', 'a date outside the selected year must be cleared');
+  assert.deepStrictEqual(crossYearDate.rendered.dates, ['2026-09-12', '2026-09-10'],
+    'a cross-year date must fall back to the latest-year recent-week default');
+
+  const dateWithoutPosts = renderFor({ year: '2026', selectedDate: '2026-09-03' });
+  assert.deepStrictEqual(dateWithoutPosts.rendered.dates, ['2026-09-03'],
+    'a valid selected date without posts must remain selected so its empty state can be restored');
+  assert.strictEqual(dateWithoutPosts.rendered.title, '2026-09-03 發表內容');
+
+  const invalidDate = renderFor({ year: '2026', selectedDate: '2026-09-31' });
+  assert.deepStrictEqual(invalidDate.rendered.dates, ['2026-09-12', '2026-09-10'],
+    'an impossible calendar date must fall back to the existing recent-week default');
+  assert.strictEqual(invalidDate.context.isCalendarDate('2024-02-29'), true, 'leap days must be accepted');
+  assert.strictEqual(invalidDate.context.isCalendarDate('2025-02-29'), false, 'impossible leap days must be rejected');
+}
+
+{
   const source = sourceText('source/reading/index.md');
   const readingLogic = functionsBetween(source, 'pad', 'renderUpdates');
   const readingData = {
@@ -211,4 +275,4 @@ function buttonDocument(buttons) {
   assert.strictEqual(option.tooltip.formatter({ data: ['2026-09-04', 5] }), '2026-09-04: 5 個當日新增題目');
 }
 
-console.log('calendar tests passed: seven-day window, leap-year controls, exact reading counts, and planned entries');
+console.log('calendar tests passed: date selection, seven-day window, leap-year controls, exact reading counts, and planned entries');

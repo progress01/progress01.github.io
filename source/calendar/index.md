@@ -112,6 +112,13 @@ comments: false
       return parts.length === 3 ? new Date(parts[0], parts[1] - 1, parts[2]) : null;
     }
 
+    function isCalendarDate(value) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+      var parts = value.split('-').map(Number);
+      var date = parseDate(value);
+      return date && date.getFullYear() === parts[0] && date.getMonth() + 1 === parts[1] && date.getDate() === parts[2];
+    }
+
     function getLatestDate(posts, year) {
       return Object.keys(posts)
         .filter(function(date) { return date.slice(0, 4) === year && posts[date] && posts[date].length; })
@@ -247,7 +254,8 @@ comments: false
         button.classList.toggle('is-active', button.getAttribute('data-year') === selectedYear);
       });
 
-      if (year === latestYear) {
+      var requestedDate = selectedDate && selectedDate.slice(0, 4) === selectedYear && isCalendarDate(selectedDate) ? selectedDate : '';
+      if (year === latestYear && !requestedDate) {
         var recentDates = getRecentDates(posts);
         if (recentDates.length) {
           renderUpdates(posts, recentDates, '近一週發表的文章', '只顯示有文章發表的日期');
@@ -255,7 +263,6 @@ comments: false
         }
       }
 
-      var requestedDate = selectedDate && selectedDate.slice(0, 4) === selectedYear ? selectedDate : '';
       var latestDate = getLatestDate(posts, year);
       var displayDate = requestedDate || latestDate;
       renderUpdates(posts, displayDate ? [displayDate] : [], displayDate ? displayDate + ' 發表內容' : year + ' 年發表內容', '點選熱力圖格子查看其他日期');

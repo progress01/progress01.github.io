@@ -6,10 +6,12 @@ const crypto = require('crypto');
 const { parse } = require('url');
 const nextFont = require('./font');
 const nextUrl = require('./next-url');
+const openGraphPage = require('./open-graph-page');
 const { getVendors } = require('../events/lib/utils');
 
 hexo.extend.helper.register('next_font', nextFont);
 hexo.extend.helper.register('next_url', nextUrl);
+hexo.extend.helper.register('open_graph_page', openGraphPage);
 
 hexo.extend.helper.register('next_inject', function(point) {
   return this.theme.injects[point]
