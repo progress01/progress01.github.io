@@ -5,7 +5,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { git, parseArgs, planPublication, readState, runPublication, confirmPages, writeState } = require('../publish');
+const { git, parseArgs, planPublication, readState, runPublication, confirmPages, writeState, createProgressLogger } = require('../publish');
 
 const article = 'source/_posts/中文 空白 & [稿].md';
 function fixture(t) {
@@ -47,6 +47,22 @@ function fixture(t) {
     statePath: path.join(root, 'node_modules/.cache/blog-publish-state.json') };
 }
 
+test('progress continues displaying completed stages after a log append failure, warning only once', () => {
+  const displayed = [];
+  const warnings = [];
+  let attempts = 0;
+  const progress = createProgressLogger('D:\\missing\\publish.log', message => displayed.push(message), {
+    append: () => { attempts++; throw new Error('disk full'); },
+    warn: message => warnings.push(message)
+  });
+  progress('Pages 已確認完成部署。');
+  progress('後續進度仍可顯示。');
+  assert.deepEqual(displayed, ['Pages 已確認完成部署。', '後續進度仍可顯示。']);
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /disk full/);
+  assert.equal(attempts, 1);
+});
+
 test('preview is read-only and CLI flags cannot silently execute', t => {
   const f = fixture(t);
   const result = runPublication({ ...f.options, execute: false });
@@ -64,7 +80,8 @@ test('preview is read-only and CLI flags cannot silently execute', t => {
 test('one execution verifies, commits all current changes with literal paths, backs up, then deploys', t => {
   const f = fixture(t);
   fs.writeFileSync(path.join(f.root, 'notes.md'), 'unfinished notes');
-  const result = runPublication(f.options);
+  const output = [];
+  const result = runPublication({ ...f.options, log: line => output.push(line) });
   assert.deepEqual(f.events, ['verify', 'push', 'deploy']);
   assert.equal(result.backedUp, true);
   assert.equal(readState(f.statePath).stage, 'deployed');
@@ -76,6 +93,13 @@ test('one execution verifies, commits all current changes with literal paths, ba
   assert.equal(git(f.root, ['diff', '--cached', '--name-only']), '');
   assert.equal(fs.readFileSync(path.join(f.root, 'notes.md'), 'utf8'), 'unfinished notes');
   assert.equal(git(f.root, ['ls-files', '--', 'notes.md']).trim(), 'notes.md');
+  assert.ok(output.some(line => line.includes('2 個原稿檔案')));
+  assert.ok(output.some(line => line.includes('source 已備份')));
+  assert.ok(output.some(line => line.includes('GitHub Pages 已確認完成部署')));
+  assert.ok(!output.join('\n').includes(article));
+  assert.ok(!/[a-f0-9]{9}/i.test(output.join('\n')));
+  const logs = fs.readdirSync(path.join(f.root, 'node_modules/.cache')).filter(name => name.startsWith('blog-publish-') && name.endsWith('.log'));
+  assert.equal(logs.length, 1);
 });
 
 test('Pages pending or query errors keep the successfully deployed stage', t => {
@@ -159,7 +183,19 @@ test('ignored build inputs and wrong branches are blocked, while tracked deletio
 
 test('verification failure does not commit, push or deploy', t => {
   const f = fixture(t);
-  assert.throws(() => runPublication({ ...f.options, verify: () => { throw new Error('fixture validation failure'); } }), /validation failure/);
+  const failure = () => runPublication({ ...f.options, verify: () => { throw new Error('fixture validation failure'); } });
+  let firstError;
+  try { failure(); } catch (error) { firstError = error; }
+  assert.match(firstError.message, /validation failure/);
+  assert.equal(path.isAbsolute(firstError.logPath), true);
+  assert.equal(fs.existsSync(firstError.logPath), true);
+  const firstLog = fs.readFileSync(firstError.logPath, 'utf8');
+  let secondError;
+  try { failure(); } catch (error) { secondError = error; }
+  assert.notEqual(secondError.logPath, firstError.logPath);
+  assert.equal(fs.existsSync(firstError.logPath), true);
+  assert.equal(fs.existsSync(secondError.logPath), true);
+  assert.equal(fs.readFileSync(firstError.logPath, 'utf8'), firstLog);
   assert.equal(git(f.root, ['rev-parse', 'HEAD']).trim(), f.initial);
   assert.equal(git(f.root, ['diff', '--cached', '--name-only']), '');
   assert.deepEqual(f.events, []);

@@ -70,8 +70,12 @@ test('deterministic Hexo placeholder rendering keeps comments in front matter an
 });
 
 test('real Hexo scaffold API renders post and draft into an isolated temporary source tree', async t => {
-  const temp = fs.mkdtempSync(path.join(root, 'tmp', 'article-scaffold-'));
-  t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
+  const tempPrefix = path.join(os.tmpdir(), 'blog-article-scaffold-');
+  const temp = fs.mkdtempSync(tempPrefix);
+  t.after(() => {
+    assert.ok(temp.startsWith(tempPrefix), 'temporary scaffold directory must stay inside its test prefix');
+    fs.rmSync(temp, { recursive: true, force: true });
+  });
   const sourceDir = path.join(temp, 'source');
   fs.mkdirSync(sourceDir);
   const isolatedScaffolds = path.join(temp, 'scaffolds');

@@ -3,6 +3,10 @@ const path = require('path');
 const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 
+const LEGACY_ROUTE_ALIASES = new Map([
+  ['/watch/reply-1988-writing-plan/', '/watch/reply-1988-30-questions/']
+]);
+
 // 比對實際檔案清單，連 Windows 上不易發現的大小寫錯誤也能檢出。
 function checkUrl(reference, from, { origin, files, externalProjects = [] }) {
   if (!reference || /^(?:#|mailto:|tel:|javascript:|data:)/i.test(reference)) return null;
@@ -47,10 +51,40 @@ function checkDocument(html, from, options) {
   });
   if (options.checkStructuredData) {
     const pagePath = String(from).replace(/\\/g, '/');
+    const outputRoute = pagePath === 'index.html'
+      ? '/'
+      : '/' + pagePath.replace(/\/index\.html$/, '/');
+    const legacyTarget = LEGACY_ROUTE_ALIASES.get(outputRoute);
     const isRoot = pagePath === 'index.html';
     const isCollection = /^(?:page\/\d+(?:\/|$)|categories\/|tags\/|archives\/)/.test(pagePath);
     const isArticle = $('article.post-content-single').length > 0;
-    if (jsonLd.length !== 1) {
+    if (legacyTarget) {
+      const expectedTarget = new URL(legacyTarget, options.origin + '/').href;
+      const canonicalLinks = $('link[rel="canonical"]');
+      if (isArticle || $('article').length || jsonLd.length !== 0) {
+        errors.push(`${pagePath} 的舊網址相容頁不得包含文章標記或 JSON-LD。`);
+      }
+      if (canonicalLinks.length !== 1 || canonicalLinks.attr('href') !== expectedTarget) {
+        errors.push(`${pagePath} 的 canonical 必須唯一並指向指定的新文章網址。`);
+      }
+      const refresh = $('meta[http-equiv]').filter((_, element) => String($(element).attr('http-equiv')).toLowerCase() === 'refresh');
+      const refreshValue = refresh.length === 1 ? String(refresh.attr('content') || '').match(/^\s*0\s*;\s*url=(.+?)\s*$/i) : null;
+      let refreshUrl = null;
+      try { if (refreshValue) refreshUrl = new URL(refreshValue[1].replace(/^['"]|['"]$/g, ''), options.origin + '/').href; } catch {}
+      if (refresh.length !== 1 || refreshUrl !== expectedTarget) {
+        errors.push(`${pagePath} 必須立即以 meta refresh 轉向指定的新文章網址。`);
+      }
+      const replacesTarget = $('script').toArray().some(element => {
+        const script = $(element).text();
+        return script.includes(`window.location.replace('${legacyTarget}')`)
+          || script.includes(`window.location.replace("${legacyTarget}")`);
+      });
+      if (!replacesTarget) errors.push(`${pagePath} 必須以 location.replace 轉向指定的新文章網址。`);
+      const fallback = $('a[href]').filter((_, element) => $(element).attr('href') === legacyTarget);
+      if (!fallback.length || !fallback.first().text().trim()) {
+        errors.push(`${pagePath} 必須提供可見的新文章連結。`);
+      }
+    } else if (jsonLd.length !== 1) {
       errors.push(`JSON-LD 應恰有一個區塊，目前為 ${jsonLd.length} 個。`);
     } else {
       const data = jsonLd[0];
@@ -68,9 +102,6 @@ function checkDocument(html, from, options) {
         };
         const canonicalUrl = absoluteHttp(canonical);
         const dataUrlObject = absoluteHttp(data.url);
-        const outputRoute = pagePath === 'index.html'
-          ? '/'
-          : '/' + pagePath.replace(/\/index\.html$/, '/');
         const outputUrl = new URL(outputRoute, options.origin + '/');
         if (canonicalLinks.length !== 1 || !canonicalUrl) errors.push(`${pagePath} 必須有唯一的絕對 HTTP(S) canonical。`);
         if (canonicalUrl && canonicalUrl.href !== outputUrl.href) errors.push(`${pagePath} 的本站 canonical 應對齊目前頁面：${canonical} ≠ ${outputUrl.href}`);

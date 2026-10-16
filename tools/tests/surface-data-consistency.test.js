@@ -180,13 +180,9 @@ function readPublishedPosts(routeMap) {
   return posts;
 }
 
-test('real public corpus, thirteen profile posts, eight approved URLs, random baseline, and legacy sample agree', t => {
+test('real public corpus, thirteen profile posts, eight approved URLs, random eligibility, and legacy sample agree', () => {
   const routeSnapshot = path.join(root, 'public/navigation-index.json');
-  const randomBaselineFile = path.join(root, 'tmp/wbs33-public-20260926/random.json');
-  if (!fs.existsSync(routeSnapshot) || !fs.existsSync(randomBaselineFile)) {
-    t.skip('4.1 route snapshot or 4.2 pre-filter random baseline is unavailable; fixture cross-consistency still runs');
-    return;
-  }
+  assert.ok(fs.existsSync(routeSnapshot), 'public/navigation-index.json is required; run npm run build before this test');
 
   const generatedNavigationSnapshot = JSON.parse(fs.readFileSync(routeSnapshot, 'utf8'));
   const snapshotArticles = generatedNavigationSnapshot.records.filter(record => record.kind === 'article');

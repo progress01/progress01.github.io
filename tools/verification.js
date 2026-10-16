@@ -167,15 +167,64 @@ function removeReceipt(receiptPath = RECEIPT_PATH) {
   try { fs.unlinkSync(receiptPath); } catch (error) { if (error.code !== 'ENOENT') throw error; }
 }
 
-function runNpmScript(script, root = ROOT) {
+function readLogTail(filename, maxBytes = 8192) {
+  let descriptor;
+  try {
+    descriptor = fs.openSync(filename, 'r');
+    const size = fs.fstatSync(descriptor).size;
+    const length = Math.min(size, maxBytes);
+    const buffer = Buffer.alloc(length);
+    fs.readSync(descriptor, buffer, 0, length, size - length);
+    return buffer.toString('utf8').trim().split(/\r?\n/).slice(-8).join('\n');
+  } catch { return ''; }
+  finally { if (descriptor !== undefined) try { fs.closeSync(descriptor); } catch {} }
+}
+
+function runNpmScript(script, root = ROOT, options = {}) {
   const deploying = script === 'deploy';
-  const command = deploying
+  const output = options.output || 'inherit';
+  if (!['inherit', 'file'].includes(output)) throw new Error(`unsupported npm output mode: ${output}`);
+  if (output === 'file' && !options.logPath) throw new Error('file output requires logPath');
+  const logPath = output === 'file' ? path.resolve(root, options.logPath) : null;
+  const command = options.command || (deploying
     ? (process.platform === 'win32' ? 'hexo.cmd' : 'hexo')
-    : (process.platform === 'win32' ? 'npm.cmd' : 'npm');
-  const args = deploying ? ['deploy'] : ['run', script];
-  const result = spawnSync(command, args, { cwd: root, stdio: 'inherit', shell: process.platform === 'win32' });
-  if (result.error) throw result.error;
-  if (result.status !== 0) throw new Error(`npm run ${script} failed with exit code ${result.status ?? 'unknown'}`);
+    : (process.platform === 'win32' ? 'npm.cmd' : 'npm'));
+  const args = options.args || (deploying ? ['deploy'] : ['run', script]);
+  let logDescriptor;
+  let commandSucceeded = false;
+  const warnLogFailure = error => {
+    try { (options.warn || console.error)(`詳細發布記錄寫入失敗；流程結果依子程序狀態判定：${logPath}（${error.message}）`); } catch {}
+  };
+  try {
+    if (logPath) {
+      fs.mkdirSync(path.dirname(logPath), { recursive: true });
+      logDescriptor = fs.openSync(logPath, 'a');
+      fs.writeSync(logDescriptor, `\n[${new Date().toISOString()}] 開始：${script}\n`);
+    }
+    const result = spawnSync(command, args, {
+      cwd: root,
+      stdio: logDescriptor === undefined ? 'inherit' : ['inherit', logDescriptor, logDescriptor],
+      shell: options.command ? false : process.platform === 'win32'
+    });
+    if (result.error) throw result.error;
+    if (result.status !== 0) throw new Error(`npm run ${script} 失敗，結束代碼 ${result.status ?? 'unknown'}`);
+    commandSucceeded = true;
+    if (logDescriptor !== undefined) {
+      try { fs.writeSync(logDescriptor, `\n[${new Date().toISOString()}] 完成：${script}\n`); }
+      catch (error) { warnLogFailure(error); }
+    }
+  } catch (error) {
+    const tail = logPath ? readLogTail(logPath) : '';
+    const detail = [error.message, tail && `最近輸出：\n${tail}`, logPath && `詳細記錄：${logPath}`].filter(Boolean).join('\n');
+    const wrapped = new Error(detail, { cause: error });
+    if (logPath) wrapped.logPath = logPath;
+    throw wrapped;
+  } finally {
+    if (logDescriptor !== undefined) {
+      try { fs.closeSync(logDescriptor); }
+      catch (error) { warnLogFailure(error); }
+    }
+  }
 }
 
 function runStages(stages, runner) { for (const stage of stages) runner(stage); }
@@ -207,7 +256,7 @@ function currentState(root, clock) {
   return { files, day, sourceFingerprint: inventoryFingerprint(files) };
 }
 
-function runVerification({ action = 'auto', root = ROOT, receiptPath = RECEIPT_PATH, clock = () => new Date(), runner = stage => runNpmScript(stage, root) } = {}) {
+function runVerification({ action = 'auto', root = ROOT, receiptPath = RECEIPT_PATH, clock = () => new Date(), runner = stage => runNpmScript(stage, root), log = console.log } = {}) {
   if (!['auto', 'full', 'deploy'].includes(action)) throw new Error(`unsupported verification action: ${action}`);
   const receipt = readReceipt(receiptPath);
   const before = currentState(root, clock);
@@ -215,7 +264,7 @@ function runVerification({ action = 'auto', root = ROOT, receiptPath = RECEIPT_P
   const plannedLevel = selectLevel({ action, receipt, files: before.files, outputHash: beforePublic, day: before.day });
   const reuse = action !== 'full' && isExactReceipt(receipt, before.files, beforePublic, before.day);
   const displayLevel = reuse ? receipt.level : plannedLevel;
-  console.log(`驗證階段：${reuse ? '沿用既有' : ''}${displayLevel === 'full' ? '完整驗證' : '內容更新驗證'}（${reuse ? '來源、public 與日期指紋完全吻合' : levelReason({ action, receipt, files: before.files })}）。`);
+  log(`驗證階段：${reuse ? '沿用既有' : ''}${displayLevel === 'full' ? '完整驗證' : '內容更新驗證'}（${reuse ? '來源、public 與日期指紋完全吻合' : levelReason({ action, receipt, files: before.files })}）。`);
 
   if (reuse) {
     if (action === 'deploy') {

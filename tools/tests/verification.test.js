@@ -3,7 +3,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { readReceipt, runVerification, verificationStages } = require('../verification');
+const { readReceipt, runNpmScript, runVerification, verificationStages } = require('../verification');
 
 function makeFixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'blog-verify-'));
@@ -274,4 +274,57 @@ test('both verification routes build before public-dependent regression tests', 
   const full = verificationStages('full');
   assert.ok(full.indexOf('build') < full.indexOf('test:regression'));
   assert.ok(!verificationStages('content').includes('test:regression'));
+});
+
+test('file-output runner captures real child stdout and stderr and reports failed-child details', t => {
+  const { root } = makeFixture(t);
+  const logPath = path.join(root, 'node_modules/.cache', 'runner.log');
+  runNpmScript('fixture-success', root, {
+    output: 'file', logPath, command: process.execPath,
+    args: ['-e', "process.stdout.write('child stdout marker\\n'); process.stderr.write('child stderr marker\\n');"]
+  });
+  const successLog = fs.readFileSync(logPath, 'utf8');
+  assert.match(successLog, /child stdout marker/);
+  assert.match(successLog, /child stderr marker/);
+  assert.match(successLog, /完成：fixture-success/);
+
+  assert.throws(() => runNpmScript('fixture-failure', root, {
+    output: 'file', logPath, command: process.execPath,
+    args: ['-e', "process.stdout.write('failure stdout marker\\n'); process.stderr.write('failure stderr marker\\n'); process.exit(7);"]
+  }), error => {
+    assert.match(error.message, /結束代碼 7/);
+    assert.match(error.message, /failure stderr marker/);
+    assert.match(error.message, new RegExp(path.resolve(logPath).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    assert.equal(error.logPath, path.resolve(logPath));
+    return true;
+  });
+  const failedLog = fs.readFileSync(logPath, 'utf8');
+  assert.match(failedLog, /failure stdout marker/);
+  assert.match(failedLog, /failure stderr marker/);
+});
+
+test('successful child status is preserved when the completion log marker cannot be written', t => {
+  const { root } = makeFixture(t);
+  const logPath = path.join(root, 'node_modules/.cache', 'runner.log');
+  const warnings = [];
+  const originalWriteSync = fs.writeSync;
+  let writes = 0;
+  fs.writeSync = (...args) => {
+    writes++;
+    if (writes === 2) throw new Error('disk full after child success');
+    return originalWriteSync(...args);
+  };
+  try {
+    assert.doesNotThrow(() => runNpmScript('fixture-success', root, {
+      output: 'file', logPath, command: process.execPath,
+      args: ['-e', "process.stdout.write('deployment finished\\n');"],
+      warn: message => warnings.push(message)
+    }));
+  } finally {
+    fs.writeSync = originalWriteSync;
+  }
+  assert.equal(writes, 2);
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /disk full after child success/);
+  assert.match(fs.readFileSync(logPath, 'utf8'), /deployment finished/);
 });

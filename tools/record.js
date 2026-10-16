@@ -187,15 +187,23 @@ function run(input, options = {}) {
   return { ...result, backup, written: true };
 }
 
-function main(args = process.argv.slice(2)) {
+function main(args = process.argv.slice(2), { root = ROOT, stdout = console.log, stderr = console.error } = {}) {
   try {
     const input = parseArgs(args);
-    if (input.help) { console.log(usage); return; }
-    const result = run(input);
-    console.log(`${input.dryRun ? '預覽' : '已新增本機紀錄'}：${result.summary}`);
-    if (input.dryRun) console.log('未寫入來源；移除 --dry-run 即可新增。');
-    else console.log(`來源備份：${path.relative(ROOT, result.backup)}`);
-  } catch (error) { console.error(`新增失敗：${error.message}\n\n${usage}`); process.exitCode = 1; }
+    if (input.help) { stdout(usage); return; }
+    run(input, { root });
+    if (input.dryRun) {
+      const date = input.date || '台北今日';
+      const preview = input.type === 'microblog'
+        ? `預覽新增本機碎碎念：${date}｜${input.tag?.trim() || '💭'}｜${input.text.trim()}`
+        : `預覽新增草稿夾題目：「${input.title.trim()}」｜${date}｜${input.url.trim()}`;
+      stdout(`${preview}（未寫入來源）`);
+    } else if (input.type === 'microblog') stdout('已新增本機碎碎念（尚未發布）');
+    else stdout(`已新增草稿夾題目「${input.title.trim()}」`);
+  } catch (error) {
+    stderr(`新增失敗：${error.message}\n查看詳細用法：npm run record -- --help`);
+    process.exitCode = 1;
+  }
 }
 
 if (require.main === module) main();

@@ -2,13 +2,15 @@
 
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 const yaml = require('js-yaml');
-const { run } = require('../record');
+const { main, run, usage } = require('../record');
 
 function fixture(t, { microblog, desk = '# keep this comment\nyear: 2026\nsample: false\ntopics: []\n', posts = [] } = {}) {
-  const root = fs.mkdtempSync(path.join(__dirname, '../../tmp/record-test-'));
+  const tempPrefix = path.join(os.tmpdir(), 'blog-record-test-');
+  const root = fs.mkdtempSync(tempPrefix);
   fs.mkdirSync(path.join(root, 'source'), { recursive: true });
   fs.mkdirSync(path.join(root, 'source/_posts'), { recursive: true });
   fs.mkdirSync(path.join(root, 'tools/data'), { recursive: true });
@@ -18,7 +20,10 @@ function fixture(t, { microblog, desk = '# keep this comment\nyear: 2026\nsample
   posts.forEach((post, index) => fs.writeFileSync(path.join(root, `source/_posts/post-${index}.md`), `---\ntitle: ${JSON.stringify(post.title || 'fixture')}\npermalink: ${JSON.stringify(post.url)}\nsurfaces: ${JSON.stringify(post.surfaces || ['memory'])}\n---\n`));
   fs.writeFileSync(path.join(root, 'tools/data/legacy-surfaces.v1.json'), JSON.stringify({ schemaVersion: 1, posts: [], microblogIds: [], readingDeskItemIds: [] }));
   fs.writeFileSync(path.join(root, 'tools/data/microblog-boundary-migration.v1.json'), JSON.stringify({ retiredIds: ['micro-retired'] }));
-  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  t.after(() => {
+    assert.ok(root.startsWith(tempPrefix), 'record fixture directory must stay inside its test prefix');
+    fs.rmSync(root, { recursive: true, force: true });
+  });
   return root;
 }
 
@@ -30,6 +35,17 @@ test('microblog dry-run previews an ID without changing source or making a backu
   assert.equal(result.written, false);
   assert.match(result.id, /^micro-[a-f0-9]{16}$/);
   assert.equal(fs.readFileSync(file, 'utf8'), before);
+  assert.equal(fs.existsSync(path.join(root, 'node_modules')), false);
+});
+
+test('record dry-run CLI shows a concise date and content summary without writing', t => {
+  const root = fixture(t);
+  const output = [];
+  main(['microblog', '--text', '今天散步完成', '--date', '2026-02-03', '--dry-run'], {
+    root, stdout: message => output.push(message), stderr: assert.fail
+  });
+  assert.deepEqual(output, ['預覽新增本機碎碎念：2026-02-03｜💭｜今天散步完成（未寫入來源）']);
+  assert.equal(fs.readFileSync(path.join(root, 'source/microblog.json'), 'utf8'), '[]\n');
   assert.equal(fs.existsSync(path.join(root, 'node_modules')), false);
 });
 
@@ -149,4 +165,39 @@ test('duplicate reading item IDs in source fail without writes', t => {
   assert.throws(() => run({ type: 'reading', title: 'x', url: '/learning/x/', topic: 't' }, { root }), /重複/);
   assert.equal(fs.readFileSync(file, 'utf8'), before);
   assert.equal(fs.existsSync(path.join(root, 'node_modules')), false);
+});
+
+test('record CLI keeps help complete and routine success or errors concise', t => {
+  const root = fixture(t);
+  const output = [];
+  const errors = [];
+  const originalExitCode = process.exitCode;
+  try {
+    process.exitCode = undefined;
+    main(['microblog', '--text', '簡短輸出測試', '--date', '2026-02-03'], {
+      root, stdout: message => output.push(message), stderr: message => errors.push(message)
+    });
+    assert.deepEqual(output, ['已新增本機碎碎念（尚未發布）']);
+    assert.deepEqual(errors, []);
+    assert.ok(fs.existsSync(path.join(root, 'source/microblog.json')));
+    const backupFiles = fs.readdirSync(path.join(root, 'node_modules/.cache/record-backups'));
+    assert.equal(backupFiles.length, 1);
+    assert.ok(!output.join('\n').includes(backupFiles[0]));
+    assert.ok(!output.join('\n').match(/micro-[a-f0-9]{16}/));
+
+    output.length = 0;
+    main(['--help'], { root, stdout: message => output.push(message), stderr: message => errors.push(message) });
+    assert.deepEqual(output, [usage]);
+
+    output.length = 0;
+    process.exitCode = undefined;
+    main(['microblog', '--text'], { root, stdout: message => output.push(message), stderr: message => errors.push(message) });
+    assert.equal(errors.length, 1);
+    assert.match(errors[0], /新增失敗：--text 後面需要一個值。/);
+    assert.match(errors[0], /npm run record -- --help/);
+    assert.notEqual(errors[0], usage);
+    assert.equal(errors[0].split(/\r?\n/).length, 2);
+  } finally {
+    process.exitCode = originalExitCode;
+  }
 });

@@ -77,6 +77,27 @@ function saveDeploymentSha({ root = ROOT, repository = REPOSITORY, state, stateP
 
 function sleepSync(ms) { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms); }
 
+function createPublishLog(root) {
+  const directory = path.join(root, 'node_modules/.cache');
+  fs.mkdirSync(directory, { recursive: true });
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filename = path.join(directory, `blog-publish-${stamp}-${process.pid}-${crypto.randomBytes(6).toString('hex')}.log`);
+    let descriptor;
+    try {
+      descriptor = fs.openSync(filename, 'wx');
+      fs.writeSync(descriptor, `部落格發布詳細記錄｜${new Date().toISOString()}\n`);
+      fs.closeSync(descriptor);
+      return filename;
+    } catch (error) {
+      if (descriptor !== undefined) try { fs.closeSync(descriptor); } catch {}
+      if (error.code === 'EEXIST') continue;
+      throw new Error(`無法建立發布詳細記錄，已停止發布：${error.message}`);
+    }
+  }
+  throw new Error('無法建立不覆蓋既有檔案的發布詳細記錄，已停止發布。');
+}
+
 function confirmPages({ root, repository, state, statePath, queryPages = queryPagesBuild,
   resolveSha = saveDeploymentSha, sleep = sleepSync } = {}) {
   let deploymentSha;
@@ -103,8 +124,8 @@ function confirmPages({ root, repository, state, statePath, queryPages = queryPa
   return { ...result, deploymentSha };
 }
 
-function reportPages(result, log) {
-  if (result.status === 'confirmed') log(`GitHub Pages 已確認完成部署（main ${result.deploymentSha.slice(0, 9)}）。`);
+function reportPages(result, log, { includeSha = true } = {}) {
+  if (result.status === 'confirmed') log(`GitHub Pages 已確認完成部署${includeSha ? `（main ${result.deploymentSha.slice(0, 9)}）` : ''}。`);
   else if (result.status === 'failed') log(`source 已備份、main 已推送，Pages 建置失敗${result.build?.error?.message ? `：${result.build.error.message}` : ''}。`);
   else if (result.status === 'pending') log('source 已備份、main 已推送，Pages 尚待確認/建置完成。');
   else log(`source 已備份、main 已推送，Pages 尚待確認（狀態查詢不可用：${result.reason || '未知原因'}）。`);
@@ -150,35 +171,53 @@ function planPublication({ root = ROOT, resume = false, repository = REPOSITORY 
   return { root, statePath, previous, head, fingerprint, indexTree, changed, blockers, resume };
 }
 
-function printPlan(plan, log) {
+function printPlan(plan, log, { brief = false } = {}) {
   log('本次操作：檢查目前整站 → 保存全部原稿修改 → 推送 source 備份 → 全部發布到 main。');
   log('未完成的公開紀錄也一起發布；既有草稿與隱私設定仍生效。');
-  log(`本次保存：${plan.changed.join('、') || '無新修改，使用目前已提交版本'}`);
+  log(brief
+    ? `本次保存：${plan.changed.length ? `${plan.changed.length} 個原稿檔案` : '無新修改，使用目前已提交版本'}`
+    : `本次保存：${plan.changed.join('、') || '無新修改，使用目前已提交版本'}`);
   plan.blockers.forEach(reason => log(`停止原因：${reason}`));
+}
+
+function createProgressLogger(logPath, display = console.log, {
+  append = fs.appendFileSync,
+  warn = console.error
+} = {}) {
+  let loggingAvailable = true;
+  let warned = false;
+  return message => {
+    if (loggingAvailable) {
+      try { append(logPath, `[${new Date().toISOString()}] ${message}\n`); }
+      catch (error) {
+        loggingAvailable = false;
+        if (!warned) {
+          warned = true;
+          warn(`發布進度記錄寫入失敗，將繼續顯示進度：${path.resolve(logPath)}（${error.message}）`);
+        }
+      }
+    }
+    display(message);
+  };
+}
+
+function createDetailLogger(logPath) {
+  return message => fs.appendFileSync(logPath, `[${new Date().toISOString()}] ${message}\n`);
 }
 
 function runPublication({ root = ROOT, message = '更新部落格紀錄', execute = false, resume = false,
   repository = REPOSITORY, log = console.log,
   queryPages = queryPagesBuild, resolveSha = saveDeploymentSha, sleep = sleepSync,
-  verify = () => runVerification({ root, receiptPath: path.join(root, 'node_modules/.cache/blog-verify-receipt.json') }),
+  verify,
   push = commit => git(root, ['push', 'origin', `${commit}:refs/heads/source`]),
-  deploy = guard => runVerification({ action: 'deploy', root,
-    receiptPath: path.join(root, 'node_modules/.cache/blog-verify-receipt.json'),
-    runner: stage => {
-      if (stage === 'deploy') {
-        guard();
-        const receipt = readReceipt(path.join(root, 'node_modules/.cache/blog-verify-receipt.json'));
-        if (!receipt || receipt.publicFingerprint !== publicFingerprint(path.join(root, 'public'))) {
-          throw new Error('生成網站在部署前改變，已停止部署。');
-        }
-      }
-      runNpmScript(stage, root);
-    } })
+  deploy
 } = {}) {
   const lockPath = path.join(root, 'node_modules/.cache/blog-publish.lock');
   let lock;
+  let logPath;
   try {
     if (execute) {
+      logPath = createPublishLog(root);
       fs.mkdirSync(path.dirname(lockPath), { recursive: true });
       try { lock = fs.openSync(lockPath, 'wx'); }
       catch (error) {
@@ -186,15 +225,32 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
         throw error;
       }
     }
+    const progress = execute ? createProgressLogger(logPath, log) : log;
+    const detail = execute ? createDetailLogger(logPath) : progress;
+    const receiptPath = path.join(root, 'node_modules/.cache/blog-verify-receipt.json');
+    const runStage = stage => runNpmScript(stage, root, execute ? { output: 'file', logPath } : {});
+    const verifyNow = verify || (() => runVerification({ root, receiptPath, runner: runStage, log: detail }));
+    const deployNow = deploy || (guard => runVerification({ action: 'deploy', root, receiptPath,
+      log: detail,
+      runner: stage => {
+        if (stage === 'deploy') {
+          guard();
+          const receipt = readReceipt(receiptPath);
+          if (!receipt || receipt.publicFingerprint !== publicFingerprint(path.join(root, 'public'))) {
+            throw new Error('生成網站在部署前改變，已停止部署。');
+          }
+        }
+        runStage(stage);
+      } }));
     const plan = planPublication({ root, resume, repository });
-    printPlan(plan, log);
+    printPlan(plan, progress, { brief: execute });
     if (!execute) return { preview: true, ready: plan.blockers.length === 0 };
     if (plan.blockers.length) throw new Error('發布條件尚未符合，未執行提交、推送或部署。');
     if (!message.trim()) throw new Error('更新說明不可空白。');
     if (plan.previous?.stage === 'deployed' && plan.previous.commit === plan.head
         && plan.previous.fingerprint === plan.fingerprint && plan.previous.day === taipeiDate() && !plan.changed.length) {
       const pages = confirmPages({ root, repository, state: plan.previous, statePath: plan.statePath, queryPages, resolveSha, sleep });
-      reportPages(pages, log);
+      reportPages(pages, progress, { includeSha: false });
       return { commit: plan.head, alreadyDeployed: true, pages: pages.status };
     }
     let expectedHead = plan.head;
@@ -212,8 +268,9 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
         throw new Error('來源備份位置在流程中改變，已停止。');
       }
     }
-    log('正在驗證本次網站內容……');
-    verify();
+    progress('正在驗證本次網站內容……');
+    verifyNow();
+    progress('網站檢查完成。');
     guard();
     if (!resume && plan.changed.length) {
       git(root, ['add', '-A', '--', ...plan.changed]);
@@ -235,24 +292,27 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
     let state = { version: 1, stage: 'committed', commit: expectedHead, fingerprint: plan.fingerprint, repository };
     writeState(plan.statePath, state);
     guard();
-    log(`正在備份 source：${state.commit.slice(0, 9)}`);
+    progress('正在備份 source 原始資料……');
     push(state.commit);
     const remoteHead = git(root, ['ls-remote', '--heads', 'origin', 'refs/heads/source']).trim().split(/\s+/)[0];
     if (remoteHead !== state.commit) throw new Error('遠端來源版本未確認，停止網站部署。');
     state = { ...state, stage: 'backed-up' };
     writeState(plan.statePath, state);
     guard();
-    log('source 已備份，正在發布驗證過的整站……');
+    progress('source 已備份，正在發布驗證過的整站……');
     // Verification may rebuild for a new day, so capture the candidate at its final deploy stage.
-    deploy(guard);
+    deployNow(guard);
     // A successful remote push stays successful even if the author starts another edit meanwhile.
     let candidateSha = null;
     try { candidateSha = git(root, ['-C', path.join(root, '.deploy_git'), 'rev-parse', 'HEAD']).trim(); } catch {}
     state = { ...state, stage: 'deployed', day: taipeiDate(), ...(candidateSha && /^[a-f0-9]{40,64}$/i.test(candidateSha) ? { deploymentSha: candidateSha } : {}) };
     writeState(plan.statePath, state);
     const pages = confirmPages({ root, repository, state, statePath: plan.statePath, queryPages, resolveSha, sleep });
-    reportPages(pages, log);
+    reportPages(pages, progress, { includeSha: false });
     return { commit: state.commit, backedUp: true, deployed: true, pages: pages.status, deploymentSha: pages.deploymentSha };
+  } catch (error) {
+    if (logPath) error.logPath = logPath;
+    throw error;
   } finally {
     if (lock !== undefined) { fs.closeSync(lock); fs.unlinkSync(lockPath); }
   }
@@ -276,8 +336,9 @@ if (require.main === module) {
   try { runPublication(parseArgs(process.argv.slice(2))); }
   catch (error) {
     const state = readState(path.join(ROOT, 'node_modules/.cache/blog-publish-state.json'));
-    console.error(`發布未完成：${error.message}\n現有檔案與提交均保留。${state ? '可先查看 npm run publish -- --resume 的計畫；有新修改時直接重新發布整站。' : '請先檢查 git status 與最近提交，再重新執行。'}`);
+    const logMessage = error.logPath ? `\n詳細執行記錄：${path.resolve(error.logPath)}` : '';
+    console.error(`發布未完成：${error.message}${logMessage}\n現有檔案與提交均保留。${state ? '可先查看 npm run publish -- --resume 的計畫；有新修改時直接重新發布整站。' : '請先檢查 git status 與最近提交，再重新執行。'}`);
     process.exitCode = 1;
   }
 }
-module.exports = { git, parseArgs, planPublication, readState, writeState, saveDeploymentSha, confirmPages, reportPages, runPublication };
+module.exports = { git, parseArgs, planPublication, readState, writeState, saveDeploymentSha, confirmPages, reportPages, createProgressLogger, runPublication };
