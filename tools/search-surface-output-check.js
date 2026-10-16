@@ -19,6 +19,25 @@ function routeFile(url) {
     return relative.endsWith('/') ? `${relative}index.html` : relative;
   } catch { return null; }
 }
+function generatedArticlePaths(root) {
+  const found = new Set();
+  const visit = directory => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) visit(file);
+      else if (entry.isFile() && entry.name.endsWith('.html')) {
+        let html;
+        try { html = fs.readFileSync(file, 'utf8'); } catch { continue; }
+        if (!cheerio.load(html)('.post-content-single[itemtype*="BlogPosting"]').length) continue;
+        const relative = path.relative(root, file).split(path.sep).join('/');
+        const route = relative.endsWith('/index.html') ? `/${relative.slice(0, -'index.html'.length)}` : `/${relative}`;
+        found.add(decodeURIComponent(route));
+      }
+    }
+  };
+  visit(root);
+  return found;
+}
 
 function validateSearchSurface({ root, pages, index, sources = {} } = {}) {
   const errors = [];
@@ -26,8 +45,9 @@ function validateSearchSurface({ root, pages, index, sources = {} } = {}) {
     localSearch: 'themes/next/source/js/third-party/search/local-search.js',
     navigationSearch: 'themes/next/source/js/third-party/search/navigation-search.js',
     template: 'themes/next/layout/_partials/search/index.njk',
-    helper: 'scripts/search-recent-posts.js'
+    helper: 'tools/lib/navigation-index.js'
   };
+  let articlePagePath = null;
   for (const key of Object.keys(files)) {
     if (typeof sources[key] !== 'string') {
       try { sources[key] = fs.readFileSync(path.join(__dirname, '..', files[key]), 'utf8'); }
@@ -52,10 +72,10 @@ function validateSearchSurface({ root, pages, index, sources = {} } = {}) {
       || !/seenIds/.test(sources.navigationSearch)) {
     errors.push(diagnostic('search_surface_result_labels_or_dedup_missing', files.navigationSearch));
   }
-  if (!/data-search-recent-surfaces/.test(sources.template)
-      || !/search_recent_posts\(\)/.test(sources.template)
-      || !/filterPostsBySurface/.test(sources.helper)
-      || !/resolvePostSurface\(post/.test(sources.helper)) {
+  if (!/data-search-recent-list/.test(sources.template)
+      || /search_recent_posts\(\)/.test(sources.template)
+      || !/publishedAt/.test(sources.helper)
+      || !/NavigationSearch\.renderRecent\(document, recent, records, filters\.surface, selectedCategory, restoreFocus\)/.test(sources.localSearch)) {
     errors.push(diagnostic('search_surface_recent_source_invalid', files.template));
   }
 
@@ -68,9 +88,35 @@ function validateSearchSurface({ root, pages, index, sources = {} } = {}) {
   catch { return { errors: [...errors, diagnostic('search_surface_index_invalid', 'navigation-index.json')], recordCount: 0, recentCount: 0 }; }
   const articles = records.filter(record => record.kind === 'article');
   const articleByPath = new Map(articles.map(record => [new URL(record.url, 'https://example.test').pathname, record]));
+  if (!pages) {
+    const generated = generatedArticlePaths(root);
+    const indexed = new Set(articleByPath.keys());
+    if (generated.size !== indexed.size || [...generated].some(route => !indexed.has(route))) {
+      errors.push(diagnostic('search_surface_article_dataset_incomplete', 'navigation-index.json'));
+    }
+  }
+  for (const record of articles) {
+    if (typeof record.publishedAt !== 'string' || Number.isNaN(Date.parse(record.publishedAt))) {
+      errors.push(diagnostic('search_surface_article_publication_time_missing', record.url));
+      continue;
+    }
+    const file = routeFile(record.url);
+    let articleHtml = pages?.[file];
+    try { if (articleHtml === undefined) articleHtml = fs.readFileSync(path.join(root, ...file.split('/')), 'utf8'); }
+    catch { errors.push(diagnostic('search_surface_article_page_unreadable', file)); continue; }
+    const articlePage = cheerio.load(articleHtml);
+    const jsonLd = articlePage('script[type="application/ld+json"]').toArray().map(node => {
+      try { return JSON.parse(articlePage(node).text()); } catch { return null; }
+    }).find(value => value && (value['@type'] === 'BlogPosting' || Array.isArray(value['@type']) && value['@type'].includes('BlogPosting')));
+    const visibleDate = articlePage('[itemprop~="datePublished"]').first().attr('datetime');
+    if (!jsonLd?.datePublished || Date.parse(jsonLd.datePublished) !== Date.parse(record.publishedAt) ||
+        !visibleDate || Date.parse(visibleDate) !== Date.parse(record.publishedAt)) {
+      errors.push(diagnostic('search_surface_article_publication_time_mismatch', file));
+    }
+  }
   const pageFiles = ['index.html', 'memory/index.html', 'profile/index.html', 'archives/index.html'];
   const articleRecord = articles.find(record => record.surfaces.includes('profile') && record.surfaces.includes('memory'));
-  if (articleRecord) pageFiles.push(routeFile(articleRecord.url));
+  if (articleRecord) { articlePagePath = routeFile(articleRecord.url); pageFiles.push(articlePagePath); }
   else errors.push(diagnostic('search_surface_dual_article_missing', 'navigation-index.json'));
 
   const dualResults = articleRecord ? ['profile', 'memory', 'all'].map(surface =>
@@ -112,22 +158,26 @@ function validateSearchSurface({ root, pages, index, sources = {} } = {}) {
         errors.push(diagnostic('search_surface_scope_options_invalid', file));
       }
     }
-    const recent = $('[data-search-recent-item]');
-    if (!recent.length) errors.push(diagnostic('search_surface_recent_candidates_missing', file));
-    const seen = new Set();
-    recent.each((_, element) => {
-      const item = $(element);
-      const url = new URL(item.attr('href') || '/', 'https://example.test').pathname;
-      const record = articleByPath.get(url);
-      const surfaces = (item.attr('data-search-recent-surfaces') || '').split('|').filter(Boolean);
-      if (!record || seen.has(url) || JSON.stringify(surfaces) !== JSON.stringify(record.surfaces)) {
-        errors.push(diagnostic('search_surface_recent_record_invalid', `${file}#${url}`));
+    const list = $('[data-search-recent-list]');
+    if (list.length !== 1 || list.children().length !== 0 || $('[data-search-recent-item]').length) {
+      errors.push(diagnostic('search_surface_recent_static_candidates_present', file));
+    }
+    const scope = file === articlePagePath ? 'all' : file === 'profile/index.html' || file === 'index.html' ? 'profile' : 'memory';
+    const categories = ['all', ...new Set(articles.flatMap(record => record.categories))];
+    for (const category of categories) {
+      const eligible = articles.filter(record => (scope === 'all' || record.surfaces.includes(scope)) &&
+        (category === 'all' || record.categories.includes(category)));
+      const expected = eligible.slice().sort((a, b) => {
+        const aTime = Date.parse(a.publishedAt || `${a.date || ''}T00:00:00.000Z`) || 0;
+        const bTime = Date.parse(b.publishedAt || `${b.date || ''}T00:00:00.000Z`) || 0;
+        return bTime - aTime || (a.url < b.url ? -1 : a.url > b.url ? 1 : 0);
+      }).slice(0, 10).map(record => record.id);
+      const actual = Search.recentArticles(records, scope, category).map(record => record.id);
+      if (expected.length > 10 || JSON.stringify(actual) !== JSON.stringify(expected) ||
+          actual.some(id => !articleByPath.has(new URL(records.find(record => record.id === id).url, 'https://example.test').pathname))) {
+        errors.push(diagnostic('search_surface_recent_dataset_selection_invalid', `${file}#${category}`));
       }
-      seen.add(url);
-    });
-    recentCount = Math.max(recentCount, seen.size);
-    if (recent.length !== articles.length || seen.size !== articles.length) {
-      errors.push(diagnostic('search_surface_recent_candidates_incomplete', file));
+      recentCount = Math.max(recentCount, actual.length);
     }
   }
 
@@ -158,10 +208,10 @@ function runCli(args = process.argv.slice(2)) {
     result.errors.forEach(error => console.error(`- ${error.code} path=${error.path}`));
     return 1;
   }
-  console.log(`搜尋面向輸出檢查通過：${result.recordCount} records、${result.articleCount} 篇完整 recent candidates、雙面文章各範圍 ${result.dualResults.join('/')} 筆、共用 URL ${result.sharedUrlRecordCount} 筆獨立紀錄、預設 ${JSON.stringify(result.defaults)}。`);
+  console.log(`搜尋面向輸出檢查通過：${result.recordCount} records、${result.articleCount} 篇完整索引文章、每頁／分類最多 ${result.recentCount} 篇 recent、雙面文章各範圍 ${result.dualResults.join('/')} 筆、共用 URL ${result.sharedUrlRecordCount} 筆獨立紀錄、預設 ${JSON.stringify(result.defaults)}。`);
   return 0;
 }
 
 if (require.main === module) process.exitCode = runCli();
 
-module.exports = { routeFile, validateSearchSurface, runCli };
+module.exports = { routeFile, generatedArticlePaths, validateSearchSurface, runCli };

@@ -88,13 +88,14 @@ test('new missing and invalid surfaces fail with source context; empty filtered 
   assert.throws(() => helper.call(context([]), 'private'), /content_browser_range_invalid/);
 });
 
-test('search template carries canonical surfaces and local-search scopes recent lists and resets per page', () => {
+test('search template keeps only an empty recent list and local-search renders candidates from the loaded index', () => {
   const template = fs.readFileSync(path.join(__dirname, '../../themes/next/layout/_partials/search/index.njk'), 'utf8');
   const localSearch = fs.readFileSync(path.join(__dirname, '../../themes/next/source/js/third-party/search/local-search.js'), 'utf8');
   assert.match(template, /搜尋範圍[\s\S]*value="profile"[\s\S]*工作與學習[\s\S]*value="memory"[\s\S]*個人記憶庫[\s\S]*value="all"[\s\S]*全部公開內容/);
-  assert.match(template, /data-search-recent-surfaces="\{\{ record\.surfaces \| join\('\|'\) \}\}"/);
+  assert.match(template, /data-search-recent-list/);
+  assert.doesNotMatch(template, /search_recent_posts\(\)|data-search-recent-item/);
   assert.match(localSearch, /const recentMarkup = container\.innerHTML/);
-  assert.match(localSearch, /container\.innerHTML = recentMarkup/);
+  assert.match(localSearch, /NavigationSearch\.renderRecent\(document, recent, records, filters\.surface, selectedCategory, restoreFocus\)/);
   assert.match(localSearch, /document\.addEventListener\('pjax:success',[\s\S]*?currentPageSurface\(\)/);
   assert.match(localSearch, /surface: filters\.surface/);
   assert.match(localSearch, /NavigationSearch\.resetFilters\(defaultSurface\)/);

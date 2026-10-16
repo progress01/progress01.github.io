@@ -18,6 +18,7 @@ test('article and learning note merge while preserving source text and date mean
   const result = buildIndex(input());
   assert.equal(result.records.length, 2);
   const article = result.records.find(item => item.kind === 'article');
+  assert.equal(article.publishedAt, '2026-08-28T16:00:00.000Z');
   assert.deepEqual(article.sources, ['article', 'learning']);
   assert.match(article.text, /早段拉臂時機/);
   assert.match(article.text, /console.log\(1\)/);
@@ -28,6 +29,13 @@ test('article and learning note merge while preserving source text and date mean
   assert.deepEqual(article.events.map(e => e.date), ['2026-08-29', '2026-09-04']);
   assert.equal(result.records.filter(item => item.url === '/learning/one/').length, 1);
   assert.deepEqual(result.records.find(item => item.kind === 'microblog').surfaces, ['memory']);
+});
+test('article publication instants use the same Taipei timezone parsing as published dates', () => {
+  const article = buildIndex(input({ posts: [post({ date: '2026-08-29T12:30:00' })], microblog: [], desk: { topics: [] } })).records[0];
+  assert.equal(article.date, '2026-08-29');
+  assert.equal(article.publishedAt, '2026-08-29T04:30:00.000Z');
+  const offset = buildIndex(input({ posts: [post({ date: '2026-08-29T12:30:00+08:00' })], microblog: [], desk: { topics: [] } })).records[0];
+  assert.equal(offset.publishedAt, '2026-08-29T04:30:00.000Z');
 });
 test('persisted microblog IDs survive text edits, reordering and insertion', () => {
   const original = assignMicroblogIds([{ date: '2026-09-13', content: 'A' }, { date: '2026-09-12', content: 'B' }]);

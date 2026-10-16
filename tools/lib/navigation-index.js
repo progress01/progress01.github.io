@@ -20,6 +20,12 @@ function dateOf(value, label) {
   if (!parsed.isValid()) throw new Error('Invalid date: ' + label);
   return parsed.format('YYYY-MM-DD');
 }
+function publishedAtOf(value, label) {
+  if (value == null || value === '') return null;
+  const parsed = moment.isMoment(value) ? value.clone().tz(TZ) : moment.tz(String(value), moment.ISO_8601, true, TZ);
+  if (!parsed.isValid()) throw new Error('Invalid date: ' + label);
+  return parsed.toISOString();
+}
 function target(value, origin) {
   if (!value) return { local: null, external: null };
   const url = new URL(String(value), origin);
@@ -78,7 +84,8 @@ function buildIndex({ posts, microblog, desk, origin, legacySurfaceManifest = DE
     if (!post.path || !post.title || !url || byUrl.has(url)) throw new Error(`${source} [missing_or_duplicate_article_target]`);
     const surfaces = resolveSurfaces(post, source, legacy.posts.has(source) ? 'legacy' : 'error', warnings);
     const date = dateOf(post.date, post.title);
-    const record = { id: 'article:' + url, kind: 'article', sources: ['article'], title: plain(post.title), text: plain(post.content), url,
+    const publishedAt = publishedAtOf(post.date, post.title);
+    const record = { id: 'article:' + url, kind: 'article', sources: ['article'], title: plain(post.title), text: plain(post.content), url, publishedAt,
       passages: passagesOf(post.content), categories: names(post.categories), tags: names(post.tags), date, dateKind: 'published',
       events: date ? [{ kind: 'published', date }] : [], learningItems: [], surfaces };
     records.push(record); byUrl.set(url, record);
@@ -132,4 +139,4 @@ function buildIndex({ posts, microblog, desk, origin, legacySurfaceManifest = DE
   if (new Set(ids).size !== ids.length) throw new Error('Duplicate navigation record ID');
   return { schemaVersion: 1, timezone: TZ, records, warnings };
 }
-module.exports = { assignMicroblogIds, buildIndex, plain, dateOf, target };
+module.exports = { assignMicroblogIds, buildIndex, plain, dateOf, publishedAtOf, target };

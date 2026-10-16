@@ -41,19 +41,7 @@
             {%- endfor %}
           </div>
 
-          <div class="search-recent-list">
-            {%- for record in search_recent_posts() %}
-              {%- set post = record.post %}
-              <a class="search-recent-item" href="{{ url_for(post.path) }}" data-search-recent-item data-search-recent-rank="{{ record.rank }}" data-search-recent-surfaces="{{ record.surfaces | join('|') }}" data-search-recent-categories="{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %}|{% endif %}{% endfor %}"{% if record.rank >= 10 %} hidden{% endif %}>
-                <time class="search-recent-date" datetime="{{ moment(post.date).format() }}">{{ date(post.date, 'MM-DD') }}</time>
-                <span class="search-recent-copy">
-                  <span class="search-recent-category">{% for category in post.categories.toArray() %}{{ category.name }}{% if not loop.last %} / {% endif %}{% endfor %}</span>
-                  <span class="search-recent-title">{{ post.title or __('post.untitled') }}</span>
-                </span>
-                <span class="search-recent-arrow" aria-hidden="true">↗</span>
-              </a>
-            {%- endfor %}
-          </div>
+          <div class="search-recent-list" data-search-recent-list></div>
           <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有更新，可以直接搜尋完整紀錄。</p>
         </section>
       </div>

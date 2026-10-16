@@ -6,7 +6,7 @@ const { validateSearchSurface } = require('../search-surface-output-check');
 
 const article = {
   id: 'article:/dual/', kind: 'article', sources: ['article'], title: '雙面文章', text: '內文', url: '/dual/',
-  categories: ['工作'], tags: [], date: '2026-09-01', surfaces: ['profile', 'memory'],
+  categories: ['工作'], tags: [], date: '2026-09-01', publishedAt: '2026-09-01T00:00:00.000Z', surfaces: ['profile', 'memory'],
   events: [{ kind: 'published', date: '2026-09-01' }], learningItems: []
 };
 const sharedA = { ...article, id: 'micro-a', kind: 'microblog', sources: ['microblog'], title: '共享頁面的碎碎念 A', url: '/status/', surfaces: ['memory'], events: [{ kind: 'recorded', date: '2026-09-01' }] };
@@ -14,8 +14,8 @@ const sharedB = { ...sharedA, id: 'micro-b', title: '共享頁面的碎碎念 B'
 const index = { schemaVersion: 1, records: [article, sharedA, sharedB] };
 const scope = '<label>搜尋範圍<select data-navigation-filter="surface" disabled><option value="profile">工作與學習</option><option value="memory">個人記憶庫</option><option value="all">全部公開內容</option></select></label>';
 function page(isArticle = false, surfaces = 'profile|memory') {
-  const marker = isArticle ? '<article class="post-content-single" itemtype="https://schema.org/BlogPosting"><nav class="post-surface-marker" data-surfaces="profile memory"></nav></article>' : '';
-  return `${scope}<a data-search-recent-item data-search-recent-surfaces="${surfaces}" href="/dual/"></a>${marker}`;
+  const marker = isArticle ? '<article class="post-content-single" itemtype="https://schema.org/BlogPosting"><nav class="post-surface-marker" data-surfaces="profile memory"></nav><time itemprop="datePublished" datetime="2026-09-01T00:00:00.000Z"></time></article><script type="application/ld+json">{"@type":"BlogPosting","datePublished":"2026-09-01T00:00:00.000Z"}</script>' : '';
+  return `${scope}<div data-search-recent-list></div>${marker}`;
 }
 function pages(recentSurfaces = 'profile|memory') {
   return {
@@ -28,7 +28,7 @@ function pages(recentSurfaces = 'profile|memory') {
 }
 const check = (htmlPages = pages()) => validateSearchSurface({ root: '.', pages: htmlPages, index });
 
-test('accepts three visible scope choices and complete surface-tagged recent candidates on all page types', () => {
+test('accepts three visible scope choices, complete index and empty dynamic recent lists on all page types', () => {
   const result = check();
   assert.deepEqual(result.errors, []);
   assert.equal(result.articleCount, 1);
@@ -45,15 +45,23 @@ test('rejects missing result labels and inconsistent dedupe/state wiring', () =>
     localSearch: fs.readFileSync(path.resolve(__dirname, '../../themes/next/source/js/third-party/search/local-search.js'), 'utf8'),
     navigationSearch: navSource.replace('search-result-surfaces', 'result-surface'),
     template: fs.readFileSync(path.resolve(__dirname, '../../themes/next/layout/_partials/search/index.njk'), 'utf8'),
-    helper: fs.readFileSync(path.resolve(__dirname, '../../scripts/search-recent-posts.js'), 'utf8')
+    helper: fs.readFileSync(path.resolve(__dirname, '../lib/navigation-index.js'), 'utf8')
   } });
   assert.ok(result.errors.some(error => error.code === 'search_surface_result_labels_or_dedup_missing'));
 });
 
-test('rejects missing options and recent candidate surface drift', () => {
-  const htmlPages = pages('memory');
+test('rejects missing options and recent candidate HTML reappearing', () => {
+  const htmlPages = pages();
   htmlPages['profile/index.html'] = htmlPages['profile/index.html'].replace('value="all">全部公開內容', 'value="everything">全部公開內容');
+  htmlPages['memory/index.html'] = htmlPages['memory/index.html'].replace('<div data-search-recent-list></div>', '<div data-search-recent-list><a data-search-recent-item href="/dual/"></a></div>');
   const result = check(htmlPages);
   assert.ok(result.errors.some(error => error.code === 'search_surface_scope_options_invalid'));
-  assert.ok(result.errors.some(error => error.code === 'search_surface_recent_record_invalid'));
+  assert.ok(result.errors.some(error => error.code === 'search_surface_recent_static_candidates_present'));
+});
+
+test('rejects publication-time drift between the index and generated article', () => {
+  const htmlPages = pages();
+  htmlPages['dual/index.html'] = htmlPages['dual/index.html'].replace('2026-09-01T00:00:00.000Z', '2026-09-01T01:00:00.000Z');
+  const result = check(htmlPages);
+  assert.ok(result.errors.some(error => error.code === 'search_surface_article_publication_time_mismatch'));
 });

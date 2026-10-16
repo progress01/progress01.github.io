@@ -113,32 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recent = container.querySelector('[data-search-recent]');
     if (!recent) return;
 
-    recent.querySelectorAll('[data-search-category]').forEach(button => {
-      const isActive = button.dataset.searchCategory === selectedCategory;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    const recentItems = [...recent.querySelectorAll('[data-search-recent-item]')];
-    const recentCandidates = recentItems.map(item => ({
-      surfaces: (item.dataset.searchRecentSurfaces || '').split('|').filter(Boolean),
-      categories: (item.dataset.searchRecentCategories || '').split('|').filter(Boolean)
-    }));
-    const visibleSet = NavigationSearch.recentIndexes(recentCandidates, filters.surface, selectedCategory);
-    const visibleItems = recentItems.filter((item, index) => {
-      const isVisible = visibleSet.has(index);
-      item.hidden = !isVisible;
-      return isVisible;
-    });
-    const recentNote = recent.querySelector('[data-search-recent-note]');
-    if (recentNote) recentNote.textContent = selectedCategory === 'all' ? '最近 10 篇' : '分類內最新 10 篇';
-    const emptyState = recent.querySelector('[data-search-recent-empty]');
-    if (emptyState) emptyState.hidden = visibleItems.length > 0;
-    if (restoreFocus) {
-      const selectedButton = [...recent.querySelectorAll('[data-search-category]')]
-        .find(button => button.dataset.searchCategory === selectedCategory);
-      if (selectedButton) selectedButton.focus();
-    }
+    NavigationSearch.renderRecent(document, recent, records, filters.surface, selectedCategory, restoreFocus);
   };
 
   const parseSearchData = responseText => NavigationSearch.parse(responseText);
