@@ -58,7 +58,7 @@ learning_status: 進行中
 
 ## 2. 先做故事線，再做頁面
 
-[Duarte 對簡報故事結構的整理](https://www.duarte.com/blog/move-presentation-audiences-with-story-techniques-in-presentations/)有一個對我很有用的觀察：簡報可以在「現在的狀況」與「可能的狀況」之間移動，最後讓聽眾抵達一個新的理解或行動。
+[Duarte 對簡報故事結構的整理](https://www.duarte.com/blog/move-presentation-audience-with-story-techniques-in-presentations/)有一個對我很有用的觀察：簡報可以在「現在的狀況」與「可能的狀況」之間移動，最後讓聽眾抵達一個新的理解或行動。
 
 我不把它硬套成戲劇，而是先轉成報告語言：
 
@@ -257,7 +257,7 @@ open-slide 也支援在畫面元素上留下註解，再由 agent 依照註解�
 3. [open-slide Inspector 文件](https://open-slide.dev/docs/core-feature/inspector)：確認視覺編輯器、元素選取、儲存與 comment 的實際方式。
 4. [open-slide Skills Overview](https://open-slide.dev/docs/skills/overview)：了解 `/create-slide`、`/slide-authoring`、`/apply-comments` 與 workspace 規則如何協作。
 5. [silenceper：open-slide: A Slide Framework Built for AI Agents](https://silenceper.github.io/en/article/2026-05-07-open-slide-agent-slide-framework/)：參考其他人如何把 open-slide 理解成「可執行、可迭代、可版本控制的簡報程式」，而不只是一次性的 AI 產檔工具。
-6. [Duarte：How to move presentation audiences with structure and story](https://www.duarte.com/blog/move-presentation-audiences-with-story-techniques-in-presentations/)：採用「現在的狀況、可能的狀況、最後的行動／新理解」作為故事線參考。
+6. [Duarte：How to move presentation audiences with structure and story](https://www.duarte.com/blog/move-presentation-audience-with-story-techniques-in-presentations/)：採用「現在的狀況、可能的狀況、最後的行動／新理解」作為故事線參考。
 7. [Garr Reynolds：Presentation Zen Tips](https://www.garrreynolds.com/tips)：提醒我把準備、設計與呈現分開處理，投影片不等於逐字稿。
 8. [BFA 簡報：從一張白紙畫出專業簡報](https://www.bfa.com.tw/blog/from-blank-paper-to-professional-presentation)：採用先釐清目的與受眾、建立故事線、每頁保留少量重點、把不在主線的資料放進附錄等做法。
 9. [SlideArt：別再用 Enter 排版了](https://www.youtube.com/watch?v=sTTFnBpxNMk)：作為中文視覺化排版的入門觀察材料，之後再判斷哪些方法適合自己的報告情境。

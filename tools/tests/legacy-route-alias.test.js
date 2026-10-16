@@ -5,6 +5,7 @@ const os = require('os');
 const path = require('path');
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 const { validateSeoUrls, routeFile } = require('../seo-url-audit');
 const { checkDocument } = require('../site-check');
@@ -13,6 +14,25 @@ const origin = 'https://progress01.github.io';
 const legacyRoute = '/watch/reply-1988-writing-plan/';
 const currentRoute = '/watch/reply-1988-30-questions/';
 const aliasFile = path.resolve(__dirname, '../../source/watch/reply-1988-writing-plan/index.html');
+const historicalAliases = [
+  ['/2026/05/21/歌曲推薦/歌曲推薦-動不動就說愛我/', '/2026/05/20/歌曲推薦/歌曲推薦-動不動就說愛我/'],
+  ['/2026/05/22/歌曲推薦/歌曲推薦-理想/', '/2026/05/21/歌曲推薦/歌曲推薦-理想/'],
+  ['/2026/04/06/實驗室/討論GEO篇一_做網頁說明/', '/2026/04/06/實驗室/討論GEO篇一/'],
+  ['/2026/09/10/隨筆/有些事情要分開/', '/2026/09/10/隨筆/在喜歡與被喜歡之間/'],
+  ['/2026/02/03/歌曲推薦-我在紐約打電話給你/', '/2026/02/03/歌曲推薦/歌曲推薦-我在紐約打電話給你/'],
+  ['/2025/06/16/閱讀影評/有工作的第N-3天/', '/2025/06/16/隨筆/有工作的第N-3天/'],
+  ['/2025/04/09/呼吸/', '/2025/04/09/閱讀影評/呼吸/'],
+  ['/2026/01/22/歌曲推薦/When-you-say-nothing-at-all/', '/2026/01/22/歌曲推薦/歌曲推薦-When-you-say-nothing-at-all/'],
+  ['/2022/07/31/明天別再來敲門-書籍閱讀紀錄/', '/2022/07/31/閱讀影評/明天別再來敲門/'],
+  ['/2024/12/24/若草物語-戀愛姐妹與無法戀愛的我-影片紀錄/', '/2024/12/24/閱讀影評/若草物語-戀愛姐妹與無法戀愛的我/'],
+  ['/2025/01/07/請不要在大家面前稱讚我-書籍閱讀紀錄/', '/2025/01/07/閱讀影評/請不要在大家面前稱讚我/'],
+  ['/2025/04/09/女給時代：1930年代臺灣的珈琲店文化/', '/2025/04/09/閱讀影評/女給時代：1930年代臺灣的珈琲店文化/'],
+  ['/2025/10/24/歌曲推薦-2375/', '/2025/10/24/歌曲推薦/歌曲推薦-2375/'],
+  ['/2025/12/25/歌曲推薦-Better-Man/', '/2025/12/25/歌曲推薦/歌曲推薦-Better-Man/'],
+  ['/2026/01/19/歌曲推薦-Free-Loop/', '/2026/01/19/歌曲推薦/歌曲推薦-Free-Loop/'],
+  ['/2026/01/21/歌曲推薦-說，你愛我/', '/2026/01/21/歌曲推薦/歌曲推薦-說，你愛我/'],
+  ['/2026/01/22/welcome-board/', '/2026/01/21/welcome-board/']
+];
 
 function put(root, relative, value) {
   const filename = path.join(root, relative);
@@ -68,4 +88,37 @@ test('legacy Reply 1988 route redirects to the canonical article without becomin
   assert.equal(result.counts.articleHtml, 2);
   assert.equal(result.counts.uniqueArticleRoutes, 2);
   assert.equal(result.counts.sitemapUrls, 6);
+});
+
+test('historical published article and page routes resolve through encoded static aliases', () => {
+  for (const [legacyRoute, currentRoute] of historicalAliases) {
+    const aliasFile = path.resolve(__dirname, '../../source', routeFile(legacyRoute));
+    const source = fs.readFileSync(aliasFile, 'utf8');
+    const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+    assert.ok(match, `${legacyRoute} should have front matter and a static HTML page`);
+    const frontMatter = yaml.load(match[1]);
+    const html = match[2];
+    const encodedCurrentUrl = new URL(currentRoute, `${origin}/`).href;
+
+    assert.equal(frontMatter.layout, false, `${legacyRoute} should bypass the article layout`);
+    assert.equal(frontMatter.permalink, legacyRoute);
+    assert.equal(frontMatter.sitemap, false);
+    assert.match(html, new RegExp(`http-equiv="refresh" content="0; url=${currentRoute.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
+    assert.ok(html.includes(`<link rel="canonical" href="${encodedCurrentUrl}">`), `${legacyRoute} canonical should use the percent-encoded current URL`);
+    assert.ok(html.includes(`window.location.replace('${currentRoute}')`));
+    assert.ok(html.includes(`<a href="${currentRoute}">`));
+    assert.doesNotMatch(html, /BlogPosting|post-content-single|application\/ld\+json/);
+
+    const files = new Set([routeFile(legacyRoute), routeFile(currentRoute)].map(file => file.replace(/\\/g, '/')));
+    const result = checkDocument(html, routeFile(legacyRoute), { origin, files, checkStructuredData: true });
+    assert.deepEqual(result.errors, [], `${legacyRoute} should pass the static alias checks`);
+
+    const targetFile = path.resolve(__dirname, '../../public', routeFile(currentRoute));
+    const targetHtml = fs.readFileSync(targetFile, 'utf8');
+    const $target = cheerio.load(targetHtml);
+    assert.equal($target('article.post-content-single').length, 1, `${currentRoute} should resolve to its published article`);
+    const schema = JSON.parse($target('script[type="application/ld+json"]').first().text());
+    assert.equal(schema['@type'], 'BlogPosting', `${currentRoute} should retain the article schema`);
+    assert.equal(schema.url, encodedCurrentUrl, `${currentRoute} schema should use the encoded canonical URL`);
+  }
 });

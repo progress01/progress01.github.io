@@ -1,5 +1,26 @@
 # 個人網誌動線改善進度
 
+## 2026-10-16，歷史網址與外部連結盤點（修正完成；完整驗證通過；未部署）
+
+- 由主線複核、LUNA6 盤點與實作。檢視 2026-01-20 至 2026-10-15 的 175 個部署提交及截至 10-16 的 152 個 source 提交，補上 17 個歷史網址相容入口，加上既有 1 個，共 18 個有部署歷史依據的入口。涵蓋日期、標題及分類路徑更動；只轉向現有公開文章，不恢復舊正文。此為歷史路徑盤點，不表示已完成每個入口的線上驗收。
+- 盤點目前生成公開文章、圖牆與資料頁的外連：201 個去重 URL、59 個網域。限速最多 3 路並行 HEAD；結果 185 個 200、1 個 202、12 個 403、1 個 429、2 個 404（後兩個以 GET 確認）。多數 403／429／202 起初無法由狀態碼判斷內容；另用網頁內容確認其中 6 個連到符合引用的頁面，8 個仍待確認，列於下表。Spotify 117 個皆回 200 只表示 HTTP 有回應，不保證內容可播放；YouTube 連結亦同。網址與原始狀態證據保存在忽略目錄 `node_modules/.cache/external-link-audit/`（`inventory.json`、`results.json`）。
+- 修正 3 篇文章的 4 個 href：Cheercut 明確包住正確文章 URL；Duarte 兩處改為官方的單數 `audience` URL；The News Lens URL 獨立成連結，避免後續評論黏入 href。使用已安裝的 `marked` 渲染 4 段，確認 href 與正文均保留；`git diff --check -- source/_posts` 通過。沒有新增測試。原稿畫面與閱讀感受由作者驗收。
+
+| 待確認公開 URL | 所屬公開文章／資料頁 |
+| --- | --- |
+| `https://dictionary.cambridge.org/dictionary/english/go-on` | `/learning/go-on-grammar-in-song-lyrics/` |
+| `https://dictionary.cambridge.org/grammar/british-grammar/conditionals-if` | `/learning/if-three-tenses-in-song-lyrics/` |
+| `https://dictionary.cambridge.org/us/dictionary/english/do` | `/learning/go-on-grammar-in-song-lyrics/` |
+| `https://dictionary.cambridge.org/us/dictionary/english/on-and-on` | `/learning/go-on-grammar-in-song-lyrics/` |
+| `https://www.books.com.tw/products/0010910694` | `/2026/08/25/閱讀影評/基地/` |
+| `https://www.books.com.tw/products/0011025033` | `life-index.json`（現在的我資料） |
+| `https://www.kkbox.com/tw/tc/song/1_Q7nEuk_TKl6iW5rD` | `/2026/01/21/歌曲推薦/歌曲推薦-說，你愛我/`、`/memory/page/16/`、`/photos/` |
+| `https://www.sciencedirect.com/org/science/article/pii/S0022041826000676` | `/learning/lis-research-1965-2025-content-analysis/` |
+
+- 已確認的更正目標：[Cheercut](https://cheercut.com/2015-10-13-877/)、[Duarte](https://www.duarte.com/blog/move-presentation-audience-with-story-techniques-in-presentations/)、[The News Lens](https://www.thenewslens.com/article/122121)。
+- 最終完整驗證 350/350 通過，0 失敗／略過；1,046 產物、411 HTML、283 文章網址及 328 sitemap 網址通過，public 與來源指紋一致。新增歷史網址測試逐筆檢查 17 筆轉址與實際文章目標；主線另核對全部 18 個生成相容頁不含文章標記、不進文章索引或 sitemap，以及三篇生成文章的 4 個更正 href。初次沙箱測試受 EPERM 阻擋，核准後重跑原完整檢查通過，未減少檢查。完整日誌：`D:\myblog1988\historical-links-verify.log`。
+- 未部署；來源備份狀態以本次交付為準。手機操作、載入效能與 deprecated 舊依賴仍待後續盤點，畫面由作者驗收。
+
 ## 2026-10-16，搬家後流程與相容性修正（完成；原目錄與還原副本完整驗證通過；未部署）
 
 - 作者同意開始修正，並補充最困擾的是新增紀錄／發布的步驟與訊息太多。由主線規劃複核、LUNA6 實作手冊、舊網址、搜尋與日常輸出調整；保留完整檢查、來源備份、B 面預設與整站發布規則。
