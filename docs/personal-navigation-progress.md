@@ -1,5 +1,14 @@
 # 個人網誌動線改善進度
 
+## 2026-10-17，移除舊推薦套件與傳遞依賴（完成；完整驗證通過；未部署）
+
+- LUNA6 確認目前文章使用自訂 `popular_posts_fixed`、主題 related_posts 停用，舊 `hexo-related-popular-posts` 的 helper 與 collector 附加欄位沒有本站消費者，並保存基準。移除僅修改 package.json／lockfile；npm 移除 288 個實裝套件，lockfile 減少 292 個套件路徑項，新增與留存版本變更皆為 0。推薦程式、原稿與版面來源未改。LUNA6 後續達額度限制，由主線完成受控重建與複核，未使用重置券。
+- 安全查詢成功：受影響套件項 52 → 28（critical 3 → 0、high 29 → 19、moderate 20 → 9），並非所有通報都已排除。舊 request／lodash／form-data 支線隨之移除；renderer → jsdom → form-data 4.0.5 仍有 high 通報，待單獨修補。ECharts、js-yaml 與其餘依賴仍按前則規劃處理，不執行無差別 audit fix。查詢證據為 ignored cache 的 `npm-audit-20261017.json` 與 `npm-audit-legacy-recommend-after.json`。
+- 完整 `npm run verify` 358/358 通過，0 失敗／略過，來源與產物指紋吻合；1,046 個產物、411 HTML、283 篇公開文章的既有檢查通過。移除前後 source 全目錄 hash 一致，283 篇推薦區完整 markup 與連結順序一致。最初只存 hash 的產物比對有 67 檔不同，未直接當作無影響。
+- 為追查差異，在 `D:\myblog1988\legacy-recommend-validation-20261017` 建立一次性驗證副本（不是日常編輯來源），複製 1,458 個追蹤檔，核對 892 個 source 檔內容與 mtime；以 HEAD 原 lockfile 乾淨安裝 594 套件並建置。舊套件副本與主目錄比較有 91 檔 raw hash 不同：逐篇核對 283 篇正文／推薦區完全一致；4 個 JSON 的完整資料在陣列排序正規化後一致；3 個 XML 的資料行在條目／標籤排序正規化後一致；HTML 排除已另驗的前後篇與排序差異後，全部資料行及出現次數一致。30 篇前後篇差異皆為同時刻群組位置變化，連結仍在本群組／相鄰時間群組，未出現遺失文章或跳錯日期群組。
+- CSS 唯一差異是 `.links-of-author a::before` 背景色，來源 `_common/outline/sidebar/index.styl` 明確呼叫既有 random-color。舊依賴重建也與原舊基準不同，不能宣稱重建產物逐位元相同。新增待修：搜尋以外的同時刻文章清單／分頁／前後篇，以及標籤輸出順序仍不穩定；隨機色是既有主題行為，本次不改。一次性比對證據存 ignored cache 的 `legacy-recommend-*`、`legacy-semantic-comparison.json`，正式測試不依賴它們。
+- 未部署，來源備份以本次交付為準。手機實測、8 個外站受限連結、剩餘套件修補及上述排序問題待續；畫面仍由作者驗收。
+
 ## 2026-10-17，Windows 驗證警告修正與依賴安全盤點（相容性修正完成；依賴修補待續；未部署）
 
 - 主線規劃複核、LUNA6 實作與盤點。Windows 驗證原以 shell 加參數啟動 npm／Hexo，在 Node 24 印出 DEP0190；現改由 Node 直接執行 npm CLI 與 Hexo 套件宣告入口，保留 npm lifecycle、PATH、參數、工作目錄、退出碼及詳細記錄。缺少工具時仍回報記錄路徑，未將警告當作已證實可利用的命令注入。
