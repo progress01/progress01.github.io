@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { readReceipt, runNpmScript, runVerification, verificationStages } = require('../verification');
@@ -301,6 +302,68 @@ test('file-output runner captures real child stdout and stderr and reports faile
   const failedLog = fs.readFileSync(logPath, 'utf8');
   assert.match(failedLog, /failure stdout marker/);
   assert.match(failedLog, /failure stderr marker/);
+});
+
+test('Windows runner invokes real npm scripts and lifecycle hooks from a path containing spaces', { skip: process.platform !== 'win32' }, t => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'blog verify space-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  fs.mkdirSync(path.join(root, 'tools'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'node_modules'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'node_modules', 'hexo', 'bin'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'node_modules', 'hexo', 'package.json'), JSON.stringify({ bin: { hexo: './bin/hexo.js' } }));
+  fs.writeFileSync(path.join(root, 'node_modules', 'hexo', 'bin', 'hexo.js'), [
+    "process.stdout.write(`hexo:${process.argv.slice(2).join(',')}:${process.cwd().includes(' ')}\\n`);"
+  ].join('\n'));
+  fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify({
+    private: true,
+    scripts: {
+      'precompat-success': 'node tools/compat-marker.js pre',
+      'compat-success': 'node tools/compat-marker.js success',
+      'postcompat-success': 'node tools/compat-marker.js post',
+      'compat-failure': 'node tools/compat-marker.js failure'
+    }
+  }));
+  fs.writeFileSync(path.join(root, 'tools/compat-marker.js'), [
+    "const path = require('node:path');",
+    "const phase = process.argv[2];",
+    "process.stdout.write(`${process.env.npm_lifecycle_event}:${phase}:${process.cwd().includes(' ')}:${process.env.PATH.includes(path.join(process.cwd(), 'node_modules', '.bin'))}\\n`);",
+    "process.stderr.write(`stderr:${phase}\\n`);",
+    "if (phase === 'failure') process.exitCode = 7;"
+  ].join('\n'));
+
+  const logPath = path.join(root, 'runner log.txt');
+  const runnerModule = require.resolve('../verification');
+  const runnerCode = `require(${JSON.stringify(runnerModule)}).runNpmScript('compat-success', ${JSON.stringify(root)}, { output: 'file', logPath: ${JSON.stringify(logPath)} });`;
+  const runnerProcess = spawnSync(process.execPath, ['-e', runnerCode], { cwd: root, encoding: 'utf8' });
+  assert.equal(runnerProcess.status, 0, runnerProcess.stderr);
+  assert.doesNotMatch(runnerProcess.stderr, /DEP0190/);
+  const successLog = fs.readFileSync(logPath, 'utf8');
+  for (const phase of ['precompat-success:pre', 'compat-success:success', 'postcompat-success:post']) {
+    assert.match(successLog, new RegExp(`${phase}:true:true`));
+  }
+
+  const deployLogPath = path.join(root, 'deploy log.txt');
+  runNpmScript('deploy', root, { output: 'file', logPath: deployLogPath });
+  assert.match(fs.readFileSync(deployLogPath, 'utf8'), /hexo:deploy:true/);
+
+  const brokenRoot = path.join(root, 'broken');
+  fs.mkdirSync(path.join(brokenRoot, 'node_modules'), { recursive: true });
+  const brokenLogPath = path.join(brokenRoot, 'deploy log.txt');
+  assert.throws(() => runNpmScript('deploy', brokenRoot, { output: 'file', logPath: brokenLogPath }), error => {
+    assert.match(error.message, /無法讀取 Hexo CLI 宣告/);
+    assert.match(error.message, new RegExp(path.resolve(brokenLogPath).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    assert.equal(error.logPath, path.resolve(brokenLogPath));
+    return true;
+  });
+  assert.match(fs.readFileSync(brokenLogPath, 'utf8'), /開始：deploy/);
+
+  assert.throws(() => runNpmScript('compat-failure', root, { output: 'file', logPath }), error => {
+    assert.match(error.message, /結束代碼 7/);
+    assert.match(error.message, /stderr:failure/);
+    assert.equal(error.logPath, path.resolve(logPath));
+    return true;
+  });
+  assert.match(fs.readFileSync(logPath, 'utf8'), /compat-failure:failure:true:true/);
 });
 
 test('successful child status is preserved when the completion log marker cannot be written', t => {

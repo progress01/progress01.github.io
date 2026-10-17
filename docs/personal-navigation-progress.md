@@ -1,5 +1,14 @@
 # 個人網誌動線改善進度
 
+## 2026-10-17，Windows 驗證警告修正與依賴安全盤點（相容性修正完成；依賴修補待續；未部署）
+
+- 主線規劃複核、LUNA6 實作與盤點。Windows 驗證原以 shell 加參數啟動 npm／Hexo，在 Node 24 印出 DEP0190；現改由 Node 直接執行 npm CLI 與 Hexo 套件宣告入口，保留 npm lifecycle、PATH、參數、工作目錄、退出碼及詳細記錄。缺少工具時仍回報記錄路徑，未將警告當作已證實可利用的命令注入。
+- 針對測試 14/14、完整 `npm run verify` 358/358 通過，0 失敗／略過，來源與產物指紋吻合；日誌 `D:\myblog1988\runner-compat-verify.log` 沒有 DEP0190。新增測試實跑含空格路徑的 npm 前後 lifecycle、失敗碼與 stderr，另以假 Hexo 入口驗證 deploy argv／工作目錄與缺檔回報，未執行真實部署。
+- Node 24.12.0 符合 Hexo 8.1.1 的 Node >=20.19.0 要求，套件樹未報缺失／版本無效。沙箱 audit 曾 DNS 失敗，主線取得核准後以限時查詢成功；`node_modules/.cache/npm-audit-20261017.json` 記錄 52 個受影響套件項（3 critical、29 high、20 moderate，包含上游依賴影響），不能解讀成 52 個本站可利用漏洞。沒有執行 audit fix、降版或套件升級。
+- 三個 critical 聚合項為 request、form-data、lodash，目前查到的路徑在 Node 建置工具鏈：舊 `hexo-related-popular-posts → ga-analytics → googleapis/gapitoken` 與 `kuromoji` 支線，以及 `hexo-renderer-marked → jsdom → form-data`。GA 功能有設定條件，未確認目前能被外部觸發。下一步先核對並評估移除舊推薦套件：現文章用自訂 `popular_posts_fixed`，主題 related_posts 關閉，但仍須驗證移除其 filter/helper 後的完整輸出，不能只憑未呼叫 helper 就刪除。
+- 可獨立修補項目：ECharts 6.0.0 確實隨日曆／閱讀頁送到瀏覽器，本機 vendor 與 npm dist 雜湊一致；[上游修正](https://github.com/apache/echarts/pull/21608)針對 lines tooltip，本站現為 heatmap 加自訂 formatter，未確認符合觸發條件。後續升到含修補版本（通報為 6.1.0）時須同步 vendor；js-yaml 4.1.1 的建置端 DoS 通報則需獨立更新到含修補版本（本次 audit 範圍截至 <4.3.2），重驗 YAML／原稿輸出。其餘依賴分批處理；audit 建議的 Hexo 等舊 major 回退不能直接套用。
+- 手機實測仍未完成：現有瀏覽器分頁是本機連線逾時錯誤頁，工具對其 data URL 的讀取又受安全政策阻擋，未取得手機操作或 LCP／CLS 證據。8 個受外站限制連結、依賴修補與部署仍待後續；畫面由作者驗收，來源備份結果以本次交付為準。
+
 ## 2026-10-17，搜尋候選延後呈現與同時刻穩定排序（完成；完整驗證通過；未部署）
 
 - 主線規劃複核、LUNA6 實作與獨立檢查。各頁不再預先嵌入全部最近文章候選，開啟搜尋後沿用既有 navigation-index 載入與錯誤重試流程，依面向／分類呈現最近 10 篇；保留分類列、返回狀態、鍵盤焦點與空結果提示，不新增請求端點或作者操作。

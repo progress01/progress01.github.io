@@ -180,16 +180,36 @@ function readLogTail(filename, maxBytes = 8192) {
   finally { if (descriptor !== undefined) try { fs.closeSync(descriptor); } catch {} }
 }
 
+function resolveNpmCli() {
+  const fromEnvironment = process.env.npm_execpath;
+  if (fromEnvironment) {
+    const candidate = path.resolve(fromEnvironment);
+    if (path.basename(candidate).toLowerCase() === 'npm-cli.js' && fs.existsSync(candidate)) return candidate;
+  }
+  const installedWithNode = path.join(path.dirname(process.execPath), 'node_modules', 'npm', 'bin', 'npm-cli.js');
+  if (fs.existsSync(installedWithNode)) return installedWithNode;
+  throw new Error(`找不到 npm-cli.js（npm_execpath=${fromEnvironment || '未設定'}；Node 安裝目錄=${path.dirname(process.execPath)}）`);
+}
+
+function resolveHexoCli(root) {
+  const packagePath = path.join(root, 'node_modules', 'hexo', 'package.json');
+  let packageJson;
+  try { packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8')); }
+  catch (error) { throw new Error(`無法讀取 Hexo CLI 宣告：${packagePath}（${error.message}）`, { cause: error }); }
+  const entry = typeof packageJson.bin === 'string' ? packageJson.bin : packageJson.bin?.hexo;
+  const cliPath = entry && path.resolve(path.dirname(packagePath), entry);
+  if (!cliPath || !fs.existsSync(cliPath)) throw new Error(`Hexo 套件未宣告可用的 hexo CLI：${packagePath}`);
+  return cliPath;
+}
+
 function runNpmScript(script, root = ROOT, options = {}) {
   const deploying = script === 'deploy';
   const output = options.output || 'inherit';
   if (!['inherit', 'file'].includes(output)) throw new Error(`unsupported npm output mode: ${output}`);
   if (output === 'file' && !options.logPath) throw new Error('file output requires logPath');
   const logPath = output === 'file' ? path.resolve(root, options.logPath) : null;
-  const command = options.command || (deploying
-    ? (process.platform === 'win32' ? 'hexo.cmd' : 'hexo')
-    : (process.platform === 'win32' ? 'npm.cmd' : 'npm'));
-  const args = options.args || (deploying ? ['deploy'] : ['run', script]);
+  const defaultArgs = options.args || (deploying ? ['deploy'] : ['run', script]);
+  const commandOverride = options.command;
   let logDescriptor;
   let commandSucceeded = false;
   const warnLogFailure = error => {
@@ -201,10 +221,14 @@ function runNpmScript(script, root = ROOT, options = {}) {
       logDescriptor = fs.openSync(logPath, 'a');
       fs.writeSync(logDescriptor, `\n[${new Date().toISOString()}] 開始：${script}\n`);
     }
+    const command = commandOverride || (process.platform === 'win32' ? process.execPath : deploying ? 'hexo' : 'npm');
+    const args = process.platform === 'win32' && !commandOverride
+      ? [deploying ? resolveHexoCli(root) : resolveNpmCli(), ...defaultArgs]
+      : defaultArgs;
     const result = spawnSync(command, args, {
       cwd: root,
       stdio: logDescriptor === undefined ? 'inherit' : ['inherit', logDescriptor, logDescriptor],
-      shell: options.command ? false : process.platform === 'win32'
+      shell: false
     });
     if (result.error) throw result.error;
     if (result.status !== 0) throw new Error(`npm run ${script} 失敗，結束代碼 ${result.status ?? 'unknown'}`);
