@@ -63,7 +63,16 @@ prismjs:
 index_generator:
   path: memory
   per_page: 10
-  order_by: -date
+  order_by: -date stable_order_path
+
+archive_generator:
+  order_by: -date stable_order_path
+
+category_generator:
+  order_by: -date stable_order_path
+
+tag_generator:
+  order_by: -date stable_order_path
 
 # Category & Tag
 default_category: uncategorized

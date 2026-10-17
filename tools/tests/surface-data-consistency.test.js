@@ -55,12 +55,27 @@ function article(source, url, surfaces, categories = ['一般'], extra = {}) {
 
 function collectionFor(posts) {
   return {
-    sort: (field, direction) => ({
-      toArray: () => [...posts].sort((a, b) => {
-        const difference = a[field].valueOf() - b[field].valueOf();
-        return direction === -1 ? -difference : difference;
-      })
-    })
+    sort: (query, legacyDirection) => {
+      const terms = legacyDirection === undefined
+        ? String(query).trim().split(/\s+/).filter(Boolean).map(term => ({
+          field: term.replace(/^-/, ''), direction: term.startsWith('-') ? -1 : 1
+        }))
+        : [{ field: query, direction: legacyDirection }];
+      return {
+        toArray: () => [...posts].sort((a, b) => {
+          for (const { field, direction } of terms) {
+            const value = post => field === 'stable_order_path'
+              ? String(post.path || '').replace(/^\/+/, '')
+              : post[field]?.valueOf?.() ?? post[field];
+            const left = value(a);
+            const right = value(b);
+            if (left < right) return -direction;
+            if (left > right) return direction;
+          }
+          return 0;
+        })
+      };
+    }
   };
 }
 
@@ -108,6 +123,8 @@ test('fixture records resolve identically across navigation, random, browser, an
   const browserProfile = browser.call(helperContext(posts), 'profile');
   const browserMemory = browser.call(helperContext(posts), 'memory');
   const urls = records => records.map(record => record.url);
+  assert.deepEqual(urls(browserAll), ['/both/', '/legacy/', '/profile/', '/random-control/', '/station/'],
+    'equal-date records use ascending canonical paths');
   assert.deepEqual(new Set(urls(browserAll)), new Set(byUrl.keys()));
   assert.deepEqual(new Set(urls(browserProfile)), new Set(['/profile/', '/both/']));
   assert.deepEqual(new Set(urls(browserMemory)), new Set(['/legacy/', '/both/', '/station/', '/random-control/']));

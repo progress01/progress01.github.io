@@ -7,7 +7,7 @@ if (!legacySurfaces || legacySurfaces.schemaVersion !== 1 || !Array.isArray(lega
 const legacyPostSources = new Set(legacySurfaces.posts);
 
 hexo.extend.helper.register('content_browser_records', function(range = 'all') {
-  const posts = filterPostsBySurface(this.site.posts.sort('date', -1).toArray(), range, {
+  const posts = filterPostsBySurface(this.site.posts.sort('-date stable_order_path').toArray(), range, {
     legacyPostSources,
     onWarning: warning => hexo.log.warn(`${warning.source} [${warning.code}]`)
   });

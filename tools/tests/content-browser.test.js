@@ -7,6 +7,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const yaml = require('js-yaml');
 const { CONTENT_BROWSER_RANGES, filterPostsBySurface } = require('../lib/content-browser');
+const { POST_ORDER } = require('../../scripts/stable-post-order');
 
 const legacyPostSources = new Set(['source/_posts/legacy.md']);
 const post = (source, surfaces, extra = {}) => ({
@@ -70,8 +71,9 @@ test('Hexo helper defaults to all and preserves category/tag/date/url output sha
     }
   });
   const posts = [post('source/_posts/profile.md', ['profile']), post('source/_posts/legacy.md')];
+  let orderBy;
   const context = {
-    site: { posts: { sort: (_field, _direction) => ({ toArray: () => posts }) } },
+    site: { posts: { sort: value => { orderBy = value; return { toArray: () => posts }; } } },
     url_for: value => value,
     date: () => '2026-01-01'
   };
@@ -80,8 +82,17 @@ test('Hexo helper defaults to all and preserves category/tag/date/url output sha
   assert.deepEqual(Object.keys(all[0]), ['title', 'url', 'date', 'categories', 'tags']);
   assert.deepEqual(all[0].categories, ['分類']);
   assert.deepEqual(all[0].tags, ['標籤']);
+  assert.equal(orderBy, POST_ORDER);
   assert.deepEqual(recordsHelper.call(context, 'profile').map(item => item.url), ['/profile/']);
   assert.deepEqual(recordsHelper.call(context, 'memory').map(item => item.url), ['/legacy/']);
+});
+
+test('Hexo listing generators use the stable date and canonical path order', () => {
+  const root = path.resolve(__dirname, '../..');
+  const config = yaml.load(fs.readFileSync(path.join(root, '_config.yml'), 'utf8'));
+  for (const generator of ['index_generator', 'archive_generator', 'category_generator', 'tag_generator']) {
+    assert.equal(config[generator]?.order_by, POST_ORDER, `${generator}.order_by`);
+  }
 });
 
 test('current public source keeps all, profile, and memory memberships consistent', () => {
