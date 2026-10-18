@@ -5,6 +5,18 @@ const vm = require('vm');
 
 const root = path.join(__dirname, '..', '..');
 
+const echartsPackage = JSON.parse(fs.readFileSync(path.join(root, 'node_modules', 'echarts', 'package.json'), 'utf8'));
+const echartsVendor = fs.readFileSync(path.join(root, 'source', 'lib', 'echarts.min.js'));
+const echartsDist = fs.readFileSync(path.join(root, 'node_modules', 'echarts', 'dist', 'echarts.min.js'));
+const echarts = require('echarts');
+assert.ok(echartsVendor.equals(echartsDist), `browser vendor must match the installed ECharts ${echartsPackage.version} dist`);
+assert.match(echartsVendor.subarray(0, 1200).toString('utf8'), /Licensed to the Apache Software Foundation[\s\S]*Apache License, Version 2\.0/,
+  'the vendored ECharts distribution must retain its Apache license header');
+assert.equal(echarts.version, echartsPackage.version, 'runtime and installed ECharts versions must agree');
+assert.equal(typeof echarts.init, 'function', 'calendar pages use echarts.init');
+assert.equal(typeof echarts.getInstanceByDom, 'function', 'calendar pages check for existing chart instances');
+assert.equal(typeof echarts.format?.formatTime, 'function', 'calendar tooltips use the retained formatTime API');
+
 function sourceText(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }

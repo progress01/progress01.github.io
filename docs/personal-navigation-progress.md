@@ -1,5 +1,12 @@
 # 個人網誌動線改善進度
 
+## 2026-10-18，ECharts 與 YAML 相容版本修補（完成；完整驗證通過；未部署）
+
+- LUNA6 盤點與實作、主線安裝及複核。ECharts 6.0.0 → 6.1.0、js-yaml 4.1.1 → 4.3.2，僅連帶更新 zrender 6.0.0 → 6.1.0；其餘鎖定版本不變，維持原 major，不執行 audit fix。`source/lib/echarts.min.js` 同步官方 npm dist，保留 Apache 授權；新增 vendor/dist 完全一致與日曆所用 API 相容檢查。
+- 日曆、YAML、內容／標籤等針對測試 40/40 通過；最終 `npm run verify` 362/362 通過、0 失敗／略過，來源與產物指紋吻合，日誌 `D:\myblog1988\dependency-patch-verify.log`。獨立比對 283 篇正文、延伸閱讀、12,045 處標籤順序及兩份 JSON 資料不變；source 僅 ECharts vendor 更動，其餘 891 檔雜湊一致。一次性證據為 ignored cache 的 `dependency-direct-after.json` 與 `dependency-patch-before-lock.json`。
+- 連網 audit 成功，受影響套件項 28 → 26（high 19 → 18、moderate 9 → 8、critical 維持 0），ECharts 與 js-yaml 通報已排除；不是宣稱整站無漏洞。仍有 12 個名稱可評估在上游 semver 範圍內更新，其餘牽涉 Hexo/plugin 上游修補，不直接採用 audit 建議的舊 major 回退。
+- 排除本機預覽連線阻礙：沙箱內 4000 埠瀏覽器逾時，獲准於沙箱外啟動 4001 埠後可開啟。390×844 實際瀏覽器核對日曆選取 2026-10-10、進文章後返回仍保留原日期；頁面 scrollWidth 375 ≤ viewport 390，該流程 error/warn log 為空。這是手機尺寸桌面瀏覽器測試，非真實手機或行動網路效能比較；畫面喜好仍由作者驗收。
+
 ## 2026-10-18，文章標籤依原稿順序顯示（完成；完整驗證通過；未部署）
 
 - 接續額度中斷前的未提交草稿，由 LUNA6 實作與針對測試、主線複核。建置時保存 canonical 原稿標籤次序；文章標籤連結、特色卡、JSON-LD keywords、文章瀏覽／A 面清單、navigation-index 與 random.json 共用排序 helper。保留原 Tag 關聯、名稱、路徑與集合；Hexo 複製頁面資料後以文章 ID 取得順序，長駐重建會重新讀取原稿及別名。
