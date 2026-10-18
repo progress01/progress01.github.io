@@ -62,6 +62,7 @@ test('Hexo helper defaults to all and preserves category/tag/date/url output sha
   vm.runInNewContext(script, {
     require: id => {
       if (id === '../tools/lib/content-browser') return require('../lib/content-browser');
+      if (id === '../tools/lib/post-tags') return require('../lib/post-tags');
       if (id === '../tools/data/legacy-surfaces.v1.json') return { schemaVersion: 1, posts: ['source/_posts/legacy.md'] };
       throw new Error(`unexpected require ${id}`);
     },

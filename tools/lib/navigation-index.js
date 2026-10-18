@@ -3,6 +3,7 @@ const crypto = require('crypto');
 const cheerio = require('cheerio');
 const moment = require('moment-timezone');
 const { passagesOf } = require('./navigation-anchors');
+const { getOrderedPostTagNames } = require('./post-tags');
 const { normalizeSurfaces, isSurfaceSubset } = require('./content-surfaces');
 const DEFAULT_LEGACY_SURFACES = require('../data/legacy-surfaces.v1.json');
 const TZ = 'Asia/Taipei';
@@ -86,7 +87,7 @@ function buildIndex({ posts, microblog, desk, origin, legacySurfaceManifest = DE
     const date = dateOf(post.date, post.title);
     const publishedAt = publishedAtOf(post.date, post.title);
     const record = { id: 'article:' + url, kind: 'article', sources: ['article'], title: plain(post.title), text: plain(post.content), url, publishedAt,
-      passages: passagesOf(post.content), categories: names(post.categories), tags: names(post.tags), date, dateKind: 'published',
+      passages: passagesOf(post.content), categories: names(post.categories), tags: getOrderedPostTagNames(post), date, dateKind: 'published',
       events: date ? [{ kind: 'published', date }] : [], learningItems: [], surfaces };
     records.push(record); byUrl.set(url, record);
   }

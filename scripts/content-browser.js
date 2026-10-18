@@ -5,6 +5,7 @@ if (!legacySurfaces || legacySurfaces.schemaVersion !== 1 || !Array.isArray(lega
   throw new Error('legacy_surface_manifest_invalid [tools/data/legacy-surfaces.v1.json]');
 }
 const legacyPostSources = new Set(legacySurfaces.posts);
+const { getOrderedPostTagNames } = require('../tools/lib/post-tags');
 
 hexo.extend.helper.register('content_browser_records', function(range = 'all') {
   const posts = filterPostsBySurface(this.site.posts.sort('-date stable_order_path').toArray(), range, {
@@ -13,7 +14,7 @@ hexo.extend.helper.register('content_browser_records', function(range = 'all') {
   });
   return posts.map(post => ({
     title: post.title, url: this.url_for(post.path), date: this.date(post.date, 'YYYY-MM-DD'),
-    categories: post.categories.toArray().map(item => item.name), tags: post.tags.toArray().map(item => item.name)
+    categories: post.categories.toArray().map(item => item.name), tags: getOrderedPostTagNames(post)
   }));
 });
 

@@ -6,6 +6,7 @@ const nunjucks = require('nunjucks');
 const test = require('node:test');
 const schemaJson = require('../../themes/next/scripts/helpers/schema-json');
 const { checkDocument } = require('../site-check');
+const { getOrderedPostTags } = require('../lib/post-tags');
 
 const template = fs.readFileSync(
   path.join(__dirname, '../../themes/next/layout/_partials/head/head-unique.njk'),
@@ -19,6 +20,7 @@ const base = {
   page: { path: 'index.html', title: 'Blog', date: new Date('2026-01-01T04:00:00Z'), categories: [], tags: [] },
   is_home: () => true,
   schema_json: schemaJson,
+  ordered_post_tags: getOrderedPostTags,
   full_url_for: value => value === '/' ? 'https://example.test/' : 'https://example.test' + value,
   moment: value => ({ format: () => new Date(value).toISOString() }),
   open_graph: () => '',

@@ -1,5 +1,6 @@
 // 自動產生隨機文章資料，讓隨機入口不必直接解析 search.xml。
 const { normalizeSurfaces } = require('../tools/lib/content-surfaces');
+const { getOrderedPostTagNames } = require('../tools/lib/post-tags');
 const legacySurfaceManifest = require('../tools/data/legacy-surfaces.v1.json');
 if (legacySurfaceManifest?.schemaVersion !== 1 || !Array.isArray(legacySurfaceManifest.posts)) {
   throw new Error('legacy_surface_manifest_invalid [tools/data/legacy-surfaces.v1.json]');
@@ -38,9 +39,7 @@ hexo.extend.generator.register('random_json', function(locals) {
     const categories = post.categories && typeof post.categories.toArray === 'function'
       ? post.categories.toArray().map(category => category.name)
       : [];
-    const tags = post.tags && typeof post.tags.toArray === 'function'
-      ? post.tags.toArray().map(tag => tag.name)
-      : [];
+    const tags = getOrderedPostTagNames(post);
 
     // 入口頁與站務文章不列入隨機內容，避免抽到控制頁或系統頁。
     if (!path || post.type === 'random' || categories.includes('站務')) return;

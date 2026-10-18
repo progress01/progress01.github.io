@@ -29,6 +29,7 @@ function randomGenerator() {
   const warnings = [];
   const generatorRequire = id => {
     if (id === '../tools/lib/content-surfaces') return require('../lib/content-surfaces');
+    if (id === '../tools/lib/post-tags') return require('../lib/post-tags');
     if (id === '../tools/data/legacy-surfaces.v1.json') return require('../data/legacy-surfaces.v1.json');
     throw new Error('Unexpected generator dependency: ' + id);
   };

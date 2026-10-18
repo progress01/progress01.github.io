@@ -1,6 +1,7 @@
 'use strict';
 
 const { filterPostsBySurface } = require('./content-browser');
+const { getOrderedPostTagNames } = require('./post-tags');
 
 function sourceName(post) {
   const source = String(post?.source || '').replaceAll('\\', '/').replace(/^\/+/, '');
@@ -24,6 +25,9 @@ function getProfileArticles({ posts, legacyPostSources = new Set(), onWarning } 
 }
 
 function readTagNames(post) {
+  if (post && typeof post === 'object' && post.tags && typeof post.tags.toArray === 'function') {
+    return [...new Set(getOrderedPostTagNames(post))];
+  }
   const values = post?.tags && typeof post.tags.toArray === 'function'
     ? post.tags.toArray()
     : Array.isArray(post?.tags) ? post.tags : [];

@@ -3,6 +3,7 @@ const path = require('path');
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const nunjucks = require('nunjucks');
+const { getOrderedPostTags } = require('../lib/post-tags');
 
 const templatePath = path.join(__dirname, '..', '..', 'themes', 'next', 'layout', '_macro', 'post.njk');
 const template = fs.readFileSync(templatePath, 'utf8');
@@ -33,6 +34,7 @@ function renderPost(overrides = {}) {
   };
   const env = new nunjucks.Environment(null, { autoescape: false });
   env.addGlobal('url_for', value => value);
+  env.addGlobal('ordered_post_tags', post => getOrderedPostTags(post));
   env.addGlobal('escape_html', value => String(value));
   env.addGlobal('symbolsTime', () => '1 分鐘');
   return env.renderString(renderedSections, {

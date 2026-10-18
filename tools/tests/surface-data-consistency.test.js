@@ -25,6 +25,7 @@ function loadHexoCallback(file, kind, manifest = repoManifest) {
   const generatorRequire = id => {
     if (id === '../tools/lib/content-surfaces') return require('../lib/content-surfaces');
     if (id === '../tools/lib/content-browser') return require('../lib/content-browser');
+    if (id === '../tools/lib/post-tags') return require('../lib/post-tags');
     if (id === '../tools/lib/post-surface') return require('../lib/post-surface');
     if (id === '../tools/data/legacy-surfaces.v1.json') return manifest;
     throw new Error(`unexpected generator dependency: ${id}`);

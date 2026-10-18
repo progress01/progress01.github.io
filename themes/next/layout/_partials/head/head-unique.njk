@@ -83,9 +83,9 @@
     {%- for category in page.categories.toArray() %}
     {{ schema_json(category.name) | safe }}{% if not loop.last %},{% endif %}
     {%- endfor %}
-  ]{% endif %}{% if page.tags and page.tags.length %},
+  ]{% endif %}{% set orderedTags = ordered_post_tags(page) %}{% if orderedTags and orderedTags.length %},
   "keywords": [
-    {%- for tag in page.tags.toArray() %}
+    {%- for tag in orderedTags %}
     {{ schema_json(tag.name) | safe }}{% if not loop.last %},{% endif %}
     {%- endfor %}
   ]{% endif %}{% endif %}

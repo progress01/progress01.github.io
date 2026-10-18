@@ -4,6 +4,7 @@
 const { parse } = require('hexo-front-matter');
 const path = require('path');
 const { loadTaxonomy } = require('./tag-taxonomy');
+const { clearPostTagOrders, rememberPostTagOrder } = require('../tools/lib/post-tags');
 
 const TAG_ALIASES = loadTaxonomy().aliases;
 
@@ -40,6 +41,7 @@ if (typeof hexo !== 'undefined' && hexo.extend?.filter) hexo.extend.filter.regis
   // Reload on every generation so a newly registered tag is usable in a
   // long-running Hexo server without restarting the process.
   const aliases = loadAliases(hexo.base_dir || process.cwd());
+  clearPostTagOrders();
   const posts = this.locals.get('posts').toArray();
   return posts.reduce((promise, post) => promise.then(() => {
     // 以文章原始 front matter 為準；資料庫中的關聯可能因舊文章更新而尚未完整。
@@ -47,9 +49,12 @@ if (typeof hexo !== 'undefined' && hexo.extend?.filter) hexo.extend.filter.regis
     try {
       sourceTags = parse(post.raw || '').tags;
     } catch (error) {
-      sourceTags = post.tags;
+      sourceTags = undefined;
     }
-    return post.setTags(getCanonicalTags(sourceTags == null ? post.tags : sourceTags, aliases));
+    const hasSourceOrder = sourceTags != null;
+    const canonicalTags = getCanonicalTags(hasSourceOrder ? sourceTags : post.tags, aliases);
+    if (!hasSourceOrder) canonicalTags.sort();
+    return post.setTags(canonicalTags).then(() => rememberPostTagOrder(post, canonicalTags));
   }), Promise.resolve());
 });
 
