@@ -1,4 +1,4 @@
-/* Shared, DOM-free search logic; also exercised by Node regression tests. */
+/* Shared search logic and recent-list DOM rendering, exercised by Node regression tests. */
 (function(root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.NavigationSearch = factory();
@@ -29,6 +29,57 @@
       .filter(({ item }) => category === 'all' || item.categories.includes(category));
     return new Set(eligible.slice(0, 10).map(({ index }) => index));
   }
+  function recentArticles(records, surface, category = 'all') {
+    const compareText = (left, right) => left < right ? -1 : left > right ? 1 : 0;
+    return records.filter(record => record.kind === 'article' &&
+      (surface === 'all' || record.surfaces.includes(surface)) &&
+      (category === 'all' || record.categories.includes(category)))
+      .slice().sort((a, b) => compareText(String(b.publishedAt || b.date || ''), String(a.publishedAt || a.date || '')) ||
+        compareText(a.url, b.url)).slice(0, 10);
+  }
+  function renderRecent(document, recent, records, surface, category = 'all', restoreFocus = false) {
+    recent.querySelectorAll('[data-search-category]').forEach(button => {
+      const active = button.dataset.searchCategory === category;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    const list = recent.querySelector('[data-search-recent-list]');
+    if (!list) return [];
+    list.replaceChildren();
+    const selected = recentArticles(records, surface, category);
+    selected.forEach(record => {
+      const link = document.createElement('a');
+      link.className = 'search-recent-item';
+      link.href = record.url;
+      link.dataset.searchRecentItem = '';
+      const date = document.createElement('time');
+      date.className = 'search-recent-date';
+      date.dateTime = record.publishedAt || record.date || '';
+      date.textContent = record.date ? record.date.slice(5) : '';
+      const copy = document.createElement('span');
+      copy.className = 'search-recent-copy';
+      const categories = document.createElement('span');
+      categories.className = 'search-recent-category';
+      categories.textContent = record.categories.join(' / ');
+      const title = document.createElement('span');
+      title.className = 'search-recent-title';
+      title.textContent = record.title;
+      copy.append(categories, title);
+      const arrow = document.createElement('span');
+      arrow.className = 'search-recent-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '↗';
+      link.append(date, copy, arrow);
+      list.append(link);
+    });
+    const note = recent.querySelector('[data-search-recent-note]');
+    if (note) note.textContent = category === 'all' ? '最近 10 篇' : '分類內最新 10 篇';
+    const empty = recent.querySelector('[data-search-recent-empty]');
+    if (empty) empty.hidden = selected.length > 0;
+    if (restoreFocus) [...recent.querySelectorAll('[data-search-category]')]
+      .find(button => button.dataset.searchCategory === category)?.focus();
+    return selected;
+  }
   const tokens = query => [...new Set(String(query).trim().toLowerCase().split(/\s+/).filter(Boolean))];
   const safeLocal = url => typeof url === 'string' && /^\/(?!\/)/.test(url) && !/[\\\u0000-\u001f\u007f]/.test(url);
   const escape = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -40,6 +91,9 @@
     for (const record of data.records) {
       if (!record || typeof record.id !== 'string' || ids.has(record.id) || !labels[record.kind] || !validSurfaces(record.surfaces) ||
           typeof record.title !== 'string' || typeof record.text !== 'string' || !safeLocal(record.url) ||
+          Object.prototype.hasOwnProperty.call(record, 'publishedAt') && (typeof record.publishedAt !== 'string' ||
+            !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(record.publishedAt) ||
+            Number.isNaN(Date.parse(record.publishedAt)) || new Date(record.publishedAt).toISOString() !== record.publishedAt) ||
           !Array.isArray(record.sources) || !record.sources.length || record.sources.some(value => !labels[value]) ||
           !Array.isArray(record.categories) || record.categories.some(value => typeof value !== 'string') ||
           !Array.isArray(record.tags) || record.tags.some(value => typeof value !== 'string') ||
@@ -115,5 +169,5 @@
       `<div class="search-result-surfaces">收錄於：${escape(surfaceLabel)}</div>` +
       `<p class="search-result">${highlight(snippet, query)}</p><div class="search-result-location">${escape(locationLabel)}${detail ? ' · ' + detail : ''}</div></li>`;
   }
-  return { labels, surfaceLabels, parse, tokens, search, render, highlight, eventsFor, defaultSurface, resetFilters, canRestoreViewState, recentIndexes };
+  return { labels, surfaceLabels, parse, tokens, search, render, highlight, eventsFor, defaultSurface, resetFilters, canRestoreViewState, recentIndexes, recentArticles, renderRecent };
 });

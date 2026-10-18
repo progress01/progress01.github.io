@@ -1,17 +1,6 @@
 /* global CONFIG, NexT, pjax, LocalSearch, NavigationSearch */
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (!CONFIG.path) {
-    // Search DB path
-    console.warn('`hexo-generator-searchdb` plugin is not installed!');
-    return;
-  }
-  const localSearch = new LocalSearch({
-    path             : CONFIG.path,
-    top_n_per_article: CONFIG.localsearch.top_n_per_article,
-    unescape         : CONFIG.localsearch.unescape
-  });
-
   const input = document.querySelector('.search-input');
   const container = document.querySelector('.search-result-container');
   const overlay = document.querySelector('.search-pop-overlay');
@@ -51,6 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderFailureState = () => {
     container.innerHTML = '<div class="search-empty-state" role="status" aria-live="polite" aria-atomic="true"><i class="far fa-frown fa-3x" aria-hidden="true"></i><p>搜尋索引暫時無法載入。</p><button type="button" class="search-retry" data-search-retry>重試載入搜尋索引</button></div>';
   };
+  const renderDependencyFailureState = () => {
+    container.innerHTML = '<div class="search-empty-state" role="status" aria-live="polite" aria-atomic="true"><i class="far fa-frown fa-3x" aria-hidden="true"></i><p>搜尋元件未能載入，搜尋暫時無法使用。請重新載入頁面後再試。</p><button type="button" class="search-reload" data-search-reload>重新載入頁面</button></div>';
+  };
+  const localSearchAvailable = Boolean(CONFIG.path && typeof LocalSearch === 'function');
+  const localSearch = localSearchAvailable ? new LocalSearch({
+    path             : CONFIG.path,
+    top_n_per_article: CONFIG.localsearch?.top_n_per_article,
+    unescape         : CONFIG.localsearch?.unescape
+  }) : { isfetched: false, highlightSearchWords() {} };
+  if (!localSearchAvailable) {
+    searchState = 'failed';
+    renderDependencyFailureState();
+  }
   const pageStateUrl = () => window.location.pathname + window.location.search + window.location.hash;
   const readViewState = () => {
     try {
@@ -111,32 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recent = container.querySelector('[data-search-recent]');
     if (!recent) return;
 
-    recent.querySelectorAll('[data-search-category]').forEach(button => {
-      const isActive = button.dataset.searchCategory === selectedCategory;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    const recentItems = [...recent.querySelectorAll('[data-search-recent-item]')];
-    const recentCandidates = recentItems.map(item => ({
-      surfaces: (item.dataset.searchRecentSurfaces || '').split('|').filter(Boolean),
-      categories: (item.dataset.searchRecentCategories || '').split('|').filter(Boolean)
-    }));
-    const visibleSet = NavigationSearch.recentIndexes(recentCandidates, filters.surface, selectedCategory);
-    const visibleItems = recentItems.filter((item, index) => {
-      const isVisible = visibleSet.has(index);
-      item.hidden = !isVisible;
-      return isVisible;
-    });
-    const recentNote = recent.querySelector('[data-search-recent-note]');
-    if (recentNote) recentNote.textContent = selectedCategory === 'all' ? '最近 10 篇' : '分類內最新 10 篇';
-    const emptyState = recent.querySelector('[data-search-recent-empty]');
-    if (emptyState) emptyState.hidden = visibleItems.length > 0;
-    if (restoreFocus) {
-      const selectedButton = [...recent.querySelectorAll('[data-search-category]')]
-        .find(button => button.dataset.searchCategory === selectedCategory);
-      if (selectedButton) selectedButton.focus();
-    }
+    NavigationSearch.renderRecent(document, recent, records, filters.surface, selectedCategory, restoreFocus);
   };
 
   const parseSearchData = responseText => NavigationSearch.parse(responseText);
@@ -155,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchSearchData = () => {
+    if (!localSearchAvailable) return;
     if (searchState === 'loading' || searchState === 'loaded') return;
     searchState = 'loading';
     renderLoadingState();
@@ -200,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  localSearch.highlightSearchWords(document.querySelector('.post-body'));
-  if (CONFIG.localsearch.preload) {
+  localSearch?.highlightSearchWords(document.querySelector('.post-body'));
+  if (localSearchAvailable && CONFIG.localsearch?.preload) {
     localSearch.fetchData();
   }
 
@@ -224,6 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
     restoreViewState();
   });
   container.addEventListener('click', event => {
+    if (event.target.closest('[data-search-reload]')) {
+      window.location.reload();
+      return;
+    }
     const retry = event.target.closest('[data-search-retry]');
     if (retry) {
       input.focus();
@@ -304,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filters.surface = defaultSurface;
     const surfaceFilter = filterElements.find(element => element.dataset.navigationFilter === 'surface');
     if (surfaceFilter) surfaceFilter.value = defaultSurface;
-    localSearch.highlightSearchWords(document.querySelector('.post-body'));
+    localSearch?.highlightSearchWords(document.querySelector('.post-body'));
     onPopupClose();
     inputEventFunction();
   });
