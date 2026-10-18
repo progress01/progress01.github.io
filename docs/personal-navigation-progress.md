@@ -1,9 +1,18 @@
 # 個人網誌動線改善進度
 
+## 2026-10-19，本輪收尾與搬家後修正評估（程式階段結案；未部署）
+
+- 依作者要求停止擴大整理範圍。日常入口／新增紀錄／整站發布與備份流程、乾淨依賴還原、歷史網址相容、搜尋與返回狀態、同時刻文章及原稿標籤排序等已分批修正並驗證；本輪可以階段結案，回到正常寫作與使用。這不代表已部署、作者畫面驗收完成，或所有依賴通報歸零。
+- 最後一批僅更新 lockfile 中既有範圍允許的傳遞依賴；package.json、直接依賴範圍不變，無 major 升級。14 個既有套件路徑更新，新增 morgan 所需的 nested on-finished；所有版本符合父依賴範圍，npm ls 無 invalid／missing／extraneous。未套用 audit 建議的 Hexo／plugin 舊 major 回退。
+- 最終完整驗證於 10/18 完成，362/362 通過、0 失敗／略過，日誌 `D:\myblog1988\dependency-patch-verify.log`。10/19 收尾另核對來源與 public 指紋仍吻合，未把前日憑證改記為當日驗證；下次發布由正常流程判斷是否重驗。`dependency-transitive-after.json` 與前批基準的 sources、bodies、recommendations、tagLinks、orders、datasets 全部一致，包含 892 個 source 檔、283 篇正文與 12,045 處標籤呈現；一次性證據仍在 ignored cache。
+- 本輪相容修補後 audit 受影響套件項 28 → 15（10 high、5 moderate、0 critical），由 3 個底層通報沿依賴樹傳遞，不能解讀成 15 個已證實的本站可利用漏洞。braces 與 sprintf-js 查核時尚無 patched version；highlight.js 修補版超出舊 symbols-count-time 支線的允許範圍，需後續獨立評估 plugin。上游證據：[braces](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)、[highlight.js](https://github.com/advisories/GHSA-7wwv-vh3v-89cq)、[sprintf-js](https://github.com/advisories/GHSA-hp3w-g68c-fv3c)。
+- 補做桌面瀏覽器 390／375px 寬度操作：日曆選日進文後返回保留日期；搜尋「go on」搭配分類進文後返回保留查詢與結果；圖牆閱讀篩選可用、心得另開分頁，原頁前進返回保留篩選；閱讀頁熱力圖及文章入口可載入。受查頁無水平溢出，日曆／搜尋／閱讀流程未見 error／warn。此為手機尺寸桌面瀏覽器抽查，非全部互動、實機手機或 LCP／CLS 效能驗收；畫面與閱讀感受仍由作者確認。
+- 明確保留的後續：① 正式發布及線上核對，本輪沒有部署授權；② 作者實際手機與閱讀感受驗收，速度／LCP／CLS 若有需要再量測；③ 上述 3 類上游依賴維護；④ 10/16 表列的 8 個外站連結仍受存取限制，本次再查也未能確認內容，不能直接判為失效。這些與新增功能／進一步美化分開，不再自動延伸成下一輪全面整理。提交與 source 遠端備份結果以本次交付為準。
+
 ## 2026-10-18，ECharts 與 YAML 相容版本修補（完成；完整驗證通過；未部署）
 
 - LUNA6 盤點與實作、主線安裝及複核。ECharts 6.0.0 → 6.1.0、js-yaml 4.1.1 → 4.3.2，僅連帶更新 zrender 6.0.0 → 6.1.0；其餘鎖定版本不變，維持原 major，不執行 audit fix。`source/lib/echarts.min.js` 同步官方 npm dist，保留 Apache 授權；新增 vendor/dist 完全一致與日曆所用 API 相容檢查。
-- 日曆、YAML、內容／標籤等針對測試 40/40 通過；最終 `npm run verify` 362/362 通過、0 失敗／略過，來源與產物指紋吻合，日誌 `D:\myblog1988\dependency-patch-verify.log`。獨立比對 283 篇正文、延伸閱讀、12,045 處標籤順序及兩份 JSON 資料不變；source 僅 ECharts vendor 更動，其餘 891 檔雜湊一致。一次性證據為 ignored cache 的 `dependency-direct-after.json` 與 `dependency-patch-before-lock.json`。
+- 日曆、YAML、內容／標籤等針對測試 40/40 通過；最終 `npm run verify` 362/362 通過、0 失敗／略過，來源與產物指紋吻合，日誌另存為 `D:\myblog1988\dependency-direct-verify.log`。獨立比對 283 篇正文、延伸閱讀、12,045 處標籤順序及兩份 JSON 資料不變；source 僅 ECharts vendor 更動，其餘 891 檔雜湊一致。一次性證據為 ignored cache 的 `dependency-direct-after.json` 與 `dependency-patch-before-lock.json`。
 - 連網 audit 成功，受影響套件項 28 → 26（high 19 → 18、moderate 9 → 8、critical 維持 0），ECharts 與 js-yaml 通報已排除；不是宣稱整站無漏洞。仍有 12 個名稱可評估在上游 semver 範圍內更新，其餘牽涉 Hexo/plugin 上游修補，不直接採用 audit 建議的舊 major 回退。
 - 排除本機預覽連線阻礙：沙箱內 4000 埠瀏覽器逾時，獲准於沙箱外啟動 4001 埠後可開啟。390×844 實際瀏覽器核對日曆選取 2026-10-10、進文章後返回仍保留原日期；頁面 scrollWidth 375 ≤ viewport 390，該流程 error/warn log 為空。這是手機尺寸桌面瀏覽器測試，非真實手機或行動網路效能比較；畫面喜好仍由作者驗收。
 
