@@ -22,6 +22,12 @@ test('接受中文路徑、已知獨立專案與外站；仍攔截其他缺檔�
   assert.match(checkUrl('/learning/Roadmap/', 'index.html', options), /不存在/);
 });
 
+test('無副檔名網址可對應到同名 .html，與 GitHub Pages 的 404.html 行為一致', () => {
+  const withNotFound = { ...options, files: new Set([...options.files, '404.html']) };
+  assert.equal(checkUrl('/404', 'index.html', withNotFound), null);
+  assert.match(checkUrl('/404', 'index.html', options), /站內目標不存在/);
+});
+
 test('實際 HTML 中的缺檔與錯誤圖牆數字會讓檢查失敗', () => {
   const html = '<a href="../roadmap/">索引</a>' +
     '<button data-photo-wall-filter="all"><span>1</span></button>' +

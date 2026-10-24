@@ -35,6 +35,27 @@ function getCanonicalTags(tags, aliases = TAG_ALIASES) {
   return normalized;
 }
 
+// 找出無法對應到主標籤的名稱；getCanonicalTags 會略過它們，建置時需提醒作者。
+function getUnregisteredTags(tags, aliases = TAG_ALIASES) {
+  const unregistered = [];
+
+  getTagNames(tags).forEach(tag => {
+    const known = aliases instanceof Map ? aliases.has(tag) : Object.hasOwn(aliases, tag);
+    if (!known && !unregistered.includes(tag)) unregistered.push(tag);
+  });
+
+  return unregistered;
+}
+
+function formatUnregisteredTagWarnings(entries) {
+  if (!entries.length) return [];
+  return [
+    `⚠ 未登錄標籤：${entries.length} 篇文章的標籤不在 source/_data/content-tags.yml，這些標籤不會出現在網站上`,
+    ...entries.map(entry => `  ${entry.source}：${entry.tags.join('、')}`),
+    '  請改用已登錄的主標籤，或在 content-tags.yml 登錄主標籤／別名。'
+  ];
+}
+
 // Hexo 的 tags 是由 PostTag 關聯表建立，必須在 generate 前更新關聯，
 // 才能同時影響文章上的標籤連結、site.tags 數量和標籤文章列表。
 if (typeof hexo !== 'undefined' && hexo.extend?.filter) hexo.extend.filter.register('before_generate', function() {
@@ -43,6 +64,7 @@ if (typeof hexo !== 'undefined' && hexo.extend?.filter) hexo.extend.filter.regis
   const aliases = loadAliases(hexo.base_dir || process.cwd());
   clearPostTagOrders();
   const posts = this.locals.get('posts').toArray();
+  const unregisteredEntries = [];
   return posts.reduce((promise, post) => promise.then(() => {
     // 以文章原始 front matter 為準；資料庫中的關聯可能因舊文章更新而尚未完整。
     let sourceTags;
@@ -52,10 +74,14 @@ if (typeof hexo !== 'undefined' && hexo.extend?.filter) hexo.extend.filter.regis
       sourceTags = undefined;
     }
     const hasSourceOrder = sourceTags != null;
+    const unregistered = getUnregisteredTags(hasSourceOrder ? sourceTags : post.tags, aliases);
+    if (unregistered.length) unregisteredEntries.push({ source: `source/${String(post.source || '').replaceAll('\\', '/')}`, tags: unregistered });
     const canonicalTags = getCanonicalTags(hasSourceOrder ? sourceTags : post.tags, aliases);
     if (!hasSourceOrder) canonicalTags.sort();
     return post.setTags(canonicalTags).then(() => rememberPostTagOrder(post, canonicalTags));
-  }), Promise.resolve());
+  }), Promise.resolve()).then(() => {
+    formatUnregisteredTagWarnings(unregisteredEntries).forEach(line => hexo.log.warn(line));
+  });
 });
 
-module.exports = { TAG_ALIASES, loadAliases, getTagNames, getCanonicalTags };
+module.exports = { TAG_ALIASES, loadAliases, getTagNames, getCanonicalTags, getUnregisteredTags, formatUnregisteredTagWarnings };

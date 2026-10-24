@@ -43,7 +43,8 @@ function checkUrl(reference, from, { origin, files, externalProjects = [] }) {
   if (externalProjects.some(project => pathname === project.path || pathname.startsWith(project.path))) return null;
   const relative = pathname.replace(/^\/+/, '');
   const target = !relative || relative.endsWith('/') ? relative + 'index.html' : relative;
-  if (files.has(target) || files.has(target + '/index.html')) return null;
+  // GitHub Pages 會把 /404 這類無副檔名網址對應到 404.html。
+  if (files.has(target) || files.has(target + '/index.html') || files.has(target + '.html')) return null;
   return `站內目標不存在：${reference} → ${pathname}`;
 }
 
@@ -70,7 +71,7 @@ function checkDocument(html, from, options) {
     const pagePath = String(from).replace(/\\/g, '/');
     const outputRoute = pagePath === 'index.html'
       ? '/'
-      : '/' + pagePath.replace(/\/index\.html$/, '/');
+      : '/' + pagePath.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
     const legacyTarget = LEGACY_ROUTE_ALIASES.get(outputRoute);
     const isRoot = pagePath === 'index.html';
     const isCollection = /^(?:page\/\d+(?:\/|$)|categories\/|tags\/|archives\/)/.test(pagePath);
