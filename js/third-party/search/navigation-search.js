@@ -38,8 +38,14 @@
         compareText(a.url, b.url)).slice(0, 10);
   }
   function renderRecent(document, recent, records, surface, category = 'all', restoreFocus = false) {
+    // 分類分頁只列目前範圍內有文章的分類，A 面不出現只有 B 面文章的分類。
+    const available = new Set(records.filter(record => record.kind === 'article' &&
+      (surface === 'all' || record.surfaces.includes(surface))).flatMap(record => record.categories));
+    if (category !== 'all' && !available.has(category)) category = 'all';
     recent.querySelectorAll('[data-search-category]').forEach(button => {
-      const active = button.dataset.searchCategory === category;
+      const value = button.dataset.searchCategory;
+      button.hidden = value !== 'all' && !available.has(value);
+      const active = value === category;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-selected', active ? 'true' : 'false');
     });

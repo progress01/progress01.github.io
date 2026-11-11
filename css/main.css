@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #b03b86;
+    background: #38ff7e;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -5533,6 +5533,23 @@ body {
     padding: 12px 13px;
   }
 }
+.post-draft-status {
+  box-sizing: border-box;
+  max-width: 680px;
+  margin: 0 0 22px;
+  color: #5d5146;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.post-draft-status a {
+  color: #a34f30;
+  font-weight: 600;
+  border-bottom: 1px dashed #c99572;
+}
+.post-draft-status span {
+  color: #756758;
+}
 .main-inner,
 .main-inner .post-block,
 .main-inner .post-body,
@@ -5591,6 +5608,36 @@ body {
 @media (max-width: 430px) {
   .index .home-landing-entry-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  body:not(:has(.main-inner.post)) .sidebar-toggle,
+  body:not(:has(.sidebar-nav-active)) .sidebar-toggle {
+    display: none;
+  }
+}
+.post-block:has(#life-index) .post-header,
+.post-block:has(#random-portal) .post-header,
+.post-block:has(#status-archive) .post-header {
+  display: none;
+}
+.index .home-pick small {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .index .home-archive-rail-main {
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+  .index .home-pick-grid {
+    grid-row: 1/span 2;
+  }
+  .index .home-pick-updated {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 6px;
+    white-space: normal;
   }
 }
 .content-browser {
@@ -5897,22 +5944,14 @@ body {
 }
 [data-navigation-anchor],
 .status-item,
-.reading-calendar-update-card {
+.draft-desk-card {
   scroll-margin-top: 90px;
 }
 .status-item:target,
-.reading-calendar-update-card:target {
+.draft-desk-card:target {
   outline: 2px solid #c96545;
   outline-offset: 5px;
   background-color: #fff3d6;
-}
-.reading-calendar-update-note {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.8;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
 }
 @media (max-height: 550px) {
   .search-popup {

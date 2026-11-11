@@ -125,7 +125,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu" data-navigation-surface="memory"><li class="menu-item menu-item-home"><a href="/memory/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>更新日曆</a></li>
+  <ul class="main-menu menu" data-navigation-surface="memory"><li class="menu-item menu-item-home"><a href="/memory/" rel="section"><i class="fa fa-home fa-fw"></i>個人記憶庫</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>內容分類</a></li><li class="menu-item menu-item-reading"><a href="/reading-log/" rel="section"><i class="fa fa-book fa-fw"></i>生活索引</a></li><li class="menu-item menu-item-reading_desk"><a href="/reading/" rel="section"><i class="fa fa-book-open fa-fw"></i>草稿夾</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>記憶圖牆</a></li><li class="menu-item menu-item-calendar"><a href="/calendar/" rel="section"><i class="fa fa-calendar fa-fw"></i>發表日曆</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" tabindex="0" class="popup-trigger" aria-label="搜尋"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -163,9 +163,9 @@
         <small>月份依發表／記錄／加入學習日期；選擇內容後依該來源日期篩選。</small>
       </div>
       <div class="search-result-container" aria-live="polite">
-        <section class="search-recent" data-search-recent aria-label="最近更新文章">
+        <section class="search-recent" data-search-recent aria-label="最近發表文章">
           <div class="search-recent-heading">
-            <span class="search-recent-kicker">JUST IN / 最近更新</span>
+            <span class="search-recent-kicker">JUST IN / 最近發表</span>
             <span class="search-recent-note" data-search-recent-note>最近 10 篇</span>
           </div>
 
@@ -180,7 +180,7 @@
           </div>
 
           <div class="search-recent-list" data-search-recent-list></div>
-          <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有更新，可以直接搜尋完整紀錄。</p>
+          <p class="search-recent-empty" data-search-recent-empty hidden>這個分類最近沒有發表，可以直接搜尋完整紀錄。</p>
         </section>
       </div>
     </div>
@@ -610,14 +610,14 @@
     <section class="home-landing" aria-label="首頁內容入口">
       <section class="home-random-feature" aria-labelledby="home-random-title">
         <div class="home-random-heading">
-          <span>A-01 / RANDOM ACCESS</span>
+          <span>TRACK 01 / RANDOM ACCESS</span>
           <small id="home-random-status" aria-live="polite">正在翻找一篇紀錄……</small>
         </div>
         <div class="home-random-card">
           <div class="home-random-copy">
             <div id="home-random-meta" class="home-random-meta">RANDOM / LOADING</div>
             <h2 id="home-random-title">今天隨機翻到……</h2>
-            <p id="home-random-excerpt">從公開文章與持續整理中的草稿裡，隨機找回一篇曾經留下的內容。</p>
+            <p id="home-random-excerpt">從公開文章裡，隨機找回一篇曾經留下的內容。</p>
             <div class="home-random-actions">
               <a id="home-random-open" class="home-random-button is-primary" href="/random/">閱讀這篇 ↗</a>
               <button id="home-random-again" class="home-random-button" type="button" disabled>換一篇</button>
@@ -640,7 +640,7 @@
 
       <div class="home-archive-rail">
         <div class="home-archive-rail-main">
-          <span class="home-archive-rail-label">A-02 / DJ PLAYBACK</span>
+          <span class="home-archive-rail-label">TRACK 02 / DJ PLAYBACK</span>
           <strong class="home-archive-rail-heading">隨機點播</strong>
           <div class="home-pick-grid">
             <a id="home-dj-audio" class="home-pick" href="/random/">
@@ -734,7 +734,7 @@
               watch: ['TAPE: SCREEN_NOTE', 'TYPE: WATCH LOG', 'STATUS: ARCHIVED'],
               daily: ['TAPE: LIFE_NOTE', 'TYPE: DAILY LOG', 'STATUS: CONTINUING'],
               learning: ['TAPE: LEARNING_NOTE', 'TYPE: STUDY LOG', 'STATUS: ' + (record.note || '持續更新')],
-              work: ['TAPE: WORK_NOTE', 'TYPE: KNOWLEDGE LOG', 'STATUS: ' + (record.note || '去脈絡化紀錄')],
+              work: ['TAPE: WORK_NOTE', 'TYPE: KNOWLEDGE LOG', 'STATUS: ' + (record.note || '工作紀錄')],
               generic: ['TAPE: ARCHIVE_RECORD', 'TYPE: TEXT LOG', 'STATUS: READY']
             }[kind];
             var cover = typeof record.cover === 'string' && /^\/images\/[^?#]+$/.test(record.cover) &&
@@ -759,7 +759,7 @@
             renderVisual(record);
             open.href = record.url;
             again.disabled = records.length < 2;
-            status.textContent = '從公開文章與持續整理中的草稿隨機抽出';
+            status.textContent = '從公開文章隨機抽出';
             saveSelection(record.url);
           }
 
@@ -813,7 +813,7 @@
             .catch(function () {
               status.textContent = '隨機內容暫時無法讀取，可以改看全部文章。';
               title.textContent = '完整文章仍然照時間保存';
-              excerpt.textContent = '前往全部文章查看所有公開文章與持續整理中的草稿。';
+              excerpt.textContent = '前往全部文章查看所有公開文章。';
               renderVisual({ kind: 'generic', date: '' });
               open.href = '/archives/';
               open.textContent = '查看全部文章 ↗';
@@ -827,7 +827,7 @@
         <a class="home-landing-entry" href="/archives/">
           <span class="home-landing-label">01 / ARCHIVE</span>
           <h2>全部文章</h2>
-          <p>依發表時間查看所有文章與公開草稿。</p>
+          <p>依發表時間查看所有文章。</p>
           <span class="home-landing-link">OPEN ARCHIVE ↗</span>
         </a>
         <a class="home-landing-entry" href="/reading-log/">
@@ -843,10 +843,10 @@
           <span class="home-landing-link">OPEN DRAFTS ↗</span>
         </a>
         <a class="home-landing-entry" href="/photos/">
-          <span class="home-landing-label">04 / MEMORY</span>
+          <span class="home-landing-label">04 / PHOTOS</span>
           <h2>記憶圖牆</h2>
           <p>讓圖片替文字留下一點空氣。</p>
-          <span class="home-landing-link">OPEN MEMORY ↗</span>
+          <span class="home-landing-link">OPEN PHOTOS ↗</span>
         </a>
       </nav>
 
@@ -909,12 +909,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
+      <span>總字數：</span>
     <span title="總字數">323k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span>所需總閱讀時間 &asymp;</span>
     <span title="所需總閱讀時間">4:54</span>
   </span>
 </div>
