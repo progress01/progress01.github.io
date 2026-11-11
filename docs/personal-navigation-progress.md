@@ -1,5 +1,45 @@
 # 個人網誌動線改善進度
 
+## 2026-11-11，草稿夾改版（完成；未部署）
+
+- 依 `部落格檢查紀錄6-11-10-呈現與文字檢查9-草稿夾設計.md`，作者同意：草稿夾只記「還有什麼沒寫完、多久沒動」，哪天公開交給發表日曆；拿掉熱力圖；`learning_status` 併進草稿夾。
+- 資料 `source/reading-desk.yml`：state 改成 `writing`／`stuck`／`dropped`／`done`（原 24 個 `learning` → `writing`，1 個 `published` → `done`）；新增選填 `next`（下一步）、`last_edited`（上次動筆）。`note` 保留給搜尋，頁面不顯示。`content-check` 與 `npm run record` 跟著改。
+- 上次動筆：`last_edited` 優先，否則用文章 front matter 的 `updated`。沒用 git 日期，因為 git 會把 AI 整理的 commit（例如 9/29、10/16）也算成動筆，且 commit 前後會讓產物不一致。
+- 頁面 `/reading/` 改成建置時產生（`scripts/draft-desk.js` 的 `{% draft_desk %}`，邏輯在 `tools/lib/draft-desk.js`）：「還沒完稿」依上次動筆由舊到新；「放下」「完稿」收合。搜尋連到 `/reading/#id` 時會打開收合區並捲到卡片。卡片標題不用 heading，側欄目錄只列三區。
+- 文章頁：草稿夾裡未完稿的文章，在 🚧 框下方加一行「還沒完稿：下一步，……（上次動筆 ……）」連回草稿夾；列表卡片 STATUS 改讀草稿夾狀態。15 篇文章刪掉 front matter 的 `learning_status: 進行中`（只刪這一行）。隨機卡備註不再讀 `learning_status`。
+- 舊熱力圖的測試（calendar、custom-page-logic、deep link）移除或改寫；新增 `tools/tests/draft-desk.test.js`。
+- 未處理：`tools/lib/profile-learning.js`（舊 A 面選集 helper，已不顯示）仍讀 `learning_status`，現在永遠回傳空清單，刪不刪和 `profile-home.yml` 一起決定。25 項的狀態和下一步要作者逐項填。
+- 驗證：`npm run verify` 373/373 通過；本機看過 `/reading/`（桌機、手機）、文章頁提示行、`/reading/#reading-topic-25` 深層連結。畫面由作者驗收。未提交、未部署。
+
+## 2026-11-11，版面檢查的三個修正（完成；未部署）
+
+- 依本機看版結果，作者同意修三個版面問題；只改 CSS，新檔 `themes/next/source/css/_custom/layout-fixes.styl`，由 `main.styl` 最後載入。
+- 手機與平板（≤991px）頁首已有選單，浮動側欄按鈕只留在有目錄的文章頁；其他頁面不再蓋住內文。生活索引等卡帶頁雖然有目錄，但不是文章頁，也一併隱藏。
+- 生活索引、隨機傳送門、碎碎念歸檔隱藏主題預設的頁面標題，畫面上只留卡帶區塊自己的 `h1`。草稿夾頁沒有重複標題，等草稿夾重新設計時再看。
+- B 面隨機點播：日期不斷行；768–1279px 時狀態字移到點播下方，書名有足夠寬度。1280px 以上維持原本三欄。
+- 驗證：`npm run verify` 368/368 通過；本機 375／800／1100／1400px 實際看過。畫面由作者驗收。未提交、未部署。
+
+## 2026-11-10，設計邏輯對齊（完成；未部署）
+
+- 依 `部落格檢查紀錄\2026-11-10-呈現與文字檢查\18-設計邏輯互相打架.md`。作者決定：A 面文章上一篇／下一篇只在 A 面循環；站務不算進熱力圖；工作卡片預設標籤改「工作紀錄」；「收錄於」只在含 profile 的文章顯示。
+- `scripts/stable-post-order.js`：含 profile 的文章用 A 面文章序列計算 prev/next，其他文章維持全站序；新增單元測試。這一條取代 2026-09-27「文章沿用 memory navigation context」中與上一篇／下一篇有關的部分。
+- `scripts/calendar-generator.js`：`calendar.json`、`calendar-posts.json` 排除站務分類，和隨機抽文章一致。
+- `_macro/post.njk`：B 面專屬文章不輸出「收錄於」；`post-surface-output-check`、`surface-copy-check` 與測試改為 B 面專屬文章必須沒有 marker。
+- 名稱跟著實際算法：選單「首頁」→「個人記憶庫」；日曆「更新日曆」→「發表日曆」（選單、頁面標題、生活索引卡片）；搜尋「最近更新」→「最近發表」。同日稍早把日曆標題改成「更新日曆」是錯的，這次一併更正。
+- 搜尋「最近發表」的分類分頁只列目前範圍有文章的分類（`navigation-search.js`）；選到範圍內沒有的分類時改回「全部」。
+- 卡片預設標籤「去脈絡化工作紀錄／去脈絡化紀錄」→「工作紀錄」。
+- 文件：文案契約的文章標記列、視覺規則的文章頁段落、日常操作詳解的日曆說明。
+- 未處理：`profile-home.yml` 舊選集資料仍由 `check:profile-home` 檢查但不顯示，刪不刪待作者決定；`/` 與 `/profile/` 重複未改。
+
+## 2026-11-10，寫作規則、AI 對話殘留警告與介面文字整理（完成；未部署）
+
+- 依 `D:\myblog1988\部落格檢查紀錄\2026-11-10-呈現與文字檢查\`，作者要求做「防止 AI 再改寫」與「介面文字修正」兩類，文章正文由作者自己修。
+- `AGENTS.md` 新增寫作規則：已發布正文只增補不覆蓋、改稿預設只改錯字斷句、摘要只用作者原句、不為 A 面改寫、不得留下 AI 對話殘留、更新紀錄寫想法變化。
+- `tools/content-check.js` 新增 `AI_LEFTOVER` 警告：已發布文章正文出現「使用者提供」「你特別喜歡」「先請我回答」或 `tmp/` 路徑時列出來源；只警告不擋發布。目前 6 篇有警告，由作者改文時處理。新增 2 個測試。
+- 介面文字：生活索引 `SIDE A`→`SIDE B`；B 面、生活索引、碎碎念、隨機頁的 `A-01`／`B-01`… 編號改為 `TRACK 01`…；`04 / MEMORY`、`05 / MEMORY`、`OPEN MEMORY` 改為 PHOTOS；`/calendar/` 標題改「更新日曆」、`/tags/` 標題改「標籤」；`Loading Graph...` 改中文；刪掉「公開草稿」「持續整理中的草稿」、隨機頁演算法說明、舊首頁分頁說明；「微型資料庫」「發布渠道」「猜你也喜歡」改口語；頁尾總字數與閱讀時間加上文字標籤。草稿夾題目代碼 `A-01`… 是資料欄位，未改。
+- 文件：`docs/dual-surface-blog-plan.md` 補現況更正（`/` 是文章清單不是熱力圖）；`docs/dual-surface-copy-contract.md` 註明 A 面卡片成熟度目前不顯示、待作者決定；`docs/profile-article-rewrite-plan.md` 註明為歷史紀錄、不再照它改標題。
+- 驗證：`npm run verify` exit 0，367/367 通過；public 抽查新標籤與頁尾文字。畫面由作者驗收。未提交、未部署。
+
 ## 2026-10-24，A 面描述、手冊選集說明與 404 頁（完成；未部署）
 
 - `source/index.md`、`source/profile/index.md` 加上 A 面專用 `description`，不再用整站預設「生活紀錄與學習部落格」。

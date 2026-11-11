@@ -121,3 +121,19 @@ test('warm regeneration recomputes endpoints and clears stale native prev/next v
   ]);
 });
 
+
+test('A 面文章的上一篇／下一篇只在 A 面文章之間循環，其他文章維持全站時間序', () => {
+  const { createPostNeighbors } = require('../../scripts/stable-post-order');
+  const fixture = [
+    { path: 'p1/', date: 5, profile: true }, { path: 'm1/', date: 4 }, { path: 'p2/', date: 3, profile: true },
+    { path: 'm2/', date: 2 }, { path: 'p3/', date: 1, profile: true }
+  ];
+  const posts = { sort: () => ({ toArray: () => fixture.slice() }) };
+  const neighbors = createPostNeighbors(posts, post => Boolean(post.profile));
+  const pathOf = item => item && item.path;
+  assert.deepEqual([pathOf(neighbors.get('p1/').prev), pathOf(neighbors.get('p1/').next)], [null, 'p2/']);
+  assert.deepEqual([pathOf(neighbors.get('p2/').prev), pathOf(neighbors.get('p2/').next)], ['p1/', 'p3/']);
+  assert.deepEqual([pathOf(neighbors.get('m1/').prev), pathOf(neighbors.get('m1/').next)], ['p1/', 'p2/']);
+  const plain = createPostNeighbors(posts);
+  assert.equal(pathOf(plain.get('p1/').next), 'm1/');
+});

@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["研究筆記","內容分析"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我閱讀 LIS 長期內容分析，想弄清楚固定資料範圍與分類架構如何讓學科變化可檢查。

@@ -37,24 +37,16 @@ test('microblog deep link expands past page 20, preserves IDs after reorder, and
   assert.match(context.summary.textContent, /不存在/);
 });
 
-test('learning deep link selects the original year/date and tolerates missing dates or deleted IDs', () => {
-  let year, displayed;
-  const card = { focus() {}, scrollIntoView() {} };
-  const entry = { item: { id: 'reading-old', date: '2024-08-29' } };
-  const context = {
-    updatesElement: { isConnected: true }, readingData: {}, location: { hash: '#reading-old' },
-    allItems: () => [entry], getAddedRecords: date => date === entry.item.date ? [entry] : [],
-    showYear: value => { year = value; }, renderUpdates: records => { displayed = records; },
-    statusElement: {}, detailNote: {}, document: { getElementById: id => id === entry.item.id ? card : null }
-  };
-  vm.runInNewContext(extract('reading', 'locateLearning'), context);
-  context.locateLearning();
-  assert.equal(year, '2024'); assert.equal(displayed[0], entry);
-  assert.match(context.statusElement.textContent, /2024-08-29/);
-  entry.item.date = undefined; year = undefined;
-  context.locateLearning();
-  assert.equal(year, undefined); assert.equal(displayed[0], entry);
-  assert.match(context.statusElement.textContent, /未標日期/);
-  context.location.hash = '#reading-deleted'; context.locateLearning();
-  assert.match(context.detailNote.textContent, /不存在/);
+test('draft deep link opens the collapsed section that holds the card and ignores other ids', () => {
+  const details = { open: false };
+  const card = { classList: { contains: name => name === 'draft-desk-card' }, closest: () => details,
+    focus() { this.focused = true; }, scrollIntoView() { this.scrolled = true; } };
+  const other = { classList: { contains: () => false }, closest: () => null };
+  const context = { location: { hash: '#reading-topic-25' },
+    document: { getElementById: id => ({ 'reading-topic-25': card, 'main-content': other })[id] || null } };
+  vm.runInNewContext(extract('reading', 'locateDraft'), context);
+  context.locateDraft();
+  assert.equal(details.open, true); assert.equal(card.focused, true); assert.equal(card.scrolled, true);
+  context.location.hash = '#main-content'; context.locateDraft();
+  context.location.hash = '#reading-deleted'; context.locateDraft();
 });

@@ -21,6 +21,11 @@ function validateArticle(html, record, file) {
   const errors = [];
   const $ = cheerio.load(html);
   const marker = $('.post-surface-marker');
+  // B 面專屬文章不輸出「收錄於」；含 profile 的文章才有。
+  if (Array.isArray(record.surfaces) && record.surfaces.length && record.surfaces.every(surface => SURFACE_PRESENTATION[surface])
+      && !record.surfaces.includes('profile')) {
+    return marker.length === 0 ? [] : [diagnostic('post_surface_marker_count_invalid', file)];
+  }
   if (marker.length !== 1) return [diagnostic('post_surface_marker_count_invalid', file)];
 
   const expected = Array.isArray(record.surfaces)

@@ -135,9 +135,13 @@ test('recent DOM rendering caps results and safely updates scopes, empty state, 
   const memoryMusic = Search.renderRecent(document, section, records, 'memory', '音樂', true);
   assert.ok(memoryMusic.length <= 10 && memoryMusic.every(item => item.surfaces.includes('memory') && item.categories.includes('音樂')));
   assert.equal(musicTab.attributes['aria-selected'], 'true'); assert.ok(musicTab.classNames.has('is-active')); assert.equal(musicTab.focused, true);
-  const noMatches = Search.renderRecent(document, section, records, 'profile', '不存在');
-  assert.deepEqual(noMatches, []); assert.equal(list.children.length, 0); assert.equal(empty.hidden, false);
-  assert.equal(note.textContent, '分類內最新 10 篇');
+  // 目前範圍沒有的分類：分頁隱藏，改回「全部」。
+  const profileOnly = Search.renderRecent(document, section, records.filter(item => item.categories.includes('閱讀') || item.surfaces.includes('memory')), 'profile', '音樂');
+  assert.equal(musicTab.hidden, true); assert.equal(allTab.hidden, false);
+  assert.ok(profileOnly.every(item => item.surfaces.includes('profile')));
+  assert.equal(allTab.attributes['aria-selected'], 'true'); assert.equal(note.textContent, '最近 10 篇');
+  const empty0 = Search.renderRecent(document, section, [], 'profile', 'all');
+  assert.deepEqual(empty0, []); assert.equal(list.children.length, 0); assert.equal(empty.hidden, false);
 });
 test('results link to a passage, stable micro ID, or learning note with article fallback', () => {
   assert.equal(Search.search([record()], 'JavaScript')[0].href, '/one/#nav-one');
@@ -190,5 +194,5 @@ test('paragraph anchors preserve authored IDs, avoid duplicates and survive unre
 test('article paragraph targets scroll into view without persistent highlight styling', () => {
   const styles = fs.readFileSync(path.resolve(__dirname, '../../themes/next/source/css/main.styl'), 'utf8');
   assert.doesNotMatch(styles, /\[data-navigation-anchor\]:target/);
-  assert.match(styles, /\.status-item:target, \.reading-calendar-update-card:target/);
+  assert.match(styles, /\.status-item:target, \.draft-desk-card:target/);
 });

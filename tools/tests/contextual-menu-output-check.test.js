@@ -18,8 +18,8 @@ const config = {
 };
 
 const memoryItems = [
-  ['首頁', '/memory/'], ['全部文章', '/archives/'], ['內容分類', '/categories/'], ['生活索引', '/reading-log/'],
-  ['草稿夾', '/reading/'], ['記憶圖牆', '/photos/'], ['更新日曆', '/calendar/']
+  ['個人記憶庫', '/memory/'], ['全部文章', '/archives/'], ['內容分類', '/categories/'], ['生活索引', '/reading-log/'],
+  ['草稿夾', '/reading/'], ['記憶圖牆', '/photos/'], ['發表日曆', '/calendar/']
 ];
 
 function menu(surface, items, currentIndex = -1) {

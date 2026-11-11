@@ -19,11 +19,16 @@ function getPostRecord(post) {
   };
 }
 
+// 熱力圖只算 B 面的內容紀錄；站務文章和隨機抽文章一樣排除（作者 2026-11-10 決定）。
+function isCalendarPost(post) {
+  return Boolean(resolvePostSurface(post)?.surfaces.includes('memory')) && !getPostCategories(post).includes('站務');
+}
+
 hexo.extend.generator.register('calendar_json', function(locals) {
   const data = {};
 
   // 保留原本的日期計數格式，供 ECharts 熱力圖使用。
-  locals.posts.filter(post => resolvePostSurface(post)?.surfaces.includes('memory')).forEach(post => {
+  locals.posts.filter(isCalendarPost).forEach(post => {
     const date = post.date.format('YYYY-MM-DD');
     data[date] = (data[date] || 0) + 1;
   });
@@ -38,7 +43,7 @@ hexo.extend.generator.register('calendar_posts_json', function(locals) {
   const data = {};
 
   // 另外提供日期對應的文章明細，避免改變 calendar.json 的既有資料結構。
-  locals.posts.filter(post => resolvePostSurface(post)?.surfaces.includes('memory')).forEach(post => {
+  locals.posts.filter(isCalendarPost).forEach(post => {
     const date = post.date.format('YYYY-MM-DD');
     if (!data[date]) data[date] = [];
     data[date].push(getPostRecord(post));

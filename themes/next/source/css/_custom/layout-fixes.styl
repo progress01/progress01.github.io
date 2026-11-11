@@ -1,0 +1,40 @@
+/* 2026-11-11 版面檢查修正：只調整排列，不改內容。 */
+
+/* 手機與平板的頁首已經有選單；只有附目錄的文章頁保留浮動側欄按鈕，其他頁面不再蓋住內文。 */
+@media (max-width: 991px) {
+  body:not(:has(.main-inner.post)) .sidebar-toggle,
+  body:not(:has(.sidebar-nav-active)) .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* 卡帶頁面自己有 h1 大標，主題預設的頁面標題不再重複顯示。 */
+.post-block:has(#life-index) .post-header,
+.post-block:has(#random-portal) .post-header,
+.post-block:has(#status-archive) .post-header {
+  display: none;
+}
+
+/* 隨機點播：日期不從中間斷開；版面不夠寬時，狀態字移到點播下方，讓標題有空間。 */
+.index .home-pick small {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .index .home-archive-rail-main {
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .index .home-pick-grid {
+    grid-row: 1 / span 2;
+  }
+
+  .index .home-pick-updated {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 6px;
+    white-space: normal;
+  }
+}

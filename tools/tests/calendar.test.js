@@ -165,58 +165,6 @@ function buttonDocument(buttons) {
 }
 
 {
-  const source = sourceText('source/reading/index.md');
-  const readingLogic = functionsBetween(source, 'pad', 'renderUpdates');
-  const readingData = {
-    year: 2026,
-    topics: [{
-      name: 'Fixture',
-      items: [
-        ...Array.from({ length: 5 }, () => ({ date: '2026-09-04', state: 'learning' })),
-        { date: '2026-09-20', state: 'collected' }
-      ]
-    }]
-  };
-  let rendered;
-  const context = vm.createContext({ Date: FixedDate, readingData, renderUpdates(...args) { rendered = args; } });
-  vm.runInContext(readingLogic, context);
-
-  const backlog = context.buildBacklogData('2026');
-  assert.strictEqual(backlog['2026-09-04'], 5, 'backlog data must preserve the real daily count');
-  assert.strictEqual(backlog['2026-09-09'], 0, 'past dates with no additions must remain queryable');
-  assert.strictEqual(backlog['2026-09-20'], 1, 'future-dated entries must remain on their entered date');
-  assert.strictEqual(context.latestItemDate('2026'), '2026-09-20');
-
-  const buttons = [];
-  context.document = buttonDocument(buttons);
-  context.gridControls = { innerHTML: '', appendChild(button) { buttons.push(button); } };
-  vm.runInContext(functionsBetween(source, 'renderGridControls', 'bindCalendarClick'), context);
-  context.renderGridControls('2026');
-  const pastEmpty = buttons.find(button => button['aria-label'].startsWith('2026-09-09'));
-  const planned = buttons.find(button => button['aria-label'].startsWith('2026-09-20'));
-  const futureEmpty = buttons.find(button => button['aria-label'].startsWith('2026-09-13'));
-  assert(pastEmpty && typeof pastEmpty.handler === 'function', 'past empty dates must remain clickable');
-  assert(planned && planned.className.includes('is-future'), 'future entries must be marked as planned');
-  assert.match(planned['aria-label'], /預排 新增 1 個題目/);
-  assert.match(planned.title, /預排/);
-  assert(futureEmpty && !futureEmpty['aria-label'].includes('預排'));
-  assert.match(futureEmpty.title, /尚未到達/);
-  planned.handler();
-  assert.strictEqual(rendered[0].length, 1);
-  assert.match(rendered[1], /預排內容/);
-  futureEmpty.handler();
-  assert.strictEqual(rendered[0].length, 0);
-  assert.match(rendered[1], /尚未到達/);
-
-  assert.match(source, /type: 'piecewise'/);
-  assert.match(source, /label: '4\+'/);
-  assert.match(source, /itemWidth: 12/);
-  assert.match(source, /itemHeight: 12/);
-  assert.match(source, /calendarTop: window\.innerWidth < 768 \? 55 : 80/);
-  assert.match(source, /reading-calendar-grid-controls \{ top: 55px;/);
-}
-
-{
   const registered = {};
   const hexo = { extend: { generator: { register(name, generator) { registered[name] = generator; } } } };
   const generatorSource = sourceText('scripts/calendar-generator.js');

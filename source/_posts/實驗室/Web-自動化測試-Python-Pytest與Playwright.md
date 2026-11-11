@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["學習規劃","Web 自動化"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我把網站品質學習接到 Python、Pytest 與 Playwright，先建立可重複執行的回歸測試。

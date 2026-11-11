@@ -1279,6 +1279,8 @@ body {
 // 明確標記為探索中的文章與 A 面卡片。
 @import '_custom/thinking-status';
 @import '_custom/surface-responsive';
+// 版面檢查後的小修正（浮動按鈕、重複標題、點播列）。
+@import '_custom/layout-fixes';
 
 .content-browser { color: #543b30; text-align: left; }
 .post-block:has(.content-browser) .post-header,
@@ -1357,9 +1359,8 @@ body {
 .search-popup .search-result-location { color: #76513f; font-size: 12px; line-height: 1.7; }
 .search-popup .search-result-list mark { background: #ffe2a5; color: #543020; }
 .search-popup .search-note-link { text-decoration: underline; }
-[data-navigation-anchor], .status-item, .reading-calendar-update-card { scroll-margin-top: 90px; }
-.status-item:target, .reading-calendar-update-card:target { outline: 2px solid #c96545; outline-offset: 5px; background-color: #fff3d6; }
-.reading-calendar-update-note { display: block; margin-top: 10px; font-size: 14px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+[data-navigation-anchor], .status-item, .draft-desk-card { scroll-margin-top: 90px; }
+.status-item:target, .draft-desk-card:target { outline: 2px solid #c96545; outline-offset: 5px; background-color: #fff3d6; }
 @media (max-height: 550px) {
   .search-popup { min-height: 0 !important; height: 94vh !important; }
 }

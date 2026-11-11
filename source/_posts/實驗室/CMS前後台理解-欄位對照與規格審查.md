@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["觀念釐清"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我整理 CMS 前後台、內容建模與規格審查，先建立專案討論前可以對照的工作手冊。

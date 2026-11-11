@@ -201,37 +201,37 @@ comments: false
       <div class="life-index-stamp">1988 / REC</div>
     </div>
     <div class="life-index-screen">
-      <div class="life-index-screen-top"><span>● REC</span><span>SIDE A</span></div>
+      <div class="life-index-screen-top"><span>● REC</span><span>SIDE B</span></div>
       <strong>DON'T COUNT<br>THE DAYS</strong>
       <span class="life-index-screen-note">LIFE LOG / PERSONAL ENTRY</span>
     </div>
   </section>
 
   <section class="life-index-section">
-    <div class="life-index-section-heading"><span>A-01</span><h2>現在的我</h2><small>NOW PLAYING</small></div>
+    <div class="life-index-section-heading"><span>TRACK 01</span><h2>現在的我</h2><small>NOW PLAYING</small></div>
       <div id="life-index-current" class="life-index-now">
       <div class="life-index-entry-card">正在讀取現在的內容……</div>
     </div>
   </section>
 
   <section class="life-index-section">
-    <div class="life-index-section-heading"><span>B-01</span><h2>內容入口</h2><small>OPEN THE DRAWER</small></div>
+    <div class="life-index-section-heading"><span>TRACK 02</span><h2>內容入口</h2><small>OPEN THE DRAWER</small></div>
     <div class="life-index-entry-grid" id="life-index-entry-grid">
       <div class="life-index-entry-card">正在整理內容入口……</div>
-      <a class="life-index-entry-card" data-life-utility href="/photos/"><i class="fa fa-camera life-index-card-icon"></i><span class="life-index-card-label">05 / MEMORY</span><h3>記憶圖牆</h3><p>用圖片留下來的片段與收藏。</p><span class="life-index-card-link">OPEN MEMORY ↗</span></a>
+      <a class="life-index-entry-card" data-life-utility href="/photos/"><i class="fa fa-camera life-index-card-icon"></i><span class="life-index-card-label">05 / PHOTOS</span><h3>記憶圖牆</h3><p>用圖片留下來的片段與收藏。</p><span class="life-index-card-link">OPEN MEMORY ↗</span></a>
       <a class="life-index-entry-card" data-life-utility href="/status/"><i class="fa fa-comment life-index-card-icon"></i><span class="life-index-card-label">06 / STATUS</span><h3>碎碎念</h3><p>短一點、即時一點的現場紀錄。</p><span class="life-index-card-link">OPEN STATUS ↗</span></a>
-      <a class="life-index-entry-card" data-life-utility href="/calendar/"><i class="fa fa-calendar life-index-card-icon"></i><span class="life-index-card-label">07 / CALENDAR</span><h3>更新日曆</h3><p>回頭看自己什麼時候留下了紀錄。</p><span class="life-index-card-link">OPEN CALENDAR ↗</span></a>
+      <a class="life-index-entry-card" data-life-utility href="/calendar/"><i class="fa fa-calendar life-index-card-icon"></i><span class="life-index-card-label">07 / CALENDAR</span><h3>發表日曆</h3><p>回頭看自己什麼時候留下了紀錄。</p><span class="life-index-card-link">OPEN CALENDAR ↗</span></a>
       <a class="life-index-entry-card" data-life-utility href="/reading/"><i class="fa fa-book life-index-card-icon"></i><span class="life-index-card-label">09 / DRAFTS</span><h3>草稿夾</h3><p>把還沒想好的題目放進來，慢慢整理成文章。</p><span class="life-index-card-link">OPEN DRAFTS ↗</span></a>
       <a class="life-index-entry-card" data-life-utility href="/random/"><i class="fa fa-random life-index-card-icon"></i><span class="life-index-card-label">08 / RANDOM</span><h3>隨機文章</h3><p>不預設主題，讓下一篇自己出現。</p><span class="life-index-card-link">OPEN RANDOM ↗</span></a>
     </div>
   </section>
 
   <section class="life-index-section">
-    <div class="life-index-section-heading"><span>C-01</span><h2>紀錄熱力圖</h2><small>KEEP THE TAPE ROLLING</small></div>
+    <div class="life-index-section-heading"><span>TRACK 03</span><h2>紀錄熱力圖</h2><small>KEEP THE TAPE ROLLING</small></div>
     <div class="life-index-heatmap-panel">
       <div class="life-index-heatmap-top">
         <span id="life-index-heatmap-label">正在讀取最近的紀錄……</span>
-        <a href="/calendar/">OPEN UPDATE CALENDAR ↗</a>
+        <a href="/calendar/">OPEN CALENDAR ↗</a>
       </div>
       <div class="life-index-heatmap-scroll">
         <div id="life-index-heatmap" class="life-index-heatmap" aria-label="文章產出熱力圖"></div>
@@ -241,7 +241,7 @@ comments: false
   </section>
 
   <section class="life-index-section">
-    <div class="life-index-section-heading"><span>D-01</span><h2>現場紀錄</h2><small><a href="/status/">看更多紀錄 ↗</a></small></div>
+    <div class="life-index-section-heading"><span>TRACK 04</span><h2>現場紀錄</h2><small><a href="/status/">看更多紀錄 ↗</a></small></div>
     <div class="life-index-log-toolbar">
       <span class="life-index-log-hint">← 左右滑動查看更多 →</span>
       <div class="life-index-log-controls" aria-label="現場紀錄左右瀏覽">

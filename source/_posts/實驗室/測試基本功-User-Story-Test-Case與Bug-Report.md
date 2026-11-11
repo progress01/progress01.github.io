@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["方法整理","測試案例"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我想先把模糊需求整理成可執行、可記錄、可回頭檢查的測試工作。

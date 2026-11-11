@@ -19,7 +19,7 @@ function tags(names) {
   return { length: names.length, toArray: () => names.map(name => ({ name })) };
 }
 
-function renderPost(overrides = {}) {
+function renderPost(overrides = {}, draft = null) {
   const post = {
     source: 'source/_posts/歌曲推薦/歌曲推薦-test.md',
     title: '歌曲推薦-test',
@@ -37,6 +37,7 @@ function renderPost(overrides = {}) {
   env.addGlobal('ordered_post_tags', post => getOrderedPostTags(post));
   env.addGlobal('escape_html', value => String(value));
   env.addGlobal('symbolsTime', () => '1 分鐘');
+  env.addGlobal('draft_desk_entry', () => draft);
   return env.renderString(renderedSections, {
     is_index: true,
     post,
@@ -63,4 +64,7 @@ test('learning 文章輸出 feature card 並隱藏重複正文摘要', () => {
   });
   assert.match(output, /post-feature-card/);
   assert.equal((output.match(/學習摘要/g) || []).length, 1);
+  assert.match(output, /STATUS: 持續更新/);
+  const stuck = renderPost({ source: 'source/_posts/實驗室/學習筆記.md', learning: true }, { stateLabel: '卡住' });
+  assert.match(stuck, /STATUS: 卡住/, '草稿夾裡的文章用草稿夾狀態');
 });

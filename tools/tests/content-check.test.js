@@ -40,7 +40,7 @@ function cleanupFixture(root) {
   fs.rmSync(root, { recursive: true, force: true });
 }
 
-const validDesk = `topics:\n  - id: topic-1\n    name: 測試題目\n    items:\n      - id: item-1\n        date: 2026-02-28\n        title: 測試項目\n        source: 測試來源\n        url: /learning/test/\n        state: learning\n        note: 持續整理\n        surfaces: [memory]\n`;
+const validDesk = `topics:\n  - id: topic-1\n    name: 測試題目\n    items:\n      - id: item-1\n        date: 2026-02-28\n        title: 測試項目\n        source: 測試來源\n        url: /learning/test/\n        state: writing\n        note: 持續整理\n        surfaces: [memory]\n`;
 
 test('真 YAML 支援 inline/block categories，日期與 reading desk 通過', t => {
   assert.ok(validatePostDate('2026-01-01T00:00:00+08:00'));
@@ -66,14 +66,14 @@ test('reading desk 可以連到公開工作知識文章', t => {
 });
 
 test('日期、duplicate ID、unknown state 與壞 cover 編碼會產生可讀錯誤', t => {
-  const desk = validDesk.replace('state: learning', 'state: broken\n        resolved_date: 2026-02-27');
+  const desk = validDesk.replace('state: writing', 'state: broken\n        resolved_date: 2026-02-27');
   const root = makeFixture({ desk, posts: ['title: Bad\ndate: 2026-02-31\ncategories: [音樂]\ntags: [主標籤]\ncover: /images/%E0%A4%A'] });
   const result = checkContent({ root });
   t.after(() => cleanupFixture(root));
   assert.ok(result.errors.some(error => error.includes('date 必須是有效日期')));
   assert.ok(result.errors.some(error => error.includes('cover 路徑編碼無效')));
   assert.ok(result.errors.some(error => error.includes('state 只能是')));
-  const duplicate = `topics:\n  - id: topic-1\n    name: 測試題目\n    items:\n      - id: item-1\n        date: 2026-02-28\n        title: 測試項目\n        source: 測試來源\n        url: /learning/test/\n        state: learning\n        note: 持續整理\n      - id: item-1\n        date: 2026-03-01\n        title: duplicate\n        source: source\n        url: /learning/duplicate/\n        state: learning\n        note: note\n`;
+  const duplicate = `topics:\n  - id: topic-1\n    name: 測試題目\n    items:\n      - id: item-1\n        date: 2026-02-28\n        title: 測試項目\n        source: 測試來源\n        url: /learning/test/\n        state: writing\n        note: 持續整理\n      - id: item-1\n        date: 2026-03-01\n        title: duplicate\n        source: source\n        url: /learning/duplicate/\n        state: writing\n        note: note\n`;
   const duplicateRoot = makeFixture({ desk: duplicate });
   t.after(() => cleanupFixture(duplicateRoot));
   const duplicateErrors = [];
@@ -118,7 +118,7 @@ test('缺 title 與 JSON null 會產生資料形狀錯誤', t => {
 });
 
 function deskItem({ id = 'item-new', url = '/learning/test/', surfaces } = {}) {
-  return `topics:\n  - id: topic-new\n    name: 測試題目\n    items:\n      - id: ${id}\n        date: 2026-02-28\n        title: 測試項目\n        source: 測試來源\n        url: ${url}\n        state: learning\n        note: 測試附註\n${surfaces === undefined ? '' : `        surfaces: ${surfaces}\n`}`;
+  return `topics:\n  - id: topic-new\n    name: 測試題目\n    items:\n      - id: ${id}\n        date: 2026-02-28\n        title: 測試項目\n        source: 測試來源\n        url: ${url}\n        state: writing\n        note: 測試附註\n${surfaces === undefined ? '' : `        surfaces: ${surfaces}\n`}`;
 }
 
 function removeFixturePostSurfaces(root, postIndex = 0) {
@@ -363,4 +363,24 @@ test('clock injection 固定 Asia/Taipei 今日；surfaces 修正訊息清楚且
   const multiple = checkContent({ root: multipleRoot });
   assert.ok(multiple.errors.some(error => error.includes('empty_surfaces') && error.includes('source/_posts/post-0.md') && error.includes('請將空陣列')));
   assert.ok(multiple.errors.some(error => error.includes('THINKING_STATUS_UNSUPPORTED') && error.includes('source/_posts/post-0.md')));
+});
+
+test('正文的 AI 對話殘留只產生可定位警告，不擋發布；草稿不檢查', t => {
+  const root = makeFixture({ posts: ['title: Leftover\ndate: 2026-02-27\ncategories: [音樂]\ntags: [主標籤]', 'title: Draft\ndate: 2026-02-27\ncategories: [音樂]\ntags: [主標籤]\npublished: false'] });
+  t.after(() => cleanupFixture(root));
+  ['post-0.md', 'post-1.md'].forEach(file => {
+    const target = path.join(root, 'source', '_posts', file);
+    fs.writeFileSync(target, fs.readFileSync(target, 'utf8').replace('文章\n', '你特別喜歡這篇。參考：使用者提供的資料，存在 `tmp/notes.md`。\n'));
+  });
+  const result = checkContent({ root });
+  assert.deepEqual(result.errors, []);
+  const leftovers = result.warnings.filter(warning => warning.includes('AI_LEFTOVER'));
+  assert.equal(leftovers.length, 1);
+  assert.ok(leftovers[0].includes('source/_posts/post-0.md') && leftovers[0].includes('使用者提供') && leftovers[0].includes('你特別喜歡') && leftovers[0].includes('tmp/'));
+});
+
+test('findAiLeftovers 不把一般英文單字或路徑片段誤判為 tmp/', () => {
+  const { findAiLeftovers } = require('../content-check');
+  assert.deepEqual(findAiLeftovers('attempt/retry 與 /var/tmpfile'), []);
+  assert.deepEqual(findAiLeftovers('先請我回答下面的問題'), ['先請我回答']);
 });

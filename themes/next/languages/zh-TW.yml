@@ -6,7 +6,7 @@ title:
   tag: 標籤
   schedule: 文章日曆
 menu:
-  home: 首頁
+  home: 個人記憶庫
   archives: 全部文章
   categories: 內容分類
   tags: 標籤
@@ -18,7 +18,7 @@ menu:
   photos: 記憶圖牆
   reading: 生活索引
   random: 隨機文章
-  calendar: 更新日曆
+  calendar: 發表日曆
   reading_desk: 草稿夾
 sidebar:
   overview: 本站概要
@@ -95,7 +95,7 @@ reward:
   bitcoin: 比特幣
   comment: 請我喝杯咖啡！
 follow_me:
-  welcome: 歡迎關注我的其它發布渠道
+  welcome: 其他訂閱管道
 accessibility:
   nav_toggle: 切換導航欄
   prev_page: 上一頁

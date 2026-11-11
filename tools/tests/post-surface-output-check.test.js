@@ -17,6 +17,7 @@ function marker(surfaces) {
     profile: '<a class="post-surface-marker-link post-surface-marker-link--profile" href="/" data-surface="profile">工作與學習</a>',
     memory: '<a class="post-surface-marker-link post-surface-marker-link--memory" href="/memory/" data-surface="memory">個人記憶庫</a>'
   };
+  if (!surfaces.includes('profile')) return '';
   return `<nav class="post-surface-marker" aria-label="文章收錄面向" data-surfaces="${surfaces.join(' ')}"><span class="post-surface-marker-label">收錄於</span>${surfaces.map(key => items[key]).join('<span class="post-surface-marker-separator" aria-hidden="true">・</span>')}</nav>`;
 }
 
@@ -44,8 +45,9 @@ test('accepts one data-driven marker between each article header and body', () =
 test('rejects wrong links, labels and duplicated markers', () => {
   const pages = fixtures();
   pages['a/index.html'] = pages['a/index.html'].replace('href="/"', 'href="/profile/"');
-  pages['b/index.html'] = pages['b/index.html'].replace('個人記憶庫', '私人內容');
-  pages['dual/index.html'] = pages['dual/index.html'].replace('</article>', `${marker(['profile', 'memory'])}</article>`);
+  pages['dual/index.html'] = pages['dual/index.html'].replace('個人記憶庫', '私人內容');
+  // B 面專屬文章不應輸出「收錄於」。
+  pages['b/index.html'] = pages['b/index.html'].replace('</article>', `${marker(['profile', 'memory'])}</article>`);
   const result = validatePostSurfaces({ index, pages });
   assert.equal(codes(result).filter(code => code === 'post_surface_marker_links_invalid').length, 2);
   assert.ok(codes(result).includes('post_surface_marker_count_invalid'));
@@ -54,7 +56,7 @@ test('rejects wrong links, labels and duplicated markers', () => {
 test('rejects script-dependent or misplaced markers', () => {
   const pages = fixtures();
   pages['a/index.html'] = pages['a/index.html'].replace('data-surface="profile"', 'data-surface="profile" onclick="flip()"');
-  pages['b/index.html'] = `<article class="post-content post-content-single">${marker(['memory'])}<header class="post-header"></header><div class="post-body"></div></article>`;
+  pages['dual/index.html'] = `<article class="post-content post-content-single">${marker(['profile', 'memory'])}<header class="post-header"></header><div class="post-body"></div></article>`;
   const result = validatePostSurfaces({ index, pages });
   assert.ok(codes(result).includes('post_surface_marker_script_dependency'));
   assert.ok(codes(result).includes('post_surface_marker_position_invalid'));

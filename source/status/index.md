@@ -225,15 +225,15 @@ comments: false
   </section>
 
   <section class="status-section">
-    <div class="status-section-heading"><span>A-01</span><h2>現場紀錄</h2><small>KEEP THE TAPE ROLLING</small></div>
-    <div id="status-summary" class="status-summary">正在整理微型資料庫……</div>
+    <div class="status-section-heading"><span>TRACK 01</span><h2>現場紀錄</h2><small>KEEP THE TAPE ROLLING</small></div>
+    <div id="status-summary" class="status-summary">正在整理碎碎念……</div>
     <div class="status-controls" role="search" aria-label="搜尋碎碎念">
       <label class="status-search-label" for="status-search">搜尋</label>
       <input id="status-search" class="status-search" type="search" placeholder="搜尋文字、日期或標籤……" autocomplete="off">
       <button id="status-clear" class="status-button" type="button">清除</button>
     </div>
     <div id="status-list" class="status-list">
-      <div class="status-empty">正在連線至微型資料庫……</div>
+      <div class="status-empty">正在讀取碎碎念……</div>
     </div>
     <div id="status-actions" class="status-actions" hidden>
       <button id="status-load-more" class="status-button" type="button">載入更多</button>

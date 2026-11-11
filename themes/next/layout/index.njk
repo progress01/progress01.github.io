@@ -26,14 +26,14 @@
     <section class="home-landing" aria-label="首頁內容入口">
       <section class="home-random-feature" aria-labelledby="home-random-title">
         <div class="home-random-heading">
-          <span>A-01 / RANDOM ACCESS</span>
+          <span>TRACK 01 / RANDOM ACCESS</span>
           <small id="home-random-status" aria-live="polite">正在翻找一篇紀錄……</small>
         </div>
         <div class="home-random-card">
           <div class="home-random-copy">
             <div id="home-random-meta" class="home-random-meta">RANDOM / LOADING</div>
             <h2 id="home-random-title">今天隨機翻到……</h2>
-            <p id="home-random-excerpt">從公開文章與持續整理中的草稿裡，隨機找回一篇曾經留下的內容。</p>
+            <p id="home-random-excerpt">從公開文章裡，隨機找回一篇曾經留下的內容。</p>
             <div class="home-random-actions">
               <a id="home-random-open" class="home-random-button is-primary" href="/random/">閱讀這篇 ↗</a>
               <button id="home-random-again" class="home-random-button" type="button" disabled>換一篇</button>
@@ -56,7 +56,7 @@
 
       <div class="home-archive-rail">
         <div class="home-archive-rail-main">
-          <span class="home-archive-rail-label">A-02 / DJ PLAYBACK</span>
+          <span class="home-archive-rail-label">TRACK 02 / DJ PLAYBACK</span>
           <strong class="home-archive-rail-heading">隨機點播</strong>
           <div class="home-pick-grid">
             <a id="home-dj-audio" class="home-pick" href="/random/">
@@ -150,7 +150,7 @@
               watch: ['TAPE: SCREEN_NOTE', 'TYPE: WATCH LOG', 'STATUS: ARCHIVED'],
               daily: ['TAPE: LIFE_NOTE', 'TYPE: DAILY LOG', 'STATUS: CONTINUING'],
               learning: ['TAPE: LEARNING_NOTE', 'TYPE: STUDY LOG', 'STATUS: ' + (record.note || '持續更新')],
-              work: ['TAPE: WORK_NOTE', 'TYPE: KNOWLEDGE LOG', 'STATUS: ' + (record.note || '去脈絡化紀錄')],
+              work: ['TAPE: WORK_NOTE', 'TYPE: KNOWLEDGE LOG', 'STATUS: ' + (record.note || '工作紀錄')],
               generic: ['TAPE: ARCHIVE_RECORD', 'TYPE: TEXT LOG', 'STATUS: READY']
             }[kind];
             var cover = typeof record.cover === 'string' && /^\/images\/[^?#]+$/.test(record.cover) &&
@@ -175,7 +175,7 @@
             renderVisual(record);
             open.href = record.url;
             again.disabled = records.length < 2;
-            status.textContent = '從公開文章與持續整理中的草稿隨機抽出';
+            status.textContent = '從公開文章隨機抽出';
             saveSelection(record.url);
           }
 
@@ -229,7 +229,7 @@
             .catch(function () {
               status.textContent = '隨機內容暫時無法讀取，可以改看全部文章。';
               title.textContent = '完整文章仍然照時間保存';
-              excerpt.textContent = '前往全部文章查看所有公開文章與持續整理中的草稿。';
+              excerpt.textContent = '前往全部文章查看所有公開文章。';
               renderVisual({ kind: 'generic', date: '' });
               open.href = '/archives/';
               open.textContent = '查看全部文章 ↗';
@@ -243,7 +243,7 @@
         <a class="home-landing-entry" href="/archives/">
           <span class="home-landing-label">01 / ARCHIVE</span>
           <h2>全部文章</h2>
-          <p>依發表時間查看所有文章與公開草稿。</p>
+          <p>依發表時間查看所有文章。</p>
           <span class="home-landing-link">OPEN ARCHIVE ↗</span>
         </a>
         <a class="home-landing-entry" href="/reading-log/">
@@ -259,10 +259,10 @@
           <span class="home-landing-link">OPEN DRAFTS ↗</span>
         </a>
         <a class="home-landing-entry" href="/photos/">
-          <span class="home-landing-label">04 / MEMORY</span>
+          <span class="home-landing-label">04 / PHOTOS</span>
           <h2>記憶圖牆</h2>
           <p>讓圖片替文字留下一點空氣。</p>
-          <span class="home-landing-link">OPEN MEMORY ↗</span>
+          <span class="home-landing-link">OPEN PHOTOS ↗</span>
         </a>
       </nav>
 
@@ -307,7 +307,7 @@
     <section class="home-legacy-archive-notice">
       <span>ARCHIVE / LEGACY PAGE</span>
       <h1>文章列表已移至「全部文章」</h1>
-      <p>這個舊首頁分頁仍保留原本的時間清單；完整文章請改從新的文章區進入。</p>
+      <p>完整文章請到「全部文章」查看。</p>
       <a href="/archives/">前往全部文章 ↗</a>
     </section>
 

@@ -72,7 +72,7 @@ hexo.extend.generator.register('random_json', function(locals) {
       excerpt,
       kind,
       cover: (kind === 'audio' || kind === 'reading' || kind === 'watch' || kind === 'generic') ? safeCover(post.cover) : '',
-      note: String(post.work_note || post.learning_status || '').slice(0, 60)
+      note: String(post.work_note || '').slice(0, 60)
     });
   });
 

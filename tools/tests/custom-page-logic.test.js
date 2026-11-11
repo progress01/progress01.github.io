@@ -1,7 +1,4 @@
 const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
-const vm = require('vm');
 const { updatePhotoWallCounts } = require('../../scripts/photo-wall-counts.js');
 
 const fixture = [
@@ -27,24 +24,4 @@ const withNewCard = updatePhotoWallCounts(counted.replace('<div class="ig-grid">
 assert.match(withNewCard, /data-photo-wall-filter="all"[^>]*>全部 <span>4<\/span>/);
 assert.match(withNewCard, /data-photo-wall-filter="music"[^>]*>歌曲推薦 <span>3<\/span>/);
 
-const readingSource = fs.readFileSync(
-  path.join(__dirname, '../..', 'source', 'reading', 'index.md'),
-  'utf8'
-);
-const functionMatch = readingSource.match(/function getAddedRecords\(key\) \{[\s\S]*?\n    \}/);
-assert(functionMatch, 'getAddedRecords function is missing');
-const getAddedRecords = vm.runInNewContext(`(${functionMatch[0]})`, {
-  allItems: () => [
-    { item: { date: '2026-08-29', state: 'learning' } },
-    { item: { date: '2026-08-29', state: 'published' } },
-    { item: { date: '2026-08-29', state: 'published', resolved_date: '2026-09-01' } },
-    { item: { date: '2026-08-30', state: 'learning' } }
-  ]
-});
-assert.strictEqual(
-  getAddedRecords('2026-08-29').length,
-  3,
-  'published items must remain in their original added-date history'
-);
-
-console.log('custom page logic tests passed: photo counts and reading history');
+console.log('custom page logic tests passed: photo counts');

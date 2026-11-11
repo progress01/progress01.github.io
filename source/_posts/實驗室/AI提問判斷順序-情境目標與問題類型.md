@@ -8,7 +8,6 @@ categories: [觀念與實驗]
 tags: ["方法整理","提問方法"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我想透過這篇筆記釐清：向 AI 提問時，怎麼保留主觀，又不讓還沒驗證的原因與結論太早框住問題。

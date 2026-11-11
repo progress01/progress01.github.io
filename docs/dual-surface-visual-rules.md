@@ -2,7 +2,7 @@
 
 ## 共用骨架
 
-A／profile 與 B／memory 是「同一張紙、兩種工作狀態」。兩面共用網站既有紙色基底、字體尺度、方角卡片、排版與焦點語言。文章頁維持原本中性閱讀樣式；文章不因從 A 或 B 進入而改成不同版面。
+A／profile 與 B／memory 是「同一張紙、兩種工作狀態」。兩面共用網站既有紙色基底、字體尺度、方角卡片、排版與焦點語言。文章頁維持原本中性閱讀樣式；文章不因從 A 或 B 進入而改成不同版面。2026-11-10 起，含 profile 的文章上一篇／下一篇只在 A 面文章之間循環（`scripts/stable-post-order.js`），B 面專屬文章維持全站時間序。
 
 集中 token 位於 `themes/next/source/css/_custom/dual-surface-visual.styl`，由 `main.styl` 在首頁與其他客製樣式前載入。`:root` 提供共用／B 面預設，`.main-inner.index` 明確維持 B 面暖色覆寫，`.main-inner.profile-page` 只在 A 面命名空間覆寫差異色。語意 token 包含 paper、base、panel、ink、muted、border、accent、accent-strong、focus、shadow。
 

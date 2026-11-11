@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["研究筆記","AI Agent"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 讀這篇 Agentic Transaction 論文時，我想把探索、執行、驗證與重試整理成一套可以共用的方法。

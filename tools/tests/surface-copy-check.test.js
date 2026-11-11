@@ -17,7 +17,8 @@ const index = { records: [
 const assets = { navigationSearch: "const surfaceLabels = { profile: '工作與學習', memory: '個人記憶庫' }; '收錄於：';" };
 function article(url, surfaces, labels) {
   const links = labels.map((label, position) => `<a class="post-surface-marker-link" data-surface="${surfaces[position]}" href="${surfaces[position] === 'profile' ? '/' : '/memory/'}">${label}</a>`).join(surfaces.length === 2 ? '<span class="post-surface-marker-separator" aria-hidden="true">・</span>' : '');
-  return `<html><head><link rel="canonical" href="${encodeURI(`https://example.test${url}`)}"></head><body><article class="post-content-single"><nav class="post-surface-marker"><span class="post-surface-marker-label">收錄於</span>${links}</nav></article></body></html>`;
+  const nav = surfaces.includes('profile') ? `<nav class="post-surface-marker"><span class="post-surface-marker-label">收錄於</span>${links}</nav>` : '';
+  return `<html><head><link rel="canonical" href="${encodeURI(`https://example.test${url}`)}"></head><body><article class="post-content-single">${nav}</article></body></html>`;
 }
 function page(current) {
   const flip = current === 'memory' ? '<a class="surface-switch-link" href="/">SIDE A／看工作與學習</a>' : '<a class="surface-switch-link" href="/memory/">SIDE B／翻到個人記憶庫</a>';

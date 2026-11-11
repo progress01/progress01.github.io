@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["方法整理","CI/CD"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我把網站測試接到版本、環境、報告與發布判斷，整理成可以交接的流程。

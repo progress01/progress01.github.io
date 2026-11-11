@@ -8,13 +8,13 @@ const cheerio = require('cheerio');
 const CONFIG_PATH = 'source/_data/surface-navigation.yml';
 const DEFAULT_SOURCE_ROOT = path.resolve(__dirname, '..');
 const MEMORY_ITEMS = Object.freeze([
-  Object.freeze({ label: '首頁', href: '/memory/' }),
+  Object.freeze({ label: '個人記憶庫', href: '/memory/' }),
   Object.freeze({ label: '全部文章', href: '/archives/' }),
   Object.freeze({ label: '內容分類', href: '/categories/' }),
   Object.freeze({ label: '生活索引', href: '/reading-log/' }),
   Object.freeze({ label: '草稿夾', href: '/reading/' }),
   Object.freeze({ label: '記憶圖牆', href: '/photos/' }),
-  Object.freeze({ label: '更新日曆', href: '/calendar/' })
+  Object.freeze({ label: '發表日曆', href: '/calendar/' })
 ]);
 const PROFILE_ITEMS = Object.freeze([
   Object.freeze({ id: 'home', label: '工作與學習', href: '/', icon: 'fa fa-briefcase' })

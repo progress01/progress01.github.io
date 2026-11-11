@@ -10,7 +10,7 @@ const { validateReadingDate, parseFrontmatter, normalizePostUrl } = require('./c
 const { normalizeSurfaces, isSurfaceSubset } = require('./lib/content-surfaces');
 
 const ROOT = path.resolve(__dirname, '..');
-const usage = `新增本機紀錄（不會發布）\n\n用法：\n  npm run record -- microblog --text "今天想記下的事" [--tag 💭] [--date YYYY-MM-DD] [--dry-run]\n  npm run record -- reading --title "題目" --url "/learning/slug/" [--topic TOPIC_ID] [--source "來源"] [--note "整理備註"] [--date YYYY-MM-DD] [--dry-run]\n\n不指定 --topic 時會依題目自動建立主題；也可選填 --topic-id、--topic-name、--topic-code、--description 覆寫主題欄位。\n日期預設台北今日；碎碎念標籤預設 💭，面向固定為 memory。閱讀項目 state 固定為 learning。`;
+const usage = `新增本機紀錄（不會發布）\n\n用法：\n  npm run record -- microblog --text "今天想記下的事" [--tag 💭] [--date YYYY-MM-DD] [--dry-run]\n  npm run record -- reading --title "題目" --url "/learning/slug/" [--topic TOPIC_ID] [--source "來源"] [--note "整理備註"] [--date YYYY-MM-DD] [--dry-run]\n\n不指定 --topic 時會依題目自動建立主題；也可選填 --topic-id、--topic-name、--topic-code、--description 覆寫主題欄位。\n日期預設台北今日；碎碎念標籤預設 💭，面向固定為 memory。草稿夾項目 state 預設為 writing。`;
 
 function parseArgs(args) {
   if (args.includes('--help') || args.includes('-h')) return { help: true };
@@ -48,7 +48,7 @@ function itemIdFor(item, ids) {
 }
 function yamlScalar(value) { return JSON.stringify(value); }
 function yamlItem(item, indent = '      ') {
-  return `${indent}- id: ${yamlScalar(item.id)}\n${indent}  date: ${yamlScalar(item.date)}\n${indent}  title: ${yamlScalar(item.title)}\n${indent}  source: ${yamlScalar(item.source)}\n${indent}  url: ${yamlScalar(item.url)}\n${indent}  state: learning\n${indent}  note: ${yamlScalar(item.note)}\n${indent}  surfaces: [memory]\n`;
+  return `${indent}- id: ${yamlScalar(item.id)}\n${indent}  date: ${yamlScalar(item.date)}\n${indent}  title: ${yamlScalar(item.title)}\n${indent}  source: ${yamlScalar(item.source)}\n${indent}  url: ${yamlScalar(item.url)}\n${indent}  state: writing\n${indent}  note: ${yamlScalar(item.note)}\n${indent}  surfaces: [memory]\n`;
 }
 
 function prepareMicroblog(raw, input, projectRoot) {

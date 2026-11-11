@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["學習規劃","簡報"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 整理 open-slide 的學習筆記時，我想先決定聽眾要記住什麼，再處理簡報排版。

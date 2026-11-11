@@ -55,7 +55,8 @@
 
     {%- if not is_index %}
       {%- set post_surface = post_surface_navigation(post) %}
-      {%- if post_surface %}
+      {#- 只在 A 面文章顯示，當作回 A 面的連結；B 面專屬文章不顯示（作者 2026-11-10 決定）。 #}
+      {%- if post_surface and post_surface.surfaces.indexOf('profile') !== -1 %}
         <nav class="post-surface-marker" aria-label="文章收錄面向" data-surfaces="{{ post_surface.surfaces | join(' ') }}">
           <span class="post-surface-marker-label">收錄於</span>
           {%- for item in post_surface.items %}
@@ -74,6 +75,12 @@
           <p><span>最近校準</span> <time datetime="{{ thinking.updated }}">{{ thinking.updated }}</time></p>
           <p><span>目前適用邊界</span> {{ escape_html(thinking.boundary) }}</p>
         </aside>
+      {%- endif %}
+      {%- set draft = draft_desk_entry(post) %}
+      {%- if draft %}
+        <p class="post-draft-status is-{{ draft.state }}">
+          <a href="{{ url_for('/reading/') }}#{{ draft.id }}">{% if draft.state === 'dropped' %}這篇先放下了{% elif draft.state === 'stuck' %}還沒完稿，卡住了{% else %}還沒完稿{% endif %}</a>{% if draft.next and draft.state !== 'dropped' %}：下一步，{{ escape_html(draft.next) }}{% endif %}<span>（上次動筆 <time datetime="{{ draft.lastEdited }}">{{ draft.lastEdited }}</time>）</span>
+        </p>
       {%- endif %}
     {%- endif %}
 
@@ -102,7 +109,7 @@
             </div>
           {%- endif %}
           {%- if post.work_knowledge %}
-            <div class="post-feature-note"><i class="fa fa-sticky-note"></i> NOTE / {{ post.work_note or '去脈絡化工作紀錄' }}</div>
+            <div class="post-feature-note"><i class="fa fa-sticky-note"></i> NOTE / {{ post.work_note or '工作紀錄' }}</div>
           {%- endif %}
           {%- if post.excerpt %}
             <div class="post-feature-excerpt">{{ post.excerpt }}</div>
@@ -120,7 +127,7 @@
             <div class="post-feature-learning-placeholder" aria-label="文件紀錄">
               <small><i class="fas fa-film"></i> TAPE: LEARNING_NOTE</small>
               <div><i class="fas fa-book"></i> TYPE: STUDY LOG</div>
-              <div><i class="fas fa-circle"></i> STATUS: {{ post.learning_status or '持續更新' }}</div>
+              <div><i class="fas fa-circle"></i> STATUS: {% set card_draft = draft_desk_entry(post) %}{{ card_draft.stateLabel if card_draft else '持續更新' }}</div>
               <div>TIME: {{ post.date.format('YYYY-MM-DD') }}</div>
               <em><i class="fas fa-circle"></i> REC</em>
             </div>
@@ -195,7 +202,7 @@
       {% set related_reading = popular_posts_fixed( {}, post ) %}
       {% if related_reading %}
       <section class="post-related-reading" aria-labelledby="post-related-reading-title">
-        <h3 id="post-related-reading-title">📚 延伸閱讀 (猜你也喜歡...)</h3>
+        <h3 id="post-related-reading-title">📚 延伸閱讀</h3>
         {{ related_reading }}
       </section>
       {% endif %}

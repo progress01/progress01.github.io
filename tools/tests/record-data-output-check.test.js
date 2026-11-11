@@ -15,7 +15,7 @@ function fixture(t) {
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
   fs.writeFileSync(path.join(root, 'source/life-index.json'), JSON.stringify({ current: { listen: { title: 'A', url: '/a/' }, watch: { title: 'B', url: '/b/' } } }, null, 2));
   fs.writeFileSync(path.join(root, 'source/reading-desk.yml'), [
-    'year: 2026', 'topics:', '  - id: first', '    name: First', '    items:', '      - id: item-a', '        date: 2026-02-03', '        resolved_date: 2026-02-05', '        title: A', '        url: /learning/a/', '        state: learning', '        source: S', '        note: N', '  - id: second', '    name: Second', '    items:', '      - id: item-b', '        date: 2026-02-04', '        title: B', '        url: /learning/b/', '        state: learning', '        source: S', '        note: N', ''
+    'year: 2026', 'topics:', '  - id: first', '    name: First', '    items:', '      - id: item-a', '        date: 2026-02-03', '        resolved_date: 2026-02-05', '        title: A', '        url: /learning/a/', '        state: writing', '        source: S', '        note: N', '  - id: second', '    name: Second', '    items:', '      - id: item-b', '        date: 2026-02-04', '        title: B', '        url: /learning/b/', '        state: writing', '        source: S', '        note: N', ''
   ].join('\n'));
   return root;
 }

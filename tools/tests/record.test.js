@@ -80,7 +80,7 @@ test('malformed JSON/YAML fails without writing or backing up', t => {
 });
 
 test('reading write appends into existing topic while preserving comments and metadata', t => {
-  const desk = '# 保留註解\nyear: 2026\nsample: false\ntopics:\n  - id: t-one\n    code: A-01\n    name: 測試主題\n    description: 主題說明\n    items:\n      - id: reading-old\n        date: 2026-01-01\n        title: 舊題目\n        source: 舊來源\n        url: /learning/old/\n        state: learning\n        note: 舊備註\n        surfaces: [memory]\n';
+  const desk = '# 保留註解\nyear: 2026\nsample: false\ntopics:\n  - id: t-one\n    code: A-01\n    name: 測試主題\n    description: 主題說明\n    items:\n      - id: reading-old\n        date: 2026-01-01\n        title: 舊題目\n        source: 舊來源\n        url: /learning/old/\n        state: writing\n        note: 舊備註\n        surfaces: [memory]\n';
   const root = fixture(t, { desk, posts: [{ url: '/work/new-topic/' }] });
   const result = run({ type: 'reading', title: '新題目', url: '/work/new-topic/', topic: 't-one', date: '2026-02-01' }, { root });
   const changed = fs.readFileSync(path.join(root, 'source/reading-desk.yml'), 'utf8');
@@ -88,7 +88,7 @@ test('reading write appends into existing topic while preserving comments and me
   assert.match(changed, /^# 保留註解/m);
   assert.equal(parsed.topics[0].items.length, 2);
   assert.equal(parsed.topics[0].items[1].id, 'reading-old');
-  assert.equal(parsed.topics[0].items[0].state, 'learning');
+  assert.equal(parsed.topics[0].items[0].state, 'writing');
   assert.deepEqual(parsed.topics[0].items[0].surfaces, ['memory']);
   assert.equal(parsed.topics[0].items[0].source, '待補來源');
   assert.equal(result.written, true);
@@ -112,7 +112,7 @@ test('reading rejects missing local targets and targets without memory surface',
 });
 
 test('reading preserves 8-space item indentation, CRLF, no final newline, and escaped multiline scalars', t => {
-  const desk = 'year: 2026\r\ntopics:\r\n  - id: t-one\r\n    name: T\r\n    items:\r\n        - id: old\r\n          date: 2026-01-01\r\n          title: Old\r\n          source: S\r\n          url: https://example.test/old\r\n          state: learning\r\n          note: N\r\n          surfaces: [memory]';
+  const desk = 'year: 2026\r\ntopics:\r\n  - id: t-one\r\n    name: T\r\n    items:\r\n        - id: old\r\n          date: 2026-01-01\r\n          title: Old\r\n          source: S\r\n          url: https://example.test/old\r\n          state: writing\r\n          note: N\r\n          surfaces: [memory]';
   const root = fixture(t, { desk });
   run({ type: 'reading', title: '新題目: "引用"\n第二行', url: 'https://example.test/new', topic: 't-one', note: '多行\n保留: "字串"' }, { root });
   const changed = fs.readFileSync(path.join(root, 'source/reading-desk.yml'), 'utf8');

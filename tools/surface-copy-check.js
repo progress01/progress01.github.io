@@ -196,6 +196,14 @@ function validateOutput({ root, pages = {}, assets = {}, index } = {}) {
     const actual = marker.children('a.post-surface-marker-link').toArray().map(link => $(link).text().trim());
     const separators = marker.children('.post-surface-marker-separator').toArray().map(node => $(node).text().trim());
     const canonical = $('link[rel="canonical"]');
+    if (!record.surfaces.includes('profile')) {
+      // B 面專屬文章不輸出「收錄於」。
+      if (marker.length !== 0 || $('article.post-content-single').length !== 1
+          || canonical.length !== 1 || normalizedPath(canonical.attr('href') || '/') !== normalizedPath(record.url)) {
+        errors.push(diagnostic('surface_copy_output_article_marker_invalid', file));
+      }
+      continue;
+    }
     if (marker.children('.post-surface-marker-label').text().trim() !== '收錄於'
         || JSON.stringify(actual) !== JSON.stringify(labels)
         || JSON.stringify(separators) !== JSON.stringify(kind === 'dual' ? ['・'] : [])

@@ -1,5 +1,5 @@
 ---
-title: Heat Map
+title: 發表日曆
 date: 2026-08-29 12:00:00
 layout: page
 comments: false
@@ -11,7 +11,7 @@ comments: false
   <div class="calendar-scroll">
     <div class="calendar-chart-wrap">
       <div id="calendar" class="calendar-chart" aria-label="文章發表熱力圖">
-        <div class="calendar-loading"><i class="fa fa-spinner fa-spin"></i> Loading Graph...</div>
+        <div class="calendar-loading"><i class="fa fa-spinner fa-spin"></i> 讀取中……</div>
       </div>
       <div id="calendar-grid-controls" class="calendar-grid-controls" aria-label="選擇發表日期"></div>
     </div>

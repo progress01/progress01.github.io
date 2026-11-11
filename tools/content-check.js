@@ -23,7 +23,19 @@ function parseFrontmatter(content, label) {
   const parsed = readYaml(match[1], `${label} 的 frontmatter`);
   if (parsed.error) return parsed;
   if (!parsed.value || typeof parsed.value !== 'object' || Array.isArray(parsed.value)) return { error: `${label} 的 frontmatter 必須是 YAML 物件。` };
-  return { value: parsed.value };
+  return { value: parsed.value, body: content.slice(match[0].length) };
+}
+
+// AI 對話直接貼進正文時常留下的句子；只警告不擋發布，作者逐篇改寫後再考慮升級為錯誤。
+const AI_LEFTOVER_PATTERNS = [
+  ['使用者提供', /使用者提供/],
+  ['你特別喜歡', /你特別喜歡/],
+  ['先請我回答', /先請我回答/],
+  ['tmp/ 內部路徑', /(?:^|[^A-Za-z0-9_])tmp\//m]
+];
+
+function findAiLeftovers(body) {
+  return AI_LEFTOVER_PATTERNS.filter(([, pattern]) => pattern.test(body || '')).map(([label]) => label);
 }
 
 function asList(value) { return value == null ? [] : Array.isArray(value) ? value : [value]; }
@@ -119,7 +131,9 @@ function validateReadingDesk(root, errors, options = {}) {
           if (!parsedUrl.hostname || parsedUrl.username || parsedUrl.password) errors.push(`${itemLabel} 的外部 url 必須有主機名稱且不可包含帳密。`);
         } catch (error) { errors.push(`${itemLabel} 的外部 url 格式無效。`); }
       }
-      if (item.state != null && !['collected', 'learning', 'published'].includes(textValue(item.state))) errors.push(`${itemLabel} 的 state 只能是 collected、learning 或 published。`);
+      if (!['writing', 'stuck', 'dropped', 'done'].includes(textValue(item.state))) errors.push(`${itemLabel} 的 state 只能是 writing、stuck、dropped 或 done。`);
+      if (item.next != null && typeof item.next !== 'string') errors.push(`${itemLabel} 的 next 必須是一句文字。`);
+      if (item.last_edited != null && textValue(item.last_edited) && !validateReadingDate(item.last_edited)) errors.push(`${itemLabel} 的 last_edited 必須是有效 YYYY-MM-DD 日期。`);
 
       if (options.legacyReadingDeskIds && options.postsByUrl) {
         const itemSource = `source/reading-desk.yml#${itemId || `topic-${topicId || topicIndex + 1}-item-${itemIndex + 1}`}`;
@@ -298,7 +312,9 @@ function checkContent({ root = path.resolve(__dirname, '..'), clock = () => new 
     if (!postCategories.length) errors.push(`${relativePath} 沒有設定 categories。`);
     postCategories.forEach(category => { if (!allowedCategories.has(category)) errors.push(`${relativePath} 使用未設定的分類「${category}」。`); });
     validateCover(frontmatter.cover, relativePath, root, errors);
-    const surfaces = validateSurfaceRecord(frontmatter, stablePostPath, legacySurfaces.posts.has(stablePostPath) ? 'legacy' : 'error', errors, warnings);
+    const leftovers = postIsPublished(frontmatter) ? findAiLeftovers(parsed.body) : [];
+    if (leftovers.length) warnings.push(`${stablePostPath} [AI_LEFTOVER, body]: 正文出現 AI 對話殘留（${leftovers.join('、')}），請改成自己的說法或刪除。`);
+    const surfaces =validateSurfaceRecord(frontmatter, stablePostPath, legacySurfaces.posts.has(stablePostPath) ? 'legacy' : 'error', errors, warnings);
     if (date && (frontmatter.updated == null || updated)) errors.push(...validateThinkingRecord(frontmatter, stablePostPath, date, updated, today));
     const postUrl = normalizePostUrl(frontmatter.permalink);
     if (postUrl) {
@@ -349,4 +365,4 @@ if (require.main === module) {
   else { console.log(`內容檢查通過：${result.categories.length} 個分類、${result.microblogCount} 則碎碎念、${result.imageCount} 個圖牆圖片路徑。`); result.warnings.forEach(warning => console.warn(`內容檢查警告：${warning}`)); }
 }
 
-module.exports = { DATE_ONLY, POST_DATE, parseFrontmatter, parseCalendarDate, validatePostDate, validateReadingDate, validateReadingDesk, normalizePostUrl, validateThinkingRecord, checkContent };
+module.exports = { DATE_ONLY, POST_DATE, parseFrontmatter, parseCalendarDate, validatePostDate, validateReadingDate, validateReadingDesk, normalizePostUrl, validateThinkingRecord, findAiLeftovers, checkContent };

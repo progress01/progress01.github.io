@@ -61,7 +61,7 @@ assert(menuConfig.includes('archives: /archives/'), '主選單必須包含全部
 assert(!menuConfig.includes('\n  random:'), '主選單不應再重複顯示隨機文章');
 assert(menuConfig.indexOf('reading:') < menuConfig.indexOf('reading_desk:'), '生活索引應排在草稿夾之前');
 assert(menuConfig.indexOf('reading_desk:') < menuConfig.indexOf('photos:'), '草稿夾應排在記憶圖牆之前');
-assert(languageSource.includes('calendar: 更新日曆'), '日曆選單應使用容易理解的名稱');
+assert(languageSource.includes('calendar: 發表日曆'), '日曆選單應使用容易理解的名稱');
 assert(source.includes('class="home-outro-cassette"'), '首頁底部必須保留錄音帶器材線稿');
 assert(source.includes('class="home-outro-headphones"'), '首頁底部必須保留耳機器材線稿');
 assert(source.includes('class="home-outro" aria-hidden="true"'), '純裝飾頁尾必須從輔助技術隱藏');
@@ -110,7 +110,7 @@ assert(/object-position:\s*center/.test(mobileVisualStyles), '手機隨機縮圖
   assert.deepStrictEqual(Array.from(generated, item => item.kind), ['audio', 'learning', 'watch']);
   assert.strictEqual(generated[0].cover, '/images/song.webp', '站內封面應提供給首頁視覺');
   assert.strictEqual(generated[1].cover, '', '學習筆記與外部封面都不應載入首頁視覺');
-  assert.strictEqual(generated[1].note, '進行中');
+  assert.strictEqual(generated[1].note, '', 'learning_status 已併進草稿夾，不再當隨機卡備註');
 }
 
 {

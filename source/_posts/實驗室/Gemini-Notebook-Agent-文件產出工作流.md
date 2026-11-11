@@ -7,7 +7,6 @@ categories: [觀念與實驗]
 tags: ["研究筆記","AI Agent"]
 longform: true
 learning: true
-learning_status: 進行中
 ---
 
 我閱讀 Gemini Notebook Agent 的案例，想弄清楚 AI 產出文件時哪些工作仍需人工判斷。
