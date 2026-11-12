@@ -171,12 +171,17 @@ function planPublication({ root = ROOT, resume = false, repository = REPOSITORY 
   return { root, statePath, previous, head, fingerprint, indexTree, changed, blockers, resume };
 }
 
-function printPlan(plan, log, { brief = false } = {}) {
+const DEFAULT_MESSAGE = '更新部落格紀錄';
+
+function printPlan(plan, log, { brief = false, message = DEFAULT_MESSAGE } = {}) {
   log('本次操作：檢查目前整站 → 保存全部原稿修改 → 推送 source 備份 → 全部發布到 main。');
   log('未完成的公開紀錄也一起發布；既有草稿與隱私設定仍生效。');
   log(brief
     ? `本次保存：${plan.changed.length ? `${plan.changed.length} 個原稿檔案` : '無新修改，使用目前已提交版本'}`
     : `本次保存：${plan.changed.join('、') || '無新修改，使用目前已提交版本'}`);
+  if (plan.changed.length) {
+    log(`提交訊息：${message}${message === DEFAULT_MESSAGE ? '（預設訊息；建議加 --message "改了什麼" 寫清楚這次的修改）' : ''}`);
+  }
   plan.blockers.forEach(reason => log(`停止原因：${reason}`));
 }
 
@@ -205,7 +210,7 @@ function createDetailLogger(logPath) {
   return message => fs.appendFileSync(logPath, `[${new Date().toISOString()}] ${message}\n`);
 }
 
-function runPublication({ root = ROOT, message = '更新部落格紀錄', execute = false, resume = false,
+function runPublication({ root = ROOT, message = DEFAULT_MESSAGE, execute = false, resume = false,
   repository = REPOSITORY, log = console.log,
   queryPages = queryPagesBuild, resolveSha = saveDeploymentSha, sleep = sleepSync,
   verify,
@@ -243,7 +248,7 @@ function runPublication({ root = ROOT, message = '更新部落格紀錄', execut
         runStage(stage);
       } }));
     const plan = planPublication({ root, resume, repository });
-    printPlan(plan, progress, { brief: execute });
+    printPlan(plan, progress, { brief: execute, message });
     if (!execute) return { preview: true, ready: plan.blockers.length === 0 };
     if (plan.blockers.length) throw new Error('發布條件尚未符合，未執行提交、推送或部署。');
     if (!message.trim()) throw new Error('更新說明不可空白。');

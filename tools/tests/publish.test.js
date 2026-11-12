@@ -94,6 +94,7 @@ test('one execution verifies, commits all current changes with literal paths, ba
   assert.equal(fs.readFileSync(path.join(f.root, 'notes.md'), 'utf8'), 'unfinished notes');
   assert.equal(git(f.root, ['ls-files', '--', 'notes.md']).trim(), 'notes.md');
   assert.ok(output.some(line => line.includes('2 個原稿檔案')));
+  assert.ok(output.includes('提交訊息：更新 & $(literal)'), '指定的提交訊息要顯示在計畫裡，且不提醒');
   assert.ok(output.some(line => line.includes('source 已備份')));
   assert.ok(output.some(line => line.includes('GitHub Pages 已確認完成部署')));
   assert.ok(!output.join('\n').includes(article));
@@ -278,4 +279,13 @@ test('already committed work can be backed up and published without an empty com
   const result = runPublication(f.options);
   assert.equal(result.commit, head);
   assert.deepEqual(f.events, ['verify', 'push', 'deploy']);
+});
+
+test('preview shows the default commit message with a reminder to write what changed', t => {
+  const f = fixture(t);
+  const output = [];
+  const { message, ...options } = f.options;
+  runPublication({ ...options, execute: false, log: line => output.push(line) });
+  assert.ok(output.some(line => line.startsWith('提交訊息：更新部落格紀錄（預設訊息') && line.includes('--message')));
+  assert.deepEqual(f.events, []);
 });
