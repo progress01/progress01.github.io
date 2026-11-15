@@ -36,6 +36,7 @@
     "check:song-tags": "node tools/song-language-tags.js",
     "check:excerpt": "node tools/excerpt-check.js",
     "check:site": "node tools/site-check.js",
+    "check:links": "node tools/check-external-links.js",
     "check:seo-urls": "node tools/seo-url-audit.js --root public",
     "check:surface-regression": "node tools/surface-target-regression-check.js",
     "test:regression": "node --test --test-concurrency=1 tools/tests/*.test.js",

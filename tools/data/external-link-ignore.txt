@@ -1,0 +1,6 @@
+# 外部連結檢查的略過清單（npm run check:links 會讀這個檔案）
+# 確認過沒問題、但每次都被列成「要你點開確認」的網址，寫在這裡就不會再檢查。
+# 一行一個網址；結尾加 * 代表開頭相同的都略過；# 後面是註解。
+# 例子：
+#   https://www.example.com/some/page
+#   https://open.spotify.com/*
