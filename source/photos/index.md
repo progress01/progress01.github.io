@@ -22,6 +22,24 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/7MLRXVVgkCGHJFa81dRnW7?si=748d54d7f0be4efa" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_然らば.webp" alt="Macaroni Empitsu - 然らば - 同名單曲專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/01IZAuQsBO00iLKFO9LsFf?si=e723076ba50946c6" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_君はロックを聴かない.webp" alt="愛繆 - 君はロックを聴かない - 同名迷你專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1ElBje28cbyOa7IGAcBcZQ?si=c349c9ee601a4a54" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_放我的真心在你的手心.webp" alt="葉歡 - 放我的真心在你的手心 - 同名專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/5ZfYbZvrHU1YgSbnsPXdg2?si=e9ae13de5a16480c" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_勇氣.webp" alt="梁靜茹 - 勇氣 - 戀愛的力量">
     </a>
