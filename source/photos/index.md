@@ -34,14 +34,98 @@ comments: false
   </div>
 
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/5FWMv2Kor3Rl9MoM9Ei0vz?si=429c342ad7ed4afe" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_스토커（Stalker）.webp" alt="10cm - 스토커（Stalker） - 3.0">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6NSlOEEtWlqvEFrjQsry77?si=412b9f51d4e842cc" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_World Spins Madly On.webp" alt="The Weepies - World Spins Madly On - Say i am you">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/1ElBje28cbyOa7IGAcBcZQ?si=c349c9ee601a4a54" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_放我的真心在你的手心.webp" alt="葉歡 - 放我的真心在你的手心 - 同名專輯">
     </a>
   </div>
 
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/47sL88KSkmTAuH8xShBFBj?si=264bf75a41a246c5" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_走過咖啡屋.webp" alt="千百惠 - 走過咖啡屋 - 想你的時候">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1vAiz64h5jvmTEHh6a5918?si=2676f3f41665459c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_칵테일 사랑.webp" alt="Maronie Friends - 칵테일 사랑 - Maronie Friends">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/199onUPWOhg4hkqGLAZ3z3?si=7a991603d64345a1" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Boast.webp" alt="Kwak Jin Eon - Boast - Go with me">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/65bRYkG90LpIzqLzg4firZ?si=1e77b55c5191460e" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_素顏.webp" alt="許嵩和何曼婷 - 素顏 - 同名單曲專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0ozMlihjchxPl9Jn7v0YFp?si=a0407b9daf024de1" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_我是一隻魚.webp" alt="任賢齊 - 我是一隻魚 - 愛像太平洋">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5vtOJrmovXGxGsnAck694H?si=3ce6da76c0984471" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Fields Of Gold.webp" alt="Eva Cassidy - Fields Of Gold - Songbird">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1V8BSBe2fB5Np30sXmUCNU?si=589425a90c364c81" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Where Have All the Flowers Gone.webp" alt="Peter, Paul and Mary - Where Have All the Flowers Gone - The Very Best of Peter, Paul and Mary">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5JlqbEj7Bbh2RdZgcO5kJE?si=26ccea873b984398" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_One Day.webp" alt="Matisyahu - One Day - Light">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5h5ACEliQ9toZ3fJwVc09f?si=5893bf88494d4ad5" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_花.webp" alt="Orange range - 花 - musiQ">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1Nt2BaDGwNVnPZfiQnhZiT?si=64305c844b0b4286" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_小さな恋のうた.webp" alt="新垣結衣 - 小さな恋のうた - 虹">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3YLqM2BjxL3nQb8yV67spQ?si=b4ffa16c7c984199" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_島唄.webp" alt="夏川里美 - 島唄 - てぃだ ～太陽・風ぬ想い～">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/5ZfYbZvrHU1YgSbnsPXdg2?si=e9ae13de5a16480c" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_勇氣.webp" alt="梁靜茹 - 勇氣 - 戀愛的力量">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5tVzG4tw3M9VLkcQ0fOtgF?si=7325dcef669a46ba" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_夕陽之歌.webp" alt="梅艷芳 - 夕陽之歌 - In Brasil">
     </a>
   </div>
 

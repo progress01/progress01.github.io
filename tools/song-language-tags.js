@@ -30,7 +30,8 @@ const SONG_LANGUAGE_GROUPS = {
     '歌曲推薦-練習.md', '歌曲推薦-老男孩.md', '歌曲推薦-若我告訴你其實我愛的只是你.md', '歌曲推薦-葉子.md',
     '歌曲推薦-藍色眼睛.md', '歌曲推薦-親愛的你啊.md', '歌曲推薦-說，你愛我.md', '歌曲推薦-逍遙嘆.md',
     '歌曲推薦-這些日子以來.md', '歌曲推薦-關於愛的定義.md', '歌曲推薦-靜靜的.md', '歌曲推薦-非常時期.md',
-    '歌曲推薦-鴨子.md', '歌曲推薦-頌海.md', '歌曲推薦-放我的真心在你的手心.md'
+    '歌曲推薦-鴨子.md', '歌曲推薦-頌海.md', '歌曲推薦-放我的真心在你的手心.md', '歌曲推薦-走過咖啡屋.md',
+    '歌曲推薦-素顏.md', '歌曲推薦-我是一隻魚.md'
   ],
   英語: [
     '歌曲推薦-Better-Man.md', '歌曲推薦-Free-Loop.md', '歌曲推薦-From-The-Start.md',
@@ -41,22 +42,26 @@ const SONG_LANGUAGE_GROUPS = {
     '歌曲推薦-Tally.md', '歌曲推薦-the day you went away.md',
     '歌曲推薦-the-real-world.md',
     '歌曲推薦-Way-back-into-love.md', '歌曲推薦-When-you-say-nothing-at-all.md',
-    '歌曲推薦-Wonderful-tonight.md', '歌曲推薦-You-are-not-alone.md'
+    '歌曲推薦-Wonderful-tonight.md', '歌曲推薦-You-are-not-alone.md', '歌曲推薦-World-Spins-Madly-On.md',
+    '歌曲推薦-Fields-Of-Gold.md', '歌曲推薦-Where-Have-All-the-Flowers-Gone.md', '歌曲推薦-One-Day.md'
   ],
   日語: [
     '歌曲推薦-free-magic.md', '歌曲推薦-Secret-of-my-heart.md', '歌曲推薦-tears.md',
     '歌曲推薦-それぞれに.md', '歌曲推薦-プラスティック・ラブ.md', '歌曲推薦-22才の別れ.md',
-    '歌曲推薦-君はロックを聴かない.md', '歌曲推薦-然らば.md'
+    '歌曲推薦-君はロックを聴かない.md', '歌曲推薦-然らば.md', '歌曲推薦-花.md', '歌曲推薦-小さな恋のうた.md',
+    '歌曲推薦-島唄.md'
   ],
   韓語: [
     '歌曲推薦-All-for-you.md', '歌曲推薦-Candy.md', '歌曲推薦-Don-t-You-Worry.md',
     '歌曲推薦-Hyehwa-dong.md', '歌曲推薦-I will love you.md',
     '歌曲推薦-sailing back to you.md', '歌曲推薦-告白（고백합니다）.md',
     '歌曲推薦-舊愛.md', '歌曲推薦-시청-앞-지하철-역에서.md',
-    '歌曲推薦-아로하.md', '歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）.md'
+    '歌曲推薦-아로하.md', '歌曲推薦-잊어야 한다는 마음으로（忘記他這件事）.md',
+    '歌曲推薦-스토커（Stalker）.md', '歌曲推薦-칵테일 사랑.md', '歌曲推薦-Boast.md'
   ],
   粵語: [
-    '歌曲推薦-千千闋歌.md', '歌曲推薦-小風波.md', '歌曲推薦-好心分手.md', '歌曲推薦-沈默是金.md'
+    '歌曲推薦-千千闋歌.md', '歌曲推薦-小風波.md', '歌曲推薦-好心分手.md', '歌曲推薦-沈默是金.md',
+    '歌曲推薦-夕陽之歌.md'
   ],
   台語: [
     '歌曲推薦-I-love-you無望.md', '歌曲推薦-再會啦心愛的無緣的人.md',
