@@ -70,6 +70,54 @@ comments: false
   </div>
 
   <div class="ig-card">
+    <a href="https://www.youtube.com/watch?v=MtqWkRWEe2c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_とんぼ.webp" alt="長渕剛 - とんぼ - just one">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4TlKVrK0TnVlwvVSbUbbM4?si=9e5f112eca29404f" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_바람이 분다.webp" alt="Lee Sora - 바람이 분다 - Eyebrow Moon">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5mR5I4bKY6HlwrukCWekWE?si=e32972fe62014ff8" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_從沒來停過.webp" alt="宋德鶴 - 從沒來停過 - 燈塔">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/2RtK2Iw7AWOhKANuC1SBuC?si=2939b5f0b7404864" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_逝.webp" alt="雷光夏 - 逝 - 2003逝">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5RBDrY6VWBo4zHqajx8mLw?si=51bb18e43bd64583" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_真夏の通り雨.webp" alt="宇多田光 - 真夏の通り雨 - Fantome">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5q9FLtKa6EtOVPLaRwH61E?si=2f85e3b77c1f468e" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_愛情的故事.webp" alt="方季惟 - 愛情的故事 - 同名專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4AWVRxsHhLlLPtKuXvnprw?si=88ab468a28714ea8" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_奇洛李維斯回信.webp" alt="薛凱琪 - 奇洛李維斯回信 - F">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/0NAcDn6U2GB2Arhspmh38S?si=b9fe5cb7dcec406d" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_淚橋.webp" alt="伍佰 - 淚橋 - 淚橋">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/65bRYkG90LpIzqLzg4firZ?si=1e77b55c5191460e" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_素顏.webp" alt="許嵩和何曼婷 - 素顏 - 同名單曲專輯">
     </a>
