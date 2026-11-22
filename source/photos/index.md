@@ -118,6 +118,24 @@ comments: false
   </div>
 
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/2qb3FHsSBAHZXGfM2JtLir?si=03873456838445af" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_傳奇.webp" alt="李健 - 傳奇 - 似水流年">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1OhIn0L6iofnk5bjalWfHq?si=8b59e2728c6043a3" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Sudden Shower.webp" alt="Eclipse - Sudden Shower - Lovely Runner, pt. 1">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5WgCHXvD4eJbDuIKDLMLFm?si=208e4574569b4f08" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_島人ぬ宝.webp" alt="BEGIN - 島人ぬ宝 - ビギンの島唄 ～オモトタケオ2～">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/65bRYkG90LpIzqLzg4firZ?si=1e77b55c5191460e" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_素顏.webp" alt="許嵩和何曼婷 - 素顏 - 同名單曲專輯">
     </a>
