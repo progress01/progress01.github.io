@@ -32,7 +32,8 @@ const SONG_LANGUAGE_GROUPS = {
     '歌曲推薦-這些日子以來.md', '歌曲推薦-關於愛的定義.md', '歌曲推薦-靜靜的.md', '歌曲推薦-非常時期.md',
     '歌曲推薦-鴨子.md', '歌曲推薦-頌海.md', '歌曲推薦-放我的真心在你的手心.md', '歌曲推薦-走過咖啡屋.md',
     '歌曲推薦-素顏.md', '歌曲推薦-我是一隻魚.md', '歌曲推薦-從沒來停過.md', '歌曲推薦-逝.md',
-    '歌曲推薦-愛情的故事.md', '歌曲推薦-淚橋.md', '歌曲推薦-傳奇.md'
+    '歌曲推薦-愛情的故事.md', '歌曲推薦-淚橋.md', '歌曲推薦-傳奇.md', '歌曲推薦-少年維持著煩惱.md',
+    '歌曲推薦-一天到晚游泳的魚.md', '歌曲推薦-生活不止眼前的苟且.md', '歌曲推薦-愛我.md'
   ],
   英語: [
     '歌曲推薦-Better-Man.md', '歌曲推薦-Free-Loop.md', '歌曲推薦-From-The-Start.md',
@@ -44,7 +45,8 @@ const SONG_LANGUAGE_GROUPS = {
     '歌曲推薦-the-real-world.md',
     '歌曲推薦-Way-back-into-love.md', '歌曲推薦-When-you-say-nothing-at-all.md',
     '歌曲推薦-Wonderful-tonight.md', '歌曲推薦-You-are-not-alone.md', '歌曲推薦-World-Spins-Madly-On.md',
-    '歌曲推薦-Fields-Of-Gold.md', '歌曲推薦-Where-Have-All-the-Flowers-Gone.md', '歌曲推薦-One-Day.md'
+    '歌曲推薦-Fields-Of-Gold.md', '歌曲推薦-Where-Have-All-the-Flowers-Gone.md', '歌曲推薦-One-Day.md', '歌曲推薦-Rain.md',
+    '歌曲推薦-Stuck-on-You.md', '歌曲推薦-Tears-in-Heaven.md', '歌曲推薦-How-Do-I-Live.md'
   ],
   日語: [
     '歌曲推薦-free-magic.md', '歌曲推薦-Secret-of-my-heart.md', '歌曲推薦-tears.md',

@@ -162,15 +162,20 @@ NexT.utils = {
 
   updateActiveNav() {
     if (!Array.isArray(this.sections)) return;
-    let index = this.sections.findIndex(element => {
+    // Hidden photo-wall categories have zero-size rects. Keep their original
+    // TOC indices, but exclude them when finding the current visible heading.
+    const visibleSections = this.sections.map((element, index) => ({ element, index }))
+      .filter(({ element }) => element && !element.closest('[hidden]'));
+    if (!visibleSections.length) return;
+    let index = visibleSections.findIndex(({ element }) => {
       return element?.getBoundingClientRect().top > 10;
     });
     if (index === -1) {
-      index = this.sections.length - 1;
+      index = visibleSections.length - 1;
     } else if (index > 0) {
       index--;
     }
-    this.activateNavByIndex(index);
+    this.activateNavByIndex(visibleSections[index].index);
   },
 
   registerScrollPercent() {

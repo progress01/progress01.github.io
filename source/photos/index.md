@@ -9,11 +9,12 @@ comments: false
 
 <nav class="photo-wall-index" aria-label="圖牆分類" data-photo-wall-filter-group>
   <span class="photo-wall-index__label">PHOTO WALL / INDEX</span>
-  <button type="button" data-photo-wall-filter="all" aria-pressed="false">全部 <span>201</span></button>
+  <button type="button" data-photo-wall-filter="all" aria-pressed="false">全部分類 <span>201</span></button>
   <button type="button" data-photo-wall-filter="music" aria-pressed="true">歌曲推薦 <span>98</span></button>
   <button type="button" data-photo-wall-filter="books" aria-pressed="false">閱讀心得 <span>86</span></button>
   <button type="button" data-photo-wall-filter="films" aria-pressed="false">觀影心得 <span>17</span></button>
 </nav>
+<noscript><style>.photo-wall-section[hidden] { display: block !important; }</style></noscript>
 <section class="photo-wall-section photo-wall-section--music" id="photo-wall-music" data-photo-wall-section="music">
   <header class="photo-wall-section__header">
     <span class="photo-wall-section__eyebrow">01 / LISTEN</span>
@@ -21,6 +22,48 @@ comments: false
     <p>歌曲推薦與那些留在耳邊的片段。</p>
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/4PBdOQwfwnrUcM5HMcoc0I?si=0b84b79367c64c1f" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_愛我.webp" alt="姜育恆 - 愛我 - 愛我.孤獨之旅">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1fgaeLgU0nxFatNasdaRo6?si=3103243957324431" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_生活不止眼前的苟且.webp" alt="許巍 - 生活不止眼前的苟且 - 同名單曲專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/3cQCExeXPG5Lz2b0K0Zr7B?si=25db6f7a41ea4e2c" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_一天到晚游泳的魚.webp" alt="張雨生 - 一天到晚游泳的魚 - 同名專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/7BD50ATrF3Vab5FQy7vtK8?si=aab8b31bb2ab4a39" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_How Do I Live.webp" alt="LeAnn Rimes - How Do I Live - Greatest Hits">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/1kgdslQYmeTR4thk9whoRw?si=1dd92c8d1a0b4395" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Tears in Heaven.webp" alt="Eric Clapton - Tears in Heaven - Rush">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6HPLeKiNm92RbykX2BDTUB?si=48cb226e2f5b4101" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Stuck on You.webp" alt="LIONEL RICHIE - Stuck on You - Can’t Slow Down">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/300O5aB8IWTCGL2xIfx2xq?si=3f628be8efe849c0" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_少年維持著煩惱.webp" alt="蛋堡 - 少年維持著煩惱 - Winter Sweet">
+    </a>
+  </div>
+
   <div class="ig-card">
     <a href="https://open.spotify.com/track/7MLRXVVgkCGHJFa81dRnW7?si=748d54d7f0be4efa" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_然らば.webp" alt="Macaroni Empitsu - 然らば - 同名單曲專輯">
@@ -174,6 +217,12 @@ comments: false
   <div class="ig-card">
     <a href="https://open.spotify.com/track/1Nt2BaDGwNVnPZfiQnhZiT?si=64305c844b0b4286" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_小さな恋のうた.webp" alt="新垣結衣 - 小さな恋のうた - 虹">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/5LXh3ZNhWUwfX30YZc6VO4?si=edc6d5e22a2a44f9" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Rain.webp" alt="Pay money to my pain - Rain - gene">
     </a>
   </div>
 
@@ -898,25 +947,25 @@ comments: false
           </div>
 
 <!-- BLOGGER_IMPORT_PHOTO_WALL:MUSIC:START -->
-  <div class="ig-card">
+  <div class="ig-card" data-artist="薛凱琪 和 方大同">
     <a href="https://open.spotify.com/track/13tCl0OoBldLiDPsxS18Kf?si=9874c504a59c48d9" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_復刻回憶.webp" alt="歌曲推薦-復刻回憶｜主圖">
     </a>
   </div>
 
-  <div class="ig-card">
+  <div class="ig-card" data-artist="筷子兄弟">
     <a href="https://open.spotify.com/track/3obsARE8dcVylLhsZUshvq?si=29d8ee0267a4446a" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_老男孩.webp" alt="歌曲推薦-老男孩｜主圖">
     </a>
   </div>
 
-  <div class="ig-card">
+  <div class="ig-card" data-artist="周華健">
     <a href="https://open.spotify.com/track/2YOECkGti9IFHkPYTZAHWl?si=0506e26353a147d0" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_有沒有那麼一首歌會讓你想起我.webp" alt="歌曲推薦-有沒有那麼一首歌會讓你想起我｜主圖">
     </a>
   </div>
 
-  <div class="ig-card">
+  <div class="ig-card" data-artist="陳慧琳 與 馮德倫">
     <a href="https://open.spotify.com/track/0qgiLB55D9B2hHFeX7L9hC?si=3b1d465f362c42b1" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_北極雪.webp" alt="歌曲推薦-北極雪｜主圖">
     </a>
@@ -1574,85 +1623,4 @@ comments: false
   </div>
 </section>
 
-<script>
-  (function() {
-    var filters = Array.from(document.querySelectorAll("[data-photo-wall-filter]"));
-    var sections = Array.from(document.querySelectorAll("[data-photo-wall-section]"));
-    var validKeys = ["all", "music", "books", "films"];
-    var viewStateKey = "photo-wall-view-state-v1";
-
-    function pageStateUrl() {
-      return window.location.pathname + window.location.search + window.location.hash;
-    }
-
-    function saveViewState() {
-      try {
-        window.sessionStorage.setItem(viewStateKey, JSON.stringify({
-          url: pageStateUrl(),
-          scrollY: window.scrollY
-        }));
-      } catch (error) {
-        // 私密瀏覽或儲存空間受限時，hash 篩選仍可正常運作。
-      }
-    }
-
-    function restoreViewState() {
-      try {
-        var saved = JSON.parse(window.sessionStorage.getItem(viewStateKey) || "null");
-        if (!saved || saved.url !== pageStateUrl() || !Number.isFinite(saved.scrollY)) return false;
-        window.setTimeout(function() {
-          window.scrollTo({top: saved.scrollY, behavior: "auto"});
-        }, 0);
-        return true;
-      } catch (error) {
-        return false;
-      }
-    }
-
-    function keyFromHash() {
-      var match = window.location.hash.match(/^#photo-wall-(all|music|books|films)(?:-title)?$/);
-      return match ? match[1] : "music";
-    }
-
-    function showSection(key) {
-      var showAll = key === "all";
-      sections.forEach(function(section) {
-        section.hidden = !showAll && section.dataset.photoWallSection !== key;
-      });
-      filters.forEach(function(filter) {
-        var active = filter.dataset.photoWallFilter === key;
-        filter.classList.toggle("is-active", active);
-        filter.setAttribute("aria-pressed", String(active));
-      });
-    }
-
-    function focusHashTarget() {
-      var targetId = window.location.hash.slice(1);
-      var target = targetId ? document.getElementById(targetId) : null;
-      if (target) {
-        target.scrollIntoView({block: "start"});
-      }
-    }
-
-    filters.forEach(function(filter) {
-      filter.addEventListener("click", function() {
-        var key = filter.dataset.photoWallFilter;
-        showSection(key);
-        if (validKeys.indexOf(key) !== -1) window.history.replaceState(null, "", "#photo-wall-" + key);
-        saveViewState();
-      });
-    });
-
-    window.addEventListener("hashchange", function() {
-      showSection(keyFromHash());
-      focusHashTarget();
-    });
-
-    showSection(keyFromHash());
-    var restored = restoreViewState();
-    if (window.location.hash && !restored) {
-      window.setTimeout(focusHashTarget, 0);
-    }
-    window.addEventListener("pagehide", saveViewState);
-  })();
-</script>
+<script src="/js/photo-wall.js" defer></script>

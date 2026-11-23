@@ -77,7 +77,8 @@ if (typeof hexo !== 'undefined' && hexo.extend?.filter) {
   hexo.extend.filter.register('before_generate', function() {
     const page = this.model('Page').findOne({ source: 'photos/index.md' });
     if (!page) return;
-    const result = sortPhotoWall(page.content, this.locals.get('posts').toArray());
+    const { buildPhotoWall } = require('./photo-wall-cards');
+    const result = buildPhotoWall(page.content, this.locals.get('posts').toArray());
     for (const card of result.unmatched) {
       this.log.warn(`記憶圖牆找不到文章發布日期，保留原位置：${card.src || card.href}`);
     }
