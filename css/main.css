@@ -1222,7 +1222,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #a3ff25;
+    background: #f6f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2884,33 +2884,80 @@ header.header {
   }
 }
 /* =========================================
-   IG 照片牆專用排版 (寫在 Main 最後面)
+   記憶圖牆：連續圖文卡
    ========================================= */
 .ig-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 20px;
   margin-top: 14px;
 }
 .ig-card {
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  background: #f0f0f0;
-  border-radius: 2px;
+  min-width: 0;
+  background: transparent;
+}
+.ig-card > a {
+  display: block;
+  border-bottom: none;
 }
 .ig-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: filter 0.3s;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: #f1eee6;
   border: none;
   padding: 0;
   margin: 0;
 }
-.ig-card:hover img {
-  filter: sepia(0.4);
-  transform: scale(1.05);
-  transition: transform 0.3s;
+.ig-card .photo-wall-card__caption {
+  margin-top: 10px;
+}
+.ig-card .photo-wall-card__title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.ig-card .photo-wall-card__title a {
+  border-bottom: none;
+  color: #4a3028;
+}
+.ig-card .photo-wall-card__artist,
+.ig-card .photo-wall-card__date {
+  display: block;
+  margin: 0;
+  color: #6c6257;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.photo-wall-jump {
+  margin: 14px 0 20px;
+  color: #6c6257;
+  font-size: 13px;
+}
+.photo-wall-jump summary {
+  width: fit-content;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.photo-wall-jump__links {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  margin-top: 8px;
+}
+.photo-wall-jump__links a {
+  color: #4a3028;
+}
+.ig-card[id] {
+  scroll-margin-top: 24px;
+}
+.photo-wall-section[hidden] {
+  display: none !important;
 }
 .photo-wall-index {
   display: flex;
@@ -2997,7 +3044,15 @@ header.header {
 @media (max-width: 767px) {
   .ig-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
+    gap: 22px 14px;
+  }
+  .photo-wall-jump__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .ig-card .photo-wall-card__title {
+    font-size: 15px;
   }
   .photo-wall-index__label {
     flex-basis: 100%;
