@@ -23,6 +23,18 @@ comments: false
   </header>
   <div class="ig-grid" data-photo-wall-grid="music" aria-labelledby="photo-wall-music-title">
   <div class="ig-card">
+    <a href="https://open.spotify.com/track/7i6mxesucjND8y8Uq2pgiV?si=7359868fdc4b4b07" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_Amazing Grace.webp" alt="Hayley Westenra - Amazing Grace - Pure">
+    </a>
+  </div>
+
+  <div class="ig-card">
+    <a href="https://open.spotify.com/track/6NU6x0AdRnznBGFA0VQ7zA?si=82a238de400b44e7" target="_blank">
+      <img loading="lazy" decoding="async" src="/images/song_分手的話.webp" alt="楊林 - 分手的話 - 同名專輯">
+    </a>
+  </div>
+
+  <div class="ig-card">
     <a href="https://open.spotify.com/track/4PBdOQwfwnrUcM5HMcoc0I?si=0b84b79367c64c1f" target="_blank">
       <img loading="lazy" decoding="async" src="/images/song_愛我.webp" alt="姜育恆 - 愛我 - 愛我.孤獨之旅">
     </a>
